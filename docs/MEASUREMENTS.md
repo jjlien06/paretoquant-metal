@@ -10,6 +10,8 @@ Parameter storage, local gate/up timings, practical engine throughput, and quali
 - Sealed legacy-dispatch parity replay: `results/m2pro-paired-release-v4/`.
 - Fresh saved-weight retuning: `results/m2pro-saved-retune-v1/`.
 - Fresh retuned-dispatch paired replay: `results/m2pro-paired-retuned-v5/`.
+- Six-path compiled cached-decode runs: `results/m2pro-compiled-paired-v1/` and `results/m2pro-compiled-paired-v2/`.
+- Actual native/compiled autoregressive requests: `results/m2pro-compiled-autoregressive-v2/`.
 - Larger-model profile/construction: `results/m2pro-1.5b-mixed-v2/`.
 - Practical engine comparison: `results/framework-head-to-head-v1/`.
 - Held-out quality: `results/quality-wikitext-prefix16384-v1/`.
@@ -34,6 +36,34 @@ Ratios above one indicate higher cached decode throughput. These intervals cover
 Check the exact interval, not a rounded `1.000`, before describing a case as excluding parity.
 The earlier stale-dispatch rerun contained parity in every interval and is retained, not discarded.
 Local dispatch tuning is not proof of universal end-to-end acceleration.
+
+## Compiled decode and actual requests
+
+Both six-path cached-decode runs use unchanged mixed weights and 18 selected fused
+pairs. Each retains 432 measured path trials plus 36 warmups; 24 paired trials per
+context, 64 fixed schedule tokens. Stock/fused and dynamic/fixed/compiled controls
+separate cache policy, graph compilation, and custom MLP contribution.
+
+The second run's combined stock-eager/fused-compiled ratios are
+1.285094x [1.267641,1.301666], 1.261018x [1.238254,1.286979], and
+1.262617x [1.249584,1.275418]. These are warmed teacher-forced cached decode,
+excluding prefill, padding, sampling and first compilation; not practical requests.
+The first run is retained separately, not pooled or replaced.
+
+A separate actual MLX-LM/compiled generation protocol included prefill, sampling
+and text decoding, with models loaded and compiled decoders reused. It retained
+144 measured requests (12/path/context), each exactly 64 generated tokens. Native
+and compiled tokens matched within each backend. Compilation's incremental benefit
+versus existing native fused generation was 1.021511x [1.014905,1.027051],
+1.007712x [1.004304,1.011335], and 1.003929x [0.998911,1.006193]; long includes parity.
+Combined fused/compiled versus native stock was 1.094577x / 1.081632x / 1.059324x.
+Compiled stock alone was slower on the long context (0.990885x).
+
+Native MLX-LM already overlaps token work. A whole-prompt versus split-final-token
+prefill mismatch initially failed fused token equality; matching native prefill
+fixed that check before publication. First-call observations are not cold-process
+benchmarks. The larger synchronous gain does not transfer to real-request throughput.
+See `docs/COMPILED_DECODE.md` for full controls and exact archived source bindings.
 
 ## Larger model and quality
 

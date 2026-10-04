@@ -1,0 +1,13 @@
+{
+  "comparison_sha256": "3b61cf7f4e0f03dc1aafc62c4251d0e14e63c441d30bf98a4071476c22bc8659",
+  "archived_source_sha256": {
+    "executed_probe.py": "48c527702ca46b7657c16c11e97a55b62bd33f6caebe68bd2470b68df9032932",
+    "executed_decode.py": "20fe3acf9b99bdb386a80daae076a0c6d3b051a10874714bb702b3ed98779c3e",
+    "executed_cli.py": "f5e1187c0496c1f533bf32549b9f531473eaa42d70b18dcd75489e77a0ffbe7f"
+  },
+  "verified_measured_requests": 144,
+  "verified_generated_tokens": 9216,
+  "warmup_requests": 24,
+  "first_call_observations": 12,
+  "note": "First call observations are not cold-process latency; all models already loaded."
+}

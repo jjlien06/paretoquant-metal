@@ -355,7 +355,7 @@ def generate_local(args):
         from .decode import FixedDecoder, greedy_token_ids
 
         ids = tokenizer.encode(_chat_prompt(tokenizer, args.prompt))
-        decoder = FixedDecoder(model, capacity=len(ids) + args.max_tokens - 1, native_prefill=True)
+        decoder = FixedDecoder(model, capacity=len(ids) + args.max_tokens)
         tokens = greedy_token_ids(
             decoder, ids, max_tokens=args.max_tokens, eos_tokens=tokenizer.eos_token_ids
         )

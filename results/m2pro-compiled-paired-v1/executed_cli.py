@@ -351,18 +351,6 @@ def generate_local(args):
         except (ValueError, OSError, RuntimeError) as error:
             # install_fusion validates all replacements before mutating the model.
             print(f"Using stock kernels: {error}", file=sys.stderr)
-    if getattr(args, "compiled", False):
-        from .decode import FixedDecoder, greedy_token_ids
-
-        ids = tokenizer.encode(_chat_prompt(tokenizer, args.prompt))
-        decoder = FixedDecoder(model, capacity=len(ids) + args.max_tokens - 1, native_prefill=True)
-        tokens = greedy_token_ids(
-            decoder, ids, max_tokens=args.max_tokens, eos_tokens=tokenizer.eos_token_ids
-        )
-        if tokens and tokens[-1] in tokenizer.eos_token_ids:
-            tokens = tokens[:-1]
-        print(tokenizer.decode(tokens))
-        return 0
     print(
         generate(
             model,
@@ -572,11 +560,6 @@ def main(argv=None):
     gen.add_argument("--model", required=True)
     gen.add_argument("--prompt", required=True)
     gen.add_argument("--max-tokens", type=_positive_int, default=64)
-    gen.add_argument(
-        "--compiled",
-        action="store_true",
-        help="Opt-in compiled Qwen2 one-token decode with fixed-capacity KV state (eager prefill)",
-    )
     gen.add_argument(
         "--stock", action="store_true", help="Ignore fused manifest for a stock-kernel replay"
     )

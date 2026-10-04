@@ -1,0 +1,10 @@
+{
+  "profile_sha256": "7fd6fa0868a4caa154126befde4fc59280d70cb497b35f3a60539faca7f80582",
+  "archived_source_sha256": {
+    "executed_profiler.py": "de4e392975c60d6af512492ced33b4f74837c8bf418b2e0bb54b4d76efda7927",
+    "executed_runner.py": "4c23ea3bc54e8539c3840f1fd9a57b77895558586a0ea421d4ae6977f13e30f7"
+  },
+  "verified_operation_count": 237,
+  "isolated_samples_per_operation": 3,
+  "additive_cost_attribution": false
+}

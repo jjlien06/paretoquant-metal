@@ -76,6 +76,43 @@ These are synchronized teacher-forced wall-clock measurements, not GPU-only time
 general speedup guarantees. Token sampling and text rendering are excluded.
 The intervals describe sampled trials on this machine, not other models or workloads.
 
+### Compiled full-model decode (opt-in)
+
+An explicit-state compiled decoder adds fixed-shape KV updates and dynamic RoPE
+positions without changing the saved weights or precision map. Stock and custom
+MLP paths receive identical cache/compilation treatment.
+
+Two separately executed six-path experiments each retained 24 paired trials per
+context and 64 teacher-forced decode steps. The later run measured:
+
+| Context | Stock eager tok/s | Fused compiled tok/s | Combined ratio | Paired bootstrap 95% interval |
+|---|---:|---:|---:|---|
+| short | 207.99 | 267.28 | 1.285094x | [1.267641, 1.301666] |
+| medium | 208.43 | 262.83 | 1.261018x | [1.238254, 1.286979] |
+| long | 203.15 | 256.51 | 1.262617x | [1.249584, 1.275418] |
+
+Combined throughput increased 26.1–28.5% versus eager stock in this run; versus
+our existing retuned eager path, 21.2–22.8%. Custom fusion alone added 6.8–7.7%
+over **equally compiled stock**, not the entire combined gain. Native/compiled
+32-token autoregressive sequences matched within each backend in all three cases.
+The first run's combined ratios were 1.274048x / 1.261557x / 1.236711x and remain
+archived. These are warmed teacher-forced decode results: first compilation,
+prefill/cache setup, sampling and rendering are excluded. They do not establish
+cold-request acceleration or a new engine-comparison result.
+[Method and controls](docs/COMPILED_DECODE.md) · [First run](results/m2pro-compiled-paired-v1/)
+· [Second run](results/m2pro-compiled-paired-v2/).
+
+A separate **actual autoregressive request** check against native MLX-LM (12 paired
+requests/path/context, 64 generated tokens, prefill/sampling/text decoding included,
+models already loaded and compiled decoder reused) found much smaller incremental
+gains over our existing fused generator: short 1.021511x [1.014905,1.027051],
+medium 1.007712x [1.004304,1.011335], long 1.003929x [0.998911,1.006193].
+Long includes parity. Combined fused+compiled versus native stock was 1.094577x /
+1.081632x / 1.059324x; **the 26–29% cached-decode gain is not real-request speed**.
+Native MLX-LM already overlaps token work. Matching its separately processed final
+prompt token was necessary to preserve native/compiled tokens within each backend.
+[Practical evidence](results/m2pro-compiled-autoregressive-v2/).
+
 ### Practical engine comparison
 
 Seven warm sequential-block trials per prompt, 64 actual generated tokens per trial.
@@ -180,6 +217,9 @@ uv run paretoquant generate --model artifacts/my-mixed-run/model \
   --prompt 'Explain why a mutex prevents a data race.' --max-tokens 64
 uv run paretoquant generate --model artifacts/my-mixed-run/model \
   --prompt 'Explain why a mutex prevents a data race.' --max-tokens 64 --stock
+# Optional full-model compiled decode; cold compilation is not a speed guarantee:
+uv run paretoquant generate --model artifacts/my-mixed-run/model \
+  --prompt 'Explain why a mutex prevents a data race.' --max-tokens 64 --compiled
 ```
 
 The runtime falls back to stock execution for multi-token prefill and unsupported decode
