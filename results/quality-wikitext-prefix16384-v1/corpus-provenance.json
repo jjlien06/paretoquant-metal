@@ -1,0 +1,14 @@
+{
+  "dataset": "Salesforce/wikitext",
+  "config": "wikitext-2-raw-v1",
+  "split": "test",
+  "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "download_url": "https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-2-raw-v1/test-00000-of-00001.parquet",
+  "parquet_sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+  "parquet_bytes": 732610,
+  "selection": "evaluator prefix of 16384 next-token targets",
+  "export_policy": "all test rows in source order, including blank records",
+  "record_count": 4358,
+  "blank_count": 1467,
+  "corpus_sha256": "2bdcacbaa2fac3ffe71786a08dd909809612d2fdef5d91c11e661a6f1d126b3f"
+}

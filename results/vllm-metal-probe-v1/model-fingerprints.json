@@ -1,0 +1,32 @@
+[
+  {
+    "path": "/Users/jeremylien/Projects/paretoquant-metal/artifacts/m2pro-mixed-v2/model/config.json",
+    "bytes": 13835,
+    "sha256": "43a1c2f3b692e8cca5974f4753514e94ee4c969f8853b6d02acc16c7e64805da"
+  },
+  {
+    "path": "/Users/jeremylien/Projects/paretoquant-metal/artifacts/m2pro-mixed-v2/model/execution_manifest.json",
+    "bytes": 2847,
+    "sha256": "ae8ea552c7cb80a5ec540fe54c575a5ed5b9beb03b5279025a8efdff51ffaf79"
+  },
+  {
+    "path": "/Users/jeremylien/Projects/paretoquant-metal/artifacts/m2pro-mixed-v2/model/generation_config.json",
+    "bytes": 242,
+    "sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6"
+  },
+  {
+    "path": "/Users/jeremylien/Projects/paretoquant-metal/artifacts/m2pro-mixed-v2/model/model.safetensors",
+    "bytes": 260632120,
+    "sha256": "13c6b6a2ff78ac29fa505231ec610d6d883d4db58d6c2f57766e7ae983f0cad2"
+  },
+  {
+    "path": "/Users/jeremylien/Projects/paretoquant-metal/artifacts/m2pro-mixed-v2/model/tokenizer.json",
+    "bytes": 7031645,
+    "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+  },
+  {
+    "path": "/Users/jeremylien/Projects/paretoquant-metal/artifacts/m2pro-mixed-v2/model/tokenizer_config.json",
+    "bytes": 7305,
+    "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+  }
+]

@@ -1,0 +1,503 @@
+{
+  "schema_version": 1,
+  "profile_sha256": "7b56a31c2449c4683837806bd24a6bba9de0125a786cc241bd018312a0ac2fa5",
+  "source_weights_sha256": {
+    "model.safetensors": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"
+  },
+  "source_model": "qwen2.5-1.5b-instruct",
+  "environment_before": {
+    "timestamp_utc": "2026-10-04T17:48:26.564448+00:00",
+    "machine": "arm64",
+    "os": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.2",
+    "device": {
+      "device_name": "Apple M2 Pro",
+      "max_recommended_working_set_size": 12713115648,
+      "memory_size": 17179869184,
+      "architecture": "applegpu_g14s",
+      "max_buffer_length": 9534832640,
+      "resource_limit": 499000
+    },
+    "mlx": "0.32.3",
+    "mlx_lm": "0.32.0",
+    "git_revision": null,
+    "swap_usage": "vm.swapusage: total = 14336.00M  used = 13388.06M  free = 947.94M  (encrypted)"
+  },
+  "environment_after": {
+    "timestamp_utc": "2026-10-04T17:48:56.867421+00:00",
+    "machine": "arm64",
+    "os": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.2",
+    "device": {
+      "device_name": "Apple M2 Pro",
+      "max_recommended_working_set_size": 12713115648,
+      "memory_size": 17179869184,
+      "architecture": "applegpu_g14s",
+      "max_buffer_length": 9534832640,
+      "resource_limit": 499000
+    },
+    "mlx": "0.32.3",
+    "mlx_lm": "0.32.0",
+    "git_revision": null,
+    "swap_usage": "vm.swapusage: total = 14336.00M  used = 13668.81M  free = 667.19M  (encrypted)"
+  },
+  "memory_fraction": 0.94,
+  "latency_factor": 1.15,
+  "budget_bytes": 816434728,
+  "predicted_gate_up_latency_budget_ms": 8.09199685,
+  "plan": {
+    "choices": {
+      "model.layers.0.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.2819375,
+        "loss": 0.027845026925206184,
+        "backend": "stock"
+      },
+      "model.layers.1.mlp": {
+        "label": "q4:stock",
+        "bits": 4,
+        "memory_bytes": 15482880,
+        "latency_ms": 0.2507715,
+        "loss": 0.029918670654296875,
+        "backend": "stock"
+      },
+      "model.layers.10.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.25347949999999997,
+        "loss": 0.06706387549638748,
+        "backend": "stock"
+      },
+      "model.layers.11.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.2522295,
+        "loss": 0.06786985695362091,
+        "backend": "stock"
+      },
+      "model.layers.12.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.2575415,
+        "loss": 0.06939981877803802,
+        "backend": "stock"
+      },
+      "model.layers.13.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.25735399999999997,
+        "loss": 0.06336819380521774,
+        "backend": "stock"
+      },
+      "model.layers.14.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.2465835,
+        "loss": 0.06526440382003784,
+        "backend": "stock"
+      },
+      "model.layers.15.mlp": {
+        "label": "q4:stock",
+        "bits": 4,
+        "memory_bytes": 15482880,
+        "latency_ms": 0.2674375,
+        "loss": 0.016704095527529716,
+        "backend": "stock"
+      },
+      "model.layers.16.mlp": {
+        "label": "q4:stock",
+        "bits": 4,
+        "memory_bytes": 15482880,
+        "latency_ms": 0.2036665,
+        "loss": 0.018299121409654617,
+        "backend": "stock"
+      },
+      "model.layers.17.mlp": {
+        "label": "q4:stock",
+        "bits": 4,
+        "memory_bytes": 15482880,
+        "latency_ms": 0.2561875,
+        "loss": 0.01884685829281807,
+        "backend": "stock"
+      },
+      "model.layers.18.mlp": {
+        "label": "q4:stock",
+        "bits": 4,
+        "memory_bytes": 15482880,
+        "latency_ms": 0.33083300000000004,
+        "loss": 0.020546382293105125,
+        "backend": "stock"
+      },
+      "model.layers.19.mlp": {
+        "label": "q4:stock",
+        "bits": 4,
+        "memory_bytes": 15482880,
+        "latency_ms": 0.24814550000000002,
+        "loss": 0.020367790013551712,
+        "backend": "stock"
+      },
+      "model.layers.2.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.2521875,
+        "loss": 0.06911485642194748,
+        "backend": "stock"
+      },
+      "model.layers.20.mlp": {
+        "label": "q4:stock",
+        "bits": 4,
+        "memory_bytes": 15482880,
+        "latency_ms": 0.231875,
+        "loss": 0.01687631569802761,
+        "backend": "stock"
+      },
+      "model.layers.21.mlp": {
+        "label": "q4:stock",
+        "bits": 4,
+        "memory_bytes": 15482880,
+        "latency_ms": 0.2436665,
+        "loss": 0.016982614994049072,
+        "backend": "stock"
+      },
+      "model.layers.22.mlp": {
+        "label": "q4:stock",
+        "bits": 4,
+        "memory_bytes": 15482880,
+        "latency_ms": 0.241875,
+        "loss": 0.017539462074637413,
+        "backend": "stock"
+      },
+      "model.layers.23.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.2491875,
+        "loss": 0.0686614066362381,
+        "backend": "stock"
+      },
+      "model.layers.24.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.255375,
+        "loss": 0.057434987276792526,
+        "backend": "stock"
+      },
+      "model.layers.25.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.262292,
+        "loss": 0.07094408571720123,
+        "backend": "stock"
+      },
+      "model.layers.26.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.2483335,
+        "loss": 0.05720127001404762,
+        "backend": "stock"
+      },
+      "model.layers.27.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.26820849999999996,
+        "loss": 0.033602263778448105,
+        "backend": "stock"
+      },
+      "model.layers.3.mlp": {
+        "label": "q4:stock",
+        "bits": 4,
+        "memory_bytes": 15482880,
+        "latency_ms": 0.2360625,
+        "loss": 0.019097352400422096,
+        "backend": "stock"
+      },
+      "model.layers.4.mlp": {
+        "label": "q4:stock",
+        "bits": 4,
+        "memory_bytes": 15482880,
+        "latency_ms": 0.252854,
+        "loss": 0.01968643069267273,
+        "backend": "stock"
+      },
+      "model.layers.5.mlp": {
+        "label": "q4:stock",
+        "bits": 4,
+        "memory_bytes": 15482880,
+        "latency_ms": 0.243479,
+        "loss": 0.02350652404129505,
+        "backend": "stock"
+      },
+      "model.layers.6.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.27327100000000004,
+        "loss": 0.06331520527601242,
+        "backend": "stock"
+      },
+      "model.layers.7.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.2518335,
+        "loss": 0.0640990287065506,
+        "backend": "stock"
+      },
+      "model.layers.8.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.2648955,
+        "loss": 0.06295721232891083,
+        "backend": "stock"
+      },
+      "model.layers.9.mlp": {
+        "label": "q3:stock",
+        "bits": 3,
+        "memory_bytes": 12042240,
+        "latency_ms": 0.252521,
+        "loss": 0.06283041834831238,
+        "backend": "stock"
+      }
+    },
+    "memory_bytes": 378470400,
+    "latency_ms": 7.134084000000001,
+    "loss": 1.2093435283750296,
+    "exact": true,
+    "states_considered": 132993
+  },
+  "variants": {
+    "uniform4": {
+      "parameter_bytes": 868547584,
+      "quality": {
+        "mean_nll": 3.782296115404939,
+        "perplexity": 43.916764014722986,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          47.130833,
+          48.489958,
+          47.854792,
+          47.456291,
+          47.508291,
+          48.0,
+          47.642625,
+          48.27625,
+          47.587208,
+          47.639375,
+          47.778,
+          48.758834,
+          49.112959,
+          48.202417,
+          48.032
+        ],
+        "decode_samples_ms": [
+          495.912708,
+          525.831542,
+          493.023166,
+          485.763791,
+          490.405458,
+          485.413166,
+          490.916959,
+          491.600542,
+          482.753333,
+          483.139333,
+          492.003542,
+          531.828792,
+          533.425625,
+          527.212709,
+          498.290042
+        ],
+        "median_prefill_ms": 47.854792,
+        "median_decode_ms": 492.003542,
+        "median_decode_tokens_per_second": 130.08036434014127,
+        "decode_steps": 64,
+        "prompt_token_count": 39,
+        "warmup": 2,
+        "repeats": 15,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 18.72528081180402
+      },
+      "generation": "A mutex (short for \"mutual exclusion\") is a synchronization primitive used to prevent data races in concurrent programming. A data race occurs when two or more threads access the same memory location simultaneously, leading to undefined behavior. Here's why a mutex prevents a data race:\n\n1. **Exclusive Access**: A mutex ensures that",
+      "precision_histogram": {
+        "3": 0,
+        "4": 28,
+        "6": 0
+      },
+      "fused_pair_count": 0,
+      "runtime_counters": {},
+      "saved_weights_sha256": {
+        "model.safetensors": "c8512268f783bdd475ee512e0b7037683ea0647aaafd4438a169ba9f77209ced"
+      }
+    },
+    "mixed": {
+      "parameter_bytes": 813497344,
+      "quality": {
+        "mean_nll": 3.8462517620766,
+        "perplexity": 46.81725174730976,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          47.543875,
+          47.762416,
+          49.916125,
+          49.463167,
+          48.058667,
+          47.336,
+          48.215084,
+          47.229667,
+          48.524,
+          48.499167,
+          48.7795,
+          49.992625,
+          48.098666,
+          47.80775,
+          47.798708
+        ],
+        "decode_samples_ms": [
+          496.889541,
+          546.43625,
+          521.032791,
+          521.059041,
+          498.71075,
+          489.286458,
+          482.580208,
+          493.214834,
+          495.254,
+          514.098833,
+          508.094833,
+          471.35325,
+          473.91075,
+          480.623334,
+          480.397208
+        ],
+        "median_prefill_ms": 48.098666,
+        "median_decode_ms": 495.254,
+        "median_decode_tokens_per_second": 129.2266190681953,
+        "decode_steps": 64,
+        "prompt_token_count": 39,
+        "warmup": 2,
+        "repeats": 15,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 20.730964833305546
+      },
+      "generation": "A mutex is a synchronization primitive used to protect shared resources from concurrent access. It ensures that only one thread can access the shared resource at a time, preventing multiple threads from accessing the same resource simultaneously. This is crucial in concurrent programming to avoid data races, which occur when multiple threads access the same shared resource simultaneously, leading",
+      "precision_histogram": {
+        "3": 16,
+        "4": 12,
+        "6": 0
+      },
+      "fused_pair_count": 0,
+      "runtime_counters": {},
+      "saved_weights_sha256": {
+        "model.safetensors": "6d545d6a7b22ef1546fe2d73f599776a59cc79293d51603702ebfda99e60b3b1"
+      }
+    }
+  },
+  "reference_smoke_quality": {
+    "mean_nll": 3.435289043269745,
+    "perplexity": 31.040383282881105,
+    "token_count": 292,
+    "text_count": 6,
+    "max_tokens_per_text": 128,
+    "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+  },
+  "schedule_token_ids": [
+    32,
+    30863,
+    320,
+    8676,
+    369,
+    330,
+    6984,
+    928,
+    41208,
+    899,
+    374,
+    264,
+    57912,
+    27594,
+    1483,
+    311,
+    5358,
+    821,
+    20588,
+    304,
+    34035,
+    15473,
+    13,
+    362,
+    821,
+    6957,
+    13666,
+    979,
+    1378,
+    476,
+    803,
+    14564,
+    2615,
+    279,
+    1852,
+    4938,
+    3728,
+    24303,
+    11,
+    6388,
+    311,
+    5614,
+    7709,
+    13,
+    5692,
+    594,
+    3170,
+    264,
+    30863,
+    27934,
+    264,
+    821,
+    6957,
+    1447,
+    16,
+    13,
+    3070,
+    70405,
+    9549,
+    95518,
+    362,
+    30863,
+    25351,
+    429
+  ],
+  "generation_prompt": "Explain why a mutex prevents a data race.",
+  "peak_gpu_allocated_bytes": 3269291016,
+  "limitations": [
+    "Variants are evaluated in sequential blocks, not paired timing trials.",
+    "Same uniform4 teacher-forced cached token schedule; excludes sampling/rendering.",
+    "Smoke quality is not a standard task-quality benchmark.",
+    "Parameter bytes exclude KV cache, activations, and other process memory.",
+    "Summed isolated gate/up latency is a surrogate, not full-model latency.",
+    "Zero fused pairs is a valid measured stock fallback, not a fusion speedup."
+  ]
+}

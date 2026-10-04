@@ -1,0 +1,3 @@
+# Preserve byte-exact captured terminal/HTTP output without treating it as source formatting.
+results/**/*.log -whitespace
+results/**/response-headers.txt -whitespace

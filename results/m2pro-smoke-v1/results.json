@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "environment_before": {
+    "timestamp_utc": "2026-10-04T03:41:38.914460+00:00",
+    "machine": "arm64",
+    "os": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.2",
+    "device": {
+      "device_name": "Apple M2 Pro",
+      "max_recommended_working_set_size": 12713115648,
+      "memory_size": 17179869184,
+      "architecture": "applegpu_g14s",
+      "max_buffer_length": 9534832640,
+      "resource_limit": 499000
+    },
+    "mlx": "0.32.3",
+    "mlx_lm": "0.32.0",
+    "git_revision": null,
+    "swap_usage": "vm.swapusage: total = 12288.00M  used = 11518.12M  free = 769.88M  (encrypted)"
+  },
+  "environment_after": {
+    "timestamp_utc": "2026-10-04T03:41:55.143645+00:00",
+    "machine": "arm64",
+    "os": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.2",
+    "device": {
+      "device_name": "Apple M2 Pro",
+      "max_recommended_working_set_size": 12713115648,
+      "memory_size": 17179869184,
+      "architecture": "applegpu_g14s",
+      "max_buffer_length": 9534832640,
+      "resource_limit": 499000
+    },
+    "mlx": "0.32.3",
+    "mlx_lm": "0.32.0",
+    "git_revision": null,
+    "swap_usage": "vm.swapusage: total = 13312.00M  used = 12138.75M  free = 1173.25M  (encrypted)"
+  },
+  "source_model": "qwen2.5-0.5b-instruct",
+  "source_weights_sha256": {
+    "model.safetensors": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe"
+  },
+  "reference_parameter_bytes": 988065536,
+  "reference_quality": {
+    "mean_nll": 3.871022786179634,
+    "perplexity": 47.99144597533566,
+    "token_count": 292,
+    "text_count": 6,
+    "max_tokens_per_text": 128,
+    "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+  },
+  "calibration_texts_sha256": "4d646388c93c7666fd3d91536966526af0bb5eff3879cb6d5778db573c0cc62c",
+  "evaluation_texts_sha256": "b6e1065c2336e2977ef95baa7912bcf51d516c2f2e3518a252de927459f4be33",
+  "calibration_text_count": 4,
+  "evaluation_text_count": 6,
+  "total_parameter_budget_bytes": 277996288,
+  "gate_up_latency_budget_ms": 5.4524575,
+  "fixed_parameter_bytes": 160326400,
+  "variants": {
+    "uniform4": {
+      "parameter_bytes": 277996288,
+      "gate_up_precision_histogram": {
+        "4": 24
+      },
+      "fused_pair_count": 0,
+      "quality": {
+        "mean_nll": 4.269576556062045,
+        "perplexity": 71.49135662736386,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          17.893542,
+          20.195292,
+          17.589166,
+          17.992042,
+          17.677916
+        ],
+        "decode_samples_ms": [
+          133.015167,
+          130.145709,
+          131.832083,
+          131.785667,
+          128.386458
+        ],
+        "median_prefill_ms": 17.893542,
+        "median_decode_ms": 131.785667,
+        "median_decode_tokens_per_second": 242.81851530940767,
+        "decode_steps": 32,
+        "prompt_token_count": 35,
+        "warmup": 1,
+        "repeats": 5,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 1.7976023715424891
+      }
+    },
+    "sensitivity_only": {
+      "parameter_bytes": 277996288,
+      "gate_up_precision_histogram": {
+        "4": 24
+      },
+      "fused_pair_count": 0,
+      "quality": {
+        "mean_nll": 4.269576556062045,
+        "perplexity": 71.49135662736386,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          17.56775,
+          17.76475,
+          19.220958,
+          17.655875,
+          17.687917
+        ],
+        "decode_samples_ms": [
+          144.610709,
+          139.132667,
+          135.063083,
+          136.865208,
+          137.071167
+        ],
+        "median_prefill_ms": 17.687917,
+        "median_decode_ms": 137.071167,
+        "median_decode_tokens_per_second": 233.455369939325,
+        "decode_steps": 32,
+        "prompt_token_count": 35,
+        "warmup": 1,
+        "repeats": 5,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 3.6829249732821374
+      }
+    },
+    "hardware_stock": {
+      "parameter_bytes": 277996288,
+      "gate_up_precision_histogram": {
+        "4": 24
+      },
+      "fused_pair_count": 0,
+      "quality": {
+        "mean_nll": 4.269576556062045,
+        "perplexity": 71.49135662736386,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          17.830459,
+          17.767709,
+          17.709708,
+          21.805166,
+          17.706292
+        ],
+        "decode_samples_ms": [
+          143.453417,
+          135.546333,
+          134.100375,
+          133.731417,
+          129.095375
+        ],
+        "median_prefill_ms": 17.767709,
+        "median_decode_ms": 134.100375,
+        "median_decode_tokens_per_second": 238.62722233252515,
+        "decode_steps": 32,
+        "prompt_token_count": 35,
+        "warmup": 1,
+        "repeats": 5,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 5.217042458542467
+      }
+    },
+    "hardware_fused": {
+      "parameter_bytes": 277996288,
+      "gate_up_precision_histogram": {
+        "4": 24
+      },
+      "fused_pair_count": 0,
+      "quality": {
+        "mean_nll": 4.269576556062045,
+        "perplexity": 71.49135662736386,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          17.687,
+          17.559834,
+          18.336292,
+          17.819292,
+          19.497959
+        ],
+        "decode_samples_ms": [
+          134.676916,
+          141.777583,
+          132.865417,
+          133.071334,
+          137.38475
+        ],
+        "median_prefill_ms": 17.819292,
+        "median_decode_ms": 134.676916,
+        "median_decode_tokens_per_second": 237.60567846682795,
+        "decode_steps": 32,
+        "prompt_token_count": 35,
+        "warmup": 1,
+        "repeats": 5,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 3.7229426895565356
+      }
+    },
+    "hardware_fused_stock_replay": {
+      "parameter_bytes": 277996288,
+      "gate_up_precision_histogram": {
+        "4": 24
+      },
+      "fused_pair_count": 0,
+      "quality": {
+        "mean_nll": 4.269576556062045,
+        "perplexity": 71.49135662736386,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          17.880792,
+          18.072125,
+          17.645041,
+          17.57975,
+          17.754541
+        ],
+        "decode_samples_ms": [
+          144.04275,
+          136.219916,
+          141.904,
+          133.408458,
+          132.097708
+        ],
+        "median_prefill_ms": 17.754541,
+        "median_decode_ms": 136.219916,
+        "median_decode_tokens_per_second": 234.91425438846986,
+        "decode_steps": 32,
+        "prompt_token_count": 35,
+        "warmup": 1,
+        "repeats": 5,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 5.2383420378145225
+      }
+    },
+    "uniform4_forced_fused": {
+      "parameter_bytes": 277996288,
+      "gate_up_precision_histogram": {
+        "4": 24
+      },
+      "fused_pair_count": 24,
+      "quality": {
+        "mean_nll": 4.269576556062045,
+        "perplexity": 71.49135662736386,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          19.42075,
+          17.820959,
+          17.834583,
+          17.881667,
+          18.267291
+        ],
+        "decode_samples_ms": [
+          159.598041,
+          156.295542,
+          154.767333,
+          156.028917,
+          151.015791
+        ],
+        "median_prefill_ms": 17.881667,
+        "median_decode_ms": 156.028917,
+        "median_decode_tokens_per_second": 205.09018850653177,
+        "decode_steps": 32,
+        "prompt_token_count": 35,
+        "warmup": 1,
+        "repeats": 5,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 3.096088473664339
+      }
+    }
+  },
+  "reference_decode_token_ids": [
+    21338,
+    2711,
+    374,
+    264,
+    2711,
+    12111,
+    429,
+    6147,
+    601,
+    311,
+    29720,
+    1477,
+    264,
+    3151,
+    2392,
+    304,
+    264,
+    10615,
+    1140,
+    13,
+    1084,
+    4278,
+    553,
+    18822,
+    49702,
+    279,
+    2711,
+    9873,
+    304,
+    4279,
+    3080,
+    279
+  ],
+  "generation_prompt": "Explain binary search briefly.",
+  "hardware_fused_generation": "Binary search is a search algorithm that allows us to find a specific element in a sorted list of data. The algorithm works by repeatedly dividing the data into smaller groups",
+  "saved_model": "model",
+  "runtime_counters": {},
+  "peak_gpu_allocated_all_variants_bytes": 2679937656,
+  "limitations": [
+    "Authored smoke-text NLL is not a standard reasoning/coding accuracy benchmark.",
+    "Only gate/up pairs vary; other eligible weights use 4-bit affine quantization.",
+    "Parameter budget excludes KV cache, activations, allocator workspace, and macOS.",
+    "Summed isolated gate/up latency is a proxy, not a full-model latency guarantee.",
+    "Teacher-forced decode timing excludes token sampling and text rendering.",
+    "Forced-fusion ablation bypasses automatic performance fallback on purpose.",
+    "Calibration loads the unquantized reference; layer-sharded calibration is not implemented.",
+    "Prior swap and background workloads can influence measurements."
+  ]
+}

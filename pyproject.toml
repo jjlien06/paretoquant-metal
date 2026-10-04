@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paretoquant-metal"
+version = "0.1.0"
+description = "Hardware-aware mixed-precision quantization and fused Metal decoding for Apple Silicon"
+requires-python = ">=3.11"
+dependencies = ["mlx==0.32.3; platform_system == 'Darwin' and platform_machine == 'arm64'", "mlx-lm==0.32.0; platform_system == 'Darwin' and platform_machine == 'arm64'", "numpy>=2.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.9"]
+
+[project.scripts]
+paretoquant = "paretoquant.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+paretoquant = ["kernels/*.metal", "data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["metal: requires an Apple Silicon Metal GPU", "integration: real model integration"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

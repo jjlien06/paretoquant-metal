@@ -1,0 +1,477 @@
+{
+  "schema_version": 1,
+  "environment_before": {
+    "timestamp_utc": "2026-10-04T03:52:49.362436+00:00",
+    "machine": "arm64",
+    "os": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.2",
+    "device": {
+      "device_name": "Apple M2 Pro",
+      "max_recommended_working_set_size": 12713115648,
+      "memory_size": 17179869184,
+      "architecture": "applegpu_g14s",
+      "max_buffer_length": 9534832640,
+      "resource_limit": 499000
+    },
+    "mlx": "0.32.3",
+    "mlx_lm": "0.32.0",
+    "git_revision": null,
+    "swap_usage": "vm.swapusage: total = 12288.00M  used = 11189.31M  free = 1098.69M  (encrypted)"
+  },
+  "environment_after": {
+    "timestamp_utc": "2026-10-04T03:53:15.747465+00:00",
+    "machine": "arm64",
+    "os": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.2",
+    "device": {
+      "device_name": "Apple M2 Pro",
+      "max_recommended_working_set_size": 12713115648,
+      "memory_size": 17179869184,
+      "architecture": "applegpu_g14s",
+      "max_buffer_length": 9534832640,
+      "resource_limit": 499000
+    },
+    "mlx": "0.32.3",
+    "mlx_lm": "0.32.0",
+    "git_revision": null,
+    "swap_usage": "vm.swapusage: total = 14336.00M  used = 13266.06M  free = 1069.94M  (encrypted)"
+  },
+  "source_model": "qwen2.5-0.5b-instruct",
+  "source_weights_sha256": {
+    "model.safetensors": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe"
+  },
+  "reference_parameter_bytes": 988065536,
+  "reference_quality": {
+    "mean_nll": 3.871022786179634,
+    "perplexity": 47.99144597533566,
+    "token_count": 292,
+    "text_count": 6,
+    "max_tokens_per_text": 128,
+    "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+  },
+  "calibration_texts_sha256": "4d646388c93c7666fd3d91536966526af0bb5eff3879cb6d5778db573c0cc62c",
+  "evaluation_texts_sha256": "b6e1065c2336e2977ef95baa7912bcf51d516c2f2e3518a252de927459f4be33",
+  "calibration_text_count": 4,
+  "evaluation_text_count": 6,
+  "total_parameter_budget_bytes": 261315624,
+  "gate_up_latency_budget_ms": 6.534705949999999,
+  "fixed_parameter_bytes": 160326400,
+  "variants": {
+    "uniform4": {
+      "parameter_bytes": 277996288,
+      "gate_up_precision_histogram": {
+        "4": 24
+      },
+      "fused_pair_count": 0,
+      "quality": {
+        "mean_nll": 4.269576556062045,
+        "perplexity": 71.49135662736386,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          18.058833,
+          127.723209,
+          19.750083,
+          19.692333,
+          17.960125,
+          17.981625,
+          17.725833
+        ],
+        "decode_samples_ms": [
+          225.843541,
+          326.613292,
+          218.779417,
+          221.950833,
+          217.806917,
+          220.476584,
+          223.433708
+        ],
+        "median_prefill_ms": 18.058833,
+        "median_decode_ms": 221.950833,
+        "median_decode_tokens_per_second": 216.2641128722414,
+        "decode_steps": 48,
+        "prompt_token_count": 35,
+        "warmup": 1,
+        "repeats": 7,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 39.86753344786817
+      }
+    },
+    "sensitivity_only": {
+      "parameter_bytes": 260563712,
+      "gate_up_precision_histogram": {
+        "3": 16,
+        "4": 8
+      },
+      "fused_pair_count": 0,
+      "quality": {
+        "mean_nll": 4.34122817157066,
+        "perplexity": 76.80180723409148,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          17.605375,
+          23.0185,
+          99.689,
+          17.819708,
+          18.107959,
+          18.062375,
+          17.993167
+        ],
+        "decode_samples_ms": [
+          229.856375,
+          235.4485,
+          235.783917,
+          230.035375,
+          230.80625,
+          231.539084,
+          237.761875
+        ],
+        "median_prefill_ms": 18.062375,
+        "median_decode_ms": 231.539084,
+        "median_decode_tokens_per_second": 207.30841277751622,
+        "decode_steps": 48,
+        "prompt_token_count": 35,
+        "warmup": 1,
+        "repeats": 7,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 3.215362756753982
+      }
+    },
+    "hardware_stock": {
+      "parameter_bytes": 260563712,
+      "gate_up_precision_histogram": {
+        "3": 16,
+        "4": 8
+      },
+      "fused_pair_count": 0,
+      "quality": {
+        "mean_nll": 4.353602683707459,
+        "perplexity": 77.7580967349509,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          18.304167,
+          19.202291,
+          22.046666,
+          21.192917,
+          18.148166,
+          17.834209,
+          17.921833
+        ],
+        "decode_samples_ms": [
+          233.016667,
+          237.36275,
+          237.132541,
+          235.503916,
+          225.595708,
+          232.008458,
+          231.603291
+        ],
+        "median_prefill_ms": 18.304167,
+        "median_decode_ms": 233.016667,
+        "median_decode_tokens_per_second": 205.9938485001161,
+        "decode_steps": 48,
+        "prompt_token_count": 35,
+        "warmup": 1,
+        "repeats": 7,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 4.080952832874894
+      }
+    },
+    "hardware_fused": {
+      "parameter_bytes": 260563712,
+      "gate_up_precision_histogram": {
+        "3": 16,
+        "4": 8
+      },
+      "fused_pair_count": 19,
+      "quality": {
+        "mean_nll": 4.34122817157066,
+        "perplexity": 76.80180723409148,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          19.092708,
+          19.93175,
+          19.701875,
+          18.836416,
+          20.86825,
+          18.081083,
+          19.380458
+        ],
+        "decode_samples_ms": [
+          224.985834,
+          233.479666,
+          236.244959,
+          227.512625,
+          221.245916,
+          222.212333,
+          220.644917
+        ],
+        "median_prefill_ms": 19.380458,
+        "median_decode_ms": 224.985834,
+        "median_decode_tokens_per_second": 213.34676564569838,
+        "decode_steps": 48,
+        "prompt_token_count": 35,
+        "warmup": 1,
+        "repeats": 7,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 6.153210928170261
+      }
+    },
+    "hardware_fused_stock_replay": {
+      "parameter_bytes": 260563712,
+      "gate_up_precision_histogram": {
+        "3": 16,
+        "4": 8
+      },
+      "fused_pair_count": 0,
+      "quality": {
+        "mean_nll": 4.34122817157066,
+        "perplexity": 76.80180723409148,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          18.674,
+          19.98075,
+          21.633084,
+          18.08175,
+          17.832084,
+          19.714416,
+          18.070625
+        ],
+        "decode_samples_ms": [
+          238.668208,
+          234.717125,
+          238.613417,
+          239.865542,
+          226.198625,
+          232.312167,
+          232.413167
+        ],
+        "median_prefill_ms": 18.674,
+        "median_decode_ms": 234.717125,
+        "median_decode_tokens_per_second": 204.5014823694692,
+        "decode_steps": 48,
+        "prompt_token_count": 35,
+        "warmup": 1,
+        "repeats": 7,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 4.846778471073081
+      }
+    },
+    "uniform4_forced_fused": {
+      "parameter_bytes": 277996288,
+      "gate_up_precision_histogram": {
+        "4": 24
+      },
+      "fused_pair_count": 24,
+      "quality": {
+        "mean_nll": 4.269576556062045,
+        "perplexity": 71.49135662736386,
+        "token_count": 292,
+        "text_count": 6,
+        "max_tokens_per_text": 128,
+        "scope": "authored_smoke_texts_not_a_standard_task_benchmark"
+      },
+      "timing": {
+        "prefill_samples_ms": [
+          110.676917,
+          18.379916,
+          21.120417,
+          17.905,
+          18.43475,
+          17.99225,
+          22.123917
+        ],
+        "decode_samples_ms": [
+          216.956417,
+          241.461375,
+          224.752542,
+          215.682541,
+          212.386875,
+          222.540208,
+          216.448625
+        ],
+        "median_prefill_ms": 18.43475,
+        "median_decode_ms": 216.956417,
+        "median_decode_tokens_per_second": 221.2425917782372,
+        "decode_steps": 48,
+        "prompt_token_count": 35,
+        "warmup": 1,
+        "repeats": 7,
+        "measurement": "teacher_forced_cached_decode_wall_clock",
+        "includes_token_sampling": false,
+        "stdev_decode_ms": 9.773769679627963
+      }
+    }
+  },
+  "reference_decode_token_ids": [
+    21338,
+    2711,
+    374,
+    264,
+    2711,
+    12111,
+    429,
+    6147,
+    601,
+    311,
+    29720,
+    1477,
+    264,
+    3151,
+    2392,
+    304,
+    264,
+    10615,
+    1140,
+    13,
+    1084,
+    4278,
+    553,
+    18822,
+    49702,
+    279,
+    2711,
+    9873,
+    304,
+    4279,
+    3080,
+    279,
+    2169,
+    2392,
+    374,
+    1730,
+    476,
+    279,
+    9873,
+    374,
+    4287,
+    382,
+    8420,
+    594,
+    264,
+    3019,
+    14319,
+    29208
+  ],
+  "generation_prompt": "Explain binary search briefly.",
+  "hardware_fused_generation": "Binary search is a search algorithm that is used to find a specific element in a sorted list. It is a more efficient search algorithm than a linear search, but it has a time complexity of O(log n) in the average case and O",
+  "saved_model": "model",
+  "runtime_counters": {
+    "model.layers.0.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.1.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.10.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.11.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.12.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.13.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.16.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.17.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.18.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.2.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.20.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.21.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.3.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.4.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.5.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.6.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.7.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.8.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    },
+    "model.layers.9.mlp": {
+      "fused_calls": 433,
+      "stock_calls": 15
+    }
+  },
+  "peak_gpu_allocated_all_variants_bytes": 2534087288,
+  "limitations": [
+    "Authored smoke-text NLL is not a standard reasoning/coding accuracy benchmark.",
+    "Only gate/up pairs vary; other eligible weights use 4-bit affine quantization.",
+    "Parameter budget excludes KV cache, activations, allocator workspace, and macOS.",
+    "Summed isolated gate/up latency is a proxy, not a full-model latency guarantee.",
+    "Teacher-forced decode timing excludes token sampling and text rendering.",
+    "Forced-fusion ablation bypasses automatic performance fallback on purpose.",
+    "Calibration loads the unquantized reference; layer-sharded calibration is not implemented.",
+    "Prior swap and background workloads can influence measurements."
+  ]
+}

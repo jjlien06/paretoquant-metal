@@ -1,0 +1,4 @@
+usage: probe.py [-h] [--runtime-only] --output OUTPUT
+                [--checkpoint CHECKPOINT] [--prompt PROMPT]
+                [--new-tokens NEW_TOKENS]
+probe.py: error: unrecognized arguments: --cpu-cache-updates

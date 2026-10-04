@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.DS_Store
+artifacts/
+models/
+*.safetensors
+*.npz
+build/
+dist/
+# Local upstream research snapshots are not portfolio source/evidence.
+spikes/**/upstream/
+results/**/apple-docs.json
+results/**/keras-qwen-docs.html

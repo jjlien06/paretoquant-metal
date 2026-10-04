@@ -1,0 +1,11 @@
+{
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "source_weight_bytes": 3087467144,
+  "source_weights_sha256": {
+    "model.safetensors": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"
+  },
+  "download_policy": "Pinned revision from Hugging Face; model weights are not committed.",
+  "profile_command": ".venv/bin/python scripts/run_scaling.py profile --model models/qwen2.5-1.5b-instruct --output artifacts/m2pro-1.5b-profile-v2 --profile-repeats 20",
+  "evaluation_command": ".venv/bin/python scripts/run_scaling.py evaluate --model models/qwen2.5-1.5b-instruct --profile artifacts/m2pro-1.5b-profile-v2/profile.json --output artifacts/m2pro-1.5b-mixed-v2 --memory-fraction 0.94 --latency-factor 1.15 --decode-steps 64 --repeats 15"
+}

@@ -1,0 +1,21 @@
+{
+  "python": "3.12.14 (main, Sep  1 2026, 14:09:38) [Clang 22.1.3 ]",
+  "packages": {
+    "tensorflow": "2.21.0",
+    "tensorflow-metal": "1.2.0",
+    "keras": "3.15.1",
+    "keras-hub": "0.32.0",
+    "tensorflow-text": "2.21.1",
+    "numpy": "2.5.3",
+    "safetensors": "0.8.0"
+  }
+}
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/tensorflow/__init__.py", line 439, in <module>
+    _ll.load_library(_plugin_dir)
+  File "/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/tensorflow/python/framework/load_library.py", line 151, in load_library
+    py_tf.TF_LoadLibrary(lib)
+tensorflow.python.framework.errors_impl.NotFoundError: dlopen(/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/tensorflow-plugins/libmetal_plugin.dylib, 0x0006): Library not loaded: @rpath/_pywrap_tensorflow_internal.so
+  Referenced from: <8B62586B-B082-3113-93AB-FD766A9960AE> /Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/tensorflow-plugins/libmetal_plugin.dylib
+  Reason: tried: '/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/tensorflow-plugins/../_solib_darwin_arm64/_U@local_Uconfig_Utf_S_S_C_Upywrap_Utensorflow_Uinternal___Uexternal_Slocal_Uconfig_Utf/_pywrap_tensorflow_internal.so' (no such file), '/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/tensorflow-plugins/../_solib_darwin_arm64/_U@local_Uconfig_Utf_S_S_C_Upywrap_Utensorflow_Uinternal___Uexternal_Slocal_Uconfig_Utf/_pywrap_tensorflow_internal.so' (no such file), '/Users/jeremylien/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/_pywrap_tensorflow_internal.so' (no such file)

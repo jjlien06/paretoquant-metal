@@ -1,0 +1,16 @@
+F
+======================================================================
+FAIL: test_native_local_checkpoint_generates_exactly_eight_tokens (__main__.ProbeAcceptance.test_native_local_checkpoint_generates_exactly_eight_tokens)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jeremylien/Projects/paretoquant-metal/spikes/005-tensorflow-metal/test_probe.py", line 32, in test_native_local_checkpoint_generates_exactly_eight_tokens
+    self.assertEqual(result["status"], "ready")
+AssertionError: 'runtime_ready' != 'ready'
+- runtime_ready
++ ready
+
+
+----------------------------------------------------------------------
+Ran 1 test in 3.618s
+
+FAILED (failures=1)

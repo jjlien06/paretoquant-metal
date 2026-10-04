@@ -1,0 +1,4281 @@
+{
+  "fixed_parameter_bytes": 435026944,
+  "fixed_parameter_bytes_source": "profile.fixed_parameter_bytes",
+  "latency_factors": [
+    0.9,
+    1.0,
+    1.15
+  ],
+  "latency_note": "Predicted sum of profiled isolated gate/up option latencies; not measured full-model latency.",
+  "max_states": 20000,
+  "memory_fractions": [
+    0.9,
+    0.94,
+    0.97,
+    1.0,
+    1.03
+  ],
+  "parameter_bytes_note": "Resident model parameter bytes including fixed non-gate/up parameters and profiled packed gate/up quantization metadata; not runtime/KV-cache memory.",
+  "profile_path": "/Users/jeremylien/Projects/paretoquant-metal/artifacts/m2pro-1.5b-profile-v1/profile.json",
+  "profile_sha256": "3abe76d33a359d83fa86ac2007d4c566c1e694fccd721f1eb6d806c49fd05f50",
+  "reference": {
+    "parameter_bytes": 868547584,
+    "predicted_gate_up_latency_sum_ms": 6.907981,
+    "strategy": "uniform4_stock"
+  },
+  "rows": [
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.7.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.2171829,
+      "gate_up_parameter_budget_bytes": 346665881,
+      "latency_factor": 0.9,
+      "memory_fraction": 0.9,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 781692825
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.7.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.2171829,
+      "gate_up_parameter_budget_bytes": 346665881,
+      "latency_factor": 0.9,
+      "memory_fraction": 0.9,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 781692825
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.9.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.907981,
+      "gate_up_parameter_budget_bytes": 346665881,
+      "latency_factor": 1.0,
+      "memory_fraction": 0.9,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 781692825
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.9.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.907981,
+      "gate_up_parameter_budget_bytes": 346665881,
+      "latency_factor": 1.0,
+      "memory_fraction": 0.9,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 781692825
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 7.94417815,
+      "gate_up_parameter_budget_bytes": 346665881,
+      "latency_factor": 1.15,
+      "memory_fraction": 0.9,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "3": 26,
+          "4": 2
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.3910415,
+            "loss": 0.027845026925206184,
+            "memory_bytes": 12042240
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.248167,
+            "loss": 0.06706387549638748,
+            "memory_bytes": 12042240
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2510625,
+            "loss": 0.06786985695362091,
+            "memory_bytes": 12042240
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.260396,
+            "loss": 0.06939981877803802,
+            "memory_bytes": 12042240
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23939549999999998,
+            "loss": 0.06336819380521774,
+            "memory_bytes": 12042240
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2462085,
+            "loss": 0.06526440382003784,
+            "memory_bytes": 12042240
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.27237500000000003,
+            "loss": 0.07275538146495819,
+            "memory_bytes": 12042240
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2690835,
+            "loss": 0.07966668158769608,
+            "memory_bytes": 12042240
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.25381299999999996,
+            "loss": 0.08167671412229538,
+            "memory_bytes": 12042240
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.245417,
+            "loss": 0.09106200933456421,
+            "memory_bytes": 12042240
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.25575,
+            "loss": 0.08537854254245758,
+            "memory_bytes": 12042240
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2629375,
+            "loss": 0.06911485642194748,
+            "memory_bytes": 12042240
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2585835,
+            "loss": 0.07514633238315582,
+            "memory_bytes": 12042240
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2576255,
+            "loss": 0.07520219683647156,
+            "memory_bytes": 12042240
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2581455,
+            "loss": 0.08008331805467606,
+            "memory_bytes": 12042240
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.271625,
+            "loss": 0.0686614066362381,
+            "memory_bytes": 12042240
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.281333,
+            "loss": 0.057434987276792526,
+            "memory_bytes": 12042240
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2447915,
+            "loss": 0.07094408571720123,
+            "memory_bytes": 12042240
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.222958,
+            "loss": 0.05720127001404762,
+            "memory_bytes": 12042240
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.22562500000000002,
+            "loss": 0.033602263778448105,
+            "memory_bytes": 12042240
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2535835,
+            "loss": 0.08348813652992249,
+            "memory_bytes": 12042240
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.267458,
+            "loss": 0.07865487039089203,
+            "memory_bytes": 12042240
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23718699999999998,
+            "loss": 0.06331520527601242,
+            "memory_bytes": 12042240
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.28006200000000003,
+            "loss": 0.0640990287065506,
+            "memory_bytes": 12042240
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.311375,
+            "loss": 0.06295721232891083,
+            "memory_bytes": 12042240
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2916875,
+            "loss": 0.06283041834831238,
+            "memory_bytes": 12042240
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 344064000,
+        "parameter_bytes": 779090944,
+        "predicted_gate_up_latency_sum_ms": 7.337812,
+        "states_considered": 144585,
+        "surrogate_loss": 1.8275112882256508
+      },
+      "status": "feasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 781692825
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 7.94417815,
+      "gate_up_parameter_budget_bytes": 346665881,
+      "latency_factor": 1.15,
+      "memory_fraction": 0.9,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "3": 26,
+          "4": 2
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.3910415,
+            "loss": 0.027845026925206184,
+            "memory_bytes": 12042240
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.248167,
+            "loss": 0.06706387549638748,
+            "memory_bytes": 12042240
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2510625,
+            "loss": 0.06786985695362091,
+            "memory_bytes": 12042240
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.260396,
+            "loss": 0.06939981877803802,
+            "memory_bytes": 12042240
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23939549999999998,
+            "loss": 0.06336819380521774,
+            "memory_bytes": 12042240
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2462085,
+            "loss": 0.06526440382003784,
+            "memory_bytes": 12042240
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.27237500000000003,
+            "loss": 0.07275538146495819,
+            "memory_bytes": 12042240
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2690835,
+            "loss": 0.07966668158769608,
+            "memory_bytes": 12042240
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.25381299999999996,
+            "loss": 0.08167671412229538,
+            "memory_bytes": 12042240
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.245417,
+            "loss": 0.09106200933456421,
+            "memory_bytes": 12042240
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.25575,
+            "loss": 0.08537854254245758,
+            "memory_bytes": 12042240
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2629375,
+            "loss": 0.06911485642194748,
+            "memory_bytes": 12042240
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2585835,
+            "loss": 0.07514633238315582,
+            "memory_bytes": 12042240
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2576255,
+            "loss": 0.07520219683647156,
+            "memory_bytes": 12042240
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2581455,
+            "loss": 0.08008331805467606,
+            "memory_bytes": 12042240
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.271625,
+            "loss": 0.0686614066362381,
+            "memory_bytes": 12042240
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.281333,
+            "loss": 0.057434987276792526,
+            "memory_bytes": 12042240
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2447915,
+            "loss": 0.07094408571720123,
+            "memory_bytes": 12042240
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.222958,
+            "loss": 0.05720127001404762,
+            "memory_bytes": 12042240
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.22562500000000002,
+            "loss": 0.033602263778448105,
+            "memory_bytes": 12042240
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2535835,
+            "loss": 0.08348813652992249,
+            "memory_bytes": 12042240
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.267458,
+            "loss": 0.07865487039089203,
+            "memory_bytes": 12042240
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23718699999999998,
+            "loss": 0.06331520527601242,
+            "memory_bytes": 12042240
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.28006200000000003,
+            "loss": 0.0640990287065506,
+            "memory_bytes": 12042240
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.311375,
+            "loss": 0.06295721232891083,
+            "memory_bytes": 12042240
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2916875,
+            "loss": 0.06283041834831238,
+            "memory_bytes": 12042240
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 344064000,
+        "parameter_bytes": 779090944,
+        "predicted_gate_up_latency_sum_ms": 7.337812,
+        "states_considered": 144585,
+        "surrogate_loss": 1.8275112882256508
+      },
+      "status": "feasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 781692825
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.7.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.2171829,
+      "gate_up_parameter_budget_bytes": 381407784,
+      "latency_factor": 0.9,
+      "memory_fraction": 0.94,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 816434728
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.7.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.2171829,
+      "gate_up_parameter_budget_bytes": 381407784,
+      "latency_factor": 0.9,
+      "memory_fraction": 0.94,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 816434728
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.9.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.907981,
+      "gate_up_parameter_budget_bytes": 381407784,
+      "latency_factor": 1.0,
+      "memory_fraction": 0.94,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 816434728
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.9.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.907981,
+      "gate_up_parameter_budget_bytes": 381407784,
+      "latency_factor": 1.0,
+      "memory_fraction": 0.94,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 816434728
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 7.94417815,
+      "gate_up_parameter_budget_bytes": 381407784,
+      "latency_factor": 1.15,
+      "memory_fraction": 0.94,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "3": 16,
+          "4": 12
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.3910415,
+            "loss": 0.027845026925206184,
+            "memory_bytes": 12042240
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.248167,
+            "loss": 0.06706387549638748,
+            "memory_bytes": 12042240
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2510625,
+            "loss": 0.06786985695362091,
+            "memory_bytes": 12042240
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.260396,
+            "loss": 0.06939981877803802,
+            "memory_bytes": 12042240
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23939549999999998,
+            "loss": 0.06336819380521774,
+            "memory_bytes": 12042240
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2462085,
+            "loss": 0.06526440382003784,
+            "memory_bytes": 12042240
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242354,
+            "loss": 0.020546382293105125,
+            "memory_bytes": 15482880
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2629375,
+            "loss": 0.06911485642194748,
+            "memory_bytes": 12042240
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.271625,
+            "loss": 0.0686614066362381,
+            "memory_bytes": 12042240
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.281333,
+            "loss": 0.057434987276792526,
+            "memory_bytes": 12042240
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2447915,
+            "loss": 0.07094408571720123,
+            "memory_bytes": 12042240
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.222958,
+            "loss": 0.05720127001404762,
+            "memory_bytes": 12042240
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.22562500000000002,
+            "loss": 0.033602263778448105,
+            "memory_bytes": 12042240
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23718699999999998,
+            "loss": 0.06331520527601242,
+            "memory_bytes": 12042240
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.28006200000000003,
+            "loss": 0.0640990287065506,
+            "memory_bytes": 12042240
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.311375,
+            "loss": 0.06295721232891083,
+            "memory_bytes": 12042240
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2916875,
+            "loss": 0.06283041834831238,
+            "memory_bytes": 12042240
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 378470400,
+        "parameter_bytes": 813497344,
+        "predicted_gate_up_latency_sum_ms": 7.2044365,
+        "states_considered": 194718,
+        "surrogate_loss": 1.2093435283750296
+      },
+      "status": "feasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 816434728
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 7.94417815,
+      "gate_up_parameter_budget_bytes": 381407784,
+      "latency_factor": 1.15,
+      "memory_fraction": 0.94,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "3": 16,
+          "4": 12
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.3910415,
+            "loss": 0.027845026925206184,
+            "memory_bytes": 12042240
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.248167,
+            "loss": 0.06706387549638748,
+            "memory_bytes": 12042240
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2510625,
+            "loss": 0.06786985695362091,
+            "memory_bytes": 12042240
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.260396,
+            "loss": 0.06939981877803802,
+            "memory_bytes": 12042240
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23939549999999998,
+            "loss": 0.06336819380521774,
+            "memory_bytes": 12042240
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2462085,
+            "loss": 0.06526440382003784,
+            "memory_bytes": 12042240
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242354,
+            "loss": 0.020546382293105125,
+            "memory_bytes": 15482880
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2629375,
+            "loss": 0.06911485642194748,
+            "memory_bytes": 12042240
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.271625,
+            "loss": 0.0686614066362381,
+            "memory_bytes": 12042240
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.281333,
+            "loss": 0.057434987276792526,
+            "memory_bytes": 12042240
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2447915,
+            "loss": 0.07094408571720123,
+            "memory_bytes": 12042240
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.222958,
+            "loss": 0.05720127001404762,
+            "memory_bytes": 12042240
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.22562500000000002,
+            "loss": 0.033602263778448105,
+            "memory_bytes": 12042240
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23718699999999998,
+            "loss": 0.06331520527601242,
+            "memory_bytes": 12042240
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.28006200000000003,
+            "loss": 0.0640990287065506,
+            "memory_bytes": 12042240
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.311375,
+            "loss": 0.06295721232891083,
+            "memory_bytes": 12042240
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2916875,
+            "loss": 0.06283041834831238,
+            "memory_bytes": 12042240
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 378470400,
+        "parameter_bytes": 813497344,
+        "predicted_gate_up_latency_sum_ms": 7.2044365,
+        "states_considered": 194718,
+        "surrogate_loss": 1.2093435283750296
+      },
+      "status": "feasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 816434728
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.7.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.2171829,
+      "gate_up_parameter_budget_bytes": 407464212,
+      "latency_factor": 0.9,
+      "memory_fraction": 0.97,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 842491156
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.7.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.2171829,
+      "gate_up_parameter_budget_bytes": 407464212,
+      "latency_factor": 0.9,
+      "memory_fraction": 0.97,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 842491156
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 6.907981,
+      "gate_up_parameter_budget_bytes": 407464212,
+      "latency_factor": 1.0,
+      "memory_fraction": 0.97,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "3": 8,
+          "4": 20
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.241167,
+            "loss": 0.006353261414915323,
+            "memory_bytes": 15482880
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.248167,
+            "loss": 0.06706387549638748,
+            "memory_bytes": 12042240
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2510625,
+            "loss": 0.06786985695362091,
+            "memory_bytes": 12042240
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23225,
+            "loss": 0.01580805890262127,
+            "memory_bytes": 15482880
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23939549999999998,
+            "loss": 0.06336819380521774,
+            "memory_bytes": 12042240
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2338955,
+            "loss": 0.01510839257389307,
+            "memory_bytes": 15482880
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242354,
+            "loss": 0.020546382293105125,
+            "memory_bytes": 15482880
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2445415,
+            "loss": 0.017698651179671288,
+            "memory_bytes": 15482880
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2683335,
+            "loss": 0.015549437142908573,
+            "memory_bytes": 15482880
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.230125,
+            "loss": 0.013087192550301552,
+            "memory_bytes": 15482880
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.218229,
+            "loss": 0.017435500398278236,
+            "memory_bytes": 15482880
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.222958,
+            "loss": 0.05720127001404762,
+            "memory_bytes": 12042240
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.22562500000000002,
+            "loss": 0.033602263778448105,
+            "memory_bytes": 12042240
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.229875,
+            "loss": 0.014458336867392063,
+            "memory_bytes": 15482880
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.28006200000000003,
+            "loss": 0.0640990287065506,
+            "memory_bytes": 12042240
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.311375,
+            "loss": 0.06295721232891083,
+            "memory_bytes": 12042240
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2916875,
+            "loss": 0.06283041834831238,
+            "memory_bytes": 12042240
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 405995520,
+        "parameter_bytes": 841022464,
+        "predicted_gate_up_latency_sum_ms": 6.9073329999999995,
+        "states_considered": 205464,
+        "surrogate_loss": 0.8328625685535371
+      },
+      "status": "feasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 842491156
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 6.907981,
+      "gate_up_parameter_budget_bytes": 407464212,
+      "latency_factor": 1.0,
+      "memory_fraction": 0.97,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "3": 8,
+          "4": 20
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.241167,
+            "loss": 0.006353261414915323,
+            "memory_bytes": 15482880
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.248167,
+            "loss": 0.06706387549638748,
+            "memory_bytes": 12042240
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2510625,
+            "loss": 0.06786985695362091,
+            "memory_bytes": 12042240
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23225,
+            "loss": 0.01580805890262127,
+            "memory_bytes": 15482880
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23939549999999998,
+            "loss": 0.06336819380521774,
+            "memory_bytes": 12042240
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2338955,
+            "loss": 0.01510839257389307,
+            "memory_bytes": 15482880
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242354,
+            "loss": 0.020546382293105125,
+            "memory_bytes": 15482880
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2445415,
+            "loss": 0.017698651179671288,
+            "memory_bytes": 15482880
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2683335,
+            "loss": 0.015549437142908573,
+            "memory_bytes": 15482880
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.230125,
+            "loss": 0.013087192550301552,
+            "memory_bytes": 15482880
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.218229,
+            "loss": 0.017435500398278236,
+            "memory_bytes": 15482880
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.222958,
+            "loss": 0.05720127001404762,
+            "memory_bytes": 12042240
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.22562500000000002,
+            "loss": 0.033602263778448105,
+            "memory_bytes": 12042240
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.229875,
+            "loss": 0.014458336867392063,
+            "memory_bytes": 15482880
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.28006200000000003,
+            "loss": 0.0640990287065506,
+            "memory_bytes": 12042240
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.311375,
+            "loss": 0.06295721232891083,
+            "memory_bytes": 12042240
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2916875,
+            "loss": 0.06283041834831238,
+            "memory_bytes": 12042240
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 405995520,
+        "parameter_bytes": 841022464,
+        "predicted_gate_up_latency_sum_ms": 6.9073329999999995,
+        "states_considered": 205464,
+        "surrogate_loss": 0.8328625685535371
+      },
+      "status": "feasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 842491156
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 7.94417815,
+      "gate_up_parameter_budget_bytes": 407464212,
+      "latency_factor": 1.15,
+      "memory_fraction": 0.97,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "3": 8,
+          "4": 20
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.3910415,
+            "loss": 0.027845026925206184,
+            "memory_bytes": 12042240
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2493335,
+            "loss": 0.015501655638217926,
+            "memory_bytes": 15482880
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.265812,
+            "loss": 0.015673751011490822,
+            "memory_bytes": 15482880
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23225,
+            "loss": 0.01580805890262127,
+            "memory_bytes": 15482880
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23939549999999998,
+            "loss": 0.06336819380521774,
+            "memory_bytes": 12042240
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2338955,
+            "loss": 0.01510839257389307,
+            "memory_bytes": 15482880
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242354,
+            "loss": 0.020546382293105125,
+            "memory_bytes": 15482880
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2445415,
+            "loss": 0.017698651179671288,
+            "memory_bytes": 15482880
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2683335,
+            "loss": 0.015549437142908573,
+            "memory_bytes": 15482880
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.281333,
+            "loss": 0.057434987276792526,
+            "memory_bytes": 12042240
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.218229,
+            "loss": 0.017435500398278236,
+            "memory_bytes": 15482880
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.222958,
+            "loss": 0.05720127001404762,
+            "memory_bytes": 12042240
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.22562500000000002,
+            "loss": 0.033602263778448105,
+            "memory_bytes": 12042240
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23718699999999998,
+            "loss": 0.06331520527601242,
+            "memory_bytes": 12042240
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.276542,
+            "loss": 0.014685474336147308,
+            "memory_bytes": 15482880
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.311375,
+            "loss": 0.06295721232891083,
+            "memory_bytes": 12042240
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2916875,
+            "loss": 0.06283041834831238,
+            "memory_bytes": 12042240
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 405995520,
+        "parameter_bytes": 841022464,
+        "predicted_gate_up_latency_sum_ms": 7.128123499999999,
+        "states_considered": 211035,
+        "surrogate_loss": 0.7943871170282364
+      },
+      "status": "feasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 842491156
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 7.94417815,
+      "gate_up_parameter_budget_bytes": 407464212,
+      "latency_factor": 1.15,
+      "memory_fraction": 0.97,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "3": 8,
+          "4": 20
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.3910415,
+            "loss": 0.027845026925206184,
+            "memory_bytes": 12042240
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2493335,
+            "loss": 0.015501655638217926,
+            "memory_bytes": 15482880
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.265812,
+            "loss": 0.015673751011490822,
+            "memory_bytes": 15482880
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23225,
+            "loss": 0.01580805890262127,
+            "memory_bytes": 15482880
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23939549999999998,
+            "loss": 0.06336819380521774,
+            "memory_bytes": 12042240
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2338955,
+            "loss": 0.01510839257389307,
+            "memory_bytes": 15482880
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242354,
+            "loss": 0.020546382293105125,
+            "memory_bytes": 15482880
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2445415,
+            "loss": 0.017698651179671288,
+            "memory_bytes": 15482880
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2683335,
+            "loss": 0.015549437142908573,
+            "memory_bytes": 15482880
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.281333,
+            "loss": 0.057434987276792526,
+            "memory_bytes": 12042240
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.218229,
+            "loss": 0.017435500398278236,
+            "memory_bytes": 15482880
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.222958,
+            "loss": 0.05720127001404762,
+            "memory_bytes": 12042240
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.22562500000000002,
+            "loss": 0.033602263778448105,
+            "memory_bytes": 12042240
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.23718699999999998,
+            "loss": 0.06331520527601242,
+            "memory_bytes": 12042240
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.276542,
+            "loss": 0.014685474336147308,
+            "memory_bytes": 15482880
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.311375,
+            "loss": 0.06295721232891083,
+            "memory_bytes": 12042240
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 3,
+            "label": "q3:stock",
+            "latency_ms": 0.2916875,
+            "loss": 0.06283041834831238,
+            "memory_bytes": 12042240
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 405995520,
+        "parameter_bytes": 841022464,
+        "predicted_gate_up_latency_sum_ms": 7.128123499999999,
+        "states_considered": 211035,
+        "surrogate_loss": 0.7943871170282364
+      },
+      "status": "feasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 842491156
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.7.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.2171829,
+      "gate_up_parameter_budget_bytes": 433520640,
+      "latency_factor": 0.9,
+      "memory_fraction": 1.0,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 868547584
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.7.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.2171829,
+      "gate_up_parameter_budget_bytes": 433520640,
+      "latency_factor": 0.9,
+      "memory_fraction": 1.0,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 868547584
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 6.907981,
+      "gate_up_parameter_budget_bytes": 433520640,
+      "latency_factor": 1.0,
+      "memory_fraction": 1.0,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "4": 28
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.241167,
+            "loss": 0.006353261414915323,
+            "memory_bytes": 15482880
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2493335,
+            "loss": 0.015501655638217926,
+            "memory_bytes": 15482880
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.265812,
+            "loss": 0.015673751011490822,
+            "memory_bytes": 15482880
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23225,
+            "loss": 0.01580805890262127,
+            "memory_bytes": 15482880
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23575,
+            "loss": 0.014673011377453804,
+            "memory_bytes": 15482880
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2338955,
+            "loss": 0.01510839257389307,
+            "memory_bytes": 15482880
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242354,
+            "loss": 0.020546382293105125,
+            "memory_bytes": 15482880
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2445415,
+            "loss": 0.017698651179671288,
+            "memory_bytes": 15482880
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2683335,
+            "loss": 0.015549437142908573,
+            "memory_bytes": 15482880
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.230125,
+            "loss": 0.013087192550301552,
+            "memory_bytes": 15482880
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.218229,
+            "loss": 0.017435500398278236,
+            "memory_bytes": 15482880
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2016255,
+            "loss": 0.012202342040836811,
+            "memory_bytes": 15482880
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2183755,
+            "loss": 0.006842616014182568,
+            "memory_bytes": 15482880
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.229875,
+            "loss": 0.014458336867392063,
+            "memory_bytes": 15482880
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.276542,
+            "loss": 0.014685474336147308,
+            "memory_bytes": 15482880
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.310271,
+            "loss": 0.014324596151709557,
+            "memory_bytes": 15482880
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.31327099999999997,
+            "loss": 0.014500748366117477,
+            "memory_bytes": 15482880
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 433520640,
+        "parameter_bytes": 868547584,
+        "predicted_gate_up_latency_sum_ms": 6.907981,
+        "states_considered": 214413,
+        "surrogate_loss": 0.46227464405819774
+      },
+      "status": "feasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 868547584
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 6.907981,
+      "gate_up_parameter_budget_bytes": 433520640,
+      "latency_factor": 1.0,
+      "memory_fraction": 1.0,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "4": 28
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.241167,
+            "loss": 0.006353261414915323,
+            "memory_bytes": 15482880
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2493335,
+            "loss": 0.015501655638217926,
+            "memory_bytes": 15482880
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.265812,
+            "loss": 0.015673751011490822,
+            "memory_bytes": 15482880
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23225,
+            "loss": 0.01580805890262127,
+            "memory_bytes": 15482880
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23575,
+            "loss": 0.014673011377453804,
+            "memory_bytes": 15482880
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2338955,
+            "loss": 0.01510839257389307,
+            "memory_bytes": 15482880
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242354,
+            "loss": 0.020546382293105125,
+            "memory_bytes": 15482880
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2445415,
+            "loss": 0.017698651179671288,
+            "memory_bytes": 15482880
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2683335,
+            "loss": 0.015549437142908573,
+            "memory_bytes": 15482880
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.230125,
+            "loss": 0.013087192550301552,
+            "memory_bytes": 15482880
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.218229,
+            "loss": 0.017435500398278236,
+            "memory_bytes": 15482880
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2016255,
+            "loss": 0.012202342040836811,
+            "memory_bytes": 15482880
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2183755,
+            "loss": 0.006842616014182568,
+            "memory_bytes": 15482880
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.229875,
+            "loss": 0.014458336867392063,
+            "memory_bytes": 15482880
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.276542,
+            "loss": 0.014685474336147308,
+            "memory_bytes": 15482880
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.310271,
+            "loss": 0.014324596151709557,
+            "memory_bytes": 15482880
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.31327099999999997,
+            "loss": 0.014500748366117477,
+            "memory_bytes": 15482880
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 433520640,
+        "parameter_bytes": 868547584,
+        "predicted_gate_up_latency_sum_ms": 6.907981,
+        "states_considered": 214413,
+        "surrogate_loss": 0.46227464405819774
+      },
+      "status": "feasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 868547584
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 7.94417815,
+      "gate_up_parameter_budget_bytes": 433520640,
+      "latency_factor": 1.15,
+      "memory_fraction": 1.0,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "4": 28
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.241167,
+            "loss": 0.006353261414915323,
+            "memory_bytes": 15482880
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2493335,
+            "loss": 0.015501655638217926,
+            "memory_bytes": 15482880
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.265812,
+            "loss": 0.015673751011490822,
+            "memory_bytes": 15482880
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23225,
+            "loss": 0.01580805890262127,
+            "memory_bytes": 15482880
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23575,
+            "loss": 0.014673011377453804,
+            "memory_bytes": 15482880
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2338955,
+            "loss": 0.01510839257389307,
+            "memory_bytes": 15482880
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242354,
+            "loss": 0.020546382293105125,
+            "memory_bytes": 15482880
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2445415,
+            "loss": 0.017698651179671288,
+            "memory_bytes": 15482880
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2683335,
+            "loss": 0.015549437142908573,
+            "memory_bytes": 15482880
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.230125,
+            "loss": 0.013087192550301552,
+            "memory_bytes": 15482880
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.218229,
+            "loss": 0.017435500398278236,
+            "memory_bytes": 15482880
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2016255,
+            "loss": 0.012202342040836811,
+            "memory_bytes": 15482880
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2183755,
+            "loss": 0.006842616014182568,
+            "memory_bytes": 15482880
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.229875,
+            "loss": 0.014458336867392063,
+            "memory_bytes": 15482880
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.276542,
+            "loss": 0.014685474336147308,
+            "memory_bytes": 15482880
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.310271,
+            "loss": 0.014324596151709557,
+            "memory_bytes": 15482880
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.31327099999999997,
+            "loss": 0.014500748366117477,
+            "memory_bytes": 15482880
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 433520640,
+        "parameter_bytes": 868547584,
+        "predicted_gate_up_latency_sum_ms": 6.907981,
+        "states_considered": 219984,
+        "surrogate_loss": 0.46227464405819774
+      },
+      "status": "feasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 868547584
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 7.94417815,
+      "gate_up_parameter_budget_bytes": 433520640,
+      "latency_factor": 1.15,
+      "memory_fraction": 1.0,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "4": 28
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.241167,
+            "loss": 0.006353261414915323,
+            "memory_bytes": 15482880
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2493335,
+            "loss": 0.015501655638217926,
+            "memory_bytes": 15482880
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.265812,
+            "loss": 0.015673751011490822,
+            "memory_bytes": 15482880
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23225,
+            "loss": 0.01580805890262127,
+            "memory_bytes": 15482880
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23575,
+            "loss": 0.014673011377453804,
+            "memory_bytes": 15482880
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2338955,
+            "loss": 0.01510839257389307,
+            "memory_bytes": 15482880
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242354,
+            "loss": 0.020546382293105125,
+            "memory_bytes": 15482880
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2445415,
+            "loss": 0.017698651179671288,
+            "memory_bytes": 15482880
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2683335,
+            "loss": 0.015549437142908573,
+            "memory_bytes": 15482880
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.230125,
+            "loss": 0.013087192550301552,
+            "memory_bytes": 15482880
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.218229,
+            "loss": 0.017435500398278236,
+            "memory_bytes": 15482880
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2016255,
+            "loss": 0.012202342040836811,
+            "memory_bytes": 15482880
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2183755,
+            "loss": 0.006842616014182568,
+            "memory_bytes": 15482880
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.229875,
+            "loss": 0.014458336867392063,
+            "memory_bytes": 15482880
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.276542,
+            "loss": 0.014685474336147308,
+            "memory_bytes": 15482880
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.310271,
+            "loss": 0.014324596151709557,
+            "memory_bytes": 15482880
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.31327099999999997,
+            "loss": 0.014500748366117477,
+            "memory_bytes": 15482880
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 433520640,
+        "parameter_bytes": 868547584,
+        "predicted_gate_up_latency_sum_ms": 6.907981,
+        "states_considered": 219984,
+        "surrogate_loss": 0.46227464405819774
+      },
+      "status": "feasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 868547584
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.7.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.2171829,
+      "gate_up_parameter_budget_bytes": 459577067,
+      "latency_factor": 0.9,
+      "memory_fraction": 1.03,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 894604011
+    },
+    {
+      "error": {
+        "kind": "infeasible_budget",
+        "message": "No selection fits the budgets at unit 'model.layers.7.mlp'",
+        "type": "InfeasibleBudget"
+      },
+      "feasible": false,
+      "gate_up_latency_budget_ms": 6.2171829,
+      "gate_up_parameter_budget_bytes": 459577067,
+      "latency_factor": 0.9,
+      "memory_fraction": 1.03,
+      "solution": null,
+      "status": "infeasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 894604011
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 6.907981,
+      "gate_up_parameter_budget_bytes": 459577067,
+      "latency_factor": 1.0,
+      "memory_fraction": 1.03,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "4": 28
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.241167,
+            "loss": 0.006353261414915323,
+            "memory_bytes": 15482880
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2493335,
+            "loss": 0.015501655638217926,
+            "memory_bytes": 15482880
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.265812,
+            "loss": 0.015673751011490822,
+            "memory_bytes": 15482880
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23225,
+            "loss": 0.01580805890262127,
+            "memory_bytes": 15482880
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23575,
+            "loss": 0.014673011377453804,
+            "memory_bytes": 15482880
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2338955,
+            "loss": 0.01510839257389307,
+            "memory_bytes": 15482880
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242354,
+            "loss": 0.020546382293105125,
+            "memory_bytes": 15482880
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2445415,
+            "loss": 0.017698651179671288,
+            "memory_bytes": 15482880
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2683335,
+            "loss": 0.015549437142908573,
+            "memory_bytes": 15482880
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.230125,
+            "loss": 0.013087192550301552,
+            "memory_bytes": 15482880
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.218229,
+            "loss": 0.017435500398278236,
+            "memory_bytes": 15482880
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2016255,
+            "loss": 0.012202342040836811,
+            "memory_bytes": 15482880
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2183755,
+            "loss": 0.006842616014182568,
+            "memory_bytes": 15482880
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.229875,
+            "loss": 0.014458336867392063,
+            "memory_bytes": 15482880
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.276542,
+            "loss": 0.014685474336147308,
+            "memory_bytes": 15482880
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.310271,
+            "loss": 0.014324596151709557,
+            "memory_bytes": 15482880
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.31327099999999997,
+            "loss": 0.014500748366117477,
+            "memory_bytes": 15482880
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 433520640,
+        "parameter_bytes": 868547584,
+        "predicted_gate_up_latency_sum_ms": 6.907981,
+        "states_considered": 224406,
+        "surrogate_loss": 0.46227464405819774
+      },
+      "status": "feasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 894604011
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 6.907981,
+      "gate_up_parameter_budget_bytes": 459577067,
+      "latency_factor": 1.0,
+      "memory_fraction": 1.03,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "4": 28
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.241167,
+            "loss": 0.006353261414915323,
+            "memory_bytes": 15482880
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.237896,
+            "loss": 0.029918670654296875,
+            "memory_bytes": 15482880
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2493335,
+            "loss": 0.015501655638217926,
+            "memory_bytes": 15482880
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.265812,
+            "loss": 0.015673751011490822,
+            "memory_bytes": 15482880
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23225,
+            "loss": 0.01580805890262127,
+            "memory_bytes": 15482880
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23575,
+            "loss": 0.014673011377453804,
+            "memory_bytes": 15482880
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2338955,
+            "loss": 0.01510839257389307,
+            "memory_bytes": 15482880
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242354,
+            "loss": 0.020546382293105125,
+            "memory_bytes": 15482880
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2445415,
+            "loss": 0.017698651179671288,
+            "memory_bytes": 15482880
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2683335,
+            "loss": 0.015549437142908573,
+            "memory_bytes": 15482880
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.230125,
+            "loss": 0.013087192550301552,
+            "memory_bytes": 15482880
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.218229,
+            "loss": 0.017435500398278236,
+            "memory_bytes": 15482880
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2016255,
+            "loss": 0.012202342040836811,
+            "memory_bytes": 15482880
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2183755,
+            "loss": 0.006842616014182568,
+            "memory_bytes": 15482880
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.242229,
+            "loss": 0.02350652404129505,
+            "memory_bytes": 15482880
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.229875,
+            "loss": 0.014458336867392063,
+            "memory_bytes": 15482880
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.276542,
+            "loss": 0.014685474336147308,
+            "memory_bytes": 15482880
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.310271,
+            "loss": 0.014324596151709557,
+            "memory_bytes": 15482880
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.31327099999999997,
+            "loss": 0.014500748366117477,
+            "memory_bytes": 15482880
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 433520640,
+        "parameter_bytes": 868547584,
+        "predicted_gate_up_latency_sum_ms": 6.907981,
+        "states_considered": 224406,
+        "surrogate_loss": 0.46227464405819774
+      },
+      "status": "feasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 894604011
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 7.94417815,
+      "gate_up_parameter_budget_bytes": 459577067,
+      "latency_factor": 1.15,
+      "memory_fraction": 1.03,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "4": 25,
+          "6": 3
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.241167,
+            "loss": 0.006353261414915323,
+            "memory_bytes": 15482880
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 6,
+            "label": "q6:stock",
+            "latency_ms": 0.2801045,
+            "loss": 0.0018598148599267006,
+            "memory_bytes": 22364160
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2493335,
+            "loss": 0.015501655638217926,
+            "memory_bytes": 15482880
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.265812,
+            "loss": 0.015673751011490822,
+            "memory_bytes": 15482880
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23225,
+            "loss": 0.01580805890262127,
+            "memory_bytes": 15482880
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23575,
+            "loss": 0.014673011377453804,
+            "memory_bytes": 15482880
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2338955,
+            "loss": 0.01510839257389307,
+            "memory_bytes": 15482880
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 6,
+            "label": "q6:stock",
+            "latency_ms": 0.283271,
+            "loss": 0.0011625615879893303,
+            "memory_bytes": 22364160
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2445415,
+            "loss": 0.017698651179671288,
+            "memory_bytes": 15482880
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2683335,
+            "loss": 0.015549437142908573,
+            "memory_bytes": 15482880
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.230125,
+            "loss": 0.013087192550301552,
+            "memory_bytes": 15482880
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.218229,
+            "loss": 0.017435500398278236,
+            "memory_bytes": 15482880
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2016255,
+            "loss": 0.012202342040836811,
+            "memory_bytes": 15482880
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2183755,
+            "loss": 0.006842616014182568,
+            "memory_bytes": 15482880
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 6,
+            "label": "q6:stock",
+            "latency_ms": 0.2854795,
+            "loss": 0.0013815239071846008,
+            "memory_bytes": 22364160
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.229875,
+            "loss": 0.014458336867392063,
+            "memory_bytes": 15482880
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.276542,
+            "loss": 0.014685474336147308,
+            "memory_bytes": 15482880
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.310271,
+            "loss": 0.014324596151709557,
+            "memory_bytes": 15482880
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.31327099999999997,
+            "loss": 0.014500748366117477,
+            "memory_bytes": 15482880
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 454164480,
+        "parameter_bytes": 889191424,
+        "predicted_gate_up_latency_sum_ms": 7.034357,
+        "states_considered": 229977,
+        "surrogate_loss": 0.3927069674246013
+      },
+      "status": "feasible",
+      "strategy": "stock",
+      "total_parameter_budget_bytes": 894604011
+    },
+    {
+      "error": null,
+      "feasible": true,
+      "gate_up_latency_budget_ms": 7.94417815,
+      "gate_up_parameter_budget_bytes": 459577067,
+      "latency_factor": 1.15,
+      "memory_fraction": 1.03,
+      "solution": {
+        "backend_histogram": {
+          "stock": 28
+        },
+        "bits_histogram": {
+          "4": 25,
+          "6": 3
+        },
+        "choices": {
+          "model.layers.0.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.241167,
+            "loss": 0.006353261414915323,
+            "memory_bytes": 15482880
+          },
+          "model.layers.1.mlp": {
+            "backend": "stock",
+            "bits": 6,
+            "label": "q6:stock",
+            "latency_ms": 0.2801045,
+            "loss": 0.0018598148599267006,
+            "memory_bytes": 22364160
+          },
+          "model.layers.10.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2493335,
+            "loss": 0.015501655638217926,
+            "memory_bytes": 15482880
+          },
+          "model.layers.11.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.265812,
+            "loss": 0.015673751011490822,
+            "memory_bytes": 15482880
+          },
+          "model.layers.12.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23225,
+            "loss": 0.01580805890262127,
+            "memory_bytes": 15482880
+          },
+          "model.layers.13.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23575,
+            "loss": 0.014673011377453804,
+            "memory_bytes": 15482880
+          },
+          "model.layers.14.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2338955,
+            "loss": 0.01510839257389307,
+            "memory_bytes": 15482880
+          },
+          "model.layers.15.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2685415,
+            "loss": 0.016704095527529716,
+            "memory_bytes": 15482880
+          },
+          "model.layers.16.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.26666650000000003,
+            "loss": 0.018299121409654617,
+            "memory_bytes": 15482880
+          },
+          "model.layers.17.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.221354,
+            "loss": 0.01884685829281807,
+            "memory_bytes": 15482880
+          },
+          "model.layers.18.mlp": {
+            "backend": "stock",
+            "bits": 6,
+            "label": "q6:stock",
+            "latency_ms": 0.283271,
+            "loss": 0.0011625615879893303,
+            "memory_bytes": 22364160
+          },
+          "model.layers.19.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.23602099999999998,
+            "loss": 0.020367790013551712,
+            "memory_bytes": 15482880
+          },
+          "model.layers.2.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2445415,
+            "loss": 0.017698651179671288,
+            "memory_bytes": 15482880
+          },
+          "model.layers.20.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.24412499999999998,
+            "loss": 0.01687631569802761,
+            "memory_bytes": 15482880
+          },
+          "model.layers.21.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.240292,
+            "loss": 0.016982614994049072,
+            "memory_bytes": 15482880
+          },
+          "model.layers.22.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2421045,
+            "loss": 0.017539462074637413,
+            "memory_bytes": 15482880
+          },
+          "model.layers.23.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2683335,
+            "loss": 0.015549437142908573,
+            "memory_bytes": 15482880
+          },
+          "model.layers.24.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.230125,
+            "loss": 0.013087192550301552,
+            "memory_bytes": 15482880
+          },
+          "model.layers.25.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.218229,
+            "loss": 0.017435500398278236,
+            "memory_bytes": 15482880
+          },
+          "model.layers.26.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2016255,
+            "loss": 0.012202342040836811,
+            "memory_bytes": 15482880
+          },
+          "model.layers.27.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2183755,
+            "loss": 0.006842616014182568,
+            "memory_bytes": 15482880
+          },
+          "model.layers.3.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.243313,
+            "loss": 0.019097352400422096,
+            "memory_bytes": 15482880
+          },
+          "model.layers.4.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.2536875,
+            "loss": 0.01968643069267273,
+            "memory_bytes": 15482880
+          },
+          "model.layers.5.mlp": {
+            "backend": "stock",
+            "bits": 6,
+            "label": "q6:stock",
+            "latency_ms": 0.2854795,
+            "loss": 0.0013815239071846008,
+            "memory_bytes": 22364160
+          },
+          "model.layers.6.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.229875,
+            "loss": 0.014458336867392063,
+            "memory_bytes": 15482880
+          },
+          "model.layers.7.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.276542,
+            "loss": 0.014685474336147308,
+            "memory_bytes": 15482880
+          },
+          "model.layers.8.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.310271,
+            "loss": 0.014324596151709557,
+            "memory_bytes": 15482880
+          },
+          "model.layers.9.mlp": {
+            "backend": "stock",
+            "bits": 4,
+            "label": "q4:stock",
+            "latency_ms": 0.31327099999999997,
+            "loss": 0.014500748366117477,
+            "memory_bytes": 15482880
+          }
+        },
+        "exact": true,
+        "gate_up_parameter_bytes": 454164480,
+        "parameter_bytes": 889191424,
+        "predicted_gate_up_latency_sum_ms": 7.034357,
+        "states_considered": 229977,
+        "surrogate_loss": 0.3927069674246013
+      },
+      "status": "feasible",
+      "strategy": "fusion_aware",
+      "total_parameter_budget_bytes": 894604011
+    }
+  ],
+  "schema_version": 1,
+  "scope": "coupled_gate_up_pairs",
+  "surrogate_loss_note": "Sum of profiled local gate/up activation relative MSE; not a quality or perplexity measurement."
+}

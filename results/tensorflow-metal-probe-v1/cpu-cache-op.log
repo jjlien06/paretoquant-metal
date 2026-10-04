@@ -1,0 +1,15 @@
+keras 3.15.1
+2026-10-04 01:27:49.465686: I metal_plugin/src/device/metal_device.cc:1154] Metal device set to: Apple M2 Pro
+2026-10-04 01:27:49.465883: I metal_plugin/src/device/metal_device.cc:296] systemMemory: 16.00 GB
+2026-10-04 01:27:49.465896: I metal_plugin/src/device/metal_device.cc:313] maxCacheSize: 5.92 GB
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791091669.466055 99455993 pluggable_device_factory.cc:305] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+I0000 00:00:1791091669.466234 99455993 pluggable_device_factory.cc:271] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791091669.494625 99455993 service.cc:148] XLA service 0x7200b0500 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1791091669.495201 99455993 service.cc:156]   StreamExecutor device (0): Host, Default Version
+I0000 00:00:1791091669.582220 99455993 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+/job:localhost/replica:0/task:0/device:CPU:0 [[[0. 0.]
+  [1. 1.]
+  [0. 0.]
+  [0. 0.]]]

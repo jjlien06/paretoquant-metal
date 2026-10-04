@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://developer.apple.com/metal/tensorflow-plugin",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 2,
+      "url": "https://keras.io/keras_hub/api/models/qwen/qwen_causal_lm",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 3,
+      "url": "https://raw.githubusercontent.com/keras-team/keras-hub/v0.21.1/keras_hub/src/utils/transformers/convert_qwen.py",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 4,
+      "url": "https://raw.githubusercontent.com/keras-team/keras/v3.15.1/keras/src/backend/tensorflow/core.py",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 5,
+      "url": "https://pypi.org/pypi/tensorflow-metal/json",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 6,
+      "url": "https://pypi.org/pypi/keras-hub/0.21.1/json",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 7,
+      "url": "https://pypi.org/pypi/keras-hub/json",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 8,
+      "url": "https://api.github.com/repos/huggingface/transformers/git/trees/main?recursive=1",
+      "title": "",
+      "accessed": "2026-10-04"
+    }
+  ]
+}

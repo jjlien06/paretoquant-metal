@@ -1,0 +1,245 @@
+{
+  "status": "ready",
+  "validation_scope": "One 8-token correctness/startup probe, not a performance benchmark. Two startup attempts; zero generation requests on first failed startup.",
+  "recorded_at": "2026-10-04T01:27:03-04:00",
+  "backend": {
+    "python": "3.12.14",
+    "arch": "arm64",
+    "default_device": "Device(gpu, 0)",
+    "metal_available": true,
+    "device_info": {
+      "device_name": "Apple M2 Pro",
+      "max_recommended_working_set_size": 12713115648,
+      "memory_size": 17179869184,
+      "architecture": "applegpu_g14s",
+      "max_buffer_length": 9534832640,
+      "resource_limit": 499000
+    },
+    "versions": {
+      "vllm": "0.30.0+cpu",
+      "vllm-metal": "0.30.0.dev20261003204550",
+      "mlx": "0.32.1",
+      "mlx-metal": "0.32.1",
+      "mlx-lm": "0.32.0",
+      "torch": "2.13.0",
+      "transformers": "5.18.0"
+    }
+  },
+  "release": {
+    "channel": "latest available development wheel; recommended by inspected installer",
+    "tag": "v0.30.0.dev20261003204550",
+    "published_at": "2026-10-03T20:46:00Z",
+    "revision": "68e93fc95656e97a9c5df744261d644e0b6e5daf",
+    "core_compatible_tag": "v0.30.0",
+    "mlx_lm_revision": "9e6acca691e64d6d8bb808c328fcdea459099cca",
+    "latest_stable_available": "v0.30.0"
+  },
+  "env_path": "/Users/jeremylien/Projects/paretoquant-metal/artifacts/vllm-metal-venv",
+  "model_path": "/Users/jeremylien/Projects/paretoquant-metal/artifacts/m2pro-mixed-v2/model",
+  "same_existing_mixed_weights": true,
+  "full_precision_fallback": {
+    "attempted": false,
+    "reason": "Mixed 3/4-bit model successfully loaded and generated; fallback unnecessary."
+  },
+  "weight_format": {
+    "default_bits": 4,
+    "group_size": 64,
+    "mode": "affine",
+    "per_module_override_count": 48,
+    "per_module_override_bit_counts": {
+      "3": 32,
+      "4": 16
+    },
+    "fingerprints_path": "/Users/jeremylien/Projects/paretoquant-metal/results/vllm-metal-probe-v1/model-fingerprints.json",
+    "verification": "Exact supplied local directory loaded by MLX-LM. Installed loader source honors module-specific quantization dictionaries; packed weights were not converted."
+  },
+  "successful_launch_command": "VLLM_MLX_DEVICE=gpu HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 VLLM_PLUGINS=metal /Users/jeremylien/Projects/paretoquant-metal/artifacts/vllm-metal-venv/bin/vllm serve /Users/jeremylien/Projects/paretoquant-metal/artifacts/m2pro-mixed-v2/model --served-model-name paretoquant-mixed --host 127.0.0.1 --port 11436 --max-model-len 1024 --max-num-seqs 1 --max-num-batched-tokens 1024 --gpu-memory-utilization 0.075 --kv-cache-memory-bytes 268435456 --enforce-eager --no-enable-prefix-caching",
+  "failed_launch_command": "VLLM_MLX_DEVICE=gpu HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 VLLM_PLUGINS=metal /Users/jeremylien/Projects/paretoquant-metal/artifacts/vllm-metal-venv/bin/vllm serve /Users/jeremylien/Projects/paretoquant-metal/artifacts/m2pro-mixed-v2/model --served-model-name paretoquant-mixed --host 127.0.0.1 --port 11436 --max-model-len 1024 --max-num-seqs 1 --max-num-batched-tokens 1024 --gpu-memory-utilization 0.05 --kv-cache-memory-bytes 268435456 --enforce-eager --no-enable-prefix-caching",
+  "startup_failures": [
+    {
+      "cause": "Over-conservative Metal memory fraction, NOT model incompatibility",
+      "exact_error": "Paged attention: not enough Metal memory for KV cache. metal_limit=12.71GB, fraction=0.05, usable_metal=0.64GB, model_memory=0.26GB, overhead=0.49GB, kv_budget=-0.11GB. Mitigations: increase --gpu-memory-utilization (currently 0.05); use a smaller or more quantized model.",
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/results/vllm-metal-probe-v1/mixed-server.log",
+      "resolved_by": "gpu-memory-utilization 0.075 instead of 0.05"
+    }
+  ],
+  "request": {
+    "model": "paretoquant-mixed",
+    "prompt": "<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue in one sentence.<|im_end|>\n<|im_start|>assistant\n",
+    "max_tokens": 8,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": -1,
+    "repetition_penalty": 1.0,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "seed": 0,
+    "ignore_eos": true,
+    "stream": false,
+    "logprobs": 1,
+    "return_tokens_as_token_ids": true
+  },
+  "response": {
+    "id": "cmpl-93961c70b024aa35",
+    "object": "text_completion",
+    "created": 1791091485,
+    "model": "paretoquant-mixed",
+    "choices": [
+      {
+        "index": 0,
+        "text": "The sky is blue because it is composed",
+        "logprobs": {
+          "text_offset": [
+            0,
+            12,
+            26,
+            38,
+            51,
+            64,
+            76,
+            88
+          ],
+          "token_logprobs": [
+            -0.29499372839927673,
+            -0.07573413103818893,
+            -0.19764693081378937,
+            -0.35820654034614563,
+            -0.014030393213033676,
+            -0.6286375522613525,
+            -0.6013222336769104,
+            -1.5953751802444458
+          ],
+          "tokens": [
+            "token_id:785",
+            "token_id:12884",
+            "token_id:374",
+            "token_id:6303",
+            "token_id:1576",
+            "token_id:432",
+            "token_id:374",
+            "token_id:23415"
+          ],
+          "top_logprobs": [
+            {
+              "token_id:785": -0.29499372839927673
+            },
+            {
+              "token_id:12884": -0.07573413103818893
+            },
+            {
+              "token_id:374": -0.19764693081378937
+            },
+            {
+              "token_id:6303": -0.35820654034614563
+            },
+            {
+              "token_id:1576": -0.014030393213033676
+            },
+            {
+              "token_id:432": -0.6286375522613525
+            },
+            {
+              "token_id:374": -0.6013222336769104
+            },
+            {
+              "token_id:23415": -1.5953751802444458
+            }
+          ]
+        },
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null,
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "routed_experts": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-dc310c8d",
+    "usage": {
+      "prompt_tokens": 30,
+      "total_tokens": 38,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null,
+      "completion_tokens_details": null
+    },
+    "kv_transfer_params": null,
+    "ec_transfer_params": null,
+    "metrics": null
+  },
+  "generated_token_ids": [
+    785,
+    12884,
+    374,
+    6303,
+    1576,
+    432,
+    374,
+    23415
+  ],
+  "gpu_verification_log_lines": [
+    "(EngineCore pid=81576) INFO 10-04 01:24:14 [worker.py:127] MLX device set to: Device(gpu, 0)",
+    "(EngineCore pid=81576) INFO 10-04 01:24:14 [worker.py:135] PyTorch device set to: mps",
+    "(EngineCore pid=81576) INFO 10-04 01:24:15 [model_lifecycle.py:427] MLX-LM model loaded in 0.51s: /Users/jeremylien/Projects/paretoquant-metal/artifacts/m2pro-mixed-v2/model",
+    "(EngineCore pid=81576) INFO 10-04 01:24:16 [__init__.py:331] Native paged-attention Metal kernels loaded",
+    "(EngineCore pid=81576) INFO 10-04 01:24:16 [sdpa.py:92] Shared attention cache: 1236 blocks, 0.23 GiB across 24 Metal regions",
+    "(EngineCore pid=81576) INFO 10-04 01:24:16 [cache_policy.py:521] KV cache config received: 1236 grouped blocks (MLX layout initialized from vLLM config)"
+  ],
+  "kv_cache": {
+    "requested_upper_bound_bytes": 268435456,
+    "gpu_memory_utilization": 0.075,
+    "actual_blocks": 1236,
+    "block_size_tokens": 16,
+    "actual_capacity_tokens": 19776,
+    "allocated_log": "Shared attention cache: 1236 blocks, 0.23 GiB across 24 Metal regions",
+    "note": "Plugin still validates gpu-memory-utilization-derived budget before accepting explicit KV bytes; 0.05 fails despite kv-cache-memory-bytes."
+  },
+  "warnings": [
+    "vLLM core wheel reports +cpu/device_config=cpu; this does not mean inference is CPU: activated Metal worker reports MLX GPU and PyTorch MPS.",
+    "Duplicate FFmpeg/OpenCV Objective-C classes warned, but did not block startup or inference.",
+    "fd ulimit 2048 warning; no fd error observed.",
+    "Triton/DeepSelect absent warnings expected for this Metal route.",
+    "generation_config defaults overridden explicitly by request for greedy/no penalties sampling.",
+    "vLLM Metal shares MLX/MLX-LM weight kernels; not a CUDA-vLLM comparison."
+  ],
+  "benchmark_handoff": {
+    "generate_requests_executed": 1,
+    "max_model_len": 1024,
+    "max_num_seqs": 1,
+    "max_num_batched_tokens": 1024,
+    "prefix_caching": false,
+    "speculative_decoding": false,
+    "seed": 0,
+    "prompt_tokens": 30,
+    "greedy": true,
+    "ignore_eos": true,
+    "notes": [
+      "Run all benchmark backends sequentially after stopping competing workloads.",
+      "Use request.json exact prompt or identical prompt IDs, identical max_tokens, greedy/no penalties and ignore_eos.",
+      "Do not compare these untimed probe values as throughput.",
+      "Scope any benchmark to same mixed model; full precision comparisons must be separately labeled."
+    ]
+  },
+  "server_shutdown": {
+    "ps_returncode": 1,
+    "ps_stdout": "  PID  PPID STAT COMMAND\n",
+    "lsof_returncode": 1,
+    "lsof_stdout": "",
+    "server_and_worker_pids": [
+      77906,
+      78129,
+      79983,
+      81576
+    ],
+    "listener_absent": true
+  },
+  "artifacts": {
+    "request": "/Users/jeremylien/Projects/paretoquant-metal/results/vllm-metal-probe-v1/request.json",
+    "response": "/Users/jeremylien/Projects/paretoquant-metal/results/vllm-metal-probe-v1/response.json",
+    "backend": "/Users/jeremylien/Projects/paretoquant-metal/results/vllm-metal-probe-v1/backend.json",
+    "packages": "/Users/jeremylien/Projects/paretoquant-metal/results/vllm-metal-probe-v1/packages.txt",
+    "server_log": "/Users/jeremylien/Projects/paretoquant-metal/results/vllm-metal-probe-v1/mixed-server-ready.log",
+    "install_log": "/Users/jeremylien/Projects/paretoquant-metal/results/vllm-metal-probe-v1/install.log"
+  },
+  "source_ledger": "/Users/jeremylien/Projects/paretoquant-metal/spikes/004-vllm-metal/sources.json"
+}

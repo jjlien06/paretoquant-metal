@@ -1,0 +1,398 @@
+{
+  "schema_version": 1,
+  "engine": "vllm_metal",
+  "metadata": {
+    "python": "3.13.2 (main, Feb  4 2025, 14:51:09) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "architecture": "arm64",
+    "weight_sha256": {
+      "model.safetensors": "13c6b6a2ff78ac29fa505231ec610d6d883d4db58d6c2f57766e7ae983f0cad2"
+    },
+    "model_path": "/Users/jeremylien/Projects/paretoquant-metal/artifacts/m2pro-mixed-v2/model",
+    "precision": "same saved affine mixed 3/4-bit",
+    "server_models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "paretoquant-mixed",
+          "object": "model",
+          "created": 1791093528,
+          "owned_by": "vllm",
+          "root": "artifacts/m2pro-mixed-v2/model",
+          "parent": null,
+          "max_model_len": 1024,
+          "permission": [
+            {
+              "id": "modelperm-b479b9cb552bc092",
+              "object": "model_permission",
+              "created": 1791093528,
+              "allow_create_engine": false,
+              "allow_sampling": true,
+              "allow_logprobs": true,
+              "allow_search_indices": false,
+              "allow_view": true,
+              "allow_fine_tuning": false,
+              "organization": "*",
+              "group": null,
+              "is_blocking": false
+            }
+          ]
+        }
+      ]
+    },
+    "same_saved_mixed_weights": true,
+    "versions": {
+      "vllm": "0.30.0+cpu",
+      "vllm-metal": "0.30.0.dev20261003204550",
+      "mlx": "0.32.1",
+      "mlx-lm": "0.32.0",
+      "torch": "2.13.0"
+    },
+    "mode": "vLLM Metal/MLX GPU serving, not CUDA; local HTTP included",
+    "prefix_caching": false,
+    "max_model_len": 1024,
+    "max_num_seqs": 1,
+    "actual_system_fingerprint": "vllm-0.30.0-d912c5b3"
+  },
+  "script_sha256": "6645143b3a56643921a2088ef38e373ec16afac2f42fe025186614a9ef48cb33",
+  "fixture_sha256": "25e6f19f491a590874f500e18d6b838018d2d32817d9c64f907ad1b991a47f35",
+  "max_generated_tokens": 64,
+  "warmup_per_case": 2,
+  "raw_prompts": [
+    "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nExplain binary search with its invariant, pseudocode, and a worked example on eight elements.<|im_end|>\n<|im_start|>assistant\n",
+    "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nA database transaction groups multiple reads and writes into one logical operation. Atomicity requires either all changes or none. Consistency preserves invariants. Isolation controls interactions between concurrent transactions. Durability preserves committed changes after a crash. Write-ahead logging records changes before pages are written. Explain each ACID property with a concrete banking example and common failure modes.<|im_end|>\n<|im_start|>assistant\n",
+    "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nA database transaction groups multiple reads and writes into one logical operation. Atomicity requires either all changes or none. Consistency preserves invariants. Isolation controls interactions between concurrent transactions. Durability preserves committed changes after a crash. Write-ahead logging records changes before pages are written. A database transaction groups multiple reads and writes into one logical operation. Atomicity requires either all changes or none. Consistency preserves invariants. Isolation controls interactions between concurrent transactions. Durability preserves committed changes after a crash. Write-ahead logging records changes before pages are written. A database transaction groups multiple reads and writes into one logical operation. Atomicity requires either all changes or none. Consistency preserves invariants. Isolation controls interactions between concurrent transactions. Durability preserves committed changes after a crash. Write-ahead logging records changes before pages are written. Compare locking and multiversion concurrency control, with examples and tradeoffs.<|im_end|>\n<|im_start|>assistant\n"
+  ],
+  "trials": [
+    {
+      "engine": "vllm_metal",
+      "trial": 0,
+      "case": 0,
+      "prompt_tokens": 48,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Binary Search is a search algorithm that is used to find a specific element in a sorted list. It is a very efficient algorithm that has a time complexity of O(log n) and a space complexity of O(1). It is used in many applications such as searching for a specific element in a list.\n\nBinary Search can",
+      "wall_seconds": 0.28212129103485495,
+      "wall_tokens_per_second": 226.85278294750557
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 0,
+      "case": 1,
+      "prompt_tokens": 99,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Certainly, I am Qwen, a database transaction group, and I am here to assist you with your queries.\n\n1. Atomicity: This is the most important property of a database transaction group. It means that all changes must be consistent with each other. If you have two transactions that are both atomic, they can",
+      "wall_seconds": 0.29879808297846466,
+      "wall_tokens_per_second": 214.19146790380407
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 0,
+      "case": 2,
+      "prompt_tokens": 209,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Let's compare the locking and multiversion concurrency control with examples and tradeoffs.\n\n1. **Locking**: This is a simple locking mechanism where each transaction must acquire a lock before accessing data. This ensures that only one transaction can modify the data at a time.\n\n2. **Multiversion**: This is a",
+      "wall_seconds": 0.32663608295843005,
+      "wall_tokens_per_second": 195.93671164659747
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 1,
+      "case": 0,
+      "prompt_tokens": 48,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Binary Search is a search algorithm that is used to find a specific element in a sorted list. It is a very efficient algorithm that has a time complexity of O(log n) and a space complexity of O(1). It is used in many applications such as searching for a specific element in a list.\n\nBinary Search can",
+      "wall_seconds": 0.27529525000136346,
+      "wall_tokens_per_second": 232.47767623917605
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 1,
+      "case": 1,
+      "prompt_tokens": 99,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Certainly, I am Qwen, a database transaction group, and I am here to assist you with your queries.\n\n1. Atomicity: This is the most important property of a database transaction group. It means that all changes must be consistent with each other. If you have two transactions that are both atomic, they can",
+      "wall_seconds": 0.29327920905780047,
+      "wall_tokens_per_second": 218.22208333692916
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 1,
+      "case": 2,
+      "prompt_tokens": 209,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Let's compare the locking and multiversion concurrency control with examples and tradeoffs.\n\n1. **Locking**: This is a simple locking mechanism where each transaction must acquire a lock before accessing data. This ensures that only one transaction can modify the data at a time.\n\n2. **Multiversion**: This is a",
+      "wall_seconds": 0.3290227920515463,
+      "wall_tokens_per_second": 194.51539998473254
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 2,
+      "case": 0,
+      "prompt_tokens": 48,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Binary Search is a search algorithm that is used to find a specific element in a sorted list. It is a very efficient algorithm that has a time complexity of O(log n) and a space complexity of O(1). It is used in many applications such as searching for a specific element in a list.\n\nBinary Search can",
+      "wall_seconds": 0.2758332500234246,
+      "wall_tokens_per_second": 232.0242392625433
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 2,
+      "case": 1,
+      "prompt_tokens": 99,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Certainly, I am Qwen, a database transaction group, and I am here to assist you with your queries.\n\n1. Atomicity: This is the most important property of a database transaction group. It means that all changes must be consistent with each other. If you have two transactions that are both atomic, they can",
+      "wall_seconds": 0.29428550007287413,
+      "wall_tokens_per_second": 217.47588645771413
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 2,
+      "case": 2,
+      "prompt_tokens": 209,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Let's compare the locking and multiversion concurrency control with examples and tradeoffs.\n\n1. **Locking**: This is a simple locking mechanism where each transaction must acquire a lock before accessing data. This ensures that only one transaction can modify the data at a time.\n\n2. **Multiversion**: This is a",
+      "wall_seconds": 0.32731595798395574,
+      "wall_tokens_per_second": 195.52972728307103
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 3,
+      "case": 0,
+      "prompt_tokens": 48,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Binary Search is a search algorithm that is used to find a specific element in a sorted list. It is a very efficient algorithm that has a time complexity of O(log n) and a space complexity of O(1). It is used in many applications such as searching for a specific element in a list.\n\nBinary Search can",
+      "wall_seconds": 0.2765918329823762,
+      "wall_tokens_per_second": 231.3878877402643
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 3,
+      "case": 1,
+      "prompt_tokens": 99,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Certainly, I am Qwen, a database transaction group, and I am here to assist you with your queries.\n\n1. Atomicity: This is the most important property of a database transaction group. It means that all changes must be consistent with each other. If you have two transactions that are both atomic, they can",
+      "wall_seconds": 0.29365124995820224,
+      "wall_tokens_per_second": 217.9456072777134
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 3,
+      "case": 2,
+      "prompt_tokens": 209,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Let's compare the locking and multiversion concurrency control with examples and tradeoffs.\n\n1. **Locking**: This is a simple locking mechanism where each transaction must acquire a lock before accessing data. This ensures that only one transaction can modify the data at a time.\n\n2. **Multiversion**: This is a",
+      "wall_seconds": 0.32706166605930775,
+      "wall_tokens_per_second": 195.68175253040678
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 4,
+      "case": 0,
+      "prompt_tokens": 48,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Binary Search is a search algorithm that is used to find a specific element in a sorted list. It is a very efficient algorithm that has a time complexity of O(log n) and a space complexity of O(1). It is used in many applications such as searching for a specific element in a list.\n\nBinary Search can",
+      "wall_seconds": 0.2753217089921236,
+      "wall_tokens_per_second": 232.45533464936798
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 4,
+      "case": 1,
+      "prompt_tokens": 99,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Certainly, I am Qwen, a database transaction group, and I am here to assist you with your queries.\n\n1. Atomicity: This is the most important property of a database transaction group. It means that all changes must be consistent with each other. If you have two transactions that are both atomic, they can",
+      "wall_seconds": 0.2941806659800932,
+      "wall_tokens_per_second": 217.55338606899068
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 4,
+      "case": 2,
+      "prompt_tokens": 209,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Let's compare the locking and multiversion concurrency control with examples and tradeoffs.\n\n1. **Locking**: This is a simple locking mechanism where each transaction must acquire a lock before accessing data. This ensures that only one transaction can modify the data at a time.\n\n2. **Multiversion**: This is a",
+      "wall_seconds": 0.3391453329240903,
+      "wall_tokens_per_second": 188.7096586239177
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 5,
+      "case": 0,
+      "prompt_tokens": 48,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Binary Search is a search algorithm that is used to find a specific element in a sorted list. It is a very efficient algorithm that has a time complexity of O(log n) and a space complexity of O(1). It is used in many applications such as searching for a specific element in a list.\n\nBinary Search can",
+      "wall_seconds": 0.27453020808752626,
+      "wall_tokens_per_second": 233.12552904777385
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 5,
+      "case": 1,
+      "prompt_tokens": 99,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Certainly, I am Qwen, a database transaction group, and I am here to assist you with your queries.\n\n1. Atomicity: This is the most important property of a database transaction group. It means that all changes must be consistent with each other. If you have two transactions that are both atomic, they can",
+      "wall_seconds": 0.2934340829961002,
+      "wall_tokens_per_second": 218.10690614576828
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 5,
+      "case": 2,
+      "prompt_tokens": 209,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Let's compare the locking and multiversion concurrency control with examples and tradeoffs.\n\n1. **Locking**: This is a simple locking mechanism where each transaction must acquire a lock before accessing data. This ensures that only one transaction can modify the data at a time.\n\n2. **Multiversion**: This is a",
+      "wall_seconds": 0.33490383299067616,
+      "wall_tokens_per_second": 191.09963426958385
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 6,
+      "case": 0,
+      "prompt_tokens": 48,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Binary Search is a search algorithm that is used to find a specific element in a sorted list. It is a very efficient algorithm that has a time complexity of O(log n) and a space complexity of O(1). It is used in many applications such as searching for a specific element in a list.\n\nBinary Search can",
+      "wall_seconds": 0.27445187501143664,
+      "wall_tokens_per_second": 233.192066905475
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 6,
+      "case": 1,
+      "prompt_tokens": 99,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Certainly, I am Qwen, a database transaction group, and I am here to assist you with your queries.\n\n1. Atomicity: This is the most important property of a database transaction group. It means that all changes must be consistent with each other. If you have two transactions that are both atomic, they can",
+      "wall_seconds": 0.3133195830741897,
+      "wall_tokens_per_second": 204.26428304306052
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": 6,
+      "case": 2,
+      "prompt_tokens": 209,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Let's compare the locking and multiversion concurrency control with examples and tradeoffs.\n\n1. **Locking**: This is a simple locking mechanism where each transaction must acquire a lock before accessing data. This ensures that only one transaction can modify the data at a time.\n\n2. **Multiversion**: This is a",
+      "wall_seconds": 0.3305587909417227,
+      "wall_tokens_per_second": 193.6115503619541
+    }
+  ],
+  "warmups": [
+    {
+      "engine": "vllm_metal",
+      "trial": -2,
+      "case": 0,
+      "prompt_tokens": 48,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Binary Search is a search algorithm that is used to find a specific element in a sorted list. It is a very efficient algorithm that has a time complexity of O(log n) and a space complexity of O(1). It is used in many applications such as searching for a specific element in a list.\n\nBinary Search can",
+      "wall_seconds": 0.6545382499461994,
+      "wall_tokens_per_second": 97.77885403222892
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": -2,
+      "case": 1,
+      "prompt_tokens": 99,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Certainly, I am Qwen, a database transaction group, and I am here to assist you with your queries.\n\n1. Atomicity: This is the most important property of a database transaction group. It means that all changes must be consistent with each other. If you have two transactions that are both atomic, they can",
+      "wall_seconds": 0.31555741699412465,
+      "wall_tokens_per_second": 202.8157050138093
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": -2,
+      "case": 2,
+      "prompt_tokens": 209,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Let's compare the locking and multiversion concurrency control with examples and tradeoffs.\n\n1. **Locking**: This is a simple locking mechanism where each transaction must acquire a lock before accessing data. This ensures that only one transaction can modify the data at a time.\n\n2. **Multiversion**: This is a",
+      "wall_seconds": 0.33982362505048513,
+      "wall_tokens_per_second": 188.3329918291937
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": -1,
+      "case": 0,
+      "prompt_tokens": 48,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Binary Search is a search algorithm that is used to find a specific element in a sorted list. It is a very efficient algorithm that has a time complexity of O(log n) and a space complexity of O(1). It is used in many applications such as searching for a specific element in a list.\n\nBinary Search can",
+      "wall_seconds": 0.2836729169357568,
+      "wall_tokens_per_second": 225.61195016898293
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": -1,
+      "case": 1,
+      "prompt_tokens": 99,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Certainly, I am Qwen, a database transaction group, and I am here to assist you with your queries.\n\n1. Atomicity: This is the most important property of a database transaction group. It means that all changes must be consistent with each other. If you have two transactions that are both atomic, they can",
+      "wall_seconds": 0.30019795801490545,
+      "wall_tokens_per_second": 213.1926560167417
+    },
+    {
+      "engine": "vllm_metal",
+      "trial": -1,
+      "case": 2,
+      "prompt_tokens": 209,
+      "generated_tokens": 64,
+      "token_ids": null,
+      "response": "Let's compare the locking and multiversion concurrency control with examples and tradeoffs.\n\n1. **Locking**: This is a simple locking mechanism where each transaction must acquire a lock before accessing data. This ensures that only one transaction can modify the data at a time.\n\n2. **Multiversion**: This is a",
+      "wall_seconds": 0.3352037499425933,
+      "wall_tokens_per_second": 190.9286516363871
+    }
+  ],
+  "summaries": [
+    {
+      "case": 0,
+      "prompt_tokens": 48,
+      "repeats": 7,
+      "median_wall_seconds": 0.2753217089921236,
+      "median_wall_tokens_per_second": 232.45533464936798
+    },
+    {
+      "case": 1,
+      "prompt_tokens": 99,
+      "repeats": 7,
+      "median_wall_seconds": 0.2941806659800932,
+      "median_wall_tokens_per_second": 217.55338606899068
+    },
+    {
+      "case": 2,
+      "prompt_tokens": 209,
+      "repeats": 7,
+      "median_wall_seconds": 0.3290227920515463,
+      "median_wall_tokens_per_second": 194.51539998473254
+    }
+  ],
+  "machine_swap_after": "vm.swapusage: total = 13312.00M  used = 12655.31M  free = 656.69M  (encrypted)",
+  "limitations": [
+    "Sequential backend blocks, not cross-backend paired trials; machine state may drift.",
+    "Wall time includes tokenization, prefill, greedy generation and text detokenization.",
+    "vLLM measurements include localhost HTTP and serving/scheduling overhead; MLX uses its Python API.",
+    "vLLM Metal uses MLX, not CUDA; its MLX version differs from the main environment.",
+    "Three short-context small-model cases do not establish broad task quality or larger-model speed."
+  ]
+}

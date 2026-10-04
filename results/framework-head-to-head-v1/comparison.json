@@ -1,0 +1,73 @@
+{
+  "rows": [
+    {
+      "prompt_tokens": 48,
+      "paretoquant_mlx": 295.77566535324866,
+      "stock_mlx": 261.9774975722889,
+      "vllm_metal": 232.45533464936798,
+      "tensorflow_metal_hybrid_graph": 10.805024860591796,
+      "higher_than_vllm_percent": 27.23978384896697
+    },
+    {
+      "prompt_tokens": 99,
+      "paretoquant_mlx": 278.03632508321016,
+      "stock_mlx": 257.2767358491898,
+      "vllm_metal": 217.55338606899068,
+      "tensorflow_metal_hybrid_graph": 10.67030205280055,
+      "higher_than_vllm_percent": 27.80142387443194
+    },
+    {
+      "prompt_tokens": 209,
+      "paretoquant_mlx": 257.7070515473286,
+      "stock_mlx": 236.12362421212023,
+      "vllm_metal": 194.51539998473254,
+      "tensorflow_metal_hybrid_graph": 10.51578062377133,
+      "higher_than_vllm_percent": 32.48670879917783
+    }
+  ],
+  "trial_count": 84,
+  "warmup_count": 24,
+  "fixture_sha256": "25e6f19f491a590874f500e18d6b838018d2d32817d9c64f907ad1b991a47f35",
+  "versions": {
+    "paretoquant_mlx": {
+      "mlx": "0.32.3",
+      "mlx-lm": "0.32.0"
+    },
+    "stock_mlx": {
+      "mlx": "0.32.3",
+      "mlx-lm": "0.32.0"
+    },
+    "vllm_metal": {
+      "vllm": "0.30.0+cpu",
+      "vllm-metal": "0.30.0.dev20261003204550",
+      "mlx": "0.32.1",
+      "mlx-lm": "0.32.0",
+      "torch": "2.13.0"
+    }
+  },
+  "tf_packages": {
+    "tensorflow": "2.18.1",
+    "tensorflow-metal": "1.2.0",
+    "keras": "3.15.1",
+    "keras-hub": "0.21.1",
+    "tensorflow-text": "2.18.1",
+    "numpy": "2.0.2",
+    "safetensors": "0.8.0"
+  },
+  "source_checkpoint_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+  "evidence_sha256": {
+    "paretoquant_mlx.json": "0b5ad0b0dd8ec1e9e897542c659a97de48ffa4e961a1a38bcd400a9c3b78f3e3",
+    "stock_mlx.json": "417c249eaea6dc83d6977296bc945ac92fc52d4bd6475114aaba7bf376198937",
+    "tensorflow_metal_hybrid_graph.json": "1d4cd0d9f92fbec867c246b70388f3d3dea405692850553ce5510b81de29044a",
+    "vllm_metal.json": "91e0803acee8029d7da0b5f1c16a06ca3f4423ee5e24913335f2f00465e2643d"
+  },
+  "scope": "Qwen2.5-0.5B-Instruct; M2 Pro16GB; warmed single-request wall throughput",
+  "limitations": [
+    "Sequential backend blocks, not cross-backend paired trials; background state can drift.",
+    "Project/stock MLX/vLLM Metal use identical saved mixed weights; serving overhead and MLX/Python versions differ.",
+    "vLLM Metal is MLX-backed on Apple Silicon, not CUDA vLLM or a batching scalability comparison.",
+    "TensorFlow is native KerasHub Qwen graph mode, FP16 weights, explicit CPU slice/cache updates and soft CPU placement; not precision-matched or all-GPU.",
+    "No standard task-quality or larger-model benchmark.",
+    "Earlier Ollama measurements are preserved separately; not contemporaneous with this block comparison."
+  ]
+}

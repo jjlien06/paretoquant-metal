@@ -1,0 +1,14 @@
+F
+======================================================================
+FAIL: test_runtime_has_real_strict_gpu_execution (__main__.ProbeAcceptance.test_runtime_has_real_strict_gpu_execution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jeremylien/Projects/paretoquant-metal/spikes/005-tensorflow-metal/test_probe.py", line 18, in test_runtime_has_real_strict_gpu_execution
+    self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+AssertionError: 2 != 0 : /Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/bin/python: can't open file '/Users/jeremylien/Projects/paretoquant-metal/spikes/005-tensorflow-metal/probe.py': [Errno 2] No such file or directory
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.023s
+
+FAILED (failures=1)

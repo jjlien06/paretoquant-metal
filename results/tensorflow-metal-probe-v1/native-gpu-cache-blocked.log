@@ -1,0 +1,2488 @@
+PHASE: loading same local checkpoint with native KerasHub QwenCausalLM
+PHASE: native Qwen forward correctness and greedy cached generation
+{
+  "status": "blocked",
+  "python": "3.12.14 (main, Sep  1 2026, 14:09:38) [Clang 22.1.3 ]",
+  "architecture": "arm64",
+  "packages": {
+    "tensorflow": "2.18.1",
+    "tensorflow-metal": "1.2.0",
+    "keras": "3.15.1",
+    "keras-hub": "0.21.1",
+    "tensorflow-text": "2.18.1",
+    "numpy": "2.0.2",
+    "safetensors": "0.8.0"
+  },
+  "runtime": {
+    "physical_gpus": [
+      "PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')"
+    ],
+    "tensor_device": "/job:localhost/replica:0/task:0/device:GPU:0",
+    "values": [
+      [
+        11.0,
+        0.0
+      ],
+      [
+        25.0,
+        0.0
+      ]
+    ],
+    "soft_device_placement": false
+  },
+  "checkpoint": {
+    "path": "/Users/jeremylien/Projects/paretoquant-metal/models/qwen2.5-0.5b-instruct",
+    "sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+    "original_dtype": "bfloat16",
+    "keras_weight_dtype": "float16",
+    "config": {
+      "architectures": [
+        "Qwen2ForCausalLM"
+      ],
+      "attention_dropout": 0.0,
+      "bos_token_id": 151643,
+      "eos_token_id": 151645,
+      "hidden_act": "silu",
+      "hidden_size": 896,
+      "initializer_range": 0.02,
+      "intermediate_size": 4864,
+      "max_position_embeddings": 32768,
+      "max_window_layers": 21,
+      "model_type": "qwen2",
+      "num_attention_heads": 14,
+      "num_hidden_layers": 24,
+      "num_key_value_heads": 2,
+      "rms_norm_eps": 1e-06,
+      "rope_theta": 1000000.0,
+      "sliding_window": 32768,
+      "tie_word_embeddings": true,
+      "torch_dtype": "bfloat16",
+      "transformers_version": "4.43.1",
+      "use_cache": true,
+      "use_sliding_window": false,
+      "vocab_size": 151936
+    }
+  },
+  "loaded_weights": [
+    {
+      "key": "model.embed_tokens.weight",
+      "shape": [
+        151936,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.0.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.0.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.0.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.0.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.0.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.0.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.0.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.0.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.0.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.0.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.0.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.0.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.1.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.1.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.1.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.1.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.1.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.1.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.1.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.1.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.1.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.1.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.1.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.1.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.2.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.2.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.2.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.2.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.2.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.2.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.2.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.2.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.2.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.2.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.2.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.2.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.3.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.3.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.3.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.3.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.3.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.3.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.3.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.3.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.3.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.3.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.3.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.3.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.4.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.4.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.4.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.4.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.4.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.4.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.4.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.4.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.4.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.4.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.4.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.4.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.5.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.5.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.5.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.5.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.5.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.5.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.5.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.5.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.5.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.5.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.5.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.5.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.6.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.6.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.6.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.6.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.6.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.6.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.6.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.6.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.6.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.6.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.6.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.6.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.7.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.7.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.7.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.7.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.7.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.7.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.7.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.7.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.7.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.7.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.7.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.7.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.8.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.8.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.8.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.8.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.8.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.8.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.8.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.8.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.8.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.8.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.8.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.8.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.9.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.9.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.9.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.9.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.9.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.9.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.9.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.9.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.9.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.9.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.9.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.9.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.10.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.10.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.10.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.10.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.10.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.10.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.10.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.10.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.10.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.10.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.10.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.10.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.11.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.11.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.11.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.11.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.11.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.11.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.11.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.11.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.11.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.11.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.11.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.11.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.12.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.12.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.12.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.12.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.12.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.12.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.12.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.12.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.12.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.12.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.12.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.12.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.13.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.13.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.13.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.13.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.13.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.13.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.13.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.13.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.13.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.13.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.13.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.13.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.14.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.14.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.14.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.14.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.14.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.14.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.14.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.14.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.14.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.14.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.14.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.14.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.15.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.15.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.15.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.15.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.15.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.15.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.15.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.15.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.15.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.15.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.15.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.15.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.16.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.16.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.16.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.16.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.16.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.16.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.16.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.16.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.16.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.16.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.16.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.16.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.17.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.17.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.17.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.17.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.17.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.17.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.17.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.17.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.17.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.17.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.17.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.17.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.18.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.18.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.18.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.18.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.18.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.18.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.18.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.18.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.18.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.18.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.18.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.18.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.19.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.19.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.19.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.19.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.19.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.19.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.19.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.19.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.19.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.19.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.19.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.19.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.20.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.20.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.20.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.20.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.20.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.20.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.20.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.20.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.20.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.20.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.20.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.20.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.21.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.21.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.21.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.21.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.21.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.21.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.21.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.21.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.21.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.21.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.21.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.21.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.22.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.22.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.22.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.22.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.22.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.22.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.22.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.22.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.22.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.22.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.22.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.22.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.23.input_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.23.self_attn.q_proj.weight",
+      "shape": [
+        896,
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.23.self_attn.q_proj.bias",
+      "shape": [
+        14,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.23.self_attn.k_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.23.self_attn.k_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.23.self_attn.v_proj.weight",
+      "shape": [
+        896,
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.23.self_attn.v_proj.bias",
+      "shape": [
+        2,
+        64
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.23.self_attn.o_proj.weight",
+      "shape": [
+        14,
+        64,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.23.mlp.up_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.23.mlp.down_proj.weight",
+      "shape": [
+        4864,
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.23.mlp.gate_proj.weight",
+      "shape": [
+        896,
+        4864
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.layers.23.post_attention_layernorm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    },
+    {
+      "key": "model.norm.weight",
+      "shape": [
+        896
+      ],
+      "exact_after_float16_cast": true
+    }
+  ],
+  "error_type": "NotFoundError",
+  "error": "Exception encountered when calling QwenAttention.call().\n\n\u001b[1m{{function_node __wrapped__XlaDynamicUpdateSlice_device_/job:localhost/replica:0/task:0/device:GPU:0}} could not find registered platform with id: 0xb3f596f10 [Op:XlaDynamicUpdateSlice]\u001b[0m\n\nArguments received by QwenAttention.call():\n  \u2022 hidden_states=tf.Tensor(shape=(1, 38, 896), dtype=float16)\n  \u2022 attention_mask=tf.Tensor(shape=(1, 38, 38), dtype=bool)\n  \u2022 cache=tf.Tensor(shape=(1, 2, 38, 2, 64), dtype=float16)\n  \u2022 cache_update_index=0\n  \u2022 training=None",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/jeremylien/Projects/paretoquant-metal/spikes/005-tensorflow-metal/probe.py\", line 117, in <module>\n    generated = model.generate({\"token_ids\": tf.constant(token_ids), \"padding_mask\": tf.constant(padding_mask)}, max_length=total_length, stop_token_ids=None)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/causal_lm.py\", line 389, in generate\n    outputs = [generate(x) for x in inputs]\n               ^^^^^^^^^^^\n  File \"/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/causal_lm.py\", line 347, in generate\n    return generate_function(x, stop_token_ids=stop_token_ids)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/qwen/qwen_causal_lm.py\", line 245, in generate_step\n    hidden_states, cache = self._build_cache(token_ids)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/qwen/qwen_causal_lm.py\", line 222, in _build_cache\n    _, hidden_states, cache = self.call_with_cache(token_ids, cache, 0)\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/qwen/qwen_causal_lm.py\", line 194, in call_with_cache\n    x, next_cache = self.backbone.transformer_layers[i](\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras/src/utils/traceback_utils.py\", line 122, in error_handler\n    raise e.with_traceback(filtered_tb) from None\n  File \"/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/qwen/qwen_decoder.py\", line 190, in call\n    x = self._self_attention_layer(\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/qwen/qwen_attention.py\", line 198, in call\n    key = ops.slice_update(key_cache, start, key_update)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/tensorflow/compiler/tf2xla/ops/gen_xla_ops.py\", line 1599, in xla_dynamic_update_slice\n    except (TypeError, ValueError):\n  File \"/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/tensorflow/compiler/tf2xla/ops/gen_xla_ops.py\", line 1645, in xla_dynamic_update_slice_eager_fallback\n    _result = _execute.execute(b\"XlaDynamicUpdateSlice\", 1, inputs=_inputs_flat,\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntensorflow.python.framework.errors_impl.NotFoundError: Exception encountered when calling QwenAttention.call().\n\n\u001b[1m{{function_node __wrapped__XlaDynamicUpdateSlice_device_/job:localhost/replica:0/task:0/device:GPU:0}} could not find registered platform with id: 0xb3f596f10 [Op:XlaDynamicUpdateSlice]\u001b[0m\n\nArguments received by QwenAttention.call():\n  \u2022 hidden_states=tf.Tensor(shape=(1, 38, 896), dtype=float16)\n  \u2022 attention_mask=tf.Tensor(shape=(1, 38, 38), dtype=bool)\n  \u2022 cache=tf.Tensor(shape=(1, 2, 38, 2, 64), dtype=float16)\n  \u2022 cache_update_index=0\n  \u2022 training=None\n"
+}
+2026-10-04 01:26:51.245477: I metal_plugin/src/device/metal_device.cc:1154] Metal device set to: Apple M2 Pro
+2026-10-04 01:26:51.245508: I metal_plugin/src/device/metal_device.cc:296] systemMemory: 16.00 GB
+2026-10-04 01:26:51.245513: I metal_plugin/src/device/metal_device.cc:313] maxCacheSize: 5.92 GB
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791091611.245666 99398973 pluggable_device_factory.cc:305] Could not identify NUMA node of platform GPU ID 0, defaulting to 0. Your kernel may not have been built with NUMA support.
+I0000 00:00:1791091611.245913 99398973 pluggable_device_factory.cc:271] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 0 MB memory) -> physical PluggableDevice (device: 0, name: METAL, pci bus id: <undefined>)
+2026-10-04 01:27:03.027801: W tensorflow/core/framework/op_kernel.cc:1841] OP_REQUIRES failed at xla_compile_on_demand_op.cc:297 : NOT_FOUND: could not find registered platform with id: 0xb3f596f10
+2026-10-04 01:27:03.027829: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: NOT_FOUND: could not find registered platform with id: 0xb3f596f10
+Traceback (most recent call last):
+  File "/Users/jeremylien/Projects/paretoquant-metal/spikes/005-tensorflow-metal/probe.py", line 117, in <module>
+    generated = model.generate({"token_ids": tf.constant(token_ids), "padding_mask": tf.constant(padding_mask)}, max_length=total_length, stop_token_ids=None)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/causal_lm.py", line 389, in generate
+    outputs = [generate(x) for x in inputs]
+               ^^^^^^^^^^^
+  File "/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/causal_lm.py", line 347, in generate
+    return generate_function(x, stop_token_ids=stop_token_ids)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/qwen/qwen_causal_lm.py", line 245, in generate_step
+    hidden_states, cache = self._build_cache(token_ids)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/qwen/qwen_causal_lm.py", line 222, in _build_cache
+    _, hidden_states, cache = self.call_with_cache(token_ids, cache, 0)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/qwen/qwen_causal_lm.py", line 194, in call_with_cache
+    x, next_cache = self.backbone.transformer_layers[i](
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/qwen/qwen_decoder.py", line 190, in call
+    x = self._self_attention_layer(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/keras_hub/src/models/qwen/qwen_attention.py", line 198, in call
+    key = ops.slice_update(key_cache, start, key_update)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/tensorflow/compiler/tf2xla/ops/gen_xla_ops.py", line 1599, in xla_dynamic_update_slice
+    except (TypeError, ValueError):
+  File "/Users/jeremylien/Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312/lib/python3.12/site-packages/tensorflow/compiler/tf2xla/ops/gen_xla_ops.py", line 1645, in xla_dynamic_update_slice_eager_fallback
+    _result = _execute.execute(b"XlaDynamicUpdateSlice", 1, inputs=_inputs_flat,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tensorflow.python.framework.errors_impl.NotFoundError: Exception encountered when calling QwenAttention.call().
+
+[1m{{function_node __wrapped__XlaDynamicUpdateSlice_device_/job:localhost/replica:0/task:0/device:GPU:0}} could not find registered platform with id: 0xb3f596f10 [Op:XlaDynamicUpdateSlice][0m
+
+Arguments received by QwenAttention.call():
+  • hidden_states=tf.Tensor(shape=(1, 38, 896), dtype=float16)
+  • attention_mask=tf.Tensor(shape=(1, 38, 38), dtype=bool)
+  • cache=tf.Tensor(shape=(1, 2, 38, 2, 64), dtype=float16)
+  • cache_update_index=0
+  • training=None

@@ -1,0 +1,2 @@
+2.18.1 [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'), PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+keras_hub 0.21.1 True

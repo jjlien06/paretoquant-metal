@@ -1,0 +1,16 @@
+F
+======================================================================
+FAIL: test_invalid_token_count_is_blocked_not_runtime_ready (__main__.ProbeAcceptance.test_invalid_token_count_is_blocked_not_runtime_ready)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jeremylien/Projects/paretoquant-metal/spikes/005-tensorflow-metal/test_probe.py", line 31, in test_invalid_token_count_is_blocked_not_runtime_ready
+    self.assertEqual(result["status"], "blocked")
+AssertionError: 'runtime_ready' != 'blocked'
+- runtime_ready
++ blocked
+
+
+----------------------------------------------------------------------
+Ran 1 test in 3.311s
+
+FAILED (failures=1)

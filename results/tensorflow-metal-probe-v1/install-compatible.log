@@ -1,0 +1,28 @@
+Using Python 3.12.14 environment at: Projects/paretoquant-metal/artifacts/tensorflow-metal-probe-py312
+Resolved 44 packages in 579ms
+Downloading tensorflow (228.5MiB)
+Downloading tensorboard (5.2MiB)
+Downloading numpy (4.8MiB)
+Downloading tensorflow-text (5.8MiB)
+ Downloaded numpy
+ Downloaded tensorboard
+ Downloaded tensorflow-text
+ Downloaded tensorflow
+Prepared 9 packages in 1m 03s
+Uninstalled 5 packages in 1.35s
+Installed 10 packages in 154ms
+ - keras-hub==0.32.0
+ + keras-hub==0.21.1
+ + markdown==3.11
+ + markupsafe==3.0.4
+ - numpy==2.5.3
+ + numpy==2.0.2
+ - protobuf==7.36.2
+ + protobuf==5.29.6
+ + tensorboard==2.18.0
+ + tensorboard-data-server==0.7.2
+ - tensorflow==2.21.0
+ + tensorflow==2.18.1
+ - tensorflow-text==2.21.1
+ + tensorflow-text==2.18.1
+ + werkzeug==3.1.9

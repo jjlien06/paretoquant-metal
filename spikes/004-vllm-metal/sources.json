@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://docs.vllm.ai/projects/vllm-metal/en/latest",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 2,
+      "url": "https://github.com/vllm-project/vllm-metal",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 3,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-metal/main/install.sh",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 4,
+      "url": "https://api.github.com/repos/vllm-project/vllm-metal/releases",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 5,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-metal/v0.30.0.dev20261003204550/docs/installation.md",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 6,
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-metal/v0.30.0.dev20261003204550/docs/configuration.md",
+      "title": "",
+      "accessed": "2026-10-04"
+    },
+    {
+      "id": 7,
+      "url": "https://api.github.com/repos/vllm-project/vllm-metal/commits/v0.30.0.dev20261003204550",
+      "title": "",
+      "accessed": "2026-10-04"
+    }
+  ]
+}

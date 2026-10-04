@@ -1,0 +1,13 @@
+{
+  "ps_returncode": 1,
+  "ps_stdout": "  PID  PPID STAT COMMAND\n",
+  "lsof_returncode": 1,
+  "lsof_stdout": "",
+  "server_and_worker_pids": [
+    77906,
+    78129,
+    79983,
+    81576
+  ],
+  "listener_absent": true
+}
