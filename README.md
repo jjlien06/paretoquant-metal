@@ -131,7 +131,8 @@ uv run ruff check src tests
 
 `doctor` must show an Apple Silicon Metal device. Do not use an Intel/Rosetta interpreter.
 CPU allocator/statistics tests can run without MLX; Metal-dependent tests skip when unavailable.
-The GitHub workflow is prepared, but remote CI has not been executed or claimed green.
+GitHub CPU CI is verified on Ubuntu with Python 3.11 and 3.13 (tests, lint, distribution build).
+Metal execution and real-checkpoint inference are separately verified locally on the M2 Pro.
 
 ### Download a small full-precision reference
 

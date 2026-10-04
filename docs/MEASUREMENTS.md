@@ -88,4 +88,7 @@ for model construction and quality; those different experiments are not conflate
 
 No 7B/14B model, layer-sharded reference loading, standard task-accuracy evaluation, hardware
 counter attribution, two-physical-Mac execution, or iPhone worker is implemented or claimed.
-Remote GitHub CI is configured but has not run. See DESIGN.md and QUALITY.md for method details.
+GitHub CPU correctness/lint/packaging passed on Ubuntu with Python 3.11 and 3.13
+in run `37230028838` for commit `0be5c1836105596d8994aae0f4510848432fb09b`.
+That CI does not execute Metal kernels or hardware performance trials. See DESIGN.md
+and QUALITY.md for method details.
