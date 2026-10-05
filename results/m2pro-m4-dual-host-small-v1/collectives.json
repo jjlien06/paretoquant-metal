@@ -1,0 +1,79 @@
+{
+  "kind": "real-two-Mac-MLX-ring-collective",
+  "hostfile": [
+    [
+      "169.254.248.125:56939"
+    ],
+    [
+      "169.254.169.190:56939"
+    ]
+  ],
+  "source_sha256": "3c15e662140c964505420f55274a225b1473f18ca7c28d9c1a15c28d7de1a334",
+  "records": [
+    {
+      "mode": "collective",
+      "rank": 0,
+      "world_size": 2,
+      "all_sum": 3,
+      "all_gather": [
+        0,
+        1
+      ],
+      "received": [
+        21.0,
+        22.0
+      ],
+      "mlx_version": "0.32.3",
+      "mlx_lm_version": "0.32.0",
+      "device": {
+        "device_name": "Apple M2 Pro",
+        "max_recommended_working_set_size": 12713115648,
+        "memory_size": 17179869184,
+        "architecture": "applegpu_g14s",
+        "max_buffer_length": 9534832640,
+        "resource_limit": 499000
+      },
+      "peak_mlx_bytes": 20
+    },
+    {
+      "mode": "collective",
+      "rank": 1,
+      "world_size": 2,
+      "all_sum": 3,
+      "all_gather": [
+        0,
+        1
+      ],
+      "received": [
+        11.0,
+        12.0
+      ],
+      "mlx_version": "0.32.3",
+      "mlx_lm_version": "0.32.0",
+      "device": {
+        "device_name": "Apple M4",
+        "max_recommended_working_set_size": 12713115648,
+        "memory_size": 17179869184,
+        "architecture": "applegpu_g16g",
+        "max_buffer_length": 9534832640,
+        "resource_limit": 499000
+      },
+      "peak_mlx_bytes": 28
+    }
+  ],
+  "raw": [
+    {
+      "host": "macbook",
+      "exit_code": 0,
+      "stdout": "{\"mode\": \"collective\", \"rank\": 0, \"world_size\": 2, \"all_sum\": 3, \"all_gather\": [0, 1], \"received\": [21.0, 22.0], \"mlx_version\": \"0.32.3\", \"mlx_lm_version\": \"0.32.0\", \"device\": {\"device_name\": \"Apple M2 Pro\", \"max_recommended_working_set_size\": 12713115648, \"memory_size\": 17179869184, \"architecture\": \"applegpu_g14s\", \"max_buffer_length\": 9534832640, \"resource_limit\": 499000}, \"peak_mlx_bytes\": 20}\n",
+      "stderr": ""
+    },
+    {
+      "host": "mini",
+      "exit_code": 0,
+      "stdout": "{\"mode\": \"collective\", \"rank\": 1, \"world_size\": 2, \"all_sum\": 3, \"all_gather\": [0, 1], \"received\": [11.0, 12.0], \"mlx_version\": \"0.32.3\", \"mlx_lm_version\": \"0.32.0\", \"device\": {\"device_name\": \"Apple M4\", \"max_recommended_working_set_size\": 12713115648, \"memory_size\": 17179869184, \"architecture\": \"applegpu_g16g\", \"max_buffer_length\": 9534832640, \"resource_limit\": 499000}, \"peak_mlx_bytes\": 28}\n",
+      "stderr": ""
+    }
+  ],
+  "listeners_closed": true
+}

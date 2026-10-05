@@ -1,0 +1,27 @@
+{
+  "generation_source_sha256": "51480635f4219b25ed3cd88b367f664380d002d28087db8e4e94167f9dc6e468",
+  "collective_source_sha256": "3c15e662140c964505420f55274a225b1473f18ca7c28d9c1a15c28d7de1a334",
+  "generation_requests": 12,
+  "returned_token_events_each_request_including_EOS": 9,
+  "generation_controls": 4,
+  "all_token_ids_equal": true,
+  "layer_ranges": [
+    [
+      12,
+      24
+    ],
+    [
+      0,
+      12
+    ]
+  ],
+  "first_request_cold_remaining_warmed": true,
+  "timings_are_sequential_smoke_not_paired_speed_evidence": true,
+  "large_checkpoint_status": "not yet run",
+  "files": {
+    "collectives.json": "691f086d9cd9cdd479cf2cb6e5024f04bc7b0631849f3c2fb149fa6fc26ed1a6",
+    "generation.json": "abac7de6061b9e57077a83e599df46b9d2e3ea1dac9341e831b13f0053ef43fd",
+    "executed_generation_probe.py": "51480635f4219b25ed3cd88b367f664380d002d28087db8e4e94167f9dc6e468",
+    "executed_collective_probe.py": "3c15e662140c964505420f55274a225b1473f18ca7c28d9c1a15c28d7de1a334"
+  }
+}

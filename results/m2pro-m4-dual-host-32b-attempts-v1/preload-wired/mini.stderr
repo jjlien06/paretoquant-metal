@@ -1,0 +1,37 @@
+Traceback (most recent call last):
+  File "/Users/jeremylien/Projects/paretoquant-dual-host/probe.py", line 273, in <module>
+    main()
+    ~~~~^^
+  File "/Users/jeremylien/Projects/paretoquant-dual-host/probe.py", line 264, in main
+    result = generation(args)
+  File "/Users/jeremylien/Projects/paretoquant-dual-host/probe.py", line 176, in generation
+    for response in stream_generate(
+                    ~~~~~~~~~~~~~~~^
+        model,
+        ^^^^^^
+    ...<4 lines>...
+        prefill_step_size=2048,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "/Users/jeremylien/Projects/paretoquant-dual-host/.venv/lib/python3.13/site-packages/mlx_lm/generate.py", line 723, in stream_generate
+    for n, (token, logprobs, from_draft) in enumerate(token_generator):
+                                            ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/jeremylien/Projects/paretoquant-dual-host/.venv/lib/python3.13/site-packages/mlx_lm/generate.py", line 713, in <genexpr>
+    (token, logprobs, False) for token, logprobs in token_generator
+                                                    ^^^^^^^^^^^^^^^
+  File "/Users/jeremylien/Projects/paretoquant-dual-host/.venv/lib/python3.13/site-packages/mlx_lm/generate.py", line 463, in generate_step
+    mx.async_eval(next_y, next_logprobs)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: [METAL] Command buffer execution failed: Caused GPU Timeout Error (00000002:kIOGPUCommandBufferCallbackErrorTimeout).
+[ring] Socket 4 was closed by the peer
+[ring] Receiving from socket 4 failed with errno 9
+[ring] Receiving from socket 4 failed with errno 9
+[ring] Receiving from socket 4 failed with errno 9
+[ring] Receiving from socket 4 failed with errno 9
+[ring] Receiving from socket 4 failed with errno 9
+[ring] Receiving from socket 4 failed with errno 9
+[ring] Receiving from socket 4 failed with errno 9
+[ring] Receiving from socket 4 failed with errno 9
+[ring] Receiving from socket 4 failed with errno 9
+[ring] Too many send/recv errors. Failing pending tasks...

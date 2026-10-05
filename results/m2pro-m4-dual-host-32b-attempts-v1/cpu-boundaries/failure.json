@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "checkpoint_revision": "2938092373e5f97b95538884112085364c2da315",
+  "split": [
+    28,
+    36
+  ],
+  "completed_request_results": false,
+  "failure": "Controller tool timed out at 300 seconds. Neither rank produced a final JSON result; no completed generation or runtime peak measurement is asserted.",
+  "cleanup_followup": "Explicit SIGKILL sent to the two task-owned surviving probes, PIDs 25858 and 3419. Later local process query showed PID 25858 gone; remote PID 3419 was absent at its post-kill query.",
+  "source_sha256": {
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "stream_weights.py": "65a145602ce250c89f8df0da834432658341933bcd22c50b841b094361fb25e6",
+    "stream_server.py": "34130f52ab1cd934d693bf890d8090fc940639f96af3e681c64bcae39b52f05d",
+    "probe.py": "aa864ec1bfffd723268989a4276259fef43f044fe5cd343668d2050590540381",
+    "shard_plan.py": "968f779ef0d4793487f394f08beeb3ddcb3369f3d838a9cc4d0cb6e1bd23db44"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [],
+  "summary": "PASS for the frozen snapshot under the actual integrated single-owner contract. The remaining stale-PGID blocker is resolved: terminate() never sends a nonzero group signal after its Popen leader has been reaped. Actor and controller polling, cleanup and signal handlers have no competing waiter; handlers only append signal requests. An exit between the ownership check and signalling leaves an unreaped leader that pins its PID. After reap, surviving or unverifiable numeric groups are inspected read-only and reported as identity_unknown with pending_os_gpu_termination, not successful cleanup; controller verification rejects pending cleanup. All other 13 files are unchanged from the previously reviewed snapshot. No source modifications, GPU, SSH, network, model execution, downloads, installs, Git or credential access occurred. This verdict establishes the bounded CPU ownership repair only, not two-host/GPU or 32B execution success.",
+  "tests": [
+    "All 15 manifest SHA-256 hashes matched before and after review. Exactly remote_actor.py and test_remote_actor.py differ from the previous fixed snapshot; the other 13 files remain byte-identical.",
+    "ownership.diff is exactly 5,563 bytes and exactly matches the generated two-file unified diff against the previous fixed snapshot.",
+    "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B -m unittest discover -s /Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/retry-review-owned-1791182608976021000 -p test_remote_actor.py: 20 tests passed in 3.844 seconds, exit 0. Includes real TERM-ignoring child deadline cleanup, reaped replacement leader absent with surviving group, no subsequent signal after owner reap, and live replacement identity coverage.",
+    "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B -m unittest discover -s /Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/retry-review-owned-1791182608976021000 -p test_supervise.py: 20 tests passed in 3.996 seconds, exit 0. Local subprocess fixtures only; no SSH or model execution.",
+    "Two independent stdlib checks passed, exit 0: the original absent/reaped replacement leader with surviving unrelated group produced no nonzero signals and truthful pending cleanup; a real owned leader was released after poll returned None, observed as an unreaped zombie via /bin/ps before the mocked TERM signal, and then reaped by terminate(), with no KILL signal afterward. All group signals in these checks were mocked; no unrelated process was signalled. MLX was not imported.",
+    "Read-only integrated ownership inspection covered run_owned(), actor CLI invocation, Controller.launch/call/check/close and run() polling/finalization. No competing thread, SIGCHLD handler, waitpid/waitid caller or external Popen waiter was found in production ownership paths. Local CPython Popen._internal_poll, _cleanup and __del__ inspection confirmed the held Popen objects are not subject to destructor-driven active-list reaping. Actor receipts and controller final verification preserve failure/pending status when groups remain unverified."
+  ],
+  "hashes_verified": true,
+  "final_snapshot": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/retry-review-owned-1791182608976021000"
+}

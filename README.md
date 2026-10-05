@@ -155,6 +155,35 @@ Raw measurements and plans: [`results/`](results/).
 The first scalar kernel's slower results are retained, rather than hidden.
 The optimized kernel consumes entire packed words/bytes and amortizes scale/bias application.
 
+### Full 32B generation across two 16 GB Macs
+
+On October 5, 2026, pinned **Qwen2.5-32B-Instruct-4bit** completed a genuine
+request across the M2 Pro MacBook Pro and an M4 Mac mini over Thunderbolt Bridge.
+All 64 original layers ran: 26 on the MacBook and 38 on the mini. Both ranks
+returned identical **41 token IDs including EOS**, with exact coverage of the
+1,671 checkpoint tensors and agreement on all seven replicated tensor digests.
+Owned workers and listeners were verified shut down afterward.
+
+| One cold-process smoke request | Observed result |
+|---|---:|
+| First-token latency, rank 0 | 56.523 s |
+| Full request wall time, rank 0 | 64.878 s |
+| Whole-request throughput, including EOS | 0.632 token events/s |
+| Remaining 40 token events after the first | 8.355 s; 4.788 events/s |
+| Peak MLX allocation, MacBook / mini | 7.492 / 10.569 GiB |
+| Supervised trial, including setup/loading/cleanup | 89.179 s |
+
+This demonstrates one full-model completion, **not a distributed speedup, an
+automatic 32 GB memory pool, or production reliability**. This standalone spike
+uses stock MLX quantized operators with explicit synchronized layers and CPU
+handoffs, not the project's custom fusion/compiled decoder. MLX peaks are not
+OS residency; no standalone 32B numerical or task-quality control was run.
+Earlier failed attempts and their limitations are retained.
+
+[Read the 32B result and exact evidence](results/m2pro-m4-dual-host-phased-32b-v1/README.md)
+· [Runner, controls and limitations](spikes/007-dual-host-pipeline/README.md)
+· [Preserved failed attempts](results/m2pro-m4-dual-host-32b-attempts-v1/)
+
 ## Quick start
 
 Use native arm64 Python on an Apple Silicon Mac. Dependencies are locked in `uv.lock`.

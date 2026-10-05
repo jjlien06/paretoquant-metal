@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "checkpoint_revision": "2938092373e5f97b95538884112085364c2da315",
+  "split": [
+    28,
+    36
+  ],
+  "completed_request_results": false,
+  "failure": "Mini MLX RuntimeError: Metal command buffer execution failed: GPU Timeout Error (00000002:kIOGPUCommandBufferCallbackErrorTimeout)",
+  "cleanup_followup": "Subsequent explicit process query found no task-owned probe or server processes on either host.",
+  "source_sha256": {
+    "stream_weights.py": "65a145602ce250c89f8df0da834432658341933bcd22c50b841b094361fb25e6",
+    "stream_server.py": "34130f52ab1cd934d693bf890d8090fc940639f96af3e681c64bcae39b52f05d",
+    "probe.py": "375b6af2ec386c6ac14b036d81012e28e4a905e17fea51c3b58e147167917ff8",
+    "shard_plan.py": "968f779ef0d4793487f394f08beeb3ddcb3369f3d838a9cc4d0cb6e1bd23db44"
+  },
+  "note": "Neither final JSON record was produced. Do not infer runtime peak memory or throughput from this failed trial."
+}

@@ -1,0 +1,19 @@
+{
+  "independent_owned_source_review": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/retry-review-owned-verdict.json",
+  "source_manifest": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/retry-review-listener-1791182925855272000/manifest.json",
+  "parent_reviewed_only_production_delta": "closed-port verification timeout 0.2->2.0 seconds; still fails closed except explicit ECONNREFUSED",
+  "real_small_physical_parity": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/small-phased-supervised-v2/verified-comparison.json",
+  "split": [
+    26,
+    38
+  ],
+  "large_revision": "2938092373e5f97b95538884112085364c2da315",
+  "parameter_storage_bytes": [
+    8007776256,
+    11299411968
+  ],
+  "planned_max_tokens": 64,
+  "planned_repeats": 1,
+  "deadline_seconds": 180,
+  "outer_tool_timeout_seconds": 300
+}

@@ -1,0 +1,22 @@
+{
+  "files": {
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "supervise.py": "b87c82554455e69d7e47ff037ca4ca38c5ccc44792c2b7b5577fc82e87e68b19",
+    "phased_decode.py": "5388006e1f3237009fc5b5ec17f8aa360b11d0a567330e310a0278f24636a7b6",
+    "probe.py": "04df21a43424048ad7be3bbb98a3673f4dd76f26b13062f16550eb47383fdb38",
+    "stream_weights.py": "d4c782601de385b54374c90189251fc5a4d50fc9217fb3838d6d9c630c116ebc",
+    "stream_server.py": "34130f52ab1cd934d693bf890d8090fc940639f96af3e681c64bcae39b52f05d",
+    "shard_plan.py": "968f779ef0d4793487f394f08beeb3ddcb3369f3d838a9cc4d0cb6e1bd23db44",
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "test_remote_actor.py": "3218d6500842f14e1a991a51cb164c9bcbb75601384eb90335c48381803a85de",
+    "test_supervise.py": "7f6adce2355fb9edac206e63400b7e22d0a24398da54c593729ee6d7d73962ff",
+    "test_phased_decode.py": "4b4b686de10076175d1f0811872a27fbf75860bf3657b1cee67ad300639e788a",
+    "test_phased_gpu.py": "9612ee2b075f50becc412048197129ee28c4d8655dec6273645051924fe4295e",
+    "test_progress.py": "703f9d04d36fa8ccdce0c972332216d6df3ebdbbcb4614b9ac1bab7d0971f82b",
+    "test_probe.py": "f73f490868650efa268fa53f17145615784c2de6517990a7cf563955e31718ab",
+    "test_stream_weights.py": "18c22060c3c583ef06b9af253e97ffcb260d894c97bfbe11ef6803192c6d10b1"
+  },
+  "spike": "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline",
+  "frozen_source": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/retry-review-listener-1791182925855272000",
+  "previous_snapshot": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/retry-review-owned-1791182608976021000"
+}

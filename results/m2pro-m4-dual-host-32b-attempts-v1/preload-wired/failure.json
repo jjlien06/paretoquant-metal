@@ -1,0 +1,6 @@
+{
+  "passed": false,
+  "completed_request_results": false,
+  "failure": "The mini reported the same Metal GPU timeout after applying the recommended wired limit before weight loading.",
+  "source_provenance": "No source snapshot was persisted by the failed controller. The exact applied source change is recorded in the session, but this artifact does not claim a byte-exact executed-source attestation for this attempt."
+}

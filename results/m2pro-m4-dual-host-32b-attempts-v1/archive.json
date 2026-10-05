@@ -1,0 +1,109 @@
+{
+  "verdict": "PARTIAL: 32B generation unverified",
+  "checkpoint_revision": "2938092373e5f97b95538884112085364c2da315",
+  "failed_trial_count": 3,
+  "completed_full_32b_generation_results": 0,
+  "scope_note": "Small streamed two-host correctness is separate; the one-layer diagnostic is not full 32B inference. The wired-only retry lacks an exact executed-source archive.",
+  "files": {
+    "executed_one_layer_diagnostic.py": {
+      "bytes": 1894,
+      "sha256": "49eb1e2ad7adfe13981d1b85daa59f87e2b918bdc10e6b8cdb8dab82c1e5d40f"
+    },
+    "one-layer-diagnostic.json": {
+      "bytes": 947,
+      "sha256": "5144c222391a5ef2922f3be83579886f8cd24df82246068aa0cbc38316a3a4d9"
+    },
+    "qwen32-full-header-plan.json": {
+      "bytes": 176537,
+      "sha256": "7776dbd26c974b4c65d9d60a107d7f065f70087e9ca98048dac11a5a44f8abbf"
+    },
+    "qwen32-verified-download.json": {
+      "bytes": 2300,
+      "sha256": "390cc0753cc2564907cf48827cbb07157b908d35e037842f5621a630427f77a4"
+    },
+    "native/mini.stderr": {
+      "bytes": 2148,
+      "sha256": "efc5975ecae44b047a81a73099b91db5b72ba335f4cc90af4bf6874a444c5a24"
+    },
+    "native/macbook.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "native/ring.json": {
+      "bytes": 54,
+      "sha256": "a027088cce51b57a19ff97904185ef4c23e93b3fe54c0babb3b7205404942677"
+    },
+    "native/failure.json": {
+      "bytes": 936,
+      "sha256": "7323e3e9c252e7563a817314c5d50bfcb5fbdc5a71a775df937a9c50b6671857"
+    },
+    "native/executed-source/stream_weights.py": {
+      "bytes": 7751,
+      "sha256": "65a145602ce250c89f8df0da834432658341933bcd22c50b841b094361fb25e6"
+    },
+    "native/executed-source/stream_server.py": {
+      "bytes": 3527,
+      "sha256": "34130f52ab1cd934d693bf890d8090fc940639f96af3e681c64bcae39b52f05d"
+    },
+    "native/executed-source/probe.py": {
+      "bytes": 10490,
+      "sha256": "375b6af2ec386c6ac14b036d81012e28e4a905e17fea51c3b58e147167917ff8"
+    },
+    "native/executed-source/shard_plan.py": {
+      "bytes": 13144,
+      "sha256": "968f779ef0d4793487f394f08beeb3ddcb3369f3d838a9cc4d0cb6e1bd23db44"
+    },
+    "preload-wired/mini.stderr": {
+      "bytes": 2024,
+      "sha256": "260d7b2cc074e041a018dae9e1f17a76c3af114ba2a1f8035c7dffde244147b9"
+    },
+    "preload-wired/macbook.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "preload-wired/ring.json": {
+      "bytes": 54,
+      "sha256": "715127cc39bbf59fab228b7473ffc6e15466366b1cd1fb8e9fa30183019e19d7"
+    },
+    "preload-wired/failure.json": {
+      "bytes": 423,
+      "sha256": "d0f989ac62ec0e2f1228f144524ef67a2c7857cd56dcec8e12437f58f9e81144"
+    },
+    "cpu-boundaries/mini.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "cpu-boundaries/macbook.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "cpu-boundaries/ring.json": {
+      "bytes": 54,
+      "sha256": "2097a345390942659bf7691a0a28556703e7712966cd1067842b4b37f8e0dc96"
+    },
+    "cpu-boundaries/failure.json": {
+      "bytes": 1014,
+      "sha256": "9c86ab513a153c371385d64f6c67a2bf523a1be6ece2dc7f684703731b4806d7"
+    },
+    "cpu-boundaries/executed-source/cpu_communication.py": {
+      "bytes": 1189,
+      "sha256": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67"
+    },
+    "cpu-boundaries/executed-source/stream_weights.py": {
+      "bytes": 7751,
+      "sha256": "65a145602ce250c89f8df0da834432658341933bcd22c50b841b094361fb25e6"
+    },
+    "cpu-boundaries/executed-source/stream_server.py": {
+      "bytes": 3527,
+      "sha256": "34130f52ab1cd934d693bf890d8090fc940639f96af3e681c64bcae39b52f05d"
+    },
+    "cpu-boundaries/executed-source/probe.py": {
+      "bytes": 11394,
+      "sha256": "aa864ec1bfffd723268989a4276259fef43f044fe5cd343668d2050590540381"
+    },
+    "cpu-boundaries/executed-source/shard_plan.py": {
+      "bytes": 13144,
+      "sha256": "968f779ef0d4793487f394f08beeb3ddcb3369f3d838a9cc4d0cb6e1bd23db44"
+    }
+  }
+}

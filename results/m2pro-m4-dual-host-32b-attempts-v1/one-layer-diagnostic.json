@@ -1,0 +1,31 @@
+{
+  "record": {
+    "full_32b_generation": false,
+    "diagnostic": "one original checkpoint layer plus replicated non-layer tensors",
+    "results": [
+      {
+        "phase": "prefill",
+        "shape": [
+          1,
+          32,
+          152064
+        ],
+        "dtype": "mlx.core.float16",
+        "finite": true
+      },
+      {
+        "phase": "cached_decode",
+        "shape": [
+          1,
+          1,
+          152064
+        ],
+        "dtype": "mlx.core.float16",
+        "finite": true
+      }
+    ],
+    "peak_mlx_bytes": 1175580948,
+    "executed_source_sha256": "49eb1e2ad7adfe13981d1b85daa59f87e2b918bdc10e6b8cdb8dab82c1e5d40f"
+  },
+  "stderr": "{\"phase\": \"loaded\", \"active_mlx_bytes\": 1150201864}\n{\"phase\": \"prefill\", \"shape\": [1, 32, 152064], \"dtype\": \"mlx.core.float16\", \"finite\": true}\n{\"phase\": \"cached_decode\", \"shape\": [1, 1, 152064], \"dtype\": \"mlx.core.float16\", \"finite\": true}\n"
+}

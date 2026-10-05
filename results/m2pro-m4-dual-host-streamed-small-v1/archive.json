@@ -1,0 +1,27 @@
+{
+  "all_physical_host_tokens_equal": true,
+  "same_tokens_as_prior_single_host_controls": true,
+  "receiver_has_no_safetensors_files": true,
+  "files": {
+    "executed_stream_weights.py": {
+      "bytes": 7751,
+      "sha256": "65a145602ce250c89f8df0da834432658341933bcd22c50b841b094361fb25e6"
+    },
+    "executed_stream_server.py": {
+      "bytes": 3527,
+      "sha256": "34130f52ab1cd934d693bf890d8090fc940639f96af3e681c64bcae39b52f05d"
+    },
+    "executed_shard_plan.py": {
+      "bytes": 13144,
+      "sha256": "968f779ef0d4793487f394f08beeb3ddcb3369f3d838a9cc4d0cb6e1bd23db44"
+    },
+    "comparison.json": {
+      "bytes": 213737,
+      "sha256": "a83f90f15a86bb48b69fbf3f48f6230001fe585b37db5ba77e331d0a43e68b32"
+    },
+    "executed_probe.py": {
+      "bytes": 10490,
+      "sha256": "375b6af2ec386c6ac14b036d81012e28e4a905e17fea51c3b58e147167917ff8"
+    }
+  }
+}
