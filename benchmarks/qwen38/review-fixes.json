@@ -1,0 +1,56 @@
+{
+  "schema": "qwen38-review-fix-proof-v1",
+  "scope": "CPU-only regression proof; NOT benchmark measurements or runtime verification",
+  "baseline": {"pytest_passed": 177, "ruff": "All checks passed!"},
+  "tdd_cycles_in_execution_order": [
+    {
+      "test": "test_csv_neutralizes_formula_cells_without_mutating_json",
+      "red": {"failed": 12, "reason": "CSV cells retained formula prefixes"},
+      "green": {"passed": 12},
+      "change": "All CSV record cells pass through one presentation-only apostrophe escape for =,+,-,@ after leading whitespace. Request/case IDs, metric names, failure methods and JSON-encoded numeric cells are covered; evidence/report JSON is unchanged."
+    },
+    {
+      "test": "test_health_detects_workers_with_flat_ps_prompt_quotes",
+      "red": {"failed": 12, "reason": "Expected active worker PID 999, received empty worker list"},
+      "green": {"passed": 12},
+      "change": "HEALTH_CODE no longer shell-parses flattened ps argv. Retain PID and whitespace tokens, require Python executable first, conservatively match visible owned probe.py/stream_server.py paths. Unmatched apostrophes/double quotes cannot silently skip workers; validate_health rejects overlap. Hardware boundaries are synthetic in these regressions."
+    },
+    {
+      "test": "test_expected_measured_and_warmup_case_counts_preserve_total",
+      "red": {"failed": 2, "reason": "Missing expected_measured_case_count"},
+      "green": {"passed": 2},
+      "change": "Preserve legacy expected_case_count; add expected_measured_case_count and expected_warmup_case_count from unique scheduled IDs, including absent cases. Markdown distinguishes counts and notes possible set overlap. Complete and partial schedules are tested."
+    }
+  ],
+  "verification": {
+    "environment": "TMPDIR=/Users/jeremylien/.hermes/cache/scratch PYTHONDONTWRITEBYTECODE=1",
+    "pytest_command": ".venv/bin/python -m pytest -p no:cacheprovider benchmarks/qwen38/test_analyze.py benchmarks/qwen38/test_workloads.py benchmarks/qwen38/test_run_bench.py -q --basetemp /Users/jeremylien/.hermes/cache/scratch/qwen38-review-fixes-pytest",
+    "pytest_result": "203 passed in 10.66s",
+    "ruff_command": ".venv/bin/ruff check benchmarks/qwen38",
+    "ruff_result": "All checks passed!",
+    "authored_schedule_only_check": {
+      "source": "workloads.build_manifest using deterministic toy tokenizer; no real evidence loaded",
+      "expected_case_count": 24,
+      "expected_measured_case_count": 18,
+      "expected_warmup_case_count": 6,
+      "expected_count": 84,
+      "expected_measured_count": 72,
+      "expected_warmup_count": 12,
+      "observed_count": 0
+    }
+  },
+  "source_sha256": {
+    "analyze.py": "7b859d58609f64dfff83b63e563e37793d75d6359575f778f26b47323d3d4f83",
+    "test_analyze.py": "9a5fb44f400d931d73f48c976a7215059d833b5e792dd56e0f16e5c990cf719e",
+    "run_bench.py": "d8ba86699415c6465e637cd43f4ef17923623557e4c87573441be23712b42b5b",
+    "test_run_bench.py": "93db202834a8291d677ecd97b94b8de56e77833605abcf3fa58d779016bc8d2d"
+  },
+  "preservation": {
+    "repository_files_written": ["analyze.py", "test_analyze.py", "run_bench.py", "test_run_bench.py", "review-fixes.json"],
+    "directory": "benchmarks/qwen38",
+    "real_benchmark_evidence_written": false,
+    "running_benchmark_logs_inspected": false,
+    "gpu_or_ssh_executed": false,
+    "commit_created": false
+  }
+}

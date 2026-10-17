@@ -1,0 +1,17 @@
+{
+  "source_registry.py": "d7e71d34b8d789d4c2861b24b33f7da3938ad9a22284bea6176f3da8565fa2fa",
+  "phased_decode.py": "b54cd54f56f51480716e77a76bb947290719d8647d6326bceae87ccf50b9b790",
+  "mtp_head.py": "1ba3f003ba00094a55b69e80d2bdcf8f6cde723910a10f7c23bdc097089b5114",
+  "speculative.py": "d38616ef456db59834a0d2b8cf4b00925e2610007c5e4d1b9e8d98c7f107e140",
+  "mlx_backend.py": "dd66171cf2581f36f72b8749619f66fd0ead6b28d561d91a103d0a8d88f1111f",
+  "rank_control.py": "bccd48d89573a6baa061198aefea3cfcec3de7aa7081abf0c624024c8128818e",
+  "cache_state.py": "2181eef9be940454a6d46f01642ef6a1f68500e16c28fc613a9e5cbe444341a9",
+  "numerical_gate.py": "306b354a0242cbeefbd78752849da784078c3c5a77ac69c2d685450057fe4e66",
+  "width_gate.py": "81f3d71cf8880d7afc722e61abd46fb8466946fba350b4612277b6ed1fab78f2",
+  "primary_sources/sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+  "primary_sources/registry.json": "30952a18496bdc30ced1ad4ebfbfd0985b72062b1922877f40de47d94ca549d2",
+  "primary_sources/vlm_head.py": "2768d0ebf0bfeddb83bc8c638d79b10fd38ba38b3e0a0d44f99e36f1ff331abc",
+  "primary_sources/vlm_engine.py": "4ed467918bd24e26c60730d6d3529c6a9e633448b2fc6028829965bb1f4daad1",
+  "primary_sources/mtplx_qwen_head.py": "468e9ad3efdccf7e8316fa5b03c8f9d2015cd81b537c8be2abb17c51cb892607",
+  "primary_sources/mtplx_patch.py": "6681e13f21ba9b40a85b8f77d49232a053959d60127dc31b9ca0f3e844444189"
+}

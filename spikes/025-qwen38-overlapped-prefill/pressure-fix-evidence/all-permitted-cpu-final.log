@@ -1,0 +1,9 @@
+$ PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'"'"'spikes/025-qwen38-overlapped-prefill'"'"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError("forbidden live process: "+event)) if event in {"subprocess.Popen","os.system","os.posix_spawn"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' --all-cpu -q -p no:cacheprovider spikes/025-qwen38-overlapped-prefill --tb=short -k 'not test_standalone_cli_and_exact_registry and not test_hidden_cli_default_control_optin_both_ranks_and_chunk_bounds and not test_cli_exports_exclusively_and_preserves_raw and not test_cli_refuses_output_inside_trial' --junitxml=spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/all-permitted-cpu-final.xml
+CPU-only explicitly excluded MLX-dependent modules: test_batched_snapshot.py,test_cache_gate.py,test_config_immutability.py,test_dispatch_schedule.py,test_evidence_hardening.py,test_head.py,test_hidden_cache_inventory.py,test_hidden_control.py,test_hidden_gate.py,test_hidden_prefill.py,test_hidden_runtime.py,test_hidden_two_rank.py,test_phased_cpu.py,test_prefix_integration.py,test_prefix_rollback.py,test_two_rank_schedule.py,test_unbound_schedule.py,test_workload_cleanup.py,test_workload_evidence.py,test_workload_runtime.py,test_workload_timings.py
+....sss.s.ss.ssss....................................................... [ 23%]
+................s....................................................... [ 47%]
+........................................................................ [ 70%]
+........................................................................ [ 94%]
+............s...s.                                                       [100%]
+293 passed, 13 skipped, 4 deselected in 1.57s
+exit_code=0

@@ -1,0 +1,17 @@
+$ PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'"'"'spikes/025-qwen38-overlapped-prefill'"'"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError("forbidden live process: "+event)) if event in {"subprocess.Popen","os.system","os.posix_spawn"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' --guarded-cli spikes/025-qwen38-overlapped-prefill/remote_actor.py --help
+usage: remote_actor.py [-h] --root ROOT [--inspect]
+                       [--port-address PORT_ADDRESS] [--status STATUS]
+                       [--stop STOP] [--records] [--jobs JOBS]
+
+Stdlib-only, bounded watchdog for admitted spike children.
+
+options:
+  -h, --help            show this help message and exit
+  --root ROOT
+  --inspect
+  --port-address PORT_ADDRESS
+  --status STATUS
+  --stop STOP
+  --records
+  --jobs JOBS           Existing private directory for unique jobs
+exit_code=0

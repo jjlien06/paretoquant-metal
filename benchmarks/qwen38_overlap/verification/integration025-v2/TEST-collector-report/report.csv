@@ -1,0 +1,5 @@
+case_id,formatted_prompt_tokens,target_long,complete,metric,repeat_ids,paired_ratios,median_ratio,elapsed_reduction,required_max_ratio,threshold_met
+code-1536,1536,True,True,first_token_seconds,[0],[1.0],1.0,0.0,0.7,False
+code-1536,1536,True,True,wall_seconds,[0],[1.0],1.0,0.0,0.85,False
+structured-1536,1535,True,True,first_token_seconds,[0],[1.0],1.0,0.0,0.7,False
+structured-1536,1535,True,True,wall_seconds,[0],[1.0],1.0,0.0,0.85,False

@@ -1,0 +1,6 @@
+{
+  "GPU_executed": false,
+  "artifact_kind": "TEST_FIXTURE_NOT_MODEL_RESULTS",
+  "model_executed": false,
+  "warning": "Artificial CPU fixtures, not original native outputs, physical receipts or model timing results."
+}

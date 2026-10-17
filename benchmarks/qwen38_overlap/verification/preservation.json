@@ -1,0 +1,13 @@
+{
+  "preserved_original_files": 90,
+  "original_mismatches": [],
+  "frozen_artifact_hash_errors": [],
+  "frozen_plan_matches_current_producer": true,
+  "sample_report_hash_manifests_verified": [
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-analyze-report",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-collect-report",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-audit-report"
+  ],
+  "historical_manifest_sha256": "b20a600c3889d62cdf15a7faa6c2ca90611084ceae15b9a8dea7f7823d5a29e6",
+  "benchmark_design_sha256": "710703230b23461193337e78c8a38e1c72675e19f6d747c614c14c7211ac95f0"
+}

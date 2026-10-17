@@ -1,0 +1,244 @@
+{
+  "artifact_kind": "CPU_IMPLEMENTATION_NOT_APPROVAL",
+  "artifacts": {
+    "TEST-trust.json": "131bf1fa60818af735720fdeaff4370315f3aec89862dd2a03290d223598534e",
+    "collect025-TEST.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "collect025-TEST.stdout.json": "5e4fa7c8a9b3b5b7b9d4c21321fecef99d01e13b607ab9fed055a9e37c544e8f",
+    "freeze025.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "freeze025.stdout.json": "2964ebd278d26f9d0d6acd68bd01c4450d830c1784c84a3accc133f397b45514",
+    "pytest.log": "4000897a41c4d3b6bb7f2bf9710770449f0fa5d21065902c7e1474c3fe12edd7",
+    "pytest.xml": "068bca633d867a5eac6fcb62609c0cdc2af2ea630ead765484b9a1a9f70b03f0",
+    "run025-batch-00.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run025-batch-00.stdout.json": "462db57166ec4786ce2a898dc38cab2f354398bcd499342756d9f97221c41abc",
+    "run025-batch-01.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run025-batch-01.stdout.json": "da6d343979c2b4aedec9e36ba6def1f2d34916e9fbdce83f652f5e66b33e7a9e",
+    "run025-batch-02.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run025-batch-02.stdout.json": "b582d219387961c34ce0a7533a63753fb6191a21d52c2d5f89a6c1124a36464f",
+    "run025-batch-03.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run025-batch-03.stdout.json": "29e85882f41bc22040575948ebec8dde609cf44913daef3c580e2d7c04ff958c",
+    "run025-batch-04.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run025-batch-04.stdout.json": "8252e1b2bf7f8dfff6e6c06f12a7bfc769ddbb1b8d60cd14dc71f2e18ac15c1c",
+    "run025-batch-05.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run025-batch-05.stdout.json": "523d5804028e8e35d8dcc626e5825ac8adbcb6c366d860d06ef1ecdfbec73f7d",
+    "run025-execute-refused.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run025-execute-refused.stdout.json": "2dbfc3b05488bec88021103aeb4b9df02b5e7fba23b826885805a98c4bdb1a2c",
+    "run025-pilot.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run025-pilot.stdout.json": "15bc11590d49e1cdd7ab5396a738704aed55b74f1fb1207adfdb6f8aa8bd0e8c"
+  },
+  "cli_invocations": [
+    {
+      "argv": [
+        "freeze025",
+        "--out-dir",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/cli-freeze",
+        "--target-config-sha256",
+        "14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85",
+        "--target-index-sha256",
+        "13b840162b4cb35c66fef7df072f7dbb4717908204364f5e5d9f9655a2758fa8",
+        "--small-metadata",
+        "/Users/jeremylien/.hermes/cache/scratch/paretoquant-qwen38-preflight/small-control",
+        "--small-config-sha256",
+        "ba7770da23eae5ebd6827571f086e331956b33f4442a9e876fb4aa10969a6772",
+        "--small-index-sha256",
+        "6e48f2fa5d6f033a6d77bf833abfa9698ca24d1715ecea4c67447bcfaee44650"
+      ],
+      "entrypoint": "benchmarks.qwen38_overlap.cli.main",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "argv": [
+        "run025",
+        "--manifest",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/cli-freeze/integration-freeze.json",
+        "--manifest-sha256",
+        "2964ebd278d26f9d0d6acd68bd01c4450d830c1784c84a3accc133f397b45514",
+        "--phase",
+        "batch-00",
+        "--out-dir",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/never-batch-00",
+        "--profile",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/PRIVATE_NONEXISTENT_PROFILE.json"
+      ],
+      "entrypoint": "benchmarks.qwen38_overlap.cli.main",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "argv": [
+        "run025",
+        "--manifest",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/cli-freeze/integration-freeze.json",
+        "--manifest-sha256",
+        "2964ebd278d26f9d0d6acd68bd01c4450d830c1784c84a3accc133f397b45514",
+        "--phase",
+        "batch-01",
+        "--out-dir",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/never-batch-01",
+        "--profile",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/PRIVATE_NONEXISTENT_PROFILE.json"
+      ],
+      "entrypoint": "benchmarks.qwen38_overlap.cli.main",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "argv": [
+        "run025",
+        "--manifest",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/cli-freeze/integration-freeze.json",
+        "--manifest-sha256",
+        "2964ebd278d26f9d0d6acd68bd01c4450d830c1784c84a3accc133f397b45514",
+        "--phase",
+        "batch-02",
+        "--out-dir",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/never-batch-02",
+        "--profile",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/PRIVATE_NONEXISTENT_PROFILE.json"
+      ],
+      "entrypoint": "benchmarks.qwen38_overlap.cli.main",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "argv": [
+        "run025",
+        "--manifest",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/cli-freeze/integration-freeze.json",
+        "--manifest-sha256",
+        "2964ebd278d26f9d0d6acd68bd01c4450d830c1784c84a3accc133f397b45514",
+        "--phase",
+        "batch-03",
+        "--out-dir",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/never-batch-03",
+        "--profile",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/PRIVATE_NONEXISTENT_PROFILE.json"
+      ],
+      "entrypoint": "benchmarks.qwen38_overlap.cli.main",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "argv": [
+        "run025",
+        "--manifest",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/cli-freeze/integration-freeze.json",
+        "--manifest-sha256",
+        "2964ebd278d26f9d0d6acd68bd01c4450d830c1784c84a3accc133f397b45514",
+        "--phase",
+        "batch-04",
+        "--out-dir",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/never-batch-04",
+        "--profile",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/PRIVATE_NONEXISTENT_PROFILE.json"
+      ],
+      "entrypoint": "benchmarks.qwen38_overlap.cli.main",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "argv": [
+        "run025",
+        "--manifest",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/cli-freeze/integration-freeze.json",
+        "--manifest-sha256",
+        "2964ebd278d26f9d0d6acd68bd01c4450d830c1784c84a3accc133f397b45514",
+        "--phase",
+        "batch-05",
+        "--out-dir",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/never-batch-05",
+        "--profile",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/PRIVATE_NONEXISTENT_PROFILE.json"
+      ],
+      "entrypoint": "benchmarks.qwen38_overlap.cli.main",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "argv": [
+        "run025",
+        "--manifest",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/cli-freeze/integration-freeze.json",
+        "--manifest-sha256",
+        "2964ebd278d26f9d0d6acd68bd01c4450d830c1784c84a3accc133f397b45514",
+        "--phase",
+        "pilot",
+        "--out-dir",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/never-pilot",
+        "--profile",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/PRIVATE_NONEXISTENT_PROFILE.json"
+      ],
+      "entrypoint": "benchmarks.qwen38_overlap.cli.main",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "argv": [
+        "run025",
+        "--manifest",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/cli-freeze/integration-freeze.json",
+        "--manifest-sha256",
+        "2964ebd278d26f9d0d6acd68bd01c4450d830c1784c84a3accc133f397b45514",
+        "--phase",
+        "pilot",
+        "--out-dir",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/never-execute",
+        "--profile",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/PRIVATE_NONEXISTENT_PROFILE.json",
+        "--execute"
+      ],
+      "entrypoint": "benchmarks.qwen38_overlap.cli.main",
+      "exit_code": 2,
+      "expected_exit_code": 2
+    },
+    {
+      "argv": [
+        "collect025",
+        "--manifest",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/TEST-standalone-cli/freeze/integration-freeze.json",
+        "--manifest-sha256",
+        "2964ebd278d26f9d0d6acd68bd01c4450d830c1784c84a3accc133f397b45514",
+        "--raw-dir",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/TEST-standalone-cli/TEST_FIXTURE_NOT_MODEL_RESULTS",
+        "--trusted",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/TEST-trust.json",
+        "--trusted-sha256",
+        "131bf1fa60818af735720fdeaff4370315f3aec89862dd2a03290d223598534e",
+        "--out-dir",
+        "/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/TEST-collector-report"
+      ],
+      "entrypoint": "benchmarks.qwen38_overlap.cli.main",
+      "exit_code": 2,
+      "expected_exit_code": 2
+    }
+  ],
+  "counts": {
+    "errors": 0,
+    "failures": 0,
+    "integration025": 27,
+    "original_harness": 95,
+    "skipped": 0,
+    "total": 122
+  },
+  "denied_external_actions": [],
+  "forbidden_imports": [],
+  "hardware_executed": false,
+  "original_harness_receipt_sha256": "3c7a024aba420891de1d9cf7f974e9331e7bea886fe4ec48d53fb0284ca3a513",
+  "physical_approval": false,
+  "preservation_mismatches": [],
+  "preserved_original_files": 90,
+  "pytest_argv": [
+    "benchmarks/qwen38_overlap/tests",
+    "-q",
+    "--import-mode=importlib",
+    "-p",
+    "no:cacheprovider",
+    "--tb=short",
+    "--junitxml=/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/pytest.xml",
+    "--basetemp=/Users/jeremylien/.hermes/cache/scratch/qwen38-overlap-integration025-final-v4/pytest-tmp"
+  ],
+  "pytest_exit_code": 0,
+  "schema": "qwen38-overlap-cpu-integration-verification-v2",
+  "smoke_freeze_sha256": "2964ebd278d26f9d0d6acd68bd01c4450d830c1784c84a3accc133f397b45514",
+  "smoke_sources_not_gpu_approval": true
+}

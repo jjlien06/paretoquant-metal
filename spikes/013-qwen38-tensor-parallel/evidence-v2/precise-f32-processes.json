@@ -1,0 +1,14 @@
+[
+  {
+    "rank": 0,
+    "returncode": 0,
+    "stdout": "{\"rank\": 0, \"tokens\": [1, 89, 63], \"numerics_passed\": true, \"output\": \"/Users/jeremylien/Projects/paretoquant-metal/spikes/013-qwen38-tensor-parallel/evidence-v2/precise-f32-rank0.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "rank": 1,
+    "returncode": 0,
+    "stdout": "{\"rank\": 1, \"tokens\": [1, 89, 63], \"numerics_passed\": true, \"output\": \"/Users/jeremylien/Projects/paretoquant-metal/spikes/013-qwen38-tensor-parallel/evidence-v2/precise-f32-rank1.json\"}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,87 @@
+{
+  "schema": "qwen38-overlap-integration-tdd-v2",
+  "artifact_kind": "CPU_IMPLEMENTATION_NOT_APPROVAL",
+  "resumed_transcript": {
+    "path": "/Users/jeremylien/.hermes/cache/delegation/live/deleg_1b5f0b4e/task-2.log",
+    "sha256": "bacc2b0f8372486952c988b44a763b72f551df91e2f88401fa16bef27fb8c121",
+    "stopped_at": "05:45 collect025 CLI implementation pending test; provider429"
+  },
+  "base_test_command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest ",
+  "flags": " -q --import-mode=importlib -p no:cacheprovider --tb=short",
+  "cycles": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_supervisor025.py::test_freeze_and_safe_run_plan_never_load_private_profile -q --import-mode=importlib -p no:cacheprovider --tb=short",
+      "behavior": "Omitted transitive harness source accepted",
+      "observed_red": "DID NOT RAISE ValueError",
+      "green": "Require exact harness module set; focused green 2 tests"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_integration025.py::test_raw_actor_lossless_identity_pressure_and_incomplete_rejected -q --import-mode=importlib -p no:cacheprovider --tb=short",
+      "behavior": "Pressure v2 external identity/execution context",
+      "observed_red": "unexpected keyword argument expected_context",
+      "green": "Reconcile external context with startup/PID/result; actual expected_pressure_binding; focused green 1 test"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_complete025.py::test_complete_actual025_raw_adapter_and_collector_test_only -q --import-mode=importlib -p no:cacheprovider --tb=short",
+      "behavior": "Complete raw six-row TEST path and pilot coverage",
+      "observed_red": "coverage_complete was False after canonical source-bound audit passed",
+      "green": "Pass independently derived pressure bindings to canonical025 and restrict pilot case analysis to measured cases; focused green 1 test"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_supervisor025.py::test_guarded_runner_mock_uses_exact_snapshot_and_never_publicizes_profile -q --import-mode=importlib -p no:cacheprovider --tb=short",
+      "behavior": "Parent callback mutated shallow-copied launch argv",
+      "observed_red": "KeyError returncode after injected runner assertion was converted into supervisor_exception_cleanup_unverified",
+      "green": "Pass deepcopy to guard; focused green 2 tests"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_complete025.py::test_raw_adapter_rechecks_controller_transport_cleanup_not_only_success -q --import-mode=importlib -p no:cacheprovider --tb=short",
+      "behavior": "Successful controller status contradicted failed owned transport cleanup",
+      "observed_red": "DID NOT RAISE ValueError",
+      "green": "Check exact actor transport cleanup inventory and all transport/control cleanup values; focused green 2 tests"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_complete025.py::test_raw_adapter_rechecks_exact_listener_targets -q --import-mode=importlib -p no:cacheprovider --tb=short",
+      "behavior": "Rehashed cleanup receipt named a different closed endpoint",
+      "observed_red": "DID NOT RAISE ValueError",
+      "green": "Bind three distinct ordered listener endpoints to independent parent trust and admitted host addresses; focused green 3 tests"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_complete025.py::test_raw_adapter_reconciles_actual_job_role_with_external_owner -q --import-mode=importlib -p no:cacheprovider --tb=short",
+      "behavior": "Job host contradicted external actor owner",
+      "observed_red": "DID NOT RAISE ValueError",
+      "green": "Reconcile actual job host_role/actor_role with controller ownership and external context; focused green 14 tests"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_supervisor025.py::test_guarded_runner_mock_uses_exact_snapshot_and_never_publicizes_profile -q --import-mode=importlib -p no:cacheprovider --tb=short",
+      "behavior": "Invalid private address escaped into ValueError text",
+      "observed_red": "Expected 4 octets in TEST_PRIVATE_INVALID_ADDRESS leaked private data",
+      "green": "Suppress real parser stderr and sanitize private option validation failures; focused green 2 tests"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_complete025.py::test_raw_rank_identity_cannot_use_bool_as_integer -q --import-mode=importlib -p no:cacheprovider --tb=short",
+      "behavior": "Boolean process rank reached producer dynamic attribute lookup",
+      "observed_red": "AttributeError rankFalse_verifier",
+      "green": "Require exact integer top-level rank before canonical verifier; focused green 1 test"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_complete025.py::test_nonobject_actor_envelopes_are_invalid_inputs_not_collector_crashes -q --import-mode=importlib -p no:cacheprovider --tb=short",
+      "behavior": "Rehashed startup/PID/result arrays crashed collector",
+      "observed_red": "AttributeError list has no attribute get",
+      "green": "Validate actor envelope objects before fields; preserve failed rows and invalid verdict; focused green 1 test"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_complete025.py::test_raw_gate_prompt_is_bound_to_independent_five_token_plan -q --import-mode=importlib -p no:cacheprovider --tb=short",
+      "behavior": "Different raw width-gate prompt accepted despite fixed independent plan",
+      "observed_red": "DID NOT RAISE ValueError",
+      "green": "Bind actual rank prompt/formatted_prompt to frozen five-token plan; complete raw tests green 18 tests"
+    }
+  ],
+  "fixture_alignment_findings": [
+    "Real supervisor parser requires private root/source/key/sidecar/small-remote arguments even for parse-only fixture construction. TEST-only values supplied; no profile guessed.",
+    "Real Worker.handle returns an ACK dictionary, not an object with .ok.",
+    "Real prefix2 gate compares the selected last output position, width1, rather than the complete two-token width.",
+    "Real producer local_rank checker already rejects bool with invalid local rank. Removed redundant tentative type guard and matched the actual error; no producer checker bypass.",
+    "The complete fixture first hit an unfinished sibling workload_evidence pressure binding call. Retried only after the sibling repair; no pressure bypass was introduced."
+  ],
+  "scope": "New production fixes each followed a failing vertical behavior test. Additional rehashed adversarial cases exercise existing real025 grammar. Numerical fixtures remain explicitly TEST; no physical result manufactured."
+}

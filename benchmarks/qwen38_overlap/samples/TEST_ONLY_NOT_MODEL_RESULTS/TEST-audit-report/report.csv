@@ -1,0 +1,37 @@
+case_id,formatted_prompt_tokens,target_long,complete,metric,repeat_ids,paired_ratios,median_ratio,elapsed_reduction,required_max_ratio,threshold_met
+code-short,55,False,True,first_token_seconds,"[0, 1]","[1.0, 1.0]",1.0,0.0,None,False
+code-short,55,False,True,wall_seconds,"[0, 1]","[1.0, 1.0]",1.0,0.0,None,False
+code-512,512,False,True,first_token_seconds,"[0, 1]","[1.0, 1.0]",1.0,0.0,None,False
+code-512,512,False,True,wall_seconds,"[0, 1]","[1.0, 1.0]",1.0,0.0,None,False
+code-1536,1536,True,True,first_token_seconds,"[0, 1]","[1.0, 1.0]",1.0,0.0,0.7,False
+code-1536,1536,True,True,wall_seconds,"[0, 1]","[1.0, 1.0]",1.0,0.0,0.85,False
+explanation-short,54,False,False,first_token_seconds,"[0, 1]",[],None,None,None,False
+explanation-short,54,False,False,wall_seconds,"[0, 1]",[],None,None,None,False
+explanation-512,512,False,False,first_token_seconds,"[0, 1]",[],None,None,None,False
+explanation-512,512,False,False,wall_seconds,"[0, 1]",[],None,None,None,False
+explanation-1536,1536,True,False,first_token_seconds,"[0, 1]",[],None,None,0.7,False
+explanation-1536,1536,True,False,wall_seconds,"[0, 1]",[],None,None,0.85,False
+math-short,74,False,False,first_token_seconds,"[0, 1]",[],None,None,None,False
+math-short,74,False,False,wall_seconds,"[0, 1]",[],None,None,None,False
+math-512,512,False,False,first_token_seconds,"[0, 1]",[],None,None,None,False
+math-512,512,False,False,wall_seconds,"[0, 1]",[],None,None,None,False
+math-1536,1536,True,False,first_token_seconds,"[0, 1]",[],None,None,0.7,False
+math-1536,1536,True,False,wall_seconds,"[0, 1]",[],None,None,0.85,False
+chinese-short,51,False,False,first_token_seconds,"[0, 1]",[],None,None,None,False
+chinese-short,51,False,False,wall_seconds,"[0, 1]",[],None,None,None,False
+chinese-512,512,False,False,first_token_seconds,"[0, 1]",[],None,None,None,False
+chinese-512,512,False,False,wall_seconds,"[0, 1]",[],None,None,None,False
+chinese-1536,1536,True,False,first_token_seconds,"[0, 1]",[],None,None,0.7,False
+chinese-1536,1536,True,False,wall_seconds,"[0, 1]",[],None,None,0.85,False
+spanish-short,63,False,False,first_token_seconds,"[0, 1]",[],None,None,None,False
+spanish-short,63,False,False,wall_seconds,"[0, 1]",[],None,None,None,False
+spanish-512,512,False,False,first_token_seconds,"[0, 1]",[],None,None,None,False
+spanish-512,512,False,False,wall_seconds,"[0, 1]",[],None,None,None,False
+spanish-1536,1536,True,False,first_token_seconds,"[0, 1]",[],None,None,0.7,False
+spanish-1536,1536,True,False,wall_seconds,"[0, 1]",[],None,None,0.85,False
+structured-short,96,False,False,first_token_seconds,"[0, 1]",[],None,None,None,False
+structured-short,96,False,False,wall_seconds,"[0, 1]",[],None,None,None,False
+structured-512,512,False,False,first_token_seconds,"[0, 1]",[],None,None,None,False
+structured-512,512,False,False,wall_seconds,"[0, 1]",[],None,None,None,False
+structured-1536,1535,True,False,first_token_seconds,"[0, 1]",[],None,None,0.7,False
+structured-1536,1535,True,False,wall_seconds,"[0, 1]",[],None,None,0.85,False

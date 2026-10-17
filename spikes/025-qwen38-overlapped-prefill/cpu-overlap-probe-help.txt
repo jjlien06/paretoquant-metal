@@ -1,0 +1,58 @@
+usage: probe.py [-h] --mode {collective,generate} [--model MODEL]
+                [--verification-gate-only] [--benchmark-schedule]
+                [--benchmark-schedule-sha256 BENCHMARK_SCHEDULE_SHA256]
+                [--prefix-rollback] [--hidden-only-prefill]
+                [--overlapped-prefill] [--require-normal-pressure]
+                [--hidden-gate-chunk-size HIDDEN_GATE_CHUNK_SIZE]
+                [--verifier-mode {native,singleton-qmm,slot-qmv}]
+                [--target-revision TARGET_REVISION]
+                [--target-config-sha256 TARGET_CONFIG_SHA256]
+                [--target-index-sha256 TARGET_INDEX_SHA256]
+                [--small-model SMALL_MODEL]
+                [--small-config-sha256 SMALL_CONFIG_SHA256]
+                [--small-index-sha256 SMALL_INDEX_SHA256] [--sidecar SIDECAR]
+                [--phased] [--eval-group-size {1,2,4,8,16,32}]
+                [--eval-group-schedule [{1,2,4,8,16,32} ...]] [--single-host]
+                [--cpu-communication] [--stream-local |
+                --weight-server WEIGHT_SERVER]
+                [--weight-client-bind WEIGHT_CLIENT_BIND]
+                [--split SPLIT [SPLIT ...]] [--max-tokens MAX_TOKENS]
+                [--repeats REPEATS]
+                [--parameter-budget-bytes PARAMETER_BUDGET_BYTES]
+                [--prompt PROMPT]
+
+Standalone strict two-rank MLX ring communication smoke probe.
+
+options:
+  -h, --help            show this help message and exit
+  --mode {collective,generate}
+  --model MODEL
+  --verification-gate-only
+  --benchmark-schedule
+  --benchmark-schedule-sha256 BENCHMARK_SCHEDULE_SHA256
+  --prefix-rollback
+  --hidden-only-prefill
+  --overlapped-prefill
+  --require-normal-pressure
+  --hidden-gate-chunk-size HIDDEN_GATE_CHUNK_SIZE
+  --verifier-mode {native,singleton-qmm,slot-qmv}
+  --target-revision TARGET_REVISION
+  --target-config-sha256 TARGET_CONFIG_SHA256
+  --target-index-sha256 TARGET_INDEX_SHA256
+  --small-model SMALL_MODEL
+  --small-config-sha256 SMALL_CONFIG_SHA256
+  --small-index-sha256 SMALL_INDEX_SHA256
+  --sidecar SIDECAR
+  --phased
+  --eval-group-size {1,2,4,8,16,32}
+  --eval-group-schedule [{1,2,4,8,16,32} ...]
+  --single-host
+  --cpu-communication   Diagnostic synchronous CPU-stream pipeline boundaries
+  --stream-local
+  --weight-server WEIGHT_SERVER
+  --weight-client-bind WEIGHT_CLIENT_BIND
+  --split SPLIT [SPLIT ...]
+  --max-tokens MAX_TOKENS
+  --repeats REPEATS
+  --parameter-budget-bytes PARAMETER_BUDGET_BYTES
+  --prompt PROMPT

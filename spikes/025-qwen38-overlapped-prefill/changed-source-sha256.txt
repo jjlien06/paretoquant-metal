@@ -1,0 +1,102 @@
+{
+  "baseline": "023-qwen38-workload-bench",
+  "candidate": "024-qwen38-hidden-prefill",
+  "registered_changed_or_new": {
+    "hidden_prefill_gate.py": {
+      "before": null,
+      "after": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c"
+    },
+    "mlx_backend.py": {
+      "before": "507c6be2abbd44d80debb9ff5dc7e46b25c349d85e1f0f3202796a6e2c22ed47",
+      "after": "bb269f19696f8a3d84971c44b27ceef743585362c284f916f98de1815334f443"
+    },
+    "mtp_audit.py": {
+      "before": null,
+      "after": "00e64c72453f24b48ed9880fd42d4d3581bfb5790e00108265df005ee4c68671"
+    },
+    "mtp_runtime.py": {
+      "before": "3517a8c44877e9b3175c5a6ee411752d74ed9279be58591bec2418f6205330cf",
+      "after": "ea03fa19a04a83d633ee5dc217168329387460f3dd49ceb949d73cbdb53423fe"
+    },
+    "phased_decode.py": {
+      "before": "b54cd54f56f51480716e77a76bb947290719d8647d6326bceae87ccf50b9b790",
+      "after": "97a056ee6db36ae51012c66be2fd305a069d882b928049dab708cd488461a555"
+    },
+    "probe.py": {
+      "before": "8bf2ac39f1171815bd7f952e0fdc1b8976e5c8668371bd576f5bca17006301ca",
+      "after": "716d30974848c99b09cb3455adae25ec9cb2e297686d017a744da4d10b5ecfd7"
+    },
+    "rank_control.py": {
+      "before": "e522ed335ebd5775132a29044170cedb8d65eb057a316f37ed408d485b1771b5",
+      "after": "ce6656dd0ff351b5a66e25f738776817b0dab9374f6f7dceeeec2b40f9b64b28"
+    },
+    "remote_actor.py": {
+      "before": "21b3b77319947d824cd9d3836f0695d184d2fce6181016b0f88f15cb0045a3d0",
+      "after": "daa2480a11bd62a3283f24e6a1b7f1175303dbc8205dff159b63b3710713950c"
+    },
+    "supervise.py": {
+      "before": "c4647cf873211adfe64f56ba812f546bb726666cb651684275ace855b8114596",
+      "after": "5854ad8fd98c1ab7c1f9659457459b12e1fc982af3bd5cca0899f8045395d624"
+    },
+    "test_cli_schedule.py": {
+      "before": "3d494ffee6cf4ccdd5e8939942aff5508108fc677068f4b27ce4298968545e07",
+      "after": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c"
+    },
+    "test_controller_snapshot.py": {
+      "before": null,
+      "after": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab"
+    },
+    "test_hidden_cache_inventory.py": {
+      "before": null,
+      "after": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493"
+    },
+    "test_hidden_cli.py": {
+      "before": null,
+      "after": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f"
+    },
+    "test_hidden_control.py": {
+      "before": null,
+      "after": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232"
+    },
+    "test_hidden_evidence.py": {
+      "before": null,
+      "after": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137"
+    },
+    "test_hidden_gate.py": {
+      "before": null,
+      "after": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a"
+    },
+    "test_hidden_prefill.py": {
+      "before": null,
+      "after": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50"
+    },
+    "test_hidden_runtime.py": {
+      "before": null,
+      "after": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3"
+    },
+    "test_hidden_two_rank.py": {
+      "before": null,
+      "after": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5"
+    },
+    "test_mtp_audit.py": {
+      "before": null,
+      "after": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3"
+    },
+    "test_workload_evidence.py": {
+      "before": "b28e3f076ac78cfea2878f21af1677a406c810b268af3c274c3fd40ed6f76f12",
+      "after": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6"
+    },
+    "verification.py": {
+      "before": "df7bdaa0eb811caa6f70cc51f479103c1e526d85e4b24913e875e0cd8a444478",
+      "after": "832c9eadfb8540a9ae2f2d645c13a3a2af5c04c057ad3f0f6b07b469e9bc33d2"
+    },
+    "workload_evidence.py": {
+      "before": "fd352236657af89f5295a0a07030eb8dbf4134a949b9e10484517670a415f3ae",
+      "after": "6958f44b4e1df2c1c3f50583d63f06984a4c67138d06dec4931e1eb2cd07f7bb"
+    },
+    "workload_runtime.py": {
+      "before": "67dd60dee8c67618b7311c8ef4662b42c0486347d7354bf23063e860dc620a16",
+      "after": "1cc117eef382a123f448bcbf4022a6be03f7cb3b69e6e5432d0be3ef337ab9c6"
+    }
+  }
+}

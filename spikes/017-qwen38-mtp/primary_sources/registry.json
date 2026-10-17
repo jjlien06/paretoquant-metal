@@ -1,0 +1,26 @@
+{
+  "vlm_head.py": {
+    "url": "https://raw.githubusercontent.com/Blaizzy/mlx-vlm/4623cf9d2633c5ee2b1ac125eeae51423447c41f/mlx_vlm/speculative/drafters/qwen3_5_mtp/qwen3_5_mtp.py",
+    "sha256": "2768d0ebf0bfeddb83bc8c638d79b10fd38ba38b3e0a0d44f99e36f1ff331abc"
+  },
+  "mtplx_qwen_head.py": {
+    "url": "https://raw.githubusercontent.com/youssofal/MTPLX/9882703f3105363ddc37eca9f97aa09a1d387112/mtplx/qwen3_5_mtp_patch.py",
+    "sha256": "468e9ad3efdccf7e8316fa5b03c8f9d2015cd81b537c8be2abb17c51cb892607"
+  },
+  "mtplx_patch.py": {
+    "url": "https://raw.githubusercontent.com/youssofal/MTPLX/9882703f3105363ddc37eca9f97aa09a1d387112/mtplx/mtp_patch.py",
+    "sha256": "6681e13f21ba9b40a85b8f77d49232a053959d60127dc31b9ca0f3e844444189"
+  },
+  "sidecar_config.json": {
+    "url": "https://huggingface.co/mlx-community/Qwen3.8-27B-MTP-4bit/raw/b643c01b6d3b094e325edb6ebd832e16c486c575/config.json",
+    "sha256": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55"
+  },
+  "sidecar_api.json": {
+    "url": "https://huggingface.co/api/models/mlx-community/Qwen3.8-27B-MTP-4bit/revision/b643c01b6d3b094e325edb6ebd832e16c486c575?blobs=true",
+    "sha256": "2dbb99c1f00d4f045cb6754a9a93d4557f9dfa52746a3831bb1f619fe26d7292"
+  },
+  "vlm_engine.py": {
+    "url": "https://raw.githubusercontent.com/Blaizzy/mlx-vlm/4623cf9d2633c5ee2b1ac125eeae51423447c41f/mlx_vlm/speculative/mtp.py",
+    "sha256": "4ed467918bd24e26c60730d6d3529c6a9e633448b2fc6028829965bb1f4daad1"
+  }
+}

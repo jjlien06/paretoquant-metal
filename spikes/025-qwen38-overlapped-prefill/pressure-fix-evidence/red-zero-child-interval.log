@@ -1,0 +1,12 @@
+$ PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'"'"'spikes/025-qwen38-overlapped-prefill'"'"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError("forbidden live process: "+event)) if event in {"subprocess.Popen","os.system","os.posix_spawn"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' -q -p no:cacheprovider spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py -k zero_child_interval --tb=short
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________ test_zero_child_interval_and_coerced_clock_origin_are_rejected ________
+spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py:684: in test_zero_child_interval_and_coerced_clock_origin_are_rejected
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+=========================== short test summary info ============================
+FAILED spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py::test_zero_child_interval_and_coerced_clock_origin_are_rejected
+1 failed, 51 deselected in 0.04s
+exit_code=1

@@ -1,0 +1,20 @@
+{
+  "schema": "qwen38-overlap-noncritical-harness-api-contract-v1",
+  "status": "CPU contract only; fresh combined parent review required before physical trial",
+  "runtime_api": {
+    "policy_name": "pressure_guard.policy_name(dict_or_namespace) -> normal/noncritical",
+    "pressure_required": "pressure_guard.pressure_required(dict_or_namespace) -> bool; noncritical requires guard effective and require_normal_pressure exact False",
+    "receipt": "normal remains v2; noncritical v3 with policy=noncritical, allowed_levels=[1,2], required=true",
+    "expected_policy_keyword": "verify_pressure, expected_pressure_binding, verify_actor_pressures accept expected_policy keyword default normal",
+    "verify_completed_trial": "Receives args bound to externally validated policy; pressure binding/guard checks mandatory for both modes. No new expected_policy keyword assumed here."
+  },
+  "amendment_contract": {
+    "schema": "qwen38-overlap-memory-acceptance-amendment-v1",
+    "original_acceptance_sha256": "Must equal SHA256 of existing results/qwen38-prefill-overlap-v1/acceptance.json",
+    "pressure_policy": "noncritical",
+    "allowed_pressure_levels": [1, 2],
+    "abort_pressure_levels": [4]
+  },
+  "freeze_contract": "normal default adds no manifest/argv fields. Explicit noncritical freezes exact amendment UTF-8 bytes and SHA256 under memory_acceptance, plus pressure_policy=noncritical. run/read/adapter revalidate content and original binding independently of receipt claims.",
+  "trust_contract": "Noncritical trust requires explicit pressure_policy=noncritical and each actor_context pressure_policy=noncritical. PHYSICAL normal trust also requires explicit normal policy. Existing normal TEST fixture trust remains compatible."
+}

@@ -1,0 +1,113 @@
+{
+  "tests": {
+    "passed": 8,
+    "failed": 1,
+    "failure": "BF16 numerical gate retained; tolerance NOT loosened"
+  },
+  "cases": {
+    "F32": {
+      "passed": true,
+      "tolerance": {
+        "atol": 2e-05,
+        "rtol": 0.0002
+      },
+      "logit_max_abs": [
+        1.1920928955078125e-06,
+        1.1324882507324219e-06,
+        1.5497207641601562e-06,
+        1.1622905731201172e-06,
+        1.1026859283447266e-06
+      ],
+      "logit_passed": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "every_cache_state_passed": true,
+      "tokens": [
+        [
+          1,
+          89,
+          63
+        ],
+        [
+          1,
+          89,
+          63
+        ]
+      ],
+      "collective_calls_per_rank": [
+        30,
+        30
+      ],
+      "peak_mlx_bytes_per_rank": [
+        1161465,
+        1161465
+      ],
+      "replicated_digests_match": true,
+      "parameter_bytes_per_rank": [
+        230576,
+        230576
+      ]
+    },
+    "BF16": {
+      "passed": false,
+      "tolerance": {
+        "atol": 0.03,
+        "rtol": 0.03
+      },
+      "logit_max_abs": [
+        0.03125,
+        0.046875,
+        0.0390625,
+        0.03515625,
+        0.046875
+      ],
+      "logit_passed": [
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "every_cache_state_passed": true,
+      "tokens": [
+        [
+          1,
+          89,
+          63
+        ],
+        [
+          1,
+          89,
+          63
+        ]
+      ],
+      "collective_calls_per_rank": [
+        30,
+        30
+      ],
+      "peak_mlx_bytes_per_rank": [
+        850561,
+        850689
+      ],
+      "replicated_digests_match": true,
+      "parameter_bytes_per_rank": [
+        189400,
+        189400
+      ]
+    }
+  },
+  "upstream_sources": {
+    "mlx_lm/models/qwen3_5.py": "10c59a71d8d739b8cdff38c7e9c7345deb9a9688e821ac37cb774d3086cac42e",
+    "mlx/nn/layers/distributed.py": "67e4048ce29b4caf8df9c5ea8ee758e05ac682ee1582e2004c7d9557f6c89969"
+  },
+  "prototype_sources": {
+    "runner.py": "826b2fa367962d182516ac05a2bb8890894c830711863e5b530dcaa9e673178a",
+    "execute.py": "3999b575c4ccdc9f0234dcd3da65c86a5b3ba31e7b786faf983b462b4ca253b8",
+    "test_tp.py": "42222b6be0b2944db319b98b05436872cf62bc0bdfff09ee0b3e59e95757c9a8",
+    "tp.py": "459957cb80190e7ab3a7c78110114a9bd8d5133ef0df7e9be87cf436c576c565"
+  }
+}

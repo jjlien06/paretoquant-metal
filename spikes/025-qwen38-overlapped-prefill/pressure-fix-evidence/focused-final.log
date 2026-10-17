@@ -1,0 +1,4 @@
+$ PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'"'"'spikes/025-qwen38-overlapped-prefill'"'"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError("forbidden live process: "+event)) if event in {"subprocess.Popen","os.system","os.posix_spawn"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' -q -p no:cacheprovider spikes/025-qwen38-overlapped-prefill/test_pressure_guard.py spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py spikes/025-qwen38-overlapped-prefill/test_overlap_cli.py --tb=short --junitxml=spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/focused-final.xml
+...................................................................      [100%]
+67 passed in 0.73s
+exit_code=0

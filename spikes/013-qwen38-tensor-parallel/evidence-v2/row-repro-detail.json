@@ -1,0 +1,28 @@
+{
+  "bf16_partials_bf16_sum": {
+    "max_abs": 0.0078125,
+    "nonexact": 51,
+    "dtype": "mlx.core.bfloat16"
+  },
+  "rounded_partials_f32_sum": {
+    "max_abs": 0.0078125,
+    "nonexact": 51,
+    "dtype": "mlx.core.bfloat16"
+  },
+  "f32_partials_f32_sum_castback": {
+    "max_abs": 0.0078125,
+    "nonexact": 114,
+    "dtype": "mlx.core.bfloat16"
+  },
+  "partial_rounding_witness": {
+    "max_abs": 0.005216836929321289
+  },
+  "f32_full_vs_f32_partials": {
+    "max_abs": 1.1920928955078125e-07,
+    "nonexact_after_bf16_cast": 0
+  },
+  "bf16_vs_f32_dequantization": {
+    "max_abs": 0.0001220703125,
+    "nonexact": 13668
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "bf16_partials_bf16_sum": {
+    "max_abs": 0.0078125,
+    "nonexact": 51,
+    "dtype": "mlx.core.bfloat16"
+  },
+  "rounded_partials_f32_sum": {
+    "max_abs": 0.0078125,
+    "nonexact": 51,
+    "dtype": "mlx.core.bfloat16"
+  },
+  "f32_partials_f32_sum_castback": {
+    "max_abs": 0.0078125,
+    "nonexact": 114,
+    "dtype": "mlx.core.bfloat16"
+  },
+  "partial_rounding_witness": {
+    "max_abs": 0.005216836929321289
+  }
+}

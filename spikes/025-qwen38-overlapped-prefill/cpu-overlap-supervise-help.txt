@@ -1,0 +1,71 @@
+usage: supervise.py [-h] --remote-root REMOTE_ROOT
+                    --remote-source REMOTE_SOURCE
+                    --local-metadata LOCAL_METADATA --output OUTPUT
+                    --ssh-key SSH_KEY --split SPLIT SPLIT
+                    [--max-tokens MAX_TOKENS] [--repeats REPEATS]
+                    [--deadline DEADLINE] [--reserve-bytes RESERVE_BYTES]
+                    [--local-address LOCAL_ADDRESS]
+                    [--remote-address REMOTE_ADDRESS]
+                    [--ssh-target SSH_TARGET] [--prompt PROMPT]
+                    [--execution {phased,upstream}]
+                    [--eval-group-size {1,2,4,8,16,32}]
+                    [--eval-group-schedule [{1,2,4,8,16,32} ...]]
+                    [--ssh-host-key-alias SSH_HOST_KEY_ALIAS]
+                    [--benchmark-schedule]
+                    [--benchmark-schedule-sha256 BENCHMARK_SCHEDULE_SHA256]
+                    [--verification-gate-only] [--prefix-rollback]
+                    [--hidden-only-prefill] [--overlapped-prefill]
+                    [--require-normal-pressure] [--dry-run]
+                    [--hidden-gate-chunk-size HIDDEN_GATE_CHUNK_SIZE]
+                    [--rank0-verifier {native,singleton-qmm,slot-qmv}]
+                    [--rank1-verifier {native,singleton-qmm,slot-qmv}]
+                    --target-revision TARGET_REVISION
+                    --target-config-sha256 TARGET_CONFIG_SHA256
+                    --target-index-sha256 TARGET_INDEX_SHA256
+                    --sidecar SIDECAR --small-model-local SMALL_MODEL_LOCAL
+                    --small-model-remote SMALL_MODEL_REMOTE
+                    --small-config-sha256 SMALL_CONFIG_SHA256
+                    --small-index-sha256 SMALL_INDEX_SHA256
+
+Durable bounded two-host trial controller. Never invoke via execute_code.
+
+options:
+  -h, --help            show this help message and exit
+  --remote-root REMOTE_ROOT
+  --remote-source REMOTE_SOURCE
+  --local-metadata LOCAL_METADATA
+  --output OUTPUT
+  --ssh-key SSH_KEY
+  --split SPLIT SPLIT
+  --max-tokens MAX_TOKENS
+  --repeats REPEATS
+  --deadline DEADLINE
+  --reserve-bytes RESERVE_BYTES
+  --local-address LOCAL_ADDRESS
+  --remote-address REMOTE_ADDRESS
+  --ssh-target SSH_TARGET
+  --prompt PROMPT
+  --execution {phased,upstream}
+  --eval-group-size {1,2,4,8,16,32}
+  --eval-group-schedule [{1,2,4,8,16,32} ...]
+  --ssh-host-key-alias SSH_HOST_KEY_ALIAS
+  --benchmark-schedule
+  --benchmark-schedule-sha256 BENCHMARK_SCHEDULE_SHA256
+  --verification-gate-only
+  --prefix-rollback
+  --hidden-only-prefill
+  --overlapped-prefill
+  --require-normal-pressure
+  --dry-run             Validate CPU-only options/sources; no hardware,
+                        transport or writes
+  --hidden-gate-chunk-size HIDDEN_GATE_CHUNK_SIZE
+  --rank0-verifier {native,singleton-qmm,slot-qmv}
+  --rank1-verifier {native,singleton-qmm,slot-qmv}
+  --target-revision TARGET_REVISION
+  --target-config-sha256 TARGET_CONFIG_SHA256
+  --target-index-sha256 TARGET_INDEX_SHA256
+  --sidecar SIDECAR
+  --small-model-local SMALL_MODEL_LOCAL
+  --small-model-remote SMALL_MODEL_REMOTE
+  --small-config-sha256 SMALL_CONFIG_SHA256
+  --small-index-sha256 SMALL_INDEX_SHA256

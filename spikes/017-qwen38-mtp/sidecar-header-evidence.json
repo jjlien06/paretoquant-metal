@@ -1,0 +1,346 @@
+{
+  "weight_file": "/Users/jeremylien/Projects/paretoquant-metal/models/qwen3.8-27b-mtp-4bit-b643c01b6d3b094e325edb6ebd832e16c486c575/model.safetensors",
+  "file_bytes": 238934137,
+  "sha256": "76663c101e7e8ea9c0ae17bcb95183cd7f733ce424c912b8b264a7b1c48e4cc6",
+  "tensor_count": 31,
+  "header": {
+    "__metadata__": {
+      "format": "mlx"
+    },
+    "fc.biases": {
+      "data_offsets": [
+        186972672,
+        188611072
+      ],
+      "dtype": "BF16",
+      "shape": [
+        5120,
+        160
+      ]
+    },
+    "fc.scales": {
+      "data_offsets": [
+        207124992,
+        208763392
+      ],
+      "dtype": "BF16",
+      "shape": [
+        5120,
+        160
+      ]
+    },
+    "fc.weight": {
+      "data_offsets": [
+        212716544,
+        238930944
+      ],
+      "dtype": "U32",
+      "shape": [
+        5120,
+        1280
+      ]
+    },
+    "layers.0.input_layernorm.weight": {
+      "data_offsets": [
+        185651200,
+        185661440
+      ],
+      "dtype": "BF16",
+      "shape": [
+        5120
+      ]
+    },
+    "layers.0.mlp.down_proj.biases": {
+      "data_offsets": [
+        50145280,
+        52930560
+      ],
+      "dtype": "BF16",
+      "shape": [
+        5120,
+        272
+      ]
+    },
+    "layers.0.mlp.down_proj.scales": {
+      "data_offsets": [
+        208763392,
+        211548672
+      ],
+      "dtype": "BF16",
+      "shape": [
+        5120,
+        272
+      ]
+    },
+    "layers.0.mlp.down_proj.weight": {
+      "data_offsets": [
+        52930560,
+        97495040
+      ],
+      "dtype": "U32",
+      "shape": [
+        5120,
+        2176
+      ]
+    },
+    "layers.0.mlp.gate_proj.biases": {
+      "data_offsets": [
+        97495040,
+        100280320
+      ],
+      "dtype": "BF16",
+      "shape": [
+        17408,
+        80
+      ]
+    },
+    "layers.0.mlp.gate_proj.scales": {
+      "data_offsets": [
+        180244480,
+        183029760
+      ],
+      "dtype": "BF16",
+      "shape": [
+        17408,
+        80
+      ]
+    },
+    "layers.0.mlp.gate_proj.weight": {
+      "data_offsets": [
+        100280320,
+        144844800
+      ],
+      "dtype": "U32",
+      "shape": [
+        17408,
+        640
+      ]
+    },
+    "layers.0.mlp.up_proj.biases": {
+      "data_offsets": [
+        10240,
+        2795520
+      ],
+      "dtype": "BF16",
+      "shape": [
+        17408,
+        80
+      ]
+    },
+    "layers.0.mlp.up_proj.scales": {
+      "data_offsets": [
+        2795520,
+        5580800
+      ],
+      "dtype": "BF16",
+      "shape": [
+        17408,
+        80
+      ]
+    },
+    "layers.0.mlp.up_proj.weight": {
+      "data_offsets": [
+        5580800,
+        50145280
+      ],
+      "dtype": "U32",
+      "shape": [
+        17408,
+        640
+      ]
+    },
+    "layers.0.post_attention_layernorm.weight": {
+      "data_offsets": [
+        180234240,
+        180244480
+      ],
+      "dtype": "BF16",
+      "shape": [
+        5120
+      ]
+    },
+    "layers.0.self_attn.k_norm.weight": {
+      "data_offsets": [
+        186972160,
+        186972672
+      ],
+      "dtype": "BF16",
+      "shape": [
+        256
+      ]
+    },
+    "layers.0.self_attn.k_proj.biases": {
+      "data_offsets": [
+        212541952,
+        212705792
+      ],
+      "dtype": "BF16",
+      "shape": [
+        1024,
+        80
+      ]
+    },
+    "layers.0.self_attn.k_proj.scales": {
+      "data_offsets": [
+        188611072,
+        188774912
+      ],
+      "dtype": "BF16",
+      "shape": [
+        1024,
+        80
+      ]
+    },
+    "layers.0.self_attn.k_proj.weight": {
+      "data_offsets": [
+        204503552,
+        207124992
+      ],
+      "dtype": "U32",
+      "shape": [
+        1024,
+        640
+      ]
+    },
+    "layers.0.self_attn.o_proj.biases": {
+      "data_offsets": [
+        185661440,
+        186644480
+      ],
+      "dtype": "BF16",
+      "shape": [
+        5120,
+        96
+      ]
+    },
+    "layers.0.self_attn.o_proj.scales": {
+      "data_offsets": [
+        211558912,
+        212541952
+      ],
+      "dtype": "BF16",
+      "shape": [
+        5120,
+        96
+      ]
+    },
+    "layers.0.self_attn.o_proj.weight": {
+      "data_offsets": [
+        188774912,
+        204503552
+      ],
+      "dtype": "U32",
+      "shape": [
+        5120,
+        768
+      ]
+    },
+    "layers.0.self_attn.q_norm.weight": {
+      "data_offsets": [
+        212716032,
+        212716544
+      ],
+      "dtype": "BF16",
+      "shape": [
+        256
+      ]
+    },
+    "layers.0.self_attn.q_proj.biases": {
+      "data_offsets": [
+        144844800,
+        146810880
+      ],
+      "dtype": "BF16",
+      "shape": [
+        12288,
+        80
+      ]
+    },
+    "layers.0.self_attn.q_proj.scales": {
+      "data_offsets": [
+        146810880,
+        148776960
+      ],
+      "dtype": "BF16",
+      "shape": [
+        12288,
+        80
+      ]
+    },
+    "layers.0.self_attn.q_proj.weight": {
+      "data_offsets": [
+        148776960,
+        180234240
+      ],
+      "dtype": "U32",
+      "shape": [
+        12288,
+        640
+      ]
+    },
+    "layers.0.self_attn.v_proj.biases": {
+      "data_offsets": [
+        186644480,
+        186808320
+      ],
+      "dtype": "BF16",
+      "shape": [
+        1024,
+        80
+      ]
+    },
+    "layers.0.self_attn.v_proj.scales": {
+      "data_offsets": [
+        186808320,
+        186972160
+      ],
+      "dtype": "BF16",
+      "shape": [
+        1024,
+        80
+      ]
+    },
+    "layers.0.self_attn.v_proj.weight": {
+      "data_offsets": [
+        183029760,
+        185651200
+      ],
+      "dtype": "U32",
+      "shape": [
+        1024,
+        640
+      ]
+    },
+    "norm.weight": {
+      "data_offsets": [
+        0,
+        10240
+      ],
+      "dtype": "BF16",
+      "shape": [
+        5120
+      ]
+    },
+    "pre_fc_norm_embedding.weight": {
+      "data_offsets": [
+        212705792,
+        212716032
+      ],
+      "dtype": "BF16",
+      "shape": [
+        5120
+      ]
+    },
+    "pre_fc_norm_hidden.weight": {
+      "data_offsets": [
+        211548672,
+        211558912
+      ],
+      "dtype": "BF16",
+      "shape": [
+        5120
+      ]
+    }
+  },
+  "inspection": "CPU file/header only; no weights loaded, no GPU"
+}
