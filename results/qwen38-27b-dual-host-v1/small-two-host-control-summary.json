@@ -1,0 +1,107 @@
+{
+  "native_token_parity": true,
+  "ranks": [
+    {
+      "rank": 0,
+      "layer_start": 12,
+      "layer_end": 24,
+      "parameter_bytes": 283486304,
+      "peak_mlx_bytes": 324281565,
+      "requests": [
+        {
+          "repeat": 0,
+          "token_ids": [
+            17,
+            5346,
+            220,
+            17,
+            16327,
+            220,
+            19,
+            13,
+            248046
+          ],
+          "text": "2 plus 2 equals 4.",
+          "wall_seconds": 0.20121458399808034,
+          "first_token_seconds": 0.09205049998126924,
+          "wall_tokens_per_second": 44.7283681986285,
+          "native_generation_tps": null,
+          "prompt_tokens": 26,
+          "finish_reason": "stop"
+        },
+        {
+          "repeat": 1,
+          "token_ids": [
+            17,
+            5346,
+            220,
+            17,
+            16327,
+            220,
+            19,
+            13,
+            248046
+          ],
+          "text": "2 plus 2 equals 4.",
+          "wall_seconds": 0.12763666699174792,
+          "first_token_seconds": 0.041904416983015835,
+          "wall_tokens_per_second": 70.51265292427196,
+          "native_generation_tps": null,
+          "prompt_tokens": 26,
+          "finish_reason": "stop"
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "layer_start": 0,
+      "layer_end": 12,
+      "parameter_bytes": 283486304,
+      "peak_mlx_bytes": 324330717,
+      "requests": [
+        {
+          "repeat": 0,
+          "token_ids": [
+            17,
+            5346,
+            220,
+            17,
+            16327,
+            220,
+            19,
+            13,
+            248046
+          ],
+          "text": "2 plus 2 equals 4.",
+          "wall_seconds": 0.2051896670000133,
+          "first_token_seconds": 0.09604154200019366,
+          "wall_tokens_per_second": 43.86185781957245,
+          "native_generation_tps": null,
+          "prompt_tokens": 26,
+          "finish_reason": "stop"
+        },
+        {
+          "repeat": 1,
+          "token_ids": [
+            17,
+            5346,
+            220,
+            17,
+            16327,
+            220,
+            19,
+            13,
+            248046
+          ],
+          "text": "2 plus 2 equals 4.",
+          "wall_seconds": 0.127735457999961,
+          "first_token_seconds": 0.04201258299985966,
+          "wall_tokens_per_second": 70.45811821493409,
+          "native_generation_tps": null,
+          "prompt_tokens": 26,
+          "finish_reason": "stop"
+        }
+      ]
+    }
+  ]
+}

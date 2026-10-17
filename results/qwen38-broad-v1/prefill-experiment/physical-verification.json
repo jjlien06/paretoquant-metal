@@ -1,0 +1,35 @@
+{
+  "schema": "qwen38-hidden-prefill-physical-verification-v1",
+  "trials": [
+    {
+      "trial": "reference-before-v2",
+      "verified_requests": 14,
+      "exact_native_target_tensor_count": 1847,
+      "strict_hidden_prefill_metrics_exact_by_rank": {},
+      "result_sha256": "b94de306e1b67e0e51b71e55941306a75f01f00ac0b0b5082b31dd54963d64e5"
+    },
+    {
+      "trial": "candidate-v1",
+      "verified_requests": 14,
+      "exact_native_target_tensor_count": 1847,
+      "strict_hidden_prefill_metrics_exact_by_rank": {
+        "0": 3802,
+        "1": 4126
+      },
+      "result_sha256": "708bb04ac6b18d71fd09022152f6de27d4bd838d97f18e0285f93ec5e2dd4f71"
+    },
+    {
+      "trial": "reference-after-v1",
+      "verified_requests": 14,
+      "exact_native_target_tensor_count": 1847,
+      "strict_hidden_prefill_metrics_exact_by_rank": {},
+      "result_sha256": "a146dc44e130ed0f02a65c7a961adb1fd4494541d8a0cf3c166974e218554133"
+    }
+  ],
+  "total_completed_requests": 42,
+  "original_pre_gpu_failed_attempt": "reference-before-v1",
+  "parent_tests": "334 passed,1skipped,1GPUdeselected;Ruffclean",
+  "code_review": "final-code-review.json",
+  "comparison": "comparison.json",
+  "note": "All complete target/hidden/head cache comparisons within candidate small/full/representative256 gates exact. Original width2/prefix gates also remain mandatory. Separate action audits retained for each trial."
+}

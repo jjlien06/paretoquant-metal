@@ -1,0 +1,18 @@
+{
+  "scope": "Actual M2Pro random tiny packed4bitF16 teacher/draft GPU; public opt-in backend, EOS/budget/rejection/rollback/tied/untied/group1/8. Not genuine checkpoint, two-host or32B performance.",
+  "passed": true,
+  "device": "Apple M2 Pro",
+  "case_count": 80,
+  "matched_tokens_stop_offsets_teacher_KV_and_accounting": 80,
+  "different_draft_rejection_cases": 16,
+  "tolerance": {
+    "rtol": 0.002,
+    "atol": 0.002
+  },
+  "peak_mlx_bytes": 1334180,
+  "executed_sources_match_admission": true,
+  "owned_child_and_group_cleanup_verified": true,
+  "no_actual_checkpoint_two_host_or32B_speed_claim": true,
+  "previous_failure_preserved": "Initial actor failed before creating a child because the fixture dependency set differs from the fixed CLI SOURCES set. New library-only controller snapshots the exact extended dependency set; reviewed runtime files remain byte-unchanged.",
+  "remote_followup_blocker": "Thunderbolt bridge0 inactive, no bridge IPv6 address/neighbor; prior pinned-key SSH target returns No route to host. Link-local IPv4 route now uses en0 rather than bridge0; no Wi-Fi fallback or new host-key enrollment attempted."
+}

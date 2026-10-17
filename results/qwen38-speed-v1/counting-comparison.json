@@ -1,0 +1,132 @@
+{
+  "trials": [
+    {
+      "trial": "counting-control-before-v1",
+      "requests": [
+        {
+          "repeat": 0,
+          "events": 70,
+          "finish_reason": "stop",
+          "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
+          "matches_baseline_tokens": true,
+          "wall_s": 12.508870124991518,
+          "first_s": 2.9382417909801006,
+          "decode_events_s": 7.20955799263385
+        },
+        {
+          "repeat": 1,
+          "events": 70,
+          "finish_reason": "stop",
+          "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
+          "matches_baseline_tokens": true,
+          "wall_s": 10.59559475001879,
+          "first_s": 1.0269920420250855,
+          "decode_events_s": 7.211084220515993
+        },
+        {
+          "repeat": 2,
+          "events": 70,
+          "finish_reason": "stop",
+          "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
+          "matches_baseline_tokens": true,
+          "wall_s": 10.59894058399368,
+          "first_s": 1.0296179589931853,
+          "decode_events_s": 7.210541717940712
+        }
+      ],
+      "peaks_GiB": [
+        6.218014654703438,
+        9.448366698808968
+      ]
+    },
+    {
+      "trial": "counting-fast-v1",
+      "requests": [
+        {
+          "repeat": 0,
+          "events": 70,
+          "finish_reason": "stop",
+          "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
+          "matches_baseline_tokens": true,
+          "wall_s": 15.03867000003811,
+          "first_s": 6.47155808302341,
+          "decode_events_s": 8.054056100628575
+        },
+        {
+          "repeat": 1,
+          "events": 70,
+          "finish_reason": "stop",
+          "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
+          "matches_baseline_tokens": true,
+          "wall_s": 9.530843209009618,
+          "first_s": 1.0426058340235613,
+          "decode_events_s": 8.128896136120764
+        },
+        {
+          "repeat": 2,
+          "events": 70,
+          "finish_reason": "stop",
+          "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
+          "matches_baseline_tokens": true,
+          "wall_s": 9.529409333947115,
+          "first_s": 1.0408608339494094,
+          "decode_events_s": 8.128598193203308
+        }
+      ],
+      "peaks_GiB": [
+        8.711992481723428,
+        7.081470197066665
+      ]
+    },
+    {
+      "trial": "counting-control-after-v1",
+      "requests": [
+        {
+          "repeat": 0,
+          "events": 70,
+          "finish_reason": "stop",
+          "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
+          "matches_baseline_tokens": true,
+          "wall_s": 14.104987667000387,
+          "first_s": 4.519964459002949,
+          "decode_events_s": 7.198730613654498
+        },
+        {
+          "repeat": 1,
+          "events": 70,
+          "finish_reason": "stop",
+          "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
+          "matches_baseline_tokens": true,
+          "wall_s": 10.613687750010286,
+          "first_s": 1.0294962089974433,
+          "decode_events_s": 7.19935528257485
+        },
+        {
+          "repeat": 2,
+          "events": 70,
+          "finish_reason": "stop",
+          "text": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20",
+          "matches_baseline_tokens": true,
+          "wall_s": 10.62071362498682,
+          "first_s": 1.033658291969914,
+          "decode_events_s": 7.197204731088864
+        }
+      ],
+      "peaks_GiB": [
+        6.218014654703438,
+        9.448366698808968
+      ]
+    }
+  ],
+  "all9_requests_have_identical_tokens": true,
+  "same_all_text_tensor_hashes": true,
+  "control_warm_n": 4,
+  "fast_warm_n": 2,
+  "control_warm_wall_median_s": 10.606314167001983,
+  "fast_warm_wall_median_s": 9.530126271478366,
+  "control_decode_median": 7.204948500257782,
+  "fast_decode_median": 8.128747164662036,
+  "request_speed_ratio": 1.1129248306755828,
+  "decode_throughput_ratio": 1.128217247405891,
+  "design": "separate-process native/fast/native bracketing pilot, not randomized paired statistical significance"
+}

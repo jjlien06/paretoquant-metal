@@ -1,0 +1,118 @@
+{
+  "schema": "parent-full-suite-publication-verification-v1",
+  "verified_at": "2026-10-17T22:21:36.666321+00:00",
+  "checks": [
+    "84 unique scheduled request identifiers",
+    "12 warmups and72 measured requests",
+    "complete physically accepted collection with all required case thresholds",
+    "all18 paired-repeat latency estimates recomputed from raw normalized row timings",
+    "all36 measured serial/overlap pair outputs and stops identical",
+    "all18 CSV cases equal JSON values",
+    "all report publication file references exist",
+    "all6 phase audits,14 rows each, source/trust/analysis digests and recorded cleanup refusals verified",
+    "fresh post-suite health and cleanup observations verified"
+  ],
+  "passed": true,
+  "physical_requests": 84,
+  "warmups": 12,
+  "measured_requests": 72,
+  "cases": 18,
+  "long_cases_meeting_both_targets": 6,
+  "final_independent_review_status": "awaiting_delivery",
+  "source_or_runtime_changes": false,
+  "files": {
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/README.md": {
+      "sha256": "5e007341257495a4f7304f2acc2d738f213860783399a7ae06056cc474c0dbc9",
+      "bytes": 8652
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/report.json": {
+      "sha256": "ec0e3cf9e9bf21d1cba20af4988ca6e22d5ab92a2fe2199d910bc01a01ccf67b",
+      "bytes": 3132101
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/summary.json": {
+      "sha256": "4c8cecc5dd442e0b161d6ef598fcb3ee937661e07a0a5949f9c97ba51d9cc310",
+      "bytes": 15611
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/cases.csv": {
+      "sha256": "b5fbf3874a0f3eed1b4be29b70dd979d6c6da056419dd1301ca8ee3994bf08da",
+      "bytes": 2763
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/case-table.json": {
+      "sha256": "00a3786a873dd93b813e00170c4cf70e87f34a6dd1b6152c72155a215f4a5a70",
+      "bytes": 8072
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/plan.json": {
+      "sha256": "7e16e0e488aaf726310cf440f470354ec31c953186cf585dcc87cdf1de75c194",
+      "bytes": 878
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/post-suite-health.json": {
+      "sha256": "a4dde5c4fef05db227229abe0ab658b7e5d516a0a28bcd82e7aebe766518ad46",
+      "bytes": 2305
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-02-complete.json": {
+      "sha256": "1954bb5bef9d38a6e0b6d6d8aa8b708e11264d8e00fa6852258da7b108d45658",
+      "bytes": 2117
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-01-complete.json": {
+      "sha256": "dff487bd3ea143e45f59297909851923bd3562d6c94686c78fd3f37f29d98094",
+      "bytes": 2105
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-05-complete.json": {
+      "sha256": "8f2cea92edee01ed8c585e3af97b7f44ae26759755c6298f99b5a0dcf88c4955",
+      "bytes": 2105
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-04-complete.json": {
+      "sha256": "f72c522ce991e6168d37adffee1730e696083a92d9bb1866f49f4d516cdf6dc8",
+      "bytes": 2104
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-00-complete.json": {
+      "sha256": "bc5ed08e2a6d90ea1c6efab076ceeff8aa1b5a29f4732eace1932462ecbe27f3",
+      "bytes": 2117
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-03-complete.json": {
+      "sha256": "4f8ab80b9f97fae5f23fc39696e6004f60e5785d963085038e6ab2f8010e19b8",
+      "bytes": 2117
+    },
+    "results/qwen38-prefill-overlap-v1/parent-run-full-suite-noncritical-v1.py": {
+      "sha256": "cf255fd1e43a28ca6b950d27fc01fa9e1e84b844fdcad904e098ec540d08cca2",
+      "bytes": 7992
+    },
+    "results/qwen38-prefill-overlap-v1/parent-run-batch-noncritical-v1.py": {
+      "sha256": "b34f6c565eacd5b79038f485f0549c91b979980cb113e944cfcce3240a89e450",
+      "bytes": 10145
+    },
+    "results/qwen38-prefill-overlap-v1/parent-audit-noncritical-trial-v2.py": {
+      "sha256": "5ff4763898bcf922983cd491a6cfa8d9f80f45d3091112fdeac147d99f2224dc",
+      "bytes": 7530
+    },
+    "results/qwen38-prefill-overlap-v1/noncritical-combined-independent-review.json": {
+      "sha256": "fbdfe4c1a74775a7e6e98623feddb52baf6d37644e644bc7805f710eaa39e246",
+      "bytes": 35734
+    },
+    "results/qwen38-prefill-overlap-v1/noncritical-pilot-independent-audit.json": {
+      "sha256": "63e8c8cb269ce2a24f8231ca9875375b3d3db3824a3ad2f4f0585ede5e20fc8d",
+      "bytes": 43179
+    }
+  },
+  "linked_phase_evidence_sha256": {
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-00-1792272946336878000-external-trust.json": "329585edf295302f885e9b6fda722fc6b6c5f7b04ceee58316c54574a86eb2a8",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-00-1792272946336878000-raw-audit.json": "fee370cd57316f225a5d817a61eed0346fdd1f6dfaed205cd64054dd6fff52e7",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-00-1792272946336878000-report.json": "f0ac29fa9d3b70c35a771993db7cb14e9236b77f61ce65a55ae1080adda8aae0",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-01-1792273340516059000-external-trust.json": "f981c125a60fa4fd55836a58b1109d92682deebbb8111f14c31c1527774ff39b",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-01-1792273340516059000-raw-audit.json": "b76d0cf8f899b1897a98d5e4c448ff1d6205c7e79e0342a3f03a03a207642d25",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-01-1792273340516059000-report.json": "732ca3a425b272ed34823b3ddaa7ba6bca05dc3ed72b3ac9512434112961935c",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-02-1792273735364788000-external-trust.json": "db64a7a4afb7ef016ca466a2c33eda72e9892b917136cf4dc2f7e24e96ee41bf",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-02-1792273735364788000-raw-audit.json": "e4604c625d2fe95212abaa944c5ce481b3539ddb0b1665ef64c327deb1cc80d8",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-02-1792273735364788000-report.json": "eb79253a45a6c4edbd27dcb0b8485c2f51c151bfed378a0c3e06c5f1ecfd4671",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-03-1792274127592216000-external-trust.json": "ec7d3e63b7671238316e626bb336dc26560bdadc339f4a9047d6c17eb533018e",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-03-1792274127592216000-raw-audit.json": "d614f0e509d221909f7a7a8b22fbd185030da0e1140235da691030f277031e95",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-03-1792274127592216000-report.json": "c5416155b7fd537cb599bdb22e19bbf09ed734a20be6129e55f8adfdca268f1b",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-04-1792274534547686000-external-trust.json": "3089f88beaae359616eb57bd748068a6074e306d678caebbc2c3437052671eaa",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-04-1792274534547686000-raw-audit.json": "c83de8064bc842b8937db13cab5aa0cb2695c5410946db2f2f0fcc1cbbd88c44",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-04-1792274534547686000-report.json": "23b94adab6fc4ca5bcb57c2ed62ef5008a54fce7bd9bdf5a4fc7f048fa4ea138",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-05-1792274939899485000-external-trust.json": "edc140f08a7c0062c8b5195da7a7dcd32cbf7de89340088a0dd6a7a1805493aa",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-05-1792274939899485000-raw-audit.json": "6602d022e0d81fcc989b9ac460fb043b2970baecbcc1e708f3649db4a11df891",
+    "results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-05-1792274939899485000-report.json": "6de9eb5090b3975a2762ad55ac498e997cafdaa82b37154ccc67eee00718c96b"
+  },
+  "scope": "Publication integrity and parent recorded-result recomputation only; not a replacement for the dispatched final independent full-suite audit. No model execution, new native correctness admission, GitHub push or autonomous-agent qualification."
+}

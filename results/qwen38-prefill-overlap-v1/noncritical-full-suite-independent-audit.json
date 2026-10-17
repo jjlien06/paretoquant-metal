@@ -1,0 +1,5611 @@
+{
+  "artifact_kind": "INDEPENDENT_CPU_AUDIT_OF_ACTUAL_PHYSICAL_RECEIPTS",
+  "case_metrics": [
+    {
+      "case_id": "code-short",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 55,
+      "output_events": 128,
+      "overlap_median_ttft_seconds": 1.2265171040007772,
+      "overlap_median_wall_seconds": 13.060701854499712,
+      "request_paired_ratios": [
+        0.9999487549775566,
+        1.0055425167871859
+      ],
+      "request_reduction_percent": -0.27456358823712,
+      "serial_median_ttft_seconds": 1.2230583749997095,
+      "serial_median_wall_seconds": 13.024978250000459,
+      "target_long": false,
+      "thresholds_met": false,
+      "ttft_paired_ratios": [
+        1.0058362401484897,
+        0.9998237523508873
+      ],
+      "ttft_reduction_percent": -0.28299962496884934
+    },
+    {
+      "case_id": "code-512",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 512,
+      "output_events": 128,
+      "overlap_median_ttft_seconds": 6.385847958499653,
+      "overlap_median_wall_seconds": 18.017164791999676,
+      "request_paired_ratios": [
+        0.9207860034601553,
+        0.9026810211159065
+      ],
+      "request_reduction_percent": 8.82664877119691,
+      "serial_median_ttft_seconds": 8.421616646000075,
+      "serial_median_wall_seconds": 19.758210103999772,
+      "target_long": false,
+      "thresholds_met": false,
+      "ttft_paired_ratios": [
+        0.7525553716985137,
+        0.7643403184591353
+      ],
+      "ttft_reduction_percent": 24.15521549211754
+    },
+    {
+      "case_id": "code-1536",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 1536,
+      "output_events": 256,
+      "overlap_median_ttft_seconds": 14.976831853999101,
+      "overlap_median_wall_seconds": 37.89361808349895,
+      "request_paired_ratios": [
+        0.8022713019109001,
+        0.8023822883557185
+      ],
+      "request_reduction_percent": 19.76732048666907,
+      "serial_median_ttft_seconds": 24.31054322949967,
+      "serial_median_wall_seconds": 47.22965493799984,
+      "target_long": true,
+      "thresholds_met": true,
+      "ttft_paired_ratios": [
+        0.6159416799417834,
+        0.6161846888196618
+      ],
+      "ttft_reduction_percent": 38.39368156192774
+    },
+    {
+      "case_id": "explanation-short",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 54,
+      "output_events": 128,
+      "overlap_median_ttft_seconds": 1.1456820419998621,
+      "overlap_median_wall_seconds": 13.26387870849976,
+      "request_paired_ratios": [
+        1.0049373287661643,
+        0.9960775619993041
+      ],
+      "request_reduction_percent": -0.05074453827340619,
+      "serial_median_ttft_seconds": 1.1437807294996674,
+      "serial_median_wall_seconds": 13.257124479499907,
+      "target_long": false,
+      "thresholds_met": false,
+      "ttft_paired_ratios": [
+        1.0105144636485506,
+        0.9928587023800797
+      ],
+      "ttft_reduction_percent": -0.1686583014315124
+    },
+    {
+      "case_id": "explanation-512",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 512,
+      "output_events": 128,
+      "overlap_median_ttft_seconds": 6.34351610450085,
+      "overlap_median_wall_seconds": 18.969522312500885,
+      "request_paired_ratios": [
+        0.8700651937412702,
+        0.9055729768971141
+      ],
+      "request_reduction_percent": 11.218091468080782,
+      "serial_median_ttft_seconds": 8.566375625499859,
+      "serial_median_wall_seconds": 21.367519979498866,
+      "target_long": false,
+      "thresholds_met": false,
+      "ttft_paired_ratios": [
+        0.7202316710807782,
+        0.7609997132248224
+      ],
+      "ttft_reduction_percent": 25.93843078471997
+    },
+    {
+      "case_id": "explanation-1536",
+      "finish_reason": "stop",
+      "formatted_prompt_tokens": 1536,
+      "output_events": 214,
+      "overlap_median_ttft_seconds": 15.383121999999275,
+      "overlap_median_wall_seconds": 37.11135935399943,
+      "request_paired_ratios": [
+        0.7832188683347022,
+        0.8143142118946666
+      ],
+      "request_reduction_percent": 20.12334598853156,
+      "serial_median_ttft_seconds": 24.49754385399956,
+      "serial_median_wall_seconds": 46.491114853999534,
+      "target_long": true,
+      "thresholds_met": true,
+      "ttft_paired_ratios": [
+        0.6078657450386317,
+        0.649645886152188
+      ],
+      "ttft_reduction_percent": 37.12441844045902
+    },
+    {
+      "case_id": "math-short",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 74,
+      "output_events": 128,
+      "overlap_median_ttft_seconds": 1.611754812000072,
+      "overlap_median_wall_seconds": 13.073195978999138,
+      "request_paired_ratios": [
+        1.002833275365428,
+        1.0002476213879603
+      ],
+      "request_reduction_percent": -0.15404483766943144,
+      "serial_median_ttft_seconds": 1.6064782289995492,
+      "serial_median_wall_seconds": 13.053104124999663,
+      "target_long": false,
+      "thresholds_met": false,
+      "ttft_paired_ratios": [
+        1.0026849823348116,
+        1.0038891529564595
+      ],
+      "ttft_reduction_percent": -0.32870676456355774
+    },
+    {
+      "case_id": "math-512",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 512,
+      "output_events": 128,
+      "overlap_median_ttft_seconds": 6.209744416999456,
+      "overlap_median_wall_seconds": 17.9496267505001,
+      "request_paired_ratios": [
+        0.9036092598876578,
+        0.9058590484579874
+      ],
+      "request_reduction_percent": 9.526584582717735,
+      "serial_median_ttft_seconds": 8.0459120204996,
+      "serial_median_wall_seconds": 19.839654874999724,
+      "target_long": false,
+      "thresholds_met": false,
+      "ttft_paired_ratios": [
+        0.7668015269167832,
+        0.7768351671961949
+      ],
+      "ttft_reduction_percent": 22.8181652943511
+    },
+    {
+      "case_id": "math-1536",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 1536,
+      "output_events": 256,
+      "overlap_median_ttft_seconds": 15.47485106250042,
+      "overlap_median_wall_seconds": 38.865872270999716,
+      "request_paired_ratios": [
+        0.8185523883215815,
+        0.8240090395167663
+      ],
+      "request_reduction_percent": 17.87192860808261,
+      "serial_median_ttft_seconds": 23.915623500000038,
+      "serial_median_wall_seconds": 47.32381675000033,
+      "target_long": true,
+      "thresholds_met": true,
+      "ttft_paired_ratios": [
+        0.6435378176431975,
+        0.6506018059956805
+      ],
+      "ttft_reduction_percent": 35.2930188180561
+    },
+    {
+      "case_id": "chinese-short",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 51,
+      "output_events": 128,
+      "overlap_median_ttft_seconds": 1.1389952499994251,
+      "overlap_median_wall_seconds": 13.619963791498776,
+      "request_paired_ratios": [
+        1.0041789200742504,
+        0.9981905501941982
+      ],
+      "request_reduction_percent": -0.11847351342242352,
+      "serial_median_ttft_seconds": 1.1410247290004918,
+      "serial_median_wall_seconds": 13.603857104000781,
+      "target_long": false,
+      "thresholds_met": false,
+      "ttft_paired_ratios": [
+        0.9968687595328727,
+        0.9995744614297164
+      ],
+      "ttft_reduction_percent": 0.17783895187054588
+    },
+    {
+      "case_id": "chinese-512",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 512,
+      "output_events": 128,
+      "overlap_median_ttft_seconds": 6.195983416499075,
+      "overlap_median_wall_seconds": 18.089415229000224,
+      "request_paired_ratios": [
+        0.9093366772827718,
+        0.9129708531410865
+      ],
+      "request_reduction_percent": 8.884623478807086,
+      "serial_median_ttft_seconds": 7.95061952100059,
+      "serial_median_wall_seconds": 19.85334766699998,
+      "target_long": false,
+      "thresholds_met": false,
+      "ttft_paired_ratios": [
+        0.7787175761503318,
+        0.7798990184689664
+      ],
+      "ttft_reduction_percent": 22.069170269035098
+    },
+    {
+      "case_id": "chinese-1536",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 1536,
+      "output_events": 256,
+      "overlap_median_ttft_seconds": 15.622663957999976,
+      "overlap_median_wall_seconds": 41.213110895499995,
+      "request_paired_ratios": [
+        0.8344986654452029,
+        0.8378916342465746
+      ],
+      "request_reduction_percent": 16.380485015411118,
+      "serial_median_ttft_seconds": 23.70552968749962,
+      "serial_median_wall_seconds": 49.2864488539999,
+      "target_long": true,
+      "thresholds_met": true,
+      "ttft_paired_ratios": [
+        0.6569689789219584,
+        0.6610916248688375
+      ],
+      "ttft_reduction_percent": 34.096969810460195
+    },
+    {
+      "case_id": "spanish-short",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 63,
+      "output_events": 128,
+      "overlap_median_ttft_seconds": 1.1425440210005036,
+      "overlap_median_wall_seconds": 13.457932062500731,
+      "request_paired_ratios": [
+        1.00421192118213,
+        1.001855876322363
+      ],
+      "request_reduction_percent": -0.30338987522466887,
+      "serial_median_ttft_seconds": 1.1392086460000428,
+      "serial_median_wall_seconds": 13.417234853999616,
+      "target_long": false,
+      "thresholds_met": false,
+      "ttft_paired_ratios": [
+        0.9992713577323438,
+        1.006585047710904
+      ],
+      "ttft_reduction_percent": -0.29282027216237516
+    },
+    {
+      "case_id": "spanish-512",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 512,
+      "output_events": 128,
+      "overlap_median_ttft_seconds": 6.21469981249993,
+      "overlap_median_wall_seconds": 18.594758583499242,
+      "request_paired_ratios": [
+        0.9106954813688747,
+        0.9125786523721613
+      ],
+      "request_reduction_percent": 8.836293312948197,
+      "serial_median_ttft_seconds": 7.996867271000156,
+      "serial_median_wall_seconds": 20.397111020500233,
+      "target_long": false,
+      "thresholds_met": false,
+      "ttft_paired_ratios": [
+        0.7774182415490405,
+        0.7768664518136602
+      ],
+      "ttft_reduction_percent": 22.285765331864972
+    },
+    {
+      "case_id": "spanish-1536",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 1536,
+      "output_events": 256,
+      "overlap_median_ttft_seconds": 15.630312938001225,
+      "overlap_median_wall_seconds": 40.46753375050048,
+      "request_paired_ratios": [
+        0.8320118207630679,
+        0.8298945411235186
+      ],
+      "request_reduction_percent": 16.90468190567067,
+      "serial_median_ttft_seconds": 23.821272832999966,
+      "serial_median_wall_seconds": 48.699989125000684,
+      "target_long": true,
+      "thresholds_met": true,
+      "ttft_paired_ratios": [
+        0.6570602222589748,
+        0.6552400134105081
+      ],
+      "ttft_reduction_percent": 34.384988216525855
+    },
+    {
+      "case_id": "structured-short",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 96,
+      "output_events": 128,
+      "overlap_median_ttft_seconds": 2.065745396499551,
+      "overlap_median_wall_seconds": 15.674870395999278,
+      "request_paired_ratios": [
+        1.0063127217175285,
+        1.0056719075352032
+      ],
+      "request_reduction_percent": -0.5992314626365847,
+      "serial_median_ttft_seconds": 2.035431979500572,
+      "serial_median_wall_seconds": 15.581490604000464,
+      "target_long": false,
+      "thresholds_met": false,
+      "ttft_paired_ratios": [
+        1.022903806106914,
+        1.0067890190888205
+      ],
+      "ttft_reduction_percent": -1.4846412597867342
+    },
+    {
+      "case_id": "structured-512",
+      "finish_reason": "length",
+      "formatted_prompt_tokens": 512,
+      "output_events": 128,
+      "overlap_median_ttft_seconds": 7.674678313000186,
+      "overlap_median_wall_seconds": 21.230742396000096,
+      "request_paired_ratios": [
+        0.8891344101705847,
+        0.8899636722334615
+      ],
+      "request_reduction_percent": 11.045095879797696,
+      "serial_median_ttft_seconds": 10.241544437500124,
+      "serial_median_wall_seconds": 23.86689741649934,
+      "target_long": false,
+      "thresholds_met": false,
+      "ttft_paired_ratios": [
+        0.7430999809827645,
+        0.7557070935074434
+      ],
+      "ttft_reduction_percent": 25.059646275489598
+    },
+    {
+      "case_id": "structured-1536",
+      "finish_reason": "stop",
+      "formatted_prompt_tokens": 1535,
+      "output_events": 253,
+      "overlap_median_ttft_seconds": 15.69851270899926,
+      "overlap_median_wall_seconds": 39.63514679199943,
+      "request_paired_ratios": [
+        0.7881674360307825,
+        0.8221798563163198
+      ],
+      "request_reduction_percent": 19.482635382644876,
+      "serial_median_ttft_seconds": 25.938067062499613,
+      "serial_median_wall_seconds": 49.2263844579993,
+      "target_long": true,
+      "thresholds_met": true,
+      "ttft_paired_ratios": [
+        0.5992207402403069,
+        0.6112748134175816
+      ],
+      "ttft_reduction_percent": 39.475222317105576
+    }
+  ],
+  "created_at_utc": "2026-10-17T22:28:05.955521+00:00",
+  "existing_files_modified": [],
+  "files_created": [
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/noncritical-full-suite-independent-audit.json"
+  ],
+  "input_sha256": {
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/noncritical-combined-independent-review.json": "fbdfe4c1a74775a7e6e98623feddb52baf6d37644e644bc7805f710eaa39e246",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/noncritical-pilot-independent-audit.json": "63e8c8cb269ce2a24f8231ca9875375b3d3db3824a3ad2f4f0585ede5e20fc8d",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/parent-audit-noncritical-trial-v2.py": "5ff4763898bcf922983cd491a6cfa8d9f80f45d3091112fdeac147d99f2224dc",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/parent-noncritical-native-reference.json": "0196fc158afbe460a70eddced189a1659493d53ec05ba00e5364fcb606645ec6",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/parent-run-batch-noncritical-v1.py": "b34f6c565eacd5b79038f485f0549c91b979980cb113e944cfcce3240a89e450",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/parent-run-full-suite-noncritical-v1.py": "cf255fd1e43a28ca6b950d27fc01fa9e1e84b844fdcad904e098ec540d08cca2",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/result.json": "394b43e841e0bdcffb7644cfc409ffc99d170f0016c823824a7c5242bb3edfe8",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/result.json": "29189fd28c24ebb1df34b32716d4ea8dec33a411d94ce59ea8b18aaeb6289c8d",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-00-1792272946336878000-external-trust.json": "329585edf295302f885e9b6fda722fc6b6c5f7b04ceee58316c54574a86eb2a8",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-00-1792272946336878000-raw-audit.json": "fee370cd57316f225a5d817a61eed0346fdd1f6dfaed205cd64054dd6fff52e7",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-00-1792272946336878000-report.json": "f0ac29fa9d3b70c35a771993db7cb14e9236b77f61ce65a55ae1080adda8aae0",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-01-1792273340516059000-external-trust.json": "f981c125a60fa4fd55836a58b1109d92682deebbb8111f14c31c1527774ff39b",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-01-1792273340516059000-raw-audit.json": "b76d0cf8f899b1897a98d5e4c448ff1d6205c7e79e0342a3f03a03a207642d25",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-01-1792273340516059000-report.json": "732ca3a425b272ed34823b3ddaa7ba6bca05dc3ed72b3ac9512434112961935c",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-02-1792273735364788000-external-trust.json": "db64a7a4afb7ef016ca466a2c33eda72e9892b917136cf4dc2f7e24e96ee41bf",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-02-1792273735364788000-raw-audit.json": "e4604c625d2fe95212abaa944c5ce481b3539ddb0b1665ef64c327deb1cc80d8",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-02-1792273735364788000-report.json": "eb79253a45a6c4edbd27dcb0b8485c2f51c151bfed378a0c3e06c5f1ecfd4671",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-03-1792274127592216000-external-trust.json": "ec7d3e63b7671238316e626bb336dc26560bdadc339f4a9047d6c17eb533018e",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-03-1792274127592216000-raw-audit.json": "d614f0e509d221909f7a7a8b22fbd185030da0e1140235da691030f277031e95",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-03-1792274127592216000-report.json": "c5416155b7fd537cb599bdb22e19bbf09ed734a20be6129e55f8adfdca268f1b",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-04-1792274534547686000-external-trust.json": "3089f88beaae359616eb57bd748068a6074e306d678caebbc2c3437052671eaa",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-04-1792274534547686000-raw-audit.json": "c83de8064bc842b8937db13cab5aa0cb2695c5410946db2f2f0fcc1cbbd88c44",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-04-1792274534547686000-report.json": "23b94adab6fc4ca5bcb57c2ed62ef5008a54fce7bd9bdf5a4fc7f048fa4ea138",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-05-1792274939899485000-external-trust.json": "edc140f08a7c0062c8b5195da7a7dcd32cbf7de89340088a0dd6a7a1805493aa",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-05-1792274939899485000-raw-audit.json": "6602d022e0d81fcc989b9ac460fb043b2970baecbcc1e708f3649db4a11df891",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-05-1792274939899485000-report.json": "6de9eb5090b3975a2762ad55ac498e997cafdaa82b37154ccc67eee00718c96b",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/README.md": "5e007341257495a4f7304f2acc2d738f213860783399a7ae06056cc474c0dbc9",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-00-complete.json": "bc5ed08e2a6d90ea1c6efab076ceeff8aa1b5a29f4732eace1932462ecbe27f3",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-01-complete.json": "dff487bd3ea143e45f59297909851923bd3562d6c94686c78fd3f37f29d98094",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-02-complete.json": "1954bb5bef9d38a6e0b6d6d8aa8b708e11264d8e00fa6852258da7b108d45658",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-03-complete.json": "4f8ab80b9f97fae5f23fc39696e6004f60e5785d963085038e6ab2f8010e19b8",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-04-complete.json": "f72c522ce991e6168d37adffee1730e696083a92d9bb1866f49f4d516cdf6dc8",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-05-complete.json": "8f2cea92edee01ed8c585e3af97b7f44ae26759755c6298f99b5a0dcf88c4955",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/post-suite-health.json": "a4dde5c4fef05db227229abe0ab658b7e5d516a0a28bcd82e7aebe766518ad46",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/report.json": "ec0e3cf9e9bf21d1cba20af4988ca6e22d5ab92a2fe2199d910bc01a01ccf67b",
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/summary.json": "4c8cecc5dd442e0b161d6ef598fcb3ee937661e07a0a5949f9c97ba51d9cc310"
+  },
+  "limits": [
+    "CPU-only independent audit of existing parent-owned actual hardware receipts; no GPU/model/SSH/network/signal/global-setting execution by reviewer. Pure collector run used explicit no-model/no-network/no-subprocess/no-signal guards.",
+    "Hash binding authenticates referenced local bytes under the parent trust model, not cryptographic execution attestation or independently observed hardware execution.",
+    "Comparison is warmed, fresh-cache hidden-only MTP serial prefill versus compound pipeline prefill, with unchanged MTP/rollback/Q4 affine BF16 components, 28/36 placement and group32. It is not native autoregressive latency or the older discarded-logit comparator.",
+    "Loading/head load and numerical admission are excluded from request timings. Numerical admission warms extra shapes; this is not cold-start performance. EOS and MTP finish ACK included; local-rank wall has separate final synchronization.",
+    "Only two measured repeat pairs per case. The six long-case thresholds are descriptive median paired-ratio observations, not confidence intervals, p95, pooled overrides, statistical-confidence guarantees or universal latency floors.",
+    "All 18 cases are retained. Six short cases regress in whole-request elapsed; five short cases regress in TTFT. Do not claim all18 faster.",
+    "structured-1536 contains 1535 actual formatted prompt tokens; preserved literally, not repaired. Shorter EOS-ended outputs are retained, not padded.",
+    "Small and full target checks run in the same actual rank process before each phase requests. MTP head execution is on rank0; head metrics received by rank1 are not a second independent head execution.",
+    "Causal evaluated-receive-credit/chunk/drain event grammar and source establish bounded protocol work, not synchronized GPU-kernel occupancy, concurrent kernel proof or network-only performance attribution.",
+    "Exactly 95 warning-level2 samples are retained under the explicit allowed1/2 noncritical amendment. No admitted4, invalid/missing level, >1second coverage gap or deadline overrun. Sampled guards cannot guarantee immunity from unsampled OS/GPU-driver stalls/crashes; this is not strict-normal-pressure qualification.",
+    "Per-request recorded MLX allocator peaks are not RSS/system residency, full loading/gate peak, a minimum memory floor or isolated before/after memory savings.",
+    "Two explicit Python payload-reference releases are source-bound and common to both modes. They do not prove multi-GB memory savings or isolate a physical memory delta.",
+    "Server lookup-preservation conclusions use byte-identical source and completed receipts, not new remote source-weight filesystem readback or a new live wire capture.",
+    "Parent post-suite-health.json records fresh parent live checks; this audit only reads and binds that artifact and original phase endpoint/cleanup records, without reviewer network/SSH/PID probes.",
+    "Both historical strict-normal pilot failures remain failed and unchanged. No historical failure is relabeled by the amended criterion.",
+    "No arbitrary-prompt equivalence, coding/reasoning accuracy, visual inference, autonomy/tool use, persistent deployment or24\u201348h soak qualification. No commit, push or task-list closure performed."
+  ],
+  "logic_errors": [],
+  "passed": true,
+  "regressions": [
+    {
+      "case_id": "code-short",
+      "median_ratio": 1.0028299962496885,
+      "metric": "first_token_seconds",
+      "paired_ratios": [
+        1.0058362401484897,
+        0.9998237523508873
+      ]
+    },
+    {
+      "case_id": "code-short",
+      "median_ratio": 1.0027456358823712,
+      "metric": "wall_seconds",
+      "paired_ratios": [
+        0.9999487549775566,
+        1.0055425167871859
+      ]
+    },
+    {
+      "case_id": "explanation-short",
+      "median_ratio": 1.0016865830143151,
+      "metric": "first_token_seconds",
+      "paired_ratios": [
+        1.0105144636485506,
+        0.9928587023800797
+      ]
+    },
+    {
+      "case_id": "explanation-short",
+      "median_ratio": 1.000507445382734,
+      "metric": "wall_seconds",
+      "paired_ratios": [
+        1.0049373287661643,
+        0.9960775619993041
+      ]
+    },
+    {
+      "case_id": "math-short",
+      "median_ratio": 1.0032870676456356,
+      "metric": "first_token_seconds",
+      "paired_ratios": [
+        1.0026849823348116,
+        1.0038891529564595
+      ]
+    },
+    {
+      "case_id": "math-short",
+      "median_ratio": 1.0015404483766943,
+      "metric": "wall_seconds",
+      "paired_ratios": [
+        1.002833275365428,
+        1.0002476213879603
+      ]
+    },
+    {
+      "case_id": "chinese-short",
+      "median_ratio": 1.0011847351342242,
+      "metric": "wall_seconds",
+      "paired_ratios": [
+        1.0041789200742504,
+        0.9981905501941982
+      ]
+    },
+    {
+      "case_id": "spanish-short",
+      "median_ratio": 1.0029282027216238,
+      "metric": "first_token_seconds",
+      "paired_ratios": [
+        0.9992713577323438,
+        1.006585047710904
+      ]
+    },
+    {
+      "case_id": "spanish-short",
+      "median_ratio": 1.0030338987522467,
+      "metric": "wall_seconds",
+      "paired_ratios": [
+        1.00421192118213,
+        1.001855876322363
+      ]
+    },
+    {
+      "case_id": "structured-short",
+      "median_ratio": 1.0148464125978673,
+      "metric": "first_token_seconds",
+      "paired_ratios": [
+        1.022903806106914,
+        1.0067890190888205
+      ]
+    },
+    {
+      "case_id": "structured-short",
+      "median_ratio": 1.0059923146263658,
+      "metric": "wall_seconds",
+      "paired_ratios": [
+        1.0063127217175285,
+        1.0056719075352032
+      ]
+    }
+  ],
+  "schema": "qwen38-overlap-noncritical-full-suite-independent-audit-v1",
+  "security_concerns": [],
+  "suite_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000",
+  "verdict": "PASS: exact full84 physical receipt collection and all six individual long-case descriptive latency targets under the explicit noncritical1/2 amendment. Not cryptographic execution attestation, strict-normal pressure qualification or statistical confidence.",
+  "verification": {
+    "abort_pressure_levels": [
+      4
+    ],
+    "actual_pure_calls": [
+      "benchmarks.qwen38_overlap.integration025.collect_raw_trials([(batch00/raw,sealed_trust00), ...,(batch05/raw,sealed_trust05)], manifest)"
+    ],
+    "allowed_pressure_levels": [
+      1,
+      2
+    ],
+    "check_count": 481,
+    "checks": {
+      "actual84_unique_id_12warm72measured": {
+        "details": {
+          "identity_field": "id, not request_id",
+          "measured": 72,
+          "warmup": 12
+        },
+        "passed": true
+      },
+      "actual_pure_collect_all_six_canonical_json_equal": {
+        "details": {
+          "canonical_sha256": "ef7695e094a095ebdcb7c039aef36688aea5dd14af737f144a64bd47d336336e",
+          "evidence_errors": [],
+          "guards": "MLX/model imports, network, subprocess, signals forbidden; bytecode disabled",
+          "observed_rows": 84,
+          "raw_trials": 6,
+          "seconds": 16.900589708999178
+        },
+        "passed": true
+      },
+      "all18_actor_nonces_unique": {
+        "passed": true
+      },
+      "all18_measured_cases_retained": {
+        "passed": true
+      },
+      "all6_longcase_unrounded_thresholds_and_final_physical_verdict": {
+        "passed": true
+      },
+      "all_regressions_exact_report_summary": {
+        "passed": true
+      },
+      "approved_source_current_no_drift": {
+        "details": {
+          "count": 90
+        },
+        "passed": true
+      },
+      "auditv2_independently_pinned_native_source_review_and_actual_validator": {
+        "passed": true
+      },
+      "batch-00_actual_parent_authorization": {
+        "passed": true
+      },
+      "batch-00_actual_rank_pair_ids_stops_identical": {
+        "passed": true
+      },
+      "batch-00_all3actor_and9control_transports_clean": {
+        "passed": true
+      },
+      "batch-00_audited_before_next_batch_admitted": {
+        "passed": true
+      },
+      "batch-00_complete_audit_stdout_and_exact_summary_sidecar": {
+        "passed": true
+      },
+      "batch-00_complete_execution_stdout_and_sidecar": {
+        "passed": true
+      },
+      "batch-00_direct_original_native_ids_stops_prompts_both_old_ranks": {
+        "details": {
+          "compared_rows": 28,
+          "unique_old_native": 7
+        },
+        "passed": true
+      },
+      "batch-00_exact79_frozen_and_snapshot_sources": {
+        "passed": true
+      },
+      "batch-00_exact_listener_targets_and_archived_explicit_refusals": {
+        "passed": true
+      },
+      "batch-00_links_hashes": {
+        "passed": true
+      },
+      "batch-00_live_runtime_phase_schedule_only_difference": {
+        "passed": true
+      },
+      "batch-00_native_trust_external_binding": {
+        "passed": true
+      },
+      "batch-00_old_rank0_hash_and_tensor_reference": {
+        "passed": true
+      },
+      "batch-00_old_rank1_hash_and_tensor_reference": {
+        "passed": true
+      },
+      "batch-00_old_schedule_hash": {
+        "passed": true
+      },
+      "batch-00_parent_approval_and_partial_suite_honesty": {
+        "passed": true
+      },
+      "batch-00_rank0_actual28_36_group32_modes": {
+        "details": {
+          "actual_eval_group_schedule": [],
+          "actual_owned_layers": [
+            36,
+            64
+          ]
+        },
+        "passed": true
+      },
+      "batch-00_rank0_actual_all14_native_ids_stop_prompt": {
+        "passed": true
+      },
+      "batch-00_rank0_all_reported_numerical_objects_original_tolerances": {
+        "details": {
+          "all_strict_metric_objects_including_offsets": 5905,
+          "floating_metric_objects": 5232,
+          "invalid": 0
+        },
+        "passed": true
+      },
+      "batch-00_rank0_authoritative_logs_exact_disk_and_retrieval": {
+        "details": {
+          "authoritative_stdout_bytes": 1530474,
+          "forwarded_bytes_dropped": 0,
+          "forwarded_stdout_bytes": 1530474
+        },
+        "passed": true
+      },
+      "batch-00_rank0_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-00_rank0_exact_original_tensor_hashes": {
+        "passed": true
+      },
+      "batch-00_rank0_fresh_unique_cache_nonce_each_request": {
+        "passed": true
+      },
+      "batch-00_rank0_full_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 63
+        },
+        "passed": true
+      },
+      "batch-00_rank0_full_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 642,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "batch-00_rank0_full_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-00_rank0_full_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 330,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "batch-00_rank0_independent_credit_chunks_layers_and_drain": {
+        "details": {
+          "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+          "compound_requests": 7,
+          "phase": "batch-00",
+          "prefix_chunks": 19,
+          "rank": 0
+        },
+        "passed": true
+      },
+      "batch-00_rank0_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-00_rank0_same_process_small_full_gates_before_all14": {
+        "details": {
+          "admission_elapsed": 70.40770529200017,
+          "child_pid": 20384,
+          "first_request_elapsed": 70.4421301250004,
+          "gate_events": 21
+        },
+        "passed": true
+      },
+      "batch-00_rank0_small_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 54
+        },
+        "passed": true
+      },
+      "batch-00_rank0_small_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "batch-00_rank0_small_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-00_rank0_small_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            12,
+            24
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "batch-00_rank0_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 20380,
+          "actor_role": "rank0",
+          "child_pid": 20384,
+          "deadline_seconds": 896.7904132499998,
+          "elapsed_seconds": 376.5574557909995,
+          "execution": {
+            "child_end_seconds": 376.5480709579997,
+            "child_start_seconds": 0.021875500000533066,
+            "gate_release_seconds": 0.023572208000587125
+          },
+          "first_sample_seconds": 0.017404125000211934,
+          "host_role": "local",
+          "last_sample_seconds": 376.55410770800063,
+          "level_counts": {
+            "1": 694,
+            "2": 25
+          },
+          "max_gap_seconds": 0.5557290409997222,
+          "nonce": "1e03bb6bcd6fe2de60663123da9ca28c",
+          "phase": "batch-00",
+          "samples": 719
+        },
+        "passed": true
+      },
+      "batch-00_rank1_actual28_36_group32_modes": {
+        "details": {
+          "actual_eval_group_schedule": [],
+          "actual_owned_layers": [
+            0,
+            36
+          ]
+        },
+        "passed": true
+      },
+      "batch-00_rank1_actual_all14_native_ids_stop_prompt": {
+        "passed": true
+      },
+      "batch-00_rank1_all_reported_numerical_objects_original_tolerances": {
+        "details": {
+          "all_strict_metric_objects_including_offsets": 6355,
+          "floating_metric_objects": 5632,
+          "invalid": 0
+        },
+        "passed": true
+      },
+      "batch-00_rank1_authoritative_logs_exact_disk_and_retrieval": {
+        "details": {
+          "authoritative_stdout_bytes": 1682296,
+          "forwarded_bytes_dropped": 1354616,
+          "forwarded_stdout_bytes": 327680
+        },
+        "passed": true
+      },
+      "batch-00_rank1_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-00_rank1_exact_original_tensor_hashes": {
+        "passed": true
+      },
+      "batch-00_rank1_fresh_unique_cache_nonce_each_request": {
+        "passed": true
+      },
+      "batch-00_rank1_full_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 81
+        },
+        "passed": true
+      },
+      "batch-00_rank1_full_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 822,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "batch-00_rank1_full_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-00_rank1_full_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 420,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "batch-00_rank1_independent_credit_chunks_layers_and_drain": {
+        "details": {
+          "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+          "compound_requests": 7,
+          "phase": "batch-00",
+          "prefix_chunks": 19,
+          "rank": 1
+        },
+        "passed": true
+      },
+      "batch-00_rank1_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-00_rank1_same_process_small_full_gates_before_all14": {
+        "details": {
+          "admission_elapsed": 70.37321079199319,
+          "child_pid": 18821,
+          "first_request_elapsed": 70.39627354199183,
+          "gate_events": 21
+        },
+        "passed": true
+      },
+      "batch-00_rank1_small_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 54
+        },
+        "passed": true
+      },
+      "batch-00_rank1_small_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "batch-00_rank1_small_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-00_rank1_small_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            12
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "batch-00_rank1_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 18819,
+          "actor_role": "rank1",
+          "child_pid": 18821,
+          "deadline_seconds": 896.8060254169995,
+          "elapsed_seconds": 376.43278537498554,
+          "execution": {
+            "child_end_seconds": 376.430552832986,
+            "child_start_seconds": 0.010280457994667813,
+            "gate_release_seconds": 0.011283291009021923
+          },
+          "first_sample_seconds": 0.008467165986075997,
+          "host_role": "remote",
+          "last_sample_seconds": 376.43073362499126,
+          "level_counts": {
+            "1": 713,
+            "2": 7
+          },
+          "max_gap_seconds": 0.5527714170166291,
+          "nonce": "37ae567c1fa7df7a133c0be05d98bfee",
+          "phase": "batch-00",
+          "samples": 720
+        },
+        "passed": true
+      },
+      "batch-00_raw14_hashes": {
+        "passed": true
+      },
+      "batch-00_recomputed_raw_audit_equal": {
+        "passed": true
+      },
+      "batch-00_retrieved_rank1_exact_authoritative_envelope_bytes": {
+        "details": {
+          "control5_additional_bytes": "one JSON newline only",
+          "receipt_bytes": 44466410
+        },
+        "passed": true
+      },
+      "batch-00_server_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-00_server_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-00_server_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 18806,
+          "actor_role": "server",
+          "child_pid": 18808,
+          "deadline_seconds": 897.5287260839996,
+          "elapsed_seconds": 25.906508374988334,
+          "execution": {
+            "child_end_seconds": 25.904579958005343,
+            "child_start_seconds": 0.010861290997127071,
+            "gate_release_seconds": 0.011778082989621907
+          },
+          "first_sample_seconds": 0.008962457999587059,
+          "host_role": "remote",
+          "last_sample_seconds": 25.904664125002455,
+          "level_counts": {
+            "1": 48,
+            "2": 3
+          },
+          "max_gap_seconds": 0.5303533329861239,
+          "nonce": "547bf00cd8e22e33e6c8133390cc8614",
+          "phase": "batch-00",
+          "samples": 51
+        },
+        "passed": true
+      },
+      "batch-01_actual_parent_authorization": {
+        "passed": true
+      },
+      "batch-01_actual_rank_pair_ids_stops_identical": {
+        "passed": true
+      },
+      "batch-01_all3actor_and9control_transports_clean": {
+        "passed": true
+      },
+      "batch-01_audited_before_next_batch_admitted": {
+        "passed": true
+      },
+      "batch-01_complete_audit_stdout_and_exact_summary_sidecar": {
+        "passed": true
+      },
+      "batch-01_complete_execution_stdout_and_sidecar": {
+        "passed": true
+      },
+      "batch-01_direct_original_native_ids_stops_prompts_both_old_ranks": {
+        "details": {
+          "compared_rows": 28,
+          "unique_old_native": 7
+        },
+        "passed": true
+      },
+      "batch-01_exact79_frozen_and_snapshot_sources": {
+        "passed": true
+      },
+      "batch-01_exact_listener_targets_and_archived_explicit_refusals": {
+        "passed": true
+      },
+      "batch-01_links_hashes": {
+        "passed": true
+      },
+      "batch-01_live_runtime_phase_schedule_only_difference": {
+        "passed": true
+      },
+      "batch-01_native_trust_external_binding": {
+        "passed": true
+      },
+      "batch-01_old_rank0_hash_and_tensor_reference": {
+        "passed": true
+      },
+      "batch-01_old_rank1_hash_and_tensor_reference": {
+        "passed": true
+      },
+      "batch-01_old_schedule_hash": {
+        "passed": true
+      },
+      "batch-01_parent_approval_and_partial_suite_honesty": {
+        "passed": true
+      },
+      "batch-01_rank0_actual28_36_group32_modes": {
+        "details": {
+          "actual_eval_group_schedule": [],
+          "actual_owned_layers": [
+            36,
+            64
+          ]
+        },
+        "passed": true
+      },
+      "batch-01_rank0_actual_all14_native_ids_stop_prompt": {
+        "passed": true
+      },
+      "batch-01_rank0_all_reported_numerical_objects_original_tolerances": {
+        "details": {
+          "all_strict_metric_objects_including_offsets": 5905,
+          "floating_metric_objects": 5232,
+          "invalid": 0
+        },
+        "passed": true
+      },
+      "batch-01_rank0_authoritative_logs_exact_disk_and_retrieval": {
+        "details": {
+          "authoritative_stdout_bytes": 1531967,
+          "forwarded_bytes_dropped": 0,
+          "forwarded_stdout_bytes": 1531967
+        },
+        "passed": true
+      },
+      "batch-01_rank0_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-01_rank0_exact_original_tensor_hashes": {
+        "passed": true
+      },
+      "batch-01_rank0_fresh_unique_cache_nonce_each_request": {
+        "passed": true
+      },
+      "batch-01_rank0_full_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 63
+        },
+        "passed": true
+      },
+      "batch-01_rank0_full_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 642,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "batch-01_rank0_full_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-01_rank0_full_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 330,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "batch-01_rank0_independent_credit_chunks_layers_and_drain": {
+        "details": {
+          "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+          "compound_requests": 7,
+          "phase": "batch-01",
+          "prefix_chunks": 19,
+          "rank": 0
+        },
+        "passed": true
+      },
+      "batch-01_rank0_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-01_rank0_same_process_small_full_gates_before_all14": {
+        "details": {
+          "admission_elapsed": 68.35788016599872,
+          "child_pid": 21305,
+          "first_request_elapsed": 68.39252233299885,
+          "gate_events": 21
+        },
+        "passed": true
+      },
+      "batch-01_rank0_small_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 54
+        },
+        "passed": true
+      },
+      "batch-01_rank0_small_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "batch-01_rank0_small_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-01_rank0_small_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            12,
+            24
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "batch-01_rank0_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 21302,
+          "actor_role": "rank0",
+          "child_pid": 21305,
+          "deadline_seconds": 896.9246943329999,
+          "elapsed_seconds": 377.0878207499991,
+          "execution": {
+            "child_end_seconds": 377.08114479199867,
+            "child_start_seconds": 0.019004499999937252,
+            "gate_release_seconds": 0.020478291999097564
+          },
+          "first_sample_seconds": 0.01643366699863691,
+          "host_role": "local",
+          "last_sample_seconds": 377.08485541699883,
+          "level_counts": {
+            "1": 715,
+            "2": 5
+          },
+          "max_gap_seconds": 0.5954497500006255,
+          "nonce": "c73a89024718be8befa8d5bc667efd4c",
+          "phase": "batch-01",
+          "samples": 720
+        },
+        "passed": true
+      },
+      "batch-01_rank1_actual28_36_group32_modes": {
+        "details": {
+          "actual_eval_group_schedule": [],
+          "actual_owned_layers": [
+            0,
+            36
+          ]
+        },
+        "passed": true
+      },
+      "batch-01_rank1_actual_all14_native_ids_stop_prompt": {
+        "passed": true
+      },
+      "batch-01_rank1_all_reported_numerical_objects_original_tolerances": {
+        "details": {
+          "all_strict_metric_objects_including_offsets": 6355,
+          "floating_metric_objects": 5632,
+          "invalid": 0
+        },
+        "passed": true
+      },
+      "batch-01_rank1_authoritative_logs_exact_disk_and_retrieval": {
+        "details": {
+          "authoritative_stdout_bytes": 1683790,
+          "forwarded_bytes_dropped": 1257806,
+          "forwarded_stdout_bytes": 425984
+        },
+        "passed": true
+      },
+      "batch-01_rank1_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-01_rank1_exact_original_tensor_hashes": {
+        "passed": true
+      },
+      "batch-01_rank1_fresh_unique_cache_nonce_each_request": {
+        "passed": true
+      },
+      "batch-01_rank1_full_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 81
+        },
+        "passed": true
+      },
+      "batch-01_rank1_full_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 822,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "batch-01_rank1_full_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-01_rank1_full_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 420,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "batch-01_rank1_independent_credit_chunks_layers_and_drain": {
+        "details": {
+          "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+          "compound_requests": 7,
+          "phase": "batch-01",
+          "prefix_chunks": 19,
+          "rank": 1
+        },
+        "passed": true
+      },
+      "batch-01_rank1_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-01_rank1_same_process_small_full_gates_before_all14": {
+        "details": {
+          "admission_elapsed": 68.29706350000924,
+          "child_pid": 19676,
+          "first_request_elapsed": 68.32184766698629,
+          "gate_events": 21
+        },
+        "passed": true
+      },
+      "batch-01_rank1_small_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 54
+        },
+        "passed": true
+      },
+      "batch-01_rank1_small_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "batch-01_rank1_small_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-01_rank1_small_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            12
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "batch-01_rank1_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 19674,
+          "actor_role": "rank1",
+          "child_pid": 19676,
+          "deadline_seconds": 896.9341726660004,
+          "elapsed_seconds": 376.98790675000055,
+          "execution": {
+            "child_end_seconds": 376.98550066701137,
+            "child_start_seconds": 0.010328917007427663,
+            "gate_release_seconds": 0.011322792008286342
+          },
+          "first_sample_seconds": 0.008456750016193837,
+          "host_role": "remote",
+          "last_sample_seconds": 376.98586149999755,
+          "level_counts": {
+            "1": 716,
+            "2": 4
+          },
+          "max_gap_seconds": 0.5724476250179578,
+          "nonce": "145607f9a9d57b7437fc20466e5b3348",
+          "phase": "batch-01",
+          "samples": 720
+        },
+        "passed": true
+      },
+      "batch-01_raw14_hashes": {
+        "passed": true
+      },
+      "batch-01_recomputed_raw_audit_equal": {
+        "passed": true
+      },
+      "batch-01_retrieved_rank1_exact_authoritative_envelope_bytes": {
+        "details": {
+          "control5_additional_bytes": "one JSON newline only",
+          "receipt_bytes": 45524421
+        },
+        "passed": true
+      },
+      "batch-01_server_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-01_server_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-01_server_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 19660,
+          "actor_role": "server",
+          "child_pid": 19663,
+          "deadline_seconds": 897.6661624999997,
+          "elapsed_seconds": 24.528244874993106,
+          "execution": {
+            "child_end_seconds": 24.526360290998127,
+            "child_start_seconds": 0.01031029099249281,
+            "gate_release_seconds": 0.011373957997420803
+          },
+          "first_sample_seconds": 0.008446749998256564,
+          "host_role": "remote",
+          "last_sample_seconds": 24.52644583300571,
+          "level_counts": {
+            "1": 48
+          },
+          "max_gap_seconds": 0.5288973750139121,
+          "nonce": "9b24bceb61de28bcd13289e2c0155afd",
+          "phase": "batch-01",
+          "samples": 48
+        },
+        "passed": true
+      },
+      "batch-02_actual_parent_authorization": {
+        "passed": true
+      },
+      "batch-02_actual_rank_pair_ids_stops_identical": {
+        "passed": true
+      },
+      "batch-02_all3actor_and9control_transports_clean": {
+        "passed": true
+      },
+      "batch-02_audited_before_next_batch_admitted": {
+        "passed": true
+      },
+      "batch-02_complete_audit_stdout_and_exact_summary_sidecar": {
+        "passed": true
+      },
+      "batch-02_complete_execution_stdout_and_sidecar": {
+        "passed": true
+      },
+      "batch-02_direct_original_native_ids_stops_prompts_both_old_ranks": {
+        "details": {
+          "compared_rows": 28,
+          "unique_old_native": 7
+        },
+        "passed": true
+      },
+      "batch-02_exact79_frozen_and_snapshot_sources": {
+        "passed": true
+      },
+      "batch-02_exact_listener_targets_and_archived_explicit_refusals": {
+        "passed": true
+      },
+      "batch-02_links_hashes": {
+        "passed": true
+      },
+      "batch-02_live_runtime_phase_schedule_only_difference": {
+        "passed": true
+      },
+      "batch-02_native_trust_external_binding": {
+        "passed": true
+      },
+      "batch-02_old_rank0_hash_and_tensor_reference": {
+        "passed": true
+      },
+      "batch-02_old_rank1_hash_and_tensor_reference": {
+        "passed": true
+      },
+      "batch-02_old_schedule_hash": {
+        "passed": true
+      },
+      "batch-02_parent_approval_and_partial_suite_honesty": {
+        "passed": true
+      },
+      "batch-02_rank0_actual28_36_group32_modes": {
+        "details": {
+          "actual_eval_group_schedule": [],
+          "actual_owned_layers": [
+            36,
+            64
+          ]
+        },
+        "passed": true
+      },
+      "batch-02_rank0_actual_all14_native_ids_stop_prompt": {
+        "passed": true
+      },
+      "batch-02_rank0_all_reported_numerical_objects_original_tolerances": {
+        "details": {
+          "all_strict_metric_objects_including_offsets": 5905,
+          "floating_metric_objects": 5232,
+          "invalid": 0
+        },
+        "passed": true
+      },
+      "batch-02_rank0_authoritative_logs_exact_disk_and_retrieval": {
+        "details": {
+          "authoritative_stdout_bytes": 1529915,
+          "forwarded_bytes_dropped": 0,
+          "forwarded_stdout_bytes": 1529915
+        },
+        "passed": true
+      },
+      "batch-02_rank0_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-02_rank0_exact_original_tensor_hashes": {
+        "passed": true
+      },
+      "batch-02_rank0_fresh_unique_cache_nonce_each_request": {
+        "passed": true
+      },
+      "batch-02_rank0_full_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 63
+        },
+        "passed": true
+      },
+      "batch-02_rank0_full_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 642,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "batch-02_rank0_full_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-02_rank0_full_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 330,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "batch-02_rank0_independent_credit_chunks_layers_and_drain": {
+        "details": {
+          "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+          "compound_requests": 7,
+          "phase": "batch-02",
+          "prefix_chunks": 19,
+          "rank": 0
+        },
+        "passed": true
+      },
+      "batch-02_rank0_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-02_rank0_same_process_small_full_gates_before_all14": {
+        "details": {
+          "admission_elapsed": 66.39670216600098,
+          "child_pid": 22203,
+          "first_request_elapsed": 66.42848208299984,
+          "gate_events": 21
+        },
+        "passed": true
+      },
+      "batch-02_rank0_small_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 54
+        },
+        "passed": true
+      },
+      "batch-02_rank0_small_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "batch-02_rank0_small_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-02_rank0_small_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            12,
+            24
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "batch-02_rank0_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 22201,
+          "actor_role": "rank0",
+          "child_pid": 22203,
+          "deadline_seconds": 896.7411391669993,
+          "elapsed_seconds": 374.3357915409997,
+          "execution": {
+            "child_end_seconds": 374.3270008749987,
+            "child_start_seconds": 0.02085149999948044,
+            "gate_release_seconds": 0.022181457999977283
+          },
+          "first_sample_seconds": 0.01844383299976471,
+          "host_role": "local",
+          "last_sample_seconds": 374.3330368749994,
+          "level_counts": {
+            "1": 712,
+            "2": 6
+          },
+          "max_gap_seconds": 0.564933583000311,
+          "nonce": "398c0eae66d6f5d5716fac1af354aeaa",
+          "phase": "batch-02",
+          "samples": 718
+        },
+        "passed": true
+      },
+      "batch-02_rank1_actual28_36_group32_modes": {
+        "details": {
+          "actual_eval_group_schedule": [],
+          "actual_owned_layers": [
+            0,
+            36
+          ]
+        },
+        "passed": true
+      },
+      "batch-02_rank1_actual_all14_native_ids_stop_prompt": {
+        "passed": true
+      },
+      "batch-02_rank1_all_reported_numerical_objects_original_tolerances": {
+        "details": {
+          "all_strict_metric_objects_including_offsets": 6355,
+          "floating_metric_objects": 5632,
+          "invalid": 0
+        },
+        "passed": true
+      },
+      "batch-02_rank1_authoritative_logs_exact_disk_and_retrieval": {
+        "details": {
+          "authoritative_stdout_bytes": 1681743,
+          "forwarded_bytes_dropped": 1222991,
+          "forwarded_stdout_bytes": 458752
+        },
+        "passed": true
+      },
+      "batch-02_rank1_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-02_rank1_exact_original_tensor_hashes": {
+        "passed": true
+      },
+      "batch-02_rank1_fresh_unique_cache_nonce_each_request": {
+        "passed": true
+      },
+      "batch-02_rank1_full_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 81
+        },
+        "passed": true
+      },
+      "batch-02_rank1_full_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 822,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "batch-02_rank1_full_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-02_rank1_full_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 420,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "batch-02_rank1_independent_credit_chunks_layers_and_drain": {
+        "details": {
+          "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+          "compound_requests": 7,
+          "phase": "batch-02",
+          "prefix_chunks": 19,
+          "rank": 1
+        },
+        "passed": true
+      },
+      "batch-02_rank1_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-02_rank1_same_process_small_full_gates_before_all14": {
+        "details": {
+          "admission_elapsed": 66.34438674998819,
+          "child_pid": 20540,
+          "first_request_elapsed": 66.3672753329738,
+          "gate_events": 21
+        },
+        "passed": true
+      },
+      "batch-02_rank1_small_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 54
+        },
+        "passed": true
+      },
+      "batch-02_rank1_small_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "batch-02_rank1_small_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-02_rank1_small_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            12
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "batch-02_rank1_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 20538,
+          "actor_role": "rank1",
+          "child_pid": 20540,
+          "deadline_seconds": 896.7575101249986,
+          "elapsed_seconds": 374.19515424998826,
+          "execution": {
+            "child_end_seconds": 374.19254300001194,
+            "child_start_seconds": 0.009770709002623335,
+            "gate_release_seconds": 0.010724624997237697
+          },
+          "first_sample_seconds": 0.007947459002025425,
+          "host_role": "remote",
+          "last_sample_seconds": 374.1931472920114,
+          "level_counts": {
+            "1": 713,
+            "2": 7
+          },
+          "max_gap_seconds": 0.5552999170031399,
+          "nonce": "7f489899dba8888d52cbe976706118a4",
+          "phase": "batch-02",
+          "samples": 720
+        },
+        "passed": true
+      },
+      "batch-02_raw14_hashes": {
+        "passed": true
+      },
+      "batch-02_recomputed_raw_audit_equal": {
+        "passed": true
+      },
+      "batch-02_retrieved_rank1_exact_authoritative_envelope_bytes": {
+        "details": {
+          "control5_additional_bytes": "one JSON newline only",
+          "receipt_bytes": 45192877
+        },
+        "passed": true
+      },
+      "batch-02_server_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-02_server_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-02_server_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 20525,
+          "actor_role": "server",
+          "child_pid": 20527,
+          "deadline_seconds": 897.589365459,
+          "elapsed_seconds": 24.835849416995188,
+          "execution": {
+            "child_end_seconds": 24.8339587499795,
+            "child_start_seconds": 0.01082825000048615,
+            "gate_release_seconds": 0.011754499981179833
+          },
+          "first_sample_seconds": 0.008906791976187378,
+          "host_role": "remote",
+          "last_sample_seconds": 24.834036499989452,
+          "level_counts": {
+            "1": 47,
+            "2": 2
+          },
+          "max_gap_seconds": 0.5457119579950813,
+          "nonce": "f106668ab08ab9e49ff56629ce8c5afe",
+          "phase": "batch-02",
+          "samples": 49
+        },
+        "passed": true
+      },
+      "batch-03_actual_parent_authorization": {
+        "passed": true
+      },
+      "batch-03_actual_rank_pair_ids_stops_identical": {
+        "passed": true
+      },
+      "batch-03_all3actor_and9control_transports_clean": {
+        "passed": true
+      },
+      "batch-03_audited_before_next_batch_admitted": {
+        "passed": true
+      },
+      "batch-03_complete_audit_stdout_and_exact_summary_sidecar": {
+        "passed": true
+      },
+      "batch-03_complete_execution_stdout_and_sidecar": {
+        "passed": true
+      },
+      "batch-03_direct_original_native_ids_stops_prompts_both_old_ranks": {
+        "details": {
+          "compared_rows": 28,
+          "unique_old_native": 7
+        },
+        "passed": true
+      },
+      "batch-03_exact79_frozen_and_snapshot_sources": {
+        "passed": true
+      },
+      "batch-03_exact_listener_targets_and_archived_explicit_refusals": {
+        "passed": true
+      },
+      "batch-03_links_hashes": {
+        "passed": true
+      },
+      "batch-03_live_runtime_phase_schedule_only_difference": {
+        "passed": true
+      },
+      "batch-03_native_trust_external_binding": {
+        "passed": true
+      },
+      "batch-03_old_rank0_hash_and_tensor_reference": {
+        "passed": true
+      },
+      "batch-03_old_rank1_hash_and_tensor_reference": {
+        "passed": true
+      },
+      "batch-03_old_schedule_hash": {
+        "passed": true
+      },
+      "batch-03_parent_approval_and_partial_suite_honesty": {
+        "passed": true
+      },
+      "batch-03_rank0_actual28_36_group32_modes": {
+        "details": {
+          "actual_eval_group_schedule": [],
+          "actual_owned_layers": [
+            36,
+            64
+          ]
+        },
+        "passed": true
+      },
+      "batch-03_rank0_actual_all14_native_ids_stop_prompt": {
+        "passed": true
+      },
+      "batch-03_rank0_all_reported_numerical_objects_original_tolerances": {
+        "details": {
+          "all_strict_metric_objects_including_offsets": 5905,
+          "floating_metric_objects": 5232,
+          "invalid": 0
+        },
+        "passed": true
+      },
+      "batch-03_rank0_authoritative_logs_exact_disk_and_retrieval": {
+        "details": {
+          "authoritative_stdout_bytes": 1545450,
+          "forwarded_bytes_dropped": 0,
+          "forwarded_stdout_bytes": 1545450
+        },
+        "passed": true
+      },
+      "batch-03_rank0_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-03_rank0_exact_original_tensor_hashes": {
+        "passed": true
+      },
+      "batch-03_rank0_fresh_unique_cache_nonce_each_request": {
+        "passed": true
+      },
+      "batch-03_rank0_full_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 63
+        },
+        "passed": true
+      },
+      "batch-03_rank0_full_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 642,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "batch-03_rank0_full_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-03_rank0_full_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 330,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "batch-03_rank0_independent_credit_chunks_layers_and_drain": {
+        "details": {
+          "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+          "compound_requests": 7,
+          "phase": "batch-03",
+          "prefix_chunks": 19,
+          "rank": 0
+        },
+        "passed": true
+      },
+      "batch-03_rank0_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-03_rank0_same_process_small_full_gates_before_all14": {
+        "details": {
+          "admission_elapsed": 69.35721741599991,
+          "child_pid": 23071,
+          "first_request_elapsed": 69.38819241599958,
+          "gate_events": 21
+        },
+        "passed": true
+      },
+      "batch-03_rank0_small_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 54
+        },
+        "passed": true
+      },
+      "batch-03_rank0_small_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "batch-03_rank0_small_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-03_rank0_small_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            12,
+            24
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "batch-03_rank0_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 23068,
+          "actor_role": "rank0",
+          "child_pid": 23071,
+          "deadline_seconds": 896.7387621670005,
+          "elapsed_seconds": 388.3901697910005,
+          "execution": {
+            "child_end_seconds": 388.38583116600057,
+            "child_start_seconds": 0.020923915999446763,
+            "gate_release_seconds": 0.0225903329992434
+          },
+          "first_sample_seconds": 0.017603500000404892,
+          "host_role": "local",
+          "last_sample_seconds": 388.3869747079989,
+          "level_counts": {
+            "1": 740,
+            "2": 5
+          },
+          "max_gap_seconds": 0.5541995000003226,
+          "nonce": "389de2a1ccd92d7d96da901570f9b6c4",
+          "phase": "batch-03",
+          "samples": 745
+        },
+        "passed": true
+      },
+      "batch-03_rank1_actual28_36_group32_modes": {
+        "details": {
+          "actual_eval_group_schedule": [],
+          "actual_owned_layers": [
+            0,
+            36
+          ]
+        },
+        "passed": true
+      },
+      "batch-03_rank1_actual_all14_native_ids_stop_prompt": {
+        "passed": true
+      },
+      "batch-03_rank1_all_reported_numerical_objects_original_tolerances": {
+        "details": {
+          "all_strict_metric_objects_including_offsets": 6355,
+          "floating_metric_objects": 5632,
+          "invalid": 0
+        },
+        "passed": true
+      },
+      "batch-03_rank1_authoritative_logs_exact_disk_and_retrieval": {
+        "details": {
+          "authoritative_stdout_bytes": 1697271,
+          "forwarded_bytes_dropped": 1304055,
+          "forwarded_stdout_bytes": 393216
+        },
+        "passed": true
+      },
+      "batch-03_rank1_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-03_rank1_exact_original_tensor_hashes": {
+        "passed": true
+      },
+      "batch-03_rank1_fresh_unique_cache_nonce_each_request": {
+        "passed": true
+      },
+      "batch-03_rank1_full_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 81
+        },
+        "passed": true
+      },
+      "batch-03_rank1_full_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 822,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "batch-03_rank1_full_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-03_rank1_full_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 420,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "batch-03_rank1_independent_credit_chunks_layers_and_drain": {
+        "details": {
+          "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+          "compound_requests": 7,
+          "phase": "batch-03",
+          "prefix_chunks": 19,
+          "rank": 1
+        },
+        "passed": true
+      },
+      "batch-03_rank1_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-03_rank1_same_process_small_full_gates_before_all14": {
+        "details": {
+          "admission_elapsed": 69.31460820799111,
+          "child_pid": 21405,
+          "first_request_elapsed": 69.33740316701005,
+          "gate_events": 21
+        },
+        "passed": true
+      },
+      "batch-03_rank1_small_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 54
+        },
+        "passed": true
+      },
+      "batch-03_rank1_small_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "batch-03_rank1_small_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-03_rank1_small_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            12
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "batch-03_rank1_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 21403,
+          "actor_role": "rank1",
+          "child_pid": 21405,
+          "deadline_seconds": 896.7581419590006,
+          "elapsed_seconds": 388.27287337498274,
+          "execution": {
+            "child_end_seconds": 388.2704335839953,
+            "child_start_seconds": 0.010232792003080249,
+            "gate_release_seconds": 0.011162208975292742
+          },
+          "first_sample_seconds": 0.008440999983577058,
+          "host_role": "remote",
+          "last_sample_seconds": 388.27072224998847,
+          "level_counts": {
+            "1": 739,
+            "2": 7
+          },
+          "max_gap_seconds": 0.553224000002956,
+          "nonce": "00dfbead7c67439f50d19ad948df87ff",
+          "phase": "batch-03",
+          "samples": 746
+        },
+        "passed": true
+      },
+      "batch-03_raw14_hashes": {
+        "passed": true
+      },
+      "batch-03_recomputed_raw_audit_equal": {
+        "passed": true
+      },
+      "batch-03_retrieved_rank1_exact_authoritative_envelope_bytes": {
+        "details": {
+          "control5_additional_bytes": "one JSON newline only",
+          "receipt_bytes": 48553709
+        },
+        "passed": true
+      },
+      "batch-03_server_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-03_server_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-03_server_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 21390,
+          "actor_role": "server",
+          "child_pid": 21392,
+          "deadline_seconds": 897.5644924589997,
+          "elapsed_seconds": 25.13515625000582,
+          "execution": {
+            "child_end_seconds": 25.132655583991436,
+            "child_start_seconds": 0.011479417007649317,
+            "gate_release_seconds": 0.012437833996955305
+          },
+          "first_sample_seconds": 0.009515584009932354,
+          "host_role": "remote",
+          "last_sample_seconds": 25.132806750014424,
+          "level_counts": {
+            "1": 47,
+            "2": 2
+          },
+          "max_gap_seconds": 0.5333479580003768,
+          "nonce": "97a773fc7dc128d054f7ea78188cd395",
+          "phase": "batch-03",
+          "samples": 49
+        },
+        "passed": true
+      },
+      "batch-04_actual_parent_authorization": {
+        "passed": true
+      },
+      "batch-04_actual_rank_pair_ids_stops_identical": {
+        "passed": true
+      },
+      "batch-04_all3actor_and9control_transports_clean": {
+        "passed": true
+      },
+      "batch-04_audited_before_next_batch_admitted": {
+        "passed": true
+      },
+      "batch-04_complete_audit_stdout_and_exact_summary_sidecar": {
+        "passed": true
+      },
+      "batch-04_complete_execution_stdout_and_sidecar": {
+        "passed": true
+      },
+      "batch-04_direct_original_native_ids_stops_prompts_both_old_ranks": {
+        "details": {
+          "compared_rows": 28,
+          "unique_old_native": 7
+        },
+        "passed": true
+      },
+      "batch-04_exact79_frozen_and_snapshot_sources": {
+        "passed": true
+      },
+      "batch-04_exact_listener_targets_and_archived_explicit_refusals": {
+        "passed": true
+      },
+      "batch-04_links_hashes": {
+        "passed": true
+      },
+      "batch-04_live_runtime_phase_schedule_only_difference": {
+        "passed": true
+      },
+      "batch-04_native_trust_external_binding": {
+        "passed": true
+      },
+      "batch-04_old_rank0_hash_and_tensor_reference": {
+        "passed": true
+      },
+      "batch-04_old_rank1_hash_and_tensor_reference": {
+        "passed": true
+      },
+      "batch-04_old_schedule_hash": {
+        "passed": true
+      },
+      "batch-04_parent_approval_and_partial_suite_honesty": {
+        "passed": true
+      },
+      "batch-04_rank0_actual28_36_group32_modes": {
+        "details": {
+          "actual_eval_group_schedule": [],
+          "actual_owned_layers": [
+            36,
+            64
+          ]
+        },
+        "passed": true
+      },
+      "batch-04_rank0_actual_all14_native_ids_stop_prompt": {
+        "passed": true
+      },
+      "batch-04_rank0_all_reported_numerical_objects_original_tolerances": {
+        "details": {
+          "all_strict_metric_objects_including_offsets": 5905,
+          "floating_metric_objects": 5232,
+          "invalid": 0
+        },
+        "passed": true
+      },
+      "batch-04_rank0_authoritative_logs_exact_disk_and_retrieval": {
+        "details": {
+          "authoritative_stdout_bytes": 1533681,
+          "forwarded_bytes_dropped": 0,
+          "forwarded_stdout_bytes": 1533681
+        },
+        "passed": true
+      },
+      "batch-04_rank0_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-04_rank0_exact_original_tensor_hashes": {
+        "passed": true
+      },
+      "batch-04_rank0_fresh_unique_cache_nonce_each_request": {
+        "passed": true
+      },
+      "batch-04_rank0_full_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 63
+        },
+        "passed": true
+      },
+      "batch-04_rank0_full_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 642,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "batch-04_rank0_full_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-04_rank0_full_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 330,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "batch-04_rank0_independent_credit_chunks_layers_and_drain": {
+        "details": {
+          "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+          "compound_requests": 7,
+          "phase": "batch-04",
+          "prefix_chunks": 19,
+          "rank": 0
+        },
+        "passed": true
+      },
+      "batch-04_rank0_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-04_rank0_same_process_small_full_gates_before_all14": {
+        "details": {
+          "admission_elapsed": 68.0981986250008,
+          "child_pid": 23951,
+          "first_request_elapsed": 68.13086170900169,
+          "gate_events": 21
+        },
+        "passed": true
+      },
+      "batch-04_rank0_small_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 54
+        },
+        "passed": true
+      },
+      "batch-04_rank0_small_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "batch-04_rank0_small_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-04_rank0_small_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            12,
+            24
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "batch-04_rank0_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 23949,
+          "actor_role": "rank0",
+          "child_pid": 23951,
+          "deadline_seconds": 896.7720805000008,
+          "elapsed_seconds": 385.82018295800117,
+          "execution": {
+            "child_end_seconds": 385.81389908300116,
+            "child_start_seconds": 0.01999199999954726,
+            "gate_release_seconds": 0.021424750000733184
+          },
+          "first_sample_seconds": 0.0172960410000087,
+          "host_role": "local",
+          "last_sample_seconds": 385.8175060829999,
+          "level_counts": {
+            "1": 742
+          },
+          "max_gap_seconds": 0.584853166999892,
+          "nonce": "639cf340a2ffcf4478c098e40beaeff6",
+          "phase": "batch-04",
+          "samples": 742
+        },
+        "passed": true
+      },
+      "batch-04_rank1_actual28_36_group32_modes": {
+        "details": {
+          "actual_eval_group_schedule": [],
+          "actual_owned_layers": [
+            0,
+            36
+          ]
+        },
+        "passed": true
+      },
+      "batch-04_rank1_actual_all14_native_ids_stop_prompt": {
+        "passed": true
+      },
+      "batch-04_rank1_all_reported_numerical_objects_original_tolerances": {
+        "details": {
+          "all_strict_metric_objects_including_offsets": 6355,
+          "floating_metric_objects": 5632,
+          "invalid": 0
+        },
+        "passed": true
+      },
+      "batch-04_rank1_authoritative_logs_exact_disk_and_retrieval": {
+        "details": {
+          "authoritative_stdout_bytes": 1685511,
+          "forwarded_bytes_dropped": 1292295,
+          "forwarded_stdout_bytes": 393216
+        },
+        "passed": true
+      },
+      "batch-04_rank1_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-04_rank1_exact_original_tensor_hashes": {
+        "passed": true
+      },
+      "batch-04_rank1_fresh_unique_cache_nonce_each_request": {
+        "passed": true
+      },
+      "batch-04_rank1_full_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 81
+        },
+        "passed": true
+      },
+      "batch-04_rank1_full_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 822,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "batch-04_rank1_full_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-04_rank1_full_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 420,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "batch-04_rank1_independent_credit_chunks_layers_and_drain": {
+        "details": {
+          "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+          "compound_requests": 7,
+          "phase": "batch-04",
+          "prefix_chunks": 19,
+          "rank": 1
+        },
+        "passed": true
+      },
+      "batch-04_rank1_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-04_rank1_same_process_small_full_gates_before_all14": {
+        "details": {
+          "admission_elapsed": 68.05120250000618,
+          "child_pid": 22305,
+          "first_request_elapsed": 68.07453816701309,
+          "gate_events": 21
+        },
+        "passed": true
+      },
+      "batch-04_rank1_small_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 54
+        },
+        "passed": true
+      },
+      "batch-04_rank1_small_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "batch-04_rank1_small_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-04_rank1_small_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            12
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "batch-04_rank1_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 22303,
+          "actor_role": "rank1",
+          "child_pid": 22305,
+          "deadline_seconds": 896.7879668750011,
+          "elapsed_seconds": 385.7191996249894,
+          "execution": {
+            "child_end_seconds": 385.71685699999216,
+            "child_start_seconds": 0.009638916002586484,
+            "gate_release_seconds": 0.010629166004946455
+          },
+          "first_sample_seconds": 0.007788415998220444,
+          "host_role": "remote",
+          "last_sample_seconds": 385.71724249998806,
+          "level_counts": {
+            "1": 736,
+            "2": 8
+          },
+          "max_gap_seconds": 0.5543495420133695,
+          "nonce": "2073e35ff1475a1eff5e42ef256b4287",
+          "phase": "batch-04",
+          "samples": 744
+        },
+        "passed": true
+      },
+      "batch-04_raw14_hashes": {
+        "passed": true
+      },
+      "batch-04_recomputed_raw_audit_equal": {
+        "passed": true
+      },
+      "batch-04_retrieved_rank1_exact_authoritative_envelope_bytes": {
+        "details": {
+          "control5_additional_bytes": "one JSON newline only",
+          "receipt_bytes": 48504884
+        },
+        "passed": true
+      },
+      "batch-04_server_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-04_server_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-04_server_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 22290,
+          "actor_role": "server",
+          "child_pid": 22292,
+          "deadline_seconds": 897.6106089589994,
+          "elapsed_seconds": 25.079901165998308,
+          "execution": {
+            "child_end_seconds": 25.077888291009003,
+            "child_start_seconds": 0.010241332987789065,
+            "gate_release_seconds": 0.01124175000586547
+          },
+          "first_sample_seconds": 0.008279750007204711,
+          "host_role": "remote",
+          "last_sample_seconds": 25.07796708299429,
+          "level_counts": {
+            "1": 47,
+            "2": 2
+          },
+          "max_gap_seconds": 0.5367855420045089,
+          "nonce": "163c804dc7e23c4dd94a5cc4093f816e",
+          "phase": "batch-04",
+          "samples": 49
+        },
+        "passed": true
+      },
+      "batch-05_actual_parent_authorization": {
+        "passed": true
+      },
+      "batch-05_actual_rank_pair_ids_stops_identical": {
+        "passed": true
+      },
+      "batch-05_all3actor_and9control_transports_clean": {
+        "passed": true
+      },
+      "batch-05_complete_audit_stdout_and_exact_summary_sidecar": {
+        "passed": true
+      },
+      "batch-05_complete_execution_stdout_and_sidecar": {
+        "passed": true
+      },
+      "batch-05_direct_original_native_ids_stops_prompts_both_old_ranks": {
+        "details": {
+          "compared_rows": 28,
+          "unique_old_native": 7
+        },
+        "passed": true
+      },
+      "batch-05_exact79_frozen_and_snapshot_sources": {
+        "passed": true
+      },
+      "batch-05_exact_listener_targets_and_archived_explicit_refusals": {
+        "passed": true
+      },
+      "batch-05_links_hashes": {
+        "passed": true
+      },
+      "batch-05_live_runtime_phase_schedule_only_difference": {
+        "passed": true
+      },
+      "batch-05_native_trust_external_binding": {
+        "passed": true
+      },
+      "batch-05_old_rank0_hash_and_tensor_reference": {
+        "passed": true
+      },
+      "batch-05_old_rank1_hash_and_tensor_reference": {
+        "passed": true
+      },
+      "batch-05_old_schedule_hash": {
+        "passed": true
+      },
+      "batch-05_parent_approval_and_partial_suite_honesty": {
+        "passed": true
+      },
+      "batch-05_rank0_actual28_36_group32_modes": {
+        "details": {
+          "actual_eval_group_schedule": [],
+          "actual_owned_layers": [
+            36,
+            64
+          ]
+        },
+        "passed": true
+      },
+      "batch-05_rank0_actual_all14_native_ids_stop_prompt": {
+        "passed": true
+      },
+      "batch-05_rank0_all_reported_numerical_objects_original_tolerances": {
+        "details": {
+          "all_strict_metric_objects_including_offsets": 5905,
+          "floating_metric_objects": 5232,
+          "invalid": 0
+        },
+        "passed": true
+      },
+      "batch-05_rank0_authoritative_logs_exact_disk_and_retrieval": {
+        "details": {
+          "authoritative_stdout_bytes": 1531617,
+          "forwarded_bytes_dropped": 0,
+          "forwarded_stdout_bytes": 1531617
+        },
+        "passed": true
+      },
+      "batch-05_rank0_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-05_rank0_exact_original_tensor_hashes": {
+        "passed": true
+      },
+      "batch-05_rank0_fresh_unique_cache_nonce_each_request": {
+        "passed": true
+      },
+      "batch-05_rank0_full_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 63
+        },
+        "passed": true
+      },
+      "batch-05_rank0_full_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 642,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "batch-05_rank0_full_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-05_rank0_full_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 330,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "batch-05_rank0_independent_credit_chunks_layers_and_drain": {
+        "details": {
+          "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+          "compound_requests": 7,
+          "phase": "batch-05",
+          "prefix_chunks": 19,
+          "rank": 0
+        },
+        "passed": true
+      },
+      "batch-05_rank0_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-05_rank0_same_process_small_full_gates_before_all14": {
+        "details": {
+          "admission_elapsed": 71.01973945800091,
+          "child_pid": 24839,
+          "first_request_elapsed": 71.05225400000018,
+          "gate_events": 21
+        },
+        "passed": true
+      },
+      "batch-05_rank0_small_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 54
+        },
+        "passed": true
+      },
+      "batch-05_rank0_small_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "batch-05_rank0_small_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-05_rank0_small_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            12,
+            24
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "batch-05_rank0_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 24837,
+          "actor_role": "rank0",
+          "child_pid": 24839,
+          "deadline_seconds": 896.8440602089995,
+          "elapsed_seconds": 409.71237287499935,
+          "execution": {
+            "child_end_seconds": 409.69640383299884,
+            "child_start_seconds": 0.022109874998932355,
+            "gate_release_seconds": 0.024104291000185185
+          },
+          "first_sample_seconds": 0.018425457999910577,
+          "host_role": "local",
+          "last_sample_seconds": 409.7089295409987,
+          "level_counts": {
+            "1": 773,
+            "2": 8
+          },
+          "max_gap_seconds": 0.5854813330006436,
+          "nonce": "c7ef283219acd81dcd13dc6ef75c56eb",
+          "phase": "batch-05",
+          "samples": 781
+        },
+        "passed": true
+      },
+      "batch-05_rank1_actual28_36_group32_modes": {
+        "details": {
+          "actual_eval_group_schedule": [],
+          "actual_owned_layers": [
+            0,
+            36
+          ]
+        },
+        "passed": true
+      },
+      "batch-05_rank1_actual_all14_native_ids_stop_prompt": {
+        "passed": true
+      },
+      "batch-05_rank1_all_reported_numerical_objects_original_tolerances": {
+        "details": {
+          "all_strict_metric_objects_including_offsets": 6355,
+          "floating_metric_objects": 5632,
+          "invalid": 0
+        },
+        "passed": true
+      },
+      "batch-05_rank1_authoritative_logs_exact_disk_and_retrieval": {
+        "details": {
+          "authoritative_stdout_bytes": 1683442,
+          "forwarded_bytes_dropped": 1322994,
+          "forwarded_stdout_bytes": 360448
+        },
+        "passed": true
+      },
+      "batch-05_rank1_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-05_rank1_exact_original_tensor_hashes": {
+        "passed": true
+      },
+      "batch-05_rank1_fresh_unique_cache_nonce_each_request": {
+        "passed": true
+      },
+      "batch-05_rank1_full_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 81
+        },
+        "passed": true
+      },
+      "batch-05_rank1_full_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 822,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "batch-05_rank1_full_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-05_rank1_full_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 420,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "batch-05_rank1_independent_credit_chunks_layers_and_drain": {
+        "details": {
+          "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+          "compound_requests": 7,
+          "phase": "batch-05",
+          "prefix_chunks": 19,
+          "rank": 1
+        },
+        "passed": true
+      },
+      "batch-05_rank1_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-05_rank1_same_process_small_full_gates_before_all14": {
+        "details": {
+          "admission_elapsed": 70.9906573749904,
+          "child_pid": 23185,
+          "first_request_elapsed": 71.01490533398464,
+          "gate_events": 21
+        },
+        "passed": true
+      },
+      "batch-05_rank1_small_every_width_prefix_cache_part_shape_dtype_offset": {
+        "details": {
+          "cache_boundary_count": 10,
+          "target_parts": 54
+        },
+        "passed": true
+      },
+      "batch-05_rank1_small_hidden_only_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "batch-05_rank1_small_independent_config_derived_layouts": {
+        "passed": true
+      },
+      "batch-05_rank1_small_overlapped_prefill_every_config_cache_part_and_offsets": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            12
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "batch-05_rank1_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 23183,
+          "actor_role": "rank1",
+          "child_pid": 23185,
+          "deadline_seconds": 896.8552149999996,
+          "elapsed_seconds": 409.5258620000095,
+          "execution": {
+            "child_end_seconds": 409.5236725419818,
+            "child_start_seconds": 0.010095624980749562,
+            "gate_release_seconds": 0.01105329199344851
+          },
+          "first_sample_seconds": 0.008351041993591934,
+          "host_role": "remote",
+          "last_sample_seconds": 409.5238967089972,
+          "level_counts": {
+            "1": 777,
+            "2": 4
+          },
+          "max_gap_seconds": 0.5534594580240082,
+          "nonce": "7f672bdcaabae1997b010b1c3c3160f3",
+          "phase": "batch-05",
+          "samples": 781
+        },
+        "passed": true
+      },
+      "batch-05_raw14_hashes": {
+        "passed": true
+      },
+      "batch-05_recomputed_raw_audit_equal": {
+        "passed": true
+      },
+      "batch-05_retrieved_rank1_exact_authoritative_envelope_bytes": {
+        "details": {
+          "control5_additional_bytes": "one JSON newline only",
+          "receipt_bytes": 44034597
+        },
+        "passed": true
+      },
+      "batch-05_server_complete_owned_cleanup_logs": {
+        "passed": true
+      },
+      "batch-05_server_independent_nonce_PID_time_source_binding": {
+        "passed": true
+      },
+      "batch-05_server_v3_pressure_values_coverage_and_deadline": {
+        "details": {
+          "actor_pid": 23169,
+          "actor_role": "server",
+          "child_pid": 23172,
+          "deadline_seconds": 897.4445365419997,
+          "elapsed_seconds": 25.60121441699448,
+          "execution": {
+            "child_end_seconds": 25.59901812497992,
+            "child_start_seconds": 0.01043887497507967,
+            "gate_release_seconds": 0.011387291975552216
+          },
+          "first_sample_seconds": 0.008450041990727186,
+          "host_role": "remote",
+          "last_sample_seconds": 25.599117459001718,
+          "level_counts": {
+            "1": 51
+          },
+          "max_gap_seconds": 0.5187619999924209,
+          "nonce": "a7ae9b5a1f3ebf047282f0d0a2f732b7",
+          "phase": "batch-05",
+          "samples": 51
+        },
+        "passed": true
+      },
+      "batchrunner_exact_phase_optin_and_pinned_source_review_gate": {
+        "passed": true
+      },
+      "both_methods_mtp_mode_is_comparison": {
+        "passed": true
+      },
+      "chinese-1536_both_individual_long_targets_unrounded": {
+        "details": {
+          "request_reduction": 0.16380485015411117,
+          "ttft_reduction": 0.340969698104602
+        },
+        "passed": true
+      },
+      "chinese-1536_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "chinese-1536_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "chinese-1536_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "chinese-1536_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "chinese-512_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "chinese-512_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "chinese-512_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "chinese-512_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "chinese-short_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "chinese-short_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "chinese-short_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "chinese-short_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "code-1536_both_individual_long_targets_unrounded": {
+        "details": {
+          "request_reduction": 0.1976732048666907,
+          "ttft_reduction": 0.3839368156192774
+        },
+        "passed": true
+      },
+      "code-1536_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "code-1536_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "code-1536_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "code-1536_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "code-512_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "code-512_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "code-512_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "code-512_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "code-short_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "code-short_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "code-short_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "code-short_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "explanation-1536_both_individual_long_targets_unrounded": {
+        "details": {
+          "request_reduction": 0.2012334598853156,
+          "ttft_reduction": 0.37124418440459017
+        },
+        "passed": true
+      },
+      "explanation-1536_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "explanation-1536_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "explanation-1536_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "explanation-1536_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "explanation-512_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "explanation-512_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "explanation-512_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "explanation-512_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "explanation-short_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "explanation-short_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "explanation-short_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "explanation-short_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "external_exact_all_weights_and_replicated_equality": {
+        "details": {
+          "replicated": 7,
+          "tensor_count_by_rank": [
+            812,
+            1042
+          ],
+          "union": 1847
+        },
+        "passed": true
+      },
+      "final_input_raw_and_reviewed_sources_still_hash_bound": {
+        "passed": true
+      },
+      "frozen_manifest_hash": {
+        "passed": true
+      },
+      "harness_bindings_exact": {
+        "details": {
+          "count": 7
+        },
+        "passed": true
+      },
+      "historical90_sources_unchanged": {
+        "details": {
+          "count": 90
+        },
+        "passed": true
+      },
+      "historical_baseline77_frozen_source_hashes_preserved": {
+        "passed": true
+      },
+      "historical_normal_failures_remain_failed": {
+        "details": [
+          {
+            "error_stage": "rank_execution",
+            "error_type": "RuntimeError",
+            "owned_actor_cleanup_verified": true,
+            "path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/result.json",
+            "services_closed_verified": true,
+            "sha256": "394b43e841e0bdcffb7644cfc409ffc99d170f0016c823824a7c5242bb3edfe8",
+            "status": "failed"
+          },
+          {
+            "error_stage": "rank_execution",
+            "error_type": "RuntimeError",
+            "owned_actor_cleanup_verified": true,
+            "path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/result.json",
+            "services_closed_verified": true,
+            "sha256": "29189fd28c24ebb1df34b32716d4ea8dec33a411d94ce59ea8b18aaeb6289c8d",
+            "status": "failed"
+          }
+        ],
+        "passed": true
+      },
+      "input_hash_report.json": {
+        "passed": true
+      },
+      "input_hash_summary.json": {
+        "passed": true
+      },
+      "math-1536_both_individual_long_targets_unrounded": {
+        "details": {
+          "request_reduction": 0.1787192860808261,
+          "ttft_reduction": 0.352930188180561
+        },
+        "passed": true
+      },
+      "math-1536_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "math-1536_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "math-1536_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "math-1536_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "math-512_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "math-512_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "math-512_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "math-512_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "math-short_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "math-short_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "math-short_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "math-short_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "memory_amendment_exact_embedded_bytes_sha": {
+        "passed": true
+      },
+      "new_full_controller_correct_bounded_sequential_wiring": {
+        "passed": true
+      },
+      "original_reference_all18_artifact_hashes": {
+        "passed": true
+      },
+      "parent-audit-noncritical-trial-v2.py_no_arbitrary_shell_eval_exec": {
+        "passed": true
+      },
+      "parent-run-batch-noncritical-v1.py_no_arbitrary_shell_eval_exec": {
+        "passed": true
+      },
+      "parent-run-full-suite-noncritical-v1.py_no_arbitrary_shell_eval_exec": {
+        "passed": true
+      },
+      "parent_post_suite_health_matches_recorded_population": {
+        "details": {
+          "scope": "Read parent-produced fresh observations; reviewer did not issue SSH/network/PID probes."
+        },
+        "passed": true
+      },
+      "per_request_MLX_allocator_peaks_match_publication": {
+        "details": {
+          "GiB_by_rank": [
+            7.739493619650602,
+            9.104930805973709
+          ],
+          "bytes_by_rank": [
+            8310217996,
+            9776345011
+          ],
+          "scope": "Observed per-request MLX allocator, not RSS/minimum memory/isolated delta"
+        },
+        "passed": true
+      },
+      "plan_exact_full84_pilot_excluded": {
+        "passed": true
+      },
+      "prerequisite_hash_noncritical-combined-independent-review.json": {
+        "passed": true
+      },
+      "prerequisite_hash_noncritical-pilot-independent-audit.json": {
+        "passed": true
+      },
+      "prerequisite_hash_parent-noncritical-native-reference.json": {
+        "passed": true
+      },
+      "publication_all18_table_and_six_long_tokens_outputs_rounding_match": {
+        "passed": true
+      },
+      "publication_rank_head_timing_limits_not_overclaimed": {
+        "details": {
+          "head_metrics_received_not_peer_reexecution": true,
+          "loading_gates_excluded_and_warmed_shapes_disclosed": true,
+          "no_GPU_occupancy_RSS_memorydelta_confidence_attestation_claim": true,
+          "rank_placement_correct": true
+        },
+        "passed": true
+      },
+      "report_rows_equal_direct_actual_rank_values_with_frozen_repeat": {
+        "passed": true
+      },
+      "sender_exact_two_deletion_statement_delta": {
+        "passed": true
+      },
+      "sender_stream_server_identical_historical": {
+        "passed": true
+      },
+      "six_short_request_regressions_retained": {
+        "passed": true
+      },
+      "spanish-1536_both_individual_long_targets_unrounded": {
+        "details": {
+          "request_reduction": 0.1690468190567067,
+          "ttft_reduction": 0.3438498821652586
+        },
+        "passed": true
+      },
+      "spanish-1536_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "spanish-1536_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "spanish-1536_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "spanish-1536_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "spanish-512_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "spanish-512_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "spanish-512_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "spanish-512_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "spanish-short_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "spanish-short_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "spanish-short_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "spanish-short_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "structured-1536_both_individual_long_targets_unrounded": {
+        "details": {
+          "request_reduction": 0.19482635382644875,
+          "ttft_reduction": 0.39475222317105574
+        },
+        "passed": true
+      },
+      "structured-1536_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "structured-1536_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "structured-1536_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "structured-1536_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "structured-512_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "structured-512_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "structured-512_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "structured-512_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "structured-short_exact_two_pairs_and_original_parity": {
+        "passed": true
+      },
+      "structured-short_first_token_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "structured-short_summary_table_csv_exact_values": {
+        "passed": true
+      },
+      "structured-short_wall_seconds_unrounded_estimator_matches": {
+        "passed": true
+      },
+      "structured1536_actual1535_not_repaired": {
+        "passed": true
+      },
+      "suite_auditor_sha256": {
+        "passed": true
+      },
+      "suite_controller_sha256": {
+        "passed": true
+      },
+      "suite_manifest_and_policy": {
+        "passed": true
+      },
+      "suite_runner_sha256": {
+        "passed": true
+      },
+      "summary_csv_hash": {
+        "passed": true
+      },
+      "warnings95_no4_exact": {
+        "passed": true
+      }
+    },
+    "controller_wiring_review": {
+      "parent-audit-noncritical-trial-v2.py": {
+        "no_arbitrary_shell_eval_exec_calls": true,
+        "reviewed_not_executed": true,
+        "sha256": "5ff4763898bcf922983cd491a6cfa8d9f80f45d3091112fdeac147d99f2224dc"
+      },
+      "parent-run-batch-noncritical-v1.py": {
+        "no_arbitrary_shell_eval_exec_calls": true,
+        "reviewed_not_executed": true,
+        "sha256": "b34f6c565eacd5b79038f485f0549c91b979980cb113e944cfcce3240a89e450"
+      },
+      "parent-run-full-suite-noncritical-v1.py": {
+        "no_arbitrary_shell_eval_exec_calls": true,
+        "reviewed_not_executed": true,
+        "sha256": "cf255fd1e43a28ca6b950d27fc01fa9e1e84b844fdcad904e098ec540d08cca2"
+      }
+    },
+    "failed_check_count": 0,
+    "historical_normal_failures": [
+      {
+        "error_stage": "rank_execution",
+        "error_type": "RuntimeError",
+        "owned_actor_cleanup_verified": true,
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/result.json",
+        "services_closed_verified": true,
+        "sha256": "394b43e841e0bdcffb7644cfc409ffc99d170f0016c823824a7c5242bb3edfe8",
+        "status": "failed"
+      },
+      {
+        "error_stage": "rank_execution",
+        "error_type": "RuntimeError",
+        "owned_actor_cleanup_verified": true,
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/result.json",
+        "services_closed_verified": true,
+        "sha256": "29189fd28c24ebb1df34b32716d4ea8dec33a411d94ce59ea8b18aaeb6289c8d",
+        "status": "failed"
+      }
+    ],
+    "memory": {
+      "not_RSS": true,
+      "not_isolated_memory_delta": true,
+      "per_request_MLX_allocator_peak_bytes_by_rank": [
+        8310217996,
+        9776345011
+      ]
+    },
+    "native_binding": {
+      "all_replicated_digests_equal": true,
+      "external_reference_sha256": "0196fc158afbe460a70eddced189a1659493d53ec05ba00e5364fcb606645ec6",
+      "new_rank_rows_native_ids_stops_checked": 168,
+      "old_baseline_batches": 6,
+      "old_rank_rows_directly_compared_in_phase_mapping": 168,
+      "original_artifact_hashes": 18,
+      "replicated_count": 7,
+      "tensor_counts_by_rank": [
+        812,
+        1042
+      ],
+      "tensor_union": 1847
+    },
+    "numerical_gates": {
+      "all_strict_objects_including_offsets": 73560,
+      "atol": 1e-06,
+      "cache_details": [
+        {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            12,
+            24
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        {
+          "cache_part_comparisons": 642,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        {
+          "cache_part_comparisons": 330,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            12
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        {
+          "cache_part_comparisons": 822,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        {
+          "cache_part_comparisons": 420,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-00",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            12,
+            24
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        {
+          "cache_part_comparisons": 642,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        {
+          "cache_part_comparisons": 330,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            12
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        {
+          "cache_part_comparisons": 822,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        {
+          "cache_part_comparisons": 420,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-01",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            12,
+            24
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        {
+          "cache_part_comparisons": 642,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        {
+          "cache_part_comparisons": 330,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            12
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        {
+          "cache_part_comparisons": 822,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        {
+          "cache_part_comparisons": 420,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-02",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            12,
+            24
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        {
+          "cache_part_comparisons": 642,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        {
+          "cache_part_comparisons": 330,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            12
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        {
+          "cache_part_comparisons": 822,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        {
+          "cache_part_comparisons": 420,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-03",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            12,
+            24
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        {
+          "cache_part_comparisons": 642,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        {
+          "cache_part_comparisons": 330,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            12
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        {
+          "cache_part_comparisons": 822,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        {
+          "cache_part_comparisons": 420,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-04",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            12,
+            24
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 0,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        {
+          "cache_part_comparisons": 642,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        {
+          "cache_part_comparisons": 330,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            36,
+            64
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 0,
+          "scope": "full",
+          "target_parts_per_boundary": 63
+        },
+        {
+          "cache_part_comparisons": 2538,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            24
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 54
+        },
+        {
+          "cache_part_comparisons": 1017,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            12
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "rank": 1,
+          "scope": "small",
+          "target_parts_per_boundary": 27
+        },
+        {
+          "cache_part_comparisons": 822,
+          "head_parts_per_live_boundary": 3,
+          "kind": "hidden_only_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        },
+        {
+          "cache_part_comparisons": 420,
+          "head_parts_per_live_boundary": 3,
+          "kind": "overlapped_prefill",
+          "owned_layers": [
+            0,
+            36
+          ],
+          "phase": "batch-05",
+          "prompt_lengths": [
+            513
+          ],
+          "rank": 1,
+          "scope": "full",
+          "target_parts_per_boundary": 81
+        }
+      ],
+      "chunk_size": 256,
+      "floating_metric_objects": 65184,
+      "full_head_parts": 3,
+      "full_owned_layers_by_rank": [
+        [
+          36,
+          64
+        ],
+        [
+          0,
+          36
+        ]
+      ],
+      "full_prefix_intervals": [
+        [
+          0,
+          256
+        ],
+        [
+          256,
+          512
+        ]
+      ],
+      "full_prompt_tokens": 513,
+      "full_target_cache_parts_by_rank": [
+        63,
+        81
+      ],
+      "hidden_and_overlap_cache_part_comparisons": 55944,
+      "rank_details": [
+        {
+          "device": "Apple M2 Pro",
+          "gate_events": 21,
+          "numerical_metric_objects": 5905,
+          "phase": "batch-00",
+          "rank": 0,
+          "requests": 14
+        },
+        {
+          "device": "Apple M4",
+          "gate_events": 21,
+          "numerical_metric_objects": 6355,
+          "phase": "batch-00",
+          "rank": 1,
+          "requests": 14
+        },
+        {
+          "device": "Apple M2 Pro",
+          "gate_events": 21,
+          "numerical_metric_objects": 5905,
+          "phase": "batch-01",
+          "rank": 0,
+          "requests": 14
+        },
+        {
+          "device": "Apple M4",
+          "gate_events": 21,
+          "numerical_metric_objects": 6355,
+          "phase": "batch-01",
+          "rank": 1,
+          "requests": 14
+        },
+        {
+          "device": "Apple M2 Pro",
+          "gate_events": 21,
+          "numerical_metric_objects": 5905,
+          "phase": "batch-02",
+          "rank": 0,
+          "requests": 14
+        },
+        {
+          "device": "Apple M4",
+          "gate_events": 21,
+          "numerical_metric_objects": 6355,
+          "phase": "batch-02",
+          "rank": 1,
+          "requests": 14
+        },
+        {
+          "device": "Apple M2 Pro",
+          "gate_events": 21,
+          "numerical_metric_objects": 5905,
+          "phase": "batch-03",
+          "rank": 0,
+          "requests": 14
+        },
+        {
+          "device": "Apple M4",
+          "gate_events": 21,
+          "numerical_metric_objects": 6355,
+          "phase": "batch-03",
+          "rank": 1,
+          "requests": 14
+        },
+        {
+          "device": "Apple M2 Pro",
+          "gate_events": 21,
+          "numerical_metric_objects": 5905,
+          "phase": "batch-04",
+          "rank": 0,
+          "requests": 14
+        },
+        {
+          "device": "Apple M4",
+          "gate_events": 21,
+          "numerical_metric_objects": 6355,
+          "phase": "batch-04",
+          "rank": 1,
+          "requests": 14
+        },
+        {
+          "device": "Apple M2 Pro",
+          "gate_events": 21,
+          "numerical_metric_objects": 5905,
+          "phase": "batch-05",
+          "rank": 0,
+          "requests": 14
+        },
+        {
+          "device": "Apple M4",
+          "gate_events": 21,
+          "numerical_metric_objects": 6355,
+          "phase": "batch-05",
+          "rank": 1,
+          "requests": 14
+        }
+      ],
+      "rtol": 1e-05,
+      "small_singleton_empty_head_prefix": "At prompt length1, exact [] head prefix is required before any head state is live; no waived live components.",
+      "width_prefix_additional_cache_part_comparisons": 15120
+    },
+    "passed_check_count": 481,
+    "pipeline_details": [
+      {
+        "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+        "compound_requests": 7,
+        "phase": "batch-00",
+        "prefix_chunks": 19,
+        "rank": 0
+      },
+      {
+        "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+        "compound_requests": 7,
+        "phase": "batch-00",
+        "prefix_chunks": 19,
+        "rank": 1
+      },
+      {
+        "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+        "compound_requests": 7,
+        "phase": "batch-01",
+        "prefix_chunks": 19,
+        "rank": 0
+      },
+      {
+        "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+        "compound_requests": 7,
+        "phase": "batch-01",
+        "prefix_chunks": 19,
+        "rank": 1
+      },
+      {
+        "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+        "compound_requests": 7,
+        "phase": "batch-02",
+        "prefix_chunks": 19,
+        "rank": 0
+      },
+      {
+        "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+        "compound_requests": 7,
+        "phase": "batch-02",
+        "prefix_chunks": 19,
+        "rank": 1
+      },
+      {
+        "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+        "compound_requests": 7,
+        "phase": "batch-03",
+        "prefix_chunks": 19,
+        "rank": 0
+      },
+      {
+        "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+        "compound_requests": 7,
+        "phase": "batch-03",
+        "prefix_chunks": 19,
+        "rank": 1
+      },
+      {
+        "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+        "compound_requests": 7,
+        "phase": "batch-04",
+        "prefix_chunks": 19,
+        "rank": 0
+      },
+      {
+        "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+        "compound_requests": 7,
+        "phase": "batch-04",
+        "prefix_chunks": 19,
+        "rank": 1
+      },
+      {
+        "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+        "compound_requests": 7,
+        "phase": "batch-05",
+        "prefix_chunks": 19,
+        "rank": 0
+      },
+      {
+        "bound_basis": "Rank1 waits evaluated-receive credit for each chunk before starting next; rank0 completes target/head before next receive; <=2 simultaneous chunks and <=1 pending handoff. Local causal grammar, not GPU occupancy.",
+        "compound_requests": 7,
+        "phase": "batch-05",
+        "prefix_chunks": 19,
+        "rank": 1
+      }
+    ],
+    "population": {
+      "cases": 18,
+      "identity_key": "id",
+      "measured": 72,
+      "measured_pairs_per_case": 2,
+      "methods": [
+        "mtp"
+      ],
+      "modes": [
+        "serial",
+        "overlap"
+      ],
+      "pilot_excluded": true,
+      "rows": 84,
+      "unique_row_id": 84,
+      "warmups": 12
+    },
+    "pressure_critical_samples_total": 0,
+    "pressure_details": [
+      {
+        "actor_pid": 20380,
+        "actor_role": "rank0",
+        "child_pid": 20384,
+        "deadline_seconds": 896.7904132499998,
+        "elapsed_seconds": 376.5574557909995,
+        "execution": {
+          "child_end_seconds": 376.5480709579997,
+          "child_start_seconds": 0.021875500000533066,
+          "gate_release_seconds": 0.023572208000587125
+        },
+        "first_sample_seconds": 0.017404125000211934,
+        "host_role": "local",
+        "last_sample_seconds": 376.55410770800063,
+        "level_counts": {
+          "1": 694,
+          "2": 25
+        },
+        "max_gap_seconds": 0.5557290409997222,
+        "nonce": "1e03bb6bcd6fe2de60663123da9ca28c",
+        "phase": "batch-00",
+        "samples": 719
+      },
+      {
+        "actor_pid": 18819,
+        "actor_role": "rank1",
+        "child_pid": 18821,
+        "deadline_seconds": 896.8060254169995,
+        "elapsed_seconds": 376.43278537498554,
+        "execution": {
+          "child_end_seconds": 376.430552832986,
+          "child_start_seconds": 0.010280457994667813,
+          "gate_release_seconds": 0.011283291009021923
+        },
+        "first_sample_seconds": 0.008467165986075997,
+        "host_role": "remote",
+        "last_sample_seconds": 376.43073362499126,
+        "level_counts": {
+          "1": 713,
+          "2": 7
+        },
+        "max_gap_seconds": 0.5527714170166291,
+        "nonce": "37ae567c1fa7df7a133c0be05d98bfee",
+        "phase": "batch-00",
+        "samples": 720
+      },
+      {
+        "actor_pid": 18806,
+        "actor_role": "server",
+        "child_pid": 18808,
+        "deadline_seconds": 897.5287260839996,
+        "elapsed_seconds": 25.906508374988334,
+        "execution": {
+          "child_end_seconds": 25.904579958005343,
+          "child_start_seconds": 0.010861290997127071,
+          "gate_release_seconds": 0.011778082989621907
+        },
+        "first_sample_seconds": 0.008962457999587059,
+        "host_role": "remote",
+        "last_sample_seconds": 25.904664125002455,
+        "level_counts": {
+          "1": 48,
+          "2": 3
+        },
+        "max_gap_seconds": 0.5303533329861239,
+        "nonce": "547bf00cd8e22e33e6c8133390cc8614",
+        "phase": "batch-00",
+        "samples": 51
+      },
+      {
+        "actor_pid": 21302,
+        "actor_role": "rank0",
+        "child_pid": 21305,
+        "deadline_seconds": 896.9246943329999,
+        "elapsed_seconds": 377.0878207499991,
+        "execution": {
+          "child_end_seconds": 377.08114479199867,
+          "child_start_seconds": 0.019004499999937252,
+          "gate_release_seconds": 0.020478291999097564
+        },
+        "first_sample_seconds": 0.01643366699863691,
+        "host_role": "local",
+        "last_sample_seconds": 377.08485541699883,
+        "level_counts": {
+          "1": 715,
+          "2": 5
+        },
+        "max_gap_seconds": 0.5954497500006255,
+        "nonce": "c73a89024718be8befa8d5bc667efd4c",
+        "phase": "batch-01",
+        "samples": 720
+      },
+      {
+        "actor_pid": 19674,
+        "actor_role": "rank1",
+        "child_pid": 19676,
+        "deadline_seconds": 896.9341726660004,
+        "elapsed_seconds": 376.98790675000055,
+        "execution": {
+          "child_end_seconds": 376.98550066701137,
+          "child_start_seconds": 0.010328917007427663,
+          "gate_release_seconds": 0.011322792008286342
+        },
+        "first_sample_seconds": 0.008456750016193837,
+        "host_role": "remote",
+        "last_sample_seconds": 376.98586149999755,
+        "level_counts": {
+          "1": 716,
+          "2": 4
+        },
+        "max_gap_seconds": 0.5724476250179578,
+        "nonce": "145607f9a9d57b7437fc20466e5b3348",
+        "phase": "batch-01",
+        "samples": 720
+      },
+      {
+        "actor_pid": 19660,
+        "actor_role": "server",
+        "child_pid": 19663,
+        "deadline_seconds": 897.6661624999997,
+        "elapsed_seconds": 24.528244874993106,
+        "execution": {
+          "child_end_seconds": 24.526360290998127,
+          "child_start_seconds": 0.01031029099249281,
+          "gate_release_seconds": 0.011373957997420803
+        },
+        "first_sample_seconds": 0.008446749998256564,
+        "host_role": "remote",
+        "last_sample_seconds": 24.52644583300571,
+        "level_counts": {
+          "1": 48
+        },
+        "max_gap_seconds": 0.5288973750139121,
+        "nonce": "9b24bceb61de28bcd13289e2c0155afd",
+        "phase": "batch-01",
+        "samples": 48
+      },
+      {
+        "actor_pid": 22201,
+        "actor_role": "rank0",
+        "child_pid": 22203,
+        "deadline_seconds": 896.7411391669993,
+        "elapsed_seconds": 374.3357915409997,
+        "execution": {
+          "child_end_seconds": 374.3270008749987,
+          "child_start_seconds": 0.02085149999948044,
+          "gate_release_seconds": 0.022181457999977283
+        },
+        "first_sample_seconds": 0.01844383299976471,
+        "host_role": "local",
+        "last_sample_seconds": 374.3330368749994,
+        "level_counts": {
+          "1": 712,
+          "2": 6
+        },
+        "max_gap_seconds": 0.564933583000311,
+        "nonce": "398c0eae66d6f5d5716fac1af354aeaa",
+        "phase": "batch-02",
+        "samples": 718
+      },
+      {
+        "actor_pid": 20538,
+        "actor_role": "rank1",
+        "child_pid": 20540,
+        "deadline_seconds": 896.7575101249986,
+        "elapsed_seconds": 374.19515424998826,
+        "execution": {
+          "child_end_seconds": 374.19254300001194,
+          "child_start_seconds": 0.009770709002623335,
+          "gate_release_seconds": 0.010724624997237697
+        },
+        "first_sample_seconds": 0.007947459002025425,
+        "host_role": "remote",
+        "last_sample_seconds": 374.1931472920114,
+        "level_counts": {
+          "1": 713,
+          "2": 7
+        },
+        "max_gap_seconds": 0.5552999170031399,
+        "nonce": "7f489899dba8888d52cbe976706118a4",
+        "phase": "batch-02",
+        "samples": 720
+      },
+      {
+        "actor_pid": 20525,
+        "actor_role": "server",
+        "child_pid": 20527,
+        "deadline_seconds": 897.589365459,
+        "elapsed_seconds": 24.835849416995188,
+        "execution": {
+          "child_end_seconds": 24.8339587499795,
+          "child_start_seconds": 0.01082825000048615,
+          "gate_release_seconds": 0.011754499981179833
+        },
+        "first_sample_seconds": 0.008906791976187378,
+        "host_role": "remote",
+        "last_sample_seconds": 24.834036499989452,
+        "level_counts": {
+          "1": 47,
+          "2": 2
+        },
+        "max_gap_seconds": 0.5457119579950813,
+        "nonce": "f106668ab08ab9e49ff56629ce8c5afe",
+        "phase": "batch-02",
+        "samples": 49
+      },
+      {
+        "actor_pid": 23068,
+        "actor_role": "rank0",
+        "child_pid": 23071,
+        "deadline_seconds": 896.7387621670005,
+        "elapsed_seconds": 388.3901697910005,
+        "execution": {
+          "child_end_seconds": 388.38583116600057,
+          "child_start_seconds": 0.020923915999446763,
+          "gate_release_seconds": 0.0225903329992434
+        },
+        "first_sample_seconds": 0.017603500000404892,
+        "host_role": "local",
+        "last_sample_seconds": 388.3869747079989,
+        "level_counts": {
+          "1": 740,
+          "2": 5
+        },
+        "max_gap_seconds": 0.5541995000003226,
+        "nonce": "389de2a1ccd92d7d96da901570f9b6c4",
+        "phase": "batch-03",
+        "samples": 745
+      },
+      {
+        "actor_pid": 21403,
+        "actor_role": "rank1",
+        "child_pid": 21405,
+        "deadline_seconds": 896.7581419590006,
+        "elapsed_seconds": 388.27287337498274,
+        "execution": {
+          "child_end_seconds": 388.2704335839953,
+          "child_start_seconds": 0.010232792003080249,
+          "gate_release_seconds": 0.011162208975292742
+        },
+        "first_sample_seconds": 0.008440999983577058,
+        "host_role": "remote",
+        "last_sample_seconds": 388.27072224998847,
+        "level_counts": {
+          "1": 739,
+          "2": 7
+        },
+        "max_gap_seconds": 0.553224000002956,
+        "nonce": "00dfbead7c67439f50d19ad948df87ff",
+        "phase": "batch-03",
+        "samples": 746
+      },
+      {
+        "actor_pid": 21390,
+        "actor_role": "server",
+        "child_pid": 21392,
+        "deadline_seconds": 897.5644924589997,
+        "elapsed_seconds": 25.13515625000582,
+        "execution": {
+          "child_end_seconds": 25.132655583991436,
+          "child_start_seconds": 0.011479417007649317,
+          "gate_release_seconds": 0.012437833996955305
+        },
+        "first_sample_seconds": 0.009515584009932354,
+        "host_role": "remote",
+        "last_sample_seconds": 25.132806750014424,
+        "level_counts": {
+          "1": 47,
+          "2": 2
+        },
+        "max_gap_seconds": 0.5333479580003768,
+        "nonce": "97a773fc7dc128d054f7ea78188cd395",
+        "phase": "batch-03",
+        "samples": 49
+      },
+      {
+        "actor_pid": 23949,
+        "actor_role": "rank0",
+        "child_pid": 23951,
+        "deadline_seconds": 896.7720805000008,
+        "elapsed_seconds": 385.82018295800117,
+        "execution": {
+          "child_end_seconds": 385.81389908300116,
+          "child_start_seconds": 0.01999199999954726,
+          "gate_release_seconds": 0.021424750000733184
+        },
+        "first_sample_seconds": 0.0172960410000087,
+        "host_role": "local",
+        "last_sample_seconds": 385.8175060829999,
+        "level_counts": {
+          "1": 742
+        },
+        "max_gap_seconds": 0.584853166999892,
+        "nonce": "639cf340a2ffcf4478c098e40beaeff6",
+        "phase": "batch-04",
+        "samples": 742
+      },
+      {
+        "actor_pid": 22303,
+        "actor_role": "rank1",
+        "child_pid": 22305,
+        "deadline_seconds": 896.7879668750011,
+        "elapsed_seconds": 385.7191996249894,
+        "execution": {
+          "child_end_seconds": 385.71685699999216,
+          "child_start_seconds": 0.009638916002586484,
+          "gate_release_seconds": 0.010629166004946455
+        },
+        "first_sample_seconds": 0.007788415998220444,
+        "host_role": "remote",
+        "last_sample_seconds": 385.71724249998806,
+        "level_counts": {
+          "1": 736,
+          "2": 8
+        },
+        "max_gap_seconds": 0.5543495420133695,
+        "nonce": "2073e35ff1475a1eff5e42ef256b4287",
+        "phase": "batch-04",
+        "samples": 744
+      },
+      {
+        "actor_pid": 22290,
+        "actor_role": "server",
+        "child_pid": 22292,
+        "deadline_seconds": 897.6106089589994,
+        "elapsed_seconds": 25.079901165998308,
+        "execution": {
+          "child_end_seconds": 25.077888291009003,
+          "child_start_seconds": 0.010241332987789065,
+          "gate_release_seconds": 0.01124175000586547
+        },
+        "first_sample_seconds": 0.008279750007204711,
+        "host_role": "remote",
+        "last_sample_seconds": 25.07796708299429,
+        "level_counts": {
+          "1": 47,
+          "2": 2
+        },
+        "max_gap_seconds": 0.5367855420045089,
+        "nonce": "163c804dc7e23c4dd94a5cc4093f816e",
+        "phase": "batch-04",
+        "samples": 49
+      },
+      {
+        "actor_pid": 24837,
+        "actor_role": "rank0",
+        "child_pid": 24839,
+        "deadline_seconds": 896.8440602089995,
+        "elapsed_seconds": 409.71237287499935,
+        "execution": {
+          "child_end_seconds": 409.69640383299884,
+          "child_start_seconds": 0.022109874998932355,
+          "gate_release_seconds": 0.024104291000185185
+        },
+        "first_sample_seconds": 0.018425457999910577,
+        "host_role": "local",
+        "last_sample_seconds": 409.7089295409987,
+        "level_counts": {
+          "1": 773,
+          "2": 8
+        },
+        "max_gap_seconds": 0.5854813330006436,
+        "nonce": "c7ef283219acd81dcd13dc6ef75c56eb",
+        "phase": "batch-05",
+        "samples": 781
+      },
+      {
+        "actor_pid": 23183,
+        "actor_role": "rank1",
+        "child_pid": 23185,
+        "deadline_seconds": 896.8552149999996,
+        "elapsed_seconds": 409.5258620000095,
+        "execution": {
+          "child_end_seconds": 409.5236725419818,
+          "child_start_seconds": 0.010095624980749562,
+          "gate_release_seconds": 0.01105329199344851
+        },
+        "first_sample_seconds": 0.008351041993591934,
+        "host_role": "remote",
+        "last_sample_seconds": 409.5238967089972,
+        "level_counts": {
+          "1": 777,
+          "2": 4
+        },
+        "max_gap_seconds": 0.5534594580240082,
+        "nonce": "7f672bdcaabae1997b010b1c3c3160f3",
+        "phase": "batch-05",
+        "samples": 781
+      },
+      {
+        "actor_pid": 23169,
+        "actor_role": "server",
+        "child_pid": 23172,
+        "deadline_seconds": 897.4445365419997,
+        "elapsed_seconds": 25.60121441699448,
+        "execution": {
+          "child_end_seconds": 25.59901812497992,
+          "child_start_seconds": 0.01043887497507967,
+          "gate_release_seconds": 0.011387291975552216
+        },
+        "first_sample_seconds": 0.008450041990727186,
+        "host_role": "remote",
+        "last_sample_seconds": 25.599117459001718,
+        "level_counts": {
+          "1": 51
+        },
+        "max_gap_seconds": 0.5187619999924209,
+        "nonce": "a7ae9b5a1f3ebf047282f0d0a2f732b7",
+        "phase": "batch-05",
+        "samples": 51
+      }
+    ],
+    "pressure_policy": "noncritical",
+    "pressure_warning_samples_total": 95,
+    "publication_review": [
+      {
+        "line": 9,
+        "severity": "wording_only_nonblocking",
+        "text": "The adjective \"best\" is not established by this full-suite audit as an exhaustive search over all possible serialized implementations. Read as the selected previously admitted hidden-only serialized comparator; \"already-admitted serialized hidden-only MTP prefill\" is more precise."
+      },
+      {
+        "severity": "scope",
+        "text": "README and parent post-suite health were read, hash-bound and left untouched. Parent health is a recorded fresh observation, not a reviewer live SSH/network/PID probe. Its current independent-review-pending wording was true at the reviewed snapshot."
+      }
+    ],
+    "pure_rerun_report_canonical_byte_values_equal": true,
+    "pure_rerun_seconds": 16.900589708999178,
+    "recorded_cleanup": {
+      "actor_and_child_pid_count": 36,
+      "actors": 18,
+      "all_recorded_complete": true,
+      "control_transport_cleanups": 54,
+      "exact_phase_listener_refusals": 18,
+      "post_suite_health_parent_recorded": true,
+      "transport_cleanup_actors": 18
+    },
+    "report_canonical_sha256": "ef7695e094a095ebdcb7c039aef36688aea5dd14af737f144a64bd47d336336e",
+    "reviewer_probe_corrections_not_evidence_changes": [
+      {
+        "actual": [],
+        "initial_assumption": null,
+        "probe": "actual rank eval_group_schedule",
+        "resolution": "Controller fixed option is None; emitted rank record normalizes the absent schedule to []. Validate raw actual [] without changing any source/evidence."
+      },
+      {
+        "actual": "Rank0 5905, rank1 6355 strict_pass objects, including exact offset scalars.",
+        "initial_assumption": "Incorrectly reused pilot floating-metric-only totals as counts including offset scalar objects.",
+        "probe": "all strict_pass object count",
+        "resolution": "Remove unsupported count assumption; validate every actual object and independently validate expected cache sets below. No evidence edits."
+      },
+      {
+        "actual": "field absent in successful controller result",
+        "initial_assumption": "required field",
+        "probe": "final.pending_cleanup",
+        "resolution": "Use producer contract optional false default; independently require actual owned cleanup, services closed, empty cleanup_errors and complete transport receipts. No evidence edits."
+      },
+      {
+        "actual": "\"no reliable p95, confidence guarantee\"",
+        "initial_assumption": "Exact substring \"no confidence\"",
+        "probe": "README limitations string matching",
+        "resolution": "Match actual equivalent limitation wording; no publication edit."
+      }
+    ],
+    "source_binding": {
+      "approved_live_files_rehashed": 90,
+      "approved_review_sha256": "fbdfe4c1a74775a7e6e98623feddb52baf6d37644e644bc7805f710eaa39e246",
+      "harness_files": 7,
+      "historical_sources_rehashed": 90,
+      "manifest_sha256": "161349a091468906a7c699c83a9224a388403e2d3542675770e8635184f812eb",
+      "phases_checked": 6,
+      "pilot_independent_sha256": "63e8c8cb269ce2a24f8231ca9875375b3d3db3824a3ad2f4f0585ede5e20fc8d",
+      "source_files_per_phase": 79
+    }
+  }
+}

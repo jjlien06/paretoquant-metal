@@ -1,0 +1,84 @@
+{
+  "schema": "parent-post-suite-health-v1",
+  "timestamp": 1792275551.038661,
+  "sampled_at": "2026-10-17T22:19:11.038672+00:00",
+  "suite_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000",
+  "local": {
+    "pid_probe_returncode": 1,
+    "observed_recorded_pids": [],
+    "pressure_returncode": 0,
+    "pressure_level": 1,
+    "swap_returncode": 0,
+    "swap": "total = 2048.00M  used = 1193.56M  free = 854.44M  (encrypted)",
+    "disk_returncode": 0,
+    "disk": "Filesystem   1024-blocks      Used Available Capacity  Mounted on\n/dev/disk3s5   482797652 383352248  73153644    84%    /System/Volumes/Data"
+  },
+  "remote": {
+    "pid_probe_returncode": 1,
+    "observed_recorded_pids": [],
+    "pressure_returncode": 0,
+    "pressure_level": 1,
+    "swap_returncode": 0,
+    "swap": "total = 2048.00M  used = 698.38M  free = 1349.62M  (encrypted)",
+    "disk_returncode": 0,
+    "disk": "Filesystem   1024-blocks      Used Available Capacity  Mounted on\n/dev/disk3s5   239362496 135113600  79607028    63%    /System/Volumes/Data"
+  },
+  "recorded_actor_and_child_pid_counts": {
+    "local": 12,
+    "remote": 24
+  },
+  "fresh_listener_probes": [
+    {
+      "phase": "batch-00",
+      "explicit_listener_refusals": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "phase": "batch-01",
+      "explicit_listener_refusals": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "phase": "batch-02",
+      "explicit_listener_refusals": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "phase": "batch-03",
+      "explicit_listener_refusals": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "phase": "batch-04",
+      "explicit_listener_refusals": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "phase": "batch-05",
+      "explicit_listener_refusals": [
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "all_recorded_pids_absent": true,
+  "all_18_endpoints_explicitly_refused": true,
+  "no_signals_sent": true,
+  "scope": "Fresh read-only local and pinned-SSH peer observations after completed full suite. No GPU/model execution; swap is system snapshot, not model RSS. Valid pressure1/2 under amendment."
+}

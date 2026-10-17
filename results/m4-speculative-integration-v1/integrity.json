@@ -1,0 +1,33 @@
+{
+  "files": {
+    "failed-fixture-v1/gpu-v1-actor/pids.json": "be81848c056b3f9c0a58312a8037659be529a492040d69d40d1e0d3c4ef7554e",
+    "failed-fixture-v1/gpu-v1-actor/result.json": "e8fa710e0176d9c71874d7255ebf8e6e946b66b5cb22205f15494c6febd04d50",
+    "failed-fixture-v1/gpu-v1-actor/stderr": "10e612ba189030d58c64af249bdc3f9128133eb04ada973277c136c00ba69895",
+    "failed-fixture-v1/gpu-v1-actor/stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tiny-gpu/gpu-v2-actor/pids.json": "636624a459e60c697bc3f195b03dd2b21c29a06fb547ebbc3eb3554cfa2871ad",
+    "tiny-gpu/gpu-v2-actor/result.json": "35abb5d1578a86ddfe8f5bd3b5cba3ea219bdd7954497f83580227660448b994",
+    "tiny-gpu/gpu-v2-actor/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tiny-gpu/gpu-v2-actor/stdout": "dfd5a2c3efbd403177a01b99ffe203adf60b3b5d4b0128881f5df88eed33ef1f",
+    "tiny-gpu/gpu-v2.json": "838a84b02e71bf15d788685e66115abac4d60d911066ee929f8e41479dc64537",
+    "real-checkpoint/checkpoint-v1-actor/pids.json": "47118329d7a6f7bf823dd9833df7d36d75e24c438d082160f291bad556fe6b0f",
+    "real-checkpoint/checkpoint-v1-actor/result.json": "1f6d7a2fa2a3a0ada60676736ee23370267bf5ce135564b83f9e32bfcbb88715",
+    "real-checkpoint/checkpoint-v1-actor/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "real-checkpoint/checkpoint-v1-actor/stdout": "5725f6c1e6caf7abca560e190b091b101ebf6e9c469a21190dff42705411ab9f",
+    "real-checkpoint/checkpoint-v1.json": "82637f97939548f80f899334db37cc7c471a54c402a990358a15ac332dbddc46",
+    "cache-diagnostic/checkpoint-cache-diagnostic-v1-actor/pids.json": "82be179694ea18319b8346df40d8c8896221022cd1bf3fe18e323e3c1241444d",
+    "cache-diagnostic/checkpoint-cache-diagnostic-v1-actor/result.json": "5f7658597415603416dedbffe3964a8d7f7564fac5e29972a896045e9efc0258",
+    "cache-diagnostic/checkpoint-cache-diagnostic-v1-actor/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cache-diagnostic/checkpoint-cache-diagnostic-v1-actor/stdout": "eb9ae742c92bcdbe64932594d13bb05b5c31b1f1d69ad25d1a6c6fe11c1b7a7a",
+    "cache-diagnostic/checkpoint-cache-diagnostic-v1.json": "f1f90275278fa7dd9689ec7f331323b6603525c72c86d7be544a3f3a79748139",
+    "source/speculative_decode.py": "d4043a416b82943b3b376612581a22c27b2bbd0970c4c56a820f809b573ec923",
+    "source/test_speculative_decode.py": "0f5b6dc59261f41c60676dd6573d4084d759ca9f8e88a9aa59bce1e24232783a",
+    "source/test_speculative_gpu.py": "19ef8ee0b6cf0a4f3707a3fc16927b838a657731af9e1151c2c46ade2c354615",
+    "source/phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+    "admission/speculative-gpu-deployment.json": "c3959b3012845914c1a3183f57fbb9282d44247e656dc4f4b2b1ff7948637a8f",
+    "admission/speculative-gpu-v2-deployment.json": "a2078d579fb914043fbc698ec754dae4b35b9f4d0783201adff003280f4b824e",
+    "admission/speculative-checkpoint-v1-harness.py": "196222bb5e9229ecfa861f6fed4ffca30e647c0f6839147bee8a7895d11aa0a0",
+    "admission/checkpoint-cache-diagnostic-v1-harness.py": "9eefbd9aa5db128926e94b03a4289c7001196111d09bb194649cdba879241590"
+  },
+  "file_count": 27,
+  "raw_weights_excluded": true
+}

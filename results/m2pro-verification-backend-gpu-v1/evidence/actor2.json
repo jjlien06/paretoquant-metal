@@ -1,0 +1,24 @@
+{
+  "actor": {
+    "reason": "completed",
+    "nonce": "7e5aadc904e6499492b7f135cb40ae5a",
+    "actor_pid": 92489,
+    "child_pid": 92491,
+    "returncode": 0,
+    "cleanup": {
+      "child_reaped": true,
+      "group_gone": true,
+      "pid_reused": false,
+      "identity_unknown": false,
+      "pending_os_gpu_termination": false,
+      "gpu_driver_state": "not inspected; process/group receipt only"
+    },
+    "error_type": null,
+    "elapsed": 6.079572582966648,
+    "forwarded_bytes_dropped": 0
+  },
+  "preflight": {
+    "pressure": 1,
+    "free_disk_bytes": 21130481664
+  }
+}

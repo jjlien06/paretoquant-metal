@@ -1,0 +1,22 @@
+{
+  "objective": "Highest demonstrated autonomous coding, terminal and screenshot-based computer-use capability locally across BOTH existing 16GiB Macs; 24/7 availability; maximize useful performance without substituting a smaller single-host model.",
+  "storage": "External Samsung990EVOPlus2TB on mini, negotiated USB10Gb/s, ample ExFAT space; no measured IO performance.",
+  "interpretation_of_hands_off": "The system receives a specified goal/task queue once, then plans, uses tools, recovers and verifies completion without corrective user prompts. It must stop safely when its authorized scope cannot be met, not invent success or bypass permissions.",
+  "model_selection_evidence": [
+    "Exact deployed quantization coding quality, not original full-precision card alone",
+    "Terminal/tool-call correctness across repeated tool-result turns",
+    "Vision/screenshot grounding and end-to-end GUI task success, not only image description",
+    "Latency and memory at realistic agent-context sizes, including shared/replicated state",
+    "Usable full two-host serving path and recovery behavior"
+  ],
+  "proposed_qualification_not_executed": {
+    "coding": "Held-out bugfix and multi-file implementation tasks, actual test/patch verification, no user nudges.",
+    "terminal": "Install/build/test/debug workflows in disposable authorized workspace; score valid calls, recovery, loops and completion.",
+    "computer_use": "Read-only and reversible browser/desktop tasks with screenshots and explicit success checks; do not equate DOM tools with pixel-grounded action.",
+    "task_completion_accounting": "Count all attempts including timeouts/aborts/needed interventions. Report first-attempt success separately from internally retried success. Freeze tool/template/reasoning/context/token settings.",
+    "service": "24-48hour mixed idle/load test with bounded requests, cancellations, growing histories, memory/swap/log growth and restart/link-loss recovery; this still does not guarantee indefinite reliability.",
+    "performance_objective": "Maximize verified task completion per elapsed time, subject to capability and safe memory headroom; not counting-prompt decode peaks."
+  },
+  "claims_not_supported": "No model-card score, file-size fit or brief generation proves arbitrary computer work can run forever without supervision.",
+  "deployment_scope": "Research and read-only discovery currently. No weights downloaded, persistent services installed, power settings changed or volume reformatted. User approval is not replaced by an instruction to skip all safety boundaries."
+}

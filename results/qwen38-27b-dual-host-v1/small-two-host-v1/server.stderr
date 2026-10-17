@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/jeremylien/.hermes/cache/scratch/1c8531b59767999ed7385d40331c0d72/sources/stream_server.py", line 100, in <module>
+    main()
+    ~~~~^^
+  File "/Users/jeremylien/.hermes/cache/scratch/1c8531b59767999ed7385d40331c0d72/sources/stream_server.py", line 60, in main
+    connection, peer = listener.accept()
+                       ~~~~~~~~~~~~~~~^^
+  File "/Users/jeremylien/.local/share/uv/python/cpython-3.13.2-macos-aarch64-none/lib/python3.13/socket.py", line 295, in accept
+    fd, addr = self._accept()
+               ~~~~~~~~~~~~^^
+TimeoutError: timed out

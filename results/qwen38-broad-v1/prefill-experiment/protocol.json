@@ -1,0 +1,24 @@
+{
+  "schema": "qwen38-hidden-prefill-experiment-v1",
+  "source_cases": [
+    "explanation-short",
+    "code-1536",
+    "explanation-1536"
+  ],
+  "schedule_sha256": "163c1a042caf491facb995b81d57b4f88d3a73c7e8957d63a9e2f0749f3d4c1f",
+  "planned_order": [
+    "024-reference",
+    "024-hidden-only-prefill",
+    "024-reference"
+  ],
+  "measured_repeats_per_method_per_case_per_start": 2,
+  "split": [
+    28,
+    36
+  ],
+  "eval_group_size": 32,
+  "cap_and_prompts": "identical to corresponding broad-suite rows",
+  "gate_policy": "original strict width/cache/prefix gates plus mandatory live hidden-prefill/head-cache gates when enabled; no timing claim before physical success",
+  "metric": "whole request and TTFT primary; decode safety control; no assumption of improvement",
+  "limitation": "separate process bracketing, not randomized reference/candidate in one model process; first longer-shape samples retained"
+}

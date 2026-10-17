@@ -1,0 +1,32 @@
+{
+  "schema": "overlap-parent-pressure-integration-verification-v1",
+  "timestamp": 1792232366.9260218,
+  "original90files_unchanged": true,
+  "observed_results": {
+    "runtime": "293passed13skipped4deselected in1.49s;21MLXdependentmodulesexcluded",
+    "harness": "122passed15.87s;Rufflint/formatpassed35files"
+  },
+  "test_artifacts": {
+    "parent-pressure-v2-runtime-tests.xml": {
+      "total": 306,
+      "skipped": 13,
+      "failures": 0,
+      "errors": 0,
+      "sha256": "a72f9ed9cc7d5f0ed9701b04701121557ce112c0e6fdc549eeb19bdb946fcdbb"
+    },
+    "parent-integrated-harness-tests.xml": {
+      "total": 122,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "sha256": "8989567bbba844db44752c3bba82edd9d10c00e9128e844c3038118d9f236d8c"
+    }
+  },
+  "fresh_readonly_checkpoint_health_receipt": "readonly-preflight-1792232326775744000.json",
+  "frozen_source_schedule_receipt": "parent-freeze.json",
+  "independent_reviews": "in progress pressure-v2 and integration",
+  "new_parent_integration_concern": "Private runner maps remote_source_by_phase to args.remote_source, but real025 uses remote_source for weights and remote_root for code. Independentreviewer askedtoreproduce before repair; do not execute this hook until resolved.",
+  "GPU_model_execution": false,
+  "physical_admission": false,
+  "performance_acceptance": false
+}

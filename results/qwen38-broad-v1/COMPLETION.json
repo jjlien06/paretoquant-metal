@@ -1,0 +1,50 @@
+{
+  "schema": "qwen38-broad-goal-completion-v1",
+  "status": "complete",
+  "broad_suite": {
+    "cases": 18,
+    "measured_requests": 72,
+    "warmups": 12,
+    "requests": 84,
+    "decode_geometric_mean_speedup": 1.4290156456292908,
+    "whole_request_geometric_mean_speedup": 1.1284876578368026,
+    "evidence": "all-six-collected/evidence.json",
+    "strict_audit": "strict-action-audit.json",
+    "independent_review": "independent-review-final.json"
+  },
+  "targeted_optimization": {
+    "runtime": "spikes/024-qwen38-hidden-prefill",
+    "status": "physically validated; retained opt-in",
+    "successful_followup_requests": 42,
+    "comparisons": "prefill-experiment/comparison.json",
+    "physical_review": "prefill-experiment/independent-physical-review.json",
+    "same_source_after_control_wall_speedup": {
+      "explanation-short": 1.0004545980368138,
+      "code-1536": 1.0557203816981862,
+      "explanation-1536": 1.0301033412424752
+    },
+    "not_a_full_18_case_rerun": true
+  },
+  "packaging": {
+    "operator": "benchmarks/qwen38/README.md",
+    "attribution": "benchmarks/qwen38/ATTRIBUTION.md",
+    "report": "results/qwen38-broad-v1/README.md",
+    "csv": "results/qwen38-broad-v1/results.csv",
+    "followup_replay_command": "results/qwen38-broad-v1/prefill-experiment/README.md"
+  },
+  "final_cpu_tests": {
+    "benchmark": "276 passed,1skipped",
+    "candidate": "334 passed,1skipped,1GPUdeselected",
+    "ruff": "clean"
+  },
+  "verified_current_source_count": 61,
+  "operational_state": "Both-host physical cleanup and healthy idle readback recorded; no persistent inference server; downloads retained; no commit/push",
+  "remaining_limitations": [
+    "No universal10tok/s guarantee",
+    "Two repeats per method/case; no reliable tail-latency estimate",
+    "Synthetic context padding and capped outputs are not quality evaluation",
+    "Cross-rank prefill serialization remains",
+    "Before-control guard changes and additional candidate gate warmup are disclosed",
+    "Raw review failures and pre-GPU failed experiment retained"
+  ]
+}

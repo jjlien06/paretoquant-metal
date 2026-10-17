@@ -1,0 +1,62 @@
+[
+  {
+    "file": ".gitattributes",
+    "bytes": 1570,
+    "digest": "52373fe24473b1aa44333d318f578ae6bf04b49b"
+  },
+  {
+    "file": "README.md",
+    "bytes": 678,
+    "digest": "1d5de9efcc5248f9f4c3e443152db2a2753e59a1"
+  },
+  {
+    "file": "chat_template.jinja",
+    "bytes": 7755,
+    "digest": "0ef09f214eaa6d9bca297988afc1454b5827b2c7"
+  },
+  {
+    "file": "config.json",
+    "bytes": 3112,
+    "digest": "f2a232ff3224989be3b1a4db407475dbef3247f6"
+  },
+  {
+    "file": "model.safetensors",
+    "bytes": 625229487,
+    "digest": "f5a0d9dd3efa73510542a8023d610ff26be2b4b020d181cfc4bedaa1fcc5dd9e"
+  },
+  {
+    "file": "model.safetensors.index.json",
+    "bytes": 71473,
+    "digest": "e9a7b6207ef38295c02bbdb5e5e98a27161a4a51"
+  },
+  {
+    "file": "preprocessor_config.json",
+    "bytes": 390,
+    "digest": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64"
+  },
+  {
+    "file": "processor_config.json",
+    "bytes": 1300,
+    "digest": "7ad6acdf4203f22b7b990e36ccc3a1fe38563d5e"
+  },
+  {
+    "file": "tokenizer.json",
+    "bytes": 19989343,
+    "digest": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4"
+  },
+  {
+    "file": "tokenizer_config.json",
+    "bytes": 1139,
+    "digest": "a068e2468cff426a9b105006e74e044030a6faf4"
+  },
+  {
+    "file": "video_preprocessor_config.json",
+    "bytes": 385,
+    "digest": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe"
+  },
+  {
+    "file": "vocab.json",
+    "bytes": 6722759,
+    "digest": "0aa0ce0658d60ac4a5d609f4eadb0e8e43514176"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "schema": "paretoquant-experiment-review-disposition-v1",
+  "delegation": "deleg_616682ef",
+  "candidate": "spikes/020-qwen38-fp16-rounded",
+  "reported_compute_dtype_sha256": "38ab0f5ad3a3277f5b7027e7b6ee887bd70ca497e2cf356ee9fc58b1bb9edc6a",
+  "implementation_report": "Rounded mode preserves protected BF16/F32 A_log; 101 CPU tests and Ruff passed. No GPU or SSH was used by the repair agent.",
+  "verification_scope": "Subagent implementation report; no subsequent parent physical trial or independent review of the repaired variant is claimed.",
+  "disposition": "Retain as unadopted experiment. Do not launch further trials merely because a delayed completion arrived; the requested bounded warm-decode goal was already achieved with native BF16 in spike021.",
+  "winning_runtime_changed": false,
+  "new_inference_jobs_started": false
+}

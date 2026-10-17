@@ -1,0 +1,22 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____ test_fixed_registry_covers_every_code_config_kernel_and_empty_template ____
+
+    def test_fixed_registry_covers_every_code_config_kernel_and_empty_template():
+        import json
+    
+        from remote_actor import SOURCES, source_hashes
+    
+        expected = {p.name for p in ROOT.iterdir() if p.suffix in (".py", ".json", ".metal")}
+>       assert set(SOURCES) == expected
+E       AssertionError: assert {'benchmark_s...gate.py', ...} == {'benchmark_s...gate.py', ...}
+E         
+E         Extra items in the right set:
+E         'test_pressure_noncritical.py'
+E         'test_stream_lifetime.py'
+E         Use -v to get more diff
+
+test_hidden_cli.py:91: AssertionError
+=========================== short test summary info ============================
+FAILED test_hidden_cli.py::test_fixed_registry_covers_every_code_config_kernel_and_empty_template
+1 failed in 0.03s

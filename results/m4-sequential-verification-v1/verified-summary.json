@@ -1,0 +1,102 @@
+{
+  "verdict": "PARTIAL; sequential diagnostic passes, batched numerical gate remains failed",
+  "real_checkpoint": {
+    "batch": {
+      "cases": 6,
+      "passed": 0,
+      "teacher_live_kv_passed": 0,
+      "draft_live_kv_passed": 6,
+      "max_teacher_abs_error": 0.125
+    },
+    "sequential": {
+      "cases": 6,
+      "passed": 6,
+      "teacher_live_kv_passed": 6,
+      "draft_live_kv_passed": 6,
+      "max_teacher_abs_error": 0.0
+    }
+  },
+  "tiny_gpu": {
+    "tiny-batch": {
+      "cases": 80,
+      "passed": true
+    },
+    "tiny-sequential": {
+      "cases": 80,
+      "passed": true
+    }
+  },
+  "cpu_gate": {
+    "passed": 36,
+    "skipped": 1,
+    "subtests_passed": 2653,
+    "ruff_check": "passed",
+    "ruff_format": "6 files already formatted",
+    "provenance": "Observed parent terminal run before physical staging, not a new run"
+  },
+  "token_ids_stop_offsets_and_accounting_all_12_pass": true,
+  "checkpoint_file_digests_unchanged": true,
+  "model_bytes": 260563712,
+  "peak_mlx_bytes": 344176992,
+  "tolerance": {
+    "rtol": 0.002,
+    "atol": 0.002
+  },
+  "executed_sources": {
+    "speculative_decode.py": "25dd62cb80b4d9bcabe78d9a396615f8a658936799908cc0b10b153f2b65b856",
+    "test_speculative_gpu.py": "19ef8ee0b6cf0a4f3707a3fc16927b838a657731af9e1151c2c46ade2c354615",
+    "draft_screen.py": "fdb9ec46cff8efe4cfda568408478bb5bc47750f2942d59e30b3bd55534871ae",
+    "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "checkpoint_modes.py": "0c572a9fe6a102710a0a574d105816419f9685b4fb121a70d4a33a11f2e2a960",
+    "tiny_modes.py": "c9d4e046a317f32e9e7bbb653e3638b18a15a20ef58da32af652239100c55497"
+  },
+  "source_readback_verified_after_execution": true,
+  "guarded32_source_unchanged": true,
+  "owned_actor_cleanup": {
+    "tiny-batch": {
+      "child_reaped": true,
+      "group_gone": true,
+      "pid_reused": false,
+      "identity_unknown": false,
+      "pending_os_gpu_termination": false,
+      "gpu_driver_state": "not inspected; process/group receipt only"
+    },
+    "tiny-sequential": {
+      "child_reaped": true,
+      "group_gone": true,
+      "pid_reused": false,
+      "identity_unknown": false,
+      "pending_os_gpu_termination": false,
+      "gpu_driver_state": "not inspected; process/group receipt only"
+    },
+    "checkpoint-modes": {
+      "child_reaped": true,
+      "group_gone": true,
+      "pid_reused": false,
+      "identity_unknown": false,
+      "pending_os_gpu_termination": false,
+      "gpu_driver_state": "not inspected; process/group receipt only"
+    }
+  },
+  "limits": [
+    "Not a speedup: sequential teacher evaluates each verification input separately",
+    "No actual two-rank or32B speculative run",
+    "No post-extension independent code review claimed",
+    "Mechanism within batched teacher math not proven",
+    "No GPU-driver or OS-residency inspection"
+  ],
+  "last_observed_resources": {
+    "M4": {
+      "pressure_level": 1,
+      "swap_used_MiB": 229.06,
+      "free_disk_display": "90Gi"
+    },
+    "M2_Pro": {
+      "pressure_level": 2,
+      "swap_used_MiB": 12630.5,
+      "free_disk_display": "753Mi"
+    },
+    "provenance": "Parent terminal recheck after completion"
+  }
+}

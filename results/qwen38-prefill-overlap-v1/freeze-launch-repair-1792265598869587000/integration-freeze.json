@@ -1,0 +1,6377 @@
+{
+  "artifact_kind": "PUBLIC_PLAN_NOT_APPROVAL",
+  "execution_permitted": false,
+  "hardware_executed": false,
+  "harness_sources": {
+    "benchmarks/qwen38_overlap/cli.py": "3e7f1adadafd1ae3445c364c3c13cea7b20395c54ea066528182a58316a01cee",
+    "benchmarks/qwen38_overlap/evidence.py": "83e135873133637ab02804b5b12326e996f5866515c137ff31aa58485314d7d8",
+    "benchmarks/qwen38_overlap/harness.py": "1b4664144236aba26ec7ac79c6062d7af3b76262f6c51f3dff232a64466dcc81",
+    "benchmarks/qwen38_overlap/integration025.py": "8bd48566cbbdb7b210073047d2ce1ba4603de8f43e66e6a72bdf738dfbd4cab4",
+    "benchmarks/qwen38_overlap/numerical025.py": "c96e4b1b1bcd6810db988bd1a1751143bf2029850702ba962f88627972eb3b5e",
+    "benchmarks/qwen38_overlap/protocol.py": "24816684d819a25efe625e58c10f4bf0bc944a61d9eeadf4766e44b838bc08e7",
+    "benchmarks/qwen38_overlap/supervisor025.py": "fba88ddfba32e44ae378833cc7d39fdbefab02f9c778dfca75466282b9814814"
+  },
+  "numerical_plan": {
+    "atol": 1e-06,
+    "chunk_size": 256,
+    "forced_ids": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "full": {
+      "0": {
+        "hidden_cases": [
+          {
+            "continuation_offsets": [
+              [
+                514,
+                513
+              ],
+              [
+                515,
+                514
+              ]
+            ],
+            "final_head_offset": 512,
+            "final_target_offset": 513,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                512
+              ]
+            ],
+            "prompt_tokens": 513
+          }
+        ],
+        "hidden_comparison": "hidden-only vs original projected MTP and native cache-only prefill",
+        "native_layout": {
+          "dtype": "bfloat16",
+          "head": [
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 0,
+              "part": "offset"
+            }
+          ],
+          "head_dtype": "bfloat16",
+          "hidden_size": 5120,
+          "owned_layers": [
+            36,
+            64
+          ],
+          "rank": 0,
+          "target": [
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 1,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 1,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 2,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 2,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 3,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 4,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 4,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 5,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 5,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 6,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 6,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 7,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 8,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 8,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 9,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 9,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 10,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 10,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 11,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 12,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 12,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 13,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 13,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 14,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 14,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 15,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 15,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 15,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 16,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 16,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 17,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 17,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 18,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 18,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 19,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 19,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 19,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 20,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 20,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 21,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 21,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 22,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 22,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 23,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 23,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 23,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 24,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 24,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 25,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 25,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 26,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 26,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 27,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 27,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 27,
+              "part": "offset"
+            }
+          ],
+          "vocab_size": 248320
+        },
+        "overlap_cases": [
+          {
+            "continuation_offsets": [
+              [
+                514,
+                513
+              ],
+              [
+                515,
+                514
+              ]
+            ],
+            "final_head_offset": 512,
+            "final_target_offset": 513,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                512
+              ]
+            ],
+            "prompt_tokens": 513
+          }
+        ],
+        "overlap_comparison": "overlap vs serial; ordinary final singleton outside compound",
+        "overlap_layout": {
+          "dtype": "bfloat16",
+          "head": [
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 0,
+              "part": "offset"
+            }
+          ],
+          "head_dtype": "bfloat16",
+          "hidden_size": 5120,
+          "owned_layers": [
+            36,
+            64
+          ],
+          "rank": 0,
+          "target": [
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 1,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 1,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 2,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 2,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 3,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 4,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 4,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 5,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 5,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 6,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 6,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 7,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 8,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 8,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 9,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 9,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 10,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 10,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 11,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 12,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 12,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 13,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 13,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 14,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 14,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 15,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 15,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 15,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 16,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 16,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 17,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 17,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 18,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 18,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 19,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 19,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 19,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 20,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 20,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 21,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 21,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 22,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 22,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 23,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 23,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 23,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 24,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 24,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 25,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 25,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 26,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 26,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 27,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 27,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 27,
+              "part": "offset"
+            }
+          ],
+          "vocab_size": 248320
+        },
+        "prefix_boundaries": [
+          {
+            "name": "same_width",
+            "output_width": 2,
+            "target_offset": 7
+          },
+          {
+            "continuation_target_offset": 6,
+            "continuation_width": 1,
+            "name": "prefix0",
+            "output_width": 0,
+            "target_offset": 5
+          },
+          {
+            "continuation_target_offset": 7,
+            "continuation_width": 1,
+            "name": "prefix1",
+            "output_width": 1,
+            "target_offset": 6
+          },
+          {
+            "continuation_target_offset": 8,
+            "continuation_width": 1,
+            "name": "prefix2",
+            "output_width": 1,
+            "target_offset": 7
+          }
+        ],
+        "width_windows": [
+          {
+            "inputs": [
+              6,
+              7
+            ],
+            "output_width": 2,
+            "target_offset": 7
+          },
+          {
+            "inputs": [
+              8,
+              9
+            ],
+            "output_width": 2,
+            "target_offset": 9
+          },
+          {
+            "inputs": [
+              10,
+              11
+            ],
+            "output_width": 2,
+            "target_offset": 11
+          }
+        ]
+      },
+      "1": {
+        "hidden_cases": [
+          {
+            "continuation_offsets": [
+              [
+                514,
+                513
+              ],
+              [
+                515,
+                514
+              ]
+            ],
+            "final_head_offset": 512,
+            "final_target_offset": 513,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                512
+              ]
+            ],
+            "prompt_tokens": 513
+          }
+        ],
+        "hidden_comparison": "hidden-only vs original projected MTP and native cache-only prefill",
+        "native_layout": {
+          "dtype": "bfloat16",
+          "head": [
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 0,
+              "part": "offset"
+            }
+          ],
+          "head_dtype": "bfloat16",
+          "hidden_size": 5120,
+          "owned_layers": [
+            0,
+            36
+          ],
+          "rank": 1,
+          "target": [
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 1,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 1,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 2,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 2,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 3,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 4,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 4,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 5,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 5,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 6,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 6,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 7,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 8,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 8,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 9,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 9,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 10,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 10,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 11,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 12,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 12,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 13,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 13,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 14,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 14,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 15,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 15,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 15,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 16,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 16,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 17,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 17,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 18,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 18,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 19,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 19,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 19,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 20,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 20,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 21,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 21,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 22,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 22,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 23,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 23,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 23,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 24,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 24,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 25,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 25,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 26,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 26,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 27,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 27,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 27,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 28,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 28,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 29,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 29,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 30,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 30,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 31,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 31,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 31,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 32,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 32,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 33,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 33,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 34,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 34,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 35,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 35,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 35,
+              "part": "offset"
+            }
+          ],
+          "vocab_size": 248320
+        },
+        "overlap_cases": [
+          {
+            "continuation_offsets": [
+              [
+                514,
+                513
+              ],
+              [
+                515,
+                514
+              ]
+            ],
+            "final_head_offset": 512,
+            "final_target_offset": 513,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                512
+              ]
+            ],
+            "prompt_tokens": 513
+          }
+        ],
+        "overlap_comparison": "overlap vs serial; ordinary final singleton outside compound",
+        "overlap_layout": {
+          "dtype": "bfloat16",
+          "head": [
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 0,
+              "part": "offset"
+            }
+          ],
+          "head_dtype": "bfloat16",
+          "hidden_size": 5120,
+          "owned_layers": [
+            0,
+            36
+          ],
+          "rank": 1,
+          "target": [
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 1,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 1,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 2,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 2,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 3,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 4,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 4,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 5,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 5,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 6,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 6,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 7,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 8,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 8,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 9,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 9,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 10,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 10,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 11,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 12,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 12,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 13,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 13,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 14,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 14,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 15,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 15,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 15,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 16,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 16,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 17,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 17,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 18,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 18,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 19,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 19,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 19,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 20,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 20,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 21,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 21,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 22,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 22,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 23,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 23,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 23,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 24,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 24,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 25,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 25,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 26,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 26,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 27,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 27,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 27,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 28,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 28,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 29,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 29,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 30,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 30,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 31,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 31,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 31,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 32,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 32,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 33,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 33,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 34,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                10240
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 34,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                48,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 35,
+              "part": "keys",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 35,
+              "part": "values",
+              "shape": [
+                1,
+                4,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 35,
+              "part": "offset"
+            }
+          ],
+          "vocab_size": 248320
+        },
+        "prefix_boundaries": [
+          {
+            "name": "same_width",
+            "output_width": 2,
+            "target_offset": 7
+          },
+          {
+            "continuation_target_offset": 6,
+            "continuation_width": 1,
+            "name": "prefix0",
+            "output_width": 0,
+            "target_offset": 5
+          },
+          {
+            "continuation_target_offset": 7,
+            "continuation_width": 1,
+            "name": "prefix1",
+            "output_width": 1,
+            "target_offset": 6
+          },
+          {
+            "continuation_target_offset": 8,
+            "continuation_width": 1,
+            "name": "prefix2",
+            "output_width": 1,
+            "target_offset": 7
+          }
+        ],
+        "width_windows": [
+          {
+            "inputs": [
+              6,
+              7
+            ],
+            "output_width": 2,
+            "target_offset": 7
+          },
+          {
+            "inputs": [
+              8,
+              9
+            ],
+            "output_width": 2,
+            "target_offset": 9
+          },
+          {
+            "inputs": [
+              10,
+              11
+            ],
+            "output_width": 2,
+            "target_offset": 11
+          }
+        ]
+      }
+    },
+    "metadata": {
+      "full": {
+        "config_sha256": "14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85",
+        "index_sha256": "13b840162b4cb35c66fef7df072f7dbb4717908204364f5e5d9f9655a2758fa8",
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/models/qwen3.8-27b-4bit-tokenizer-only"
+      },
+      "small": {
+        "config_sha256": "ba7770da23eae5ebd6827571f086e331956b33f4442a9e876fb4aa10969a6772",
+        "index_sha256": "6e48f2fa5d6f033a6d77bf833abfa9698ca24d1715ecea4c67447bcfaee44650",
+        "path": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-qwen38-preflight/small-control"
+      }
+    },
+    "rtol": 1e-05,
+    "schema": "qwen38-overlap-numerical-plan-v2",
+    "small": {
+      "0": {
+        "hidden_cases": [
+          {
+            "continuation_offsets": [
+              [
+                257,
+                256
+              ],
+              [
+                258,
+                257
+              ]
+            ],
+            "final_head_offset": 255,
+            "final_target_offset": 256,
+            "intervals": [
+              [
+                0,
+                255
+              ]
+            ],
+            "prompt_tokens": 256
+          },
+          {
+            "continuation_offsets": [
+              [
+                258,
+                257
+              ],
+              [
+                259,
+                258
+              ]
+            ],
+            "final_head_offset": 256,
+            "final_target_offset": 257,
+            "intervals": [
+              [
+                0,
+                256
+              ]
+            ],
+            "prompt_tokens": 257
+          },
+          {
+            "continuation_offsets": [
+              [
+                512,
+                511
+              ],
+              [
+                513,
+                512
+              ]
+            ],
+            "final_head_offset": 510,
+            "final_target_offset": 511,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                510
+              ]
+            ],
+            "prompt_tokens": 511
+          },
+          {
+            "continuation_offsets": [
+              [
+                513,
+                512
+              ],
+              [
+                514,
+                513
+              ]
+            ],
+            "final_head_offset": 511,
+            "final_target_offset": 512,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                511
+              ]
+            ],
+            "prompt_tokens": 512
+          },
+          {
+            "continuation_offsets": [
+              [
+                514,
+                513
+              ],
+              [
+                515,
+                514
+              ]
+            ],
+            "final_head_offset": 512,
+            "final_target_offset": 513,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                512
+              ]
+            ],
+            "prompt_tokens": 513
+          }
+        ],
+        "hidden_comparison": "hidden-only vs original projected MTP and native cache-only prefill",
+        "native_layout": {
+          "dtype": "bfloat16",
+          "head": [
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 0,
+              "part": "offset"
+            }
+          ],
+          "head_dtype": "float32",
+          "hidden_size": 1024,
+          "owned_layers": [
+            0,
+            24
+          ],
+          "rank": 0,
+          "target": [
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 1,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 1,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 2,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 2,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 3,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 4,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 4,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 5,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 5,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 6,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 6,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 7,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 8,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 8,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 9,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 9,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 10,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 10,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 11,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 12,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 12,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 13,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 13,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 14,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 14,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 15,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 15,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 15,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 16,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 16,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 17,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 17,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 18,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 18,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 19,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 19,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 19,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 20,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 20,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 21,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 21,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 22,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 22,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 23,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 23,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 23,
+              "part": "offset"
+            }
+          ],
+          "vocab_size": 248320
+        },
+        "overlap_cases": [
+          {
+            "continuation_offsets": [
+              [
+                2,
+                1
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "final_head_offset": 0,
+            "final_target_offset": 1,
+            "intervals": [],
+            "prompt_tokens": 1
+          },
+          {
+            "continuation_offsets": [
+              [
+                3,
+                2
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "final_head_offset": 1,
+            "final_target_offset": 2,
+            "intervals": [
+              [
+                0,
+                1
+              ]
+            ],
+            "prompt_tokens": 2
+          },
+          {
+            "continuation_offsets": [
+              [
+                256,
+                255
+              ],
+              [
+                257,
+                256
+              ]
+            ],
+            "final_head_offset": 254,
+            "final_target_offset": 255,
+            "intervals": [
+              [
+                0,
+                254
+              ]
+            ],
+            "prompt_tokens": 255
+          },
+          {
+            "continuation_offsets": [
+              [
+                257,
+                256
+              ],
+              [
+                258,
+                257
+              ]
+            ],
+            "final_head_offset": 255,
+            "final_target_offset": 256,
+            "intervals": [
+              [
+                0,
+                255
+              ]
+            ],
+            "prompt_tokens": 256
+          },
+          {
+            "continuation_offsets": [
+              [
+                258,
+                257
+              ],
+              [
+                259,
+                258
+              ]
+            ],
+            "final_head_offset": 256,
+            "final_target_offset": 257,
+            "intervals": [
+              [
+                0,
+                256
+              ]
+            ],
+            "prompt_tokens": 257
+          },
+          {
+            "continuation_offsets": [
+              [
+                512,
+                511
+              ],
+              [
+                513,
+                512
+              ]
+            ],
+            "final_head_offset": 510,
+            "final_target_offset": 511,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                510
+              ]
+            ],
+            "prompt_tokens": 511
+          },
+          {
+            "continuation_offsets": [
+              [
+                513,
+                512
+              ],
+              [
+                514,
+                513
+              ]
+            ],
+            "final_head_offset": 511,
+            "final_target_offset": 512,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                511
+              ]
+            ],
+            "prompt_tokens": 512
+          },
+          {
+            "continuation_offsets": [
+              [
+                514,
+                513
+              ],
+              [
+                515,
+                514
+              ]
+            ],
+            "final_head_offset": 512,
+            "final_target_offset": 513,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                512
+              ]
+            ],
+            "prompt_tokens": 513
+          }
+        ],
+        "overlap_comparison": "overlap vs serial; ordinary final singleton outside compound",
+        "overlap_layout": {
+          "dtype": "bfloat16",
+          "head": [
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 0,
+              "part": "offset"
+            }
+          ],
+          "head_dtype": "float32",
+          "hidden_size": 1024,
+          "owned_layers": [
+            12,
+            24
+          ],
+          "rank": 0,
+          "target": [
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 1,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 1,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 2,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 2,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 3,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 4,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 4,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 5,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 5,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 6,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 6,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 7,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 8,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 8,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 9,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 9,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 10,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 10,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 11,
+              "part": "offset"
+            }
+          ],
+          "vocab_size": 248320
+        },
+        "prefix_boundaries": [
+          {
+            "name": "same_width",
+            "output_width": 2,
+            "target_offset": 7
+          },
+          {
+            "continuation_target_offset": 6,
+            "continuation_width": 1,
+            "name": "prefix0",
+            "output_width": 0,
+            "target_offset": 5
+          },
+          {
+            "continuation_target_offset": 7,
+            "continuation_width": 1,
+            "name": "prefix1",
+            "output_width": 1,
+            "target_offset": 6
+          },
+          {
+            "continuation_target_offset": 8,
+            "continuation_width": 1,
+            "name": "prefix2",
+            "output_width": 1,
+            "target_offset": 7
+          }
+        ],
+        "width_windows": [
+          {
+            "inputs": [
+              6,
+              7
+            ],
+            "output_width": 2,
+            "target_offset": 7
+          },
+          {
+            "inputs": [
+              8,
+              9
+            ],
+            "output_width": 2,
+            "target_offset": 9
+          },
+          {
+            "inputs": [
+              10,
+              11
+            ],
+            "output_width": 2,
+            "target_offset": 11
+          }
+        ]
+      },
+      "1": {
+        "hidden_cases": [
+          {
+            "continuation_offsets": [
+              [
+                257,
+                256
+              ],
+              [
+                258,
+                257
+              ]
+            ],
+            "final_head_offset": 255,
+            "final_target_offset": 256,
+            "intervals": [
+              [
+                0,
+                255
+              ]
+            ],
+            "prompt_tokens": 256
+          },
+          {
+            "continuation_offsets": [
+              [
+                258,
+                257
+              ],
+              [
+                259,
+                258
+              ]
+            ],
+            "final_head_offset": 256,
+            "final_target_offset": 257,
+            "intervals": [
+              [
+                0,
+                256
+              ]
+            ],
+            "prompt_tokens": 257
+          },
+          {
+            "continuation_offsets": [
+              [
+                512,
+                511
+              ],
+              [
+                513,
+                512
+              ]
+            ],
+            "final_head_offset": 510,
+            "final_target_offset": 511,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                510
+              ]
+            ],
+            "prompt_tokens": 511
+          },
+          {
+            "continuation_offsets": [
+              [
+                513,
+                512
+              ],
+              [
+                514,
+                513
+              ]
+            ],
+            "final_head_offset": 511,
+            "final_target_offset": 512,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                511
+              ]
+            ],
+            "prompt_tokens": 512
+          },
+          {
+            "continuation_offsets": [
+              [
+                514,
+                513
+              ],
+              [
+                515,
+                514
+              ]
+            ],
+            "final_head_offset": 512,
+            "final_target_offset": 513,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                512
+              ]
+            ],
+            "prompt_tokens": 513
+          }
+        ],
+        "hidden_comparison": "hidden-only vs original projected MTP and native cache-only prefill",
+        "native_layout": {
+          "dtype": "bfloat16",
+          "head": [
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 0,
+              "part": "offset"
+            }
+          ],
+          "head_dtype": "float32",
+          "hidden_size": 1024,
+          "owned_layers": [
+            0,
+            24
+          ],
+          "rank": 0,
+          "target": [
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 1,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 1,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 2,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 2,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 3,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 4,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 4,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 5,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 5,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 6,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 6,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 7,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 8,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 8,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 9,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 9,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 10,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 10,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 11,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 12,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 12,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 13,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 13,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 14,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 14,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 15,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 15,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 15,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 16,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 16,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 17,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 17,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 18,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 18,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 19,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 19,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 19,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 20,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 20,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 21,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 21,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 22,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 22,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 23,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 23,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 23,
+              "part": "offset"
+            }
+          ],
+          "vocab_size": 248320
+        },
+        "overlap_cases": [
+          {
+            "continuation_offsets": [
+              [
+                2,
+                1
+              ],
+              [
+                3,
+                2
+              ]
+            ],
+            "final_head_offset": 0,
+            "final_target_offset": 1,
+            "intervals": [],
+            "prompt_tokens": 1
+          },
+          {
+            "continuation_offsets": [
+              [
+                3,
+                2
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            "final_head_offset": 1,
+            "final_target_offset": 2,
+            "intervals": [
+              [
+                0,
+                1
+              ]
+            ],
+            "prompt_tokens": 2
+          },
+          {
+            "continuation_offsets": [
+              [
+                256,
+                255
+              ],
+              [
+                257,
+                256
+              ]
+            ],
+            "final_head_offset": 254,
+            "final_target_offset": 255,
+            "intervals": [
+              [
+                0,
+                254
+              ]
+            ],
+            "prompt_tokens": 255
+          },
+          {
+            "continuation_offsets": [
+              [
+                257,
+                256
+              ],
+              [
+                258,
+                257
+              ]
+            ],
+            "final_head_offset": 255,
+            "final_target_offset": 256,
+            "intervals": [
+              [
+                0,
+                255
+              ]
+            ],
+            "prompt_tokens": 256
+          },
+          {
+            "continuation_offsets": [
+              [
+                258,
+                257
+              ],
+              [
+                259,
+                258
+              ]
+            ],
+            "final_head_offset": 256,
+            "final_target_offset": 257,
+            "intervals": [
+              [
+                0,
+                256
+              ]
+            ],
+            "prompt_tokens": 257
+          },
+          {
+            "continuation_offsets": [
+              [
+                512,
+                511
+              ],
+              [
+                513,
+                512
+              ]
+            ],
+            "final_head_offset": 510,
+            "final_target_offset": 511,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                510
+              ]
+            ],
+            "prompt_tokens": 511
+          },
+          {
+            "continuation_offsets": [
+              [
+                513,
+                512
+              ],
+              [
+                514,
+                513
+              ]
+            ],
+            "final_head_offset": 511,
+            "final_target_offset": 512,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                511
+              ]
+            ],
+            "prompt_tokens": 512
+          },
+          {
+            "continuation_offsets": [
+              [
+                514,
+                513
+              ],
+              [
+                515,
+                514
+              ]
+            ],
+            "final_head_offset": 512,
+            "final_target_offset": 513,
+            "intervals": [
+              [
+                0,
+                256
+              ],
+              [
+                256,
+                512
+              ]
+            ],
+            "prompt_tokens": 513
+          }
+        ],
+        "overlap_comparison": "overlap vs serial; ordinary final singleton outside compound",
+        "overlap_layout": {
+          "dtype": "bfloat16",
+          "head": [
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 0,
+              "part": "offset"
+            }
+          ],
+          "head_dtype": "float32",
+          "hidden_size": 1024,
+          "owned_layers": [
+            0,
+            12
+          ],
+          "rank": 1,
+          "target": [
+            {
+              "dtype": "bfloat16",
+              "layer": 0,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 0,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 1,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 1,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 2,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 2,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 3,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 3,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 4,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 4,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 5,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 5,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 6,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 6,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 7,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 7,
+              "part": "offset"
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 8,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 8,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 9,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 9,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 10,
+              "part": "state.0.0",
+              "shape": [
+                1,
+                3,
+                6144
+              ]
+            },
+            {
+              "dtype": "float32",
+              "layer": 10,
+              "part": "state.0.1",
+              "shape": [
+                1,
+                16,
+                128,
+                128
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "keys",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "dtype": "bfloat16",
+              "layer": 11,
+              "part": "values",
+              "shape": [
+                1,
+                2,
+                null,
+                256
+              ]
+            },
+            {
+              "layer": 11,
+              "part": "offset"
+            }
+          ],
+          "vocab_size": 248320
+        },
+        "prefix_boundaries": [
+          {
+            "name": "same_width",
+            "output_width": 2,
+            "target_offset": 7
+          },
+          {
+            "continuation_target_offset": 6,
+            "continuation_width": 1,
+            "name": "prefix0",
+            "output_width": 0,
+            "target_offset": 5
+          },
+          {
+            "continuation_target_offset": 7,
+            "continuation_width": 1,
+            "name": "prefix1",
+            "output_width": 1,
+            "target_offset": 6
+          },
+          {
+            "continuation_target_offset": 8,
+            "continuation_width": 1,
+            "name": "prefix2",
+            "output_width": 1,
+            "target_offset": 7
+          }
+        ],
+        "width_windows": [
+          {
+            "inputs": [
+              6,
+              7
+            ],
+            "output_width": 2,
+            "target_offset": 7
+          },
+          {
+            "inputs": [
+              8,
+              9
+            ],
+            "output_width": 2,
+            "target_offset": 9
+          },
+          {
+            "inputs": [
+              10,
+              11
+            ],
+            "output_width": 2,
+            "target_offset": 11
+          }
+        ]
+      }
+    },
+    "width_prompt_ids": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "numerical_plan_sha256": "fe749369a727974f954d38957e2139eb3b7ae339111785164d897527fac8991b",
+  "phases": {
+    "batch-00": {
+      "deadline_seconds": 900,
+      "max_tokens": 256,
+      "requests": 14,
+      "schedule_sha256": "ddf1077de85beb84723800292ed79dc9d4bb78a7f51321243738ed3ea67cab52",
+      "source_dir": "runtime-batch-00",
+      "sources": {
+        "benchmark_schedule.json": "ddf1077de85beb84723800292ed79dc9d4bb78a7f51321243738ed3ea67cab52",
+        "cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+        "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b",
+        "distributed_control.py": "fcef87a378bf54f61e2357c01c9f145e4f1c1ec19a55481da64dbfa029f8542e",
+        "hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+        "mlx_backend.py": "8a7adc03903485a733fa12efdfa065b639eeed480ad7b3ed558ef2bf70b8d639",
+        "mtp_audit.py": "6b96425edfa476114a00083cf52521c42e82ae029c41816325ad79b6b1c6c090",
+        "mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+        "mtp_runtime.py": "20c9d920ee9c2096007082fc029fb5a349cecc08d6587ec6de923c95dc07830d",
+        "numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+        "overlap_evidence.py": "5c473a5a1639b678bc2909cb5cffb9eb7367ef317fd77158154562d5cb9c5a4f",
+        "overlap_gate.py": "e2294ed131308c265e1eefd633fece9ab446b1379a4a73fb46f5b33d79e2fc00",
+        "overlap_prefill.py": "d00a29b3cd1790a4c16c77ae2a448aa68b33f1af71618900d0d3b5d50dfec1d6",
+        "phased_decode.py": "7e586790b59ce3d1613452b378d7ce3309c5c54e169226d48b3aea1f117ed2aa",
+        "prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+        "pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20",
+        "probe.py": "4b21c1faead37933d9ebd559c19015e31c707b68dabfe66ba77a8743f2f6c702",
+        "rank_control.py": "cfaea89fefecea5e95ba9005fafacda5adae7b1a9cc7f9ee8ab1c4f719f04f80",
+        "remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+        "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+        "sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+        "slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+        "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+        "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+        "speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+        "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+        "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+        "supervise.py": "485ae42d2f5d9ff7a57359d1ff20f8a8b4283005cb1590881402204b6a6eef3c",
+        "test_batched_snapshot.py": "be1002feb6fd661085b73bf4ef0f31bbb6bba2312231314cd90a1959bfb12b66",
+        "test_cache_gate.py": "5ce8116c15a22f44a191b04b1fcf69b523f690ceaf7ebd88589340f52a7a6c42",
+        "test_cli_schedule.py": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c",
+        "test_config_immutability.py": "30e281bae3adc0c2c493cb88600d69630b8f6103e0c8065257e81defba854d69",
+        "test_controller_snapshot.py": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab",
+        "test_dispatch_schedule.py": "05ca31b22aa6af70538cb12dd145db30903fcad7ca162c8d901935bc005e6b9c",
+        "test_evidence_hardening.py": "f495a0ec7fae35b9172749fc28c2aa77931b6bf8bd2109a23acbc939ffa88a2a",
+        "test_head.py": "bf976833baa25e5da6ddff8bb59338ab046950864cf3a4f2ae30b1ea0e651485",
+        "test_hidden_cache_inventory.py": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493",
+        "test_hidden_cli.py": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f",
+        "test_hidden_control.py": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232",
+        "test_hidden_evidence.py": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137",
+        "test_hidden_gate.py": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a",
+        "test_hidden_prefill.py": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50",
+        "test_hidden_runtime.py": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3",
+        "test_hidden_two_rank.py": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5",
+        "test_integration.py": "c77b6ba8fbe9334d584b72e1ff0ea61fe098351d585f1efb33b7e0ec66df255d",
+        "test_mtp_audit.py": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3",
+        "test_overlap_backend.py": "8c49ec58f77a6989da71f6b13998d4f19e26595cec5bba78974872d2d485705d",
+        "test_overlap_bounds.py": "ed90f36077e830e3a9819e4e25b96e3dfe66b1ccadf124fab225be4c6cb83fe4",
+        "test_overlap_cli.py": "e2fe29aa0725442ae63668d5490690f6d9d0478669c3e859fb3c63cf4387a403",
+        "test_overlap_evidence.py": "a2e79c68c1b82d7f7cafd72e20d8ccc8ea320954138f2b9dee7548499083fb6d",
+        "test_overlap_failure.py": "e8993292ddfa1da7d486f55395b5e643faa751533370f4f9177257cd57e3fa96",
+        "test_overlap_gate.py": "9b74b2ea65221e4012336ead2b61e100418183ff0a000f11bd7014d53ae13a94",
+        "test_overlap_protocol.py": "cb4dad711613aaaf42df3fdc7561fe0da2a0f17eebc0c1c4d35893aa6db3e0c6",
+        "test_overlap_schedule.py": "358002dedf3e79ed45c7b39e8687623a37968071731527ca73fa0444d3f6759a",
+        "test_overlap_wiring.py": "87f456be57084f69073a65e53eb8866b8feec9dbcb60a4db951af6d1e02a5271",
+        "test_phased_cpu.py": "7b65176cc4751ba82ff92ec2ae257a22d501344dd0e901c1d245cc42dddf910e",
+        "test_prefix_integration.py": "377d62e2ed2ff9f09196afd32a1aa788be54b39550060dab0ef042254c8532d5",
+        "test_prefix_rollback.py": "d0f6f040542e4a4ed2bed704bf8af9b5cc15f63d6c4aadd7885b61e8283724d7",
+        "test_pressure_guard.py": "f182ba69d412b8dd7fdb97890aa77f74bad2d327dc855215025fe0e833fcccd5",
+        "test_pressure_v2.py": "50bb735f9ff927581200e5621126ad633297ed2456d8bdb9931a0812a7c3dbcf",
+        "test_speculative.py": "9cd3a4b0b956284e21801ac6805f93e5bd1fdc76b4f60d9cfd7bde1d77fdea17",
+        "test_two_rank_schedule.py": "b67f9a1025738e22b7da3a0f7eb0f9041aa83cc81c03dbb0a063ad6ad4f7a708",
+        "test_unbound_schedule.py": "f446a36ba5fe48f1cc88f1558c5ad4647af9c286e7bc004bd0cc7b85ae866f5a",
+        "test_workload_caps.py": "117e18df911429b210bc96ed998dcbcac6e23304223758ebe3c4b9b9467fa503",
+        "test_workload_cleanup.py": "e478df18900b76dc5dc949d8808db6e6f0cea2e977468d5538fc124b7300f9de",
+        "test_workload_evidence.py": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6",
+        "test_workload_runtime.py": "5a9e95b2e207bdf11410218771959224b683ed6bb4c306696018c3f38c24e267",
+        "test_workload_schedule.py": "ae27e162390368b19d943f0c6f974722481d59a40b9aa18d8e00d34b0470f2d4",
+        "test_workload_snapshot.py": "e8d26f9e3841f320b118a4ec8b148768cb60d72027b1e626fe5234bd71bc120f",
+        "test_workload_timings.py": "761027cf05c067526ad2267a1a81bcd4f36774bdabc5e802abdec1cf7a00e748",
+        "verification.py": "05f2ce291252c9fd276fb029ebef5f5939177b46262dfe5569744326a15981e8",
+        "verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+        "width_gate.py": "81528ae022bed8c910b9d1dcf045990cf9a8968a3978e106becdda14a4ee403c",
+        "workload_evidence.py": "28f0e79a81bec5b418cef501432efc190c1e531bc632bf7c4c5940ba95324f11",
+        "workload_runtime.py": "6d4b8efe2e12ca616069370f3bc31cfefd086f7966c813cd6a4e951b30178446",
+        "workload_schedule.py": "938b74339de27496e3187150e624937338013d57cc650cf10867c3685511113e"
+      }
+    },
+    "batch-01": {
+      "deadline_seconds": 900,
+      "max_tokens": 256,
+      "requests": 14,
+      "schedule_sha256": "081a890be91a6a27a2da0f2fd515e755cddf0e9d3456ada968eaae856f522cb4",
+      "source_dir": "runtime-batch-01",
+      "sources": {
+        "benchmark_schedule.json": "081a890be91a6a27a2da0f2fd515e755cddf0e9d3456ada968eaae856f522cb4",
+        "cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+        "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b",
+        "distributed_control.py": "fcef87a378bf54f61e2357c01c9f145e4f1c1ec19a55481da64dbfa029f8542e",
+        "hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+        "mlx_backend.py": "8a7adc03903485a733fa12efdfa065b639eeed480ad7b3ed558ef2bf70b8d639",
+        "mtp_audit.py": "6b96425edfa476114a00083cf52521c42e82ae029c41816325ad79b6b1c6c090",
+        "mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+        "mtp_runtime.py": "20c9d920ee9c2096007082fc029fb5a349cecc08d6587ec6de923c95dc07830d",
+        "numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+        "overlap_evidence.py": "5c473a5a1639b678bc2909cb5cffb9eb7367ef317fd77158154562d5cb9c5a4f",
+        "overlap_gate.py": "e2294ed131308c265e1eefd633fece9ab446b1379a4a73fb46f5b33d79e2fc00",
+        "overlap_prefill.py": "d00a29b3cd1790a4c16c77ae2a448aa68b33f1af71618900d0d3b5d50dfec1d6",
+        "phased_decode.py": "7e586790b59ce3d1613452b378d7ce3309c5c54e169226d48b3aea1f117ed2aa",
+        "prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+        "pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20",
+        "probe.py": "4b21c1faead37933d9ebd559c19015e31c707b68dabfe66ba77a8743f2f6c702",
+        "rank_control.py": "cfaea89fefecea5e95ba9005fafacda5adae7b1a9cc7f9ee8ab1c4f719f04f80",
+        "remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+        "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+        "sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+        "slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+        "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+        "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+        "speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+        "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+        "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+        "supervise.py": "485ae42d2f5d9ff7a57359d1ff20f8a8b4283005cb1590881402204b6a6eef3c",
+        "test_batched_snapshot.py": "be1002feb6fd661085b73bf4ef0f31bbb6bba2312231314cd90a1959bfb12b66",
+        "test_cache_gate.py": "5ce8116c15a22f44a191b04b1fcf69b523f690ceaf7ebd88589340f52a7a6c42",
+        "test_cli_schedule.py": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c",
+        "test_config_immutability.py": "30e281bae3adc0c2c493cb88600d69630b8f6103e0c8065257e81defba854d69",
+        "test_controller_snapshot.py": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab",
+        "test_dispatch_schedule.py": "05ca31b22aa6af70538cb12dd145db30903fcad7ca162c8d901935bc005e6b9c",
+        "test_evidence_hardening.py": "f495a0ec7fae35b9172749fc28c2aa77931b6bf8bd2109a23acbc939ffa88a2a",
+        "test_head.py": "bf976833baa25e5da6ddff8bb59338ab046950864cf3a4f2ae30b1ea0e651485",
+        "test_hidden_cache_inventory.py": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493",
+        "test_hidden_cli.py": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f",
+        "test_hidden_control.py": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232",
+        "test_hidden_evidence.py": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137",
+        "test_hidden_gate.py": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a",
+        "test_hidden_prefill.py": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50",
+        "test_hidden_runtime.py": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3",
+        "test_hidden_two_rank.py": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5",
+        "test_integration.py": "c77b6ba8fbe9334d584b72e1ff0ea61fe098351d585f1efb33b7e0ec66df255d",
+        "test_mtp_audit.py": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3",
+        "test_overlap_backend.py": "8c49ec58f77a6989da71f6b13998d4f19e26595cec5bba78974872d2d485705d",
+        "test_overlap_bounds.py": "ed90f36077e830e3a9819e4e25b96e3dfe66b1ccadf124fab225be4c6cb83fe4",
+        "test_overlap_cli.py": "e2fe29aa0725442ae63668d5490690f6d9d0478669c3e859fb3c63cf4387a403",
+        "test_overlap_evidence.py": "a2e79c68c1b82d7f7cafd72e20d8ccc8ea320954138f2b9dee7548499083fb6d",
+        "test_overlap_failure.py": "e8993292ddfa1da7d486f55395b5e643faa751533370f4f9177257cd57e3fa96",
+        "test_overlap_gate.py": "9b74b2ea65221e4012336ead2b61e100418183ff0a000f11bd7014d53ae13a94",
+        "test_overlap_protocol.py": "cb4dad711613aaaf42df3fdc7561fe0da2a0f17eebc0c1c4d35893aa6db3e0c6",
+        "test_overlap_schedule.py": "358002dedf3e79ed45c7b39e8687623a37968071731527ca73fa0444d3f6759a",
+        "test_overlap_wiring.py": "87f456be57084f69073a65e53eb8866b8feec9dbcb60a4db951af6d1e02a5271",
+        "test_phased_cpu.py": "7b65176cc4751ba82ff92ec2ae257a22d501344dd0e901c1d245cc42dddf910e",
+        "test_prefix_integration.py": "377d62e2ed2ff9f09196afd32a1aa788be54b39550060dab0ef042254c8532d5",
+        "test_prefix_rollback.py": "d0f6f040542e4a4ed2bed704bf8af9b5cc15f63d6c4aadd7885b61e8283724d7",
+        "test_pressure_guard.py": "f182ba69d412b8dd7fdb97890aa77f74bad2d327dc855215025fe0e833fcccd5",
+        "test_pressure_v2.py": "50bb735f9ff927581200e5621126ad633297ed2456d8bdb9931a0812a7c3dbcf",
+        "test_speculative.py": "9cd3a4b0b956284e21801ac6805f93e5bd1fdc76b4f60d9cfd7bde1d77fdea17",
+        "test_two_rank_schedule.py": "b67f9a1025738e22b7da3a0f7eb0f9041aa83cc81c03dbb0a063ad6ad4f7a708",
+        "test_unbound_schedule.py": "f446a36ba5fe48f1cc88f1558c5ad4647af9c286e7bc004bd0cc7b85ae866f5a",
+        "test_workload_caps.py": "117e18df911429b210bc96ed998dcbcac6e23304223758ebe3c4b9b9467fa503",
+        "test_workload_cleanup.py": "e478df18900b76dc5dc949d8808db6e6f0cea2e977468d5538fc124b7300f9de",
+        "test_workload_evidence.py": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6",
+        "test_workload_runtime.py": "5a9e95b2e207bdf11410218771959224b683ed6bb4c306696018c3f38c24e267",
+        "test_workload_schedule.py": "ae27e162390368b19d943f0c6f974722481d59a40b9aa18d8e00d34b0470f2d4",
+        "test_workload_snapshot.py": "e8d26f9e3841f320b118a4ec8b148768cb60d72027b1e626fe5234bd71bc120f",
+        "test_workload_timings.py": "761027cf05c067526ad2267a1a81bcd4f36774bdabc5e802abdec1cf7a00e748",
+        "verification.py": "05f2ce291252c9fd276fb029ebef5f5939177b46262dfe5569744326a15981e8",
+        "verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+        "width_gate.py": "81528ae022bed8c910b9d1dcf045990cf9a8968a3978e106becdda14a4ee403c",
+        "workload_evidence.py": "28f0e79a81bec5b418cef501432efc190c1e531bc632bf7c4c5940ba95324f11",
+        "workload_runtime.py": "6d4b8efe2e12ca616069370f3bc31cfefd086f7966c813cd6a4e951b30178446",
+        "workload_schedule.py": "938b74339de27496e3187150e624937338013d57cc650cf10867c3685511113e"
+      }
+    },
+    "batch-02": {
+      "deadline_seconds": 900,
+      "max_tokens": 256,
+      "requests": 14,
+      "schedule_sha256": "4df57899d8e707a1b02007f4f9a66a1d1ac6ff77ccba86679f2cc297fa035246",
+      "source_dir": "runtime-batch-02",
+      "sources": {
+        "benchmark_schedule.json": "4df57899d8e707a1b02007f4f9a66a1d1ac6ff77ccba86679f2cc297fa035246",
+        "cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+        "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b",
+        "distributed_control.py": "fcef87a378bf54f61e2357c01c9f145e4f1c1ec19a55481da64dbfa029f8542e",
+        "hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+        "mlx_backend.py": "8a7adc03903485a733fa12efdfa065b639eeed480ad7b3ed558ef2bf70b8d639",
+        "mtp_audit.py": "6b96425edfa476114a00083cf52521c42e82ae029c41816325ad79b6b1c6c090",
+        "mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+        "mtp_runtime.py": "20c9d920ee9c2096007082fc029fb5a349cecc08d6587ec6de923c95dc07830d",
+        "numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+        "overlap_evidence.py": "5c473a5a1639b678bc2909cb5cffb9eb7367ef317fd77158154562d5cb9c5a4f",
+        "overlap_gate.py": "e2294ed131308c265e1eefd633fece9ab446b1379a4a73fb46f5b33d79e2fc00",
+        "overlap_prefill.py": "d00a29b3cd1790a4c16c77ae2a448aa68b33f1af71618900d0d3b5d50dfec1d6",
+        "phased_decode.py": "7e586790b59ce3d1613452b378d7ce3309c5c54e169226d48b3aea1f117ed2aa",
+        "prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+        "pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20",
+        "probe.py": "4b21c1faead37933d9ebd559c19015e31c707b68dabfe66ba77a8743f2f6c702",
+        "rank_control.py": "cfaea89fefecea5e95ba9005fafacda5adae7b1a9cc7f9ee8ab1c4f719f04f80",
+        "remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+        "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+        "sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+        "slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+        "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+        "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+        "speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+        "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+        "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+        "supervise.py": "485ae42d2f5d9ff7a57359d1ff20f8a8b4283005cb1590881402204b6a6eef3c",
+        "test_batched_snapshot.py": "be1002feb6fd661085b73bf4ef0f31bbb6bba2312231314cd90a1959bfb12b66",
+        "test_cache_gate.py": "5ce8116c15a22f44a191b04b1fcf69b523f690ceaf7ebd88589340f52a7a6c42",
+        "test_cli_schedule.py": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c",
+        "test_config_immutability.py": "30e281bae3adc0c2c493cb88600d69630b8f6103e0c8065257e81defba854d69",
+        "test_controller_snapshot.py": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab",
+        "test_dispatch_schedule.py": "05ca31b22aa6af70538cb12dd145db30903fcad7ca162c8d901935bc005e6b9c",
+        "test_evidence_hardening.py": "f495a0ec7fae35b9172749fc28c2aa77931b6bf8bd2109a23acbc939ffa88a2a",
+        "test_head.py": "bf976833baa25e5da6ddff8bb59338ab046950864cf3a4f2ae30b1ea0e651485",
+        "test_hidden_cache_inventory.py": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493",
+        "test_hidden_cli.py": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f",
+        "test_hidden_control.py": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232",
+        "test_hidden_evidence.py": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137",
+        "test_hidden_gate.py": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a",
+        "test_hidden_prefill.py": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50",
+        "test_hidden_runtime.py": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3",
+        "test_hidden_two_rank.py": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5",
+        "test_integration.py": "c77b6ba8fbe9334d584b72e1ff0ea61fe098351d585f1efb33b7e0ec66df255d",
+        "test_mtp_audit.py": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3",
+        "test_overlap_backend.py": "8c49ec58f77a6989da71f6b13998d4f19e26595cec5bba78974872d2d485705d",
+        "test_overlap_bounds.py": "ed90f36077e830e3a9819e4e25b96e3dfe66b1ccadf124fab225be4c6cb83fe4",
+        "test_overlap_cli.py": "e2fe29aa0725442ae63668d5490690f6d9d0478669c3e859fb3c63cf4387a403",
+        "test_overlap_evidence.py": "a2e79c68c1b82d7f7cafd72e20d8ccc8ea320954138f2b9dee7548499083fb6d",
+        "test_overlap_failure.py": "e8993292ddfa1da7d486f55395b5e643faa751533370f4f9177257cd57e3fa96",
+        "test_overlap_gate.py": "9b74b2ea65221e4012336ead2b61e100418183ff0a000f11bd7014d53ae13a94",
+        "test_overlap_protocol.py": "cb4dad711613aaaf42df3fdc7561fe0da2a0f17eebc0c1c4d35893aa6db3e0c6",
+        "test_overlap_schedule.py": "358002dedf3e79ed45c7b39e8687623a37968071731527ca73fa0444d3f6759a",
+        "test_overlap_wiring.py": "87f456be57084f69073a65e53eb8866b8feec9dbcb60a4db951af6d1e02a5271",
+        "test_phased_cpu.py": "7b65176cc4751ba82ff92ec2ae257a22d501344dd0e901c1d245cc42dddf910e",
+        "test_prefix_integration.py": "377d62e2ed2ff9f09196afd32a1aa788be54b39550060dab0ef042254c8532d5",
+        "test_prefix_rollback.py": "d0f6f040542e4a4ed2bed704bf8af9b5cc15f63d6c4aadd7885b61e8283724d7",
+        "test_pressure_guard.py": "f182ba69d412b8dd7fdb97890aa77f74bad2d327dc855215025fe0e833fcccd5",
+        "test_pressure_v2.py": "50bb735f9ff927581200e5621126ad633297ed2456d8bdb9931a0812a7c3dbcf",
+        "test_speculative.py": "9cd3a4b0b956284e21801ac6805f93e5bd1fdc76b4f60d9cfd7bde1d77fdea17",
+        "test_two_rank_schedule.py": "b67f9a1025738e22b7da3a0f7eb0f9041aa83cc81c03dbb0a063ad6ad4f7a708",
+        "test_unbound_schedule.py": "f446a36ba5fe48f1cc88f1558c5ad4647af9c286e7bc004bd0cc7b85ae866f5a",
+        "test_workload_caps.py": "117e18df911429b210bc96ed998dcbcac6e23304223758ebe3c4b9b9467fa503",
+        "test_workload_cleanup.py": "e478df18900b76dc5dc949d8808db6e6f0cea2e977468d5538fc124b7300f9de",
+        "test_workload_evidence.py": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6",
+        "test_workload_runtime.py": "5a9e95b2e207bdf11410218771959224b683ed6bb4c306696018c3f38c24e267",
+        "test_workload_schedule.py": "ae27e162390368b19d943f0c6f974722481d59a40b9aa18d8e00d34b0470f2d4",
+        "test_workload_snapshot.py": "e8d26f9e3841f320b118a4ec8b148768cb60d72027b1e626fe5234bd71bc120f",
+        "test_workload_timings.py": "761027cf05c067526ad2267a1a81bcd4f36774bdabc5e802abdec1cf7a00e748",
+        "verification.py": "05f2ce291252c9fd276fb029ebef5f5939177b46262dfe5569744326a15981e8",
+        "verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+        "width_gate.py": "81528ae022bed8c910b9d1dcf045990cf9a8968a3978e106becdda14a4ee403c",
+        "workload_evidence.py": "28f0e79a81bec5b418cef501432efc190c1e531bc632bf7c4c5940ba95324f11",
+        "workload_runtime.py": "6d4b8efe2e12ca616069370f3bc31cfefd086f7966c813cd6a4e951b30178446",
+        "workload_schedule.py": "938b74339de27496e3187150e624937338013d57cc650cf10867c3685511113e"
+      }
+    },
+    "batch-03": {
+      "deadline_seconds": 900,
+      "max_tokens": 256,
+      "requests": 14,
+      "schedule_sha256": "9580a32a24972034d4e254e411fdf1e7d0709576666dd914ce0a40d024f22c44",
+      "source_dir": "runtime-batch-03",
+      "sources": {
+        "benchmark_schedule.json": "9580a32a24972034d4e254e411fdf1e7d0709576666dd914ce0a40d024f22c44",
+        "cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+        "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b",
+        "distributed_control.py": "fcef87a378bf54f61e2357c01c9f145e4f1c1ec19a55481da64dbfa029f8542e",
+        "hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+        "mlx_backend.py": "8a7adc03903485a733fa12efdfa065b639eeed480ad7b3ed558ef2bf70b8d639",
+        "mtp_audit.py": "6b96425edfa476114a00083cf52521c42e82ae029c41816325ad79b6b1c6c090",
+        "mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+        "mtp_runtime.py": "20c9d920ee9c2096007082fc029fb5a349cecc08d6587ec6de923c95dc07830d",
+        "numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+        "overlap_evidence.py": "5c473a5a1639b678bc2909cb5cffb9eb7367ef317fd77158154562d5cb9c5a4f",
+        "overlap_gate.py": "e2294ed131308c265e1eefd633fece9ab446b1379a4a73fb46f5b33d79e2fc00",
+        "overlap_prefill.py": "d00a29b3cd1790a4c16c77ae2a448aa68b33f1af71618900d0d3b5d50dfec1d6",
+        "phased_decode.py": "7e586790b59ce3d1613452b378d7ce3309c5c54e169226d48b3aea1f117ed2aa",
+        "prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+        "pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20",
+        "probe.py": "4b21c1faead37933d9ebd559c19015e31c707b68dabfe66ba77a8743f2f6c702",
+        "rank_control.py": "cfaea89fefecea5e95ba9005fafacda5adae7b1a9cc7f9ee8ab1c4f719f04f80",
+        "remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+        "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+        "sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+        "slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+        "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+        "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+        "speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+        "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+        "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+        "supervise.py": "485ae42d2f5d9ff7a57359d1ff20f8a8b4283005cb1590881402204b6a6eef3c",
+        "test_batched_snapshot.py": "be1002feb6fd661085b73bf4ef0f31bbb6bba2312231314cd90a1959bfb12b66",
+        "test_cache_gate.py": "5ce8116c15a22f44a191b04b1fcf69b523f690ceaf7ebd88589340f52a7a6c42",
+        "test_cli_schedule.py": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c",
+        "test_config_immutability.py": "30e281bae3adc0c2c493cb88600d69630b8f6103e0c8065257e81defba854d69",
+        "test_controller_snapshot.py": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab",
+        "test_dispatch_schedule.py": "05ca31b22aa6af70538cb12dd145db30903fcad7ca162c8d901935bc005e6b9c",
+        "test_evidence_hardening.py": "f495a0ec7fae35b9172749fc28c2aa77931b6bf8bd2109a23acbc939ffa88a2a",
+        "test_head.py": "bf976833baa25e5da6ddff8bb59338ab046950864cf3a4f2ae30b1ea0e651485",
+        "test_hidden_cache_inventory.py": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493",
+        "test_hidden_cli.py": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f",
+        "test_hidden_control.py": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232",
+        "test_hidden_evidence.py": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137",
+        "test_hidden_gate.py": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a",
+        "test_hidden_prefill.py": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50",
+        "test_hidden_runtime.py": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3",
+        "test_hidden_two_rank.py": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5",
+        "test_integration.py": "c77b6ba8fbe9334d584b72e1ff0ea61fe098351d585f1efb33b7e0ec66df255d",
+        "test_mtp_audit.py": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3",
+        "test_overlap_backend.py": "8c49ec58f77a6989da71f6b13998d4f19e26595cec5bba78974872d2d485705d",
+        "test_overlap_bounds.py": "ed90f36077e830e3a9819e4e25b96e3dfe66b1ccadf124fab225be4c6cb83fe4",
+        "test_overlap_cli.py": "e2fe29aa0725442ae63668d5490690f6d9d0478669c3e859fb3c63cf4387a403",
+        "test_overlap_evidence.py": "a2e79c68c1b82d7f7cafd72e20d8ccc8ea320954138f2b9dee7548499083fb6d",
+        "test_overlap_failure.py": "e8993292ddfa1da7d486f55395b5e643faa751533370f4f9177257cd57e3fa96",
+        "test_overlap_gate.py": "9b74b2ea65221e4012336ead2b61e100418183ff0a000f11bd7014d53ae13a94",
+        "test_overlap_protocol.py": "cb4dad711613aaaf42df3fdc7561fe0da2a0f17eebc0c1c4d35893aa6db3e0c6",
+        "test_overlap_schedule.py": "358002dedf3e79ed45c7b39e8687623a37968071731527ca73fa0444d3f6759a",
+        "test_overlap_wiring.py": "87f456be57084f69073a65e53eb8866b8feec9dbcb60a4db951af6d1e02a5271",
+        "test_phased_cpu.py": "7b65176cc4751ba82ff92ec2ae257a22d501344dd0e901c1d245cc42dddf910e",
+        "test_prefix_integration.py": "377d62e2ed2ff9f09196afd32a1aa788be54b39550060dab0ef042254c8532d5",
+        "test_prefix_rollback.py": "d0f6f040542e4a4ed2bed704bf8af9b5cc15f63d6c4aadd7885b61e8283724d7",
+        "test_pressure_guard.py": "f182ba69d412b8dd7fdb97890aa77f74bad2d327dc855215025fe0e833fcccd5",
+        "test_pressure_v2.py": "50bb735f9ff927581200e5621126ad633297ed2456d8bdb9931a0812a7c3dbcf",
+        "test_speculative.py": "9cd3a4b0b956284e21801ac6805f93e5bd1fdc76b4f60d9cfd7bde1d77fdea17",
+        "test_two_rank_schedule.py": "b67f9a1025738e22b7da3a0f7eb0f9041aa83cc81c03dbb0a063ad6ad4f7a708",
+        "test_unbound_schedule.py": "f446a36ba5fe48f1cc88f1558c5ad4647af9c286e7bc004bd0cc7b85ae866f5a",
+        "test_workload_caps.py": "117e18df911429b210bc96ed998dcbcac6e23304223758ebe3c4b9b9467fa503",
+        "test_workload_cleanup.py": "e478df18900b76dc5dc949d8808db6e6f0cea2e977468d5538fc124b7300f9de",
+        "test_workload_evidence.py": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6",
+        "test_workload_runtime.py": "5a9e95b2e207bdf11410218771959224b683ed6bb4c306696018c3f38c24e267",
+        "test_workload_schedule.py": "ae27e162390368b19d943f0c6f974722481d59a40b9aa18d8e00d34b0470f2d4",
+        "test_workload_snapshot.py": "e8d26f9e3841f320b118a4ec8b148768cb60d72027b1e626fe5234bd71bc120f",
+        "test_workload_timings.py": "761027cf05c067526ad2267a1a81bcd4f36774bdabc5e802abdec1cf7a00e748",
+        "verification.py": "05f2ce291252c9fd276fb029ebef5f5939177b46262dfe5569744326a15981e8",
+        "verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+        "width_gate.py": "81528ae022bed8c910b9d1dcf045990cf9a8968a3978e106becdda14a4ee403c",
+        "workload_evidence.py": "28f0e79a81bec5b418cef501432efc190c1e531bc632bf7c4c5940ba95324f11",
+        "workload_runtime.py": "6d4b8efe2e12ca616069370f3bc31cfefd086f7966c813cd6a4e951b30178446",
+        "workload_schedule.py": "938b74339de27496e3187150e624937338013d57cc650cf10867c3685511113e"
+      }
+    },
+    "batch-04": {
+      "deadline_seconds": 900,
+      "max_tokens": 256,
+      "requests": 14,
+      "schedule_sha256": "f3600d4662993afe11c5971c4ed5a85c3c80a3ad01ff412061b58af73fe97f24",
+      "source_dir": "runtime-batch-04",
+      "sources": {
+        "benchmark_schedule.json": "f3600d4662993afe11c5971c4ed5a85c3c80a3ad01ff412061b58af73fe97f24",
+        "cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+        "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b",
+        "distributed_control.py": "fcef87a378bf54f61e2357c01c9f145e4f1c1ec19a55481da64dbfa029f8542e",
+        "hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+        "mlx_backend.py": "8a7adc03903485a733fa12efdfa065b639eeed480ad7b3ed558ef2bf70b8d639",
+        "mtp_audit.py": "6b96425edfa476114a00083cf52521c42e82ae029c41816325ad79b6b1c6c090",
+        "mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+        "mtp_runtime.py": "20c9d920ee9c2096007082fc029fb5a349cecc08d6587ec6de923c95dc07830d",
+        "numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+        "overlap_evidence.py": "5c473a5a1639b678bc2909cb5cffb9eb7367ef317fd77158154562d5cb9c5a4f",
+        "overlap_gate.py": "e2294ed131308c265e1eefd633fece9ab446b1379a4a73fb46f5b33d79e2fc00",
+        "overlap_prefill.py": "d00a29b3cd1790a4c16c77ae2a448aa68b33f1af71618900d0d3b5d50dfec1d6",
+        "phased_decode.py": "7e586790b59ce3d1613452b378d7ce3309c5c54e169226d48b3aea1f117ed2aa",
+        "prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+        "pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20",
+        "probe.py": "4b21c1faead37933d9ebd559c19015e31c707b68dabfe66ba77a8743f2f6c702",
+        "rank_control.py": "cfaea89fefecea5e95ba9005fafacda5adae7b1a9cc7f9ee8ab1c4f719f04f80",
+        "remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+        "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+        "sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+        "slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+        "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+        "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+        "speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+        "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+        "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+        "supervise.py": "485ae42d2f5d9ff7a57359d1ff20f8a8b4283005cb1590881402204b6a6eef3c",
+        "test_batched_snapshot.py": "be1002feb6fd661085b73bf4ef0f31bbb6bba2312231314cd90a1959bfb12b66",
+        "test_cache_gate.py": "5ce8116c15a22f44a191b04b1fcf69b523f690ceaf7ebd88589340f52a7a6c42",
+        "test_cli_schedule.py": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c",
+        "test_config_immutability.py": "30e281bae3adc0c2c493cb88600d69630b8f6103e0c8065257e81defba854d69",
+        "test_controller_snapshot.py": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab",
+        "test_dispatch_schedule.py": "05ca31b22aa6af70538cb12dd145db30903fcad7ca162c8d901935bc005e6b9c",
+        "test_evidence_hardening.py": "f495a0ec7fae35b9172749fc28c2aa77931b6bf8bd2109a23acbc939ffa88a2a",
+        "test_head.py": "bf976833baa25e5da6ddff8bb59338ab046950864cf3a4f2ae30b1ea0e651485",
+        "test_hidden_cache_inventory.py": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493",
+        "test_hidden_cli.py": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f",
+        "test_hidden_control.py": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232",
+        "test_hidden_evidence.py": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137",
+        "test_hidden_gate.py": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a",
+        "test_hidden_prefill.py": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50",
+        "test_hidden_runtime.py": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3",
+        "test_hidden_two_rank.py": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5",
+        "test_integration.py": "c77b6ba8fbe9334d584b72e1ff0ea61fe098351d585f1efb33b7e0ec66df255d",
+        "test_mtp_audit.py": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3",
+        "test_overlap_backend.py": "8c49ec58f77a6989da71f6b13998d4f19e26595cec5bba78974872d2d485705d",
+        "test_overlap_bounds.py": "ed90f36077e830e3a9819e4e25b96e3dfe66b1ccadf124fab225be4c6cb83fe4",
+        "test_overlap_cli.py": "e2fe29aa0725442ae63668d5490690f6d9d0478669c3e859fb3c63cf4387a403",
+        "test_overlap_evidence.py": "a2e79c68c1b82d7f7cafd72e20d8ccc8ea320954138f2b9dee7548499083fb6d",
+        "test_overlap_failure.py": "e8993292ddfa1da7d486f55395b5e643faa751533370f4f9177257cd57e3fa96",
+        "test_overlap_gate.py": "9b74b2ea65221e4012336ead2b61e100418183ff0a000f11bd7014d53ae13a94",
+        "test_overlap_protocol.py": "cb4dad711613aaaf42df3fdc7561fe0da2a0f17eebc0c1c4d35893aa6db3e0c6",
+        "test_overlap_schedule.py": "358002dedf3e79ed45c7b39e8687623a37968071731527ca73fa0444d3f6759a",
+        "test_overlap_wiring.py": "87f456be57084f69073a65e53eb8866b8feec9dbcb60a4db951af6d1e02a5271",
+        "test_phased_cpu.py": "7b65176cc4751ba82ff92ec2ae257a22d501344dd0e901c1d245cc42dddf910e",
+        "test_prefix_integration.py": "377d62e2ed2ff9f09196afd32a1aa788be54b39550060dab0ef042254c8532d5",
+        "test_prefix_rollback.py": "d0f6f040542e4a4ed2bed704bf8af9b5cc15f63d6c4aadd7885b61e8283724d7",
+        "test_pressure_guard.py": "f182ba69d412b8dd7fdb97890aa77f74bad2d327dc855215025fe0e833fcccd5",
+        "test_pressure_v2.py": "50bb735f9ff927581200e5621126ad633297ed2456d8bdb9931a0812a7c3dbcf",
+        "test_speculative.py": "9cd3a4b0b956284e21801ac6805f93e5bd1fdc76b4f60d9cfd7bde1d77fdea17",
+        "test_two_rank_schedule.py": "b67f9a1025738e22b7da3a0f7eb0f9041aa83cc81c03dbb0a063ad6ad4f7a708",
+        "test_unbound_schedule.py": "f446a36ba5fe48f1cc88f1558c5ad4647af9c286e7bc004bd0cc7b85ae866f5a",
+        "test_workload_caps.py": "117e18df911429b210bc96ed998dcbcac6e23304223758ebe3c4b9b9467fa503",
+        "test_workload_cleanup.py": "e478df18900b76dc5dc949d8808db6e6f0cea2e977468d5538fc124b7300f9de",
+        "test_workload_evidence.py": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6",
+        "test_workload_runtime.py": "5a9e95b2e207bdf11410218771959224b683ed6bb4c306696018c3f38c24e267",
+        "test_workload_schedule.py": "ae27e162390368b19d943f0c6f974722481d59a40b9aa18d8e00d34b0470f2d4",
+        "test_workload_snapshot.py": "e8d26f9e3841f320b118a4ec8b148768cb60d72027b1e626fe5234bd71bc120f",
+        "test_workload_timings.py": "761027cf05c067526ad2267a1a81bcd4f36774bdabc5e802abdec1cf7a00e748",
+        "verification.py": "05f2ce291252c9fd276fb029ebef5f5939177b46262dfe5569744326a15981e8",
+        "verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+        "width_gate.py": "81528ae022bed8c910b9d1dcf045990cf9a8968a3978e106becdda14a4ee403c",
+        "workload_evidence.py": "28f0e79a81bec5b418cef501432efc190c1e531bc632bf7c4c5940ba95324f11",
+        "workload_runtime.py": "6d4b8efe2e12ca616069370f3bc31cfefd086f7966c813cd6a4e951b30178446",
+        "workload_schedule.py": "938b74339de27496e3187150e624937338013d57cc650cf10867c3685511113e"
+      }
+    },
+    "batch-05": {
+      "deadline_seconds": 900,
+      "max_tokens": 256,
+      "requests": 14,
+      "schedule_sha256": "5677bf18d24ddcc96e1e76191ca841faf431db6eb1134ff669572be32f191e0c",
+      "source_dir": "runtime-batch-05",
+      "sources": {
+        "benchmark_schedule.json": "5677bf18d24ddcc96e1e76191ca841faf431db6eb1134ff669572be32f191e0c",
+        "cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+        "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b",
+        "distributed_control.py": "fcef87a378bf54f61e2357c01c9f145e4f1c1ec19a55481da64dbfa029f8542e",
+        "hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+        "mlx_backend.py": "8a7adc03903485a733fa12efdfa065b639eeed480ad7b3ed558ef2bf70b8d639",
+        "mtp_audit.py": "6b96425edfa476114a00083cf52521c42e82ae029c41816325ad79b6b1c6c090",
+        "mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+        "mtp_runtime.py": "20c9d920ee9c2096007082fc029fb5a349cecc08d6587ec6de923c95dc07830d",
+        "numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+        "overlap_evidence.py": "5c473a5a1639b678bc2909cb5cffb9eb7367ef317fd77158154562d5cb9c5a4f",
+        "overlap_gate.py": "e2294ed131308c265e1eefd633fece9ab446b1379a4a73fb46f5b33d79e2fc00",
+        "overlap_prefill.py": "d00a29b3cd1790a4c16c77ae2a448aa68b33f1af71618900d0d3b5d50dfec1d6",
+        "phased_decode.py": "7e586790b59ce3d1613452b378d7ce3309c5c54e169226d48b3aea1f117ed2aa",
+        "prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+        "pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20",
+        "probe.py": "4b21c1faead37933d9ebd559c19015e31c707b68dabfe66ba77a8743f2f6c702",
+        "rank_control.py": "cfaea89fefecea5e95ba9005fafacda5adae7b1a9cc7f9ee8ab1c4f719f04f80",
+        "remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+        "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+        "sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+        "slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+        "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+        "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+        "speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+        "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+        "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+        "supervise.py": "485ae42d2f5d9ff7a57359d1ff20f8a8b4283005cb1590881402204b6a6eef3c",
+        "test_batched_snapshot.py": "be1002feb6fd661085b73bf4ef0f31bbb6bba2312231314cd90a1959bfb12b66",
+        "test_cache_gate.py": "5ce8116c15a22f44a191b04b1fcf69b523f690ceaf7ebd88589340f52a7a6c42",
+        "test_cli_schedule.py": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c",
+        "test_config_immutability.py": "30e281bae3adc0c2c493cb88600d69630b8f6103e0c8065257e81defba854d69",
+        "test_controller_snapshot.py": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab",
+        "test_dispatch_schedule.py": "05ca31b22aa6af70538cb12dd145db30903fcad7ca162c8d901935bc005e6b9c",
+        "test_evidence_hardening.py": "f495a0ec7fae35b9172749fc28c2aa77931b6bf8bd2109a23acbc939ffa88a2a",
+        "test_head.py": "bf976833baa25e5da6ddff8bb59338ab046950864cf3a4f2ae30b1ea0e651485",
+        "test_hidden_cache_inventory.py": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493",
+        "test_hidden_cli.py": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f",
+        "test_hidden_control.py": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232",
+        "test_hidden_evidence.py": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137",
+        "test_hidden_gate.py": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a",
+        "test_hidden_prefill.py": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50",
+        "test_hidden_runtime.py": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3",
+        "test_hidden_two_rank.py": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5",
+        "test_integration.py": "c77b6ba8fbe9334d584b72e1ff0ea61fe098351d585f1efb33b7e0ec66df255d",
+        "test_mtp_audit.py": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3",
+        "test_overlap_backend.py": "8c49ec58f77a6989da71f6b13998d4f19e26595cec5bba78974872d2d485705d",
+        "test_overlap_bounds.py": "ed90f36077e830e3a9819e4e25b96e3dfe66b1ccadf124fab225be4c6cb83fe4",
+        "test_overlap_cli.py": "e2fe29aa0725442ae63668d5490690f6d9d0478669c3e859fb3c63cf4387a403",
+        "test_overlap_evidence.py": "a2e79c68c1b82d7f7cafd72e20d8ccc8ea320954138f2b9dee7548499083fb6d",
+        "test_overlap_failure.py": "e8993292ddfa1da7d486f55395b5e643faa751533370f4f9177257cd57e3fa96",
+        "test_overlap_gate.py": "9b74b2ea65221e4012336ead2b61e100418183ff0a000f11bd7014d53ae13a94",
+        "test_overlap_protocol.py": "cb4dad711613aaaf42df3fdc7561fe0da2a0f17eebc0c1c4d35893aa6db3e0c6",
+        "test_overlap_schedule.py": "358002dedf3e79ed45c7b39e8687623a37968071731527ca73fa0444d3f6759a",
+        "test_overlap_wiring.py": "87f456be57084f69073a65e53eb8866b8feec9dbcb60a4db951af6d1e02a5271",
+        "test_phased_cpu.py": "7b65176cc4751ba82ff92ec2ae257a22d501344dd0e901c1d245cc42dddf910e",
+        "test_prefix_integration.py": "377d62e2ed2ff9f09196afd32a1aa788be54b39550060dab0ef042254c8532d5",
+        "test_prefix_rollback.py": "d0f6f040542e4a4ed2bed704bf8af9b5cc15f63d6c4aadd7885b61e8283724d7",
+        "test_pressure_guard.py": "f182ba69d412b8dd7fdb97890aa77f74bad2d327dc855215025fe0e833fcccd5",
+        "test_pressure_v2.py": "50bb735f9ff927581200e5621126ad633297ed2456d8bdb9931a0812a7c3dbcf",
+        "test_speculative.py": "9cd3a4b0b956284e21801ac6805f93e5bd1fdc76b4f60d9cfd7bde1d77fdea17",
+        "test_two_rank_schedule.py": "b67f9a1025738e22b7da3a0f7eb0f9041aa83cc81c03dbb0a063ad6ad4f7a708",
+        "test_unbound_schedule.py": "f446a36ba5fe48f1cc88f1558c5ad4647af9c286e7bc004bd0cc7b85ae866f5a",
+        "test_workload_caps.py": "117e18df911429b210bc96ed998dcbcac6e23304223758ebe3c4b9b9467fa503",
+        "test_workload_cleanup.py": "e478df18900b76dc5dc949d8808db6e6f0cea2e977468d5538fc124b7300f9de",
+        "test_workload_evidence.py": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6",
+        "test_workload_runtime.py": "5a9e95b2e207bdf11410218771959224b683ed6bb4c306696018c3f38c24e267",
+        "test_workload_schedule.py": "ae27e162390368b19d943f0c6f974722481d59a40b9aa18d8e00d34b0470f2d4",
+        "test_workload_snapshot.py": "e8d26f9e3841f320b118a4ec8b148768cb60d72027b1e626fe5234bd71bc120f",
+        "test_workload_timings.py": "761027cf05c067526ad2267a1a81bcd4f36774bdabc5e802abdec1cf7a00e748",
+        "verification.py": "05f2ce291252c9fd276fb029ebef5f5939177b46262dfe5569744326a15981e8",
+        "verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+        "width_gate.py": "81528ae022bed8c910b9d1dcf045990cf9a8968a3978e106becdda14a4ee403c",
+        "workload_evidence.py": "28f0e79a81bec5b418cef501432efc190c1e531bc632bf7c4c5940ba95324f11",
+        "workload_runtime.py": "6d4b8efe2e12ca616069370f3bc31cfefd086f7966c813cd6a4e951b30178446",
+        "workload_schedule.py": "938b74339de27496e3187150e624937338013d57cc650cf10867c3685511113e"
+      }
+    },
+    "pilot": {
+      "deadline_seconds": 900,
+      "max_tokens": 256,
+      "requests": 6,
+      "schedule_sha256": "0e736d7490fd7016fe76e22d6947e94b76c88e4582ce1b7ad28b9b90e4904bc1",
+      "source_dir": "runtime-pilot",
+      "sources": {
+        "benchmark_schedule.json": "0e736d7490fd7016fe76e22d6947e94b76c88e4582ce1b7ad28b9b90e4904bc1",
+        "cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+        "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b",
+        "distributed_control.py": "fcef87a378bf54f61e2357c01c9f145e4f1c1ec19a55481da64dbfa029f8542e",
+        "hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+        "mlx_backend.py": "8a7adc03903485a733fa12efdfa065b639eeed480ad7b3ed558ef2bf70b8d639",
+        "mtp_audit.py": "6b96425edfa476114a00083cf52521c42e82ae029c41816325ad79b6b1c6c090",
+        "mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+        "mtp_runtime.py": "20c9d920ee9c2096007082fc029fb5a349cecc08d6587ec6de923c95dc07830d",
+        "numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+        "overlap_evidence.py": "5c473a5a1639b678bc2909cb5cffb9eb7367ef317fd77158154562d5cb9c5a4f",
+        "overlap_gate.py": "e2294ed131308c265e1eefd633fece9ab446b1379a4a73fb46f5b33d79e2fc00",
+        "overlap_prefill.py": "d00a29b3cd1790a4c16c77ae2a448aa68b33f1af71618900d0d3b5d50dfec1d6",
+        "phased_decode.py": "7e586790b59ce3d1613452b378d7ce3309c5c54e169226d48b3aea1f117ed2aa",
+        "prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+        "pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20",
+        "probe.py": "4b21c1faead37933d9ebd559c19015e31c707b68dabfe66ba77a8743f2f6c702",
+        "rank_control.py": "cfaea89fefecea5e95ba9005fafacda5adae7b1a9cc7f9ee8ab1c4f719f04f80",
+        "remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+        "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+        "sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+        "slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+        "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+        "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+        "speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+        "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+        "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+        "supervise.py": "485ae42d2f5d9ff7a57359d1ff20f8a8b4283005cb1590881402204b6a6eef3c",
+        "test_batched_snapshot.py": "be1002feb6fd661085b73bf4ef0f31bbb6bba2312231314cd90a1959bfb12b66",
+        "test_cache_gate.py": "5ce8116c15a22f44a191b04b1fcf69b523f690ceaf7ebd88589340f52a7a6c42",
+        "test_cli_schedule.py": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c",
+        "test_config_immutability.py": "30e281bae3adc0c2c493cb88600d69630b8f6103e0c8065257e81defba854d69",
+        "test_controller_snapshot.py": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab",
+        "test_dispatch_schedule.py": "05ca31b22aa6af70538cb12dd145db30903fcad7ca162c8d901935bc005e6b9c",
+        "test_evidence_hardening.py": "f495a0ec7fae35b9172749fc28c2aa77931b6bf8bd2109a23acbc939ffa88a2a",
+        "test_head.py": "bf976833baa25e5da6ddff8bb59338ab046950864cf3a4f2ae30b1ea0e651485",
+        "test_hidden_cache_inventory.py": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493",
+        "test_hidden_cli.py": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f",
+        "test_hidden_control.py": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232",
+        "test_hidden_evidence.py": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137",
+        "test_hidden_gate.py": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a",
+        "test_hidden_prefill.py": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50",
+        "test_hidden_runtime.py": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3",
+        "test_hidden_two_rank.py": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5",
+        "test_integration.py": "c77b6ba8fbe9334d584b72e1ff0ea61fe098351d585f1efb33b7e0ec66df255d",
+        "test_mtp_audit.py": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3",
+        "test_overlap_backend.py": "8c49ec58f77a6989da71f6b13998d4f19e26595cec5bba78974872d2d485705d",
+        "test_overlap_bounds.py": "ed90f36077e830e3a9819e4e25b96e3dfe66b1ccadf124fab225be4c6cb83fe4",
+        "test_overlap_cli.py": "e2fe29aa0725442ae63668d5490690f6d9d0478669c3e859fb3c63cf4387a403",
+        "test_overlap_evidence.py": "a2e79c68c1b82d7f7cafd72e20d8ccc8ea320954138f2b9dee7548499083fb6d",
+        "test_overlap_failure.py": "e8993292ddfa1da7d486f55395b5e643faa751533370f4f9177257cd57e3fa96",
+        "test_overlap_gate.py": "9b74b2ea65221e4012336ead2b61e100418183ff0a000f11bd7014d53ae13a94",
+        "test_overlap_protocol.py": "cb4dad711613aaaf42df3fdc7561fe0da2a0f17eebc0c1c4d35893aa6db3e0c6",
+        "test_overlap_schedule.py": "358002dedf3e79ed45c7b39e8687623a37968071731527ca73fa0444d3f6759a",
+        "test_overlap_wiring.py": "87f456be57084f69073a65e53eb8866b8feec9dbcb60a4db951af6d1e02a5271",
+        "test_phased_cpu.py": "7b65176cc4751ba82ff92ec2ae257a22d501344dd0e901c1d245cc42dddf910e",
+        "test_prefix_integration.py": "377d62e2ed2ff9f09196afd32a1aa788be54b39550060dab0ef042254c8532d5",
+        "test_prefix_rollback.py": "d0f6f040542e4a4ed2bed704bf8af9b5cc15f63d6c4aadd7885b61e8283724d7",
+        "test_pressure_guard.py": "f182ba69d412b8dd7fdb97890aa77f74bad2d327dc855215025fe0e833fcccd5",
+        "test_pressure_v2.py": "50bb735f9ff927581200e5621126ad633297ed2456d8bdb9931a0812a7c3dbcf",
+        "test_speculative.py": "9cd3a4b0b956284e21801ac6805f93e5bd1fdc76b4f60d9cfd7bde1d77fdea17",
+        "test_two_rank_schedule.py": "b67f9a1025738e22b7da3a0f7eb0f9041aa83cc81c03dbb0a063ad6ad4f7a708",
+        "test_unbound_schedule.py": "f446a36ba5fe48f1cc88f1558c5ad4647af9c286e7bc004bd0cc7b85ae866f5a",
+        "test_workload_caps.py": "117e18df911429b210bc96ed998dcbcac6e23304223758ebe3c4b9b9467fa503",
+        "test_workload_cleanup.py": "e478df18900b76dc5dc949d8808db6e6f0cea2e977468d5538fc124b7300f9de",
+        "test_workload_evidence.py": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6",
+        "test_workload_runtime.py": "5a9e95b2e207bdf11410218771959224b683ed6bb4c306696018c3f38c24e267",
+        "test_workload_schedule.py": "ae27e162390368b19d943f0c6f974722481d59a40b9aa18d8e00d34b0470f2d4",
+        "test_workload_snapshot.py": "e8d26f9e3841f320b118a4ec8b148768cb60d72027b1e626fe5234bd71bc120f",
+        "test_workload_timings.py": "761027cf05c067526ad2267a1a81bcd4f36774bdabc5e802abdec1cf7a00e748",
+        "verification.py": "05f2ce291252c9fd276fb029ebef5f5939177b46262dfe5569744326a15981e8",
+        "verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+        "width_gate.py": "81528ae022bed8c910b9d1dcf045990cf9a8968a3978e106becdda14a4ee403c",
+        "workload_evidence.py": "28f0e79a81bec5b418cef501432efc190c1e531bc632bf7c4c5940ba95324f11",
+        "workload_runtime.py": "6d4b8efe2e12ca616069370f3bc31cfefd086f7966c813cd6a4e951b30178446",
+        "workload_schedule.py": "938b74339de27496e3187150e624937338013d57cc650cf10867c3685511113e"
+      }
+    }
+  },
+  "schema": "qwen38-overlap-integration-freeze-v2",
+  "small": {
+    "config_sha256": "ba7770da23eae5ebd6827571f086e331956b33f4442a9e876fb4aa10969a6772",
+    "index_sha256": "6e48f2fa5d6f033a6d77bf833abfa9698ca24d1715ecea4c67447bcfaee44650",
+    "path": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-qwen38-preflight/small-control"
+  },
+  "target": {
+    "config_sha256": "14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85",
+    "index_sha256": "13b840162b4cb35c66fef7df072f7dbb4717908204364f5e5d9f9655a2758fa8",
+    "path": "/Users/jeremylien/Projects/paretoquant-metal/models/qwen3.8-27b-4bit-tokenizer-only"
+  }
+}

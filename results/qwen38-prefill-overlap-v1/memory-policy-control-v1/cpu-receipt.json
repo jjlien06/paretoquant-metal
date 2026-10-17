@@ -1,0 +1,246 @@
+{
+  "schema": "wired-policy-control-cpu-receipt-v1",
+  "classification": "CONTROL_NOT_MODEL_GATE",
+  "scope": "CPU_ONLY_TESTS_NOT_PHYSICAL_APPROVAL",
+  "ok": true,
+  "tests_run": 25,
+  "failures": 0,
+  "errors": 0,
+  "test_ids": [
+    "test_control.Bounds.test_exact_modes_and_bounded_configuration",
+    "test_control.Bounds.test_host_payload_budget_includes_retained_input_lifetimes",
+    "test_control.CpuBoundary.test_only_physical_runtime_can_import_mlx_or_subprocess",
+    "test_control.ErrorRestoration.test_cleanup_sync_exception_does_not_skip_restoration",
+    "test_control.ErrorRestoration.test_deadline_stops_before_next_allocation_and_restores",
+    "test_control.ErrorRestoration.test_evaluation_failure_restores_and_frees",
+    "test_control.ErrorRestoration.test_oversize_active_counter_fails_and_restores",
+    "test_control.ErrorRestoration.test_pressure_two_during_run_restores_policy",
+    "test_control.ErrorRestoration.test_roundtrip_error_restores_previous_nonzero_limit",
+    "test_control.ErrorRestoration.test_sampler_is_required_and_abnormal_before_prevents_setters",
+    "test_control.Harness.test_admission_binds_external_originals_hashes_nonce_role_and_deadline",
+    "test_control.Harness.test_collection_uses_original_pressure_verifier_and_independent_records",
+    "test_control.Harness.test_execute_loads_byte_exact_originals_and_restores_import_scope_on_error",
+    "test_control.Harness.test_owned_call_scopes_sources_and_always_requires_pressure",
+    "test_control.Harness.test_parent_cli_requires_external_admission_before_executor",
+    "test_control.Harness.test_stage_exact_three_sources_against_external_expected_hashes",
+    "test_control.PhysicalBoundary.test_adapter_enforces_strict_allocator_and_reports_device",
+    "test_control.PhysicalBoundary.test_entrypoint_uses_fixed_payload_and_injected_runtime_only",
+    "test_control.PhysicalBoundary.test_physical_cli_has_no_payload_size_escape",
+    "test_control.Runs.test_bool_policy_readback_is_not_integer_zero",
+    "test_control.Runs.test_cleanup_residual_active_memory_fails_closed",
+    "test_control.Runs.test_retained_payload_is_revalidated_after_last_allocation",
+    "test_control.Runs.test_small_roundtrip_records_actual_policy_and_restores",
+    "test_control.Samples.test_strict_sampler_requires_pressure_one_and_vm_counters",
+    "test_control.Samples.test_vm_field_population_is_bounded_before_retention"
+  ],
+  "forbidden_attempts": [],
+  "physical_executed": false,
+  "mlx_imported": false,
+  "source_sha256": {
+    "fixture.py": "960263023c2a9a0532fd0cbc612cd8281e0783e33355d367f935c2b705af2cfc",
+    "harness.py": "0a409ca1a8e77dd554447d565db4de40c91aa4045e425fa7fe24ba6ed678f88f",
+    "test_control.py": "ff10ef9d07facaee8c3a975240069d09939afdf91b557213ca94a968727f1353",
+    "run_cpu_tests.py": "3d9004b712c16495210a94e7b6a6d841e7d34c1450c9d111e7c0f4b121720f35"
+  },
+  "original_sha256": {
+    "remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+    "pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20"
+  },
+  "child_source_registry": [
+    "fixture.py",
+    "remote_actor.py",
+    "pressure_guard.py"
+  ],
+  "original_sources_are_external_admission": false,
+  "tdd_command": "PYTHONDONTWRITEBYTECODE=1 python3 -B test_control.py",
+  "cpu_command": "PYTHONDONTWRITEBYTECODE=1 python3 -B run_cpu_tests.py",
+  "tdd_cycles": [
+    {
+      "cycle": 1,
+      "red": "tdd-01-red.txt",
+      "red_sha256": "6495b35f1117f4c4959fc587403f5b4afb43c04acbaa8043379ecdc862f8b37c",
+      "red_failed": true,
+      "green": "tdd-01-green.txt",
+      "green_sha256": "5c83d43ea3fe92f0a0863b70ba3ff992a08600489e818742f9ab4398473bbe29",
+      "green_passed": true
+    },
+    {
+      "cycle": 2,
+      "red": "tdd-02-red.txt",
+      "red_sha256": "4995d604888524042e8abb4acef56e3db247f16e8b5c1c92dc94c7d508b93992",
+      "red_failed": true,
+      "green": "tdd-02-green.txt",
+      "green_sha256": "7a1e68301f10fa728be60f25d9a283d0b1bad9a42e2c479254994f559bd58041",
+      "green_passed": true
+    },
+    {
+      "cycle": 3,
+      "red": "tdd-03-red.txt",
+      "red_sha256": "b79dd5263ffdedd9030a20c32cceda43fe529bdb5da2b54fd70218b42c691b02",
+      "red_failed": true,
+      "green": "tdd-03-green.txt",
+      "green_sha256": "0d381d10c6e7f3e461fd61c96764b2f069644f8d906f4002c89c301ba34ea53e",
+      "green_passed": true
+    },
+    {
+      "cycle": 4,
+      "red": "tdd-04-red.txt",
+      "red_sha256": "dc508a916eb129710f657e6fd63365c17b3998e39173fe3e9bdf00c9a835af99",
+      "red_failed": true,
+      "green": "tdd-04-green.txt",
+      "green_sha256": "a8537b4b40b849a118d5c1a11737a494b8ef215cab7397a54384852f077060a7",
+      "green_passed": true
+    },
+    {
+      "cycle": 5,
+      "red": "tdd-05-red.txt",
+      "red_sha256": "4411311a535d3809182f8182e782ffa1866d04da86e6590a62ad3ed06e3660de",
+      "red_failed": true,
+      "green": "tdd-05-green.txt",
+      "green_sha256": "9f938ef31d92ffbc234836f29adf1af3b8e5ce02c3110f748547217960f45c1a",
+      "green_passed": true
+    },
+    {
+      "cycle": 6,
+      "red": "tdd-06-red.txt",
+      "red_sha256": "4fb4d6376635bce59fbe4b4fa582f2afa834ab3bf92a38384d2cd3c6150b9e90",
+      "red_failed": true,
+      "green": "tdd-06-green.txt",
+      "green_sha256": "77e3117024273b05653832cd8f58b50ca420d61d019a99143050b58bed01ffdc",
+      "green_passed": true
+    },
+    {
+      "cycle": 7,
+      "red": "tdd-07-red.txt",
+      "red_sha256": "51d601a0fd7c38359e34a4431ecdab17263fea1a47d36910be6d9f4d60c11202",
+      "red_failed": true,
+      "green": "tdd-07-green.txt",
+      "green_sha256": "ef2d345af8f1fb22648223aaded0df506134d2bd9b84d270d885d21757ae00c9",
+      "green_passed": true
+    },
+    {
+      "cycle": 8,
+      "red": "tdd-08-red.txt",
+      "red_sha256": "8f21ec10926edd6de133f7ccf00a5a01ac6308cbe3f03bc3303d8041cbe153ca",
+      "red_failed": true,
+      "green": "tdd-08-green.txt",
+      "green_sha256": "33216604c99946f2715d5928710e6108f5ed58024a11cb8f5cf97466224c5eb4",
+      "green_passed": true
+    },
+    {
+      "cycle": 9,
+      "red": "tdd-09-red.txt",
+      "red_sha256": "61a6694643172404f8095dc1d329f99b7052cef8615b833a603363ace0fc7255",
+      "red_failed": true,
+      "green": "tdd-09-green.txt",
+      "green_sha256": "f6b2e0554075f8ce6d0132f4984a2d4e97451e2f1e2b794659e6fc73f21b5072",
+      "green_passed": true
+    },
+    {
+      "cycle": 10,
+      "red": "tdd-10-red.txt",
+      "red_sha256": "e0072329d1642090ebe9525cb5e0063bb62f98556eb7ae0adbbd80db03cc2f19",
+      "red_failed": true,
+      "green": "tdd-10-green.txt",
+      "green_sha256": "67c8473c56e750554503fd9da39df2f1b112653ddfc0a58b5a6efbcc8ec93d6f",
+      "green_passed": true
+    },
+    {
+      "cycle": 11,
+      "red": "tdd-11-red.txt",
+      "red_sha256": "234c45be62c9cee60e4ad2bf1f1ac38637f2c322ca73cf4543da7a9df0b86111",
+      "red_failed": true,
+      "green": "tdd-11-green.txt",
+      "green_sha256": "b6364f7527370b51cfb5c3e6e80542caac5132043ca157498e8e328a531dce57",
+      "green_passed": true
+    },
+    {
+      "cycle": 12,
+      "red": "tdd-12-red.txt",
+      "red_sha256": "e34b4b77e30cad334cbd83951453d7947a4118b5fc145a8cd30e21bcc3fb93da",
+      "red_failed": true,
+      "green": "tdd-12-green.txt",
+      "green_sha256": "ec1519b5ccd0b2c34d91d3a08f7d3a9a82a404ab0c2af11751ca59e1bb471a8d",
+      "green_passed": true
+    },
+    {
+      "cycle": 13,
+      "red": "tdd-13-red.txt",
+      "red_sha256": "e9218caece95478032be322af37a16a602f0dd89d077ea49e7f1a5a502e71adb",
+      "red_failed": true,
+      "green": "tdd-13-green.txt",
+      "green_sha256": "6e63febd71dcabc330f1ad257a9a824dc4db4cb9cb89a1a32f17af104bbe51dd",
+      "green_passed": true
+    },
+    {
+      "cycle": 14,
+      "red": "tdd-14-red.txt",
+      "red_sha256": "f50154705a74fbe5ff91ec3ddeeaf19bfb61eaba481c32b5967528fed1c3e0f0",
+      "red_failed": true,
+      "green": "tdd-14-green.txt",
+      "green_sha256": "b9846b70a2434b31469f558b4fb0d85edf3b96254604c83ca2cd3cafd435ffd6",
+      "green_passed": true
+    },
+    {
+      "cycle": 15,
+      "red": "tdd-15-red.txt",
+      "red_sha256": "da31b016473ecbc78e37d1c545e4f283ab1e5fd973579456d6975971ccdeafa2",
+      "red_failed": true,
+      "green": "tdd-15-green-final.txt",
+      "green_sha256": "f9aa222dedbab8417675180cf43c3914d068e3cde0edc5a343d7ba91bc0afebf",
+      "green_passed": true
+    },
+    {
+      "cycle": 16,
+      "red": "tdd-16-red.txt",
+      "red_sha256": "f19313b1601eae15434e6c38bf2d60c030e449cf115f6b79b027726688aa0b7a",
+      "red_failed": true,
+      "green": "tdd-16-green.txt",
+      "green_sha256": "f67919d8173b41e6e9a77d73435c0aea326c748261893af86fa31795d01f42d0",
+      "green_passed": true
+    },
+    {
+      "cycle": 17,
+      "red": "tdd-17-red.txt",
+      "red_sha256": "5fa9b612cc22b42003fa63b2a9fbf64494a936f51a35232b31fe37ada360e872",
+      "red_failed": true,
+      "green": "tdd-17-green.txt",
+      "green_sha256": "e83036227f9152b42ffb273c6238c9e38fb8a986b946975926d6f4d87db66423",
+      "green_passed": true
+    },
+    {
+      "cycle": 18,
+      "red": "tdd-18-red.txt",
+      "red_sha256": "44e5127514a06e6b2cdb5b37e6365495c28273e6d3145fb3bed1082787b1bd0c",
+      "red_failed": true,
+      "green": "tdd-18-green.txt",
+      "green_sha256": "fb1ccb238812b768d6048939dad7b45731ee0dbf5bc6f8f36b591bebc097c218",
+      "green_passed": true
+    }
+  ],
+  "supplemental_regression_tests": 7,
+  "order_per_host": [
+    "recommended",
+    "unwired",
+    "unwired",
+    "recommended"
+  ],
+  "host_order": [
+    "local_M2",
+    "remote_M4"
+  ],
+  "elapsed_seconds": 0.09754404199975397,
+  "python": "3.13.2 (main, Feb  4 2025, 14:51:09) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "executable": "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+  "limits": {
+    "retained_bytes": 67108864,
+    "active_cap_bytes": 201326592,
+    "child_deadline_seconds": 30,
+    "actor_deadline_seconds": 45
+  },
+  "pending": [
+    "independent_read_only_review",
+    "parent_admission",
+    "parent_physical_runs"
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "passed": true,
+  "approval_scope": "Independent CPU/source review only; NOT physical, numerical GPU, deployment or performance approval.",
+  "reviewed_receipt_sha256": "b6749f4c9cf070081f89b9714c11691caefa0a6492ca22c992e2e2c30eca8f7b",
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    {
+      "priority": "nonblocking",
+      "location": "overlap_gate.py:292-341; test_overlap_gate.py:162-180",
+      "suggestion": "Retain an owner-authorized real two-rank execution test for pipeline_gate itself; its existing wiring test is textual. Independent AST-body symbolic probes exercised the actual callback/control logic, but cannot validate MLX transport, cache-copy behavior or physical numerics."
+    },
+    {
+      "priority": "nonblocking",
+      "location": "overlap_prefill.py:148-158,175-185; INTERFACE-OVERLAP.md:85-92",
+      "suggestion": "Clarify the prefix-terminator envelope exception: pipeline_prefix_done currently omits cache_epoch and chunk interval fields while the interface broadly describes all internal events as carrying them. It still verifies exact request_nonce/sequence/rank/prefix offset; no nonce or credit bypass reproduced."
+    }
+  ],
+  "verification": {
+    "source_review": [
+      "Actual Command/Worker/Channel, both MTP backend class bodies, native receive hook, shifted head/final singleton/drain, request mode plumbing, Admission/live capability, detached checkpoint metadata/cache inventory, native arithmetic and transcript validators inspected.",
+      "Rank0 phased_forward evaluates RECV before receive_stage; receive_stage sends exact request/sequence/chunk/range credit before masks or local GPU graphs. Rank1 evaluates SEND, emits pipeline_send_evaluated, invokes the actual observation callback, validates credit, then permits next embedding.",
+      "One compound ACK is emitted after prefix dispatch returns; rank0 validates/drains it after its last target/head and before ordinary final singleton. Runtime and Worker poison compound raw-channel exceptions without JSON recovery.",
+      "pipeline_gate requires a real two-rank GPU group in production; full lengths() is exactly [513] with chunk256/two full prefix chunks. Small covers 1,2,255,256,257,511,512,513. It compares all native target cache parts, offsets, normalized hidden, head KV, final full logits/argmax, and two forced continuations/head logits at unchanged 1e-6/1e-5.",
+      "Rank1 locally observes/evaluates only its owned target caches. Rank0 head/hidden/logit metrics are explicitly exchanged to rank1; these are not an independent rank1 head execution.",
+      "Detached layouts derive dimensions/dtypes/layer classes from separately hash-bound checkpoint config/index, not submitted metrics. Admission additionally requires an identity/model/group-bound process-local live gate registry; forged CPU gate JSON is rejected.",
+      "Default mode remains serial. Capability flag admits both modes without forcing overlap. New schedules bind both modes to mtp and preserve source request slots. Existing numerical/source/width/prefix/hidden checks were not relaxed."
+    ],
+    "own_execution": {
+      "permitted_cpu_suite": {
+        "passed": 245,
+        "skipped": 13,
+        "excluded_mlx_modules": 21,
+        "terminal_seconds": 1.87,
+        "xml": "/Users/jeremylien/.hermes/cache/scratch/025-runtime-independent-cpu.xml",
+        "xml_sha256": "662d5b2317d75362c94bf4ebef868f4d001e4b3dc2a807544d0b148e98dddbd8"
+      },
+      "focused_suite": {
+        "passed": 98,
+        "skipped": 0,
+        "terminal_seconds": 1.38,
+        "is_subset_not_additive": true,
+        "xml": "/Users/jeremylien/.hermes/cache/scratch/025-runtime-independent-focused.xml",
+        "xml_sha256": "97795a03fe7ab669cf4ed9cc6cd2a1e0af43737c9ec4384cda08006ce0f315d3"
+      },
+      "ruff_check": "All checks passed!",
+      "ruff_format_check": "77 files already formatted",
+      "guarded_help": {
+        "supervise.py": {
+          "exit_code": 0,
+          "chars": 3180
+        },
+        "probe.py": {
+          "exit_code": 0,
+          "chars": 2485
+        }
+      },
+      "guarded_dry_run": {
+        "exit_code": 0,
+        "hardware_executed": false,
+        "rank_modes": [
+          "native",
+          "slot-qmv"
+        ],
+        "flags_both_ranks": [
+          "--overlapped-prefill",
+          "--require-normal-pressure"
+        ],
+        "output_created": false
+      },
+      "actual_gate_AST_symbolic_probe": {
+        "description": "Executed exact pipeline_gate body after stripping only owner-only imports; injected explicitly symbolic arrays/caches/metrics and actual backend class ASTs plus real Worker/serve_request/JSON framing. No real numerical claim.",
+        "results": [
+          {
+            "scope": "small",
+            "transport": "rendezvous",
+            "rank0_receive_callbacks": 10,
+            "rank1_send_observers": 10,
+            "passed": true
+          },
+          {
+            "scope": "small",
+            "transport": "eager",
+            "rank0_receive_callbacks": 10,
+            "rank1_send_observers": 10,
+            "passed": true
+          },
+          {
+            "scope": "full",
+            "transport": "rendezvous",
+            "rank0_receive_callbacks": 2,
+            "rank1_send_observers": 2,
+            "passed": true
+          },
+          {
+            "scope": "full",
+            "transport": "eager",
+            "rank0_receive_callbacks": 2,
+            "rank1_send_observers": 2,
+            "passed": true
+          }
+        ],
+        "script": "/Users/jeremylien/.hermes/cache/scratch/025-runtime-independent-probes.py"
+      },
+      "independent_adversarial_probes": {
+        "rejected": 18,
+        "unexpected_accepts": 0,
+        "coverage": [
+          "stale nonce and sequence on both resealed streams",
+          "omitted native phases",
+          "resealed swapped credit",
+          "equal-count wrong-layer completion",
+          "wrong shifted head token",
+          "premature compound drain",
+          "actual rank1 receive rejects stale nonce/sequence/chunk/range, unknown key and bool sequence before next forward"
+        ],
+        "script": "/Users/jeremylien/.hermes/cache/scratch/025-runtime-independent-adversarial.py"
+      },
+      "existing_actual_seam_mutation_checks": "Rendezvous held-rank0 progress witness passed; eager <=2 logical-chunk bound passed; removing credit wait was killed by the bound assertion.",
+      "forbidden_modules_imported": [],
+      "execution_safety": "PYTHONDONTWRITEBYTECODE=1, no pytest cache, no-model import/network/signals guard installed. Used install_guard()+pytest.main, not cpu_only_runner.main(), to avoid appending its frozen025 command ledger."
+    },
+    "preservation": {
+      "registered_source_hashes_reverified": 76,
+      "original_frozen_files_reverified": 90,
+      "candidate_artifacts_reverified": 13,
+      "mismatches": [],
+      "receipt_sha256_reverified": true
+    },
+    "parent_tests": "Parent verification receipt read as separate evidence. Its MLX-backed CPU test counts are not this reviewer execution and not physical approval."
+  },
+  "limits": {
+    "physical_approval": false,
+    "code_blockers_found": [],
+    "physical_adoption_blockers": [
+      "Fresh BOTH-host normal-pressure/health admission and single hardware owner are still required; historical pressure2 is not resolved by this CPU review.",
+      "Actual MLX two-rank small plus same-loaded full513/chunk256 compound numerical gates remain unexecuted by this reviewer. Parent MLX-default-CPU regressions do not satisfy them.",
+      "Deployment/source readback, real pilot byte-budget receipt, matched outputs/stops, full18-case suite and each of all six long-case >=30% TTFT / >=15% complete-request reductions remain required and unmeasured here."
+    ],
+    "no_actions": [
+      "MLX/mlx_lm/mlx_vlm import",
+      "GPU/device/model execution",
+      "SSH/network",
+      "signals/live-process inspection",
+      "build/install",
+      "commit",
+      "implementation fixes"
+    ],
+    "reporting_scope": "CPU digests/fixtures are not GPU attestation; no simultaneous Metal kernel, link-transfer time, quality or speedup claim."
+  },
+  "files_created": [
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/runtime-independent-review.json",
+    "/Users/jeremylien/.hermes/cache/scratch/025-runtime-independent-probes.py",
+    "/Users/jeremylien/.hermes/cache/scratch/025-runtime-independent-adversarial.py",
+    "/Users/jeremylien/.hermes/cache/scratch/025-runtime-independent-cpu.xml",
+    "/Users/jeremylien/.hermes/cache/scratch/025-runtime-independent-focused.xml"
+  ],
+  "implementation_files_modified": [],
+  "summary": "No blocking runtime/admission/transcript defect reproduced; CPU-only review passes. Physical correctness and requested end-to-end acceleration remain unapproved."
+}

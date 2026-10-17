@@ -1,0 +1,8 @@
+{"projection": "gate_proj", "width": 1, "exact": true, "ratio": 0.977886458993595}
+{"projection": "gate_proj", "width": 2, "exact": true, "ratio": 1.8166757625858092}
+{"projection": "gate_proj", "width": 5, "exact": true, "ratio": 1.323868800178183}
+{"projection": "gate_proj", "width": 9, "exact": true, "ratio": 0.5504363168349836}
+{"projection": "down_proj", "width": 1, "exact": true, "ratio": 0.9476041623743025}
+{"projection": "down_proj", "width": 2, "exact": true, "ratio": 1.628407419597177}
+{"projection": "down_proj", "width": 5, "exact": true, "ratio": 1.2132080905647002}
+{"projection": "down_proj", "width": 9, "exact": true, "ratio": 0.5388712227289569}

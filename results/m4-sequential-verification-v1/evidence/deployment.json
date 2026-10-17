@@ -1,0 +1,25 @@
+{
+  "root": "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/009-sequential-1791255950033196000",
+  "files": {
+    "speculative_decode.py": "25dd62cb80b4d9bcabe78d9a396615f8a658936799908cc0b10b153f2b65b856",
+    "test_speculative_gpu.py": "19ef8ee0b6cf0a4f3707a3fc16927b838a657731af9e1151c2c46ade2c354615",
+    "draft_screen.py": "fdb9ec46cff8efe4cfda568408478bb5bc47750f2942d59e30b3bd55534871ae",
+    "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "checkpoint_modes.py": "0c572a9fe6a102710a0a574d105816419f9685b4fb121a70d4a33a11f2e2a960",
+    "tiny_modes.py": "c9d4e046a317f32e9e7bbb653e3638b18a15a20ef58da32af652239100c55497"
+  },
+  "readback_verified": true,
+  "guarded_root": "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/007-dual-host-pipeline-guarded-1a7a2d85b186",
+  "guarded_source_sha256_before": {
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "phased_decode.py": "a75cc6777f052135211ce9f386528059d494f69ca3e264f48d920157ba71308f",
+    "probe.py": "aa81063281553bbfef92c44aae60072e6cbf855fce5f1a9929c28241aab93874",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "shard_plan.py": "968f779ef0d4793487f394f08beeb3ddcb3369f3d838a9cc4d0cb6e1bd23db44",
+    "stream_server.py": "34130f52ab1cd934d693bf890d8090fc940639f96af3e681c64bcae39b52f05d",
+    "stream_weights.py": "d4c782601de385b54374c90189251fc5a4d50fc9217fb3838d6d9c630c116ebc"
+  },
+  "scope": "Isolated sequential diagnostic; original full32B runtime untouched",
+  "transport": "Thunderbolt bridge0 IPv6; strict prior host key alias"
+}

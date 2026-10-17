@@ -1,0 +1,63 @@
+[
+  {
+    "model": "mlx-community/Qwen3.6-35B-A3B-4bit",
+    "all_weight_GiB": 19.001
+  },
+  {
+    "model": "mlx-community/GLM-4.7-Flash-4bit",
+    "all_weight_GiB": 15.695
+  },
+  {
+    "model": "mlx-community/Qwen3.8-27B-4bit",
+    "all_weight_GiB": 14.952
+  },
+  {
+    "model": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+    "variant": "Q2_0",
+    "main_GiB": 35.04,
+    "ngram_GiB": 26.822,
+    "total_GiB": 61.862,
+    "optional_vision_bytes_not_in_total": "query or shared mmproj~907543008; no intermediate buffers included"
+  },
+  {
+    "model": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+    "variant": "IQ2_XS",
+    "main_GiB": 36.532,
+    "ngram_GiB": 26.822,
+    "total_GiB": 63.354,
+    "optional_vision_bytes_not_in_total": "query or shared mmproj~907543008; no intermediate buffers included"
+  },
+  {
+    "model": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+    "variant": "IQ3_XXS",
+    "main_GiB": 43.809,
+    "ngram_GiB": 26.822,
+    "total_GiB": 70.632,
+    "optional_vision_bytes_not_in_total": "query or shared mmproj~907543008; no intermediate buffers included"
+  },
+  {
+    "model": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF",
+    "file": "IQ1_M/Qwen3.8-Flash-Next-GSQ-RCO-IQ1_M-00001-of-00002.gguf",
+    "GiB": 27.575
+  },
+  {
+    "model": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF",
+    "file": "IQ1_M/Qwen3.8-Flash-Next-GSQ-RCO-IQ1_M-00002-of-00002.gguf",
+    "GiB": 26.822
+  },
+  {
+    "model": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF",
+    "file": "mmproj-Qwen3.8-Flash-Next-BF16.gguf",
+    "GiB": 0.845
+  },
+  {
+    "model": "unsloth/Qwen3-Coder-Next-GGUF",
+    "file": "Qwen3-Coder-Next-UD-IQ2_M.gguf",
+    "GiB": 23.248
+  },
+  {
+    "model": "unsloth/Qwen3-Coder-Next-GGUF",
+    "file": "Qwen3-Coder-Next-UD-IQ2_XXS.gguf",
+    "GiB": 21.711
+  }
+]

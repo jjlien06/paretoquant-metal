@@ -1,0 +1,25 @@
+{
+  "schema": "overlap-parent-pilot-execution-v1",
+  "timestamp": 1792265932.785416,
+  "trial_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000",
+  "admission_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000-parent-admission.json",
+  "guarded_run": {
+    "schema": "qwen38-overlap-guarded-run-v2",
+    "accepted": false,
+    "phase": "pilot",
+    "manifest_sha256": "3c3104004c9acb6505ad690d04dfca5f0ea70fecfdee82f98ca558f4538f04cd",
+    "returncode": 1,
+    "status": "raw_receipt_audit_required",
+    "hardware_executed": true
+  },
+  "performance_accepted": false,
+  "controller_result": {
+    "status": "failed",
+    "error_type": "RuntimeError",
+    "error_stage": "rank_execution",
+    "owned_actor_cleanup_verified": true,
+    "services_closed_verified": true,
+    "pending_cleanup": null,
+    "elapsed_seconds": 30.114519250000058
+  }
+}

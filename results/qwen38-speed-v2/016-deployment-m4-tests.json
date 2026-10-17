@@ -1,0 +1,23 @@
+{
+  "source_sha256": {
+    "fixture.py": "294fa1d687e1a6273574efaf0054c91d1141d8ec2b75ede926498197cb9cc21b",
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "phased_decode.py": "c28f4065133a3985347fe01d8ce6dee52e1c8f90d2bf768d1086b74563afe303",
+    "test_compute_receipts.py": "f02883aebb5938a04572d0b777b0955385ccaaa3818ec9ab79f981b20f4cd428",
+    "stream_weights.py": "e15505b5aca94284b83298febcfff137656030070c704f199ef215f2b6990144",
+    "test_qwen38.py": "3b616d2798aa69d7e24fdc3aff069655563981df253d7e689a7208f660144410",
+    "remote_actor.py": "06ba94b68ef4debaa360f0a5cefd09a09f1f53186bb5d3f34cfa16dce96eb3ef",
+    "compute_dtype.py": "26f69d9649ddffa632b69108720f3355bb2dfd5695e8c24321ab9d94e8be2bf4",
+    "test_schedule.py": "efe8af03f9e9dcb05305a348a07bde6c120e8c7023ed5511e17e0a91f9a94004",
+    "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+    "probe.py": "645673c134bdfe5f476f585f5b4cc6acbe06bc4893e2620fbafff6be2031fe02",
+    "test_long_blocks.py": "49dd633adf1ac6dfddf44508476f2567f653b8ebde227a87d48bcc8ff0572e96",
+    "test_compute_dtype.py": "4313f14905b6fff9118d46d75529a0982840a2c92d1d846f95d3cfbe3afd397d",
+    "supervise.py": "356131dd34bbe9a7add97a9d0d377284ed57e81a76deb5d98afdea503fe939e4",
+    "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465"
+  },
+  "remote_root": "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/016-qwen38-fp16-compute-20261016-v1",
+  "exit_code": 0,
+  "stdout": "........................................................................ [ 57%]\n......................................................                   [100%]\n126 passed in 3.33s\n",
+  "stderr": ""
+}

@@ -1,0 +1,2075 @@
+{
+  "exit_code": 0,
+  "stdout": "{\n  \"model\": \"/Users/jeremylien/Projects/paretoquant-dual-host/checkpoints/control-qwen35-08b-da28692b5f139cb0ec58a356b437486b7dac7462\",\n  \"device\": \"Device(gpu, 0)\",\n  \"strict_atol\": 1e-06,\n  \"strict_rtol\": 1e-05,\n  \"widths\": [\n    1,\n    2\n  ],\n  \"peak_mlx_bytes\": 575206530,\n  \"strict_admitted\": false\n}\n{\"inputs\": [271, 16], \"logits\": {\"shape\": [1, 2, 248320], \"max_abs\": 0.4296875, \"exact\": false, \"strict_pass\": false, \"bf16_diagnostic_only_pass\": false}, \"strict_cache_failures\": 48, \"cache_parts\": 48, \"greedy_equal\": true}\n{\"inputs\": [11, 17], \"logits\": {\"shape\": [1, 2, 248320], \"max_abs\": 0.4375, \"exact\": false, \"strict_pass\": false, \"bf16_diagnostic_only_pass\": false}, \"strict_cache_failures\": 48, \"cache_parts\": 48, \"greedy_equal\": true}\n{\"inputs\": [11, 18], \"logits\": {\"shape\": [1, 2, 248320], \"max_abs\": 0.47802734375, \"exact\": false, \"strict_pass\": false, \"bf16_diagnostic_only_pass\": false}, \"strict_cache_failures\": 48, \"cache_parts\": 48, \"greedy_equal\": true}\n",
+  "stderr": "",
+  "script_sha256": "c7a1716c3256b3d7622c4b2bc01a755c3fcaa44ec711b5e34fb6cc5d39d10d5b",
+  "receipt": {
+    "model": "/Users/jeremylien/Projects/paretoquant-dual-host/checkpoints/control-qwen35-08b-da28692b5f139cb0ec58a356b437486b7dac7462",
+    "device": "Device(gpu, 0)",
+    "strict_atol": 1e-06,
+    "strict_rtol": 1e-05,
+    "widths": [
+      1,
+      2
+    ],
+    "cases": [
+      {
+        "inputs": [
+          271,
+          16
+        ],
+        "logits": {
+          "shape": [
+            1,
+            2,
+            248320
+          ],
+          "max_abs": 0.4296875,
+          "exact": false,
+          "strict_pass": false,
+          "bf16_diagnostic_only_pass": false
+        },
+        "sequential_greedy": [
+          [
+            16,
+            11
+          ]
+        ],
+        "batch_greedy": [
+          [
+            16,
+            11
+          ]
+        ],
+        "caches": [
+          {
+            "layer": 0,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 0,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.011761203408241272,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 1,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.1953125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 1,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.03651553392410278,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 2,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.203125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 2,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.01751542091369629,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 3,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              37,
+              256
+            ],
+            "max_abs": 0.171875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 3,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              37,
+              256
+            ],
+            "max_abs": 0.056640625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 4,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.375,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 4,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.02368783950805664,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 5,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.25,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 5,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.021081209182739258,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 6,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.25,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 6,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.008613765239715576,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 7,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              37,
+              256
+            ],
+            "max_abs": 0.1875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 7,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              37,
+              256
+            ],
+            "max_abs": 0.05859375,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 8,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.1875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 8,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.006941318511962891,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 9,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.140625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 9,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.0068351030349731445,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 10,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.140625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 10,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.003803431987762451,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 11,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              37,
+              256
+            ],
+            "max_abs": 0.26171875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 11,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              37,
+              256
+            ],
+            "max_abs": 0.0419921875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 12,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.34375,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 12,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.023098230361938477,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 13,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.15625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 13,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.016697078943252563,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 14,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.1544189453125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 14,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.006286283023655415,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 15,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              37,
+              256
+            ],
+            "max_abs": 0.125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 15,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              37,
+              256
+            ],
+            "max_abs": 0.05078125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 16,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.171875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 16,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.02654743194580078,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 17,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.1875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 17,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.022020816802978516,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 18,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.25,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 18,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.025079786777496338,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 19,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              37,
+              256
+            ],
+            "max_abs": 0.09765625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 19,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              37,
+              256
+            ],
+            "max_abs": 0.0546875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 20,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.1875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 20,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.01163133978843689,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 21,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.21875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 21,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.01880490779876709,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 22,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.3125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 22,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.013317346572875977,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 23,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              37,
+              256
+            ],
+            "max_abs": 0.09375,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 23,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              37,
+              256
+            ],
+            "max_abs": 0.15625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          }
+        ]
+      },
+      {
+        "inputs": [
+          11,
+          17
+        ],
+        "logits": {
+          "shape": [
+            1,
+            2,
+            248320
+          ],
+          "max_abs": 0.4375,
+          "exact": false,
+          "strict_pass": false,
+          "bf16_diagnostic_only_pass": false
+        },
+        "sequential_greedy": [
+          [
+            17,
+            11
+          ]
+        ],
+        "batch_greedy": [
+          [
+            17,
+            11
+          ]
+        ],
+        "caches": [
+          {
+            "layer": 0,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.0625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 0,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.012038081884384155,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 1,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.09765625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 1,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.035852670669555664,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 2,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.15625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 2,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.016969740390777588,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 3,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              39,
+              256
+            ],
+            "max_abs": 0.171875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 3,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              39,
+              256
+            ],
+            "max_abs": 0.0625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 4,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.375,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 4,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.021238505840301514,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 5,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.25,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 5,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.01710715889930725,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 6,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.203125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 6,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.015575513243675232,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 7,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              39,
+              256
+            ],
+            "max_abs": 0.1875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 7,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              39,
+              256
+            ],
+            "max_abs": 0.05859375,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 8,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.13916015625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 8,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.010146379470825195,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 9,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.140625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 9,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.010153114795684814,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 10,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 10,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.010776549577713013,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 11,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              39,
+              256
+            ],
+            "max_abs": 0.26171875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 11,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              39,
+              256
+            ],
+            "max_abs": 0.05078125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 12,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.1875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 12,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.017251253128051758,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 13,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.1875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 13,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.011933833360671997,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 14,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 14,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.011277899146080017,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 15,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              39,
+              256
+            ],
+            "max_abs": 0.12890625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 15,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              39,
+              256
+            ],
+            "max_abs": 0.0625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 16,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.1875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 16,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.021328210830688477,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 17,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.1875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 17,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.017959237098693848,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 18,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.25,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 18,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.038716793060302734,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 19,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              39,
+              256
+            ],
+            "max_abs": 0.15625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 19,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              39,
+              256
+            ],
+            "max_abs": 0.09375,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 20,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.21875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 20,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.011929720640182495,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 21,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.25,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 21,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.016587212681770325,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 22,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.3125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 22,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.014766007661819458,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 23,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              39,
+              256
+            ],
+            "max_abs": 0.125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 23,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              39,
+              256
+            ],
+            "max_abs": 0.15625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          }
+        ]
+      },
+      {
+        "inputs": [
+          11,
+          18
+        ],
+        "logits": {
+          "shape": [
+            1,
+            2,
+            248320
+          ],
+          "max_abs": 0.47802734375,
+          "exact": false,
+          "strict_pass": false,
+          "bf16_diagnostic_only_pass": false
+        },
+        "sequential_greedy": [
+          [
+            18,
+            11
+          ]
+        ],
+        "batch_greedy": [
+          [
+            18,
+            11
+          ]
+        ],
+        "caches": [
+          {
+            "layer": 0,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.0625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 0,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.012137249112129211,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 1,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 1,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.03781700134277344,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 2,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.13671875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 2,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.017729967832565308,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 3,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              41,
+              256
+            ],
+            "max_abs": 0.171875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 3,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              41,
+              256
+            ],
+            "max_abs": 0.072265625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 4,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.234375,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 4,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.02062457799911499,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 5,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.15234375,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 5,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.017144381999969482,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 6,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.1875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 6,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.03190445899963379,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 7,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              41,
+              256
+            ],
+            "max_abs": 0.1875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 7,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              41,
+              256
+            ],
+            "max_abs": 0.05859375,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 8,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 8,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.009948238730430603,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 9,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.15625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 9,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.010036319494247437,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 10,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.11328125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 10,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.00955323874950409,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 11,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              41,
+              256
+            ],
+            "max_abs": 0.26171875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 11,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              41,
+              256
+            ],
+            "max_abs": 0.05078125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 12,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.15625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 12,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.017089366912841797,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 13,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.15625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 13,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.01143386960029602,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 14,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.15625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 14,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.014844313263893127,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 15,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              41,
+              256
+            ],
+            "max_abs": 0.12890625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 15,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              41,
+              256
+            ],
+            "max_abs": 0.078125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 16,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.375,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 16,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.023972749710083008,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 17,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.25,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 17,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.01982066035270691,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 18,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.25,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 18,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.048792362213134766,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 19,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              41,
+              256
+            ],
+            "max_abs": 0.15625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 19,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              41,
+              256
+            ],
+            "max_abs": 0.10546875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 20,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.1875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 20,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.010781511664390564,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 21,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.25,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 21,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.017878204584121704,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 22,
+            "part": "state0",
+            "shape": [
+              1,
+              3,
+              6144
+            ],
+            "max_abs": 0.201171875,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 22,
+            "part": "state1",
+            "shape": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "max_abs": 0.005453050136566162,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": true
+          },
+          {
+            "layer": 23,
+            "part": "keys",
+            "shape": [
+              1,
+              2,
+              41,
+              256
+            ],
+            "max_abs": 0.125,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          },
+          {
+            "layer": 23,
+            "part": "values",
+            "shape": [
+              1,
+              2,
+              41,
+              256
+            ],
+            "max_abs": 0.15625,
+            "exact": false,
+            "strict_pass": false,
+            "bf16_diagnostic_only_pass": false
+          }
+        ]
+      }
+    ],
+    "peak_mlx_bytes": 575206530,
+    "strict_admitted": false
+  }
+}

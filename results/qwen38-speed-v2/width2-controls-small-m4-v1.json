@@ -1,0 +1,6230 @@
+{
+  "source_sha256": {
+    "diagnose_width2.py": "c7a1716c3256b3d7622c4b2bc01a755c3fcaa44ec711b5e34fb6cc5d39d10d5b",
+    "diagnose_width2_controls.py": "d96deafd000428fc0d2ebbc1e4ec2cc2d0425f2fe144a17f61c2f1cec9d9da5e"
+  },
+  "results": {
+    "qmm": {
+      "exit_code": 0,
+      "stdout": "NUMERICAL_CONTROL qmm\n{\n  \"model\": \"/Users/jeremylien/Projects/paretoquant-dual-host/checkpoints/control-qwen35-08b-da28692b5f139cb0ec58a356b437486b7dac7462\",\n  \"device\": \"Device(gpu, 0)\",\n  \"strict_atol\": 1e-06,\n  \"strict_rtol\": 1e-05,\n  \"widths\": [\n    1,\n    2\n  ],\n  \"peak_mlx_bytes\": 575206530,\n  \"strict_admitted\": true\n}\n{\"inputs\": [271, 16], \"logits\": {\"shape\": [1, 2, 248320], \"max_abs\": 0.0, \"exact\": true, \"strict_pass\": true, \"bf16_diagnostic_only_pass\": true}, \"strict_cache_failures\": 0, \"cache_parts\": 48, \"greedy_equal\": true}\n{\"inputs\": [11, 17], \"logits\": {\"shape\": [1, 2, 248320], \"max_abs\": 0.0, \"exact\": true, \"strict_pass\": true, \"bf16_diagnostic_only_pass\": true}, \"strict_cache_failures\": 0, \"cache_parts\": 48, \"greedy_equal\": true}\n{\"inputs\": [11, 18], \"logits\": {\"shape\": [1, 2, 248320], \"max_abs\": 0.0, \"exact\": true, \"strict_pass\": true, \"bf16_diagnostic_only_pass\": true}, \"strict_cache_failures\": 0, \"cache_parts\": 48, \"greedy_equal\": true}\n",
+      "stderr": "",
+      "receipt": {
+        "model": "/Users/jeremylien/Projects/paretoquant-dual-host/checkpoints/control-qwen35-08b-da28692b5f139cb0ec58a356b437486b7dac7462",
+        "device": "Device(gpu, 0)",
+        "strict_atol": 1e-06,
+        "strict_rtol": 1e-05,
+        "widths": [
+          1,
+          2
+        ],
+        "cases": [
+          {
+            "inputs": [
+              271,
+              16
+            ],
+            "logits": {
+              "shape": [
+                1,
+                2,
+                248320
+              ],
+              "max_abs": 0.0,
+              "exact": true,
+              "strict_pass": true,
+              "bf16_diagnostic_only_pass": true
+            },
+            "sequential_greedy": [
+              [
+                16,
+                11
+              ]
+            ],
+            "batch_greedy": [
+              [
+                16,
+                11
+              ]
+            ],
+            "caches": [
+              {
+                "layer": 0,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 0,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              }
+            ]
+          },
+          {
+            "inputs": [
+              11,
+              17
+            ],
+            "logits": {
+              "shape": [
+                1,
+                2,
+                248320
+              ],
+              "max_abs": 0.0,
+              "exact": true,
+              "strict_pass": true,
+              "bf16_diagnostic_only_pass": true
+            },
+            "sequential_greedy": [
+              [
+                17,
+                11
+              ]
+            ],
+            "batch_greedy": [
+              [
+                17,
+                11
+              ]
+            ],
+            "caches": [
+              {
+                "layer": 0,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 0,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              }
+            ]
+          },
+          {
+            "inputs": [
+              11,
+              18
+            ],
+            "logits": {
+              "shape": [
+                1,
+                2,
+                248320
+              ],
+              "max_abs": 0.0,
+              "exact": true,
+              "strict_pass": true,
+              "bf16_diagnostic_only_pass": true
+            },
+            "sequential_greedy": [
+              [
+                18,
+                11
+              ]
+            ],
+            "batch_greedy": [
+              [
+                18,
+                11
+              ]
+            ],
+            "caches": [
+              {
+                "layer": 0,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 0,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              }
+            ]
+          }
+        ],
+        "peak_mlx_bytes": 575206530,
+        "strict_admitted": true
+      }
+    },
+    "qmm_sdpa": {
+      "exit_code": 0,
+      "stdout": "NUMERICAL_CONTROL qmm_sdpa\n{\n  \"model\": \"/Users/jeremylien/Projects/paretoquant-dual-host/checkpoints/control-qwen35-08b-da28692b5f139cb0ec58a356b437486b7dac7462\",\n  \"device\": \"Device(gpu, 0)\",\n  \"strict_atol\": 1e-06,\n  \"strict_rtol\": 1e-05,\n  \"widths\": [\n    1,\n    2\n  ],\n  \"peak_mlx_bytes\": 575206530,\n  \"strict_admitted\": true\n}\n{\"inputs\": [271, 16], \"logits\": {\"shape\": [1, 2, 248320], \"max_abs\": 0.0, \"exact\": true, \"strict_pass\": true, \"bf16_diagnostic_only_pass\": true}, \"strict_cache_failures\": 0, \"cache_parts\": 48, \"greedy_equal\": true}\n{\"inputs\": [11, 17], \"logits\": {\"shape\": [1, 2, 248320], \"max_abs\": 0.0, \"exact\": true, \"strict_pass\": true, \"bf16_diagnostic_only_pass\": true}, \"strict_cache_failures\": 0, \"cache_parts\": 48, \"greedy_equal\": true}\n{\"inputs\": [11, 18], \"logits\": {\"shape\": [1, 2, 248320], \"max_abs\": 0.0, \"exact\": true, \"strict_pass\": true, \"bf16_diagnostic_only_pass\": true}, \"strict_cache_failures\": 0, \"cache_parts\": 48, \"greedy_equal\": true}\n",
+      "stderr": "",
+      "receipt": {
+        "model": "/Users/jeremylien/Projects/paretoquant-dual-host/checkpoints/control-qwen35-08b-da28692b5f139cb0ec58a356b437486b7dac7462",
+        "device": "Device(gpu, 0)",
+        "strict_atol": 1e-06,
+        "strict_rtol": 1e-05,
+        "widths": [
+          1,
+          2
+        ],
+        "cases": [
+          {
+            "inputs": [
+              271,
+              16
+            ],
+            "logits": {
+              "shape": [
+                1,
+                2,
+                248320
+              ],
+              "max_abs": 0.0,
+              "exact": true,
+              "strict_pass": true,
+              "bf16_diagnostic_only_pass": true
+            },
+            "sequential_greedy": [
+              [
+                16,
+                11
+              ]
+            ],
+            "batch_greedy": [
+              [
+                16,
+                11
+              ]
+            ],
+            "caches": [
+              {
+                "layer": 0,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 0,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              }
+            ]
+          },
+          {
+            "inputs": [
+              11,
+              17
+            ],
+            "logits": {
+              "shape": [
+                1,
+                2,
+                248320
+              ],
+              "max_abs": 0.0,
+              "exact": true,
+              "strict_pass": true,
+              "bf16_diagnostic_only_pass": true
+            },
+            "sequential_greedy": [
+              [
+                17,
+                11
+              ]
+            ],
+            "batch_greedy": [
+              [
+                17,
+                11
+              ]
+            ],
+            "caches": [
+              {
+                "layer": 0,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 0,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              }
+            ]
+          },
+          {
+            "inputs": [
+              11,
+              18
+            ],
+            "logits": {
+              "shape": [
+                1,
+                2,
+                248320
+              ],
+              "max_abs": 0.0,
+              "exact": true,
+              "strict_pass": true,
+              "bf16_diagnostic_only_pass": true
+            },
+            "sequential_greedy": [
+              [
+                18,
+                11
+              ]
+            ],
+            "batch_greedy": [
+              [
+                18,
+                11
+              ]
+            ],
+            "caches": [
+              {
+                "layer": 0,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 0,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              }
+            ]
+          }
+        ],
+        "peak_mlx_bytes": 575206530,
+        "strict_admitted": true
+      }
+    },
+    "qmm_sdpa_conv": {
+      "exit_code": 0,
+      "stdout": "NUMERICAL_CONTROL qmm_sdpa_conv\n{\n  \"model\": \"/Users/jeremylien/Projects/paretoquant-dual-host/checkpoints/control-qwen35-08b-da28692b5f139cb0ec58a356b437486b7dac7462\",\n  \"device\": \"Device(gpu, 0)\",\n  \"strict_atol\": 1e-06,\n  \"strict_rtol\": 1e-05,\n  \"widths\": [\n    1,\n    2\n  ],\n  \"peak_mlx_bytes\": 575206530,\n  \"strict_admitted\": true\n}\n{\"inputs\": [271, 16], \"logits\": {\"shape\": [1, 2, 248320], \"max_abs\": 0.0, \"exact\": true, \"strict_pass\": true, \"bf16_diagnostic_only_pass\": true}, \"strict_cache_failures\": 0, \"cache_parts\": 48, \"greedy_equal\": true}\n{\"inputs\": [11, 17], \"logits\": {\"shape\": [1, 2, 248320], \"max_abs\": 0.0, \"exact\": true, \"strict_pass\": true, \"bf16_diagnostic_only_pass\": true}, \"strict_cache_failures\": 0, \"cache_parts\": 48, \"greedy_equal\": true}\n{\"inputs\": [11, 18], \"logits\": {\"shape\": [1, 2, 248320], \"max_abs\": 0.0, \"exact\": true, \"strict_pass\": true, \"bf16_diagnostic_only_pass\": true}, \"strict_cache_failures\": 0, \"cache_parts\": 48, \"greedy_equal\": true}\n",
+      "stderr": "",
+      "receipt": {
+        "model": "/Users/jeremylien/Projects/paretoquant-dual-host/checkpoints/control-qwen35-08b-da28692b5f139cb0ec58a356b437486b7dac7462",
+        "device": "Device(gpu, 0)",
+        "strict_atol": 1e-06,
+        "strict_rtol": 1e-05,
+        "widths": [
+          1,
+          2
+        ],
+        "cases": [
+          {
+            "inputs": [
+              271,
+              16
+            ],
+            "logits": {
+              "shape": [
+                1,
+                2,
+                248320
+              ],
+              "max_abs": 0.0,
+              "exact": true,
+              "strict_pass": true,
+              "bf16_diagnostic_only_pass": true
+            },
+            "sequential_greedy": [
+              [
+                16,
+                11
+              ]
+            ],
+            "batch_greedy": [
+              [
+                16,
+                11
+              ]
+            ],
+            "caches": [
+              {
+                "layer": 0,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 0,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  37,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              }
+            ]
+          },
+          {
+            "inputs": [
+              11,
+              17
+            ],
+            "logits": {
+              "shape": [
+                1,
+                2,
+                248320
+              ],
+              "max_abs": 0.0,
+              "exact": true,
+              "strict_pass": true,
+              "bf16_diagnostic_only_pass": true
+            },
+            "sequential_greedy": [
+              [
+                17,
+                11
+              ]
+            ],
+            "batch_greedy": [
+              [
+                17,
+                11
+              ]
+            ],
+            "caches": [
+              {
+                "layer": 0,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 0,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  39,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              }
+            ]
+          },
+          {
+            "inputs": [
+              11,
+              18
+            ],
+            "logits": {
+              "shape": [
+                1,
+                2,
+                248320
+              ],
+              "max_abs": 0.0,
+              "exact": true,
+              "strict_pass": true,
+              "bf16_diagnostic_only_pass": true
+            },
+            "sequential_greedy": [
+              [
+                18,
+                11
+              ]
+            ],
+            "batch_greedy": [
+              [
+                18,
+                11
+              ]
+            ],
+            "caches": [
+              {
+                "layer": 0,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 0,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 1,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 2,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 3,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 4,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 5,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 6,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 7,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 8,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 9,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 10,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 11,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 12,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 13,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 14,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 15,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 16,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 17,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 18,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 19,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 20,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 21,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state0",
+                "shape": [
+                  1,
+                  3,
+                  6144
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 22,
+                "part": "state1",
+                "shape": [
+                  1,
+                  16,
+                  128,
+                  128
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "keys",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              },
+              {
+                "layer": 23,
+                "part": "values",
+                "shape": [
+                  1,
+                  2,
+                  41,
+                  256
+                ],
+                "max_abs": 0.0,
+                "exact": true,
+                "strict_pass": true,
+                "bf16_diagnostic_only_pass": true
+              }
+            ]
+          }
+        ],
+        "peak_mlx_bytes": 575206530,
+        "strict_admitted": true
+      }
+    }
+  }
+}

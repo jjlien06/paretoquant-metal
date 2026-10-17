@@ -1,0 +1,12 @@
+{
+  "scope": "Random GPU array operator gate only; no actual-checkpoint/full32B/speed admission",
+  "cases": 112,
+  "exact_output_values": 112,
+  "within_original_tolerance": 112,
+  "owned_cleanup_verified": true,
+  "guarded_unchanged": true,
+  "CPU_TDD_cycles": 18,
+  "parent_CPU_pytest_passed": 312,
+  "parent_stdlib_unittest_passed": 2,
+  "peak_mlx_bytes": 4436024
+}

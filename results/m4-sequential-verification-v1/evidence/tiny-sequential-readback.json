@@ -1,0 +1,29 @@
+{
+  "fetched_sha256": {
+    "tiny-sequential.json": "799d317ecc28f05af4a2217f98039f5e798d57471615cd29c184c128256036d7",
+    "job-tiny-sequential/startup.json": "7713a671163e2fa48310de79f7ed2e4b02262543ecb734cbde0d190ac7866880",
+    "job-tiny-sequential/pids.json": "1e07e8e77be7c478d5d850459e38e97f28887fff58592a387be273dc6c5d263c",
+    "job-tiny-sequential/result.json": "1e191f5ca28d04199d6d3c2d1b67ebf813c26f73b61a9f82583e83824d3468e5",
+    "job-tiny-sequential/stdout": "df91821c8a44d1793144b39f6607159fc4c91f8b978751a38bcca3529e3d03bd",
+    "job-tiny-sequential/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "guarded_source_sha256_after": {
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "phased_decode.py": "a75cc6777f052135211ce9f386528059d494f69ca3e264f48d920157ba71308f",
+    "probe.py": "aa81063281553bbfef92c44aae60072e6cbf855fce5f1a9929c28241aab93874",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "shard_plan.py": "968f779ef0d4793487f394f08beeb3ddcb3369f3d838a9cc4d0cb6e1bd23db44",
+    "stream_server.py": "34130f52ab1cd934d693bf890d8090fc940639f96af3e681c64bcae39b52f05d",
+    "stream_weights.py": "d4c782601de385b54374c90189251fc5a4d50fc9217fb3838d6d9c630c116ebc"
+  },
+  "guarded_unchanged": true,
+  "report_sources_bound": true,
+  "actor_cleanup": {
+    "child_reaped": true,
+    "group_gone": true,
+    "pid_reused": false,
+    "identity_unknown": false,
+    "pending_os_gpu_termination": false,
+    "gpu_driver_state": "not inspected; process/group receipt only"
+  }
+}

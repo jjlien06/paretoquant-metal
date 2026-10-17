@@ -1,0 +1,9 @@
+{
+  "scope": "spikes007 excluding GPU module; frozen diagnostic tests/lint separately",
+  "passed": 243,
+  "optional_skip": 1,
+  "subtests_passed": 52,
+  "duration_s": 22.82,
+  "diagnostic_cpu_passed": 10,
+  "lint_format": "passed for stable007 and draft_screen/test_draft_screen; concurrently built speculative component not included"
+}

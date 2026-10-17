@@ -1,0 +1,36 @@
+{
+  "schema": "overlap-independent-review-disposition-v1",
+  "timestamp": 1792230681.9303,
+  "core_CPU_review": {
+    "passed": true,
+    "sha256": "1b031dc1fe6621b1331257f67b8a3d9fcb4338bfa4e6eac681c1e840d8a992f2",
+    "scope": "Core runtime CPU/source only; physical gates remain pending."
+  },
+  "pressure_CPU_review": {
+    "passed": false,
+    "original_reviewer_evidence": "/Users/jeremylien/.hermes/cache/scratch/pressure_independent_review_025.py",
+    "reviewer_transcript": "/Users/jeremylien/.hermes/cache/delegation/live/deleg_1b5f0b4e/task-1.log",
+    "full_review_JSON_missing": true,
+    "bounds": "No claim to have recovered untruncated full reviewer verdict; blocking findings corroborated from preserved probes and parent snapshot replay."
+  },
+  "parent_pressure_snapshot_sha256": "748823fe86fbf63361bff43a4e6710483bfa322d90c8b117a11a2815218e03cc",
+  "snapshot_path": "/Users/jeremylien/.hermes/cache/scratch/pressure-parent-failure-zryb3prc/pressure_guard_reviewed.py",
+  "parent_reproduced": {
+    "short_unbound_timeline": {
+      "accepted": true
+    },
+    "wrong_timeout": {
+      "accepted": true
+    },
+    "unknown_stage": {
+      "accepted": true
+    }
+  },
+  "blockers": [
+    "Missing binding of sampled pressure receipt to actor nonce/host-role/process identity and actual execution interval.",
+    "Expired deadline or prelaunch stop during setup can still reach child spawn; reviewer mock reproduction retained."
+  ],
+  "repair_status": "Narrow TDD repair dispatched; raw harness integration resumed after provider-interrupted partial implementation.",
+  "GPU_execution_permitted": false,
+  "model_requests_executed": 0
+}

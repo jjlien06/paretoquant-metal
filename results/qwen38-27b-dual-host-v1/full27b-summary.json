@@ -1,0 +1,142 @@
+{
+  "model": "mlx-community/Qwen3.8-27B-4bit",
+  "revision": "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+  "text_only": true,
+  "layers": 64,
+  "tensor_union_count": 1847,
+  "replicated_tensor_count": 7,
+  "both_rank_tokens_match": true,
+  "repeated_request_tokens_match": true,
+  "ranks": [
+    {
+      "rank": 0,
+      "layer_start": 40,
+      "layer_end": 64,
+      "parameter_bytes": 6568759168,
+      "peak_mlx_bytes": 6674973677,
+      "device": {
+        "device_name": "Apple M2 Pro",
+        "max_recommended_working_set_size": 12713115648,
+        "memory_size": 17179869184,
+        "architecture": "applegpu_g14s",
+        "max_buffer_length": 9534832640,
+        "resource_limit": 499000
+      },
+      "requests": [
+        {
+          "repeat": 0,
+          "token_ids": [
+            17,
+            5346,
+            220,
+            17,
+            16327,
+            220,
+            19,
+            13,
+            248046
+          ],
+          "text": "2 plus 2 equals 4.",
+          "wall_seconds": 5.8699538329965435,
+          "first_token_seconds": 4.65072129102191,
+          "wall_tokens_per_second": 1.5332318202246582,
+          "native_generation_tps": null,
+          "prompt_tokens": 26,
+          "finish_reason": "stop",
+          "actual_token_events": 9,
+          "post_first_token_events_per_second": 6.561504655250942
+        },
+        {
+          "repeat": 1,
+          "token_ids": [
+            17,
+            5346,
+            220,
+            17,
+            16327,
+            220,
+            19,
+            13,
+            248046
+          ],
+          "text": "2 plus 2 equals 4.",
+          "wall_seconds": 1.6637148750014603,
+          "first_token_seconds": 0.5677069170051254,
+          "wall_tokens_per_second": 5.409580773263268,
+          "native_generation_tps": null,
+          "prompt_tokens": 26,
+          "finish_reason": "stop",
+          "actual_token_events": 9,
+          "post_first_token_events_per_second": 7.29921707377489
+        }
+      ],
+      "maximum_phase_process_rss_bytes": 3992780800,
+      "phase_peak_mlx_bytes": 6674973677
+    },
+    {
+      "rank": 1,
+      "layer_start": 0,
+      "layer_end": 40,
+      "parameter_bytes": 9994376320,
+      "peak_mlx_bytes": 10143520109,
+      "device": {
+        "device_name": "Apple M4",
+        "max_recommended_working_set_size": 12713115648,
+        "memory_size": 17179869184,
+        "architecture": "applegpu_g16g",
+        "max_buffer_length": 9534832640,
+        "resource_limit": 499000
+      },
+      "requests": [
+        {
+          "repeat": 0,
+          "token_ids": [
+            17,
+            5346,
+            220,
+            17,
+            16327,
+            220,
+            19,
+            13,
+            248046
+          ],
+          "text": "2 plus 2 equals 4.",
+          "wall_seconds": 5.868898249999802,
+          "first_token_seconds": 4.649781041999859,
+          "wall_tokens_per_second": 1.5335075880724809,
+          "native_generation_tps": null,
+          "prompt_tokens": 26,
+          "finish_reason": "stop",
+          "actual_token_events": 9,
+          "post_first_token_events_per_second": 6.562125403122332
+        },
+        {
+          "repeat": 1,
+          "token_ids": [
+            17,
+            5346,
+            220,
+            17,
+            16327,
+            220,
+            19,
+            13,
+            248046
+          ],
+          "text": "2 plus 2 equals 4.",
+          "wall_seconds": 1.663787457999888,
+          "first_token_seconds": 0.5678249579998464,
+          "wall_tokens_per_second": 5.409344779422304,
+          "native_generation_tps": null,
+          "prompt_tokens": 26,
+          "finish_reason": "stop",
+          "actual_token_events": 9,
+          "post_first_token_events_per_second": 7.299519828461007
+        }
+      ],
+      "maximum_phase_process_rss_bytes": 3680911360,
+      "phase_peak_mlx_bytes": 10143520109
+    }
+  ]
+}

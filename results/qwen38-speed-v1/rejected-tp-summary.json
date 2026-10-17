@@ -1,0 +1,223 @@
+{
+  "status": "REJECTED_BF16_GATE_UNCHANGED",
+  "baseline_archive_verified": true,
+  "original_evidence_unchanged": true,
+  "native_candidate_source_and_loading_identical": true,
+  "results": [
+    {
+      "mode": "native",
+      "dtype": "f32",
+      "rank": 0,
+      "logit_passed": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "max_abs": 1.5497207641601562e-06,
+      "cache_checks": 50,
+      "cache_passed": 50,
+      "tokens": [
+        1,
+        89,
+        63
+      ],
+      "tolerance": {
+        "atol": 2e-05,
+        "rtol": 0.0002
+      },
+      "overall": true
+    },
+    {
+      "mode": "native",
+      "dtype": "f32",
+      "rank": 1,
+      "logit_passed": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "max_abs": 1.5497207641601562e-06,
+      "cache_checks": 50,
+      "cache_passed": 50,
+      "tokens": [
+        1,
+        89,
+        63
+      ],
+      "tolerance": {
+        "atol": 2e-05,
+        "rtol": 0.0002
+      },
+      "overall": true
+    },
+    {
+      "mode": "native",
+      "dtype": "bf16",
+      "rank": 0,
+      "logit_passed": [
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "max_abs": 0.046875,
+      "cache_checks": 50,
+      "cache_passed": 50,
+      "tokens": [
+        1,
+        89,
+        63
+      ],
+      "tolerance": {
+        "atol": 0.03,
+        "rtol": 0.03
+      },
+      "overall": false
+    },
+    {
+      "mode": "native",
+      "dtype": "bf16",
+      "rank": 1,
+      "logit_passed": [
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "max_abs": 0.046875,
+      "cache_checks": 50,
+      "cache_passed": 50,
+      "tokens": [
+        1,
+        89,
+        63
+      ],
+      "tolerance": {
+        "atol": 0.03,
+        "rtol": 0.03
+      },
+      "overall": false
+    },
+    {
+      "mode": "precise",
+      "dtype": "f32",
+      "rank": 0,
+      "logit_passed": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "max_abs": 1.5497207641601562e-06,
+      "cache_checks": 50,
+      "cache_passed": 50,
+      "tokens": [
+        1,
+        89,
+        63
+      ],
+      "tolerance": {
+        "atol": 2e-05,
+        "rtol": 0.0002
+      },
+      "overall": true
+    },
+    {
+      "mode": "precise",
+      "dtype": "f32",
+      "rank": 1,
+      "logit_passed": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "max_abs": 1.5497207641601562e-06,
+      "cache_checks": 50,
+      "cache_passed": 50,
+      "tokens": [
+        1,
+        89,
+        63
+      ],
+      "tolerance": {
+        "atol": 2e-05,
+        "rtol": 0.0002
+      },
+      "overall": true
+    },
+    {
+      "mode": "precise",
+      "dtype": "bf16",
+      "rank": 0,
+      "logit_passed": [
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "max_abs": 0.0400390625,
+      "cache_checks": 50,
+      "cache_passed": 50,
+      "tokens": [
+        1,
+        89,
+        63
+      ],
+      "tolerance": {
+        "atol": 0.03,
+        "rtol": 0.03
+      },
+      "overall": false
+    },
+    {
+      "mode": "precise",
+      "dtype": "bf16",
+      "rank": 1,
+      "logit_passed": [
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "max_abs": 0.0400390625,
+      "cache_checks": 50,
+      "cache_passed": 49,
+      "tokens": [
+        1,
+        89,
+        63
+      ],
+      "tolerance": {
+        "atol": 0.03,
+        "rtol": 0.03
+      },
+      "overall": false
+    }
+  ],
+  "source_sha256": {
+    "runner.py": "af9dd15aa4d7d8a84487347da8be8c8f0b34a5a78dff3b4c341cc910a95c7df0",
+    "execute.py": "3999b575c4ccdc9f0234dcd3da65c86a5b3ba31e7b786faf983b462b4ca253b8",
+    "tp.py": "459957cb80190e7ab3a7c78110114a9bd8d5133ef0df7e9be87cf436c576c565",
+    "precision_v2.py": "15e7b7c666b8d162d534d40c7975937a522b3855388c7fa614bba90c7a2ce5f8",
+    "test_tp.py": "42222b6be0b2944db319b98b05436872cf62bc0bdfff09ee0b3e59e95757c9a8",
+    "test_row_v2.py": "f8435b6e306d148d0e5c509099b2587e3b8b41289770ca7c838c9cac827d6e9c",
+    "test_integration_v2.py": "f5b9746fd449dce87947707e47259bc81a381fdd79f99aa55b52b19195d4b1bc",
+    "repro_row_v2.py": "9d4be9414d0f2701e1e2b57950c1f6872d7591178bac09f24e7e89043a2b8237"
+  },
+  "unit_tests": "2 passed",
+  "original_plus_unit_regression": "10 passed, 1 failed (original BF16 gate)",
+  "two_process_integration": "2 passed, 2 failed (native BF16 and candidate BF16)",
+  "precision": "Stored packed/floating parameters unchanged; exact F32 casts of row input/scales/affine biases; F32 quantized_matmul and F32 reduction; castback after sum. Different dequantization/matmul arithmetic, NOT identical arithmetic.",
+  "diagnosis": "Partial rounding is real, but F32 dequantization also changes effective matrix arithmetic. F32 partial sum matches F32 full projection after BF16 cast in bounded repro, not native BF16 full projection."
+}

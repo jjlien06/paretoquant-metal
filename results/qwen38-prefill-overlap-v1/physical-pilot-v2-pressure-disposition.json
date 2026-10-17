@@ -1,0 +1,125 @@
+{
+  "schema": "overlap-cleared-memory-physical-retry-disposition-v1",
+  "timestamp": 1792268265.770114,
+  "trial_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000",
+  "status": "failed-during-weight-load-before-numerical-admission-or-benchmark",
+  "roles": {
+    "rank0": {
+      "receipt_sha256": "dae2c4278c9b9e16038f5b8e42d07d6c114012f5781beff6a033d4ead0d55be8",
+      "reason": "pressure",
+      "pressure_levels": [
+        1,
+        2
+      ],
+      "failed_samples": [
+        {
+          "stage": "owned_child",
+          "elapsed_seconds": 22.950526958999944,
+          "level": 2
+        }
+      ],
+      "benchmark_request_starts": 0,
+      "final_phase": {
+        "phase": "tensor_done",
+        "tensor_index": 653,
+        "tensor_count": 812,
+        "active_mlx_bytes": 6147616286,
+        "peak_mlx_bytes": 6147616286,
+        "cache_mlx_bytes": 0,
+        "pid": 4985,
+        "rank": 0,
+        "timestamp": 1792268179.6906822,
+        "elapsed_seconds": 22.841628708999906,
+        "process_maxrss": 4076732416,
+        "process_maxrss_units": "bytes (macOS)",
+        "memory_accounting": "MLX allocator bytes; not system residency"
+      },
+      "cleanup": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      }
+    },
+    "rank1": {
+      "receipt_sha256": "1e1a264af1a69e64bfd333150e087b48e374a71eefb141b749247a46becffdd4",
+      "reason": "pressure",
+      "pressure_levels": [
+        1,
+        2
+      ],
+      "failed_samples": [
+        {
+          "stage": "owned_child",
+          "elapsed_seconds": 23.174526874994626,
+          "level": 2
+        }
+      ],
+      "benchmark_request_starts": 0,
+      "final_phase": {
+        "phase": "tensor_done",
+        "tensor_index": 672,
+        "tensor_count": 1042,
+        "active_mlx_bytes": 6359647186,
+        "peak_mlx_bytes": 6359647190,
+        "cache_mlx_bytes": 0,
+        "pid": 17631,
+        "rank": 1,
+        "timestamp": 1792268179.928274,
+        "elapsed_seconds": 23.127447000006214,
+        "process_maxrss": 2889744384,
+        "process_maxrss_units": "bytes (macOS)",
+        "memory_accounting": "MLX allocator bytes; not system residency"
+      },
+      "cleanup": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      }
+    },
+    "server": {
+      "receipt_sha256": "f61ce1da408ec1893d88c1f2e00bf9a9e79674e0dc2fa7c3a1e2a2a9e3d9555f",
+      "reason": "pressure",
+      "pressure_levels": [
+        1,
+        2
+      ],
+      "failed_samples": [
+        {
+          "stage": "owned_child",
+          "elapsed_seconds": 23.632453083002474,
+          "level": 2
+        }
+      ],
+      "benchmark_request_starts": 0,
+      "final_phase": null,
+      "cleanup": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      }
+    }
+  },
+  "post_cleanup_health": {
+    "local_pressure": 1,
+    "remote_pressure": 1
+  },
+  "explicit_connection_refusals_rechecked": [
+    true,
+    true,
+    true
+  ],
+  "reviewed_code_changed": false,
+  "split_or_weight_identity_changed": false,
+  "performance_acceptance": false,
+  "separate_prelaunch_failure": "Earlier retry stopped before execution because prior snapshot gained __pycache__ through remote Python startup. Old cache retained; fresh exclusive snapshots readback539files passed for this physical retry.",
+  "next": "CPU source/lifetime investigation and historical-pressure reconciliation; no blind third physical load, no relaxed guard, no unrelated process termination."
+}

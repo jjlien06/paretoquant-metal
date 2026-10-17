@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    "This is approval of the isolated synthetic-activation diagnostic and faithful negative evidence only. Do not integrate any candidate: every whole-MLP fused path fails two of three parity rows on both hosts, and neither host has a >5% gate/up winner.",
+    "Validation reuses the same three synthetic rows in fresh timing calls; it is not held-out captured-activation or full-shard parity. Require captured/full-shard parity and independent repeated-run uncertainty before any rollout decision.",
+    "The optional paired summary reports descriptive trial-index pairing and empirical sample percentiles, not confidence intervals or statistical significance. Rotating interleaved samples can be autocorrelated.",
+    "Manifest and nine local file/raw hashes match; source_config_sha256 is syntactically valid and identical across manifests, but the original pinned checkpoint config/shard extraction was not independently revalidated in this offline review (cached original config absent). Hash agreement verifies artifact consistency, not an external provenance attestation."
+  ],
+  "tests": [
+    "Independent CPU standard-library suite: 10 tests and 13 subtests passed; second run under an import guard confirmed no NumPy, MLX, model-runtime, or paretoquant imports.",
+    "Frozen screen.py/test_screen.py/README.md SHA-256 hashes exactly match the frozen manifest and live spikes/008-32b-kernel-screen files.",
+    "M2 installed-source hashes for screen.py, metal.py, benchmark.py, and both Metal kernels match the independently read frozen/local source; M4 source hash map is identical.",
+    "M2 asset manifest SHA-256 matches recorded evidence, and decoded manifest is identical. Nine NPY file hashes, bounded header shapes/dtypes, C-order payload lengths, and raw SHA-256 hashes verified without NumPy; total file size 238879872 bytes. M4 manifest and manifest hash are identical.",
+    "M2 and newly available M4 completed JSON evidence inspected once without polling or rerunning GPU code. All pooled tuning/validation medians, sample counts, improvement ratios and winner sets recomputed exactly; all per-round mean/median/stdev metadata checked within floating-point roundoff (stdev differences <=5.6e-17 ms).",
+    "Both hosts retain three rounds of 24 positive finite raw samples per valid method per phase, preserve starting-order rotation, and time no failed fused MLP path. Shared-stock-down and whole-MLP compilation controls verified statically and by CPU test doubles.",
+    "M2 gate/up candidates all pass preregistered parity against native and compiled stock; validation improvement versus compiled stock is 3.404659%, 2.548681%, 2.698376%, 2.878792% for rpg1/2/4/8, respectively; winners empty.",
+    "M4 gate/up candidates all pass parity; corresponding validation improvements are 2.974869%, 2.496966%, 2.323266%, 2.931723%; winners empty.",
+    "All four full-MLP fused candidates fail input rows 1 and 2 on both hosts and are absent from tuning/validation timings. Failure metrics are retained (max absolute errors 0.03125/0.0625/0.0625 on rows 0/1/2); stock controls pass.",
+    "Exclusive output creation, no-pickle loading, manifest/file size/path constraints, file/raw hash validation before GPU imports, finite parity and state restoration examined. No consequential issue found under the declared bounded local diagnostic scope."
+  ],
+  "hashes_verified": true,
+  "summary": "PASS for the bounded layer-0 actual-packed-weight / synthetic-activation diagnostic and faithfully retained negative M2/M4 evidence only; no >5% gate/up winner and all full-MLP candidates rejected by parity. No kernel rollout or full-model claim is approved."
+}

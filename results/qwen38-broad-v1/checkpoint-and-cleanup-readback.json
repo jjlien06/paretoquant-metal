@@ -1,0 +1,7 @@
+{
+  "reference": "results/qwen38-speed-v2/native-explanation-28x36-g32-v1",
+  "unchanged_text_tensor_count": 1847,
+  "all_six_trials_exact_native_tensor_hashes": true,
+  "no_owned_workers_both_hosts": true,
+  "normal_memory_pressure_both_hosts": true
+}

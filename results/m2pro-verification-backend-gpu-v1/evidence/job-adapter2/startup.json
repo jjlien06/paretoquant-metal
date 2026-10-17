@@ -1,0 +1,1 @@
+{"actor_pid": 92489, "nonce": "7e5aadc904e6499492b7f135cb40ae5a", "deadline": 150, "argv": ["/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python", "-u", "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/local-verification-backend-v1/operator_gate.py"]}

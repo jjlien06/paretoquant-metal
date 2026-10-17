@@ -1,0 +1,1 @@
+{"actor_pid": 16038, "nonce": "021ab7bbe3be484d9b57f62692762eee", "deadline": 150, "argv": ["/Users/jeremylien/Projects/paretoquant-dual-host/.venv/bin/python", "-u", "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/010-slot-operator-1791264341252170000/operator_gate.py"]}

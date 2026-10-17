@@ -1,0 +1,302 @@
+{
+  "schema": "parent-qwen38-prefill-overlap-final-acceptance-v1",
+  "accepted": true,
+  "status": "complete",
+  "accepted_at": "2026-10-17T22:29:07.595670+00:00",
+  "suite_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000",
+  "scope": "Completed two-Mac Qwen3.8-27B text overlapped-prefill milestone only, under explicit warning-tolerant memory amendment; not vision/autonomous-agent/always-on qualification.",
+  "physical_requests": 84,
+  "warmups": 12,
+  "measurements": 72,
+  "cases": 18,
+  "long_case_targets_met": 6,
+  "independent_review": {
+    "path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/noncritical-full-suite-independent-audit.json",
+    "sha256": "4359ef25ba7a3e969ee0d8bd115173bbb51c5016d1d7e13c72cf75be0a3daa1a",
+    "passed": true,
+    "checks_passed": 481,
+    "security_concerns": [],
+    "logic_errors": []
+  },
+  "long_case_results": [
+    {
+      "case_id": "code-1536",
+      "formatted_prompt_tokens": 1536,
+      "target_long": true,
+      "thresholds_met": true,
+      "ttft_reduction_percent": 38.39368156192774,
+      "request_reduction_percent": 19.76732048666907,
+      "serial_median_ttft_seconds": 24.31054322949967,
+      "serial_median_wall_seconds": 47.22965493799984,
+      "overlap_median_ttft_seconds": 14.976831853999101,
+      "overlap_median_wall_seconds": 37.89361808349895
+    },
+    {
+      "case_id": "explanation-1536",
+      "formatted_prompt_tokens": 1536,
+      "target_long": true,
+      "thresholds_met": true,
+      "ttft_reduction_percent": 37.12441844045902,
+      "request_reduction_percent": 20.12334598853156,
+      "serial_median_ttft_seconds": 24.49754385399956,
+      "serial_median_wall_seconds": 46.491114853999534,
+      "overlap_median_ttft_seconds": 15.383121999999275,
+      "overlap_median_wall_seconds": 37.11135935399943
+    },
+    {
+      "case_id": "math-1536",
+      "formatted_prompt_tokens": 1536,
+      "target_long": true,
+      "thresholds_met": true,
+      "ttft_reduction_percent": 35.2930188180561,
+      "request_reduction_percent": 17.87192860808261,
+      "serial_median_ttft_seconds": 23.915623500000038,
+      "serial_median_wall_seconds": 47.32381675000033,
+      "overlap_median_ttft_seconds": 15.47485106250042,
+      "overlap_median_wall_seconds": 38.865872270999716
+    },
+    {
+      "case_id": "chinese-1536",
+      "formatted_prompt_tokens": 1536,
+      "target_long": true,
+      "thresholds_met": true,
+      "ttft_reduction_percent": 34.096969810460195,
+      "request_reduction_percent": 16.380485015411118,
+      "serial_median_ttft_seconds": 23.70552968749962,
+      "serial_median_wall_seconds": 49.2864488539999,
+      "overlap_median_ttft_seconds": 15.622663957999976,
+      "overlap_median_wall_seconds": 41.213110895499995
+    },
+    {
+      "case_id": "spanish-1536",
+      "formatted_prompt_tokens": 1536,
+      "target_long": true,
+      "thresholds_met": true,
+      "ttft_reduction_percent": 34.384988216525855,
+      "request_reduction_percent": 16.90468190567067,
+      "serial_median_ttft_seconds": 23.821272832999966,
+      "serial_median_wall_seconds": 48.699989125000684,
+      "overlap_median_ttft_seconds": 15.630312938001225,
+      "overlap_median_wall_seconds": 40.46753375050048
+    },
+    {
+      "case_id": "structured-1536",
+      "formatted_prompt_tokens": 1535,
+      "target_long": true,
+      "thresholds_met": true,
+      "ttft_reduction_percent": 39.475222317105576,
+      "request_reduction_percent": 19.482635382644876,
+      "serial_median_ttft_seconds": 25.938067062499613,
+      "serial_median_wall_seconds": 49.2263844579993,
+      "overlap_median_ttft_seconds": 15.69851270899926,
+      "overlap_median_wall_seconds": 39.63514679199943
+    }
+  ],
+  "regressions": [
+    {
+      "case_id": "code-short",
+      "metric": "first_token_seconds",
+      "paired_ratios": [
+        1.0058362401484897,
+        0.9998237523508873
+      ],
+      "median_ratio": 1.0028299962496885
+    },
+    {
+      "case_id": "code-short",
+      "metric": "wall_seconds",
+      "paired_ratios": [
+        0.9999487549775566,
+        1.0055425167871859
+      ],
+      "median_ratio": 1.0027456358823712
+    },
+    {
+      "case_id": "explanation-short",
+      "metric": "first_token_seconds",
+      "paired_ratios": [
+        1.0105144636485506,
+        0.9928587023800797
+      ],
+      "median_ratio": 1.0016865830143151
+    },
+    {
+      "case_id": "explanation-short",
+      "metric": "wall_seconds",
+      "paired_ratios": [
+        1.0049373287661643,
+        0.9960775619993041
+      ],
+      "median_ratio": 1.000507445382734
+    },
+    {
+      "case_id": "math-short",
+      "metric": "first_token_seconds",
+      "paired_ratios": [
+        1.0026849823348116,
+        1.0038891529564595
+      ],
+      "median_ratio": 1.0032870676456356
+    },
+    {
+      "case_id": "math-short",
+      "metric": "wall_seconds",
+      "paired_ratios": [
+        1.002833275365428,
+        1.0002476213879603
+      ],
+      "median_ratio": 1.0015404483766943
+    },
+    {
+      "case_id": "chinese-short",
+      "metric": "wall_seconds",
+      "paired_ratios": [
+        1.0041789200742504,
+        0.9981905501941982
+      ],
+      "median_ratio": 1.0011847351342242
+    },
+    {
+      "case_id": "spanish-short",
+      "metric": "first_token_seconds",
+      "paired_ratios": [
+        0.9992713577323438,
+        1.006585047710904
+      ],
+      "median_ratio": 1.0029282027216238
+    },
+    {
+      "case_id": "spanish-short",
+      "metric": "wall_seconds",
+      "paired_ratios": [
+        1.00421192118213,
+        1.001855876322363
+      ],
+      "median_ratio": 1.0030338987522467
+    },
+    {
+      "case_id": "structured-short",
+      "metric": "first_token_seconds",
+      "paired_ratios": [
+        1.022903806106914,
+        1.0067890190888205
+      ],
+      "median_ratio": 1.0148464125978673
+    },
+    {
+      "case_id": "structured-short",
+      "metric": "wall_seconds",
+      "paired_ratios": [
+        1.0063127217175285,
+        1.0056719075352032
+      ],
+      "median_ratio": 1.0059923146263658
+    }
+  ],
+  "pressure_policy": "noncritical",
+  "warning_samples": 95,
+  "cleanup_verified": true,
+  "final_independent_review_status": "passed",
+  "all_reviewed_inputs_unchanged_except_documentation": true,
+  "documentation_update": {
+    "previous_and_current": [
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/README.md",
+        "reviewed_sha256": "5e007341257495a4f7304f2acc2d738f213860783399a7ae06056cc474c0dbc9",
+        "current_sha256": "c1f581bb35a58e5aca13d801ef620b05f1d936dddf3b6cc48a52d7fdf91f795f"
+      }
+    ],
+    "changes": [
+      "Replace pending status with verified final review verdict",
+      "Replace unbounded best-comparator wording with previously validated comparator",
+      "Clarify rank allocator figure punctuation",
+      "Add final evidence links"
+    ],
+    "runtime_or_raw_measurement_changes": false
+  },
+  "supersedes_publication_index": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/publication-verification.json",
+  "files": {
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/README.md": {
+      "sha256": "c1f581bb35a58e5aca13d801ef620b05f1d936dddf3b6cc48a52d7fdf91f795f",
+      "bytes": 9143
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/report.json": {
+      "sha256": "ec0e3cf9e9bf21d1cba20af4988ca6e22d5ab92a2fe2199d910bc01a01ccf67b",
+      "bytes": 3132101
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/summary.json": {
+      "sha256": "4c8cecc5dd442e0b161d6ef598fcb3ee937661e07a0a5949f9c97ba51d9cc310",
+      "bytes": 15611
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/cases.csv": {
+      "sha256": "b5fbf3874a0f3eed1b4be29b70dd979d6c6da056419dd1301ca8ee3994bf08da",
+      "bytes": 2763
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/case-table.json": {
+      "sha256": "00a3786a873dd93b813e00170c4cf70e87f34a6dd1b6152c72155a215f4a5a70",
+      "bytes": 8072
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/plan.json": {
+      "sha256": "7e16e0e488aaf726310cf440f470354ec31c953186cf585dcc87cdf1de75c194",
+      "bytes": 878
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/post-suite-health.json": {
+      "sha256": "a4dde5c4fef05db227229abe0ab658b7e5d516a0a28bcd82e7aebe766518ad46",
+      "bytes": 2305
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-02-complete.json": {
+      "sha256": "1954bb5bef9d38a6e0b6d6d8aa8b708e11264d8e00fa6852258da7b108d45658",
+      "bytes": 2117
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-01-complete.json": {
+      "sha256": "dff487bd3ea143e45f59297909851923bd3562d6c94686c78fd3f37f29d98094",
+      "bytes": 2105
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-05-complete.json": {
+      "sha256": "8f2cea92edee01ed8c585e3af97b7f44ae26759755c6298f99b5a0dcf88c4955",
+      "bytes": 2105
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-04-complete.json": {
+      "sha256": "f72c522ce991e6168d37adffee1730e696083a92d9bb1866f49f4d516cdf6dc8",
+      "bytes": 2104
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-00-complete.json": {
+      "sha256": "bc5ed08e2a6d90ea1c6efab076ceeff8aa1b5a29f4732eace1932462ecbe27f3",
+      "bytes": 2117
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/batch-03-complete.json": {
+      "sha256": "4f8ab80b9f97fae5f23fc39696e6004f60e5785d963085038e6ab2f8010e19b8",
+      "bytes": 2117
+    },
+    "results/qwen38-prefill-overlap-v1/parent-run-full-suite-noncritical-v1.py": {
+      "sha256": "cf255fd1e43a28ca6b950d27fc01fa9e1e84b844fdcad904e098ec540d08cca2",
+      "bytes": 7992
+    },
+    "results/qwen38-prefill-overlap-v1/parent-run-batch-noncritical-v1.py": {
+      "sha256": "b34f6c565eacd5b79038f485f0549c91b979980cb113e944cfcce3240a89e450",
+      "bytes": 10145
+    },
+    "results/qwen38-prefill-overlap-v1/parent-audit-noncritical-trial-v2.py": {
+      "sha256": "5ff4763898bcf922983cd491a6cfa8d9f80f45d3091112fdeac147d99f2224dc",
+      "bytes": 7530
+    },
+    "results/qwen38-prefill-overlap-v1/noncritical-combined-independent-review.json": {
+      "sha256": "fbdfe4c1a74775a7e6e98623feddb52baf6d37644e644bc7805f710eaa39e246",
+      "bytes": 35734
+    },
+    "results/qwen38-prefill-overlap-v1/noncritical-pilot-independent-audit.json": {
+      "sha256": "63e8c8cb269ce2a24f8231ca9875375b3d3db3824a3ad2f4f0585ede5e20fc8d",
+      "bytes": 43179
+    },
+    "results/qwen38-prefill-overlap-v1/noncritical-full-suite-independent-audit.json": {
+      "sha256": "4359ef25ba7a3e969ee0d8bd115173bbb51c5016d1d7e13c72cf75be0a3daa1a",
+      "bytes": 179223
+    },
+    "results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/publication-verification.json": {
+      "sha256": "268b869c9372367261647987c5ab0305e2faa7786675081ab700a7dc6b8762b5",
+      "bytes": 8330
+    }
+  },
+  "git_push_claimed": false,
+  "remaining_milestone_gates": []
+}

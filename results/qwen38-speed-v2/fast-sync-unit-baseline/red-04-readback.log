@@ -1,0 +1,304 @@
+.....................FFFFFFFFF                                           [100%]
+=================================== FAILURES ===================================
+_____ test_probe_reports_actual_start_and_completion_env_without_gpu[None] _____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1085b67b0>
+capsys = <_pytest.capture.CaptureFixture object at 0x1085d1400>, value = None
+
+    @pytest.mark.parametrize("value", [None, "1"])
+    def test_probe_reports_actual_start_and_completion_env_without_gpu(monkeypatch, capsys, value):
+        import probe
+    
+        if value is None:
+            monkeypatch.delenv("MLX_METAL_FAST_SYNCH", raising=False)
+        else:
+            monkeypatch.setenv("MLX_METAL_FAST_SYNCH", value)
+        monkeypatch.setattr(sys, "argv", ["probe.py", "--mode", "collective", "--repeats", "1"])
+        # A result claiming the opposite setting must be overwritten by actual os.environ.
+        monkeypatch.setattr(
+            probe,
+            "collective",
+            lambda: {"unit_fixture": True, "fast_synch": value is None, "environment": {}},
+        )
+        probe.main()
+        captured = capsys.readouterr()
+        start, final = json.loads(captured.err), json.loads(captured.out)
+        assert start["phase"] == "process_start"
+        for record in (start, final):
+>           assert record["fast_synch"] is (value == "1")
+                   ^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'fast_synch'
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:184: KeyError
+______ test_probe_reports_actual_start_and_completion_env_without_gpu[1] _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1084ebdf0>
+capsys = <_pytest.capture.CaptureFixture object at 0x1085abb10>, value = '1'
+
+    @pytest.mark.parametrize("value", [None, "1"])
+    def test_probe_reports_actual_start_and_completion_env_without_gpu(monkeypatch, capsys, value):
+        import probe
+    
+        if value is None:
+            monkeypatch.delenv("MLX_METAL_FAST_SYNCH", raising=False)
+        else:
+            monkeypatch.setenv("MLX_METAL_FAST_SYNCH", value)
+        monkeypatch.setattr(sys, "argv", ["probe.py", "--mode", "collective", "--repeats", "1"])
+        # A result claiming the opposite setting must be overwritten by actual os.environ.
+        monkeypatch.setattr(
+            probe,
+            "collective",
+            lambda: {"unit_fixture": True, "fast_synch": value is None, "environment": {}},
+        )
+        probe.main()
+        captured = capsys.readouterr()
+        start, final = json.loads(captured.err), json.loads(captured.out)
+        assert start["phase"] == "process_start"
+        for record in (start, final):
+>           assert record["fast_synch"] is (value == "1")
+                   ^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'fast_synch'
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:184: KeyError
+___________ test_probe_rejects_unknown_environment_before_runtime[0] ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108704050>
+value = '0'
+
+    @pytest.mark.parametrize("value", ["0", "false", "true", "", "2", "01", "1 "])
+    def test_probe_rejects_unknown_environment_before_runtime(monkeypatch, value):
+        import probe
+    
+        monkeypatch.setenv("MLX_METAL_FAST_SYNCH", value)
+        monkeypatch.setattr(sys, "argv", ["probe.py", "--mode", "collective", "--repeats", "1"])
+    
+        def forbidden():
+            pytest.fail("Unadmitted environment reached runtime")
+    
+        monkeypatch.setattr(probe, "collective", forbidden)
+        with pytest.raises(ValueError, match="MLX_METAL_FAST_SYNCH"):
+>           probe.main()
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:200: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+spikes/015-qwen38-fast-sync/probe.py:421: in main
+    result = collective()
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def forbidden():
+>       pytest.fail("Unadmitted environment reached runtime")
+E       Failed: Unadmitted environment reached runtime
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:196: Failed
+----------------------------- Captured stderr call -----------------------------
+{"phase": "process_start", "source_sha256": {"probe.py": "9fafafcde51b84f8b4e9ae53416ccc5948524ca84d7e1e35211426a11052ba72", "stream_weights.py": "4eae4f55c042b6214449cae4e9ef77d825ebf3ad53b376fc18bd75f3a577948e", "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1", "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465", "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67", "phased_decode.py": "341f5190a533dd332b84104335a373495280ec26abbb1c2f637735a0697d9628", "remote_actor.py": "034db272cb5a9f20dd1b130d661719a56c5a751829953f46219aaa355385f0c6"}, "execution": "upstream", "active_mlx_bytes": null, "peak_mlx_bytes": null, "cache_mlx_bytes": null, "pid": 16109, "rank": 0, "timestamp": 1792133419.8139699, "elapsed_seconds": 0.01609795802505687, "process_maxrss": 45940736, "process_maxrss_units": "bytes (macOS)", "memory_accounting": "MLX allocator bytes; not system residency"}
+_________ test_probe_rejects_unknown_environment_before_runtime[false] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1086f6750>
+value = 'false'
+
+    @pytest.mark.parametrize("value", ["0", "false", "true", "", "2", "01", "1 "])
+    def test_probe_rejects_unknown_environment_before_runtime(monkeypatch, value):
+        import probe
+    
+        monkeypatch.setenv("MLX_METAL_FAST_SYNCH", value)
+        monkeypatch.setattr(sys, "argv", ["probe.py", "--mode", "collective", "--repeats", "1"])
+    
+        def forbidden():
+            pytest.fail("Unadmitted environment reached runtime")
+    
+        monkeypatch.setattr(probe, "collective", forbidden)
+        with pytest.raises(ValueError, match="MLX_METAL_FAST_SYNCH"):
+>           probe.main()
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:200: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+spikes/015-qwen38-fast-sync/probe.py:421: in main
+    result = collective()
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def forbidden():
+>       pytest.fail("Unadmitted environment reached runtime")
+E       Failed: Unadmitted environment reached runtime
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:196: Failed
+----------------------------- Captured stderr call -----------------------------
+{"phase": "process_start", "source_sha256": {"probe.py": "9fafafcde51b84f8b4e9ae53416ccc5948524ca84d7e1e35211426a11052ba72", "stream_weights.py": "4eae4f55c042b6214449cae4e9ef77d825ebf3ad53b376fc18bd75f3a577948e", "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1", "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465", "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67", "phased_decode.py": "341f5190a533dd332b84104335a373495280ec26abbb1c2f637735a0697d9628", "remote_actor.py": "034db272cb5a9f20dd1b130d661719a56c5a751829953f46219aaa355385f0c6"}, "execution": "upstream", "active_mlx_bytes": null, "peak_mlx_bytes": null, "cache_mlx_bytes": null, "pid": 16109, "rank": 0, "timestamp": 1792133419.8211908, "elapsed_seconds": 0.023319208004977554, "process_maxrss": 46612480, "process_maxrss_units": "bytes (macOS)", "memory_accounting": "MLX allocator bytes; not system residency"}
+_________ test_probe_rejects_unknown_environment_before_runtime[true] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1086f6c50>
+value = 'true'
+
+    @pytest.mark.parametrize("value", ["0", "false", "true", "", "2", "01", "1 "])
+    def test_probe_rejects_unknown_environment_before_runtime(monkeypatch, value):
+        import probe
+    
+        monkeypatch.setenv("MLX_METAL_FAST_SYNCH", value)
+        monkeypatch.setattr(sys, "argv", ["probe.py", "--mode", "collective", "--repeats", "1"])
+    
+        def forbidden():
+            pytest.fail("Unadmitted environment reached runtime")
+    
+        monkeypatch.setattr(probe, "collective", forbidden)
+        with pytest.raises(ValueError, match="MLX_METAL_FAST_SYNCH"):
+>           probe.main()
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:200: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+spikes/015-qwen38-fast-sync/probe.py:421: in main
+    result = collective()
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def forbidden():
+>       pytest.fail("Unadmitted environment reached runtime")
+E       Failed: Unadmitted environment reached runtime
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:196: Failed
+----------------------------- Captured stderr call -----------------------------
+{"phase": "process_start", "source_sha256": {"probe.py": "9fafafcde51b84f8b4e9ae53416ccc5948524ca84d7e1e35211426a11052ba72", "stream_weights.py": "4eae4f55c042b6214449cae4e9ef77d825ebf3ad53b376fc18bd75f3a577948e", "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1", "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465", "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67", "phased_decode.py": "341f5190a533dd332b84104335a373495280ec26abbb1c2f637735a0697d9628", "remote_actor.py": "034db272cb5a9f20dd1b130d661719a56c5a751829953f46219aaa355385f0c6"}, "execution": "upstream", "active_mlx_bytes": null, "peak_mlx_bytes": null, "cache_mlx_bytes": null, "pid": 16109, "rank": 0, "timestamp": 1792133419.8282108, "elapsed_seconds": 0.030338665994349867, "process_maxrss": 46645248, "process_maxrss_units": "bytes (macOS)", "memory_accounting": "MLX allocator bytes; not system residency"}
+___________ test_probe_rejects_unknown_environment_before_runtime[] ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108764050>
+value = ''
+
+    @pytest.mark.parametrize("value", ["0", "false", "true", "", "2", "01", "1 "])
+    def test_probe_rejects_unknown_environment_before_runtime(monkeypatch, value):
+        import probe
+    
+        monkeypatch.setenv("MLX_METAL_FAST_SYNCH", value)
+        monkeypatch.setattr(sys, "argv", ["probe.py", "--mode", "collective", "--repeats", "1"])
+    
+        def forbidden():
+            pytest.fail("Unadmitted environment reached runtime")
+    
+        monkeypatch.setattr(probe, "collective", forbidden)
+        with pytest.raises(ValueError, match="MLX_METAL_FAST_SYNCH"):
+>           probe.main()
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:200: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+spikes/015-qwen38-fast-sync/probe.py:421: in main
+    result = collective()
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def forbidden():
+>       pytest.fail("Unadmitted environment reached runtime")
+E       Failed: Unadmitted environment reached runtime
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:196: Failed
+----------------------------- Captured stderr call -----------------------------
+{"phase": "process_start", "source_sha256": {"probe.py": "9fafafcde51b84f8b4e9ae53416ccc5948524ca84d7e1e35211426a11052ba72", "stream_weights.py": "4eae4f55c042b6214449cae4e9ef77d825ebf3ad53b376fc18bd75f3a577948e", "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1", "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465", "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67", "phased_decode.py": "341f5190a533dd332b84104335a373495280ec26abbb1c2f637735a0697d9628", "remote_actor.py": "034db272cb5a9f20dd1b130d661719a56c5a751829953f46219aaa355385f0c6"}, "execution": "upstream", "active_mlx_bytes": null, "peak_mlx_bytes": null, "cache_mlx_bytes": null, "pid": 16109, "rank": 0, "timestamp": 1792133419.8351018, "elapsed_seconds": 0.03722979099256918, "process_maxrss": 46661632, "process_maxrss_units": "bytes (macOS)", "memory_accounting": "MLX allocator bytes; not system residency"}
+___________ test_probe_rejects_unknown_environment_before_runtime[2] ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1087646e0>
+value = '2'
+
+    @pytest.mark.parametrize("value", ["0", "false", "true", "", "2", "01", "1 "])
+    def test_probe_rejects_unknown_environment_before_runtime(monkeypatch, value):
+        import probe
+    
+        monkeypatch.setenv("MLX_METAL_FAST_SYNCH", value)
+        monkeypatch.setattr(sys, "argv", ["probe.py", "--mode", "collective", "--repeats", "1"])
+    
+        def forbidden():
+            pytest.fail("Unadmitted environment reached runtime")
+    
+        monkeypatch.setattr(probe, "collective", forbidden)
+        with pytest.raises(ValueError, match="MLX_METAL_FAST_SYNCH"):
+>           probe.main()
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:200: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+spikes/015-qwen38-fast-sync/probe.py:421: in main
+    result = collective()
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def forbidden():
+>       pytest.fail("Unadmitted environment reached runtime")
+E       Failed: Unadmitted environment reached runtime
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:196: Failed
+----------------------------- Captured stderr call -----------------------------
+{"phase": "process_start", "source_sha256": {"probe.py": "9fafafcde51b84f8b4e9ae53416ccc5948524ca84d7e1e35211426a11052ba72", "stream_weights.py": "4eae4f55c042b6214449cae4e9ef77d825ebf3ad53b376fc18bd75f3a577948e", "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1", "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465", "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67", "phased_decode.py": "341f5190a533dd332b84104335a373495280ec26abbb1c2f637735a0697d9628", "remote_actor.py": "034db272cb5a9f20dd1b130d661719a56c5a751829953f46219aaa355385f0c6"}, "execution": "upstream", "active_mlx_bytes": null, "peak_mlx_bytes": null, "cache_mlx_bytes": null, "pid": 16109, "rank": 0, "timestamp": 1792133419.842495, "elapsed_seconds": 0.04462237498955801, "process_maxrss": 46727168, "process_maxrss_units": "bytes (macOS)", "memory_accounting": "MLX allocator bytes; not system residency"}
+__________ test_probe_rejects_unknown_environment_before_runtime[01] ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10860be70>
+value = '01'
+
+    @pytest.mark.parametrize("value", ["0", "false", "true", "", "2", "01", "1 "])
+    def test_probe_rejects_unknown_environment_before_runtime(monkeypatch, value):
+        import probe
+    
+        monkeypatch.setenv("MLX_METAL_FAST_SYNCH", value)
+        monkeypatch.setattr(sys, "argv", ["probe.py", "--mode", "collective", "--repeats", "1"])
+    
+        def forbidden():
+            pytest.fail("Unadmitted environment reached runtime")
+    
+        monkeypatch.setattr(probe, "collective", forbidden)
+        with pytest.raises(ValueError, match="MLX_METAL_FAST_SYNCH"):
+>           probe.main()
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:200: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+spikes/015-qwen38-fast-sync/probe.py:421: in main
+    result = collective()
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def forbidden():
+>       pytest.fail("Unadmitted environment reached runtime")
+E       Failed: Unadmitted environment reached runtime
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:196: Failed
+----------------------------- Captured stderr call -----------------------------
+{"phase": "process_start", "source_sha256": {"probe.py": "9fafafcde51b84f8b4e9ae53416ccc5948524ca84d7e1e35211426a11052ba72", "stream_weights.py": "4eae4f55c042b6214449cae4e9ef77d825ebf3ad53b376fc18bd75f3a577948e", "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1", "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465", "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67", "phased_decode.py": "341f5190a533dd332b84104335a373495280ec26abbb1c2f637735a0697d9628", "remote_actor.py": "034db272cb5a9f20dd1b130d661719a56c5a751829953f46219aaa355385f0c6"}, "execution": "upstream", "active_mlx_bytes": null, "peak_mlx_bytes": null, "cache_mlx_bytes": null, "pid": 16109, "rank": 0, "timestamp": 1792133419.850682, "elapsed_seconds": 0.05280883301747963, "process_maxrss": 46727168, "process_maxrss_units": "bytes (macOS)", "memory_accounting": "MLX allocator bytes; not system residency"}
+__________ test_probe_rejects_unknown_environment_before_runtime[1 ] ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10860af90>
+value = '1 '
+
+    @pytest.mark.parametrize("value", ["0", "false", "true", "", "2", "01", "1 "])
+    def test_probe_rejects_unknown_environment_before_runtime(monkeypatch, value):
+        import probe
+    
+        monkeypatch.setenv("MLX_METAL_FAST_SYNCH", value)
+        monkeypatch.setattr(sys, "argv", ["probe.py", "--mode", "collective", "--repeats", "1"])
+    
+        def forbidden():
+            pytest.fail("Unadmitted environment reached runtime")
+    
+        monkeypatch.setattr(probe, "collective", forbidden)
+        with pytest.raises(ValueError, match="MLX_METAL_FAST_SYNCH"):
+>           probe.main()
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:200: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+spikes/015-qwen38-fast-sync/probe.py:421: in main
+    result = collective()
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def forbidden():
+>       pytest.fail("Unadmitted environment reached runtime")
+E       Failed: Unadmitted environment reached runtime
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:196: Failed
+----------------------------- Captured stderr call -----------------------------
+{"phase": "process_start", "source_sha256": {"probe.py": "9fafafcde51b84f8b4e9ae53416ccc5948524ca84d7e1e35211426a11052ba72", "stream_weights.py": "4eae4f55c042b6214449cae4e9ef77d825ebf3ad53b376fc18bd75f3a577948e", "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1", "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465", "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67", "phased_decode.py": "341f5190a533dd332b84104335a373495280ec26abbb1c2f637735a0697d9628", "remote_actor.py": "034db272cb5a9f20dd1b130d661719a56c5a751829953f46219aaa355385f0c6"}, "execution": "upstream", "active_mlx_bytes": null, "peak_mlx_bytes": null, "cache_mlx_bytes": null, "pid": 16109, "rank": 0, "timestamp": 1792133419.857941, "elapsed_seconds": 0.06007066601887345, "process_maxrss": 46727168, "process_maxrss_units": "bytes (macOS)", "memory_accounting": "MLX allocator bytes; not system residency"}
+=========================== short test summary info ============================
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_probe_reports_actual_start_and_completion_env_without_gpu[None]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_probe_reports_actual_start_and_completion_env_without_gpu[1]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_probe_rejects_unknown_environment_before_runtime[0]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_probe_rejects_unknown_environment_before_runtime[false]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_probe_rejects_unknown_environment_before_runtime[true]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_probe_rejects_unknown_environment_before_runtime[]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_probe_rejects_unknown_environment_before_runtime[2]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_probe_rejects_unknown_environment_before_runtime[01]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_probe_rejects_unknown_environment_before_runtime[1 ]
+9 failed, 21 passed in 0.48s

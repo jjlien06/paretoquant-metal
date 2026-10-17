@@ -1,0 +1,13 @@
+{
+  "direction": "M4 initiates TCP to M2 Python",
+  "local_listener_port": 64407,
+  "peer": [
+    "169.254.214.155",
+    49895
+  ],
+  "payload": "probe",
+  "accepted": true,
+  "remote_exit": 0,
+  "remote_stdout": "{\"reply\": \"reply\"}\n",
+  "remote_stderr": ""
+}

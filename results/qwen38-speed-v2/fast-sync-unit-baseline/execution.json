@@ -1,0 +1,22 @@
+{
+  "started_utc": "2026-10-16T06:58:50.115394+00:00",
+  "completed_utc": "2026-10-16T06:58:59.949592+00:00",
+  "pytest_exit_code": 0,
+  "tests": [
+    "test_fast_sync.py",
+    "test_schedule.py",
+    "test_supervise.py",
+    "test_remote_actor.py",
+    "test_progress.py"
+  ],
+  "python": "3.13.2 (main, Feb  4 2025, 14:51:09) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "versions_without_importing_runtime": {
+    "mlx": "0.32.3",
+    "mlx-lm": "0.32.0",
+    "pytest": "9.1.1",
+    "ruff": "0.16.10"
+  },
+  "pytest_process_mlx_modules_loaded": [],
+  "scope": "CPU contracts only; stdlib substitute probe subprocesses; no GPU/SSH/model jobs",
+  "hardware_validation": "NOT RUN; parent only"
+}

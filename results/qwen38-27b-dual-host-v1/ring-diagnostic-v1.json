@@ -1,0 +1,34 @@
+{
+  "hostfile": [
+    [
+      "169.254.47.213:64497"
+    ],
+    [
+      "169.254.214.155:53171"
+    ]
+  ],
+  "records": [
+    {
+      "rank": 0,
+      "actor_directory": "/Users/jeremylien/.hermes/cache/scratch/qwen38-ring-c7a052b2ad024b52bdb2ca50c84119e2-0",
+      "exit": 0,
+      "stdout": "{\"reason\": \"completed\", \"nonce\": \"59ab50de621a47d3a5920941be514b0a\", \"actor_pid\": 74412, \"child_pid\": 74414, \"returncode\": 0, \"cleanup\": {\"child_reaped\": true, \"group_gone\": true, \"pid_reused\": false, \"identity_unknown\": false, \"pending_os_gpu_termination\": false, \"gpu_driver_state\": \"not inspected; process/group receipt only\"}, \"error_type\": null, \"elapsed\": 0.1690124580054544, \"forwarded_bytes_dropped\": 0}\n",
+      "stderr": "",
+      "logs": {
+        "stdout": "INIT 0\nREADY 0\nSUM [3]\n",
+        "stderr": "[ring] Rank 0 accepting\n[ring] Rank 0 connecting to 1\n"
+      }
+    },
+    {
+      "rank": 1,
+      "actor_directory": "/Users/jeremylien/.hermes/cache/scratch/qwen38-ring-c7a052b2ad024b52bdb2ca50c84119e2-1",
+      "exit": 0,
+      "stdout": "{\"reason\": \"completed\", \"nonce\": \"d1bf927a5afb45268de17fb51bec3034\", \"actor_pid\": 1512, \"child_pid\": 1513, \"returncode\": 0, \"cleanup\": {\"child_reaped\": true, \"group_gone\": true, \"pid_reused\": false, \"identity_unknown\": false, \"pending_os_gpu_termination\": false, \"gpu_driver_state\": \"not inspected; process/group receipt only\"}, \"error_type\": null, \"elapsed\": 0.05752308300020559, \"forwarded_bytes_dropped\": 0}\n",
+      "stderr": "",
+      "logs": {
+        "stdout": "INIT 1\nREADY 1\nSUM [3]\n",
+        "stderr": "[ring] Rank 1 connecting to 0\n[ring] Rank 1 accepting\n"
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "observed_local_date": "2026-10-16",
+  "discovery": "Read-only pinned SSH to existing Mac mini profile; diskutil plist, df, ioreg and sysctl. No disk benchmark or writes.",
+  "hosts": [
+    {
+      "role": "laptop",
+      "chip": "M2 Pro",
+      "unified_memory_GiB": 16
+    },
+    {
+      "role": "mini",
+      "model": "Mac16,10",
+      "chip": "M4",
+      "unified_memory_GiB": 16,
+      "pressure_level": 1,
+      "swap_used_MB": 277.12
+    }
+  ],
+  "mini_external_storage": {
+    "model": "Samsung SSD 990 EVO Plus",
+    "bytes": 2000398934016,
+    "enclosure": "Ugreen Storage Device",
+    "bus": "USB",
+    "negotiated_link_bits_per_second": 10000000000,
+    "theoretical_raw_bytes_per_second": 1250000000.0,
+    "actual_random_read_throughput": "not measured",
+    "volumes": [
+      {
+        "mount": "/Volumes/新增磁碟區",
+        "filesystem": "ExFAT",
+        "writable": true,
+        "free_bytes": 926501699584
+      },
+      {
+        "mount": "/Volumes/New Volume",
+        "filesystem": "ExFAT",
+        "writable": true,
+        "free_bytes": 520171028480
+      }
+    ]
+  },
+  "scope": "Capacity and interface evidence only. M.2 storage is not additional unified RAM; no 24/7 model qualification performed."
+}

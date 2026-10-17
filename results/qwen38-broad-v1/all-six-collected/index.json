@@ -1,0 +1,21 @@
+{
+  "selected_batches": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "completed_batches": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "failures": [],
+  "missing_selected_ids": [],
+  "unscheduled_ids": []
+}

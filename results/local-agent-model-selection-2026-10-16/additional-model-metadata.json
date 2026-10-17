@@ -1,0 +1,30 @@
+[
+  {
+    "repo": "lmstudio-community/Qwen3.8-27B-MLX-6bit",
+    "revision": "05f38c1f39e2f39619653616fe8e96a5d676358e",
+    "weight_bytes": 22777879765,
+    "weight_GiB": 21.21355362702161,
+    "source": "https://huggingface.co/api/models/lmstudio-community/Qwen3.8-27B-MLX-6bit?blobs=true"
+  },
+  {
+    "repo": "mlx-community/Qwen3.8-27B-8bit",
+    "revision": "815b83c0df8ffd1d1b5244cf75fd6ef14fca9ef9",
+    "weight_bytes": 29501218479,
+    "weight_GiB": 27.47515074815601,
+    "source": "https://huggingface.co/api/models/mlx-community/Qwen3.8-27B-8bit?blobs=true"
+  },
+  {
+    "repo": "ornith-ai/Ornith-1.5-35B-A3B-MLX-4bit",
+    "revision": "19504d912fa8fc7622bf6b1de3db5d5d890b1f02",
+    "weight_bytes": 19509024201,
+    "weight_GiB": 18.169194647111,
+    "source": "https://huggingface.co/api/models/ornith-ai/Ornith-1.5-35B-A3B-MLX-4bit?blobs=true"
+  },
+  {
+    "repo": "mlx-community/gemma-4-31b-it-4bit",
+    "revision": "696d436c404745a59f30e4939a658162b0a9e57f",
+    "weight_bytes": 18412016676,
+    "weight_GiB": 17.147526774555445,
+    "source": "https://huggingface.co/api/models/mlx-community/gemma-4-31b-it-4bit?blobs=true"
+  }
+]

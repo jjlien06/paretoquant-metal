@@ -1,0 +1,49 @@
+[
+  {
+    "argv": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "spikes/012-qwen38-scheduling",
+      "-q"
+    ],
+    "returncode": 0,
+    "stdout": "........................................................................ [ 86%]\n...........                                                              [100%]\n83 passed in 4.30s\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "spikes/014-qwen38-compiled-gdn",
+      "-q"
+    ],
+    "returncode": 0,
+    "stdout": "...............................................                          [100%]\n47 passed in 5.33s\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      ".venv/bin/ruff",
+      "check",
+      "spikes/012-qwen38-scheduling",
+      "spikes/014-qwen38-compiled-gdn"
+    ],
+    "returncode": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      ".venv/bin/ruff",
+      "format",
+      "--check",
+      "spikes/012-qwen38-scheduling",
+      "spikes/014-qwen38-compiled-gdn"
+    ],
+    "returncode": 0,
+    "stdout": "30 files already formatted\n",
+    "stderr": ""
+  }
+]

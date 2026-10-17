@@ -1,0 +1,12 @@
+{
+  "local": {
+    "pressure": 1,
+    "free_bytes": 12626116608,
+    "swap": "vm.swapusage: total = 4096.00M  used = 3129.06M  free = 966.94M  (encrypted)\n"
+  },
+  "remote": {
+    "pressure": 1,
+    "free_bytes": 96553480192,
+    "swap": "vm.swapusage: total = 1024.00M  used = 213.06M  free = 810.94M  (encrypted)\n"
+  }
+}

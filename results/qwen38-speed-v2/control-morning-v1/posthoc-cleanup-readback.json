@@ -1,0 +1,29 @@
+{
+  "observed_unix_seconds": 1792159063.605303,
+  "original_trial_status": "failed/timeout, unchanged",
+  "rank0_nonce": "2b2c4e6ad0f16c69830f0094ee7ee272",
+  "recorded_child_pid": 10629,
+  "recorded_pgid": 10629,
+  "process_group_members_now": [],
+  "listeners": [
+    [
+      "169.254.47.213",
+      65324
+    ],
+    [
+      "169.254.214.155",
+      50044
+    ],
+    [
+      "169.254.214.155",
+      50045
+    ]
+  ],
+  "explicitly_refused": [
+    true,
+    true,
+    true
+  ],
+  "posthoc_cleanup_resolved": true,
+  "signals_sent": false
+}

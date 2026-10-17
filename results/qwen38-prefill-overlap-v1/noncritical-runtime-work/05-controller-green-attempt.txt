@@ -1,0 +1,108 @@
+........................................................................ [ 55%]
+.......................................F.................                [100%]
+=================================== FAILURES ===================================
+___ test_schedule_verifier_requires_and_receives_external_pressure_bindings ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1067350f0>
+
+    def test_schedule_verifier_requires_and_receives_external_pressure_bindings(monkeypatch):
+        import pressure_guard
+        import workload_evidence
+        from remote_actor import SOURCES
+        from test_workload_schedule import schedule
+    
+        receipts, bindings = trial_receipts()
+        args = S(benchmark_schedule_sha256="a" * 64, repeats=2, require_normal_pressure=True)
+        common = dict(
+            ranks=[dict(rank=0), dict(rank=1)],
+            server={},
+            receipts=receipts,
+            weight_files=[],
+            rows=schedule()["requests"],
+            prompt_ids=[[1], [1]],
+            args=args,
+            phases={0: [], 1: []},
+            source_sha256={name: "a" * 64 for name in SOURCES},
+            expected_inventory={},
+        )
+    
+        class Observed(Exception):
+            pass
+    
+        def check(receipts, *, expected_bindings=None):
+            assert expected_bindings == bindings
+            raise Observed()
+    
+        monkeypatch.setattr(pressure_guard, "verify_actor_pressures", check)
+        with pytest.raises(Observed):
+>           workload_evidence.verify_schedule_trial(**common, expected_pressure_bindings=bindings)
+
+test_pressure_v2.py:618: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ranks = [{'rank': 0}, {'rank': 1}], server = {}
+receipts = [{'reason': 'completed', 'require_normal_pressure': True, 'host_role': 'remote', 'actor_role': 'server', ...}, {'reaso...nk1', ...}, {'reason': 'completed', 'require_normal_pressure': True, 'host_role': 'local', 'actor_role': 'rank0', ...}]
+weight_files = []
+rows = [{'id': 'native', 'case_id': 'a', 'method': 'native', 'prompt': 'tokens:[1,2,3]', ...}, {'id': 'mtp', 'case_id': 'a', 'method': 'mtp', 'prompt': 'tokens:[1,2,3]', ...}]
+prompt_ids = [[1], [1]]
+args = namespace(benchmark_schedule_sha256='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', repeats=2, require_normal_pressure=True)
+phases = {0: [], 1: []}
+source_sha256 = {'cpu_only_runner.py': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'overlap_evidence.py': 'aaa...aaaaaaaaaaaaaaaaaaaaaa', 'overlap_prefill.py': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ...}
+expected_inventory = {}
+expected_pressure_bindings = [{'host_role': 'remote', 'actor_role': 'server', 'nonce': '11111111111111111111111111111111', 'actor_pid': 100, ...}, .....}, {'host_role': 'local', 'actor_role': 'rank0', 'nonce': '33333333333333333333333333333333', 'actor_pid': 102, ...}]
+
+    def verify_schedule_trial(
+        *,
+        ranks,
+        server,
+        receipts,
+        weight_files,
+        rows,
+        prompt_ids,
+        args,
+        phases,
+        source_sha256,
+        expected_inventory,
+        expected_pressure_bindings=None,
+    ):
+        from mtp_audit import validate_mtp_actions
+        from remote_actor import SOURCES
+        from supervise import verify_mtp_evidence, verify_sources, verify_trial
+    
+        validate_schedule(
+            {
+                "schema": OVERLAP_SCHEMA if any("prefill_mode" in r for r in rows) else SCHEMA,
+                "requests": rows,
+            }
+        )
+        if (
+            not isinstance(source_sha256, dict)
+            or set(source_sha256) != set(SOURCES)
+            or any(
+                not isinstance(v, str) or re.fullmatch("[0-9a-f]{64}", v) is None
+                for v in source_sha256.values()
+            )
+            or source_sha256["benchmark_schedule.json"] != args.benchmark_schedule_sha256
+        ):
+            raise ValueError("Missing exact registry/schedule SHA binding")
+        if (
+            not isinstance(phases, dict)
+            or set(phases) != {0, 1}
+            or len(ranks) != 2
+            or sorted(r.get("rank", -1) for r in ranks) != [0, 1]
+            or len(prompt_ids) != len(rows)
+            or args.repeats != len(rows)
+        ):
+            raise ValueError("Missing trusted schedule/rank/prompt evidence")
+        from overlap_prefill import validate_modes
+        from pressure_guard import policy_name, pressure_required, verify_actor_pressures
+    
+        validate_modes(args, rows)
+        if pressure_required(args):
+>           verify_actor_pressures(receipts, expected_bindings=expected_pressure_bindings, expected_policy=policy_name(args))
+E           TypeError: test_schedule_verifier_requires_and_receives_external_pressure_bindings.<locals>.check() got an unexpected keyword argument 'expected_policy'
+
+workload_evidence.py:99: TypeError
+=========================== short test summary info ============================
+FAILED test_pressure_v2.py::test_schedule_verifier_requires_and_receives_external_pressure_bindings
+1 failed, 128 passed in 0.83s

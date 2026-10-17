@@ -1,0 +1,1 @@
+{"reason": "exception", "nonce": "69906117b598441190bfe3a18cd3a87a", "actor_pid": 91147, "child_pid": null, "returncode": null, "cleanup": {"child_reaped": true, "group_gone": true, "pending_os_gpu_termination": false}, "error_type": "ValueError", "elapsed": 0.00011162494774907827, "forwarded_bytes_dropped": 0}

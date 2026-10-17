@@ -1,0 +1,32 @@
+{
+  "files": {
+    "README.md": "c75e6fbc6bc6451ec523ba7b0e10fe4ef451ed9942b766f4e1a48c58e1cf2a8f",
+    "executed-package/__init__.py": "e804f4ae1ad3c6c0b7493b96d9c8c3b541878fdfcfe4b6b3a212afe73dc89037",
+    "executed-package/benchmark.py": "99ebe7fd42249635f83b33f8a23575eb6215e44064a5a1f10274d893e90bf242",
+    "executed-package/kernels/gate_up.metal": "e333cdf506597a9054a56d622d213062bddf6cbf3c96c6df276108a8606530c5",
+    "executed-package/kernels/gate_up_packed.metal": "b3837a90cc4f42c62aa5b0e776fbef5d9725c80673efb2a7f0696a009942dbc3",
+    "executed-package/metal.py": "c400c14de9b505e3cd11d15fc5d588bd6286c84dbd1c71a1234fd6d0b23396d5",
+    "executed-source/README.md": "b5f2926a7d61e51e121e5a8aa1fd4e12e78571a6f1d2ff24b7239e70c90d1da6",
+    "executed-source/manifest.json": "508906bf815ef568ecb01b82bc8be19a4f9987d1bc5297037571a22c6a517a14",
+    "executed-source/remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "executed-source/screen.py": "f5e4794c27d875236d2c4c64bb4f15bc82a57a6b7df83826481c383092b0bd7b",
+    "executed-source/test_screen.py": "4561e9b89b278cf58519e11aa42dd514029b21920cee2f8aa09aa921a8ef36bb",
+    "integrity.json": "927a6331ad7a2ced5de7cd8b616c4f51a3e79f8f54d221670d837949a3454bdb",
+    "m2-actor/pids.json": "0ac0e91b3e70a761e9f739381f9666c6d8771db48c190e6cd2ce088ce0ab69eb",
+    "m2-actor/result.json": "aa5b84e71dc6a4ccf7a5f19f38f550d3c4ee62122f528636f43ab31b034cb9fa",
+    "m2-actor/startup.json": "bc67f38ff90c0122d6e26bd2d6a45819b6bb9a885e36eaa1a086fc9d051b9fdf",
+    "m2.json": "d34d1cc07a3e959fa3ebcfc8f8a24a67d081d15fa8e4c4e023d01a1645ed58bd",
+    "m4-actor/pids.json": "c237370de7200e13ade06c9068f0e8823aaa9650df2acd79d266282e54e461b4",
+    "m4-actor/result.json": "b51b42112fb2b3543c2df7ad8d72981122061687a3e24bcf3bb0c1d4f752f7c2",
+    "m4-actor/startup.json": "cc8498d95695cfde1e406c52e61e5ddadd22ea136a7cf4a1714382fb18aabfbb",
+    "m4.json": "a48f6e035f4ea4562c946b0920daf3776323cf1740b88c593c160f1e15a8f99e",
+    "review/kernel-review-paired-summary.json": "99afb4252062d101f3e1f03554451c2e07076a4d81648de3a98007cfc66c3edc",
+    "review/kernel-review-verdict.json": "78027d6b9d8c6e4070b0a1b9666c957a30ebf751e9a307465b5149affefd6bd5",
+    "review/parent-provenance-crosscheck.json": "1737dcf631ccdf4dacc587b700653f8e7e04fda2aa7900e39ec251f99afed182"
+  },
+  "file_count": 23,
+  "prior_integrity_files_verified": 18,
+  "binary_weights_excluded": true,
+  "symlinks_absent": true,
+  "metadata_updated_after_independent_review": true
+}

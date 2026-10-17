@@ -1,0 +1,192 @@
+{
+  "verified": true,
+  "weights_and_token_ids_unchanged": true,
+  "fresh_cache_each_request": true,
+  "result": {
+    "tokens_agree": true,
+    "tensor_completeness": true,
+    "server_completed": true,
+    "receiver_weight_files": [],
+    "owned_groups_gone": true,
+    "listeners_closed": true,
+    "status": "success",
+    "nonce": "df24f1cdb8bbdb893aec919761cc2be5",
+    "error_type": null,
+    "metadata_sha256": {
+      "config.json": "c027829d800805358d67ac87819a3754fd8240be973f7147840651310fd30ae3",
+      "model.safetensors.index.json": "7b6da9b2b1f3ebd698ae15f9fcf6ba3099e742ec07e5d383f28b7cb77a4d16db"
+    },
+    "owned_actor_cleanup_verified": true,
+    "services_closed_verified": true,
+    "transport_cleanup": {
+      "server": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "rank1": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "rank0": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      }
+    },
+    "cleanup_errors": [],
+    "elapsed_seconds": 94.19356299994979,
+    "control_transport_cleanup": {
+      "control1": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control2": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control3": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control4": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control5": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control6": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control7": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control8": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control9": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      }
+    }
+  },
+  "ranks": {
+    "rank0": {
+      "requests": [
+        {
+          "repeat": 0,
+          "tokens_including_eos": 41,
+          "first_token_seconds": 40.10006774996873,
+          "wall_seconds": 49.10257641703356,
+          "post_first_token_seconds": 9.00250866706483,
+          "post_first_token_tps": 4.443205941732413,
+          "wall_tps": 0.8349867357627533
+        },
+        {
+          "repeat": 1,
+          "tokens_including_eos": 41,
+          "first_token_seconds": 1.0320183329749852,
+          "wall_seconds": 9.059602749999613,
+          "post_first_token_seconds": 8.027584417024627,
+          "post_first_token_tps": 4.982818980410765,
+          "wall_tps": 4.525584744872147
+        },
+        {
+          "repeat": 2,
+          "tokens_including_eos": 41,
+          "first_token_seconds": 1.2354627080494538,
+          "wall_seconds": 8.918177917017601,
+          "post_first_token_seconds": 7.682715208968148,
+          "post_first_token_tps": 5.206492615176911,
+          "wall_tps": 4.597351654284011
+        }
+      ],
+      "peak_mlx_bytes": 8044165296,
+      "parameter_bytes": 8007776256
+    },
+    "rank1": {
+      "requests": [
+        {
+          "repeat": 0,
+          "tokens_including_eos": 41,
+          "first_token_seconds": 40.10916145900046,
+          "wall_seconds": 49.10887637500127,
+          "post_first_token_seconds": 8.999714916000812,
+          "post_first_token_tps": 4.444585231125824,
+          "wall_tps": 0.8348796190513316
+        },
+        {
+          "repeat": 1,
+          "tokens_including_eos": 41,
+          "first_token_seconds": 1.2052403330017114,
+          "wall_seconds": 9.231851875003485,
+          "post_first_token_seconds": 8.026611542001774,
+          "post_first_token_tps": 4.983422928926783,
+          "wall_tps": 4.441145780405464
+        },
+        {
+          "repeat": 2,
+          "tokens_including_eos": 41,
+          "first_token_seconds": 1.3159740839982987,
+          "wall_seconds": 8.997697833998245,
+          "post_first_token_seconds": 7.6817237499999464,
+          "post_first_token_tps": 5.207164602866678,
+          "wall_tps": 4.556721147611723
+        }
+      ],
+      "peak_mlx_bytes": 11348383920,
+      "parameter_bytes": 11299411968
+    }
+  }
+}

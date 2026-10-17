@@ -1,0 +1,985 @@
+
+diff --git a/spikes/011-qwen38-dual-host/fixture.py b/spikes/011-qwen38-dual-host/fixture.py
+new file mode 100644
+index 0000000..e270421
+--- /dev/null
++++ b/spikes/011-qwen38-dual-host/fixture.py
+@@ -0,0 +1,73 @@
++"""Create a deterministic, bounded built-in Qwen3.5 hybrid checkpoint.
++
++Tokenizer assets are deliberately separate. Copy real tokenizer.save_pretrained
++assets into the output (no config.json overwrite), and use --prompt tokens:[...]
++for the 128-entry fixture vocabulary. Random weights are NOT a pretrained model.
++"""
++
++import argparse
++import json
++from pathlib import Path
++
++
++def create(output):
++    import mlx.core as mx
++    import mlx.nn as nn
++    from mlx.utils import tree_flatten
++    from mlx_lm.models.qwen3_5 import Model, ModelArgs
++
++    config = dict(
++        model_type="qwen3_5",
++        hidden_size=64,
++        intermediate_size=128,
++        num_hidden_layers=5,
++        num_attention_heads=4,
++        num_key_value_heads=2,
++        head_dim=16,
++        vocab_size=128,
++        linear_num_value_heads=4,
++        linear_num_key_heads=2,
++        linear_key_head_dim=16,
++        linear_value_head_dim=16,
++        linear_conv_kernel_dim=4,
++        full_attention_interval=2,
++        tie_word_embeddings=False,
++        max_position_embeddings=512,
++        rope_parameters=dict(type="default", partial_rotary_factor=0.5, rope_theta=10000),
++        quantization=dict(group_size=32, bits=4),
++        eos_token_id=[],
++    )
++    output = Path(output)
++    output.mkdir(mode=0o700)
++    mx.set_default_device(mx.gpu)
++    mx.random.seed(731)
++    model = Model(ModelArgs.from_dict(config))
++    nn.quantize(model, group_size=32, bits=4)
++    model.eval()
++    mx.eval(model.parameters())
++    weights = dict(tree_flatten(model.parameters()))
++    mx.save_safetensors(str(output / "model.safetensors"), weights)
++    (output / "config.json").write_text(json.dumps(config, indent=2))
++    (output / "model.safetensors.index.json").write_text(
++        json.dumps(
++            dict(
++                metadata=dict(total_size=sum(a.nbytes for a in weights.values())),
++                weight_map={k: "model.safetensors" for k in weights},
++            ),
++            indent=2,
++        )
++    )
++    return dict(
++        output=str(output.resolve()),
++        tensor_count=len(weights),
++        parameter_bytes=sum(a.nbytes for a in weights.values()),
++        prompt="tokens:[1,7,3,4,8,9]",
++        split=[2, 3],
++        tokenizer_assets="copy separately",
++    )
++
++
++if __name__ == "__main__":
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--output", required=True)
++    print(json.dumps(create(parser.parse_args().output)))
+
+diff --git a/spikes/007-dual-host-pipeline/phased_decode.py b/spikes/011-qwen38-dual-host/phased_decode.py
+index cba103b..4606dbb 100644
+--- a/spikes/007-dual-host-pipeline/phased_decode.py
++++ b/spikes/011-qwen38-dual-host/phased_decode.py
+@@ -1,4 +1,4 @@
+-"""Explicit Qwen2 layers, synchronized CPU handoffs, stock model arithmetic.
++"""Explicit Qwen3.5 layers, synchronized CPU handoffs, stock model arithmetic.
+ 
+ No custom fusion, compile, or native asynchronous benchmark scheduling.
+ """
+@@ -7,8 +7,8 @@ import time
+ 
+ 
+ def ownership(model, group):
+-    if model.model_type != "qwen2":
+-        raise ValueError("Phased execution admits only built-in Qwen2")
++    if model.model_type != "qwen3_5":
++        raise ValueError("Phased execution admits only built-in Qwen3.5")
+     core = model.model
+     rank, size = (0, 1) if group is None else (group.rank(), group.size())
+     if (rank, size) not in {(0, 1), (0, 2), (1, 2)}:
+@@ -16,19 +16,22 @@ def ownership(model, group):
+     if core.pipeline_rank != rank or core.pipeline_size != size:
+         raise ValueError("Model ownership differs from supplied group")
+     layers = core.pipeline_layers
+-    end = core.end_idx or model.args.num_hidden_layers
++    end = core.end_idx or model.language_model.args.num_hidden_layers
+     if (
+-        not 0 <= core.start_idx < end <= model.args.num_hidden_layers
++        not 0 <= core.start_idx < end <= model.language_model.args.num_hidden_layers
+         or len(layers) != end - core.start_idx
+     ):
+         raise ValueError("Invalid retained layer interval")
+     if not layers or any(layer is None for layer in layers):
+         raise ValueError("Require nonempty owned original layers")
+-    if size == 1 and (core.start_idx != 0 or end != model.args.num_hidden_layers):
++    if size == 1 and (core.start_idx != 0 or end != model.language_model.args.num_hidden_layers):
+         raise ValueError("Single host must own every layer")
+     if size == 2 and (
+-        (rank == 1 and (core.start_idx != 0 or end >= model.args.num_hidden_layers))
+-        or (rank == 0 and (core.start_idx <= 0 or end != model.args.num_hidden_layers))
++        (rank == 1 and (core.start_idx != 0 or end >= model.language_model.args.num_hidden_layers))
++        or (
++            rank == 0
++            and (core.start_idx <= 0 or end != model.language_model.args.num_hidden_layers)
++        )
+     ):
+         raise ValueError("Require reverse contiguous pipeline ownership")
+     return rank, size
+@@ -56,7 +59,8 @@ def phased_forward(
+     Communication remains outside the local lazy layer graphs.
+     """
+     import mlx.core as mx
+-    from mlx_lm.models.base import create_attention_mask
++    from mlx_lm.models.base import create_attention_mask, create_ssm_mask
++    from mlx_lm.models.cache import ArraysCache, KVCache
+ 
+     validate_eval_group_size(eval_group_size)
+     if type(all_logits) is not bool:
+@@ -70,7 +74,12 @@ def phased_forward(
+         or any(c is None or not hasattr(c, "state") for c in cache)
+     ):
+         raise ValueError("Cache must cover every retained layer")
+-    if len({c.offset for c in cache}) != 1:
++    if any(
++        not isinstance(state, ArraysCache if layer.is_linear else KVCache)
++        for layer, state in zip(layers, cache)
++    ):
++        raise ValueError("Cache type differs from hybrid layer type")
++    if len({c.offset for c in cache if isinstance(c, KVCache)}) > 1:
+         raise ValueError("Layer cache offsets differ")
+     if inputs.ndim != 2 or inputs.shape[0] != 1 or inputs.shape[1] < 1:
+         raise ValueError("Require inputs [1,T] with positive T")
+@@ -82,7 +91,11 @@ def phased_forward(
+     if size == 2 and rank == 0:
+         emit({"phase": "handoff_receive_before", "tokens": inputs.shape[1]})
+         h = mx.distributed.recv(
+-            (1, inputs.shape[1], model.args.hidden_size), dtype, 1, group=group, stream=mx.cpu
++            (1, inputs.shape[1], model.language_model.args.hidden_size),
++            dtype,
++            1,
++            group=group,
++            stream=mx.cpu,
+         )
+         mx.eval(h)  # finish network wait before any GPU layer graph exists
+         emit({"phase": "handoff_receive_done"})
+@@ -93,11 +106,14 @@ def phased_forward(
+         emit({"phase": "embedding_done"})
+     if h.dtype != dtype:
+         raise ValueError("Hidden state dtype differs from embedding compute dtype")
+-    mask = create_attention_mask(h, cache[0])
++    fa = next((c for c in cache if isinstance(c, KVCache)), None)
++    ssm = next((c for c in cache if isinstance(c, ArraysCache)), None)
++    fa_mask = create_attention_mask(h, fa) if fa is not None else None
++    ssm_mask = create_ssm_mask(h, ssm) if ssm is not None else None
+     if eval_group_size == 1:
+         for index, (layer, state) in enumerate(zip(layers, cache), core.start_idx):
+             emit({"phase": "layer_before", "layer_index": index})
+-            h = layer(h, mask, state)
++            h = layer(h, ssm_mask if layer.is_linear else fa_mask, state)
+             mx.eval(h, state.state)
+             if h.dtype != dtype:
+                 raise ValueError("Layer changed hidden state dtype")
+@@ -108,7 +124,7 @@ def phased_forward(
+             interval = {"start_idx": core.start_idx + start, "end_idx": core.start_idx + end}
+             emit({"phase": "block_before", **interval})
+             for layer, state in zip(layers[start:end], cache[start:end]):
+-                h = layer(h, mask, state)
++                h = layer(h, ssm_mask if layer.is_linear else fa_mask, state)
+                 if h.dtype != dtype:
+                     raise ValueError("Layer changed hidden state dtype")
+             mx.eval(h, [state.state for state in cache[start:end]])
+@@ -127,7 +143,11 @@ def phased_forward(
+         return None
+     emit({"phase": "head_before"})
+     h = core.norm(h if all_logits else h[:, -1:, :])
+-    out = embedding.as_linear(h) if model.args.tie_word_embeddings else model.lm_head(h)
++    out = (
++        embedding.as_linear(h)
++        if model.language_model.args.tie_word_embeddings
++        else model.language_model.lm_head(h)
++    )
+     mx.eval(out)
+     emit({"phase": "head_done"})
+     return out
+@@ -170,9 +190,11 @@ def phased_generate(
+         ids = tokenizer.encode(prompt, add_special_tokens=add_special)
+     else:
+         ids = list(prompt)
+-    limit = min(context_limit, getattr(model.args, "max_position_embeddings", context_limit))
++    limit = min(
++        context_limit, getattr(model.language_model.args, "max_position_embeddings", context_limit)
++    )
+     validate_options(ids, max_tokens, prefill_step_size, limit)
+-    if any(t >= model.args.vocab_size for t in ids):
++    if any(t >= model.language_model.args.vocab_size for t in ids):
+         raise ValueError("Prompt token outside vocabulary")
+     emit = progress or (lambda event: None)
+     cache = make_prompt_cache(model)
+
+diff --git a/spikes/007-dual-host-pipeline/probe.py b/spikes/011-qwen38-dual-host/probe.py
+index d0a91f0..6d86709 100644
+--- a/spikes/007-dual-host-pipeline/probe.py
++++ b/spikes/011-qwen38-dual-host/probe.py
+@@ -12,7 +12,7 @@ import time
+ from contextlib import nullcontext
+ from pathlib import Path
+ 
+-from shard_plan import select_pipeline_rank
++from shard_plan import select_pipeline_rank, text_config
+ from stream_weights import (
+     checkpoint_inventory,
+     load_from_tensors,
+@@ -94,6 +94,20 @@ def collective():
+     }
+ 
+ 
++def prepare_prompt(tokenizer, prompt):
++    if prompt.startswith("tokens:"):
++        ids = json.loads(prompt.removeprefix("tokens:"))
++        if not isinstance(ids, list) or not ids or any(type(t) is not int or t < 0 for t in ids):
++            raise ValueError("Invalid raw token prompt")
++        return ids
++    return tokenizer.apply_chat_template(
++        [{"role": "user", "content": prompt}],
++        tokenize=False,
++        add_generation_prompt=True,
++        enable_thinking=False,
++    )
++
++
+ def generation(args):
+     import mlx.core as mx
+     from cpu_communication import synchronous_cpu_pipeline
+@@ -107,8 +121,7 @@ def generation(args):
+         raise ValueError("Require 1..512 tokens and positive repeats")
+     model_path = Path(args.model).resolve(strict=True)
+     config = json.loads((model_path / "config.json").read_text())
+-    if config.get("model_type") != "qwen2":
+-        raise ValueError("Only the verified Qwen2 pipeline architecture is admitted")
++    text = text_config(config)
+     mx.set_default_device(mx.gpu)
+     mx.set_cache_limit(256 * 1024**2)
+     mx.reset_peak_memory()
+@@ -150,8 +163,8 @@ def generation(args):
+             def size(self):
+                 return 1
+ 
+-        selected_split = args.split or [config["num_hidden_layers"] // size] * size
+-        if sum(selected_split) != config["num_hidden_layers"]:
++        selected_split = args.split or [text["num_hidden_layers"] // size] * size
++        if sum(selected_split) != text["num_hidden_layers"]:
+             raise ValueError("An explicit valid split is required")
+         selected_group = group or SingleGroup()
+         if args.stream_local:
+@@ -159,10 +172,10 @@ def generation(args):
+             plan = select_pipeline_rank(
+                 tensors,
+                 model_type=config["model_type"],
+-                num_hidden_layers=config["num_hidden_layers"],
++                num_hidden_layers=text["num_hidden_layers"],
+                 split=selected_split,
+                 rank=rank,
+-                tie_word_embeddings=config.get("tie_word_embeddings", False),
++                tie_word_embeddings=text.get("tie_word_embeddings", False),
+             )
+             selected = {k: tensors[k] for k in plan["selected_keys"]}
+             model, weight_loading = load_from_tensors(
+@@ -230,11 +243,7 @@ def generation(args):
+     if group is not None:
+         mx.eval(mx.distributed.all_sum(mx.array(1), group=group, stream=mx.cpu))
+     report({"phase": "loading_done", "parameter_bytes": parameter_bytes})
+-    prompt = tokenizer.apply_chat_template(
+-        [{"role": "user", "content": args.prompt}],
+-        tokenize=False,
+-        add_generation_prompt=True,
+-    )
++    prompt = prepare_prompt(tokenizer, args.prompt)
+     requests = []
+     communication_context = (
+         synchronous_cpu_pipeline(group)
+@@ -310,10 +319,11 @@ def generation(args):
+         "world_size": size,
+         "model_path": str(model_path),
+         "prompt": args.prompt,
+-        "formatted_prompt": prompt,
++        "formatted_prompt": prompt if isinstance(prompt, str) else json.dumps(prompt),
++        "model_type": config["model_type"],
+         "trust_remote_code": False,
+         "layer_start": model.model.start_idx,
+-        "layer_end": model.model.end_idx or config["num_hidden_layers"],
++        "layer_end": model.model.end_idx or text["num_hidden_layers"],
+         "parameter_bytes": parameter_bytes,
+         "parameter_budget_bytes": budget,
+         "parameter_layout": [
+@@ -342,9 +352,9 @@ def generation(args):
+         },
+         "implementation": (
+             (
+-                "explicit synchronized Qwen2 layers/CPU handoffs; "
++                "explicit synchronized Qwen3.5 layers/CPU handoffs; "
+                 if args.phased
+-                else "upstream mlx-lm Qwen2 pipeline; "
++                else "upstream mlx-lm Qwen3.5 pipeline; "
+             )
+             + "stock quantized operators; "
+             "no custom fusion or compilation"
+
+
+diff --git a/spikes/007-dual-host-pipeline/shard_plan.py b/spikes/011-qwen38-dual-host/shard_plan.py
+index c3a0300..c494462 100644
+--- a/spikes/007-dual-host-pipeline/shard_plan.py
++++ b/spikes/011-qwen38-dual-host/shard_plan.py
+@@ -1,4 +1,4 @@
+-"""Stdlib-only safetensors storage and Qwen2 pipeline planning.
++"""Stdlib-only safetensors storage and Qwen3.5 pipeline planning.
+ 
+ This spike follows the supplied mlx-lm 0.32.0 PipelineMixin convention:
+ start_idx = sum(split[rank + 1:]); rank 0 keeps the last layers. All ranks
+@@ -40,6 +40,12 @@ _DTYPE_BYTES = {
+ }
+ 
+ 
++def text_config(config):
++    if config.get("model_type") != "qwen3_5" or config.get("model_file"):
++        raise ValueError("Require built-in qwen3_5")
++    return config.get("text_config", config)
++
++
+ def tensor_storage_bytes(metadata):
+     """Validate one tensor descriptor and return its packed storage byte count."""
+     if not isinstance(metadata, dict):
+@@ -171,8 +177,8 @@ def merge_safetensors_headers(headers):
+ 
+ 
+ def _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings):
+-    if model_type != "qwen2":
+-        raise ValueError("only model_type='qwen2' is supported")
++    if model_type != "qwen3_5":
++        raise ValueError("only model_type='qwen3_5' is supported")
+     if type(num_hidden_layers) is not int or num_hidden_layers <= 0:
+         raise ValueError("num_hidden_layers must be a positive integer")
+     if (
+@@ -194,6 +200,14 @@ def _classify_tensors(tensors, num_hidden_layers, tie_word_embeddings):
+     replicated = []
+     prefixes = ("model.embed_tokens.", "model.norm.", "lm_head.")
+     for key, metadata in tensors.items():
++        if not isinstance(key, str):
++            raise ValueError("tensor keys must be strings")
++        if key.startswith(("vision_tower.", "model.visual.")):
++            continue
++        canonical = key
++        if not key.startswith("language_model."):
++            raise ValueError(f"Noncanonical text parameter: {key}")
++        key = key.removeprefix("language_model.")
+         if not isinstance(key, str):
+             raise ValueError("tensor keys must be strings")
+         tensor_storage_bytes(metadata)
+@@ -202,13 +216,13 @@ def _classify_tensors(tensors, num_hidden_layers, tie_word_embeddings):
+             index = int(match[1])
+             if index not in layers:
+                 raise ValueError(f"layer outside configured range: {key}")
+-            layers[index].append(key)
++            layers[index].append(canonical)
+         elif any(key.startswith(prefix) and len(key) > len(prefix) for prefix in prefixes):
+             if tie_word_embeddings and key.startswith("lm_head."):
+                 raise ValueError("tied embeddings must not contain a separate lm_head")
+-            replicated.append(key)
++            replicated.append(canonical)
+         else:
+-            raise ValueError(f"unrecognized Qwen2 parameter name: {key!r}")
++            raise ValueError(f"unrecognized Qwen3.5 parameter name: {key!r}")
+     missing = [index for index, keys in layers.items() if not keys]
+     if missing:
+         raise ValueError(f"incomplete layer coverage; missing layers: {missing}")
+@@ -216,7 +230,7 @@ def _classify_tensors(tensors, num_hidden_layers, tie_word_embeddings):
+     if not tie_word_embeddings:
+         required.append("lm_head.weight")
+     for key in required:
+-        if key not in tensors:
++        if "language_model." + key not in tensors:
+             raise ValueError(f"missing required replicated parameter: {key}")
+     return layers, sorted(replicated)
+ 
+@@ -253,6 +267,9 @@ def plan_qwen2_pipeline(
+ ):
+     """Return a JSON-serializable retained-parameter plan, not a peak-memory estimate."""
+     _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings)
++    tensors = {
++        k: v for k, v in tensors.items() if not k.startswith(("vision_tower.", "model.visual."))
++    }
+     ranks = [
+         select_pipeline_rank(
+             tensors,
+@@ -290,9 +307,11 @@ def plan_qwen2_pipeline(
+         "replicated_keys": replicated,
+         "replicated_bytes_per_rank": replicated_bytes,
+         "replicated_parameters": {
+-            "embedding": [key for key in replicated if key.startswith("model.embed_tokens.")],
+-            "norm": [key for key in replicated if key.startswith("model.norm.")],
+-            "untied_head": [key for key in replicated if key.startswith("lm_head.")],
++            "embedding": [
++                key for key in replicated if key.startswith("language_model.model.embed_tokens.")
++            ],
++            "norm": [key for key in replicated if key.startswith("language_model.model.norm.")],
++            "untied_head": [key for key in replicated if key.startswith("language_model.lm_head.")],
+         },
+         "tensor_count": len(tensors),
+         "unique_tensor_bytes": sum(tensor_storage_bytes(meta) for meta in tensors.values()),
+
+diff --git a/spikes/007-dual-host-pipeline/stream_server.py b/spikes/011-qwen38-dual-host/stream_server.py
+index a2102f9..37093c9 100644
+--- a/spikes/007-dual-host-pipeline/stream_server.py
++++ b/spikes/011-qwen38-dual-host/stream_server.py
+@@ -8,7 +8,7 @@ import os
+ import socket
+ from pathlib import Path
+ 
+-from shard_plan import select_pipeline_rank
++from shard_plan import select_pipeline_rank, text_config
+ from stream_weights import checkpoint_inventory, exact, send_json, send_records, tensor_records
+ 
+ 
+@@ -26,14 +26,15 @@ def main():
+     root = Path(args.source).resolve(strict=True)
+     config_bytes = (root / "config.json").read_bytes()
+     config = json.loads(config_bytes)
++    text = text_config(config)
+     tensors, provenance = checkpoint_inventory(root)
+     plan = select_pipeline_rank(
+         tensors,
+         model_type=config["model_type"],
+-        num_hidden_layers=config["num_hidden_layers"],
++        num_hidden_layers=text["num_hidden_layers"],
+         split=args.split,
+         rank=args.rank,
+-        tie_word_embeddings=config.get("tie_word_embeddings", False),
++        tie_word_embeddings=text.get("tie_word_embeddings", False),
+     )
+     selected = {name: tensors[name] for name in plan["selected_keys"]}
+     before = {
+
+diff --git a/spikes/007-dual-host-pipeline/stream_weights.py b/spikes/011-qwen38-dual-host/stream_weights.py
+index 2ca2709..6b48291 100644
+--- a/spikes/007-dual-host-pipeline/stream_weights.py
++++ b/spikes/011-qwen38-dual-host/stream_weights.py
+@@ -1,4 +1,4 @@
+-"""Disk-free, fail-closed Qwen2 pipeline weight loading from bounded tensor records."""
++"""Disk-free, fail-closed Qwen3.5 pipeline weight loading from bounded tensor records."""
+ 
+ import hashlib
+ import json
+@@ -7,7 +7,7 @@ from pathlib import Path
+ 
+ from shard_plan import merge_safetensors_headers, read_safetensors_header, tensor_storage_bytes
+ 
+-MAX_TENSOR_BYTES = 512 * 1024**2
++MAX_TENSOR_BYTES = 768 * 1024**2
+ 
+ 
+ def checkpoint_inventory(source):
+@@ -52,16 +52,19 @@ def load_from_tensors(config, group, split, tensors, records, *, budget_bytes, p
+     import mlx.nn as nn
+     import numpy as np
+     from mlx.utils import tree_flatten
+-    from mlx_lm.models.qwen2 import Model, ModelArgs
++    from mlx_lm.models.qwen3_5 import Model, ModelArgs
+ 
+-    if config.get("model_type") != "qwen2" or config.get("model_file"):
+-        raise ValueError("Only built-in Qwen2, without remote code, is admitted")
++    if config.get("model_type") != "qwen3_5" or config.get("model_file"):
++        raise ValueError("Only built-in qwen3_5, without remote code, is admitted")
+     if type(budget_bytes) is not int or budget_bytes <= 0:
+         raise ValueError("A positive parameter budget is required")
+     total = sum(tensor_storage_bytes(x) for x in tensors.values())
++    if any(tensor_storage_bytes(x) > MAX_TENSOR_BYTES for x in tensors.values()):
++        raise ValueError("Tensor exceeds bounded loading buffer")
+     if total > budget_bytes:
+         raise ValueError(f"Stored parameter bytes {total} exceed budget {budget_bytes}")
+     model = Model(ModelArgs.from_dict(config))
++    model.eval()
+     model.model.pipeline(group, split=split)
+     quantization = config.get("quantization")
+     if not isinstance(quantization, dict):
+
+diff --git a/spikes/007-dual-host-pipeline/supervise.py b/spikes/011-qwen38-dual-host/supervise.py
+index be896a3..9bd492d 100644
+--- a/spikes/007-dual-host-pipeline/supervise.py
++++ b/spikes/011-qwen38-dual-host/supervise.py
+@@ -16,6 +16,7 @@ import time
+ from pathlib import Path
+ 
+ from remote_actor import SOURCES, source_bytes, terminate, write_json
++from shard_plan import text_config
+ 
+ ROOT = Path(__file__).resolve().parent
+ REPO = ROOT.parents[1]
+@@ -37,6 +38,7 @@ def parser():
+     p.add_argument("--prompt", default="What is 2 plus 2? Explain briefly.")
+     p.add_argument("--execution", choices=("phased", "upstream"), default="phased")
+     p.add_argument("--eval-group-size", type=int, choices=(1, 2, 4, 8), default=1)
++    p.add_argument("--ssh-host-key-alias")
+     return p
+ 
+ 
+@@ -89,6 +91,11 @@ def ssh_argv(args, actor_args):
+     command = [str(python), "-u", str(root / "remote_actor.py"), "--root", str(root), *actor_args]
+     return [
+         "ssh",
++        *(
++            ["-o", "HostKeyAlias=" + args.ssh_host_key_alias]
++            if getattr(args, "ssh_host_key_alias", None)
++            else []
++        ),
+         "-T",
+         "-o",
+         "BatchMode=yes",
+@@ -111,10 +118,11 @@ def ssh_argv(args, actor_args):
+ 
+ def expected_inventory(config, index_names, split):
+     """Partition trusted checkpoint index names; never infer names from rank receipts."""
+-    layers = config.get("num_hidden_layers")
+-    tied = config.get("tie_word_embeddings", False)
++    text = text_config(config)
++    layers = text.get("num_hidden_layers")
++    tied = text.get("tie_word_embeddings", False)
+     if (
+-        config.get("model_type") != "qwen2"
++        config.get("model_type") != "qwen3_5"
+         or config.get("model_file")
+         or type(layers) is not int
+         or layers <= 0
+@@ -124,27 +132,29 @@ def expected_inventory(config, index_names, split):
+         or any(type(count) is not int or count <= 0 for count in split)
+         or sum(split) != layers
+     ):
+-        raise ValueError("Invalid Qwen2 inventory configuration/split")
++        raise ValueError("Invalid Qwen3.5 inventory configuration/split")
+     names = set(index_names)
+     replicated, layer_names = set(), {}
+     for name in names:
+         if not isinstance(name, str):
+             raise ValueError("Invalid inventory name")
+-        match = re.fullmatch(r"model\.layers\.(0|[1-9][0-9]*)\.(.+)", name)
++        if name.startswith(("vision_tower.", "model.visual.")):
++            continue
++        match = re.fullmatch(r"language_model\.model\.layers\.(0|[1-9][0-9]*)\.(.+)", name)
+         if match:
+             layer = int(match[1])
+             if layer >= layers:
+                 raise ValueError("Inventory layer outside configured range")
+             layer_names[name] = layer
+-        elif re.fullmatch(r"(?:model\.embed_tokens|model\.norm|lm_head)\..+", name):
+-            if tied and name.startswith("lm_head."):
++        elif re.fullmatch(r"language_model\.(?:model\.embed_tokens|model\.norm|lm_head)\..+", name):
++            if tied and name.startswith("language_model.lm_head."):
+                 raise ValueError("Tied inventory contains separate lm_head")
+             replicated.add(name)
+         else:
+-            raise ValueError("Unrecognized Qwen2 inventory name")
+-    required = {"model.embed_tokens.weight", "model.norm.weight"}
++            raise ValueError("Unrecognized Qwen3.5 inventory name")
++    required = {"language_model.model.embed_tokens.weight", "language_model.model.norm.weight"}
+     if not tied:
+-        required.add("lm_head.weight")
++        required.add("language_model.lm_head.weight")
+     if not required <= replicated or set(layer_names.values()) != set(range(layers)):
+         raise ValueError("Incomplete trusted metadata inventory")
+     return {
+@@ -219,9 +229,9 @@ def verify_trial(
+         ):
+             raise ValueError("Incomplete world/tensor evidence")
+         admitted_layers = {
+-            int(name.split(".")[2])
++            int(name.split(".")[3])
+             for name in expected_inventory[rank["rank"]]
+-            if name.startswith("model.layers.")
++            if name.startswith("language_model.model.layers.")
+         }
+         if (
+             not admitted_layers
+@@ -561,11 +571,11 @@ def run(args, *, transport=ssh_argv):
+         }
+         config = json.loads(metadata_bytes["config.json"])
+         if (
+-            config.get("model_type") != "qwen2"
++            config.get("model_type") != "qwen3_5"
+             or config.get("model_file")
+-            or sum(args.split) != config.get("num_hidden_layers")
++            or sum(args.split) != text_config(config).get("num_hidden_layers")
+         ):
+-            raise ValueError("Require built-in Qwen2 and complete explicit split")
++            raise ValueError("Require built-in Qwen3.5 and complete explicit split")
+         index = json.loads(metadata_bytes["model.safetensors.index.json"])
+         if (
+             not isinstance(index, dict)
+
+diff --git a/spikes/011-qwen38-dual-host/test_qwen38.py b/spikes/011-qwen38-dual-host/test_qwen38.py
+new file mode 100644
+index 0000000..14add25
+--- /dev/null
++++ b/spikes/011-qwen38-dual-host/test_qwen38.py
+@@ -0,0 +1,361 @@
++import hashlib
++import json
++from pathlib import Path
++
++import mlx.core as mx
++import mlx.nn as nn
++import pytest
++from mlx.utils import tree_flatten
++from mlx_lm.models.qwen3_5 import Model, ModelArgs
++
++
++class Group:
++    def __init__(self, rank=0, size=1):
++        self.r, self.n = rank, size
++
++    def rank(self):
++        return self.r
++
++    def size(self):
++        return self.n
++
++
++def tiny_config():
++    return dict(
++        model_type="qwen3_5",
++        hidden_size=64,
++        intermediate_size=128,
++        num_hidden_layers=5,
++        num_attention_heads=4,
++        num_key_value_heads=2,
++        head_dim=16,
++        vocab_size=128,
++        linear_num_value_heads=4,
++        linear_num_key_heads=2,
++        linear_key_head_dim=16,
++        linear_value_head_dim=16,
++        linear_conv_kernel_dim=4,
++        full_attention_interval=2,
++        tie_word_embeddings=False,
++        max_position_embeddings=512,
++        rope_parameters=dict(type="default", partial_rotary_factor=0.5, rope_theta=10000),
++        quantization=dict(group_size=32, bits=4),
++    )
++
++
++@pytest.fixture(params=["F32", "BF16"])
++def checkpoint(tmp_path, request):
++    mx.set_default_device(mx.gpu)
++    mx.random.seed(731)
++    config = tiny_config()
++    model = Model(ModelArgs.from_dict(config))
++    nn.quantize(model, group_size=32, bits=4)
++    if request.param == "BF16":
++        model.apply(lambda x: x.astype(mx.bfloat16) if mx.issubdtype(x.dtype, mx.floating) else x)
++    model.eval()
++    mx.eval(model.parameters())
++    path = tmp_path / "tiny"
++    path.mkdir()
++    (path / "config.json").write_text(json.dumps(config))
++    params = dict(tree_flatten(model.parameters()))
++    mx.save_safetensors(str(path / "model.safetensors"), params)
++    return path, config, model
++
++
++def test_streamed_hybrid_exact_serialization_and_text_plan(checkpoint):
++    from shard_plan import select_pipeline_rank
++    from stream_weights import (
++        MAX_TENSOR_BYTES,
++        checkpoint_inventory,
++        load_from_tensors,
++        tensor_records,
++    )
++
++    path, config, native = checkpoint
++    tensors, provenance = checkpoint_inventory(path)
++    augmented = {
++        **tensors,
++        "vision_tower.fake.weight": dict(dtype="F32", shape=[1], data_offsets=[0, 4]),
++    }
++    plans = [
++        select_pipeline_rank(
++            augmented, model_type="qwen3_5", num_hidden_layers=5, split=[2, 3], rank=r
++        )
++        for r in (0, 1)
++    ]
++    assert plans[0]["layer_indices"] == [3, 4]
++    assert plans[1]["layer_indices"] == [0, 1, 2]
++    assert not any("vision" in k for p in plans for k in p["selected_keys"])
++    assert MAX_TENSOR_BYTES == 768 * 1024**2
++    loaded, receipt = load_from_tensors(
++        config, Group(), [5], tensors, tensor_records(tensors, provenance), budget_bytes=8 * 1024**2
++    )
++    expected, actual = (
++        dict(tree_flatten(native.parameters())),
++        dict(tree_flatten(loaded.parameters())),
++    )
++    assert expected.keys() == actual.keys() == tensors.keys()
++    for name, a in expected.items():
++        b = actual[name]
++        assert a.shape == b.shape and a.dtype == b.dtype
++        assert mx.array_equal(a, b).item(), name
++    for record in tensor_records(tensors, provenance):
++        assert (
++            receipt["tensor_sha256"][record["name"]]
++            == hashlib.sha256(record["payload"]).hexdigest()
++        )
++    conv = [v for k, v in tensors.items() if k.endswith("conv1d.weight")]
++    assert conv and all(v["shape"][-2:] == [4, 1] for v in conv)
++    for rank in (0, 1):
++        selected = {k: tensors[k] for k in plans[rank]["selected_keys"]}
++        shard, _ = load_from_tensors(
++            config,
++            Group(rank, 2),
++            [2, 3],
++            selected,
++            tensor_records(selected, provenance),
++            budget_bytes=8 * 1024**2,
++        )
++        assert shard.model.start_idx == plans[rank]["start_idx"]
++        assert all(x is None for x in shard.model.layers[: shard.model.start_idx])
++        assert set(dict(tree_flatten(shard.parameters()))) == set(selected)
++
++
++def assert_caches(left, right):
++    from mlx_lm.models.cache import ArraysCache, KVCache
++
++    assert len(left) == len(right)
++    for a, b in zip(left, right):
++        assert type(a) is type(b)
++        if isinstance(a, KVCache):
++            assert a.offset == b.offset
++            pairs = [
++                (a.keys[..., : a.offset, :], b.keys[..., : b.offset, :]),
++                (a.values[..., : a.offset, :], b.values[..., : b.offset, :]),
++            ]
++        else:
++            assert isinstance(a, ArraysCache)
++            assert a.left_padding is b.left_padding is None
++            assert a.lengths is b.lengths is None
++            pairs = list(zip(a.cache, b.cache))
++        for x, y in pairs:
++            assert x.shape == y.shape and x.dtype == y.dtype
++            assert mx.allclose(x, y, atol=1e-6, rtol=1e-5).item()
++
++
++@pytest.mark.parametrize("group_size", [1, 2, 4, 8])
++def test_gpu_phased_hybrid_chunked_prefill_decode_full_state(checkpoint, group_size):
++    from phased_decode import phased_forward, phased_generate
++
++    path, config, model = checkpoint
++    native_cache, phased_cache = model.make_cache(), model.make_cache()
++    events = []
++    for ids in [[1, 7, 3], [4, 8], [9], [11], [12]]:
++        x = mx.array([ids], mx.int32)
++        expected = model(x, cache=native_cache)
++        mx.eval(expected, [c.state for c in native_cache])
++        actual = phased_forward(
++            model,
++            x,
++            phased_cache,
++            eval_group_size=group_size,
++            all_logits=True,
++            progress=events.append,
++        )
++        assert mx.allclose(expected, actual, atol=1e-6, rtol=1e-5).item()
++        assert mx.array_equal(mx.argmax(expected, -1), mx.argmax(actual, -1)).item()
++        assert_caches(native_cache, phased_cache)
++    assert {e["layer_index"] for e in events if e["phase"] == "layer_done"} == set(range(5))
++
++    class Tokenizer:
++        eos_token_ids = []
++
++        def decode(self, ids, **kwargs):
++            return str(ids)
++
++    prompt = [1, 7, 3, 4, 8, 9]
++    cache = model.make_cache()
++    for ids in [prompt[:2], prompt[2:4], prompt[4:5]]:
++        mx.eval(model(mx.array([ids], mx.int32), cache=cache), [c.state for c in cache])
++    current = mx.array([[prompt[-1]]], mx.int32)
++    tokens = []
++    for _ in range(4):
++        scores = model(current, cache=cache)
++        mx.eval(scores, [c.state for c in cache])
++        token = int(mx.argmax(scores[:, -1, :], -1).item())
++        tokens.append(token)
++        current = mx.array([[token]], mx.int32)
++    receipt = phased_generate(
++        model, Tokenizer(), prompt, max_tokens=4, prefill_step_size=2, eval_group_size=group_size
++    )
++    assert receipt["token_ids"] == tokens
++
++
++def test_supervisor_binds_canonical_text_inventory_and_sources(checkpoint):
++    from remote_actor import SOURCES, source_hashes
++    from shard_plan import select_pipeline_rank
++    from stream_weights import checkpoint_inventory
++    from supervise import expected_inventory, parser, ssh_argv
++
++    path, config, _ = checkpoint
++    tensors, _ = checkpoint_inventory(path)
++    names = set(tensors) | {"vision_tower.foo.weight"}
++    actual = expected_inventory(config, names, [2, 3])
++    for r in (0, 1):
++        plan = select_pipeline_rank(
++            tensors, model_type="qwen3_5", num_hidden_layers=5, split=[2, 3], rank=r
++        )
++        assert actual[r] == set(plan["selected_keys"])
++    nested = dict(model_type="qwen3_5", text_config=config)
++    assert expected_inventory(nested, names, [2, 3]) == actual
++    with pytest.raises(ValueError):
++        expected_inventory(config, names | {"unknown.weight"}, [2, 3])
++    root = Path(__file__).parent
++    assert set(source_hashes(root)) == set(SOURCES)
++    assert {
++        "probe.py",
++        "stream_weights.py",
++        "stream_server.py",
++        "shard_plan.py",
++        "phased_decode.py",
++        "cpu_communication.py",
++        "remote_actor.py",
++    } <= set(SOURCES)
++    args = parser().parse_args(
++        [
++            "--remote-root",
++            "/a/b/spikes/011-qwen38-dual-host",
++            "--remote-source",
++            "/model",
++            "--local-metadata",
++            "/metadata",
++            "--output",
++            "/out",
++            "--ssh-key",
++            "/key",
++            "--split",
++            "2",
++            "3",
++            "--ssh-host-key-alias",
++            "old-trusted-host",
++        ]
++    )
++    assert "HostKeyAlias=old-trusted-host" in ssh_argv(args, [])
++
++
++def test_probe_formats_non_thinking_and_raw_tokens():
++    import probe
++
++    class Tokenizer:
++        def apply_chat_template(self, messages, **kwargs):
++            assert kwargs == dict(tokenize=False, add_generation_prompt=True, enable_thinking=False)
++            return "formatted"
++
++    assert probe.prepare_prompt(Tokenizer(), "hi") == "formatted"
++    assert probe.prepare_prompt(Tokenizer(), "tokens:[1,2,3]") == [1, 2, 3]
++
++
++@pytest.mark.parametrize("split", [[2, 3], [1, 4], [4, 1]])
++def test_gpu_ragged_shards_all_logits_and_states(checkpoint, monkeypatch, split):
++    from phased_decode import phased_forward
++    from shard_plan import select_pipeline_rank
++    from stream_weights import checkpoint_inventory, load_from_tensors, tensor_records
++
++    path, config, native = checkpoint
++    tensors, provenance = checkpoint_inventory(path)
++    shards = []
++    for r in (0, 1):
++        plan = select_pipeline_rank(
++            tensors, model_type="qwen3_5", num_hidden_layers=5, split=split, rank=r
++        )
++        selected = {k: tensors[k] for k in plan["selected_keys"]}
++        model, _ = load_from_tensors(
++            config,
++            Group(r, 2),
++            split,
++            selected,
++            tensor_records(selected, provenance),
++            budget_bytes=8 * 1024**2,
++        )
++        shards.append(model)
++    slot = []
++
++    def send(array, rank, **kwargs):
++        assert rank == 0
++        slot.append(array)
++        return array
++
++    def recv(shape, dtype, rank, **kwargs):
++        assert rank == 1 and len(slot) == 1
++        array = slot.pop()
++        assert array.shape == shape and array.dtype == dtype
++        return array
++
++    monkeypatch.setattr(mx.distributed, "send", send)
++    monkeypatch.setattr(mx.distributed, "recv", recv)
++    caches = [s.make_cache() for s in shards]
++    ref_cache = native.make_cache()
++    for ids in [[1, 2, 3], [4, 5], [6], [7]]:
++        x = mx.array([ids], mx.int32)
++        expected = native(x, cache=ref_cache)
++        mx.eval(expected, [c.state for c in ref_cache])
++        assert phased_forward(shards[1], x, caches[1], group=Group(1, 2), eval_group_size=4) is None
++        actual = phased_forward(
++            shards[0], x, caches[0], group=Group(0, 2), eval_group_size=4, all_logits=True
++        )
++        assert mx.allclose(expected, actual, atol=1e-6, rtol=1e-5).item()
++        assert mx.array_equal(mx.argmax(expected, -1), mx.argmax(actual, -1)).item()
++        assert_caches(ref_cache, caches[1] + caches[0])
++
++
++def test_fixture_creation_cli(tmp_path):
++    import subprocess
++    import sys
++
++    path = tmp_path / "fixture"
++    result = subprocess.run(
++        [sys.executable, str(Path(__file__).with_name("fixture.py")), "--output", str(path)],
++        capture_output=True,
++        text=True,
++        timeout=30,
++    )
++    assert result.returncode == 0, result.stderr
++    config = json.loads((path / "config.json").read_text())
++    assert config["model_type"] == "qwen3_5"
++    from stream_weights import checkpoint_inventory
++
++    tensors, _ = checkpoint_inventory(path)
++    index = json.loads((path / "model.safetensors.index.json").read_text())
++    assert set(tensors) == set(index["weight_map"])
++    assert not any("vision" in k for k in tensors)
++
++
++@pytest.mark.parametrize("bad", ["missing", "dtype", "conv", "digest", "vision", "overcap"])
++def test_fail_closed_stream_admission(checkpoint, bad):
++    import copy
++
++    from stream_weights import checkpoint_inventory, load_from_tensors, tensor_records
++
++    path, config, _ = checkpoint
++    tensors, origins = checkpoint_inventory(path)
++    tensors = copy.deepcopy(tensors)
++    records = tensor_records(tensors, origins)
++    if bad == "missing":
++        tensors.pop("language_model.model.layers.0.linear_attn.dt_bias")
++    if bad == "dtype":
++        tensors["language_model.lm_head.weight"]["dtype"] = "I32"
++    if bad == "conv":
++        value = tensors["language_model.model.layers.0.linear_attn.conv1d.weight"]
++        value["shape"][-2:] = [1, 4]
++    if bad == "digest":
++        rows = list(records)
++        rows[0]["sha256"] = "0" * 64
++        records = iter(rows)
++    if bad == "vision":
++        tensors["vision_tower.fake.weight"] = dict(dtype="F32", shape=[1], data_offsets=[0, 4])
++    if bad == "overcap":
++        tensors["language_model.lm_head.weight"] = dict(
++            dtype="U32", shape=[201326593], data_offsets=[0, 805306372]
++        )
++    with pytest.raises(ValueError):
++        load_from_tensors(config, Group(), [5], tensors, records, budget_bytes=2 * 1024**3)

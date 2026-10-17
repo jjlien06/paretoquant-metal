@@ -1,0 +1,23 @@
+{
+  "schema": "qwen38-broad-independent-review-v1",
+  "delegation": "deleg_920e93bf",
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "verified_cpu_tests": "276 passed, 1 skipped",
+  "ruff": "All checks passed",
+  "reviewed_scope": "operator/analyzer/security fixes and separate strict generation action auditor; not original023 verifier approval or pending024 integration",
+  "original_forgeries_independently_rejected": ["zero rounds with multiple outputs", "changed accepted draft counter", "changed verify current token", "wrong per-request verifier mode"],
+  "all_six_saved_audits_reproduced": true,
+  "unique_requests": 84,
+  "rank_requests": 168,
+  "measured_requests": 72,
+  "explicit_warmups": 12,
+  "measured_cases": 18,
+  "failures": 0,
+  "fresh_normalization_and_analysis_match_archived_results": true,
+  "auditor_sha256": "cd60f5d747fef5df31ad9947ca3fbb7abd23f3768922cd795a41a0153b11bef7",
+  "decode_geometric_mean_speedup": 1.4290156456292908,
+  "whole_request_geometric_mean_speedup": 1.1284876578368026,
+  "certification_limit": "Composes original physical numerical/loading/cleanup gates with independent recorded-action audit. Recorded progress does not independently prove unlogged teacher predictions or independently retokenize prompts. Statistics are descriptive with two repeats, not tail-reliability proof."
+}

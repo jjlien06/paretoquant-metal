@@ -1,0 +1,30 @@
+test_exact_modes_and_bounded_configuration (control_v2_tests.Bounds.test_exact_modes_and_bounded_configuration) ... ok
+test_host_payload_budget_includes_retained_input_lifetimes (control_v2_tests.Bounds.test_host_payload_budget_includes_retained_input_lifetimes) ... ok
+test_only_physical_runtime_can_import_mlx_or_subprocess (control_v2_tests.CpuBoundary.test_only_physical_runtime_can_import_mlx_or_subprocess) ... ok
+test_cleanup_sync_exception_does_not_skip_restoration (control_v2_tests.ErrorRestoration.test_cleanup_sync_exception_does_not_skip_restoration) ... ok
+test_deadline_stops_before_next_allocation_and_restores (control_v2_tests.ErrorRestoration.test_deadline_stops_before_next_allocation_and_restores) ... ok
+test_evaluation_failure_restores_and_frees (control_v2_tests.ErrorRestoration.test_evaluation_failure_restores_and_frees) ... ok
+test_oversize_active_counter_fails_and_restores (control_v2_tests.ErrorRestoration.test_oversize_active_counter_fails_and_restores) ... ok
+test_pressure_two_during_run_restores_policy (control_v2_tests.ErrorRestoration.test_pressure_two_during_run_restores_policy) ... ok
+test_roundtrip_error_restores_previous_nonzero_limit (control_v2_tests.ErrorRestoration.test_roundtrip_error_restores_previous_nonzero_limit) ... ok
+test_sampler_is_required_and_abnormal_before_prevents_setters (control_v2_tests.ErrorRestoration.test_sampler_is_required_and_abnormal_before_prevents_setters) ... ok
+test_admission_binds_external_originals_hashes_nonce_role_and_deadline (control_v2_tests.Harness.test_admission_binds_external_originals_hashes_nonce_role_and_deadline) ... ok
+test_collection_uses_original_pressure_verifier_and_independent_records (control_v2_tests.Harness.test_collection_uses_original_pressure_verifier_and_independent_records) ... ok
+test_execute_loads_byte_exact_originals_and_restores_import_scope_on_error (control_v2_tests.Harness.test_execute_loads_byte_exact_originals_and_restores_import_scope_on_error) ... ok
+test_owned_call_scopes_sources_and_always_requires_pressure (control_v2_tests.Harness.test_owned_call_scopes_sources_and_always_requires_pressure) ... ok
+test_parent_cli_requires_external_admission_before_executor (control_v2_tests.Harness.test_parent_cli_requires_external_admission_before_executor) ... ok
+test_stage_exact_three_sources_against_external_expected_hashes (control_v2_tests.Harness.test_stage_exact_three_sources_against_external_expected_hashes) ... ok
+test_adapter_uses_installed_single_argument_api_and_labels_advisory_limit (control_v2_tests.PhysicalBoundary.test_adapter_uses_installed_single_argument_api_and_labels_advisory_limit) ... ok
+test_entrypoint_uses_fixed_payload_and_injected_runtime_only (control_v2_tests.PhysicalBoundary.test_entrypoint_uses_fixed_payload_and_injected_runtime_only) ... ok
+test_physical_cli_has_no_payload_size_escape (control_v2_tests.PhysicalBoundary.test_physical_cli_has_no_payload_size_escape) ... ok
+test_bool_policy_readback_is_not_integer_zero (control_v2_tests.Runs.test_bool_policy_readback_is_not_integer_zero) ... ok
+test_cleanup_residual_active_memory_fails_closed (control_v2_tests.Runs.test_cleanup_residual_active_memory_fails_closed) ... ok
+test_retained_payload_is_revalidated_after_last_allocation (control_v2_tests.Runs.test_retained_payload_is_revalidated_after_last_allocation) ... ok
+test_small_roundtrip_records_actual_policy_and_restores (control_v2_tests.Runs.test_small_roundtrip_records_actual_policy_and_restores) ... ok
+test_strict_sampler_requires_pressure_one_and_vm_counters (control_v2_tests.Samples.test_strict_sampler_requires_pressure_one_and_vm_counters) ... ok
+test_vm_field_population_is_bounded_before_retention (control_v2_tests.Samples.test_vm_field_population_is_bounded_before_retention) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.075s
+
+OK

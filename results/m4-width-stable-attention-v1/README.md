@@ -1,0 +1,7 @@
+# Width-stable verification: attention physical gate
+
+Thirty-two random real floating nativeKVCache GPU cases match concatenated native width-one SDPA exactly and leave live cache values/offset unchanged. F16/F32, query widths1/2/5/9, pre-existing prefixes32/256 and small(14Qheads,2KV,64D) plus32B(40Q,8KV,128D) GQA are exercised. All104 future-K/V poison tests preserve every causally earlier query output. This qualifies target-like geometry, not32B checkpoint generation.
+
+The components remain opt-in and isolated; default decoder/library files were not edited. Original atol=rtol=.002 is unchanged. Exactness means element equality, not independently audited storage-byte identity. No synchronized timing comparison was performed. Peak MLX allocation is not system residency. Owned actor cleanup, exact deployed source readbacks and unchanged guarded full32B source hashes passed. Independent reviews and physical distributed small/full32B gates remain required before claiming accelerated32B generation.
+
+The attention's nine actual RED/GREEN cycles and the QMV's existing TDD/CPU artifacts are retained. Parent independently ran447 combined CPU tests with1 opt-in GPU skip and2653 subtests; Ruff/format passed for attention. `evidence/` preserves executed GPU sources/reports/process/startup/preflight/cleanup receipts; `source/` snapshots candidate/test/license/TDD files. `verified-summary.json` is computed from receipts; `integrity.json` hashes all archive files excluding itself.

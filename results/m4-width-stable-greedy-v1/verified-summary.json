@@ -1,0 +1,17 @@
+{
+  "scope": "greedy",
+  "passed": true,
+  "owned_cleanup_verified": true,
+  "guarded_full32B_source_unchanged": true,
+  "executed_source_readback_exact": true,
+  "peak_mlx_bytes": 344176992,
+  "candidate_attention_SHA256": "672ad8e27382e74e7a3b26b2a32021e7c17dd8bc84d4670065f9e650095bec9f",
+  "no32B_admission_or_speed_claim": true,
+  "cases": 6,
+  "token_ids_and_stop_reasons_match": 6,
+  "every_live_teacher_KV_exact": 6,
+  "draft_KV_original_tolerance_pass": 6,
+  "every_offset_and_round_accounting_pass": 6,
+  "checkpoint_hashes_unchanged": true,
+  "controller_failure": "Initial parent controller exited1 after successful GPU execution/readback because it expected operator schema source_sha256 rather than greedy schema sources; raw error and source preserved. This independent receipt validates sources/counts/cleanup from recorded exact readbacks without rerunning or rewriting failure."
+}

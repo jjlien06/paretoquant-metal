@@ -1,0 +1,175 @@
+{
+  "schema": "qwen38-overlap-integration-independent-review-v1",
+  "created_at": "2026-10-17T06:22:03.035730-04:00",
+  "artifact_kind": "INDEPENDENT_CPU_REVIEW_NOT_PHYSICAL_APPROVAL",
+  "passed": false,
+  "security_concerns": [],
+  "logic_errors": [
+    {
+      "id": "REMOTE_CODE_ROOT_CHECKPOINT_ARGUMENT_MIXUP",
+      "severity": "blocking",
+      "component": "parent-owned executable hook, not detached CPU receipt auditor",
+      "locations": [
+        "benchmarks/qwen38_overlap/supervisor025.py:234-261",
+        "benchmarks/qwen38_overlap/INTEGRATION025.md:129-135",
+        "benchmarks/qwen38_overlap/tests/test_supervisor025.py:129-168",
+        "spikes/025-qwen38-overlapped-prefill/supervise.py:223-226",
+        "spikes/025-qwen38-overlapped-prefill/supervise.py:1235-1240",
+        "spikes/025-qwen38-overlapped-prefill/supervise.py:1275-1278"
+      ],
+      "description": "The private profile selects remote_source_by_phase[phase] and appends it as --remote-source, while retaining one --remote-root. Actual025 uses --remote-root for remote actor code and its registered source snapshot; --remote-source is the existing weight checkpoint consumed by stream_server --source and rank1 probe --model. The documented phase-specific source directories are therefore sent to checkpoint consumers, not the remote actor. One unmodified actor code root cannot simultaneously match the seven distinct frozen schedule hashes. The current mock test validates syntax and local frozen source selection but does not assert these remote argument semantics.",
+      "actual_reproducer": {
+        "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 TMPDIR=/Users/jeremylien/.hermes/cache/scratch .venv/bin/python /Users/jeremylien/.hermes/cache/scratch/integration025-remote-hook-repro.py",
+        "working_directory": "/Users/jeremylien/Projects/paretoquant-metal",
+        "exit_code": 0,
+        "method": "Invoke actual supervisor025.guarded_run with an exact-manifest/phase TEST parent guard and injected runner; inside the runner parse and validate the actual emitted argv with pinned025 supervise.parser/validate_args and call pure ssh_argv/probe_options. Never execute the generated SSH command or producer run function.",
+        "test_profile_remote_root": "/TEST/project/spikes/shared-code",
+        "test_profile_remote_source_by_phase_pilot": "/TEST/project/spikes/runtime-pilot",
+        "observed_remote_root": "/TEST/project/spikes/shared-code",
+        "observed_remote_source": "/TEST/project/spikes/runtime-pilot",
+        "observed_remote_actor_command": [
+          "/TEST/project/.venv/bin/python",
+          "-u",
+          "/TEST/project/spikes/shared-code/remote_actor.py",
+          "--root",
+          "/TEST/project/spikes/shared-code",
+          "--inspect"
+        ],
+        "observed_checkpoint_argument": "/TEST/project/spikes/runtime-pilot",
+        "distinct_phase_schedule_hashes": 7,
+        "mock_result_status": "raw_receipt_audit_required",
+        "mock_result_accepted": false,
+        "hardware_executed": false,
+        "evidence_path": "/Users/jeremylien/.hermes/cache/scratch/integration025-independent-probes-20261017/remote-hook-reproducer.json",
+        "evidence_sha256": "93932efb8b258710a375c2cf719ee9557b0ccf519e8167194cb88061117386de"
+      },
+      "required_narrow_repair": "Select phase-specific immutable code snapshots through remote_root_by_phase -> --remote-root, retain a single remote_source -> --remote-source for the existing pinned weight checkpoint, and update the exact whitelist, documentation and mock assertions. No duplicated model copies should be required. Re-freeze source-bound manifests after the repair.",
+      "reviewer_modified_implementation": false
+    }
+  ],
+  "verification": {
+    "implementation_receipt": {
+      "path": "results/qwen38-prefill-overlap-v1/cpu-integration-implementation.json",
+      "expected_sha256": "5e9adf81e977960248218843ff4a5b365f5e3e7fe81b7295dc13e95fdf5b2497",
+      "actual_sha256": "5e9adf81e977960248218843ff4a5b365f5e3e7fe81b7295dc13e95fdf5b2497",
+      "matched": true,
+      "harness_source_binding_mismatches": [],
+      "observed_runtime_source_binding_mismatches": []
+    },
+    "scope": [
+      "INTEGRATION025.md and actual025 INTERFACE-OVERLAP.md",
+      "integration025.py, numerical025.py, supervisor025.py, cli.py and unchanged per-case analyzer",
+      "Actual producer Command/Worker, pipeline and receive-credit codec, causal-stream and compound-drain helpers",
+      "Pressure-v2 external actor contexts, startup/PID/result reconciliation, origin/execution interval and nonce/host/role ownership",
+      "Externally bound source registry, schedule, metadata, prompt IDs, native outputs, exact tensor ownership, numerical gates and cleanup/listener targets",
+      "Inert seven-phase plans, guard argument isolation, private profile authorization order, sanitization and TEST runner confinement"
+    ],
+    "cpu_core_review_passed": true,
+    "executable_hook_review_passed": false,
+    "regression_run": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 TMPDIR=/Users/jeremylien/.hermes/cache/scratch .venv/bin/python benchmarks/qwen38_overlap/verification/integration025_cpu.py --run-dir /Users/jeremylien/.hermes/cache/scratch/integration025-independent-review-20261017",
+      "actual_argv_environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+        "TMPDIR": "/Users/jeremylien/.hermes/cache/scratch"
+      },
+      "working_directory": "/Users/jeremylien/Projects/paretoquant-metal",
+      "exit_code": 0,
+      "counts": {
+        "total": 122,
+        "original_harness": 95,
+        "integration025": 27,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "real_in_process_cli_invocations": 10,
+      "forbidden_imports": [],
+      "denied_external_actions": [],
+      "verification_path": "/Users/jeremylien/.hermes/cache/scratch/integration025-independent-review-20261017/verification.json",
+      "verification_sha256": "c25e2e0807b5798ec24856cd80f9bd2c6a2c04800e0389f38d24624605da0a55",
+      "pytest_xml_sha256": "ab758f70247d0848b4be03dd83534257097e4f62a679e746c0810d962d4cf20b",
+      "pytest_log_sha256": "11727caaf7d535fdaa7ef2904ca34fd82cfec09edfb3b26a0ddefc7bf04a4f1b"
+    },
+    "independent_adversarial_probes": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 TMPDIR=/Users/jeremylien/.hermes/cache/scratch .venv/bin/python /Users/jeremylien/.hermes/cache/scratch/integration025-review-probes.py",
+      "exit_code": 0,
+      "total": 62,
+      "passed": 62,
+      "failed": [],
+      "separate_hook_blocker_reproducer_count": 1,
+      "probe_results_path": "/Users/jeremylien/.hermes/cache/scratch/integration025-independent-probes-20261017/probe-results.json",
+      "probe_results_sha256": "f15b980a805480acc5a1bcc67e1f1ed08d9c4e79e633ff298c9183f44a4a9013",
+      "probe_script_sha256": "916e2e806720f49cf292ff4a95bdad4925a6353f5c8512411084879bbee9b2de",
+      "hook_reproducer_script_sha256": "e604179a6f05eecd08aa5eebfdf1922b72a402329c1dba1a38e192e7e1cfd13b",
+      "coverage": [
+        "Complete actual-producer TEST grammar returns six ordered rows and twelve independent rank metric rows, never physical acceptance",
+        "Rehashed wrong source readback and changed actual source bytes; omitted runtime and harness dependency entries",
+        "Wrong mode, source slot, request nonce/cache epoch, original-native reference, external tensor hash and metadata binding",
+        "Missing legacy/overlap cache parts, recurrent-state dtype, head KV shape, changed tolerance, wrong width prompt and shortened full gate",
+        "Wrong pressure job nonce, external host/identity/origin/execution interval, short uncovered interval, unhealthy/bool sample and job-owner contradiction",
+        "Unreaped owned actor, contradictory control transport cleanup, wrong closed listener endpoint and missing pilot warmup",
+        "Rehashed/resealed wrong credit state grammar and omitted compound drain",
+        "Guard wrong manifest/phase, TEST runner absence with no subprocess fallback, mutable callback argument isolation and private validation redaction",
+        "Missing/duplicate/extra full populations, pilot/full separation, one long-case failure despite five passing cases, median of paired ratios rather than ratio of medians",
+        "Exact implementation receipt SHA256, all recorded harness/runtime source hashes and original90 preservation"
+      ]
+    },
+    "numerical_plan": {
+      "reviewed": true,
+      "independent_json_architecture_bound": true,
+      "original_atol": 0.000001,
+      "original_rtol": 0.00001,
+      "full_prompt_tokens": 513,
+      "full_prefix_intervals": [[0, 256], [256, 512]],
+      "final_singleton_outside_compound": true,
+      "full_rank0_owned_layers": [36, 64],
+      "full_rank1_owned_layers": [0, 36],
+      "width_prompt_ids": [1, 2, 3, 4, 5],
+      "forced_ids": [6, 7, 8, 9, 10, 11],
+      "checks": "Original width windows and prefix rollback retained; exact layer-local KV keys/values/offsets, GDN convolution history and float32 recurrent state, normalized hidden/full-vocabulary output, shifted head cache and two continuations checked against independently derived layouts. Small native gate covers the whole control model; small overlap uses its actual two-rank split."
+    },
+    "population_and_statistics": {
+      "full_rows": 84,
+      "measured_rows": 72,
+      "warmups": 12,
+      "cases": 18,
+      "long_cases_requiring_both_targets": 6,
+      "ttft_required_max_ratio": 0.7,
+      "request_wall_required_max_ratio": 0.85,
+      "estimator": "Unchanged median of paired per-repeat candidate/reference ratios independently for each case and each metric; no pooled override",
+      "pilot_rows": 6,
+      "pilot_measured_cases": 2,
+      "pilot_full_suite_accepted": false,
+      "actual_model_requests_executed": 0
+    },
+    "preservation": {
+      "original_files_rechecked": 90,
+      "mismatches": [],
+      "original_harness_receipt_sha256": "3c7a024aba420891de1d9cf7f974e9331e7bea886fe4ec48d53fb0284ca3a513",
+      "historical_receipts_modified": false,
+      "implementation_files_modified": false,
+      "runtime025_files_modified": false
+    },
+    "confinement": {
+      "model_or_mlx_imports": [],
+      "network_or_ssh_executed": false,
+      "subprocesses_spawned_by_tests_or_probes": false,
+      "signals_sent": false,
+      "gpu_or_live_app_activity": false,
+      "installs_builds_or_commits": false,
+      "probe_writes": "New scratch directories only",
+      "repository_write": "Only this new independent review receipt"
+    }
+  },
+  "limits": [
+    "This is independent CPU consumer/core verification with a blocking executable-hook finding, not overall implementation approval or physical execution permission.",
+    "The implementation receipt and reviewed source hashes are exact as observed; any subsequent repair needs new tests, source freeze and independent re-review. This receipt must remain historical.",
+    "Explicit TEST fixtures exercise real pure producer helpers and required receipt grammar; their numerical/timing values are not model measurements and cannot establish live model/group admission.",
+    "Detached source-bound evidence is not cryptographic runtime attestation. External trust/review hash authenticity remains the independent parent's responsibility; hash-only producer claims are not approval.",
+    "Finite pressure samples establish only the checked sampled interval and identities, not uninterrupted pressure health between samples.",
+    "The parent must still run fresh both-host health/headroom/bridge/deployment readback, actual small two-rank and same-loaded full513/chunk256 gates, independent native outputs/tensor binding, real pilot and byte-budget admission, full84 physical requests, all six per-case performance targets and owned process/listener cleanup.",
+    "No physical positive receipt, speedup, quality, simultaneous GPU-kernel overlap or link-transfer-time claim is made.",
+    "Scratch evidence may be pruned by the environment; the blocking diagnosis, actual TEST reproducer observations and evidence hashes are embedded in this durable receipt."
+  ]
+}

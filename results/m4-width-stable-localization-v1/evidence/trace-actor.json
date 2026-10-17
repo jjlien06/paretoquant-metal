@@ -1,0 +1,25 @@
+{
+  "actor": {
+    "reason": "completed",
+    "nonce": "1f7f62aaa99646898fec2a4949e5e3a1",
+    "actor_pid": 15644,
+    "child_pid": 15647,
+    "returncode": 0,
+    "cleanup": {
+      "child_reaped": true,
+      "group_gone": true,
+      "pid_reused": false,
+      "identity_unknown": false,
+      "pending_os_gpu_termination": false,
+      "gpu_driver_state": "not inspected; process/group receipt only"
+    },
+    "error_type": null,
+    "elapsed": 2.8434940000006463,
+    "forwarded_bytes_dropped": 0
+  },
+  "preflight": {
+    "pressure": "1",
+    "free_disk_bytes": 94332485632,
+    "swap": "vm.swapusage: total = 3072.00M  used = 1921.50M  free = 1150.50M  (encrypted)\n"
+  }
+}

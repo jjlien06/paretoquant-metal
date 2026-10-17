@@ -1,0 +1,719 @@
+{
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    "Keep the original failed reference-before-v1 and the stronger post-hoc audits separate from successful before-v2/candidate receipts.",
+    "Do not adopt or claim a performance benefit until the separately owned reference-after control and matched analysis are complete."
+  ],
+  "verification": {
+    "source_identity": {
+      "final_template_manifest_sha256": "92ce80269e82ca3b3b5b2604d078ffc35c9c21d0513dc13ca64f8cfaed0752e3",
+      "registered_files": 61,
+      "sole_template_deployment_difference": "benchmark_schedule.json",
+      "schedule_sha256": "163c1a042caf491facb995b81d57b4f88d3a73c7e8957d63a9e2f0749f3d4c1f",
+      "executed_controller_sha256": "5854ad8fd98c1ab7c1f9659457459b12e1fc982af3bd5cca0899f8045395d624",
+      "before_source_differences": [
+        "hidden_prefill_gate.py",
+        "supervise.py",
+        "test_cli_schedule.py",
+        "test_hidden_cache_inventory.py",
+        "test_hidden_cli.py"
+      ],
+      "candidate_snapshot_actor_remote_readbacks_match": true,
+      "posthoc_and_captured_auditor_ast_identical": true,
+      "captured_auditor_sha256": "00e64c72453f24b48ed9880fd42d4d3581bfb5790e00108265df005ee4c68671",
+      "posthoc_auditor_sha256": "cd60f5d747fef5df31ad9947ca3fbb7abd23f3768922cd795a41a0153b11bef7"
+    },
+    "checkpoint_identity": {
+      "model": "mlx-community/Qwen3.8-27B-4bit",
+      "revision": "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+      "target_config_sha256": "14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85",
+      "target_index_sha256": "13b840162b4cb35c66fef7df072f7dbb4717908204364f5e5d9f9655a2758fa8",
+      "exact_text_tensor_union": 1847,
+      "candidate_before_archived_native_all_tensor_hashes_match": true,
+      "small_metadata_binding": {
+        "config.json": "ba7770da23eae5ebd6827571f086e331956b33f4442a9e876fb4aa10969a6772",
+        "model.safetensors.index.json": "6e48f2fa5d6f033a6d77bf833abfa9698ca24d1715ecea4c67447bcfaee44650"
+      },
+      "full_metadata_binding": {
+        "config.json": "14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85",
+        "model.safetensors.index.json": "13b840162b4cb35c66fef7df072f7dbb4717908204364f5e5d9f9655a2758fa8"
+      },
+      "sidecar": {
+        "SIDECAR_REVISION": "b643c01b6d3b094e325edb6ebd832e16c486c575",
+        "SIDECAR_SHA256": "76663c101e7e8ea9c0ae17bcb95183cd7f733ce424c912b8b264a7b1c48e4cc6",
+        "SIDECAR_CONFIG_SHA256": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+        "SIDECAR_BYTES": 238934137
+      }
+    },
+    "cpu_only_metadata_method": "Independent config-derived layout, crosschecked against captured architecture_layout; metadata_layout dependency substituted in memory only; no mlx imports.",
+    "validator_signatures": {
+      "verify_prefill_evidence": "(evidence, *, scope, chunk_size, layer_count, expected_layout=None)",
+      "verify_mtp_evidence": "(ranks, phases, args, *, request_specs=None)"
+    },
+    "actual_receipts": {
+      "candidate-v1": {
+        "gates": [
+          {
+            "physical_rank": 0,
+            "scope": "small",
+            "device": "Apple M2 Pro",
+            "owned_layers": [
+              0,
+              24
+            ],
+            "target_parts_per_comparison": 54,
+            "recurrent_layers": 18,
+            "kv_layers": 6,
+            "width_prefix": {
+              "total_metrics": 555,
+              "exact_metrics": 555,
+              "tensor_metrics": 495,
+              "offset_metrics": 60,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            },
+            "hidden_prefill": {
+              "total_metrics": 2616,
+              "exact_metrics": 2616,
+              "tensor_metrics": 2322,
+              "offset_metrics": 294,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            },
+            "hidden_prompt_lengths": [
+              256,
+              257,
+              511,
+              512,
+              513
+            ],
+            "hidden_chunk_size": 256
+          },
+          {
+            "physical_rank": 0,
+            "scope": "full",
+            "device": "Apple M2 Pro",
+            "owned_layers": [
+              36,
+              64
+            ],
+            "target_parts_per_comparison": 63,
+            "recurrent_layers": 21,
+            "kv_layers": 7,
+            "width_prefix": {
+              "total_metrics": 645,
+              "exact_metrics": 645,
+              "tensor_metrics": 575,
+              "offset_metrics": 70,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            },
+            "hidden_prefill": {
+              "total_metrics": 1186,
+              "exact_metrics": 1186,
+              "tensor_metrics": 1053,
+              "offset_metrics": 133,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            },
+            "hidden_prompt_lengths": [
+              17
+            ],
+            "hidden_chunk_size": 8,
+            "native256": {
+              "total_metrics": 528,
+              "exact_metrics": 528,
+              "tensor_metrics": 469,
+              "offset_metrics": 59,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            },
+            "configured_chunk8_only": {
+              "total_metrics": 658,
+              "exact_metrics": 658,
+              "tensor_metrics": 584,
+              "offset_metrics": 74,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            }
+          },
+          {
+            "physical_rank": 1,
+            "scope": "small",
+            "device": "Apple M4",
+            "owned_layers": [
+              0,
+              24
+            ],
+            "target_parts_per_comparison": 54,
+            "recurrent_layers": 18,
+            "kv_layers": 6,
+            "width_prefix": {
+              "total_metrics": 555,
+              "exact_metrics": 555,
+              "tensor_metrics": 495,
+              "offset_metrics": 60,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            },
+            "hidden_prefill": {
+              "total_metrics": 2616,
+              "exact_metrics": 2616,
+              "tensor_metrics": 2322,
+              "offset_metrics": 294,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            },
+            "hidden_prompt_lengths": [
+              256,
+              257,
+              511,
+              512,
+              513
+            ],
+            "hidden_chunk_size": 256
+          },
+          {
+            "physical_rank": 1,
+            "scope": "full",
+            "device": "Apple M4",
+            "owned_layers": [
+              0,
+              36
+            ],
+            "target_parts_per_comparison": 81,
+            "recurrent_layers": 27,
+            "kv_layers": 9,
+            "width_prefix": {
+              "total_metrics": 825,
+              "exact_metrics": 825,
+              "tensor_metrics": 735,
+              "offset_metrics": 90,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            },
+            "hidden_prefill": {
+              "total_metrics": 1510,
+              "exact_metrics": 1510,
+              "tensor_metrics": 1341,
+              "offset_metrics": 169,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            },
+            "hidden_prompt_lengths": [
+              17
+            ],
+            "hidden_chunk_size": 8,
+            "native256": {
+              "total_metrics": 672,
+              "exact_metrics": 672,
+              "tensor_metrics": 597,
+              "offset_metrics": 75,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            },
+            "configured_chunk8_only": {
+              "total_metrics": 838,
+              "exact_metrics": 838,
+              "tensor_metrics": 744,
+              "offset_metrics": 94,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            }
+          }
+        ],
+        "actual_validator_result": {
+          "strict_numerical_admission": true,
+          "rank_actions_agree": true,
+          "actual_rank_action_counts": {
+            "0": 1495,
+            "1": 1495
+          }
+        },
+        "action_audit": {
+          "status": "verified",
+          "verified_request_count": 14,
+          "verified_rank_request_count": 28,
+          "verified_mtp_request_count": 7,
+          "actual_rank_action_counts": {
+            "0": 1495,
+            "1": 1495
+          },
+          "raw_sha256": {
+            "result.json": "708bb04ac6b18d71fd09022152f6de27d4bd838d97f18e0285f93ec5e2dd4f71",
+            "source_sha256.json": "2550341373c51a5cb90300f9e266df73597d5db67c9d6c1eb3585b33ca3582fa",
+            "rank0.receipt.json": "eee2d96909eb5ce22501b955e760565ca11ccb5c93320fa83aface0d6d70d426",
+            "rank1.receipt.json": "43cf6b32baa202ad6a3cbc8a9e630e410e72bacbe75c7f88c4e5066d57de738f"
+          }
+        },
+        "tensor_counts_by_rank": [
+          812,
+          1042
+        ],
+        "cleanup": {
+          "actors_reaped_groups_gone": true,
+          "listeners": {
+            "ports": [
+              [
+                "169.254.47.213",
+                49398
+              ],
+              [
+                "169.254.214.155",
+                50587
+              ],
+              [
+                "169.254.214.155",
+                50588
+              ]
+            ],
+            "closed": [
+              true,
+              true,
+              true
+            ],
+            "services_closed_verified": true
+          },
+          "cleanup_errors": [],
+          "transport_cleanup_checked": [
+            "server",
+            "rank1",
+            "rank0",
+            "control1",
+            "control2",
+            "control3",
+            "control4",
+            "control5",
+            "control6",
+            "control7",
+            "control8",
+            "control9"
+          ]
+        },
+        "raw_inputs": {
+          "rank0.receipt.json": "eee2d96909eb5ce22501b955e760565ca11ccb5c93320fa83aface0d6d70d426",
+          "rank1.receipt.json": "43cf6b32baa202ad6a3cbc8a9e630e410e72bacbe75c7f88c4e5066d57de738f",
+          "server.receipt.json": "3d405ae54923287aaa309b5a185e2c423c5c19d55b4a71632fce4d69de910271",
+          "result.json": "708bb04ac6b18d71fd09022152f6de27d4bd838d97f18e0285f93ec5e2dd4f71"
+        }
+      },
+      "reference-before-v2": {
+        "gates": [
+          {
+            "physical_rank": 0,
+            "scope": "small",
+            "device": "Apple M2 Pro",
+            "owned_layers": [
+              0,
+              24
+            ],
+            "target_parts_per_comparison": 54,
+            "recurrent_layers": 18,
+            "kv_layers": 6,
+            "width_prefix": {
+              "total_metrics": 555,
+              "exact_metrics": 555,
+              "tensor_metrics": 495,
+              "offset_metrics": 60,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            }
+          },
+          {
+            "physical_rank": 0,
+            "scope": "full",
+            "device": "Apple M2 Pro",
+            "owned_layers": [
+              36,
+              64
+            ],
+            "target_parts_per_comparison": 63,
+            "recurrent_layers": 21,
+            "kv_layers": 7,
+            "width_prefix": {
+              "total_metrics": 645,
+              "exact_metrics": 645,
+              "tensor_metrics": 575,
+              "offset_metrics": 70,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            }
+          },
+          {
+            "physical_rank": 1,
+            "scope": "small",
+            "device": "Apple M4",
+            "owned_layers": [
+              0,
+              24
+            ],
+            "target_parts_per_comparison": 54,
+            "recurrent_layers": 18,
+            "kv_layers": 6,
+            "width_prefix": {
+              "total_metrics": 555,
+              "exact_metrics": 555,
+              "tensor_metrics": 495,
+              "offset_metrics": 60,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            }
+          },
+          {
+            "physical_rank": 1,
+            "scope": "full",
+            "device": "Apple M4",
+            "owned_layers": [
+              0,
+              36
+            ],
+            "target_parts_per_comparison": 81,
+            "recurrent_layers": 27,
+            "kv_layers": 9,
+            "width_prefix": {
+              "total_metrics": 825,
+              "exact_metrics": 825,
+              "tensor_metrics": 735,
+              "offset_metrics": 90,
+              "max_abs": 0.0,
+              "max_tolerance_ratio": 0.0
+            }
+          }
+        ],
+        "actual_validator_result": {
+          "strict_numerical_admission": true,
+          "rank_actions_agree": true,
+          "actual_rank_action_counts": {
+            "0": 1495,
+            "1": 1495
+          }
+        },
+        "action_audit": {
+          "status": "verified",
+          "verified_request_count": 14,
+          "verified_rank_request_count": 28,
+          "verified_mtp_request_count": 7,
+          "actual_rank_action_counts": {
+            "0": 1495,
+            "1": 1495
+          },
+          "raw_sha256": {
+            "result.json": "b94de306e1b67e0e51b71e55941306a75f01f00ac0b0b5082b31dd54963d64e5",
+            "source_sha256.json": "b4d1bf3eeca64b78f8de86a83e9ebf1fd2117544cff926ca7062a2e4518df20d",
+            "rank0.receipt.json": "1020f70813e56060ddc650d59951289bc48798e2b9133ddf3c6167ed978ef15f",
+            "rank1.receipt.json": "683cf50687d50ee7141a79c9f2693a4372c0b17dc3fdaa1f4d84c4264cfeb581"
+          }
+        },
+        "tensor_counts_by_rank": [
+          812,
+          1042
+        ],
+        "cleanup": {
+          "actors_reaped_groups_gone": true,
+          "listeners": {
+            "ports": [
+              [
+                "169.254.47.213",
+                64882
+              ],
+              [
+                "169.254.214.155",
+                50583
+              ],
+              [
+                "169.254.214.155",
+                50584
+              ]
+            ],
+            "closed": [
+              true,
+              true,
+              true
+            ],
+            "services_closed_verified": true
+          },
+          "cleanup_errors": [],
+          "transport_cleanup_checked": [
+            "server",
+            "rank1",
+            "rank0",
+            "control1",
+            "control2",
+            "control3",
+            "control4",
+            "control5",
+            "control6",
+            "control7",
+            "control8",
+            "control9"
+          ]
+        },
+        "raw_inputs": {
+          "rank0.receipt.json": "1020f70813e56060ddc650d59951289bc48798e2b9133ddf3c6167ed978ef15f",
+          "rank1.receipt.json": "683cf50687d50ee7141a79c9f2693a4372c0b17dc3fdaa1f4d84c4264cfeb581",
+          "server.receipt.json": "0d2a78662841180f8c89a3dbf36bbe83498a56f0eebe542b8be1fda9988868ea",
+          "result.json": "b94de306e1b67e0e51b71e55941306a75f01f00ac0b0b5082b31dd54963d64e5"
+        }
+      }
+    },
+    "output_agreement": {
+      "candidate_before_all_14_exact": true,
+      "candidate_corresponding_broad_native_all_14_exact": true,
+      "requests": [
+        {
+          "id": "prefill-warmup-native",
+          "case_id": "prefill-warmup",
+          "method": "native",
+          "prompt_tokens": 26,
+          "output_tokens": 32,
+          "finish_reason": "length",
+          "broad_native_ids": [
+            "b00-warmup-native",
+            "b01-warmup-native",
+            "b02-warmup-native",
+            "b03-warmup-native",
+            "b04-warmup-native",
+            "b05-warmup-native"
+          ]
+        },
+        {
+          "id": "prefill-warmup-mtp",
+          "case_id": "prefill-warmup",
+          "method": "mtp",
+          "prompt_tokens": 26,
+          "output_tokens": 32,
+          "finish_reason": "length",
+          "broad_native_ids": [
+            "b00-warmup-native",
+            "b01-warmup-native",
+            "b02-warmup-native",
+            "b03-warmup-native",
+            "b04-warmup-native",
+            "b05-warmup-native"
+          ]
+        },
+        {
+          "id": "prefill-explanation-short-native-r0",
+          "case_id": "explanation-short",
+          "method": "native",
+          "prompt_tokens": 54,
+          "output_tokens": 128,
+          "finish_reason": "length",
+          "broad_native_ids": [
+            "explanation-short-native-r0"
+          ]
+        },
+        {
+          "id": "prefill-explanation-short-mtp-r0",
+          "case_id": "explanation-short",
+          "method": "mtp",
+          "prompt_tokens": 54,
+          "output_tokens": 128,
+          "finish_reason": "length",
+          "broad_native_ids": [
+            "explanation-short-native-r0"
+          ]
+        },
+        {
+          "id": "prefill-explanation-short-mtp-r1",
+          "case_id": "explanation-short",
+          "method": "mtp",
+          "prompt_tokens": 54,
+          "output_tokens": 128,
+          "finish_reason": "length",
+          "broad_native_ids": [
+            "explanation-short-native-r1"
+          ]
+        },
+        {
+          "id": "prefill-explanation-short-native-r1",
+          "case_id": "explanation-short",
+          "method": "native",
+          "prompt_tokens": 54,
+          "output_tokens": 128,
+          "finish_reason": "length",
+          "broad_native_ids": [
+            "explanation-short-native-r1"
+          ]
+        },
+        {
+          "id": "prefill-code-1536-mtp-r0",
+          "case_id": "code-1536",
+          "method": "mtp",
+          "prompt_tokens": 1536,
+          "output_tokens": 256,
+          "finish_reason": "length",
+          "broad_native_ids": [
+            "code-1536-native-r0"
+          ]
+        },
+        {
+          "id": "prefill-code-1536-native-r0",
+          "case_id": "code-1536",
+          "method": "native",
+          "prompt_tokens": 1536,
+          "output_tokens": 256,
+          "finish_reason": "length",
+          "broad_native_ids": [
+            "code-1536-native-r0"
+          ]
+        },
+        {
+          "id": "prefill-code-1536-native-r1",
+          "case_id": "code-1536",
+          "method": "native",
+          "prompt_tokens": 1536,
+          "output_tokens": 256,
+          "finish_reason": "length",
+          "broad_native_ids": [
+            "code-1536-native-r1"
+          ]
+        },
+        {
+          "id": "prefill-code-1536-mtp-r1",
+          "case_id": "code-1536",
+          "method": "mtp",
+          "prompt_tokens": 1536,
+          "output_tokens": 256,
+          "finish_reason": "length",
+          "broad_native_ids": [
+            "code-1536-native-r1"
+          ]
+        },
+        {
+          "id": "prefill-explanation-1536-native-r0",
+          "case_id": "explanation-1536",
+          "method": "native",
+          "prompt_tokens": 1536,
+          "output_tokens": 214,
+          "finish_reason": "stop",
+          "broad_native_ids": [
+            "explanation-1536-native-r0"
+          ]
+        },
+        {
+          "id": "prefill-explanation-1536-mtp-r0",
+          "case_id": "explanation-1536",
+          "method": "mtp",
+          "prompt_tokens": 1536,
+          "output_tokens": 214,
+          "finish_reason": "stop",
+          "broad_native_ids": [
+            "explanation-1536-native-r0"
+          ]
+        },
+        {
+          "id": "prefill-explanation-1536-mtp-r1",
+          "case_id": "explanation-1536",
+          "method": "mtp",
+          "prompt_tokens": 1536,
+          "output_tokens": 214,
+          "finish_reason": "stop",
+          "broad_native_ids": [
+            "explanation-1536-native-r1"
+          ]
+        },
+        {
+          "id": "prefill-explanation-1536-native-r1",
+          "case_id": "explanation-1536",
+          "method": "native",
+          "prompt_tokens": 1536,
+          "output_tokens": 214,
+          "finish_reason": "stop",
+          "broad_native_ids": [
+            "explanation-1536-native-r1"
+          ]
+        }
+      ],
+      "measured_requests": 12,
+      "warmup_requests": 2,
+      "measured_case_ids": [
+        "code-1536",
+        "explanation-1536",
+        "explanation-short"
+      ]
+    },
+    "broad_native_raw_crosscheck": {
+      "batches": [
+        {
+          "batch_index": 0,
+          "trialdir": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-broad-v1/batch-00-v1",
+          "raw_sha256": {
+            "rank0.receipt.json": "b2175f325c9ecdb55c9995e2ecf21a6b406356292cd7eef1b9f24ab8c9f9c0f6",
+            "rank1.receipt.json": "0d9cb70c049b49a52b21c04de863392bf613c093be67722d8e622f0a35725a5e",
+            "result.json": "f6d05fc582f31a56c0487beecdd62e5f69ae1e0d72831ce3cfec6f403e80f011",
+            "source_sha256.json": "19e9a611d85dbe3b393d3cd36ac47c3e5ce137255d300df721b48532f4c1a79d"
+          },
+          "request_count": 14,
+          "source_tensor_cleanup_readbacks_verified": true
+        },
+        {
+          "batch_index": 1,
+          "trialdir": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-broad-v1/batch-01-v1",
+          "raw_sha256": {
+            "rank0.receipt.json": "2b9affdcf20f3e6407594bead5ff25f39a9405c3f1986355f43667255d831295",
+            "rank1.receipt.json": "a48c500a01898df761469a843f3c206d95b1346d5213d9522eba0cfd5947d02d",
+            "result.json": "b338a9e27de64ce7c7e71e3a598445b4dced48363527397e77869b64b8e6ab5a",
+            "source_sha256.json": "65e6b059040b5f567f2317b63e55f0b6d991d5ac8bd5dddd6d5fd2e3fbc53703"
+          },
+          "request_count": 14,
+          "source_tensor_cleanup_readbacks_verified": true
+        }
+      ],
+      "all_14_candidate_requests_match_actual_both_rank_native_receipts": true
+    },
+    "actual_receipt_mutations_rejected": [
+      {
+        "physical_rank": 0,
+        "scope": "small",
+        "deleted_parts_and_forged_metrics_rejected": 118
+      },
+      {
+        "physical_rank": 0,
+        "scope": "full",
+        "deleted_parts_and_forged_metrics_rejected": 136
+      },
+      {
+        "physical_rank": 0,
+        "scope": "representative",
+        "deleted_parts_and_forged_metrics_rejected": 136
+      },
+      {
+        "physical_rank": 1,
+        "scope": "small",
+        "deleted_parts_and_forged_metrics_rejected": 118
+      },
+      {
+        "physical_rank": 1,
+        "scope": "full",
+        "deleted_parts_and_forged_metrics_rejected": 172
+      },
+      {
+        "physical_rank": 1,
+        "scope": "representative",
+        "deleted_parts_and_forged_metrics_rejected": 172
+      }
+    ],
+    "before_source_delta_review": "Only metric-consistency validation and scheduled unsupported-mode rejection changed in runtime Python; remaining differences are tests. Computational forward/head/cache/Metal files match exactly.",
+    "execution_note": "Initial system Python lacked hashlib.file_digest; verified execution succeeded using the repository .venv/bin/python at nice19 with bytecode writes disabled. No test suite or MLX imported."
+  },
+  "assurance_bounds": [
+    "Read-only CPU post-hoc validation of captured physical-run receipts, not new GPU execution; no SSH, network/process probes, test suite, source edits, or commits.",
+    "Physical rank0 owns layers36..63; rank1 owns0..35. Each independently attests owned target caches. Full hidden/head/logit metrics on rank1 are rank0-exchanged values, not a second independent MTP-head execution.",
+    "Small checkpoint has24 layers and a deterministic quantized native-head fixture, not the target MTP sidecar. Full-shard gates use the pinned actual target sidecar.",
+    "Target checkpoint identity is exact metadata/inventory and recorded loaded tensor digests crosschecked against archived native control; remote checkpoint files were not newly rehashed. Sidecar local serialized bytes were independently rehashed.",
+    "Metrics are complete config-bound finite shape/dtype/error receipts at atol1e-6/rtol1e-5, not retained raw arrays. Cannot reconstruct unlogged logits or cryptographically prove execution against arbitrary in-process compromise.",
+    "Cleanup is archived child/group disappearance and explicit closed-listener receipts; no current remote status or OS GPU-driver reclamation assertion.",
+    "All14 outputs match before control and broad native corresponding cases, but this is a selected3-measured-case experiment, not the whole broad suite or a quality/generalization guarantee.",
+    "No reference-after evidence accessed and no performance-benefit claim made."
+  ],
+  "files_created": [
+    "/Users/jeremylien/.hermes/cache/scratch/pq-hidden-physical-independent-verify.py",
+    "/Users/jeremylien/.hermes/cache/scratch/pq-hidden-physical-independent-verdict.json",
+    "/Users/jeremylien/.hermes/cache/scratch/pq-hidden-physical-independent-supplement.py",
+    "/Users/jeremylien/.hermes/cache/scratch/pq-hidden-physical-independent-verdict-v2.json"
+  ],
+  "files_modified": []
+}

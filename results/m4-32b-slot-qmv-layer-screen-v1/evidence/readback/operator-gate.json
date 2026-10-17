@@ -1,0 +1,958 @@
+{
+  "passed": true,
+  "case_count": 8,
+  "expected_case_count": 8,
+  "exact_case_count": 8,
+  "close_case_count": 8,
+  "cases": [
+    {
+      "projection": "model.layers.0.mlp.gate_proj",
+      "K": 5120,
+      "N": 27648,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "bits": 4,
+      "group_size": 64,
+      "exact": true,
+      "finite": true,
+      "close": true,
+      "passed": true,
+      "samples": [
+        {
+          "trial": 0,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0011705,
+          "evaluations": 3
+        },
+        {
+          "trial": 0,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.001159264,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.00113575,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0011688473333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0011062776666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.001246722,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0010747223333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0011417083333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.001318125,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.001230903,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.001313514,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.001203361,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0010683196666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0012035416666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.001123375,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0010862223333333333,
+          "evaluations": 3
+        }
+      ],
+      "medians": {
+        "stock_single_slots": 0.0011552778333333335,
+        "shared_slots": 0.0011814028333333331
+      },
+      "isolated_speed_ratio": 0.977886458993595
+    },
+    {
+      "projection": "model.layers.0.mlp.gate_proj",
+      "K": 5120,
+      "N": 27648,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "bits": 4,
+      "group_size": 64,
+      "exact": true,
+      "finite": true,
+      "close": true,
+      "passed": true,
+      "samples": [
+        {
+          "trial": 0,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.001914625,
+          "evaluations": 3
+        },
+        {
+          "trial": 0,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0010970833333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.001249889,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.001974347,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.00219025,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.001168611,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0010678193333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0020364443333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0020769583333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.001069125,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0011456806666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.002098444666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0020379306666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0013321666666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0010806666666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.001859389,
+          "evaluations": 3
+        }
+      ],
+      "medians": {
+        "stock_single_slots": 0.0020371875,
+        "shared_slots": 0.001121382
+      },
+      "isolated_speed_ratio": 1.8166757625858092
+    },
+    {
+      "projection": "model.layers.0.mlp.gate_proj",
+      "K": 5120,
+      "N": 27648,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "bits": 4,
+      "group_size": 64,
+      "exact": true,
+      "finite": true,
+      "close": true,
+      "passed": true,
+      "samples": [
+        {
+          "trial": 0,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.004881458333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 0,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.003481611,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.003588319333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.005082680666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.004700041666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.00373675,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.003733028,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.00465525,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.005078291666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0036491803333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0034459306666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.005029041666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.004581694666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.003705541666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.003537389,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.004653986,
+          "evaluations": 3
+        }
+      ],
+      "medians": {
+        "stock_single_slots": 0.00479075,
+        "shared_slots": 0.003618749833333333
+      },
+      "isolated_speed_ratio": 1.323868800178183
+    },
+    {
+      "projection": "model.layers.0.mlp.gate_proj",
+      "K": 5120,
+      "N": 27648,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "bits": 4,
+      "group_size": 64,
+      "exact": true,
+      "finite": true,
+      "close": true,
+      "passed": true,
+      "samples": [
+        {
+          "trial": 0,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.00766925,
+          "evaluations": 3
+        },
+        {
+          "trial": 0,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.014282125,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.013902208333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.007862125,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.007583416666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.013749361333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.013842138666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.007303652666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.007690916666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.013608111333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.013795527666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.007354902666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.008067444666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.014265583333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.013868,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.007573097,
+          "evaluations": 3
+        }
+      ],
+      "medians": {
+        "stock_single_slots": 0.007626333333333333,
+        "shared_slots": 0.013855069333333334
+      },
+      "isolated_speed_ratio": 0.5504363168349836
+    },
+    {
+      "projection": "model.layers.0.mlp.down_proj",
+      "K": 27648,
+      "N": 5120,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "bits": 4,
+      "group_size": 64,
+      "exact": true,
+      "finite": true,
+      "close": true,
+      "passed": true,
+      "samples": [
+        {
+          "trial": 0,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0014316666666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 0,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0012938333333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.001373125,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.001153486,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0010736803333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0011994166666666668,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0011574166666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0013666943333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0011811666666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0012457223333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0010847223333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0011308193333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0011030416666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0012111946666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0011363886666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0011265416666666668,
+          "evaluations": 3
+        }
+      ],
+      "medians": {
+        "stock_single_slots": 0.0011421526666666668,
+        "shared_slots": 0.0012053056666666666
+      },
+      "isolated_speed_ratio": 0.9476041623743025
+    },
+    {
+      "projection": "model.layers.0.mlp.down_proj",
+      "K": 27648,
+      "N": 5120,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "bits": 4,
+      "group_size": 64,
+      "exact": true,
+      "finite": true,
+      "close": true,
+      "passed": true,
+      "samples": [
+        {
+          "trial": 0,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.002165903,
+          "evaluations": 3
+        },
+        {
+          "trial": 0,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0012308056666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0011302916666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0018933886666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.00233075,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0011381943333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0013768473333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0018911526666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0019371526666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0011625693333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0012533886666666666,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0023261806666666665,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.001961639,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0012667083333333332,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0011634303333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0019314583333333334,
+          "evaluations": 3
+        }
+      ],
+      "medians": {
+        "stock_single_slots": 0.0019493958333333334,
+        "shared_slots": 0.001197118
+      },
+      "isolated_speed_ratio": 1.628407419597177
+    },
+    {
+      "projection": "model.layers.0.mlp.down_proj",
+      "K": 27648,
+      "N": 5120,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "bits": 4,
+      "group_size": 64,
+      "exact": true,
+      "finite": true,
+      "close": true,
+      "passed": true,
+      "samples": [
+        {
+          "trial": 0,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.00463675,
+          "evaluations": 3
+        },
+        {
+          "trial": 0,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.003834,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0035904723333333335,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.004709972,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.0043855556666666665,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0036610553333333335,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.003810264,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.004490416666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.004886916666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0037229723333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0036274443333333332,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.004767875,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.004353472333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0038485276666666668,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.0038001943333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.004379472333333334,
+          "evaluations": 3
+        }
+      ],
+      "medians": {
+        "stock_single_slots": 0.0045635833333333336,
+        "shared_slots": 0.0037615833333333334
+      },
+      "isolated_speed_ratio": 1.2132080905647002
+    },
+    {
+      "projection": "model.layers.0.mlp.down_proj",
+      "K": 27648,
+      "N": 5120,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "bits": 4,
+      "group_size": 64,
+      "exact": true,
+      "finite": true,
+      "close": true,
+      "passed": true,
+      "samples": [
+        {
+          "trial": 0,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.007826763666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 0,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.01412125,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.014027389,
+          "evaluations": 3
+        },
+        {
+          "trial": 1,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.007388736333333333,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.007753069666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 2,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.013788444666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.014416361,
+          "evaluations": 3
+        },
+        {
+          "trial": 3,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.007614708333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.008062361,
+          "evaluations": 3
+        },
+        {
+          "trial": 4,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.014419166666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.014114014,
+          "evaluations": 3
+        },
+        {
+          "trial": 5,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.007621889,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.008062180333333334,
+          "evaluations": 3
+        },
+        {
+          "trial": 6,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.014553055666666667,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "shared_slots",
+          "seconds_per_evaluated_call": 0.014543972,
+          "evaluations": 3
+        },
+        {
+          "trial": 7,
+          "path": "stock_single_slots",
+          "seconds_per_evaluated_call": 0.007625027666666667,
+          "evaluations": 3
+        }
+      ],
+      "medians": {
+        "stock_single_slots": 0.007689048666666667,
+        "shared_slots": 0.0142688055
+      },
+      "isolated_speed_ratio": 0.5388712227289569
+    }
+  ],
+  "source_sha256": {
+    "slot_qmv.py": "bf0a643bd1dc3018a3890631862145625f4b48c12ca43a8910e9f1eb45cf7bfa",
+    "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+    "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+    "operator_gate.py": "a1417d376cc3ef75723bb95ce164602fc640723a957971619a5ac92b2ffb65cb"
+  },
+  "tensor_sha256": {
+    "model.layers.0.mlp.gate_proj.weight": "07ed99780ae3a9777a5fc727f746819d516c60fbadf68fcd0aef0a75d5abccd1",
+    "model.layers.0.mlp.gate_proj.scales": "123a894a12ebc509ba4708052e0f2c52de35715bede58c3c1039c3fb2b735426",
+    "model.layers.0.mlp.gate_proj.biases": "4b6c82106f1b50cc0773e26fe2ee6215ce826e81618f5175557384e93875cc80",
+    "model.layers.0.mlp.down_proj.weight": "6cea41e0b63c160870ca201578b31a85a1a1cd356078d784a8382c68f5a1935b",
+    "model.layers.0.mlp.down_proj.scales": "a7fdadb28896f9657bf5f44f03e358a4a3c0032303f160b9d28cdd219c5a0bfb",
+    "model.layers.0.mlp.down_proj.biases": "a16be96a119c285d69485c6d27f6ecf9963b40b48f83308db74e2ed06ad09e32"
+  },
+  "checkpoint_metadata_sha256": {
+    "model.safetensors.index.json": "7b6da9b2b1f3ebd698ae15f9fcf6ba3099e742ec07e5d383f28b7cb77a4d16db",
+    "config.json": "c027829d800805358d67ac87819a3754fd8240be973f7147840651310fd30ae3"
+  },
+  "peak_mlx_bytes": 82640912,
+  "fatal_traceback": null,
+  "scope": "Random F16 activations with unchanged genuine32B layer0 gate/down weights; isolated synchronized graph-build+GPU-call comparison against concatenated stock width-one QMV; not whole32B, native batchedQMM, or inference speedup"
+}

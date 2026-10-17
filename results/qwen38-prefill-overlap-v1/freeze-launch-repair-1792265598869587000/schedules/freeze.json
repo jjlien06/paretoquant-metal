@@ -1,0 +1,45 @@
+{
+  "artifact_sha256": {
+    "batch-00.json": "ddf1077de85beb84723800292ed79dc9d4bb78a7f51321243738ed3ea67cab52",
+    "batch-01.json": "081a890be91a6a27a2da0f2fd515e755cddf0e9d3456ada968eaae856f522cb4",
+    "batch-02.json": "4df57899d8e707a1b02007f4f9a66a1d1ac6ff77ccba86679f2cc297fa035246",
+    "batch-03.json": "9580a32a24972034d4e254e411fdf1e7d0709576666dd914ce0a40d024f22c44",
+    "batch-04.json": "f3600d4662993afe11c5971c4ed5a85c3c80a3ad01ff412061b58af73fe97f24",
+    "batch-05.json": "5677bf18d24ddcc96e1e76191ca841faf431db6eb1134ff669572be32f191e0c",
+    "pilot.json": "2a899d69791cc76f0e17168bee6ff9e696c452d372d3bdd500b193c72db0b173",
+    "schedule.json": "06d17b2fe778c98a67b32324c1ebb702e970d6e43b40088d27873912ef331ab0"
+  },
+  "batch_sizes": [
+    14,
+    14,
+    14,
+    14,
+    14,
+    14
+  ],
+  "conventions": {
+    "EOS": "EOS IDs248044/248046 included as output events; stop iff final EOS; length iff exact original cap and no EOS.",
+    "loading": "One loaded process pair per category batch; loading/gates excluded from request timing.",
+    "prefill": "Both MTP hidden-only; serial versus overlap; native label denotes historical ORDER SLOT only.",
+    "pressure": "Mandatory 0.5s both-host sampled guard, not a continuous guarantee.",
+    "statistics": "Two paired repeats descriptive, not CI/tail/general-workload guarantees.",
+    "timing": "Rank0 inclusive first_token_seconds and wall_seconds; phases non-additive; no cross-host clock subtraction.",
+    "warmup": "Two original short queue prompts cap32 per loaded batch; no first-long-shape exclusion."
+  },
+  "design_sha256": "710703230b23461193337e78c8a38e1c72675e19f6d747c614c14c7211ac95f0",
+  "execution_permitted": false,
+  "historical_manifest_sha256": "b20a600c3889d62cdf15a7faa6c2ca90611084ceae15b9a8dea7f7823d5a29e6",
+  "integration_status": "pending_runtime025_adapter_and_independent_review",
+  "mandatory_supervisor_flags": [
+    "--hidden-only-prefill",
+    "--overlapped-prefill",
+    "--require-normal-pressure",
+    "--prefix-rollback",
+    "--benchmark-schedule"
+  ],
+  "measured": 72,
+  "pilot_requests": 6,
+  "requests": 84,
+  "schema": "qwen38-overlap-plan-v1",
+  "warmups": 12
+}

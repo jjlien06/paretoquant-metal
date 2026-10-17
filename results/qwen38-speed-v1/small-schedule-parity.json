@@ -1,0 +1,22 @@
+[
+  {
+    "rank": 0,
+    "groups": [
+      4,
+      32,
+      8,
+      16
+    ],
+    "native_tokens_match": true
+  },
+  {
+    "rank": 1,
+    "groups": [
+      4,
+      32,
+      8,
+      16
+    ],
+    "native_tokens_match": true
+  }
+]

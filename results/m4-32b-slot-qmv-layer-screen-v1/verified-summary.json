@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "scope": "Random F16 activations with unchanged genuine32B layer0 gate/down weights; isolated synchronized graph-build+GPU-call comparison against concatenated stock width-one QMV; not whole32B, native batchedQMM, or inference speedup",
+  "cases": 8,
+  "exact_operator_cases": 8,
+  "samples": 128,
+  "timed_evaluations": 384,
+  "source_bindings_verified": true,
+  "historical_full32B_weight_hashes_match": true,
+  "owned_cleanup_verified": true,
+  "guarded_decoder_unchanged": true,
+  "peak_mlx_bytes": 82640912,
+  "rows": [
+    {
+      "projection": "model.layers.0.mlp.gate_proj",
+      "K": 5120,
+      "N": 27648,
+      "width": 1,
+      "stock_one_query_slots_ms": 1.1552778333333336,
+      "shared_slot_ms": 1.181402833333333,
+      "isolated_ratio": 0.977886458993595
+    },
+    {
+      "projection": "model.layers.0.mlp.gate_proj",
+      "K": 5120,
+      "N": 27648,
+      "width": 2,
+      "stock_one_query_slots_ms": 2.0371875,
+      "shared_slot_ms": 1.1213819999999999,
+      "isolated_ratio": 1.8166757625858092
+    },
+    {
+      "projection": "model.layers.0.mlp.gate_proj",
+      "K": 5120,
+      "N": 27648,
+      "width": 5,
+      "stock_one_query_slots_ms": 4.79075,
+      "shared_slot_ms": 3.6187498333333328,
+      "isolated_ratio": 1.323868800178183
+    },
+    {
+      "projection": "model.layers.0.mlp.gate_proj",
+      "K": 5120,
+      "N": 27648,
+      "width": 9,
+      "stock_one_query_slots_ms": 7.626333333333333,
+      "shared_slot_ms": 13.855069333333335,
+      "isolated_ratio": 0.5504363168349836
+    },
+    {
+      "projection": "model.layers.0.mlp.down_proj",
+      "K": 27648,
+      "N": 5120,
+      "width": 1,
+      "stock_one_query_slots_ms": 1.1421526666666668,
+      "shared_slot_ms": 1.2053056666666666,
+      "isolated_ratio": 0.9476041623743025
+    },
+    {
+      "projection": "model.layers.0.mlp.down_proj",
+      "K": 27648,
+      "N": 5120,
+      "width": 2,
+      "stock_one_query_slots_ms": 1.9493958333333334,
+      "shared_slot_ms": 1.1971180000000001,
+      "isolated_ratio": 1.628407419597177
+    },
+    {
+      "projection": "model.layers.0.mlp.down_proj",
+      "K": 27648,
+      "N": 5120,
+      "width": 5,
+      "stock_one_query_slots_ms": 4.563583333333334,
+      "shared_slot_ms": 3.7615833333333333,
+      "isolated_ratio": 1.2132080905647002
+    },
+    {
+      "projection": "model.layers.0.mlp.down_proj",
+      "K": 27648,
+      "N": 5120,
+      "width": 9,
+      "stock_one_query_slots_ms": 7.689048666666666,
+      "shared_slot_ms": 14.268805500000001,
+      "isolated_ratio": 0.5388712227289569
+    }
+  ],
+  "not_whole_model_speedup": true
+}

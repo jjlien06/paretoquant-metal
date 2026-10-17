@@ -1,0 +1,20 @@
+{
+  "remote_root": "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/015-qwen38-fast-sync-20261016-v1",
+  "source_sha256": {
+    "probe.py": "9d8a433d1f51c30c5dd1a749db27effb165d620c6e77abcaf63c188d9167fca7",
+    "stream_weights.py": "4eae4f55c042b6214449cae4e9ef77d825ebf3ad53b376fc18bd75f3a577948e",
+    "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+    "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "phased_decode.py": "341f5190a533dd332b84104335a373495280ec26abbb1c2f637735a0697d9628",
+    "remote_actor.py": "034db272cb5a9f20dd1b130d661719a56c5a751829953f46219aaa355385f0c6",
+    "supervise.py": "e9b4e117784305b085db439e8045aee3c3eaecc3a931accafb1b86a1288737f3",
+    "test_qwen38.py": "3b616d2798aa69d7e24fdc3aff069655563981df253d7e689a7208f660144410",
+    "test_long_blocks.py": "49dd633adf1ac6dfddf44508476f2567f653b8ebde227a87d48bcc8ff0572e96"
+  },
+  "tests": {
+    "exit_code": 1,
+    "stdout": ".....................................F..............                     [100%]\n=================================== FAILURES ===================================\n__________________________ test_fixture_creation_cli ___________________________\n\ntmp_path = PosixPath('/Users/jeremylien/.hermes/cache/scratch/pytest-of-jeremylien/pytest-0/test_fixture_creation_cli0')\n\n    def test_fixture_creation_cli(tmp_path):\n        import subprocess\n        import sys\n    \n        path = tmp_path / \"fixture\"\n        result = subprocess.run(\n            [sys.executable, str(Path(__file__).with_name(\"fixture.py\")), \"--output\", str(path)],\n            capture_output=True,\n            text=True,\n            timeout=30,\n        )\n>       assert result.returncode == 0, result.stderr\nE       AssertionError: /Users/jeremylien/Projects/paretoquant-dual-host/.venv/bin/python: can't open file '/Users/jeremylien/Projects/paretoquant-dual-host/spikes/015-qwen38-fast-sync-20261016-v1/fixture.py': [Errno 2] No such file or directory\nE         \nE       assert 2 == 0\nE        +  where 2 = CompletedProcess(args=['/Users/jeremylien/Projects/paretoquant-dual-host/.venv/bin/python', '/Users/jeremylien/Project...ects/paretoquant-dual-host/spikes/015-qwen38-fast-sync-20261016-v1/fixture.py': [Errno 2] No such file or directory\\n\").returncode\n\nProjects/paretoquant-dual-host/spikes/015-qwen38-fast-sync-20261016-v1/test_qwen38.py:379: AssertionError\n=========================== short test summary info ============================\nFAILED Projects/paretoquant-dual-host/spikes/015-qwen38-fast-sync-20261016-v1/test_qwen38.py::test_fixture_creation_cli\n1 failed, 51 passed in 3.96s\n",
+    "stderr": ""
+  }
+}

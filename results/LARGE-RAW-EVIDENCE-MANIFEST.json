@@ -1,0 +1,185 @@
+{
+ "schema": "paretoquant-large-raw-evidence-manifest-v1",
+ "description": "Raw rank receipts/stdout/stderr over 50 MB are kept out of git history (GitHub per-file limits/repo size) and published byte-for-byte as a GitHub Release asset tarball. Verify with sha256 after extraction at the repository root.",
+ "release_tag": "evidence-raw-2026-10-17",
+ "asset": "large-raw-evidence-2026-10-17.tar.gz",
+ "file_count": 35,
+ "total_bytes": 1991040014,
+ "files": [
+  {
+   "path": "results/qwen38-broad-v1/batch-00-v1/control5.stdout",
+   "bytes": 53437745,
+   "sha256": "99e43987c836150b9e9ff167c0880ad1d9d7841be7aa6feb5b1dfcf917c9f760"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-00-v1/control9.stdout",
+   "bytes": 53437745,
+   "sha256": "99e43987c836150b9e9ff167c0880ad1d9d7841be7aa6feb5b1dfcf917c9f760"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-00-v1/rank1.receipt.json",
+   "bytes": 53437744,
+   "sha256": "0d9cb70c049b49a52b21c04de863392bf613c093be67722d8e622f0a35725a5e"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-01-v1/control5.stdout",
+   "bytes": 51742679,
+   "sha256": "77c12bb12be43920caada4f9748368d2a53e86f2de332a3a2631d1ebbd5b4257"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-01-v1/control9.stdout",
+   "bytes": 51742679,
+   "sha256": "77c12bb12be43920caada4f9748368d2a53e86f2de332a3a2631d1ebbd5b4257"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-01-v1/rank1.receipt.json",
+   "bytes": 51742678,
+   "sha256": "a48c500a01898df761469a843f3c206d95b1346d5213d9522eba0cfd5947d02d"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-02-v1/control5.stdout",
+   "bytes": 53744409,
+   "sha256": "8a92ccb615288e42d5d7bdcde051e461a1a6d576ccc30806efd56b989de803f8"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-02-v1/control9.stdout",
+   "bytes": 53744409,
+   "sha256": "8a92ccb615288e42d5d7bdcde051e461a1a6d576ccc30806efd56b989de803f8"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-02-v1/rank1.receipt.json",
+   "bytes": 53744408,
+   "sha256": "09ad40f9a07437258027357884a84a23dc579b1b05c5905f37dbb41cfe139932"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-03-v1/control5.stdout",
+   "bytes": 55495096,
+   "sha256": "f6516c88c23230d884677920232047ced7965ecf4b2edf68198343e14b257ab1"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-03-v1/control9.stdout",
+   "bytes": 55495096,
+   "sha256": "f6516c88c23230d884677920232047ced7965ecf4b2edf68198343e14b257ab1"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-03-v1/rank1.receipt.json",
+   "bytes": 55495095,
+   "sha256": "4af0bb8b3c58537707c7fba583f3b1d6688fd33edd40a50a20e8924c88faf3c7"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-03-v1/rank1.stderr",
+   "bytes": 50316207,
+   "sha256": "06241f2480e5193df2d0c331219ac0670448de21196396f09c79e093c5a06c62"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-04-v1/control5.stdout",
+   "bytes": 55446807,
+   "sha256": "69c8f9cb8a8f7e4ef4507932591e96d5bf49b6cb69e7db8bcd293df32e5bc310"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-04-v1/control9.stdout",
+   "bytes": 55446807,
+   "sha256": "69c8f9cb8a8f7e4ef4507932591e96d5bf49b6cb69e7db8bcd293df32e5bc310"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-04-v1/rank1.receipt.json",
+   "bytes": 55446806,
+   "sha256": "9717336f240c965a49d5a86514f1d39f4d0d68552cb6c2a36cf5530f17cfa5ee"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-04-v1/rank1.stderr",
+   "bytes": 50285768,
+   "sha256": "c8f16d7af0aaf4be593c79178f982b380c299c2ec1342493918be046f693b9b5"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-05-v1/control5.stdout",
+   "bytes": 53536675,
+   "sha256": "650b6d97b696e201c23fee072cb0d63a36fb41730484e38988716aa612635b64"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-05-v1/control9.stdout",
+   "bytes": 53536675,
+   "sha256": "650b6d97b696e201c23fee072cb0d63a36fb41730484e38988716aa612635b64"
+  },
+  {
+   "path": "results/qwen38-broad-v1/batch-05-v1/rank1.receipt.json",
+   "bytes": 53536674,
+   "sha256": "fc2c15867bf4e2c7ac828da2e48fa7e1b4193b4cc68196be1898ca246fbb48ed"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/candidate-v1/control5.stdout",
+   "bytes": 66236998,
+   "sha256": "f2bad24963b777ed20c17209c811d3452b8d6f1a4e7b980fa059e2fbea9bb2bd"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/candidate-v1/control9.stdout",
+   "bytes": 66236998,
+   "sha256": "f2bad24963b777ed20c17209c811d3452b8d6f1a4e7b980fa059e2fbea9bb2bd"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/candidate-v1/rank0.receipt.json",
+   "bytes": 52376139,
+   "sha256": "eee2d96909eb5ce22501b955e760565ca11ccb5c93320fa83aface0d6d70d426"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/candidate-v1/rank1.receipt.json",
+   "bytes": 66236997,
+   "sha256": "43cf6b32baa202ad6a3cbc8a9e630e410e72bacbe75c7f88c4e5066d57de738f"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/candidate-v1/rank1.stderr",
+   "bytes": 59225237,
+   "sha256": "3cb8d52814a469b8f5964fa67fb4ce10970500c8810d144c069e522a82c1ffbd"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/reference-after-v1/control5.stdout",
+   "bytes": 64950096,
+   "sha256": "3b26f801a7d32be8975168402ad16f1c539d70b446d114bc659bf3fab9c3e872"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/reference-after-v1/control9.stdout",
+   "bytes": 64950096,
+   "sha256": "3b26f801a7d32be8975168402ad16f1c539d70b446d114bc659bf3fab9c3e872"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/reference-after-v1/rank0.receipt.json",
+   "bytes": 51187513,
+   "sha256": "ac66682bbae0648783f76069974e74829af05d9e60d4afac1a9bb8a3e8d45ef1"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/reference-after-v1/rank1.receipt.json",
+   "bytes": 64950095,
+   "sha256": "ba3c35035aab7e1f108f603e6f1fa5a263407b1fc077ceac163279076556bd8f"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/reference-after-v1/rank1.stderr",
+   "bytes": 58921026,
+   "sha256": "0b9e3d9999376b14e4bcdb52b0d1bfbbe380696732b490ed9f9800f138624fbb"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/reference-before-v2/control5.stdout",
+   "bytes": 64949708,
+   "sha256": "e3f437ec832e3dfa19ebcaa1676ca1facdfdf66e66c3a08a12a83de9b3d01265"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/reference-before-v2/control9.stdout",
+   "bytes": 64949708,
+   "sha256": "e3f437ec832e3dfa19ebcaa1676ca1facdfdf66e66c3a08a12a83de9b3d01265"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/reference-before-v2/rank0.receipt.json",
+   "bytes": 51186851,
+   "sha256": "1020f70813e56060ddc650d59951289bc48798e2b9133ddf3c6167ed978ef15f"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/reference-before-v2/rank1.receipt.json",
+   "bytes": 64949707,
+   "sha256": "683cf50687d50ee7141a79c9f2693a4372c0b17dc3fdaa1f4d84c4264cfeb581"
+  },
+  {
+   "path": "results/qwen38-broad-v1/prefill-experiment/reference-before-v2/rank1.stderr",
+   "bytes": 58920643,
+   "sha256": "487f192996f8398cfad5d0f6b74fdea1c7b12d02a45be592f1ba7badae7cb7e9"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+  "root": "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/009-draft-screen-1791216672479820000",
+  "files": {
+    "draft_screen.py": "fdb9ec46cff8efe4cfda568408478bb5bc47750f2942d59e30b3bd55534871ae",
+    "target-receipt.json": "a089038d15a57bbe7793db2b562941c62bc9b2648283f8c10f4ee0e09cca6b3e"
+  },
+  "readback_verified": true,
+  "receipt": {
+    "model": "mlx-community/Qwen2.5-32B-Instruct-4bit",
+    "revision": "2938092373e5f97b95538884112085364c2da315",
+    "config_sha256": "c027829d800805358d67ac87819a3754fd8240be973f7147840651310fd30ae3",
+    "reference_sha256": "1f1769bf74680ab1a47edd90a79c51e4da2de02c6825208834f86cbb4a68fc53",
+    "parent_provenance": "bytes tied to published full32B metadata/reference archive; this receipt is not independent verification"
+  }
+}

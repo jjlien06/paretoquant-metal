@@ -1,0 +1,1299 @@
+"""Durable bounded two-host trial controller. Never invoke via execute_code."""
+
+import argparse
+import hashlib
+import ipaddress
+import json
+import os
+import re
+import secrets
+import shlex
+import signal
+import socket
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+from phased_decode import validate_eval_schedule
+from remote_actor import RETRIEVAL_CAP_BYTES, SOURCES, source_bytes, terminate, write_json
+from shard_plan import text_config
+
+ROOT = Path(__file__).resolve().parent
+REPO = ROOT.parents[1]
+SCRATCH = "/Users/jeremylien/.hermes/cache/scratch"
+
+
+def controller_source_names():
+    """Copy each source once, retaining the controller last for its own digest."""
+    return tuple(name for name in SOURCES if name != "supervise.py") + ("supervise.py",)
+
+
+def parser():
+    p = argparse.ArgumentParser(description=__doc__)
+    for name in ("remote-root", "remote-source", "local-metadata", "output", "ssh-key"):
+        p.add_argument("--" + name, required=True)
+    p.add_argument("--split", nargs=2, type=int, required=True)
+    p.add_argument("--max-tokens", type=int, default=16)
+    p.add_argument("--repeats", type=int, default=1)
+    p.add_argument("--deadline", type=float, default=180)
+    p.add_argument("--reserve-bytes", type=int, default=4294967296)
+    p.add_argument("--local-address", default="169.254.248.125")
+    p.add_argument("--remote-address", default="169.254.169.190")
+    p.add_argument("--ssh-target", default="jeremylien@fe80::56:c507:c02a:a630%bridge0")
+    p.add_argument("--prompt", default="What is 2 plus 2? Explain briefly.")
+    p.add_argument("--execution", choices=("phased", "upstream"), default="phased")
+    p.add_argument("--eval-group-size", type=int, choices=(1, 2, 4, 8, 16, 32), default=1)
+    p.add_argument("--eval-group-schedule", type=int, nargs="*", choices=(1, 2, 4, 8, 16, 32))
+    p.add_argument("--ssh-host-key-alias")
+    p.add_argument("--benchmark-schedule", action="store_true")
+    p.add_argument("--benchmark-schedule-sha256")
+    p.add_argument("--verification-gate-only", action="store_true")
+    p.add_argument("--prefix-rollback", action="store_true")
+    p.add_argument("--hidden-only-prefill", action="store_true")
+    p.add_argument("--hidden-gate-chunk-size", type=int, default=256)
+    p.add_argument(
+        "--rank0-verifier", choices=("native", "singleton-qmm", "slot-qmv"), default="native"
+    )
+    p.add_argument(
+        "--rank1-verifier", choices=("native", "singleton-qmm", "slot-qmv"), default="singleton-qmm"
+    )
+    p.add_argument("--target-revision", required=True)
+    p.add_argument("--target-config-sha256", required=True)
+    p.add_argument("--target-index-sha256", required=True)
+    p.add_argument("--sidecar", required=True)
+    p.add_argument("--small-model-local", required=True)
+    p.add_argument("--small-model-remote", required=True)
+    p.add_argument("--small-config-sha256", required=True)
+    p.add_argument("--small-index-sha256", required=True)
+    return p
+
+
+def validate_args(args):
+    from hidden_prefill_gate import gate_lengths
+
+    gate_lengths("full", getattr(args, "hidden_gate_chunk_size", 256))
+    if type(getattr(args, "hidden_only_prefill", False)) is not bool:
+        raise ValueError("Hidden prefill flag must be a bool")
+    scheduled = getattr(args, "benchmark_schedule", False)
+    if scheduled:
+        from workload_schedule import NAME, load_schedule
+
+        rows = load_schedule(ROOT / NAME, args.benchmark_schedule_sha256)
+        if (
+            args.repeats != len(rows)
+            or args.max_tokens != max(r["max_tokens"] for r in rows)
+            or args.split != [28, 36]
+            or args.eval_group_size != 32
+            or args.eval_group_schedule
+            or not args.prefix_rollback
+        ):
+            raise ValueError(
+                "023 schedule args differ from admitted count/cap/split28/36/group32/prefix"
+            )
+    elif getattr(args, "benchmark_schedule_sha256", None):
+        raise ValueError("Schedule hash requires explicit schedule mode")
+    elif not 1 <= args.max_tokens <= 96 or not 1 <= args.repeats <= 3:
+        raise ValueError("019 caps: three requests, 96 tokens each")
+    if args.execution != "phased":
+        raise ValueError("019 requires phased execution")
+    if args.target_revision != "10c35caafbb80f7dc6a7a432cdd11af10a6d4818":
+        raise ValueError("019 admits only pinned Qwen3.8 target revision")
+    for name in (
+        "target_config_sha256",
+        "target_index_sha256",
+        "small_config_sha256",
+        "small_index_sha256",
+    ):
+        if re.fullmatch("[0-9a-f]{64}", getattr(args, name)) is None:
+            raise ValueError("Trusted hash syntax")
+    validate_eval_schedule(
+        args.eval_group_size,
+        getattr(args, "eval_group_schedule", None),
+        args.repeats,
+        args.execution == "phased",
+    )
+    if (
+        not 0
+        < args.deadline
+        <= (900 if scheduled or getattr(args, "hidden_only_prefill", False) else 240)
+        or not 1 <= args.max_tokens <= 512
+        or args.repeats < 1
+    ):
+        raise ValueError("Invalid deadline/token/repeat bounds")
+    if any(x <= 0 for x in args.split) or args.reserve_bytes < 0:
+        raise ValueError("Invalid split/reserve")
+    for address in (args.local_address, args.remote_address):
+        ipaddress.IPv4Address(address)
+    for name in ("remote_root", "remote_source", "local_metadata", "output", "ssh_key"):
+        if not Path(getattr(args, name)).is_absolute():
+            raise ValueError("Require absolute paths")
+    if Path(args.ssh_key).resolve().is_relative_to(REPO):
+        raise ValueError("SSH key filename must be outside repository")
+    if args.ssh_target.startswith("-") or any(c.isspace() for c in args.ssh_target):
+        raise ValueError("Invalid SSH target")
+
+
+def probe_options(args, *, rank=0):
+    validate_args(args)
+    common = [
+        "--mode",
+        "generate",
+        "--split",
+        *[str(value) for value in args.split],
+        "--max-tokens",
+        str(args.max_tokens),
+        "--repeats",
+        str(args.repeats),
+        "--prompt",
+        args.prompt,
+        "--eval-group-size",
+        str(args.eval_group_size),
+    ]
+    if args.execution == "phased":
+        common.append("--phased")
+    if getattr(args, "eval_group_schedule", None):
+        common.extend(["--eval-group-schedule", *map(str, args.eval_group_schedule)])
+    common.extend(
+        [
+            "--verifier-mode",
+            getattr(args, f"rank{rank}_verifier"),
+            "--target-revision",
+            args.target_revision,
+            "--target-config-sha256",
+            args.target_config_sha256,
+            "--target-index-sha256",
+            args.target_index_sha256,
+            "--small-model",
+            args.small_model_local if rank == 0 else args.small_model_remote,
+            "--small-config-sha256",
+            args.small_config_sha256,
+            "--small-index-sha256",
+            args.small_index_sha256,
+        ]
+    )
+    if rank == 0:
+        common.extend(["--sidecar", args.sidecar])
+    if args.prefix_rollback:
+        common.append("--prefix-rollback")
+    if getattr(args, "hidden_only_prefill", False):
+        common.extend(
+            [
+                "--hidden-only-prefill",
+                "--hidden-gate-chunk-size",
+                str(getattr(args, "hidden_gate_chunk_size", 256)),
+            ]
+        )
+    if args.verification_gate_only:
+        common.append("--verification-gate-only")
+    if getattr(args, "benchmark_schedule", False):
+        common.extend(
+            ["--benchmark-schedule", "--benchmark-schedule-sha256", args.benchmark_schedule_sha256]
+        )
+    return common
+
+
+def ssh_argv(args, actor_args):
+    root = Path(args.remote_root)
+    python = root.parents[1] / ".venv/bin/python"
+    command = [str(python), "-u", str(root / "remote_actor.py"), "--root", str(root), *actor_args]
+    return [
+        "ssh",
+        *(
+            ["-o", "HostKeyAlias=" + args.ssh_host_key_alias]
+            if getattr(args, "ssh_host_key_alias", None)
+            else []
+        ),
+        "-T",
+        "-o",
+        "BatchMode=yes",
+        "-o",
+        "IdentitiesOnly=yes",
+        "-o",
+        "StrictHostKeyChecking=yes",
+        "-o",
+        "ConnectTimeout=5",
+        "-o",
+        "ServerAliveInterval=2",
+        "-o",
+        "ServerAliveCountMax=2",
+        "-i",
+        args.ssh_key,
+        args.ssh_target,
+        shlex.join(command),
+    ]
+
+
+def expected_inventory(config, index_names, split):
+    """Partition trusted checkpoint index names; never infer names from rank receipts."""
+    text = text_config(config)
+    layers = text.get("num_hidden_layers")
+    tied = text.get("tie_word_embeddings", False)
+    if (
+        config.get("model_type") != "qwen3_5"
+        or config.get("model_file")
+        or type(layers) is not int
+        or layers <= 0
+        or type(tied) is not bool
+        or not isinstance(split, (list, tuple))
+        or len(split) != 2
+        or any(type(count) is not int or count <= 0 for count in split)
+        or sum(split) != layers
+    ):
+        raise ValueError("Invalid Qwen3.5 inventory configuration/split")
+    names = set(index_names)
+    replicated, layer_names = set(), {}
+    for name in names:
+        if not isinstance(name, str):
+            raise ValueError("Invalid inventory name")
+        if name.startswith(("vision_tower.", "model.visual.")):
+            continue
+        match = re.fullmatch(r"language_model\.model\.layers\.(0|[1-9][0-9]*)\.(.+)", name)
+        if match:
+            layer = int(match[1])
+            if layer >= layers:
+                raise ValueError("Inventory layer outside configured range")
+            layer_names[name] = layer
+        elif re.fullmatch(r"language_model\.(?:model\.embed_tokens|model\.norm|lm_head)\..+", name):
+            if tied and name.startswith("language_model.lm_head."):
+                raise ValueError("Tied inventory contains separate lm_head")
+            replicated.add(name)
+        else:
+            raise ValueError("Unrecognized Qwen3.5 inventory name")
+    required = {"language_model.model.embed_tokens.weight", "language_model.model.norm.weight"}
+    if not tied:
+        required.add("language_model.lm_head.weight")
+    if not required <= replicated or set(layer_names.values()) != set(range(layers)):
+        raise ValueError("Incomplete trusted metadata inventory")
+    return {
+        rank: frozenset(
+            replicated
+            | {
+                name
+                for name, layer in layer_names.items()
+                if sum(split[rank + 1 :]) <= layer < sum(split[rank:])
+            }
+        )
+        for rank in (0, 1)
+    }
+
+
+def verify_metadata(metadata, admitted_sha256):
+    if any(
+        hashlib.sha256((Path(metadata) / name).read_bytes()).hexdigest() != digest
+        for name, digest in admitted_sha256.items()
+    ):
+        raise ValueError("Admitted metadata changed during trial")
+
+
+def verify_trial(
+    ranks,
+    server,
+    receipts,
+    weight_files,
+    *,
+    repeats=1,
+    expected_inventory=None,
+    eval_group_size=1,
+    eval_group_schedule=None,
+    phases=None,
+    source_sha256=None,
+    execution="phased",
+    gate_only=False,
+):
+    if execution not in ("phased", "upstream"):
+        raise ValueError("Invalid admitted execution")
+    admitted_groups = validate_eval_schedule(
+        eval_group_size, eval_group_schedule, repeats, execution == "phased"
+    )
+    admitted_schedule = list(eval_group_schedule or [])
+    if admitted_schedule or phases is not None:
+        if (
+            not isinstance(phases, dict)
+            or set(phases) != {0, 1}
+            or not isinstance(source_sha256, dict)
+            or set(source_sha256) != set(SOURCES)
+        ):
+            raise ValueError("Missing admitted schedule phase/source evidence")
+        for rank_id in (0, 1):
+            events = phases[rank_id]
+            starts = [e for e in events if e.get("phase") == "process_start"]
+            if len(starts) != 1 or starts[0].get("rank") != rank_id:
+                raise ValueError("Missing actual rank process-start evidence")
+            verify_sources(source_sha256, starts[0])
+            boundaries = []
+            for event in events:
+                if "repeat" not in event:
+                    continue
+                repeat = event["repeat"]
+                actual = event.get("eval_group_size")
+                if (
+                    type(repeat) is not int
+                    or not 0 <= repeat < repeats
+                    or event.get("rank") != rank_id
+                    or type(actual) is not int
+                    or actual != admitted_groups[repeat]
+                ):
+                    raise ValueError("Request phase differs from admitted schedule")
+                if event.get("phase") in ("request_before", "request_done"):
+                    boundaries.append((event["phase"], repeat))
+            expected_boundaries = [
+                (phase, repeat)
+                for repeat in range(0 if gate_only else repeats)
+                for phase in ("request_before", "request_done")
+            ]
+            if boundaries != expected_boundaries:
+                raise ValueError("Missing or reordered request phase boundaries")
+    if (
+        not isinstance(expected_inventory, dict)
+        or set(expected_inventory) != {0, 1}
+        or any(
+            not isinstance(names, (set, frozenset))
+            or not names
+            or any(not isinstance(name, str) or not name for name in names)
+            for names in expected_inventory.values()
+        )
+    ):
+        raise ValueError("Missing admitted per-rank inventory")
+    if len(ranks) != 2 or sorted(r.get("rank", -1) for r in ranks) != [0, 1]:
+        raise ValueError("Missing two actual rank records")
+    if not server.get("completed") or server.get("rank") != 0 or weight_files:
+        raise ValueError("Server incomplete or receiver has weight files")
+    if len(receipts) != 3 or any(
+        r.get("reason") != "completed"
+        or not r.get("cleanup", {}).get("child_reaped")
+        or not r.get("cleanup", {}).get("group_gone")
+        for r in receipts
+    ):
+        raise ValueError("Missing verified successful actor cleanup")
+    reference = None
+    prompt_reference, prompt_tokens_reference = None, None
+    for rank in ranks:
+        actual_group = rank.get("eval_group_size", 1)
+        if type(actual_group) is not int or actual_group != eval_group_size:
+            raise ValueError("Evaluation group differs from admitted execution")
+        if rank.get("eval_group_schedule", []) != admitted_schedule:
+            raise ValueError("Rank schedule differs from admitted schedule")
+        if rank.get("execution") != execution:
+            raise ValueError("Rank execution differs from admitted execution")
+        loading = rank.get("weight_loading") or {}
+        requests = rank.get("requests") or []
+        hashes = loading.get("tensor_sha256") or {}
+        if not isinstance(hashes, dict) or set(hashes) != expected_inventory[rank["rank"]]:
+            raise ValueError("Tensor names differ from admitted rank inventory")
+        if any(
+            not isinstance(digest, str) or re.fullmatch(r"[0-9a-f]{64}", digest) is None
+            for digest in hashes.values()
+        ):
+            raise ValueError("Invalid tensor SHA-256 digest")
+        if (
+            rank.get("world_size") != 2
+            or not loading.get("all_retained_tensors_loaded")
+            or loading.get("tensor_count", 0) != len(hashes)
+            or not hashes
+        ):
+            raise ValueError("Incomplete world/tensor evidence")
+        admitted_layers = {
+            int(name.split(".")[3])
+            for name in expected_inventory[rank["rank"]]
+            if name.startswith("language_model.model.layers.")
+        }
+        if (
+            not admitted_layers
+            or rank.get("layer_start") != min(admitted_layers)
+            or rank.get("layer_end") != max(admitted_layers) + 1
+        ):
+            raise ValueError("Rank layer range differs from admitted inventory")
+        layout = rank.get("parameter_layout")
+        if (
+            not isinstance(layout, list)
+            or len(layout) != len(hashes)
+            or any(
+                not isinstance(item, dict)
+                or item.get("name") not in hashes
+                or type(item.get("bytes")) is not int
+                or item["bytes"] < 0
+                for item in layout
+            )
+            or {item["name"] for item in layout} != set(hashes)
+        ):
+            raise ValueError("Parameter layout differs from admitted inventory")
+        actual_bytes = sum(item["bytes"] for item in layout)
+        if (
+            rank.get("parameter_bytes") != actual_bytes
+            or loading.get("parameter_bytes") != actual_bytes
+        ):
+            raise ValueError("Parameter bytes contradict loading/layout evidence")
+        if len(requests) != (0 if gate_only else repeats):
+            raise ValueError("Missing repeats")
+        prompt_evidence = tuple(
+            rank.get(field) for field in ("prompt", "formatted_prompt", "execution")
+        )
+        if any(not isinstance(value, str) or not value for value in prompt_evidence):
+            raise ValueError("Missing prompt/execution evidence")
+        if prompt_reference is None:
+            prompt_reference = prompt_evidence
+        if prompt_evidence != prompt_reference:
+            raise ValueError("Ranks disagree on prompt/execution")
+        for repeat, request in enumerate(requests):
+            actual = request.get("eval_group_size")
+            if (
+                type(request.get("repeat")) is not int
+                or request["repeat"] != repeat
+                or type(actual) is not int
+                or actual != admitted_groups[repeat]
+            ):
+                raise ValueError("Request differs from admitted evaluation schedule")
+            prompt_tokens = request.get("prompt_tokens")
+            if type(prompt_tokens) is not int or prompt_tokens <= 0:
+                raise ValueError("Missing tokenized prompt evidence")
+            if prompt_tokens_reference is None:
+                prompt_tokens_reference = prompt_tokens
+            if prompt_tokens != prompt_tokens_reference:
+                raise ValueError("Ranks/repeats disagree on tokenized prompt")
+            tokens = request.get("token_ids")
+            if not tokens or any(type(t) is not int or t < 0 for t in tokens):
+                raise ValueError("Missing actual greedy token IDs")
+            if reference is None:
+                reference = tokens
+            if tokens != reference:
+                raise ValueError("Ranks/repeats disagree")
+    by_rank = {rank["rank"]: rank for rank in ranks}
+    replicated = expected_inventory[0] & expected_inventory[1]
+    if any(
+        by_rank[0]["weight_loading"]["tensor_sha256"][name]
+        != by_rank[1]["weight_loading"]["tensor_sha256"][name]
+        for name in replicated
+    ):
+        raise ValueError("Replicated tensor SHA-256 digests disagree")
+    if server.get("selected_tensor_count") != by_rank[0]["weight_loading"]["tensor_count"]:
+        raise ValueError("Server/receiver tensor counts differ")
+    if server.get("selected_bytes") != by_rank[0]["parameter_bytes"]:
+        raise ValueError("Server/receiver parameter bytes differ")
+    return {
+        "tokens_agree": not gate_only,
+        "tensor_completeness": True,
+        "server_completed": True,
+        "receiver_weight_files": [],
+        "owned_groups_gone": True,
+    }
+
+
+def verify_prefix_evidence(evidence, layer_count):
+    if (
+        not isinstance(evidence, dict)
+        or evidence.get("passed") is not True
+        or evidence.get("atol") != 1e-6
+        or evidence.get("rtol") != 1e-5
+        or [p.get("keep") for p in evidence.get("prefixes", [])] != [0, 1, 2]
+    ):
+        raise ValueError("Missing strict prefix capture evidence")
+
+    def check(row, logits):
+        parts = row.get("caches", [])
+        if (
+            row.get("passed") is not True
+            or row.get("cache_pass") is not True
+            or not parts
+            or {p.get("layer") for p in parts} != set(range(layer_count))
+            or any(p.get("strict_pass") is not True for p in parts)
+        ):
+            raise ValueError("Incomplete prefix cache evidence")
+        if logits and (
+            row.get("argmax_equal") is not True
+            or any(row.get(k, {}).get("strict_pass") is not True for k in ("logits", "hidden"))
+        ):
+            raise ValueError("Incomplete prefix full-logit/normalized-hidden evidence")
+
+    check(evidence.get("same_width", {}), True)
+    for row in evidence["prefixes"]:
+        check(row, row["keep"] != 0)
+        check(row.get("continuation", {}), True)
+
+
+def verify_mtp_evidence(ranks, phases, args, *, request_specs=None):
+    if args is None or len(ranks) != 2:
+        raise ValueError("Missing trusted MTP admission")
+    from rank_control import Command, Worker
+
+    groups = validate_eval_schedule(
+        args.eval_group_size, args.eval_group_schedule, args.repeats, True
+    )
+    actions = {}
+    for rank in ranks:
+        rank_id = rank["rank"]
+        mode = getattr(args, f"rank{rank_id}_verifier")
+        gate = rank.get("verification", {})
+        hidden_only = getattr(args, "hidden_only_prefill", False)
+        hidden_width = getattr(args, "hidden_gate_chunk_size", 256)
+        if (
+            rank.get("hidden_only_prefill", False) != hidden_only
+            or gate.get("hidden_only_prefill", False) != hidden_only
+            or (
+                hidden_only
+                and (
+                    rank.get("hidden_gate_chunk_size") != hidden_width
+                    or gate.get("hidden_gate_chunk_size") != hidden_width
+                )
+            )
+        ):
+            raise ValueError("Mismatched trusted hidden prefill mode")
+        expected_binding = {
+            "config.json": args.target_config_sha256,
+            "model.safetensors.index.json": args.target_index_sha256,
+        }
+        if (
+            gate.get("passed") is not True
+            or gate.get("mode") != mode
+            or gate.get("same_loaded_shards") is not True
+            or gate.get("gate_only") != args.verification_gate_only
+            or rank.get("target_binding") != expected_binding
+            or rank.get("target_revision") != args.target_revision
+            or rank.get("verifier_mode") != mode
+            or rank.get("prefix_rollback", False) != args.prefix_rollback
+            or gate.get("prefix_rollback", False) != args.prefix_rollback
+        ):
+            raise ValueError("Missing/mismatched numerical admission")
+        if set(map(int, gate.get("groups", {}))) != set(groups):
+            raise ValueError("Gate schedule mismatch")
+        for size in set(groups):
+            pair = gate["groups"].get(str(size), gate["groups"].get(size))
+            for scope in ("small", "full"):
+                evidence = pair[scope]
+                if (
+                    evidence.get("passed") is not True
+                    or evidence.get("mode") != mode
+                    or evidence.get("atol") != 1e-6
+                    or evidence.get("rtol") != 1e-5
+                    or len(evidence.get("windows", [])) != 3
+                ):
+                    raise ValueError("Incomplete strict gate")
+                lo, hi = evidence["owned_layers"]
+                if hidden_only:
+                    from hidden_prefill_gate import metadata_layout, verify_prefill_evidence
+
+                    hidden = evidence.get("hidden_only_prefill")
+                    verify_prefill_evidence(
+                        hidden,
+                        scope=scope,
+                        chunk_size=256 if scope == "small" else hidden_width,
+                        layer_count=hi - lo,
+                        expected_layout=metadata_layout(
+                            args, scope=scope, owned_layers=[lo, hi], rank=rank_id
+                        ),
+                    )
+                    if hidden.get("owned_layers") != [lo, hi] or hidden.get("rank") != (
+                        0 if scope == "small" else rank_id
+                    ):
+                        raise ValueError("Hidden prefill gate ownership mismatch")
+                    peer_hidden = (
+                        pair.get("peer", {}).get(scope, {}).get("hidden_only_prefill") or {}
+                    )
+                    if any(
+                        peer_hidden.get(k) != hidden.get(k)
+                        for k in (
+                            "passed",
+                            "same_process",
+                            "schema",
+                            "chunk_size",
+                            "prompt_lengths",
+                        )
+                    ):
+                        raise ValueError("Missing peer hidden prefill gate")
+                if args.prefix_rollback:
+                    verify_prefix_evidence(evidence.get("prefix_rollback"), hi - lo)
+                if scope == "full" and [lo, hi] != [rank["layer_start"], rank["layer_end"]]:
+                    raise ValueError("Gate ownership")
+                for window in evidence["windows"]:
+                    if (
+                        window.get("argmax_equal") is not True
+                        or window.get("cache_pass") is not True
+                        or window.get("logits", {}).get("strict_pass") is not True
+                        or window.get("sequential_argmax") != window.get("batch_argmax")
+                        or not window.get("caches")
+                        or any(p.get("strict_pass") is not True for p in window["caches"])
+                        or {p["layer"] for p in window["caches"]} != set(range(hi - lo))
+                    ):
+                        raise ValueError("Failed full-vocabulary/cache/argmax gate")
+        events = phases[rank_id]
+        admitted = [e for e in events if e.get("phase") == "numerical_admission_done"]
+        if len(admitted) != 1 or admitted[0].get("prefix_rollback", False) != args.prefix_rollback:
+            raise ValueError("Missing live gate phase")
+        if admitted[0].get("hidden_only_prefill", False) != hidden_only or (
+            hidden_only and admitted[0].get("hidden_gate_chunk_size") != hidden_width
+        ):
+            raise ValueError("Missing live hidden prefill gate phase")
+        starts = [e for e in events if e.get("phase") == "process_start"]
+        if hidden_only and (
+            len(starts) != 1
+            or starts[0].get("hidden_only_prefill") is not True
+            or starts[0].get("hidden_gate_chunk_size") != hidden_width
+        ):
+            raise ValueError("Missing process hidden prefill flag")
+        first_request = next(
+            (i for i, e in enumerate(events) if e.get("phase") == "request_before"), len(events)
+        )
+        if events.index(admitted[0]) >= first_request:
+            raise ValueError("Bench preceded gate")
+        actions[rank_id] = []
+        owned = set(range(rank["layer_start"], rank["layer_end"]))
+        layers = []
+        head_phases = []
+        worker = Worker(lambda op, tokens: None)
+        for e in events:
+            if request_specs is not None and "repeat" in e:
+                if e.get("phase") == "request_before":
+                    layers = []
+                    head_phases = []
+                if request_specs[e["repeat"]]["method"] == "native":
+                    if e.get("phase") == "rank_action":
+                        raise ValueError("Native request emitted MTP actions")
+                    continue
+            if e.get("phase") == "layer_done":
+                layers.append(e["layer_index"])
+            if e.get("phase") in ("head_done", "hidden_norm_done"):
+                head_phases.append(e["phase"])
+            if e.get("phase") != "rank_action":
+                continue
+            command = Command(e["request"], e["sequence"], e["op"], e["tokens"])
+            worker.handle(command)
+            if command.op == "prefill_hidden" and not hidden_only:
+                raise ValueError("Hidden prefill action without trusted opt-in")
+            if hidden_only:
+                expected_head = []
+                if rank_id == 0 and command.op in ("prefill_hidden", "forward", "verify"):
+                    expected_head = [
+                        "hidden_norm_done" if command.op == "prefill_hidden" else "head_done"
+                    ]
+                if head_phases != expected_head:
+                    raise ValueError("Hidden prefill/output projection phase mismatch")
+            head_phases = []
+            if command.op in ("prefill_hidden", "forward", "verify") and (
+                set(layers) != owned or len(layers) != len(owned)
+            ):
+                raise ValueError("Missing actual owned-layer completion")
+            layers = []
+            actions[rank_id].append(
+                (
+                    e["repeat"],
+                    e["eval_group_size"],
+                    e["request"],
+                    e["sequence"],
+                    e["op"],
+                    e["tokens"],
+                )
+            )
+        if not args.verification_gate_only and (
+            not actions[rank_id] or actions[rank_id][-1][4] != "finish"
+        ):
+            raise ValueError("Missing actual rank actions")
+        if request_specs is not None and not args.verification_gate_only:
+            for ordinal, spec in enumerate(request_specs):
+                ops = [a[4] for a in actions[rank_id] if a[0] == ordinal]
+                if spec["method"] == "mtp" and (
+                    not ops
+                    or ops[0] != "reset"
+                    or ops[-1] != "finish"
+                    or ops.count("reset") != 1
+                    or ops.count("finish") != 1
+                ):
+                    raise ValueError("Missing per-request MTP reset/finish")
+    if actions[0] != actions[1]:
+        raise ValueError("Actual rank actions disagree")
+    return {
+        "strict_numerical_admission": True,
+        "rank_actions_agree": True,
+        "actual_rank_action_counts": {r: len(a) for r, a in actions.items()},
+    }
+
+
+def verify_completed_trial(
+    *,
+    ranks,
+    server,
+    receipts,
+    weight_files,
+    args,
+    phases,
+    source_sha256,
+    expected_inventory,
+    rows=None,
+    prompt_ids=None,
+):
+    if getattr(args, "benchmark_schedule", False):
+        from workload_evidence import verify_schedule_trial
+
+        if rows is None or prompt_ids is None:
+            raise ValueError("Missing frozen workload/prompt admission")
+        return verify_schedule_trial(
+            ranks=ranks,
+            server=server,
+            receipts=receipts,
+            weight_files=weight_files,
+            rows=rows,
+            prompt_ids=prompt_ids,
+            args=args,
+            phases=phases,
+            source_sha256=source_sha256,
+            expected_inventory=expected_inventory,
+        )
+    final = verify_trial(
+        ranks,
+        server,
+        receipts,
+        weight_files,
+        repeats=args.repeats,
+        expected_inventory=expected_inventory,
+        eval_group_size=args.eval_group_size,
+        eval_group_schedule=args.eval_group_schedule,
+        phases=phases,
+        source_sha256=source_sha256,
+        execution=args.execution,
+        gate_only=args.verification_gate_only,
+    )
+    final.update(verify_mtp_evidence(ranks, phases, args))
+    return final
+
+
+class Controller:
+    """All child polling/resource checks occur at <=0.1-second intervals."""
+
+    def __init__(self, args):
+        validate_args(args)
+        self.args = args
+        self.output = Path(args.output)
+        self.output.mkdir(mode=0o700)
+        self.started = time.monotonic()
+        self.children = {}
+        self.files = []
+        self.signals = []
+        self.handlers = {
+            sig: signal.signal(sig, self.on_signal)
+            for sig in (signal.SIGHUP, signal.SIGTERM, signal.SIGINT)
+        }
+        self.calls = 0
+        self.control_cleanup = {}
+        self.last_space = 0
+
+    def on_signal(self, signum, frame):
+        self.signals.append(signum)
+
+    def check(self):
+        if self.signals:
+            raise InterruptedError("Controller received signal")
+        if time.monotonic() - self.started >= self.args.deadline:
+            raise TimeoutError("Trial deadline")
+        stat = os.statvfs("/")
+        free = stat.f_bavail * stat.f_frsize
+        if free < self.args.reserve_bytes:
+            raise OSError("Boot volume reserve breached")
+        if time.monotonic() - self.last_space >= 0.5:
+            write_json(
+                self.output / "space.json",
+                {"boot_volume_available_bytes": free, "elapsed": time.monotonic() - self.started},
+            )
+            self.last_space = time.monotonic()
+        for name in ("server", "rank0", "rank1"):
+            child = self.children.get(name)
+            if child is not None and child.poll() not in (None, 0):
+                raise RuntimeError(f"{name} actor failed")
+
+    def launch(self, name, argv, *, job=None):
+        self.check()
+        handles = [
+            os.fdopen(
+                os.open(
+                    self.output / f"{name}.{suffix}", os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600
+                ),
+                "wb",
+            )
+            for suffix in ("stdout", "stderr")
+        ]
+        self.files.extend(handles)
+        child = subprocess.Popen(
+            argv,
+            stdin=subprocess.PIPE if job else subprocess.DEVNULL,
+            stdout=handles[0],
+            stderr=handles[1],
+            start_new_session=True,
+        )
+        self.children[name] = child
+        write_json(
+            self.output / f"{name}.transport.json",
+            {
+                "pid": child.pid,
+                "pgid": child.pid,
+                "nonce": job.get("nonce") if job else None,
+                "argv": argv,
+            },
+        )
+        if job:
+            # Small validated job; token stays exclusively on stdin, never in records.
+            data = json.dumps(job).encode() + b"\n"
+            if len(data) > 16384:
+                raise ValueError("Job exceeds bounded stdin")
+            child.stdin.write(data)
+            child.stdin.close()
+        return child
+
+    def call(self, argv, *, cleanup=False):
+        self.calls += 1
+        name = f"control{self.calls}"
+        if cleanup:
+            # Cleanup remains bounded even after trial deadline/signal.
+            handles = [
+                os.fdopen(
+                    os.open(
+                        self.output / f"{name}.{suffix}",
+                        os.O_WRONLY | os.O_CREAT | os.O_EXCL,
+                        0o600,
+                    ),
+                    "wb",
+                )
+                for suffix in ("stdout", "stderr")
+            ]
+            self.files.extend(handles)
+            child = subprocess.Popen(
+                argv,
+                stdin=subprocess.DEVNULL,
+                stdout=handles[0],
+                stderr=handles[1],
+                start_new_session=True,
+            )
+            self.children[name] = child
+        else:
+            child = self.launch(name, argv)
+        handles = self.files[-2:]
+        until = time.monotonic() + 7
+        try:
+            while child.poll() is None:
+                if not cleanup:
+                    self.check()
+                if time.monotonic() >= until:
+                    raise TimeoutError("Bounded actor control call")
+                time.sleep(0.05)
+            if child.returncode:
+                raise RuntimeError("Actor control call failed")
+            raw = self.output / f"{name}.stdout"
+            if raw.stat().st_size > RETRIEVAL_CAP_BYTES:
+                raise ValueError("Actor control response too large")
+            return json.loads(raw.read_text())
+        finally:
+            cleanup_result = terminate(child)
+            for handle in handles:
+                handle.close()
+                self.files.remove(handle)
+            self.control_cleanup[name] = cleanup_result
+            write_json(self.output / f"{name}.cleanup.json", cleanup_result)
+            if cleanup_result["child_reaped"] and cleanup_result["group_gone"]:
+                self.children.pop(name, None)
+            else:
+                raise RuntimeError("Control transport termination pending")
+
+    def close(self):
+        cleanup = {name: terminate(child) for name, child in self.children.items()}
+        for handle in self.files:
+            handle.close()
+        for sig, handler in self.handlers.items():
+            signal.signal(sig, handler)
+        return cleanup
+
+
+def verify_sources(local, peer):
+    if peer.get("source_sha256") != local:
+        raise ValueError("Peer executed source differs from admitted local source")
+
+
+def free_port(address):
+    with socket.socket() as listener:
+        listener.bind((address, 0))
+        return listener.getsockname()[1]
+
+
+def listener_closed(address, port):
+    import errno
+
+    with socket.socket() as connection:
+        connection.settimeout(2.0)
+        try:
+            connection.connect((address, port))
+        except OSError as exc:
+            return exc.errno == errno.ECONNREFUSED
+        return False
+
+
+def weight_files(root):
+    extensions = {".safetensors", ".npz", ".bin", ".gguf", ".pt", ".pth"}
+    return [str(p) for p in Path(root).rglob("*") if p.suffix.lower() in extensions]
+
+
+def json_records(text):
+    return [json.loads(line) for line in text.splitlines() if line.strip()]
+
+
+def run(args, *, transport=ssh_argv):
+    """Real execution entry; tests replace transport only with local subprocesses."""
+    controller = Controller(args)
+    output = controller.output
+    actors = output / "actors"
+    actors.mkdir(mode=0o700)
+    jobs, final, error_type = {}, {}, None
+    metadata_sha256 = {}
+    hashes, hostfile, server_port = None, None, None
+    stage = "metadata_admission"
+    local_cleanup, statuses, remote_cleanup_errors = {}, {}, []
+    trial_nonce = secrets.token_hex(16)
+    startup = {
+        "controller_pid": os.getpid(),
+        "nonce": trial_nonce,
+        "args": vars(args),
+        "status": "started",
+        "token": "[REDACTED]",
+    }
+    write_json(output / "startup.json", startup)
+
+    def remote_call(extra, cleanup=False):
+        return controller.call(transport(args, ["--jobs", SCRATCH, *extra]), cleanup=cleanup)
+
+    def start(name, entrypoint, argv, *, rank=None, remote=True, token=None):
+        controller.check()
+        remaining = args.deadline - (time.monotonic() - controller.started)
+        job = {
+            "nonce": secrets.token_hex(16),
+            "entrypoint": entrypoint,
+            "argv": argv,
+            "deadline": remaining,
+            "reserve_bytes": args.reserve_bytes,
+            "source_sha256": hashes,
+            "env": {},
+        }
+        if token:
+            job["env"]["PARETOQUANT_WEIGHT_TOKEN"] = token
+        if rank is not None:
+            job["env"]["MLX_RANK"] = str(rank)
+            job["hostfile"] = hostfile
+        jobs[name] = {"nonce": job["nonce"], "remote": remote}
+        write_json(output / "actors.json", jobs)
+        write_json(
+            output / f"{name}.job.json",
+            {
+                **job,
+                "env": {
+                    k: "[REDACTED]" if k == "PARETOQUANT_WEIGHT_TOKEN" else v
+                    for k, v in job["env"].items()
+                },
+            },
+        )
+        command = (
+            transport(args, ["--jobs", SCRATCH])
+            if remote
+            else [
+                sys.executable,
+                "-u",
+                str(ROOT / "remote_actor.py"),
+                "--root",
+                str(ROOT),
+                "--jobs",
+                str(actors),
+            ]
+        )
+        return controller.launch(name, command, job=job)
+
+    def status(name, *, records=False, cleanup=False):
+        item = jobs[name]
+        if item["remote"]:
+            extra = ["--status", item["nonce"]]
+            if records:
+                extra.append("--records")
+            return remote_call(extra, cleanup=cleanup)
+        from remote_actor import job_status
+
+        return job_status(actors, item["nonce"], records=records)
+
+    try:
+        metadata = Path(args.local_metadata).resolve(strict=True)
+        if weight_files(metadata):
+            raise ValueError("Receiver metadata must contain no weight files")
+        metadata_bytes = {
+            name: (metadata / name).read_bytes()
+            for name in ("config.json", "model.safetensors.index.json")
+        }
+        config = json.loads(metadata_bytes["config.json"])
+        if (
+            config.get("model_type") != "qwen3_5"
+            or config.get("model_file")
+            or sum(args.split) != text_config(config).get("num_hidden_layers")
+        ):
+            raise ValueError("Require built-in Qwen3.5 and complete explicit split")
+        index = json.loads(metadata_bytes["model.safetensors.index.json"])
+        if (
+            not isinstance(index, dict)
+            or not isinstance(index.get("weight_map"), dict)
+            or not index["weight_map"]
+        ):
+            raise ValueError("Trusted index requires a nonempty weight_map object")
+        inventory = expected_inventory(config, index["weight_map"], args.split)
+        metadata_sha256 = {
+            name: hashlib.sha256(data).hexdigest() for name, data in metadata_bytes.items()
+        }
+        from verification import bind_metadata
+
+        bind_metadata(metadata, args.target_config_sha256, args.target_index_sha256)
+        startup["metadata_sha256"] = metadata_sha256
+        startup["expected_tensor_names"] = {
+            rank: sorted(names) for rank, names in inventory.items()
+        }
+        write_json(output / "startup.json", startup)
+        stage = "source_admission"
+        snapshot = output / "sources"
+        snapshot.mkdir(mode=0o700)
+        hashes = {}
+        for name in controller_source_names():
+            path = ROOT / name
+            if path.is_symlink():
+                raise ValueError("Source symlinks forbidden")
+            data = source_bytes(path)
+            with os.fdopen(
+                os.open(snapshot / name, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600), "wb"
+            ) as handle:
+                handle.write(data)
+                handle.flush()
+                os.fsync(handle.fileno())
+            if name in SOURCES:
+                hashes[name] = hashlib.sha256(data).hexdigest()
+        write_json(output / "source_sha256.json", hashes)
+        schedule_rows, schedule_prompt_ids = None, None
+        if getattr(args, "benchmark_schedule", False):
+            from mlx_lm.utils import load_tokenizer
+            from workload_runtime import tokenize_requests
+            from workload_schedule import NAME, load_schedule
+
+            schedule_rows = load_schedule(snapshot / NAME, args.benchmark_schedule_sha256)
+            if hashes[NAME] != args.benchmark_schedule_sha256:
+                raise ValueError("Source-registered schedule differs from parent SHA")
+            trusted_tokenizer = load_tokenizer(
+                metadata,
+                {"trust_remote_code": False, "local_files_only": True},
+                eos_token_ids=config.get("eos_token_id"),
+            )
+            schedule_prompt_ids = tokenize_requests(trusted_tokenizer, schedule_rows)
+            write_json(
+                output / "schedule_admission.json",
+                {
+                    "sha256": args.benchmark_schedule_sha256,
+                    "requests": schedule_rows,
+                    "prompt_token_ids": schedule_prompt_ids,
+                },
+            )
+        write_json(
+            output / "controller_sha256.json", {"supervise.py": hashlib.sha256(data).hexdigest()}
+        )
+        peer = controller.call(
+            transport(args, ["--inspect", "--port-address", args.remote_address])
+        )
+        verify_sources(hashes, peer)
+        write_json(output / "peer_source.json", peer)
+        local_port = free_port(args.local_address)
+        remote_port = peer["available_port"]
+        hostfile = [
+            [f"{args.local_address}:{local_port}"],
+            [f"{args.remote_address}:{remote_port}"],
+        ]
+        write_json(output / "hostfile.json", hostfile)
+        token = secrets.token_hex(32)
+        split = [str(x) for x in args.split]
+        start(
+            "server",
+            "stream_server.py",
+            [
+                "--source",
+                args.remote_source,
+                "--bind",
+                args.remote_address,
+                "--peer",
+                args.local_address,
+                "--split",
+                *split,
+                "--rank",
+                "0",
+            ],
+            token=token,
+        )
+        stage = "server_readiness"
+        ready_until = min(controller.started + args.deadline, time.monotonic() + 45)
+        while True:
+            controller.check()
+            current = status("server")
+            if "ready" in current:
+                address, server_port = current["ready"]["address"]
+                if (
+                    address != args.remote_address
+                    or type(server_port) is not int
+                    or not 1 <= server_port <= 65535
+                ):
+                    raise ValueError("Invalid actual server address")
+                verify_sources(hashes, current)
+                write_json(output / "server.ready.json", current)
+                break
+            if current.get("result"):
+                raise RuntimeError("Weight server failed readiness")
+            if time.monotonic() >= ready_until:
+                raise TimeoutError("Weight server readiness deadline")
+            time.sleep(0.1)
+        stage = "rank_execution"
+        common = probe_options(args)
+        start(
+            "rank1",
+            "probe.py",
+            [*probe_options(args, rank=1), "--model", args.remote_source, "--stream-local"],
+            rank=1,
+        )
+        start(
+            "rank0",
+            "probe.py",
+            [
+                *common,
+                "--model",
+                args.local_metadata,
+                "--weight-server",
+                f"{args.remote_address}:{server_port}",
+                "--weight-client-bind",
+                args.local_address,
+            ],
+            rank=0,
+            remote=False,
+            token=token,
+        )
+        del token
+        while any(
+            controller.children[name].poll() is None for name in ("server", "rank0", "rank1")
+        ):
+            controller.check()
+            time.sleep(0.1)
+        controller.check()
+        stage = "verification"
+        for name in jobs:
+            statuses[name] = status(name, records=True)
+            verify_sources(hashes, statuses[name])
+            write_json(output / f"{name}.receipt.json", statuses[name])
+        ranks = [json_records(statuses[name]["stdout"])[-1] for name in ("rank0", "rank1")]
+        server = json_records(statuses["server"]["stdout"])[-1]
+        verify_metadata(metadata, metadata_sha256)
+        final = verify_completed_trial(
+            ranks=ranks,
+            server=server,
+            receipts=[statuses[n]["result"] for n in jobs],
+            weight_files=weight_files(metadata),
+            args=args,
+            phases={
+                rank: json_records(statuses[name]["stderr"])
+                for rank, name in enumerate(("rank0", "rank1"))
+            },
+            source_sha256=hashes,
+            expected_inventory=inventory,
+            rows=schedule_rows,
+            prompt_ids=schedule_prompt_ids,
+        )
+        ports = [
+            (args.local_address, local_port),
+            (args.remote_address, remote_port),
+            (args.remote_address, server_port),
+        ]
+        closed = [listener_closed(address, port) for address, port in ports]
+        write_json(output / "listeners.json", {"ports": ports, "closed": closed})
+        if not all(closed):
+            raise RuntimeError("Listener termination not verified")
+        final["listeners_closed"] = True
+        final["status"] = "success"
+    except BaseException as exc:
+        error_type = type(exc).__name__  # no exception args / credentials
+        final = {"status": "failed", "error_type": error_type, "error_stage": stage}
+    finally:
+        # Request only nonce-owned actors to stop. Do not kill by stale remote PID.
+        from remote_actor import request_stop
+
+        for name, item in jobs.items():
+            try:
+                if item["remote"]:
+                    remote_call(["--stop", item["nonce"]], cleanup=True)
+                else:
+                    request_stop(actors, item["nonce"])
+            except BaseException as exc:
+                remote_cleanup_errors.append({"actor": name, "error_type": type(exc).__name__})
+        until = time.monotonic() + 3
+        while time.monotonic() < until and any(
+            p.poll() is None for p in controller.children.values()
+        ):
+            time.sleep(0.05)
+        for name in jobs:
+            try:
+                current = status(name, records=True, cleanup=True)
+                statuses[name] = current
+                write_json(output / f"{name}.receipt.json", current)
+            except BaseException as exc:
+                remote_cleanup_errors.append({"actor": name, "error_type": type(exc).__name__})
+        local_cleanup = controller.close()
+        owned_clean = len(statuses) == len(jobs) and all(
+            s.get("result", {}).get("cleanup", {}).get("child_reaped")
+            and s.get("result", {}).get("cleanup", {}).get("group_gone")
+            for s in statuses.values()
+        )
+        known_ports = []
+        if hostfile:
+            for host in hostfile:
+                address, port = host[0].rsplit(":", 1)
+                known_ports.append((address, int(port)))
+        server_ready = statuses.get("server", {}).get("ready")
+        if server_port is None and server_ready:
+            server_port = server_ready["address"][1]
+        if server_port is not None:
+            known_ports.append((args.remote_address, server_port))
+        closed = [listener_closed(address, port) for address, port in known_ports]
+        services_closed = (
+            owned_clean and all(closed) and ("server" not in jobs or server_port is not None)
+        )
+        write_json(
+            output / "listeners.cleanup.json",
+            {
+                "ports": known_ports,
+                "closed": closed,
+                "services_closed_verified": services_closed,
+            },
+        )
+        final.update(
+            {
+                "nonce": trial_nonce,
+                "error_type": error_type,
+                "metadata_sha256": metadata_sha256,
+                "owned_actor_cleanup_verified": owned_clean,
+                "services_closed_verified": services_closed,
+                "transport_cleanup": local_cleanup,
+                "cleanup_errors": remote_cleanup_errors,
+                "elapsed_seconds": time.monotonic() - controller.started,
+            }
+        )
+        transport_clean = all(
+            item["child_reaped"] and item["group_gone"]
+            for item in (*local_cleanup.values(), *controller.control_cleanup.values())
+        )
+        final["control_transport_cleanup"] = controller.control_cleanup
+        if not owned_clean or remote_cleanup_errors or not services_closed or not transport_clean:
+            final["status"] = "failed"
+            final["pending_cleanup"] = True
+        write_json(output / "result.json", final)
+    return final
+
+
+def main():
+    args = parser().parse_args()
+    result = run(args)
+    print(json.dumps(result, allow_nan=False), flush=True)
+    return 0 if result["status"] == "success" else 1
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except Exception as exc:
+        print(json.dumps({"status": "failed", "error_type": type(exc).__name__}), file=sys.stderr)
+        sys.exit(1)

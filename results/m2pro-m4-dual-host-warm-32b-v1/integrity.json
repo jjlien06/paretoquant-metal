@@ -1,0 +1,16 @@
+{
+  "files": {
+    "result.json": "64176d84a5ae8dec08d0863ce806e744bbd780f034cfee13afcb3161d203584f",
+    "rank0.receipt.json": "673991402ae22adeaba637af0be70132bd834076908d5dd587e3010bb2145825",
+    "rank1.receipt.json": "3c6581f4479a4af63eb5899c096aefdedd9337b78fb834ce181a3d053379b4d5",
+    "server.receipt.json": "588399967b107fc10ee60eb3869b6649a92313d7d2f521dec7c7ee0735703c20",
+    "source_sha256.json": "a5f00d0e44763821d95450df8da4514eab99d4203200b0c9b023cf805245cc34",
+    "controller_sha256.json": "840e135066cfe13b360b7d65e33095aa50e19da614c5294fa1b9737e697b4712",
+    "peer_source.json": "09a97f4997f19fb6d143de73d4505d47dfebb10f4aea9c68e5d63d74da52c007",
+    "listeners.cleanup.json": "015bd682ab5a05583c1f6af5f2224127943c5b8ae37fa68c26a4cb8487dddde8",
+    "timing-summary.json": "f8c05f849480072d38a08dd3d1a3b2ef19fa2036a11c38bc1c8cc5305c01d1af",
+    "README.md": "0232bb23f409ee073818ab77d8d5dce2ac7085a38b003fa18a27085d5e8a0d7f"
+  },
+  "file_count": 10,
+  "verified": true
+}

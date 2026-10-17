@@ -1,0 +1,9 @@
+{
+  "files": {
+    "extract_timeline.py": "54ce9dc5f58633847b1cd13af09511a2101fdd2dada2400b3627f2ae6ad9ead2",
+    "summary.json": "d157a732838275117d899d7fa47f273ef5a403b5675caa4f226ac763f86e1985"
+  },
+  "original_rank0_first_layer_seconds": 47.74206379195675,
+  "timing_boundary": "same-process layer_before to layer_done, includes evaluator wait; not GPU-device-only",
+  "cause": "not established"
+}

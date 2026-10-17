@@ -1,0 +1,73 @@
+{
+  "schema": "parent-source-schedule-freeze-v1",
+  "timestamp": 1792232307.0348349,
+  "freeze_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/freeze-1792232305143360000/integration-freeze.json",
+  "freeze_sha256": "2964ebd278d26f9d0d6acd68bd01c4450d830c1784c84a3accc133f397b45514",
+  "phase_counts": {
+    "batch-00": 14,
+    "batch-01": 14,
+    "batch-02": 14,
+    "batch-03": 14,
+    "batch-04": 14,
+    "batch-05": 14,
+    "pilot": 6
+  },
+  "sources_per_phase": {
+    "batch-00": 77,
+    "batch-01": 77,
+    "batch-02": 77,
+    "batch-03": 77,
+    "batch-04": 77,
+    "batch-05": 77,
+    "pilot": 77
+  },
+  "all_snapshot_bytes_rehashed": true,
+  "safe_plans": [
+    {
+      "phase": "batch-00",
+      "exit_code": 0,
+      "trial_directory_created": false,
+      "stdout_sha256": "f1482e98fc4d89cc66942b5e50fff468179048cb098c6ca78999e6e078ee9e2e"
+    },
+    {
+      "phase": "batch-01",
+      "exit_code": 0,
+      "trial_directory_created": false,
+      "stdout_sha256": "5918ae71da15d5989de169ccad91ef1240b55822089b4be311b3b419aea37fa5"
+    },
+    {
+      "phase": "batch-02",
+      "exit_code": 0,
+      "trial_directory_created": false,
+      "stdout_sha256": "d54043d160344b32d3e5967fe7b984141c3aa747bf6de033193b9cbd97d972d9"
+    },
+    {
+      "phase": "batch-03",
+      "exit_code": 0,
+      "trial_directory_created": false,
+      "stdout_sha256": "01e4aadb7a7fe9bed7c0e9c1aa09159f575e5235b7b8c71d18791c178f10b473"
+    },
+    {
+      "phase": "batch-04",
+      "exit_code": 0,
+      "trial_directory_created": false,
+      "stdout_sha256": "f0dac4f9f82c4a3ee47a2abafc0a4bbd4e7299f7f5e865602ab49e0ded2f9859"
+    },
+    {
+      "phase": "batch-05",
+      "exit_code": 0,
+      "trial_directory_created": false,
+      "stdout_sha256": "6e7fdf35d2f3a88d6e70e998cf2587742a9e69eeec5d2493702ec347af43e291"
+    },
+    {
+      "phase": "pilot",
+      "exit_code": 0,
+      "trial_directory_created": false,
+      "stdout_sha256": "42cebcaf06a21432e69c53bfc46188767f2471f436c01587334278bc99897632"
+    }
+  ],
+  "independent_reviews": "pending",
+  "execution_permitted": false,
+  "model_requests_executed": 0,
+  "scope": "Actual CPU source/workload freezing and dryplans, not physical execution or performance approval."
+}

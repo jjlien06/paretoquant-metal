@@ -1,0 +1,18 @@
+test_adapter_uses_installed_single_argument_api_and_labels_advisory_limit (__main__.PhysicalBoundary.test_adapter_uses_installed_single_argument_api_and_labels_advisory_limit) ... ERROR
+
+======================================================================
+ERROR: test_adapter_uses_installed_single_argument_api_and_labels_advisory_limit (__main__.PhysicalBoundary.test_adapter_uses_installed_single_argument_api_and_labels_advisory_limit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/memory-policy-control-v2/test_control.py", line 182, in test_adapter_uses_installed_single_argument_api_and_labels_advisory_limit
+    self.assertEqual(backend.set_memory_limit(192*1024**2), 123)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/memory-policy-control-v2/fixture.py", line 217, in set_memory_limit
+    return mx.set_memory_limit(value, relaxed=False)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: PhysicalBoundary.test_adapter_uses_installed_single_argument_api_and_labels_advisory_limit.<locals>.Mx.set_memory_limit() got an unexpected keyword argument 'relaxed'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

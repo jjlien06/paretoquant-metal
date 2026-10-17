@@ -1,0 +1,33 @@
+{
+  "repo": "mlx-community/Qwen3.8-27B-MTP-4bit",
+  "revision": "b643c01b6d3b094e325edb6ebd832e16c486c575",
+  "path": "/Users/jeremylien/Projects/paretoquant-metal/models/qwen3.8-27b-mtp-4bit-b643c01b6d3b094e325edb6ebd832e16c486c575",
+  "download_bytes": 238941335,
+  "pre_download_available_bytes": 84192047104,
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 1421,
+      "sha256": "61b0a92d432cd2c3095a86bbe04eb4e11671f96bc506361cce4006277b6568ca",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "name": "config.json",
+      "bytes": 3804,
+      "sha256": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+      "upstream_lfs_sha256": null
+    },
+    {
+      "name": "model.safetensors",
+      "bytes": 238934137,
+      "sha256": "76663c101e7e8ea9c0ae17bcb95183cd7f733ce424c912b8b264a7b1c48e4cc6",
+      "upstream_lfs_sha256": "76663c101e7e8ea9c0ae17bcb95183cd7f733ce424c912b8b264a7b1c48e4cc6"
+    },
+    {
+      "name": "model.safetensors.index.json",
+      "bytes": 1973,
+      "sha256": "6233c1805e07b028f4eb34d50dac5bf22a676728eeaf2ea43c4f94523af7a4fc",
+      "upstream_lfs_sha256": null
+    }
+  ]
+}

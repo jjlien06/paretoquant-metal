@@ -1,0 +1,14 @@
+{
+  "schema": "qwen38-broad-preregistration-v1",
+  "files": {
+    "PROTOCOL.md": "47002fd771bee8b852f75f984f3535e1be410bbf16857f962870c0f00726a13b",
+    "workloads/manifest.json": "b20a600c3889d62cdf15a7faa6c2ca90611084ceae15b9a8dea7f7823d5a29e6",
+    "workloads/schedule-00.json": "9794402e6fbfc6f680cd64a6579044103f0c83bd21664a50094187140d77072a",
+    "workloads/schedule-01.json": "557f406ed196a695626646281f693b865b34d339a7e54d73ad0b7bacab22e4d2",
+    "workloads/schedule-02.json": "11c5fe99205bed6cf64bfb7b4b2470c3bb74218f4d5f4f70a8d1f77e49855fc1",
+    "workloads/schedule-03.json": "78ec6bd11f5eb54fbc32175712456565fdada3e409fba878200ba6591c865288",
+    "workloads/schedule-04.json": "55a599b4986542a7d0db03aa9981f97bb222db702a5cd1b88b630e4516e08533",
+    "workloads/schedule-05.json": "6ada5280a4ae4889e8b257e86ba0a17316d304d8f2f916da9b31687a9ce52af2"
+  },
+  "status": "frozen before physical benchmark; no result implied"
+}

@@ -1,0 +1,903 @@
+{
+  "passed": false,
+  "cases": [
+    {
+      "prompt_index": 0,
+      "k": 1,
+      "control": {
+        "token_ids": [
+          17,
+          5519,
+          220,
+          17,
+          374,
+          220,
+          19,
+          13,
+          151645
+        ],
+        "text": "2 plus 2 is 4.",
+        "wall_seconds": 0.21096850000321865,
+        "first_token_seconds": 0.16330254200147465,
+        "wall_tokens_per_second": 42.660397167646785,
+        "native_generation_tps": null,
+        "prompt_tokens": 40,
+        "finish_reason": "stop"
+      },
+      "speculative": {
+        "token_ids": [
+          17,
+          5519,
+          220,
+          17,
+          374,
+          220,
+          19,
+          13,
+          151645
+        ],
+        "text": "2 plus 2 is 4.",
+        "wall_seconds": 0.13781037500302773,
+        "first_token_seconds": 0.08562762499786913,
+        "wall_tokens_per_second": 65.30712945090141,
+        "native_generation_tps": null,
+        "prompt_tokens": 40,
+        "finish_reason": "stop",
+        "acceptance_stats": {
+          "rounds": 5,
+          "proposed": 5,
+          "accepted": 5
+        },
+        "draft_calls": 11,
+        "target_forward_calls": 7,
+        "target_verification_calls": 5
+      },
+      "all_cache_offsets_match": true,
+      "live_kv_close": false,
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "round": 0,
+          "offset": 39,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 41
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 1,
+          "offset": 41,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 43
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 2,
+          "offset": 43,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 45
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 3,
+          "offset": 45,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 47
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 4,
+          "offset": 47,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 48
+        }
+      ],
+      "passed": false
+    },
+    {
+      "prompt_index": 0,
+      "k": 4,
+      "control": {
+        "token_ids": [
+          17,
+          5519,
+          220,
+          17,
+          374,
+          220,
+          19,
+          13,
+          151645
+        ],
+        "text": "2 plus 2 is 4.",
+        "wall_seconds": 0.0745986250040005,
+        "first_token_seconds": 0.026923707999230828,
+        "wall_tokens_per_second": 120.6456553256492,
+        "native_generation_tps": null,
+        "prompt_tokens": 40,
+        "finish_reason": "stop"
+      },
+      "speculative": {
+        "token_ids": [
+          17,
+          5519,
+          220,
+          17,
+          374,
+          220,
+          19,
+          13,
+          151645
+        ],
+        "text": "2 plus 2 is 4.",
+        "wall_seconds": 0.12163608399714576,
+        "first_token_seconds": 0.09388749999925494,
+        "wall_tokens_per_second": 73.99120149421441,
+        "native_generation_tps": null,
+        "prompt_tokens": 40,
+        "finish_reason": "stop",
+        "acceptance_stats": {
+          "rounds": 2,
+          "proposed": 8,
+          "accepted": 8
+        },
+        "draft_calls": 11,
+        "target_forward_calls": 4,
+        "target_verification_calls": 2
+      },
+      "all_cache_offsets_match": true,
+      "live_kv_close": false,
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "round": 0,
+          "offset": 39,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 44
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 1,
+          "offset": 44,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 4,
+          "cache_offset": 48
+        }
+      ],
+      "passed": false
+    },
+    {
+      "prompt_index": 0,
+      "k": 8,
+      "control": {
+        "token_ids": [
+          17,
+          5519,
+          220,
+          17,
+          374,
+          220,
+          19,
+          13,
+          151645
+        ],
+        "text": "2 plus 2 is 4.",
+        "wall_seconds": 0.07536029199400218,
+        "first_token_seconds": 0.027231749998463783,
+        "wall_tokens_per_second": 119.42628885668725,
+        "native_generation_tps": null,
+        "prompt_tokens": 40,
+        "finish_reason": "stop"
+      },
+      "speculative": {
+        "token_ids": [
+          17,
+          5519,
+          220,
+          17,
+          374,
+          220,
+          19,
+          13,
+          151645
+        ],
+        "text": "2 plus 2 is 4.",
+        "wall_seconds": 0.0975772500023595,
+        "first_token_seconds": 0.09757374999753665,
+        "wall_tokens_per_second": 92.23461411120289,
+        "native_generation_tps": null,
+        "prompt_tokens": 40,
+        "finish_reason": "stop",
+        "acceptance_stats": {
+          "rounds": 1,
+          "proposed": 8,
+          "accepted": 8
+        },
+        "draft_calls": 11,
+        "target_forward_calls": 3,
+        "target_verification_calls": 1
+      },
+      "all_cache_offsets_match": true,
+      "live_kv_close": false,
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "round": 0,
+          "offset": 39,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 48
+        }
+      ],
+      "passed": false
+    },
+    {
+      "prompt_index": 1,
+      "k": 1,
+      "control": {
+        "token_ids": [
+          16,
+          13,
+          576,
+          17330,
+          374,
+          264,
+          5810,
+          23210,
+          315,
+          279,
+          9237,
+          11,
+          323,
+          432,
+          85128,
+          279,
+          9237,
+          304,
+          264,
+          220,
+          17,
+          22,
+          15,
+          37675,
+          26507,
+          624,
+          17,
+          13,
+          576,
+          17330,
+          702,
+          264
+        ],
+        "text": "1. The Moon is a natural satellite of the Earth, and it orbits the Earth in a 270-degree orbit.\n2. The Moon has a",
+        "wall_seconds": 0.20445329200447304,
+        "first_token_seconds": 0.024461417000566144,
+        "wall_tokens_per_second": 156.51496577174166,
+        "native_generation_tps": null,
+        "prompt_tokens": 37,
+        "finish_reason": "length"
+      },
+      "speculative": {
+        "token_ids": [
+          16,
+          13,
+          576,
+          17330,
+          374,
+          264,
+          5810,
+          23210,
+          315,
+          279,
+          9237,
+          11,
+          323,
+          432,
+          85128,
+          279,
+          9237,
+          304,
+          264,
+          220,
+          17,
+          22,
+          15,
+          37675,
+          26507,
+          624,
+          17,
+          13,
+          576,
+          17330,
+          702,
+          264
+        ],
+        "text": "1. The Moon is a natural satellite of the Earth, and it orbits the Earth in a 270-degree orbit.\n2. The Moon has a",
+        "wall_seconds": 0.27144099999713944,
+        "first_token_seconds": 0.054679624998243526,
+        "wall_tokens_per_second": 117.88933875257322,
+        "native_generation_tps": null,
+        "prompt_tokens": 37,
+        "finish_reason": "length",
+        "acceptance_stats": {
+          "rounds": 16,
+          "proposed": 16,
+          "accepted": 16
+        },
+        "draft_calls": 34,
+        "target_forward_calls": 18,
+        "target_verification_calls": 16
+      },
+      "all_cache_offsets_match": true,
+      "live_kv_close": false,
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "round": 0,
+          "offset": 36,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 38
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 1,
+          "offset": 38,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 40
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 2,
+          "offset": 40,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 42
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 3,
+          "offset": 42,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 44
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 4,
+          "offset": 44,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 46
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 5,
+          "offset": 46,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 48
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 6,
+          "offset": 48,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 50
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 7,
+          "offset": 50,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 52
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 8,
+          "offset": 52,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 54
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 9,
+          "offset": 54,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 56
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 10,
+          "offset": 56,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 58
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 11,
+          "offset": 58,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 60
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 12,
+          "offset": 60,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 62
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 13,
+          "offset": 62,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 64
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 14,
+          "offset": 64,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 66
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 15,
+          "offset": 66,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 68
+        }
+      ],
+      "passed": false
+    },
+    {
+      "prompt_index": 1,
+      "k": 4,
+      "control": {
+        "token_ids": [
+          16,
+          13,
+          576,
+          17330,
+          374,
+          264,
+          5810,
+          23210,
+          315,
+          279,
+          9237,
+          11,
+          323,
+          432,
+          85128,
+          279,
+          9237,
+          304,
+          264,
+          220,
+          17,
+          22,
+          15,
+          37675,
+          26507,
+          624,
+          17,
+          13,
+          576,
+          17330,
+          702,
+          264
+        ],
+        "text": "1. The Moon is a natural satellite of the Earth, and it orbits the Earth in a 270-degree orbit.\n2. The Moon has a",
+        "wall_seconds": 0.20709541699761758,
+        "first_token_seconds": 0.023841582995373756,
+        "wall_tokens_per_second": 154.5181465815254,
+        "native_generation_tps": null,
+        "prompt_tokens": 37,
+        "finish_reason": "length"
+      },
+      "speculative": {
+        "token_ids": [
+          16,
+          13,
+          576,
+          17330,
+          374,
+          264,
+          5810,
+          23210,
+          315,
+          279,
+          9237,
+          11,
+          323,
+          432,
+          85128,
+          279,
+          9237,
+          304,
+          264,
+          220,
+          17,
+          22,
+          15,
+          37675,
+          26507,
+          624,
+          17,
+          13,
+          576,
+          17330,
+          702,
+          264
+        ],
+        "text": "1. The Moon is a natural satellite of the Earth, and it orbits the Earth in a 270-degree orbit.\n2. The Moon has a",
+        "wall_seconds": 0.23712800000066636,
+        "first_token_seconds": 0.06546904199785786,
+        "wall_tokens_per_second": 134.94821362264295,
+        "native_generation_tps": null,
+        "prompt_tokens": 37,
+        "finish_reason": "length",
+        "acceptance_stats": {
+          "rounds": 7,
+          "proposed": 25,
+          "accepted": 25
+        },
+        "draft_calls": 34,
+        "target_forward_calls": 9,
+        "target_verification_calls": 7
+      },
+      "all_cache_offsets_match": true,
+      "live_kv_close": false,
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "round": 0,
+          "offset": 36,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 41
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 1,
+          "offset": 41,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 46
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 2,
+          "offset": 46,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 51
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 3,
+          "offset": 51,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 56
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 4,
+          "offset": 56,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 61
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 5,
+          "offset": 61,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 66
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 6,
+          "offset": 66,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 68
+        }
+      ],
+      "passed": false
+    },
+    {
+      "prompt_index": 1,
+      "k": 8,
+      "control": {
+        "token_ids": [
+          16,
+          13,
+          576,
+          17330,
+          374,
+          264,
+          5810,
+          23210,
+          315,
+          279,
+          9237,
+          11,
+          323,
+          432,
+          85128,
+          279,
+          9237,
+          304,
+          264,
+          220,
+          17,
+          22,
+          15,
+          37675,
+          26507,
+          624,
+          17,
+          13,
+          576,
+          17330,
+          702,
+          264
+        ],
+        "text": "1. The Moon is a natural satellite of the Earth, and it orbits the Earth in a 270-degree orbit.\n2. The Moon has a",
+        "wall_seconds": 0.19894499999645632,
+        "first_token_seconds": 0.02428949999739416,
+        "wall_tokens_per_second": 160.84847571223202,
+        "native_generation_tps": null,
+        "prompt_tokens": 37,
+        "finish_reason": "length"
+      },
+      "speculative": {
+        "token_ids": [
+          16,
+          13,
+          576,
+          17330,
+          374,
+          264,
+          5810,
+          23210,
+          315,
+          279,
+          9237,
+          11,
+          323,
+          432,
+          85128,
+          279,
+          9237,
+          304,
+          264,
+          220,
+          17,
+          22,
+          15,
+          37675,
+          26507,
+          624,
+          17,
+          13,
+          576,
+          17330,
+          702,
+          264
+        ],
+        "text": "1. The Moon is a natural satellite of the Earth, and it orbits the Earth in a 270-degree orbit.\n2. The Moon has a",
+        "wall_seconds": 0.23095320800348418,
+        "first_token_seconds": 0.09038787500321632,
+        "wall_tokens_per_second": 138.55620485478272,
+        "native_generation_tps": null,
+        "prompt_tokens": 37,
+        "finish_reason": "length",
+        "acceptance_stats": {
+          "rounds": 4,
+          "proposed": 28,
+          "accepted": 28
+        },
+        "draft_calls": 34,
+        "target_forward_calls": 6,
+        "target_verification_calls": 4
+      },
+      "all_cache_offsets_match": true,
+      "live_kv_close": false,
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "round": 0,
+          "offset": 36,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 45
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 1,
+          "offset": 45,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 54
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 2,
+          "offset": 54,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 63
+        },
+        {
+          "phase": "speculative_round_done",
+          "round": 3,
+          "offset": 63,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 68
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "case_count": 6,
+  "model_bytes": 260563712,
+  "same_model_self_draft": true,
+  "scope": "Real mixed3/4bit0.5B unchanged checkpoint self-draft correctness, no32B orspeedup claim",
+  "prompt_strings": [
+    "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nWhat is 2 plus 2? Explain briefly.<|im_end|>\n<|im_start|>assistant\n",
+    "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nWrite three short facts about the Moon.<|im_end|>\n<|im_start|>assistant\n"
+  ],
+  "inventory": {
+    "LICENSE": {
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "config.json": {
+      "bytes": 13835,
+      "sha256": "43a1c2f3b692e8cca5974f4753514e94ee4c969f8853b6d02acc16c7e64805da"
+    },
+    "execution_manifest.json": {
+      "bytes": 3277,
+      "sha256": "f53e0ac67f56eac45f695bc4d7bc550b0bfcd8ab6818695b9ec867d9aae11d96"
+    },
+    "execution_manifest.original-ae8ea552c7cb80a5ec540fe54c575a5ed5b9beb03b5279025a8efdff51ffaf79.json": {
+      "bytes": 2847,
+      "sha256": "ae8ea552c7cb80a5ec540fe54c575a5ed5b9beb03b5279025a8efdff51ffaf79"
+    },
+    "generation_config.json": {
+      "bytes": 242,
+      "sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6"
+    },
+    "merges.txt": {
+      "bytes": 1671839,
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+    },
+    "model.safetensors": {
+      "bytes": 260632120,
+      "sha256": "13c6b6a2ff78ac29fa505231ec610d6d883d4db58d6c2f57766e7ae983f0cad2"
+    },
+    "model.safetensors.index.json": {
+      "bytes": 44248,
+      "sha256": "e1ed3f5e215de1596a0e612c137275c258cfcd5b09cb9b75f1cd7922433356aa"
+    },
+    "tokenizer.json": {
+      "bytes": 7031645,
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    "tokenizer_config.json": {
+      "bytes": 7305,
+      "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+    },
+    "vocab.json": {
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "config_sha256": "43a1c2f3b692e8cca5974f4753514e94ee4c969f8853b6d02acc16c7e64805da",
+  "sources": {
+    "speculative_decode.py": "d4043a416b82943b3b376612581a22c27b2bbd0970c4c56a820f809b573ec923",
+    "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f"
+  },
+  "peak_mlx_bytes": 344176992,
+  "device": {
+    "device_name": "Apple M4",
+    "max_recommended_working_set_size": 12713115648,
+    "memory_size": 17179869184,
+    "architecture": "applegpu_g16g",
+    "max_buffer_length": 9534832640,
+    "resource_limit": 499000
+  }
+}

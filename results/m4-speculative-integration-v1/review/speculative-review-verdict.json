@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    "Keep this verdict limited to the frozen component and CPU control-flow/accounting behavior. It is not admission for 32B GPU execution, deployment, speedup, native generation TPS, or batched-versus-sequential numerical equivalence; none of those were tested here.",
+    "Consider retaining the independent prefix-sensitive differential and blocking-send two-rank probes in the project's CPU regression suite. They exercise rejected-tail overwrites, EOS/budget boundaries at every supported K, and synchronous communication scheduling beyond the frozen suite's primary distributed scenario.",
+    "Consider adding explicit negative tests for matching BOS/EOS IDs absent from get_vocab, missing retained-layer cache entries, and effective model context limits. These would clarify configuration-admission expectations beyond the existing emitted-ID, per-layer offset, fresh-cache, growth, and trim checks; no demonstrated output or security defect was found in the admitted trusted-local configuration scope."
+  ],
+  "tests": {
+    "scope": "Independent review of the exact frozen speculative_decode.py, test_speculative_decode.py, phased_decode.py helper dependency, and admission.json. Trusted local matched configurations and actor deadlines are assumed. Actor, CLI, controller, deployment, previously approved draft/head components, and subsequent parent GPU tests are outside this verdict.",
+    "execution_constraints": {
+      "stdlib_only": true,
+      "mlx_gpu_imports": false,
+      "network_ssh_installs_credentials": false,
+      "live_source_edits_or_git_writes": false,
+      "frozen_source_edits": false,
+      "scratch_only_artifacts": true
+    },
+    "frozen_suite": {
+      "command": "python3 -I -B /Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/run_independent_speculative_review.py",
+      "exit_code": 0,
+      "tests_run": 16,
+      "subtests_observed": 1331,
+      "symbolic_boundary_matrix_cases": 1284,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "reported_runtime_seconds": 2.832,
+      "successful": true,
+      "note": "These are independently observed unittest counts for the frozen file, not the parent's broader reported 26-test pytest gate. CPU doubles predict integer IDs and do not validate real MLX logits or hardware performance.",
+      "result_artifact": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/speculative-independent-cpu-results.json"
+    },
+    "independent_probes": {
+      "command": "python3 -I -B /Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/speculative_independent_probes.py",
+      "exit_code": 0,
+      "successful": true,
+      "prefix_sensitive_deterministic_differential_cases": 400,
+      "blocking_send_two_rank_cases": 48,
+      "preallocation_invalid_admission_cases": 5,
+      "synchronous_draft_catchup_first_token_timing_cases": 1,
+      "result_artifact": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/speculative-independent-probe-results.json"
+    },
+    "reviewed_invariants": [
+      "Longest teacher-confirmed prefix, first mismatch or all-accepted bonus, EOS inclusion/stop, remaining-token cap, and emitted-only accepted accounting.",
+      "Fresh-cache pending-token invariant; every supplied cache layer has matching integer offsets and trimmable state; exact forward growth, rollback, catch-up and stale rejected-tail overwrite.",
+      "Fixed K+4 CPU-int32 packet shape, round/offset/count validation, token ranges and -1 sentinel padding; proposal count at most min(K,R-1) with only final EOS permitting a short proposal sequence; teacher count exactly proposals+1.",
+      "Reverse pipeline ownership: rank 1 first retained layers and local draft, rank 0 later retained layers and teacher head; default single-host ownership rejects inconsistent pipeline state; proposal/hidden/answer scheduling completes with blocking sends.",
+      "Both ranks require configured draft tokenizer; teacher tokenizer ID-to-token map is a semantic subset of draft map; BOS/EOS equality, permitted embedding padding/different vocabulary sizes, and fail-closed emitted/proposed IDs outside the shared semantic vocabulary.",
+      "Bounded options and prompt admission occur before cache allocation/forward calls for exercised invalid inputs; verification and draft catch-up never consume the final emitted pending token.",
+      "Reported target/draft counters include prefill/catch-up; target verification calls equal rounds; normal native_generation_tps is null; synchronized first-token timing includes draft catch-up."
+    ],
+    "mirror_root": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/speculative-independent-review-mirror",
+    "frozen_imports_guarded_against_mlx": true,
+    "source_integrity_verified_before_and_after_execution": true
+  },
+  "source_hashes": {
+    "algorithm": "sha256",
+    "frozen_root": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/speculative-review-1791219843769933000",
+    "before": {
+      "admission.json": "14671131a610aba0811eaecaf8393d91d5949676f2ff9bc6f48ebbc63b44305d",
+      "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+      "speculative_decode.py": "d4043a416b82943b3b376612581a22c27b2bbd0970c4c56a820f809b573ec923",
+      "test_speculative_decode.py": "0f5b6dc59261f41c60676dd6573d4084d759ca9f8e88a9aa59bce1e24232783a"
+    },
+    "after": {
+      "admission.json": "14671131a610aba0811eaecaf8393d91d5949676f2ff9bc6f48ebbc63b44305d",
+      "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+      "speculative_decode.py": "d4043a416b82943b3b376612581a22c27b2bbd0970c4c56a820f809b573ec923",
+      "test_speculative_decode.py": "0f5b6dc59261f41c60676dd6573d4084d759ca9f8e88a9aa59bce1e24232783a"
+    },
+    "admission_manifest_matches": true,
+    "unchanged": true,
+    "mirrored_source_bytes_match": true
+  },
+  "summary": "PASS for the exact frozen opt-in speculative component and stdlib CPU tests in the trusted-local configuration scope: no demonstrated security concerns or logic errors; frozen tests and independent control-flow/accounting probes pass, source hashes are unchanged, and no MLX/GPU or deployment admission is asserted."
+}

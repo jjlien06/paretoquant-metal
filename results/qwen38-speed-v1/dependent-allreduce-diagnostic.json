@@ -1,0 +1,58 @@
+{
+  "program": "import mlx.core as mx,json,time,statistics\nmx.set_default_device(mx.gpu)\ng=mx.distributed.init(strict=True,backend=\"ring\")\ny=mx.full((1,1,5120),0.0,dtype=mx.bfloat16); mx.eval(y)\nsamples=[]\nfor trial in range(8):\n start=time.perf_counter()\n for i in range(128):\n  x=mx.tanh(y*0.125+(g.rank()+1)).astype(mx.bfloat16); mx.eval(x)\n  y=mx.distributed.all_sum(x,group=g,stream=mx.cpu); mx.eval(y)\n samples.append(time.perf_counter()-start)\nassert mx.all(mx.isfinite(y)).item()\nprint(json.dumps({\"rank\":g.rank(),\"world_size\":g.size(),\"shape\":list(y.shape),\"dtype\":str(y.dtype),\"allreduce_calls_per_chain\":128,\"chain_seconds\":samples,\"warmup_chains\":1,\"warm_median_chain_ms\":1000*statistics.median(samples[1:]),\"final_value\":float(y[0,0,0].item()),\"scope\":\"isolated dependent GPU pointwise producer+eval+CPU ring sum+eval; not matmul or full-model timing\"}))\n",
+  "program_sha256": "a89d24476f1be7661950f166f1fc1cf358208d4dd003d2c4378b5ed82c1854b1",
+  "hostfile": [
+    [
+      "169.254.47.213:50043"
+    ],
+    [
+      "169.254.214.155:53175"
+    ]
+  ],
+  "ranks": [
+    {
+      "actor": {
+        "reason": "completed",
+        "nonce": "98a53cb8dba546198bd9ccb35babe2ff",
+        "actor_pid": 73748,
+        "child_pid": 73750,
+        "returncode": 0,
+        "cleanup": {
+          "child_reaped": true,
+          "group_gone": true,
+          "pid_reused": false,
+          "identity_unknown": false,
+          "pending_os_gpu_termination": false,
+          "gpu_driver_state": "not inspected; process/group receipt only"
+        },
+        "error_type": null,
+        "elapsed": 0.6883763329824433,
+        "forwarded_bytes_dropped": 0
+      },
+      "stdout": "{\"rank\": 0, \"world_size\": 2, \"shape\": [1, 1, 5120], \"dtype\": \"mlx.core.bfloat16\", \"allreduce_calls_per_chain\": 128, \"chain_seconds\": [0.11910154100041837, 0.06905974994879216, 0.06721229094546288, 0.0654264580225572, 0.05767612502677366, 0.04833670804509893, 0.04420245799701661, 0.044876125000882894], \"warmup_chains\": 1, \"warm_median_chain_ms\": 57.67612502677366, \"final_value\": 1.8125, \"scope\": \"isolated dependent GPU pointwise producer+eval+CPU ring sum+eval; not matmul or full-model timing\"}\n",
+      "stderr": ""
+    },
+    {
+      "actor": {
+        "reason": "completed",
+        "nonce": "409162d1376d464d94e12b80b5d2ed91",
+        "actor_pid": 2308,
+        "child_pid": 2309,
+        "returncode": 0,
+        "cleanup": {
+          "child_reaped": true,
+          "group_gone": true,
+          "pid_reused": false,
+          "identity_unknown": false,
+          "pending_os_gpu_termination": false,
+          "gpu_driver_state": "not inspected; process/group receipt only"
+        },
+        "error_type": null,
+        "elapsed": 0.5967336670000805,
+        "forwarded_bytes_dropped": 0
+      },
+      "stdout": "{\"rank\": 1, \"world_size\": 2, \"shape\": [1, 1, 5120], \"dtype\": \"mlx.core.bfloat16\", \"allreduce_calls_per_chain\": 128, \"chain_seconds\": [0.12277524999990419, 0.06904574999998658, 0.06726841699992292, 0.06538983300015389, 0.05768179099959525, 0.04839883400018152, 0.044151582999802486, 0.044917624999925465], \"warmup_chains\": 1, \"warm_median_chain_ms\": 57.68179099959525, \"final_value\": 1.8125, \"scope\": \"isolated dependent GPU pointwise producer+eval+CPU ring sum+eval; not matmul or full-model timing\"}\n",
+      "stderr": ""
+    }
+  ]
+}

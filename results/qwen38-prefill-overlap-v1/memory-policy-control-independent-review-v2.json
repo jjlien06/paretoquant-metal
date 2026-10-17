@@ -1,0 +1,97 @@
+{
+  "schema": "memory-policy-control-independent-review-v2",
+  "passed": true,
+  "classification": "CONTROL_NOT_MODEL_GATE",
+  "verdict": "PASS: API-001 corrected by the direct single-argument advisory setter; no security concerns or logic errors in the reviewed v1-to-v2 diff. This is not physical execution approval or a model gate.",
+  "security_concerns": [],
+  "logic_errors": [],
+  "scope": "Independent DIFF-ONLY compatibility review, inheriting the unchanged v1 implementation review, not re-auditing it.",
+  "prior_review": {
+    "path": "memory-policy-control-independent-review.json",
+    "sha256": "298963a79641eaeab27ff18de950b0f9260cbc76ea4dae8ac2c4751052464cc6",
+    "only_blocker": "API-001: unsupported relaxed=False",
+    "disposition": "Resolved in v2; prior review and all its pinned files verified unchanged."
+  },
+  "diff_findings": {
+    "fixture.py": "Exact full-file comparison equals v1 with only two substitutions: describe adds memory_limit_semantics=advisory-with-observed-cap; set_memory_limit calls mx.set_memory_limit(value) and revises its comment. No exception fallback or other change.",
+    "harness.py": "Byte-identical to v1 and prior review pin; source registry/admission, original pressure1 watchdog, actor ownership, deadlines and collection unchanged.",
+    "test_control.py": "Only the adapter regression is revised: actual single-argument fake rejects unexpected keywords, asserts previous-limit return/value forwarding, preserves device assertion, and checks advisory-with-observed-cap label. All other tests unchanged.",
+    "run_cpu_tests.py": "New v2 wrapper reuses the exact hash-pinned v1 guards; exclusively creates timestamped output/receipt files and hashes current sources/originals. Does not overwrite old evidence.",
+    "README.md": "Correctly replaces unsupported strict allocator claim with structural retention plus observed-counter caps, preserves parent-only admission/execution prerequisites by explicit reference to v1, and requires v2 fixture hash.",
+    "unchanged_bound_and_policy_semantics": "All fixture code outside the two precise substitutions is byte-identical: fixed retention/work, observed checkpoints, wired modes and restoration, cache policy, cleanup and pressure/deadline checks. Only memory-setter compatibility and truthful advisory labeling change."
+  },
+  "verification": {
+    "independent_cpu_run": {
+      "receipt": "memory-policy-control-v2/cpu-1792270571431650000-verification.json",
+      "receipt_sha256": "a3e7d2e2f536d195567847c2d3a113832ca2c7dcab8ffb4ef8b9bdbe425af406",
+      "output": "memory-policy-control-v2/cpu-1792270571431650000-output.txt",
+      "output_sha256": "0a2b461c3c431723189565a9b8fd4798c48b350974fedefd348a1cc72b9b9e61",
+      "tests_run": 25,
+      "failures": 0,
+      "errors": 0,
+      "forbidden_attempts": [],
+      "forbidden_modules_loaded": [],
+      "method": "Executed exact v2 run_cpu_tests.main() under Python -B with exact v1 guards; only TemporaryDirectory destinations redirected to scratch. Six temporary directories cleaned.",
+      "hardware_executed": false
+    },
+    "existing_parent_cpu_receipt_current_source_hashes_match": true,
+    "stored_red_regression": "api-red.txt records unexpected keyword relaxed with the new one-argument fake against the old adapter. Current regression independently passes.",
+    "parent_installed_api_evidence": "Parent-reported live MLX 0.32.3 signature/pre-array call established lack of relaxed; reviewer did not import MLX or NumPy and makes no independent installed-backend claim.",
+    "all_preexisting_v1_v2_files_unchanged_after_test": true,
+    "all_prior_review_pinned_source_files_unchanged": true,
+    "physical_executed": false,
+    "model_loaded": false,
+    "mlx_or_numpy_imported": false,
+    "network_ssh_subprocess_or_signals_executed_by_cpu_review": false,
+    "execution_boundary": "Terminal launched CPU Python interpreters; no subprocess operation occurred inside the guarded CPU review. Physical GPU, SSH and process ownership remain parent-only."
+  },
+  "sourcehashes": {
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-independent-review.json": "298963a79641eaeab27ff18de950b0f9260cbc76ea4dae8ac2c4751052464cc6",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v2/fixture.py": "4ad969f59d3b4bf9e1b0ff8076490474dc6c91dd1e96ba9509bd49c6f5a2ced8",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v2/harness.py": "0a409ca1a8e77dd554447d565db4de40c91aa4045e425fa7fe24ba6ed678f88f",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v2/test_control.py": "e28d7a11f4ad2722a5d4c0428201646386b4bfbf592c1b7b128771ae9c033f6b",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v2/run_cpu_tests.py": "108bca9cf4bcadeed356dca2684f2b3288645a0bea168ef87f1029c14c36d1e8",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v2/README.md": "fed17b00a2cab3a0d3a95d1533e489b24973091fabf82d9af5b56dc0d0ad4718",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v2/api-red.txt": "dda0cca0ef50818495dd64ac33c9477fdd19c3af5ec443ee53ba638404a12ce3",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v2/cpu-1792270414331422000-verification.json": "ee61b567080946bbd7a4148478a45a0a08c42de359d2158011ca120c9e7f53f2",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v2/cpu-1792270414331422000-output.txt": "fcfc5a9a3e8648935703c2afa3b8630f2ba7836ac398a60011be93737c3d6962",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v2/cpu-1792270571431650000-verification.json": "a3e7d2e2f536d195567847c2d3a113832ca2c7dcab8ffb4ef8b9bdbe425af406",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v2/cpu-1792270571431650000-output.txt": "0a2b461c3c431723189565a9b8fd4798c48b350974fedefd348a1cc72b9b9e61",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v1/run_cpu_tests.py": "3d9004b712c16495210a94e7b6a6d841e7d34c1450c9d111e7c0f4b121720f35",
+    "spikes/025-qwen38-overlapped-prefill/remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+    "spikes/025-qwen38-overlapped-prefill/pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20"
+  },
+  "limits": {
+    "retained_bytes": 67108864,
+    "physical_chunk_bytes": 1048576,
+    "physical_allocation_iterations": 64,
+    "physical_retained_verification_iterations": 64,
+    "requested_advisory_memory_limit_bytes": 201326592,
+    "memory_checkpoint_ceiling_bytes": 201326592,
+    "memory_limit_semantics": "advisory-with-observed-cap",
+    "strict_allocator_ceiling_verified": false,
+    "counter_semantics": "Unchanged active/cache/peak checks at recorded checkpoints, not continuous enforcement or RSS/driver bounds.",
+    "logical_host_payload_cap_bytes": 142606336,
+    "child_import_and_work_budget_seconds": 30,
+    "parent_actor_deadline_seconds": 45,
+    "pressure_gate": "Original independent watchdog and fixture samples require normal pressure level 1; sampled evidence only.",
+    "policy_semantics": "recommended versus exactly-zero unwired; original cache/memory/wired restoration unchanged; no global settings changes.",
+    "remaining_parent_owned_actions": "Fresh v2 source-bound staging/admission, current host health and installed-backend prerequisites, then serial bounded physical cases under the original process owner/watchdog. No automatic full-model retry.",
+    "claims_excluded": [
+      "physical correctness established by CPU fakes",
+      "strict allocator enforcement",
+      "continuous pressure proof",
+      "model feasibility or capacity",
+      "model numerical admission",
+      "full-model retry approval",
+      "causality",
+      "performance or speedup"
+    ]
+  },
+  "files_created": [
+    "memory-policy-control-independent-review-v2.json",
+    "memory-policy-control-v2/cpu-1792270571431650000-verification.json",
+    "memory-policy-control-v2/cpu-1792270571431650000-output.txt"
+  ],
+  "files_modified": []
+}

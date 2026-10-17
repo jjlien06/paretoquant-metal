@@ -1,0 +1,228 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_overlap_live_policy_is_noncritical_not_forged_normal ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a0efce0>
+
+    def test_overlap_live_policy_is_noncritical_not_forged_normal(monkeypatch):
+        """Policy-only envelope test: numerical producer seams are explicitly mocked."""
+        import hidden_prefill_gate
+        import overlap_gate
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        args.overlapped_prefill = args.hidden_only_prefill = args.prefix_rollback = True
+        args.hidden_gate_chunk_size = 256
+        monkeypatch.setattr(overlap_gate, "metadata_layout", lambda *a, **kw: {})
+        monkeypatch.setattr(overlap_gate, "verify_overlap_gate", lambda *a, **kw: None)
+        monkeypatch.setattr(hidden_prefill_gate, "verify_prefill_evidence", lambda *a, **kw: None)
+        monkeypatch.setattr(supervise, "verify_prefix_evidence", lambda *a, **kw: None)
+        for rid, rank in enumerate(ranks):
+            for record in (rank, rank["verification"], *phases[rid]):
+                record.update(overlapped_prefill=True, hidden_only_prefill=True, prefix_rollback=True,
+                              hidden_gate_chunk_size=256, prefill_modes=["serial", "overlap"])
+            pair = rank["verification"]["groups"][1]
+            pair["peer"] = {}
+            for scope in ("small", "full"):
+                hidden = dict(passed=True, same_process=True, schema="MOCKED_POLICY_ONLY", chunk_size=256,
+                              prompt_lengths=[513], owned_layers=[0, 1], rank=0 if scope == "small" else rid)
+                overlap = dict(schema="MOCKED_POLICY_ONLY", passed=True, same_process=True, physical_gpu=False,
+                               scope=scope, modes=["serial", "overlap"], chunk_size=256, prompt_lengths=[513], eval_group_size=1)
+                pair[scope].update(hidden_only_prefill=hidden, overlapped_prefill=overlap)
+                pair["peer"][scope] = dict(hidden_only_prefill=deepcopy(hidden), overlapped_prefill=deepcopy(overlap))
+>       assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_pressure_noncritical.py:901: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ranks = [{'rank': 0, 'verification': {'passed': True, 'mode': 'native', 'same_loaded_shards': True, 'gate_only': True, ...}, '...s.index.json': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'}, 'target_revision': 'fixture', ...}]
+phases = {0: [{'phase': 'process_start', 'pressure_policy': 'noncritical', 'require_normal_pressure': False, 'overlapped_prefil...admission_done', 'pressure_policy': 'noncritical', 'require_normal_pressure': False, 'overlapped_prefill': True, ...}]}
+args = namespace(pressure_policy='noncritical', require_normal_pressure=False, eval_group_size=1, eval_group_schedule=None, r...evision='fixture', prefix_rollback=True, overlapped_prefill=True, hidden_only_prefill=True, hidden_gate_chunk_size=256)
+request_specs = None
+
+    def verify_mtp_evidence(ranks, phases, args, *, request_specs=None):
+        if args is None or len(ranks) != 2:
+            raise ValueError("Missing trusted MTP admission")
+        from overlap_prefill import validate_modes
+        from rank_control import Command, Worker
+    
+        validate_modes(args)
+        expected_policy = policy_name(args)
+        groups = validate_eval_schedule(
+            args.eval_group_size, args.eval_group_schedule, args.repeats, True
+        )
+        actions = {}
+        for rank in ranks:
+            rank_id = rank["rank"]
+            mode = getattr(args, f"rank{rank_id}_verifier")
+            gate = rank.get("verification", {})
+            hidden_only = getattr(args, "hidden_only_prefill", False)
+            hidden_width = getattr(args, "hidden_gate_chunk_size", 256)
+            overlap_enabled = getattr(args, "overlapped_prefill", False)
+            if overlap_enabled and (
+                rank.get("overlapped_prefill") is not True
+                or gate.get("overlapped_prefill") is not True
+                or gate.get("prefill_modes") != ["serial", "overlap"]
+            ):
+                raise ValueError("Missing trusted two-mode overlap admission")
+            if (
+                rank.get("hidden_only_prefill", False) != hidden_only
+                or gate.get("hidden_only_prefill", False) != hidden_only
+                or (
+                    hidden_only
+                    and (
+                        rank.get("hidden_gate_chunk_size") != hidden_width
+                        or gate.get("hidden_gate_chunk_size") != hidden_width
+                    )
+                )
+            ):
+                raise ValueError("Mismatched trusted hidden prefill mode")
+            expected_binding = {
+                "config.json": args.target_config_sha256,
+                "model.safetensors.index.json": args.target_index_sha256,
+            }
+            if (
+                gate.get("passed") is not True
+                or gate.get("mode") != mode
+                or gate.get("same_loaded_shards") is not True
+                or gate.get("gate_only") != args.verification_gate_only
+                or rank.get("target_binding") != expected_binding
+                or rank.get("target_revision") != args.target_revision
+                or rank.get("verifier_mode") != mode
+                or rank.get("prefix_rollback", False) != args.prefix_rollback
+                or gate.get("prefix_rollback", False) != args.prefix_rollback
+            ):
+                raise ValueError("Missing/mismatched numerical admission")
+            if set(map(int, gate.get("groups", {}))) != set(groups):
+                raise ValueError("Gate schedule mismatch")
+            for size in set(groups):
+                pair = gate["groups"].get(str(size), gate["groups"].get(size))
+                for scope in ("small", "full"):
+                    evidence = pair[scope]
+                    if (
+                        evidence.get("passed") is not True
+                        or evidence.get("mode") != mode
+                        or evidence.get("atol") != 1e-6
+                        or evidence.get("rtol") != 1e-5
+                        or len(evidence.get("windows", [])) != 3
+                    ):
+                        raise ValueError("Incomplete strict gate")
+                    lo, hi = evidence["owned_layers"]
+                    if overlap_enabled:
+                        from overlap_gate import metadata_layout as overlap_layout
+                        from overlap_gate import verify_overlap_gate
+    
+                        overlap = evidence.get("overlapped_prefill")
+                        verify_overlap_gate(
+                            overlap,
+                            expected_layout=overlap_layout(args, scope=scope, rank=rank_id),
+                            scope=scope,
+                            eval_group_size=size,
+                        )
+                        peer_overlap = (
+                            pair.get("peer", {}).get(scope, {}).get("overlapped_prefill") or {}
+                        )
+                        for key in (
+                            "schema",
+                            "passed",
+                            "same_process",
+                            "physical_gpu",
+                            "scope",
+                            "modes",
+                            "chunk_size",
+                            "prompt_lengths",
+                            "eval_group_size",
+                        ):
+                            if (
+                                type(peer_overlap.get(key)) is not type(overlap[key])
+                                or peer_overlap[key] != overlap[key]
+                            ):
+                                raise ValueError("Missing peer two-mode physical admission")
+                    if hidden_only:
+                        from hidden_prefill_gate import metadata_layout, verify_prefill_evidence
+    
+                        hidden = evidence.get("hidden_only_prefill")
+                        verify_prefill_evidence(
+                            hidden,
+                            scope=scope,
+                            chunk_size=256 if scope == "small" else hidden_width,
+                            layer_count=hi - lo,
+                            expected_layout=(
+                                overlap_layout(args, scope=scope, rank=rank_id, native_small=True)
+                                if overlap_enabled
+                                else metadata_layout(
+                                    args, scope=scope, owned_layers=[lo, hi], rank=rank_id
+                                )
+                            ),
+                        )
+                        if hidden.get("owned_layers") != [lo, hi] or hidden.get("rank") != (
+                            0 if scope == "small" else rank_id
+                        ):
+                            raise ValueError("Hidden prefill gate ownership mismatch")
+                        peer_hidden = (
+                            pair.get("peer", {}).get(scope, {}).get("hidden_only_prefill") or {}
+                        )
+                        if any(
+                            peer_hidden.get(k) != hidden.get(k)
+                            for k in (
+                                "passed",
+                                "same_process",
+                                "schema",
+                                "chunk_size",
+                                "prompt_lengths",
+                            )
+                        ):
+                            raise ValueError("Missing peer hidden prefill gate")
+                    if args.prefix_rollback:
+                        verify_prefix_evidence(evidence.get("prefix_rollback"), hi - lo)
+                    if scope == "full" and [lo, hi] != [rank["layer_start"], rank["layer_end"]]:
+                        raise ValueError("Gate ownership")
+                    for window in evidence["windows"]:
+                        if (
+                            window.get("argmax_equal") is not True
+                            or window.get("cache_pass") is not True
+                            or window.get("logits", {}).get("strict_pass") is not True
+                            or window.get("sequential_argmax") != window.get("batch_argmax")
+                            or not window.get("caches")
+                            or any(p.get("strict_pass") is not True for p in window["caches"])
+                            or {p["layer"] for p in window["caches"]} != set(range(hi - lo))
+                        ):
+                            raise ValueError("Failed full-vocabulary/cache/argmax gate")
+            events = phases[rank_id]
+            admitted = [e for e in events if e.get("phase") == "numerical_admission_done"]
+            if len(admitted) != 1 or admitted[0].get("prefix_rollback", False) != args.prefix_rollback:
+                raise ValueError("Missing live gate phase")
+            if admitted[0].get("hidden_only_prefill", False) != hidden_only or (
+                hidden_only and admitted[0].get("hidden_gate_chunk_size") != hidden_width
+            ):
+                raise ValueError("Missing live hidden prefill gate phase")
+            starts = [e for e in events if e.get("phase") == "process_start"]
+            if expected_policy == "noncritical" and (
+                len(starts) != 1
+                or any(
+                    record.get("pressure_policy") != expected_policy
+                    or record.get("require_normal_pressure") is not False
+                    for record in (rank, gate, starts[0], admitted[0])
+                )
+            ):
+                raise ValueError("Missing/mismatched live pressure policy")
+            if any(
+                record.get("pressure_policy", "normal") != expected_policy
+                for record in (rank, gate, *starts, admitted[0])
+            ):
+                raise ValueError("Unexpected live pressure policy")
+            if overlap_enabled and (
+                admitted[0].get("overlapped_prefill") is not True
+                or admitted[0].get("prefill_modes") != ["serial", "overlap"]
+                or len(starts) != 1
+                or starts[0].get("overlapped_prefill") is not True
+                or starts[0].get("require_normal_pressure") is not True
+            ):
+>               raise ValueError("Missing process/live overlap flag")
+E               ValueError: Missing process/live overlap flag
+
+supervise.py:722: ValueError
+=========================== short test summary info ============================
+FAILED test_pressure_noncritical.py::test_overlap_live_policy_is_noncritical_not_forged_normal
+1 failed in 0.10s
+{"extra_guard": "forbid actual child process/network/signals", "blocked_attempts": []}

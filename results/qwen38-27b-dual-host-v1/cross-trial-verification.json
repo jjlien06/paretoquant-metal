@@ -1,0 +1,15 @@
+{
+  "same_per_rank_tensor_digests_across_trials": true,
+  "trials": {
+    "full27b-two-host-v1": {
+      "success": true,
+      "cleanup_verified": true,
+      "trial_seconds": 26.751022791024297
+    },
+    "full27b-explanation-v1": {
+      "success": true,
+      "cleanup_verified": true,
+      "trial_seconds": 37.72266587498598
+    }
+  }
+}

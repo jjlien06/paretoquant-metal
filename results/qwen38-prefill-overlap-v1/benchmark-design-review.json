@@ -1,0 +1,836 @@
+{
+  "schema": "qwen38-prefill-overlap-benchmark-design-review-v1",
+  "status": "DESIGN_ONLY_NOT_IMPLEMENTED_OR_PERFORMANCE_ADMITTED",
+  "scope": "Independent local read-only CPU review; no MLX imports/model loading/GPU/SSH/network/build/install/process management. Only this exclusive review artifact is written.",
+  "input_findings": {
+    "frozen_cases": 18,
+    "long_cases": 6,
+    "batches": 6,
+    "total_requests": 84,
+    "measured_requests": 72,
+    "warmups": 12,
+    "original_raw_action_audits": {
+      "trials": 6,
+      "requests": 84,
+      "rank_requests": 168,
+      "mtp_requests": 42
+    },
+    "archived_hidden_serial_trial_audit": {
+      "requests": 14,
+      "mtp_requests": 7,
+      "hidden_only_prefill": true
+    },
+    "all_024_registered_files_match_frozen_candidate_deployment_except_different_benchmark_schedule": true,
+    "original_registration_hashes_rechecked": true,
+    "structured_long_actual_prompt_tokens": 1535
+  },
+  "frozen_cases": [
+    {
+      "id": "code-short",
+      "category": "code",
+      "context_target_tokens": null,
+      "formatted_prompt_tokens": 55,
+      "prompt_sha256": "61d32d67a09ae4b8f6c96fa60471d5613d78704c0ffddb228a89853c94371c72",
+      "max_tokens": 128,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:13-22",
+      "archived_output_events": 128,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "code-512",
+      "category": "code",
+      "context_target_tokens": 512,
+      "formatted_prompt_tokens": 512,
+      "prompt_sha256": "06c4b1f3876088c1de00c5342a62d87d870060b2b4ec0185787fb95562c65389",
+      "max_tokens": 128,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:23-32",
+      "archived_output_events": 128,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "code-1536",
+      "category": "code",
+      "context_target_tokens": 1536,
+      "formatted_prompt_tokens": 1536,
+      "prompt_sha256": "a465bc2c4b3acda5e79a9cd4012e4f1afbe677d9198cdcea2e521b46537d4250",
+      "max_tokens": 256,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:33-42",
+      "archived_output_events": 256,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "explanation-short",
+      "category": "explanation",
+      "context_target_tokens": null,
+      "formatted_prompt_tokens": 54,
+      "prompt_sha256": "6b2157b20e4acab86c5846aba87383f43402831eb5f579d6613f1aa312f6c6dd",
+      "max_tokens": 128,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:43-52",
+      "archived_output_events": 128,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "explanation-512",
+      "category": "explanation",
+      "context_target_tokens": 512,
+      "formatted_prompt_tokens": 512,
+      "prompt_sha256": "d16e8fb1cbeaebca71a518fdaf3610e0c02a9b7f1d76bd95bd69959bc4f07cd1",
+      "max_tokens": 128,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:53-62",
+      "archived_output_events": 128,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "explanation-1536",
+      "category": "explanation",
+      "context_target_tokens": 1536,
+      "formatted_prompt_tokens": 1536,
+      "prompt_sha256": "9fb5d6cc5804d4eb3b980e7834308f7d643a7f8bb3f362142824d0431d6f59e4",
+      "max_tokens": 256,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:63-72",
+      "archived_output_events": 214,
+      "archived_finish_reason": "stop"
+    },
+    {
+      "id": "math-short",
+      "category": "math",
+      "context_target_tokens": null,
+      "formatted_prompt_tokens": 74,
+      "prompt_sha256": "0e99d217580eb5b7ada97647ac073b4d69db451bf1cfef552c4173c665312452",
+      "max_tokens": 128,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:73-82",
+      "archived_output_events": 128,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "math-512",
+      "category": "math",
+      "context_target_tokens": 512,
+      "formatted_prompt_tokens": 512,
+      "prompt_sha256": "ab7792c957d65aac8034bfab52f25e95bb506f8b9d464d8348e2df97ca88f798",
+      "max_tokens": 128,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:83-92",
+      "archived_output_events": 128,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "math-1536",
+      "category": "math",
+      "context_target_tokens": 1536,
+      "formatted_prompt_tokens": 1536,
+      "prompt_sha256": "a9445d95bf1c54c7402f463ea9a4bfa7788e003cb246f83014b02876d2106a8c",
+      "max_tokens": 256,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:93-102",
+      "archived_output_events": 256,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "chinese-short",
+      "category": "chinese",
+      "context_target_tokens": null,
+      "formatted_prompt_tokens": 51,
+      "prompt_sha256": "d6eef59f0fa1e41c6baa4026a2e642cdda3b3e6b8a7aee7eecbe7f432121f134",
+      "max_tokens": 128,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:103-112",
+      "archived_output_events": 128,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "chinese-512",
+      "category": "chinese",
+      "context_target_tokens": 512,
+      "formatted_prompt_tokens": 512,
+      "prompt_sha256": "67b42dd4a277737f205cfe5cd1c312719de217beaf21a17f7d895a8d274cfe3e",
+      "max_tokens": 128,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:113-122",
+      "archived_output_events": 128,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "chinese-1536",
+      "category": "chinese",
+      "context_target_tokens": 1536,
+      "formatted_prompt_tokens": 1536,
+      "prompt_sha256": "b34bf42285525834e775dc083830e175673880006553499c3f2841ee82e54adb",
+      "max_tokens": 256,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:123-132",
+      "archived_output_events": 256,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "spanish-short",
+      "category": "spanish",
+      "context_target_tokens": null,
+      "formatted_prompt_tokens": 63,
+      "prompt_sha256": "d57cc032b9ac99d737f3f157dd1d679cb9d983f4a0f2e77ad371109cb4d69c56",
+      "max_tokens": 128,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:133-142",
+      "archived_output_events": 128,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "spanish-512",
+      "category": "spanish",
+      "context_target_tokens": 512,
+      "formatted_prompt_tokens": 512,
+      "prompt_sha256": "f7420b05a971618160167cc28685e2d9f5389bcf80c93351978f6ac3d1417524",
+      "max_tokens": 128,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:143-152",
+      "archived_output_events": 128,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "spanish-1536",
+      "category": "spanish",
+      "context_target_tokens": 1536,
+      "formatted_prompt_tokens": 1536,
+      "prompt_sha256": "57de44befcdd34804972ef4ecafae976f46b34a965b0c7d657db69bb902fca51",
+      "max_tokens": 256,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:153-162",
+      "archived_output_events": 256,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "structured-short",
+      "category": "structured",
+      "context_target_tokens": null,
+      "formatted_prompt_tokens": 96,
+      "prompt_sha256": "daeb30c7c99f0342758c9a46ef84e3d013e9b78905cd4f50d32edcfd1dc21bda",
+      "max_tokens": 128,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:163-172",
+      "archived_output_events": 128,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "structured-512",
+      "category": "structured",
+      "context_target_tokens": 512,
+      "formatted_prompt_tokens": 512,
+      "prompt_sha256": "cd2218f43eb371eb0ce034696ac8fce549cbbbbdaad5aba3ab6f8c61d8344dcc",
+      "max_tokens": 128,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:173-182",
+      "archived_output_events": 128,
+      "archived_finish_reason": "length"
+    },
+    {
+      "id": "structured-1536",
+      "category": "structured",
+      "context_target_tokens": 1536,
+      "formatted_prompt_tokens": 1535,
+      "prompt_sha256": "facf60e5471a52583b423f4b69b52ce0a6e38df7d2d341aa1930b295b00ac77e",
+      "max_tokens": 256,
+      "frozen_case_source": "results/qwen38-broad-v1/workloads/manifest.json:183-192",
+      "archived_output_events": 253,
+      "archived_finish_reason": "stop"
+    }
+  ],
+  "long_case_ids": [
+    "code-1536",
+    "explanation-1536",
+    "math-1536",
+    "chinese-1536",
+    "spanish-1536",
+    "structured-1536"
+  ],
+  "source_sha256": {
+    "results/qwen38-broad-v1/PROTOCOL.md": "47002fd771bee8b852f75f984f3535e1be410bbf16857f962870c0f00726a13b",
+    "results/qwen38-broad-v1/preregistration.json": "0812a87de7031063e1dcacd1a7528ddc1dd780e401e7a9036ad73c5223b8f3fa",
+    "results/qwen38-broad-v1/workloads/manifest.json": "b20a600c3889d62cdf15a7faa6c2ca90611084ceae15b9a8dea7f7823d5a29e6",
+    "results/qwen38-broad-v1/workloads/schedule-00.json": "9794402e6fbfc6f680cd64a6579044103f0c83bd21664a50094187140d77072a",
+    "results/qwen38-broad-v1/workloads/schedule-01.json": "557f406ed196a695626646281f693b865b34d339a7e54d73ad0b7bacab22e4d2",
+    "results/qwen38-broad-v1/workloads/schedule-02.json": "11c5fe99205bed6cf64bfb7b4b2470c3bb74218f4d5f4f70a8d1f77e49855fc1",
+    "results/qwen38-broad-v1/workloads/schedule-03.json": "78ec6bd11f5eb54fbc32175712456565fdada3e409fba878200ba6591c865288",
+    "results/qwen38-broad-v1/workloads/schedule-04.json": "55a599b4986542a7d0db03aa9981f97bb222db702a5cd1b88b630e4516e08533",
+    "results/qwen38-broad-v1/workloads/schedule-05.json": "6ada5280a4ae4889e8b257e86ba0a17316d304d8f2f916da9b31687a9ce52af2",
+    "results/qwen38-broad-v1/all-six-collected/evidence.json": "084aa979b13155fdb6d97fc757fc1d0eba89e4a51b9983faf2874bcf84f45e8a",
+    "results/qwen38-broad-v1/all-six-trials.json": "95323e7605d8837039df71adb51ab11060151cbb625ff0a3bc8278d9f6dde9ee",
+    "results/qwen38-broad-v1/strict-action-audit.json": "298253ce97fdc89e0a159361aaebcab9bddd769d31702bd12e93dbb4043281dc",
+    "results/qwen38-broad-v1/prefill-experiment/candidate-v1-command.json": "3cf592eb0da9c0957cd3d16cc9f3150948ec4db0ffa6d534eba3d39572d8b2ae",
+    "results/qwen38-broad-v1/prefill-experiment/candidate-v1-deployment.json": "e8eecf0229587b66a6058e34c012b1d9dc273b099e4e5e234f2e238523f75f95",
+    "benchmarks/qwen38/workloads.py": "36f24e179745c41921ac83f04f86b5b3e854226a0a1e375053e2b793c71ead75",
+    "benchmarks/qwen38/run_bench.py": "d8ba86699415c6465e637cd43f4ef17923623557e4c87573441be23712b42b5b",
+    "benchmarks/qwen38/analyze.py": "7b859d58609f64dfff83b63e563e37793d75d6359575f778f26b47323d3d4f83",
+    "benchmarks/qwen38/mtp_audit.py": "cd60f5d747fef5df31ad9947ca3fbb7abd23f3768922cd795a41a0153b11bef7",
+    "spikes/024-qwen38-hidden-prefill/mlx_backend.py": "bb269f19696f8a3d84971c44b27ceef743585362c284f916f98de1815334f443",
+    "spikes/024-qwen38-hidden-prefill/workload_runtime.py": "1cc117eef382a123f448bcbf4022a6be03f7cb3b69e6e5432d0be3ef337ab9c6",
+    "spikes/024-qwen38-hidden-prefill/workload_schedule.py": "0bad9bead01dd6fd78e8d1c732fa5ef83a1101deb950aded42333c09dabeeb9a",
+    "spikes/024-qwen38-hidden-prefill/workload_evidence.py": "6958f44b4e1df2c1c3f50583d63f06984a4c67138d06dec4931e1eb2cd07f7bb",
+    "spikes/024-qwen38-hidden-prefill/remote_actor.py": "daa2480a11bd62a3283f24e6a1b7f1175303dbc8205dff159b63b3710713950c",
+    "spikes/024-qwen38-hidden-prefill/rank_control.py": "ce6656dd0ff351b5a66e25f738776817b0dab9374f6f7dceeeec2b40f9b64b28",
+    "spikes/024-qwen38-hidden-prefill/distributed_control.py": "894403782594e8ffc7fb832f336fdd2600925dd0ba330403a701a8a47f695f4e",
+    "spikes/024-qwen38-hidden-prefill/verification.py": "832c9eadfb8540a9ae2f2d645c13a3a2af5c04c057ad3f0f6b07b469e9bc33d2",
+    "spikes/024-qwen38-hidden-prefill/hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+    "spikes/024-qwen38-hidden-prefill/mtp_runtime.py": "ea03fa19a04a83d633ee5dc217168329387460f3dd49ceb949d73cbdb53423fe",
+    "spikes/024-qwen38-hidden-prefill/probe.py": "716d30974848c99b09cb3455adae25ec9cb2e297686d017a744da4d10b5ecfd7",
+    "spikes/024-qwen38-hidden-prefill/supervise.py": "5854ad8fd98c1ab7c1f9659457459b12e1fc982af3bd5cca0899f8045395d624",
+    "spikes/024-qwen38-hidden-prefill/mtp_audit.py": "00e64c72453f24b48ed9880fd42d4d3581bfb5790e00108265df005ee4c68671",
+    "spikes/024-qwen38-hidden-prefill/phased_decode.py": "97a056ee6db36ae51012c66be2fd305a069d882b928049dab708cd488461a555",
+    "spikes/024-qwen38-hidden-prefill/verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f"
+  },
+  "frozen_hidden_candidate_registry_sha256": {
+    "benchmark_schedule.json": "163c1a042caf491facb995b81d57b4f88d3a73c7e8957d63a9e2f0749f3d4c1f",
+    "cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "distributed_control.py": "894403782594e8ffc7fb832f336fdd2600925dd0ba330403a701a8a47f695f4e",
+    "hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+    "mlx_backend.py": "bb269f19696f8a3d84971c44b27ceef743585362c284f916f98de1815334f443",
+    "mtp_audit.py": "00e64c72453f24b48ed9880fd42d4d3581bfb5790e00108265df005ee4c68671",
+    "mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+    "mtp_runtime.py": "ea03fa19a04a83d633ee5dc217168329387460f3dd49ceb949d73cbdb53423fe",
+    "numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+    "phased_decode.py": "97a056ee6db36ae51012c66be2fd305a069d882b928049dab708cd488461a555",
+    "prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+    "probe.py": "716d30974848c99b09cb3455adae25ec9cb2e297686d017a744da4d10b5ecfd7",
+    "rank_control.py": "ce6656dd0ff351b5a66e25f738776817b0dab9374f6f7dceeeec2b40f9b64b28",
+    "remote_actor.py": "daa2480a11bd62a3283f24e6a1b7f1175303dbc8205dff159b63b3710713950c",
+    "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+    "sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+    "slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+    "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+    "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+    "speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+    "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+    "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+    "supervise.py": "5854ad8fd98c1ab7c1f9659457459b12e1fc982af3bd5cca0899f8045395d624",
+    "test_batched_snapshot.py": "be1002feb6fd661085b73bf4ef0f31bbb6bba2312231314cd90a1959bfb12b66",
+    "test_cache_gate.py": "5ce8116c15a22f44a191b04b1fcf69b523f690ceaf7ebd88589340f52a7a6c42",
+    "test_cli_schedule.py": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c",
+    "test_config_immutability.py": "30e281bae3adc0c2c493cb88600d69630b8f6103e0c8065257e81defba854d69",
+    "test_controller_snapshot.py": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab",
+    "test_dispatch_schedule.py": "05ca31b22aa6af70538cb12dd145db30903fcad7ca162c8d901935bc005e6b9c",
+    "test_evidence_hardening.py": "f495a0ec7fae35b9172749fc28c2aa77931b6bf8bd2109a23acbc939ffa88a2a",
+    "test_head.py": "bf976833baa25e5da6ddff8bb59338ab046950864cf3a4f2ae30b1ea0e651485",
+    "test_hidden_cache_inventory.py": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493",
+    "test_hidden_cli.py": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f",
+    "test_hidden_control.py": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232",
+    "test_hidden_evidence.py": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137",
+    "test_hidden_gate.py": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a",
+    "test_hidden_prefill.py": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50",
+    "test_hidden_runtime.py": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3",
+    "test_hidden_two_rank.py": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5",
+    "test_integration.py": "c77b6ba8fbe9334d584b72e1ff0ea61fe098351d585f1efb33b7e0ec66df255d",
+    "test_mtp_audit.py": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3",
+    "test_phased_cpu.py": "7b65176cc4751ba82ff92ec2ae257a22d501344dd0e901c1d245cc42dddf910e",
+    "test_prefix_integration.py": "377d62e2ed2ff9f09196afd32a1aa788be54b39550060dab0ef042254c8532d5",
+    "test_prefix_rollback.py": "d0f6f040542e4a4ed2bed704bf8af9b5cc15f63d6c4aadd7885b61e8283724d7",
+    "test_speculative.py": "9cd3a4b0b956284e21801ac6805f93e5bd1fdc76b4f60d9cfd7bde1d77fdea17",
+    "test_two_rank_schedule.py": "b67f9a1025738e22b7da3a0f7eb0f9041aa83cc81c03dbb0a063ad6ad4f7a708",
+    "test_unbound_schedule.py": "f446a36ba5fe48f1cc88f1558c5ad4647af9c286e7bc004bd0cc7b85ae866f5a",
+    "test_workload_caps.py": "117e18df911429b210bc96ed998dcbcac6e23304223758ebe3c4b9b9467fa503",
+    "test_workload_cleanup.py": "e478df18900b76dc5dc949d8808db6e6f0cea2e977468d5538fc124b7300f9de",
+    "test_workload_evidence.py": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6",
+    "test_workload_runtime.py": "5a9e95b2e207bdf11410218771959224b683ed6bb4c306696018c3f38c24e267",
+    "test_workload_schedule.py": "ae27e162390368b19d943f0c6f974722481d59a40b9aa18d8e00d34b0470f2d4",
+    "test_workload_snapshot.py": "e8d26f9e3841f320b118a4ec8b148768cb60d72027b1e626fe5234bd71bc120f",
+    "test_workload_timings.py": "761027cf05c067526ad2267a1a81bcd4f36774bdabc5e802abdec1cf7a00e748",
+    "verification.py": "832c9eadfb8540a9ae2f2d645c13a3a2af5c04c057ad3f0f6b07b469e9bc33d2",
+    "verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+    "width_gate.py": "81528ae022bed8c910b9d1dcf045990cf9a8968a3978e106becdda14a4ee403c",
+    "workload_evidence.py": "6958f44b4e1df2c1c3f50583d63f06984a4c67138d06dec4931e1eb2cd07f7bb",
+    "workload_runtime.py": "1cc117eef382a123f448bcbf4022a6be03f7cb3b69e6e5432d0be3ef337ab9c6",
+    "workload_schedule.py": "0bad9bead01dd6fd78e8d1c732fa5ef83a1101deb950aded42333c09dabeeb9a"
+  },
+  "comparison": {
+    "S": "Existing admitted 024 hidden-only SERIAL MTP, not native autoregressive, not projection-enabled old MTP.",
+    "O": "Same exact MTP arithmetic/chunking/head/verification/rollback with two-host prefill overlap only.",
+    "fixed": {
+      "model": "mlx-community/Qwen3.8-27B-4bit",
+      "revision": "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+      "split": [
+        28,
+        36
+      ],
+      "eval_group_size": 32,
+      "rank0_verifier": "native",
+      "rank1_verifier": "slot-qmv",
+      "hidden_only_prefill": true,
+      "prefix_rollback": true,
+      "prefill_chunk_tokens": 256,
+      "context_limit": 4096,
+      "seed": 0,
+      "atol": 1e-06,
+      "rtol": 1e-05,
+      "greedy": true,
+      "thinking": false,
+      "max_inflight_chunks": 2
+    },
+    "source": "spikes/024-qwen38-hidden-prefill/mlx_backend.py:126-143; verifier.py:69-75; results/qwen38-broad-v1/prefill-experiment/candidate-v1-command.json"
+  },
+  "minimum_standalone_harness": {
+    "artifacts": [
+      "new PROTOCOL.md + preregistration with original bytes/hashes and derived schedules",
+      "new standalone overlap_bench.py (plan/run/collect-only with no hardware in plan or collect)",
+      "new standalone overlap_evidence.py / overlap_audit.py CPU validator + reducer (one module is sufficient)",
+      "new isolated runtime fork of 024 and dedicated overlap helper, never edit 024/023/broad sources",
+      "CPU-only mutation-test module"
+    ],
+    "schedule_schema": "New strict qwen38-prefill-overlap-schedule-v1 derived from original v1 row shape; method is mtp for EVERY request, add prefill_mode in {serial,overlap} and source_request_id. Use exact case_id/prompt/max_tokens/warmup/repeat from original. New unique IDs encode actual mtp+mode. Freeze original schedule bytes unchanged alongside derived schedule bytes.",
+    "mapping": "Original native slot -> S; original mtp slot -> O ONLY as declared derivation of order, never as runtime method reinterpretation. Bijection source_request_id->derived ID; validate all 84 original source rows are used exactly once.",
+    "pairing": "Exactly one mtp serial and one mtp overlap per (case_id,warmup,repeat); validate pair-key uniqueness and full exact expected ID/order sets. Request ordinal is not sample repeat.",
+    "why_not_unmodified_v1": "workload_schedule.py:13-49, run_bench.py:328-358, analyze.py:49-54,149-150,183-210 hardcode native/mtp and pair slots without overlap mode. Two mtp rows collide or fail validation; substituting serial MTP under native is semantically false.",
+    "reuse": "Reuse stdlib hash/strict-JSON/path-disjoint/exclusive-freeze/deploy/cleanup/metadata-inventory primitives, not old native/mtp reducer nor unmodified normalizer. New plan must pin new runtime and collector/auditor/reducer hashes."
+  },
+  "same_loaded_preference": {
+    "decision": "Preferred and structurally compatible: workload_runtime already creates a new backend/target per request over one resident model/head, then releases request state symmetrically. Requires NEW per-request mode plumbing and both-mode live admission; not supported by unmodified CLI today.",
+    "sources": [
+      "spikes/024-qwen38-hidden-prefill/workload_runtime.py:42-147",
+      "spikes/024-qwen38-hidden-prefill/mtp_runtime.py:93-211"
+    ],
+    "rules": [
+      "One loaded target+head per category, both S/O gated before any warmup or measured request; same process IDs and source manifest through category.",
+      "Fresh native target cache, MTP head KV cache, nonce, channel/chunk queues per request; no prompt prefix reuse.",
+      "Short queue warmup prompt exact original bytes, cap32, one per mode/process; two measured repeats per mode/case. Keep first long-shape request measured; no silent extra shape warmups. Gate-induced warming disclosed symmetrically.",
+      "Backend construction excluded in both timers as existing convention; no prefill/async work may start there. Timed interval begins before reset/prefill and ends after finish ACK, drain and synchronization."
+    ],
+    "derived_batch_orders": [
+      {
+        "batch_index": 0,
+        "warmup_order": [
+          "S",
+          "O"
+        ],
+        "cases": [
+          {
+            "case_id": "code-short",
+            "mode_order": [
+              "S",
+              "O",
+              "O",
+              "S"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "case_id": "code-512",
+            "mode_order": [
+              "O",
+              "S",
+              "S",
+              "O"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "case_id": "code-1536",
+            "mode_order": [
+              "S",
+              "O",
+              "O",
+              "S"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "batch_index": 1,
+        "warmup_order": [
+          "O",
+          "S"
+        ],
+        "cases": [
+          {
+            "case_id": "explanation-512",
+            "mode_order": [
+              "O",
+              "S",
+              "S",
+              "O"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "case_id": "explanation-1536",
+            "mode_order": [
+              "S",
+              "O",
+              "O",
+              "S"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "case_id": "explanation-short",
+            "mode_order": [
+              "O",
+              "S",
+              "S",
+              "O"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "batch_index": 2,
+        "warmup_order": [
+          "S",
+          "O"
+        ],
+        "cases": [
+          {
+            "case_id": "math-1536",
+            "mode_order": [
+              "S",
+              "O",
+              "O",
+              "S"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "case_id": "math-short",
+            "mode_order": [
+              "O",
+              "S",
+              "S",
+              "O"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "case_id": "math-512",
+            "mode_order": [
+              "S",
+              "O",
+              "O",
+              "S"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "batch_index": 3,
+        "warmup_order": [
+          "O",
+          "S"
+        ],
+        "cases": [
+          {
+            "case_id": "chinese-short",
+            "mode_order": [
+              "O",
+              "S",
+              "S",
+              "O"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "case_id": "chinese-512",
+            "mode_order": [
+              "S",
+              "O",
+              "O",
+              "S"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "case_id": "chinese-1536",
+            "mode_order": [
+              "O",
+              "S",
+              "S",
+              "O"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "batch_index": 4,
+        "warmup_order": [
+          "S",
+          "O"
+        ],
+        "cases": [
+          {
+            "case_id": "spanish-512",
+            "mode_order": [
+              "S",
+              "O",
+              "O",
+              "S"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "case_id": "spanish-1536",
+            "mode_order": [
+              "O",
+              "S",
+              "S",
+              "O"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "case_id": "spanish-short",
+            "mode_order": [
+              "S",
+              "O",
+              "O",
+              "S"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "batch_index": 5,
+        "warmup_order": [
+          "O",
+          "S"
+        ],
+        "cases": [
+          {
+            "case_id": "structured-1536",
+            "mode_order": [
+              "O",
+              "S",
+              "S",
+              "O"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "case_id": "structured-short",
+            "mode_order": [
+              "S",
+              "O",
+              "O",
+              "S"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "case_id": "structured-512",
+            "mode_order": [
+              "O",
+              "S",
+              "S",
+              "O"
+            ],
+            "repeat_order": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ]
+      }
+    ],
+    "counts": {
+      "total": 84,
+      "measured": 72,
+      "warmups": 12,
+      "measured_per_mode": 36,
+      "warmups_per_mode": 6
+    }
+  },
+  "fallback_bracket": {
+    "trigger": "Only if same-loaded mode switching is shown incompatible during admission; choose and freeze fallback before measured collection, not after seeing ratios.",
+    "design": "Per original category run serial-before -> overlap -> serial-after with identical executed source and only explicit mode selection differing; each process has its own exact cap32 warmup plus two repeats for each of three cases. Preserve original per-mode context order/repeats within each filtered schedule.",
+    "counts": {
+      "process_starts": 18,
+      "total_requests": 126,
+      "measured_requests": 108,
+      "warmups": 18
+    },
+    "estimator": "For each case/repeat/metric, ratio=O / ((S_before+S_after)/2), then arithmetic median of its two ratios. Retain and report ratios against before and after separately, drift and gate/warm differences. Never select minimum/best/most favorable reference.",
+    "disclosure": "Separate-load bracket is not same-loaded randomized pairing and is NOT an 84-request execution. It needs a separately frozen expected set and cannot reuse 84 coverage claim."
+  },
+  "integration_seams": [
+    {
+      "source": "workload_runtime.py:42-49,73-115,119-147",
+      "change": "Read prefill_mode from trusted row; bind it to request_before/done/results/all phases; pass to both newly constructed backend and target, not global mutable CLI state; preserve independent rank timing/memory and symmetric release."
+    },
+    {
+      "source": "mlx_backend.py:22-62,64-124,126-143,188-256",
+      "change": "Extend constructors/admission for mode. Preserve serial branch exact behavior. Isolate overlap fresh-prefill path only; final one-token forward + argmax and every decode verify/snapshot/commit/head operation stay unchanged. Head receives all normalized hidden positions with shifted prompt tokens at original absolute starts."
+    },
+    {
+      "source": "rank_control.py:11-92; distributed_control.py:27-77",
+      "change": "Version bounded command protocol / dispatcher if needed for pipelining; validate operation spellings against actual dispatch; bind request nonce, sequence, mode, chunk index/start/end and cache epoch. Do not just drop finish ACK or weaken Worker ordering. Existing begin/forward/finish is serialized and cannot overlap by flag alone."
+    },
+    {
+      "source": "phased_decode.py:111-121,133-171; mlx_backend.py:64-143",
+      "change": "Retain native evaluated group32 stage work and all live-cache evaluation at boundaries. Two total in-flight chunks maximum, explicit slot/buffer ownership and credit return; order recurrent/KV mutation and head updates per request. Drain before final prompt forward/first token/decode/finish/reset; all buffers empty at request boundary."
+    },
+    {
+      "source": "verification.py:308-390; mtp_runtime.py:99-185; hidden_prefill_gate.py:169-330",
+      "change": "Mint live model+mode+group bound capabilities for both paths after original width/prefix/hidden gates plus new serial-vs-overlap small/full logits/normalized-hidden/every target and head cache/continuation gates on both physical owners. Reduced gates cannot omit native256 multi-chunk overlap coverage or 1535/1536 request boundary evidence."
+    },
+    {
+      "source": "supervise.py:519-712; workload_evidence.py:51-329; mtp_audit.py:72-168,200-461; benchmarks/qwen38/run_bench.py:615-895",
+      "change": "New schema-aware CPU validator and collector; bind requested/actual modes, trusted schedule/source set, action output progress and stage completions. Existing serial actions can retain validator; overlap actions need exact per-chunk state-machine grammar, not equal action counts."
+    },
+    {
+      "source": "remote_actor.py:346-408; supervise.py:27-29; benchmarks/qwen38/run_bench.py:173-194,500-522,631-677,1129-1168",
+      "change": "Add EVERY new runtime/gate/protocol/audit/helper/config/Metal dependency to literal source registry. Keep supervisor snapshot handling unique and digest-bound; deploy new immutable local/remote directories and verify actual startup hashes. Pin collector and reducer hashes separately in trusted preregistration."
+    }
+  ],
+  "trust_and_overlap_evidence": [
+    "Do not let receipt choose trusted source registry: external preregistration pins exact registry set and hashes, supervisor, schemas/schedules, target metadata/revision, sidecar manifest/tensors, native-control target tensor map, numerical modes. CPU audit receives expected manifest/path/hash independently. Existing audit_trial reads self-reported registry and is narrower than collector trust (mtp_audit.py:351-369 vs run_bench.py:631-677).",
+    "Use original trusted 1847 target union, exact per-rank tensor-name sets and replicated byte hashes; same tensor values for S/O. Bind same upstream native implementation/version and new snapshot. No source changes during a trial.",
+    "Every stage event binds actor/start nonce, rank, request nonce, cache epoch, actual mode, request ID/ordinal, chunk sequence/start/end, shape/dtype and completion; maintain exact inventory and strict ordering, not only counts or hash syntax. Both ranks reconcile send/receive/ACK chunks.",
+    "Require complete evaluated local layer coverage per chunk and target/head cache coverage. For hidden chunks rank0 normalized-hidden but no target vocabulary head; final prompt token does project vocab. Head shifted token payload/absolute position and head offset must cover each preceding prompt token exactly once.",
+    "Record per-rank monotonic stage submit/complete and bounded transfer/queue occupancy. Cross-host timestamp comparison requires measured clock-offset uncertainty; otherwise label overlap requested/causal protocol verified, not simultaneous-GPU-time proved. Blocking receives include upstream wait, not link-transfer attribution. Timings are inclusive and non-additive."
+  ],
+  "predeclared_estimator_and_verdict": {
+    "same_loaded": "For metric X in {first_token_seconds,wall_seconds}, r[c,j]=X_overlap[c,j]/X_serial[c,j] for sample repeat j in {0,1}; R[c]=arithmetic median of these two ratios; reduction[c]=1-R[c]. Do NOT use ratio of medians, inverse throughput-ratio median, pooled token rates or archived fastest sample.",
+    "long_gate": "EACH exact long ID must have R_TTFT <= 0.70 AND R_wall <= 0.85, unrounded. Any one long case failing either threshold means target_not_met. Threshold equality passes. Report both repeats/ranges and all 18 per-case regressions; equal-case aggregates descriptive only.",
+    "correctness": "Both ranks and all methods/repeats match exact archived greedy token_ids and finish_reason for all 18 original cases; any deviation fails correctness even if current S/O agree. Preserve fresh-cache and admitted exact arithmetic configuration.",
+    "stop": "Respect official EOS IDs [248044,248046], include EOS as an output event, reject EOS before last, stop iff last is EOS; length iff no EOS and actual N equals original cap. Accept original length-capped completions as complete requests at their frozen caps, not naturally finished answers. No forcing/padding/early truncation or shorter cap.",
+    "completeness": "Any missing/duplicate/extra request, failed/truncated run, unknown cleanup, unbound source/mode, absent cache part or absent action stream -> INVALID/INCOMPLETE, never performance pass. Retain attempted failures and expected missing IDs, no survivor-only acceptance or time imputation. Legitimate slow valid rows remain in estimator.",
+    "pressure": "Sole parent hardware owner collects both host preflight and request-boundary/in-run pressure/swap/disk records. Pressure must be exactly1 on both throughout accepted attempt (finite predeclared sampling). Missing health, any pressure2/other, insufficient8GiB reserve, route ambiguity, competing workers or unproven cleanup blocks/stops trial and invalidates acceptance. No unrelated process termination. Current laptop pressure2 supplied by parent blocks GPU trials; not independently measured here.",
+    "inflight": "Exactly declared max2 chunks, no unbounded buffering. Timeout, missing credit/ACK, stale chunk, leak or queue not drained at finish/reset is failure; do not silently fall back to serial.",
+    "statistics": "Two repeats are descriptive and cannot support tail-latency, confidence-interval or general-workload guarantees. Passing means this exact frozen suite under recorded conditions only."
+  },
+  "bounded_pilot": {
+    "prerequisites": "Complete CPU mutation tests and physical small/full numerical admission on both healthy hosts; no full model trial while pressure unhealthy.",
+    "schedule": "Separate pilot, not counted toward full suite: exact original short queue warmup once per S/O cap32; code-1536 S/O repeat0; structured-1536 O/S repeat0. Six requests (four measured), exact original long prompts/cap256. Covers a historically length-capped case and a historical natural-EOS case, including actual 1535-token formatted prompt.",
+    "bounds": "One exclusive pilot, max2 in-flight chunks, inherited bounded supervisor deadline <=900s plus bounded cleanup outside it; freeze log/control/retrieval budgets from full gate and pilot evidence. Failure stops; no automatic retry/resume or deleting failed attempts.",
+    "decision": "Require both-mode actions, source/mode binding, all caches/logits, exact archived outputs/stops, finite timings, health and cleanup. Check directional/threshold viability only for these two pilot cases; no six-long or full-suite claim. Freeze any revised design before a new attempt. Then execute fresh full84 separately including all18 cases/regressions; pilot cannot replace rows."
+  },
+  "CPU_mutation_test_requirements": [
+    "Positive unchanged genuine receipt baseline plus exact expected schema/manifest and both per-request modes.",
+    "Equal rank action counts with wrong verify current token, wrong accepted/rejected progression, forged counters, replacement of one chunk by another of identical token count, swapped chunk identities and changed shifted tokens must all fail.",
+    "Delete all actions on both ranks while retaining success/count flags and output tokens: fail. Remove individual snapshot/verify/commit/final forward/finish or stage evaluation: fail.",
+    "Keep both ranks in same wrong mode or change startup/result/event/schedule mode separately: fail against externally pinned per-request manifest; verifier numerical mode and prefill scheduling mode are distinct.",
+    "For every target KV keys/values/offset, recurrent convolution and recurrence arrays, plus draft-head keys/values/offset: delete/duplicate/replace one part with another while preserving count; fail at each chunk/final/continuation and native256 gate. Forge shape/dtype/offset/finite/tolerance metrics under strict_pass=true: fail.",
+    "Carry chunk from request A into B with unchanged bytes or reused nonce/cache epoch; mutate nonce/ordinal/mode/sequence/start/end; fail. Also reuse whole A stream and rewrite superficial IDs: independent expected prompt offsets/cache epoch/nonce uniqueness must catch it.",
+    "Delayed old-request ACK, duplicated or reordered chunk, missing/extra credit, max_inflight exceeded, premature reset/finish/decode before drain, leftover head/target cache, unsupported op alias or silent serial fallback: fail.",
+    "Missing/failed/extra/duplicate run, bool-as-int, duplicate JSON keys, NaN/Inf/overflow timing, wall<TTFT, EOS in middle or wrong stop/cap, pressure missing/non1, failed cleanup, source helper omission or receipt+source hash co-forgery: fail.",
+    "Estimator fixtures must discriminate median-of-paired-ratios from ratio-of-medians; threshold-equality fixtures, one failing long case, large gain on five unable to compensate sixth, and regression reporting for all12 nonlong cases.",
+    "Plan/collect-only checker tests must deny subprocess/socket/SSH/MLX imports and assert no writes to source/evidence/checkpoint or any file in true plan mode. Tests use detached JSON or explicit synthetic schema fixtures, never represent fixtures as physical receipts."
+  ],
+  "CPU_checks_actually_executed_in_this_review": {
+    "existing_024_GenerationAuditTests": {
+      "tests_run": 63,
+      "failures": 0,
+      "errors": 0,
+      "note": "Only this stdlib in-process class; no subprocess/CLI fixture class or MLX tests executed."
+    },
+    "genuine_saved_hidden_serial_action_mutations_rejected": [
+      "no_actions",
+      "same_count_wrong_prefill",
+      "same_count_wrong_verify",
+      "wrong_mode",
+      "stale_request_nonce"
+    ],
+    "genuine_saved_full_rank0_hidden_cache_deletion_mutations_rejected": 13,
+    "deletion_parts": [
+      "caches:keys",
+      "caches:offset",
+      "caches:state.0.0",
+      "caches:state.0.1",
+      "caches:values",
+      "native_caches:keys",
+      "native_caches:offset",
+      "native_caches:state.0.0",
+      "native_caches:state.0.1",
+      "native_caches:values",
+      "head_caches:keys",
+      "head_caches:offset",
+      "head_caches:values"
+    ],
+    "cache_layout_origin": "Independent trusted checkpoint config fields via pure architecture_layout; no MLX/model imports. Detached archived full receipt validated before in-memory single-part deletions.",
+    "mlx_imported": false,
+    "assurance": "Existing serial validator regressions and original action audits only. Future overlap/chunk-credit/stale-cache-mode tests are requirements, NOT implemented or passed."
+  },
+  "issues": [
+    "Original v1 native/mtp pairing cannot truthfully encode two MTP variants without a versioned standalone adapter/checker.",
+    "Existing audit proves recorded progress, not unlogged greedy logits or physical overlap; preserve separate physical numerical admission.",
+    "Unmodified collector/reducer cannot be used as acceptance for new per-request modes.",
+    "No physical execution authorized or performed; current pressure2 blocks parent hardware admission."
+  ]
+}

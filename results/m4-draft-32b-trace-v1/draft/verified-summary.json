@@ -1,0 +1,52 @@
+{
+  "draft_cases": [
+    {
+      "k": 1,
+      "hypothetical_rounds": 23,
+      "accepted_tokens_including_matching_eos": 19,
+      "proposed_tokens": 23,
+      "total_draft_seconds_including_prefix_recomputation": 0.7038000829779776,
+      "mean_archived_output_tokens_per_hypothetical_round": 1.7826086956521738
+    },
+    {
+      "k": 2,
+      "hypothetical_rounds": 18,
+      "accepted_tokens_including_matching_eos": 24,
+      "proposed_tokens": 34,
+      "total_draft_seconds_including_prefix_recomputation": 0.5654244999968796,
+      "mean_archived_output_tokens_per_hypothetical_round": 2.2777777777777777
+    },
+    {
+      "k": 4,
+      "hypothetical_rounds": 13,
+      "accepted_tokens_including_matching_eos": 29,
+      "proposed_tokens": 45,
+      "total_draft_seconds_including_prefix_recomputation": 0.5024808750094962,
+      "mean_archived_output_tokens_per_hypothetical_round": 3.1538461538461537
+    },
+    {
+      "k": 8,
+      "hypothetical_rounds": 12,
+      "accepted_tokens_including_matching_eos": 30,
+      "proposed_tokens": 75,
+      "total_draft_seconds_including_prefix_recomputation": 0.6108865409987629,
+      "mean_archived_output_tokens_per_hypothetical_round": 3.4166666666666665
+    }
+  ],
+  "scope": "actual small mixed3/4-bit draft evaluated against archived32B token trajectory, target notexecuted",
+  "no_speedup_inference_from_hypothetical_round_counts": true,
+  "block_order": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "timing_design": "sequential K1,K2,K4,K8; no repeated randomized trials; fresh prefix/cache each round; shared runtime warming can affect timings",
+  "tiny_gpu_batch_vs_sequential": {
+    "passed": true,
+    "cases": 16,
+    "max_abs_logit_error": 0.0,
+    "not_32b_parity": true
+  },
+  "owned_cleanup_verified": true
+}

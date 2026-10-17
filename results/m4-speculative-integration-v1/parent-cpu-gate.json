@@ -1,0 +1,9 @@
+{
+  "command_scope": "spikes007 and009 excluding007GPUmodule",
+  "passed": 269,
+  "optional_skips": 2,
+  "subtests_passed": 1383,
+  "duration_s": 23.37,
+  "ruff_check": "passed",
+  "ruff_format": "passed27files"
+}

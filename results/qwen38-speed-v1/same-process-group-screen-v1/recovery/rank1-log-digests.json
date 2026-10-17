@@ -1,0 +1,30 @@
+{
+  "stdout": {
+    "size": 315290,
+    "sha256": "f99b72d77fed3729231dbcb78c54691cb2abce209501b6c99acb9b4c203514de"
+  },
+  "stderr": {
+    "size": 14825067,
+    "sha256": "814e1903ebd3317475e5414209cbb25516c91db5f7dd42d0a85b50e45f3773f8"
+  },
+  "startup.json": {
+    "size": 772,
+    "sha256": "03e6c3b044f706b6b7c3200eefb8e74479411aca5c30d03566fb87992c8c10d1"
+  },
+  "result.json": {
+    "size": 414,
+    "sha256": "84fb351aba46f12dc5817783b78cadaa7315f56204556616c2f5a5efee547103"
+  },
+  "pids.json": {
+    "size": 860,
+    "sha256": "c19a929978cc1ab4e71c8502f6b793b7a777f0c9bda2ee4fda1f37d6c4dfc2df"
+  },
+  "source_sha256.json": {
+    "size": 609,
+    "sha256": "dd2e679b3ca58d38b01d1a9e0114b78457f157796c74f52f4c6770590c9a646a"
+  },
+  "hostfile.json": {
+    "size": 53,
+    "sha256": "775c493a407cffbbdd0d123ba62dc6b449707c50ae1a0386008d27eeda5ada98"
+  }
+}

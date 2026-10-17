@@ -1,0 +1,1234 @@
+{
+  "artifact_kind": "INDEPENDENT_CPU_ONLY_AUDIT_OF_RECORDED_PHYSICAL_PILOT_EVIDENCE",
+  "created_at_unix": 1792273418.149971,
+  "input_sha256": {
+    "results/qwen38-prefill-overlap-v1/freeze-noncritical-1792272045472674000/integration-freeze.json": "161349a091468906a7c699c83a9224a388403e2d3542675770e8635184f812eb",
+    "results/qwen38-prefill-overlap-v1/memory-acceptance-amendment-v1.json": "a0341821118cfd83d45f0f8979152aaffae3f296b372f8dc29b58aacc35d409f",
+    "results/qwen38-prefill-overlap-v1/noncritical-combined-independent-review.json": "fbdfe4c1a74775a7e6e98623feddb52baf6d37644e644bc7805f710eaa39e246",
+    "results/qwen38-prefill-overlap-v1/parent-noncritical-native-reference.json": "0196fc158afbe460a70eddced189a1659493d53ec05ba00e5364fcb606645ec6",
+    "results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000-audit-summary.json": "8b168769a54e4210764417a8b58b085cbaeb79a9ed2fb804211e6bc1de865b5d",
+    "results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000-external-trust.json": "875aa7174d5f3654b3415d784f99354959a9ba0fcc605dfc8a1f267deeb3e40d",
+    "results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000-parent-admission.json": "dafa8071531e570117f2edf9ab4051ff4a1257d25be26a003e483ec10a42295e",
+    "results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000-raw-audit.json": "ecf43c3bb5bf62dbe15c0be341efb1a45067315c6531c704c91dbace51da4caf",
+    "results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000-report.json": "877aaf45c8bec965c9f6712a282df66fa52b71787bcfdd31ca2ebae7ae64245d"
+  },
+  "limits": {
+    "all_six_long_targets_met": false,
+    "budget": "Conservative linear projection is finite capacity admission, not a guarantee that arbitrary 14-request/full-suite logs will remain below caps.",
+    "cleanup": "Read-only verification of recorded cleanup and exact recorded endpoints, not new process/listener probes. Parent owns current running suite and all live hardware/process state.",
+    "eighteen_cases_completed_by_this_pilot": false,
+    "execution_attestation": "Reports, source hashes, nonce/PID bindings, and self-reported tensor/numerical receipts are not cryptographic execution attestation. CPU audit cannot prove unlogged GPU work or rederive tensor-level elementwise comparisons without rerunning models.",
+    "full_suite_approved": false,
+    "full_suite_cases_required": 18,
+    "long_target_cases_required": 6,
+    "measured_cases": 2,
+    "measured_pairs_per_case": 1,
+    "operations": {
+      "gpu_execution": false,
+      "hardware_or_system_changes": false,
+      "mlx_or_models_imported": false,
+      "network_or_ssh_calls": false,
+      "parked_64mib_diagnostic_touched": false,
+      "raw_data_or_old_results_or_code_modified": false,
+      "repository_publication": "Only this exclusive new JSON report",
+      "subprocess_or_signals_or_sysctl": false
+    },
+    "original_report_complete_suite": false,
+    "original_report_statistical_targets_met": false,
+    "performance": "One paired observation per measured case. No confidence/repeatability, generalized speedup, full-suite performance acceptance, quality, or production reliability claim. Numerical gates are untimed but warm physical shapes and can affect later thermal/runtime state.",
+    "pressure": "Finite samples cover recorded actual child execution boundaries and satisfy <=1s gap; no continuous pressure guarantee and no crash-prevention guarantee.",
+    "remote_state": "No current remote weights, source filesystem, or hardware state readback; source stability checks are pinned executed code plus recorded successful completion."
+  },
+  "logic_errors": [],
+  "nonblocking_observations": [
+    {
+      "details": "Actor recorded 1256899 forwarded bytes dropped. The 393216-byte forwarded rank1.stdout is NOT treated as complete. Sealed rank1.receipt.json contains the complete 1650115-byte stdout; it equals the full control5 retrieval JSON. The full 20800431-byte stderr equals the disk stderr. All source-pinned raw validators passed on authoritative receipt strings.",
+      "kind": "rank1_forwarded_stdout_dropped"
+    },
+    {
+      "details": "structured-1536 is a target label; actual tokenized prompt is1535 tokens on both matched paths. code-1536 is1536. No label or prompt was repaired.",
+      "kind": "structured_target_label_vs_actual_length"
+    },
+    {
+      "details": "Actual integer warning2 samples are retained:34 rank0,7 rank1,3 server; no critical4. This passes the amended sampled noncritical contract, not the historical pressure1-only contract.",
+      "kind": "strict_noncritical_not_normal"
+    }
+  ],
+  "passed": true,
+  "pilot_rows_reduced": [
+    {
+      "case_id": "b00-warmup",
+      "finish_reason": "length",
+      "first_token_seconds": 0.7243797920000361,
+      "id": "pilot-v1-b00-warmup-native",
+      "max_tokens": 32,
+      "output_token_count": 32,
+      "prefill_mode": "serial",
+      "prompt_tokens": 26,
+      "sample_repeat": 0,
+      "wall_seconds": 3.779928916999779,
+      "warmup": true
+    },
+    {
+      "case_id": "b00-warmup",
+      "finish_reason": "length",
+      "first_token_seconds": 0.7040706249999857,
+      "id": "pilot-v1-b00-warmup-mtp",
+      "max_tokens": 32,
+      "output_token_count": 32,
+      "prefill_mode": "overlap",
+      "prompt_tokens": 26,
+      "sample_repeat": 0,
+      "wall_seconds": 3.738477457999579,
+      "warmup": true
+    },
+    {
+      "case_id": "code-1536",
+      "finish_reason": "length",
+      "first_token_seconds": 25.887860333999924,
+      "id": "pilot-v1-code-1536-native-r0",
+      "max_tokens": 256,
+      "output_token_count": 256,
+      "prefill_mode": "serial",
+      "prompt_tokens": 1536,
+      "sample_repeat": 0,
+      "wall_seconds": 49.874056792000374,
+      "warmup": false
+    },
+    {
+      "case_id": "code-1536",
+      "finish_reason": "length",
+      "first_token_seconds": 15.254609000000528,
+      "id": "pilot-v1-code-1536-mtp-r0",
+      "max_tokens": 256,
+      "output_token_count": 256,
+      "prefill_mode": "overlap",
+      "prompt_tokens": 1536,
+      "sample_repeat": 0,
+      "wall_seconds": 39.27174700000069,
+      "warmup": false
+    },
+    {
+      "case_id": "structured-1536",
+      "finish_reason": "stop",
+      "first_token_seconds": 15.270853709000221,
+      "id": "pilot-v1-structured-1536-mtp-r0",
+      "max_tokens": 256,
+      "output_token_count": 253,
+      "prefill_mode": "overlap",
+      "prompt_tokens": 1535,
+      "sample_repeat": 0,
+      "wall_seconds": 38.47317099999964,
+      "warmup": false
+    },
+    {
+      "case_id": "structured-1536",
+      "finish_reason": "stop",
+      "first_token_seconds": 25.94263641699945,
+      "id": "pilot-v1-structured-1536-native-r0",
+      "max_tokens": 256,
+      "output_token_count": 253,
+      "prefill_mode": "serial",
+      "prompt_tokens": 1535,
+      "sample_repeat": 0,
+      "wall_seconds": 49.142366874999425,
+      "warmup": false
+    }
+  ],
+  "recomputed_pilot_ratios": [
+    {
+      "case_id": "code-1536",
+      "output_token_count": 256,
+      "overlap_ttft_seconds": 15.254609000000528,
+      "overlap_wall_seconds": 39.27174700000069,
+      "pairs": 1,
+      "pilot_point_estimate_thresholds_met": true,
+      "prompt_tokens": 1536,
+      "sample_repeat": 0,
+      "serial_ttft_seconds": 25.887860333999924,
+      "serial_wall_seconds": 49.874056792000374,
+      "stop_reason": "length",
+      "token_ids_equal": true,
+      "ttft_candidate_reference_ratio": 0.5892572349815186,
+      "ttft_reduction_fraction": 0.4107427650184814,
+      "wall_candidate_reference_ratio": 0.7874183398351453,
+      "wall_reduction_fraction": 0.2125816601648547
+    },
+    {
+      "case_id": "structured-1536",
+      "output_token_count": 253,
+      "overlap_ttft_seconds": 15.270853709000221,
+      "overlap_wall_seconds": 38.47317099999964,
+      "pairs": 1,
+      "pilot_point_estimate_thresholds_met": true,
+      "prompt_tokens": 1535,
+      "sample_repeat": 0,
+      "serial_ttft_seconds": 25.94263641699945,
+      "serial_wall_seconds": 49.142366874999425,
+      "stop_reason": "stop",
+      "token_ids_equal": true,
+      "ttft_candidate_reference_ratio": 0.5886392371052034,
+      "ttft_reduction_fraction": 0.4113607628947966,
+      "wall_candidate_reference_ratio": 0.782892104034419,
+      "wall_reduction_fraction": 0.217107895965581
+    }
+  ],
+  "schema": "qwen38-noncritical-pilot-independent-audit-v1",
+  "scope": "Actual noncritical 27B PILOT only. Six rows, two warmup plus four measured; one serial/overlap pair for each of two cases. No full-suite or all-six-long-target approval.",
+  "security_concerns": [],
+  "timing_convention": "EOS included; fresh cache; gates/head load excluded; MTP finish ACK included; independent local_rank_wall includes final synchronization",
+  "trial_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000",
+  "verification": {
+    "abort_pressure_levels": [
+      4
+    ],
+    "actor_cleanup": {
+      "rank0": {
+        "actor_pid": 19465,
+        "child_pid": 19467,
+        "forwarded_bytes_dropped": 0,
+        "log_evidence_complete": true,
+        "nonce": "f6bc8bfe0f33b8e3505ba9c9959ef3b2"
+      },
+      "rank1": {
+        "actor_pid": 18157,
+        "child_pid": 18159,
+        "forwarded_bytes_dropped": 1256899,
+        "log_evidence_complete": true,
+        "nonce": "7e738c9dfccf98a0bfac529f3e72d9d2"
+      },
+      "server": {
+        "actor_pid": 18144,
+        "child_pid": 18146,
+        "forwarded_bytes_dropped": 0,
+        "log_evidence_complete": true,
+        "nonce": "65d7729b8d2ec024dc88edd608ddfdd0"
+      }
+    },
+    "actual_pure_calls": [
+      "supervisor025.read_freeze(exact_path, exact_sha256)",
+      "integration025.audit_raw_trial(actual_raw_directory, exact_external_trust, exact_manifest)",
+      "integration025.collect_raw_trials([(actual_raw_directory, exact_external_trust)], exact_manifest)"
+    ],
+    "allowed_pressure_levels": [
+      1,
+      2
+    ],
+    "check_count": 61,
+    "checks": {
+      "actual_budget_matches_published": {
+        "passed": true
+      },
+      "actual_original_native_outputs_and_tensors": {
+        "details": {
+          "original_rank_rows_checked": 12,
+          "reference_batches": [
+            0,
+            5
+          ]
+        },
+        "passed": true
+      },
+      "actual_pilot_log_and_retrieval_budgets": {
+        "details": [
+          {
+            "actor_log_cap_bytes": 67108864,
+            "actual_log_bytes": [
+              1498305,
+              16469521
+            ],
+            "actual_retrieval_bytes": 19680926,
+            "projected_log_bytes_14_requests": [
+              3496045,
+              38428883
+            ],
+            "projected_retrieval_bytes_14_requests": 45922161,
+            "retrieval_cap_bytes": 134217728,
+            "role": "rank0"
+          },
+          {
+            "actor_log_cap_bytes": 67108864,
+            "actual_log_bytes": [
+              1650115,
+              20800431
+            ],
+            "actual_retrieval_bytes": 24581539,
+            "projected_log_bytes_14_requests": [
+              3850269,
+              48534339
+            ],
+            "projected_retrieval_bytes_14_requests": 57356925,
+            "retrieval_cap_bytes": 134217728,
+            "role": "rank1"
+          },
+          {
+            "actor_log_cap_bytes": 67108864,
+            "actual_log_bytes": [
+              203,
+              0
+            ],
+            "actual_retrieval_bytes": 14304,
+            "projected_log_bytes_14_requests": [
+              474,
+              0
+            ],
+            "projected_retrieval_bytes_14_requests": 33376,
+            "retrieval_cap_bytes": 134217728,
+            "role": "server"
+          }
+        ],
+        "passed": true
+      },
+      "all_tensor_digests_well_formed": {
+        "passed": true
+      },
+      "collection_rerun_json_equivalent": {
+        "passed": true
+      },
+      "exact_recorded_listener_cleanup": {
+        "details": {
+          "endpoints": [
+            [
+              "169.254.198.236",
+              55287
+            ],
+            [
+              "169.254.214.155",
+              51780
+            ],
+            [
+              "169.254.214.155",
+              51781
+            ]
+          ],
+          "new_network_probe": false,
+          "recorded_refusals": [
+            true,
+            true,
+            true
+          ]
+        },
+        "passed": true
+      },
+      "five_targeted_actual_evidence_mutation_rejections": {
+        "details": [
+          {
+            "probe": "critical4",
+            "rejected": true
+          },
+          {
+            "probe": "missing_sample_level",
+            "rejected": true
+          },
+          {
+            "probe": "coverage_gap",
+            "rejected": true
+          },
+          {
+            "probe": "missing_KV_value",
+            "rejected": true
+          },
+          {
+            "probe": "changed_tolerance",
+            "rejected": true
+          }
+        ],
+        "passed": true
+      },
+      "freeze_sha256": {
+        "passed": true
+      },
+      "full_runner_static_budget_gate_precedes_launch": {
+        "details": {
+          "scope": "Read-only source ordering check only; no suite state inspected and no full-suite verdict.",
+          "source_sha256": "cf255fd1e43a28ca6b950d27fc01fa9e1e84b844fdcad904e098ec540d08cca2"
+        },
+        "passed": true
+      },
+      "given_input_sha256": {
+        "passed": true
+      },
+      "harness_source_hashes": {
+        "details": {
+          "count": 7
+        },
+        "passed": true
+      },
+      "memory_amendment": {
+        "passed": true
+      },
+      "native_reference_artifact_hashes": {
+        "details": {
+          "artifacts": 18,
+          "bytes_read": 578736289
+        },
+        "passed": true
+      },
+      "native_reference_manifest_and_digest": {
+        "passed": true
+      },
+      "new_report_scope_only_pilot": {
+        "passed": true
+      },
+      "no_mlx_import": {
+        "passed": true
+      },
+      "pilot_exact_row_population": {
+        "details": {
+          "measured_case_ids": [
+            "code-1536",
+            "structured-1536"
+          ],
+          "measured_rows": 4,
+          "pairs_per_case": 1,
+          "rows": 6,
+          "warmup_rows": 2
+        },
+        "passed": true
+      },
+      "pilot_point_ratios_recomputed": {
+        "details": {
+          "cases": [
+            {
+              "case_id": "code-1536",
+              "output_token_count": 256,
+              "overlap_ttft_seconds": 15.254609000000528,
+              "overlap_wall_seconds": 39.27174700000069,
+              "pairs": 1,
+              "pilot_point_estimate_thresholds_met": true,
+              "prompt_tokens": 1536,
+              "sample_repeat": 0,
+              "serial_ttft_seconds": 25.887860333999924,
+              "serial_wall_seconds": 49.874056792000374,
+              "stop_reason": "length",
+              "token_ids_equal": true,
+              "ttft_candidate_reference_ratio": 0.5892572349815186,
+              "ttft_reduction_fraction": 0.4107427650184814,
+              "wall_candidate_reference_ratio": 0.7874183398351453,
+              "wall_reduction_fraction": 0.2125816601648547
+            },
+            {
+              "case_id": "structured-1536",
+              "output_token_count": 253,
+              "overlap_ttft_seconds": 15.270853709000221,
+              "overlap_wall_seconds": 38.47317099999964,
+              "pairs": 1,
+              "pilot_point_estimate_thresholds_met": true,
+              "prompt_tokens": 1535,
+              "sample_repeat": 0,
+              "serial_ttft_seconds": 25.94263641699945,
+              "serial_wall_seconds": 49.142366874999425,
+              "stop_reason": "stop",
+              "token_ids_equal": true,
+              "ttft_candidate_reference_ratio": 0.5886392371052034,
+              "ttft_reduction_fraction": 0.4113607628947966,
+              "wall_candidate_reference_ratio": 0.782892104034419,
+              "wall_reduction_fraction": 0.217107895965581
+            }
+          ],
+          "formula": "candidate_overlap_seconds / same-case serial_seconds; reduction = 1 - ratio",
+          "not_a_full_target_pass": true
+        },
+        "passed": true
+      },
+      "pilot_report_scope_not_fullsuite": {
+        "passed": true
+      },
+      "published_pilot_budget_and_summary_bindings": {
+        "passed": true
+      },
+      "pure_raw025_json_equivalent_to_original": {
+        "details": {
+          "python_int_dictionary_keys_normalized_by_JSON": true
+        },
+        "passed": true
+      },
+      "pure_raw025_rerun": {
+        "passed": true
+      },
+      "rank0_authoritative_stdout_availability": {
+        "details": {
+          "authoritative_stdout_bytes": 1498305,
+          "authority": "rank0 disk exact",
+          "forwarded_stdout_bytes": 1498305
+        },
+        "passed": true
+      },
+      "rank0_cleanup": {
+        "passed": true
+      },
+      "rank0_full_all_reported_metrics": {
+        "details": {
+          "max_tolerance_ratio": 0.0,
+          "metric_count": 1459,
+          "nonexact_metric_count": 0
+        },
+        "passed": true
+      },
+      "rank0_full_hidden_only_prefill_metadata_and_cache_components": {
+        "details": {
+          "cache_part_comparisons": 642,
+          "head_cache_parts": 3,
+          "owned_layers": [
+            36,
+            64
+          ],
+          "prompt_lengths": [
+            513
+          ],
+          "target_cache_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "rank0_full_overlapped_prefill_metadata_and_cache_components": {
+        "details": {
+          "cache_part_comparisons": 330,
+          "head_cache_parts": 3,
+          "owned_layers": [
+            36,
+            64
+          ],
+          "prompt_lengths": [
+            513
+          ],
+          "target_cache_parts_per_boundary": 63
+        },
+        "passed": true
+      },
+      "rank0_output_native_prompt_bindings": {
+        "passed": true
+      },
+      "rank0_pressure_identity_values_and_time_coverage": {
+        "details": {
+          "actor_pid": 19465,
+          "actor_role": "rank0",
+          "child_pid": 19467,
+          "cleanup": {
+            "child_reaped": true,
+            "gpu_driver_state": "not inspected; process/group receipt only",
+            "group_gone": true,
+            "identity_unknown": false,
+            "pending_os_gpu_termination": false,
+            "pid_reused": false
+          },
+          "elapsed_seconds": 257.0859581670002,
+          "execution": {
+            "child_end_seconds": 257.0821576670005,
+            "child_start_seconds": 0.021230874999673688,
+            "gate_release_seconds": 0.02314391700019769
+          },
+          "first_sample_seconds": 0.01756745900001988,
+          "host_role": "local",
+          "last_sample_seconds": 257.08250545900046,
+          "level_counts": {
+            "1": 452,
+            "2": 34
+          },
+          "max_gap_seconds": 0.6007925419999083,
+          "nonce": "f6bc8bfe0f33b8e3505ba9c9959ef3b2",
+          "returncode": 0,
+          "role": "rank0",
+          "samples": 486,
+          "schema": "qwen38-owned-pressure-v3"
+        },
+        "passed": true
+      },
+      "rank0_same_process_admission_before_all_six": {
+        "details": {
+          "admission_elapsed_seconds": 72.31469679200018,
+          "child_pid": 19467,
+          "first_request_elapsed_seconds": 72.36182837500019,
+          "gate_event_count": 21,
+          "last_request_done_elapsed_seconds": 256.7706080420003,
+          "request_boundary_events": 18,
+          "request_ordinals": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "passed": true
+      },
+      "rank0_small_all_reported_metrics": {
+        "details": {
+          "max_tolerance_ratio": 0.0,
+          "metric_count": 3773,
+          "nonexact_metric_count": 0
+        },
+        "passed": true
+      },
+      "rank0_small_hidden_only_prefill_metadata_and_cache_components": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_cache_parts": 3,
+          "owned_layers": [
+            0,
+            24
+          ],
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "target_cache_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "rank0_small_overlapped_prefill_metadata_and_cache_components": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_cache_parts_when_live": 3,
+          "owned_layers": [
+            12,
+            24
+          ],
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "singleton_empty_head_prefix_expected": true,
+          "target_cache_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "rank0_stderr_disk_exact": {
+        "passed": true
+      },
+      "rank0_tensor_bindings": {
+        "details": {
+          "count": 812,
+          "owned_layers": [
+            36,
+            64
+          ]
+        },
+        "passed": true
+      },
+      "rank0_timing_and_outputs_equal_request_done": {
+        "passed": true
+      },
+      "rank1_authoritative_stdout_availability": {
+        "details": {
+          "authoritative_stdout_bytes": 1650115,
+          "authority": "sealed full receipt equals control5 retrieved JSON",
+          "forwarded_stdout_bytes": 393216
+        },
+        "passed": true
+      },
+      "rank1_cleanup": {
+        "passed": true
+      },
+      "rank1_full_all_reported_metrics": {
+        "details": {
+          "max_tolerance_ratio": 0.0,
+          "metric_count": 1859,
+          "nonexact_metric_count": 0
+        },
+        "passed": true
+      },
+      "rank1_full_hidden_only_prefill_metadata_and_cache_components": {
+        "details": {
+          "cache_part_comparisons": 822,
+          "head_cache_parts": 3,
+          "owned_layers": [
+            0,
+            36
+          ],
+          "prompt_lengths": [
+            513
+          ],
+          "target_cache_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "rank1_full_overlapped_prefill_metadata_and_cache_components": {
+        "details": {
+          "cache_part_comparisons": 420,
+          "head_cache_parts": 3,
+          "owned_layers": [
+            0,
+            36
+          ],
+          "prompt_lengths": [
+            513
+          ],
+          "target_cache_parts_per_boundary": 81
+        },
+        "passed": true
+      },
+      "rank1_output_native_prompt_bindings": {
+        "passed": true
+      },
+      "rank1_pressure_identity_values_and_time_coverage": {
+        "details": {
+          "actor_pid": 18157,
+          "actor_role": "rank1",
+          "child_pid": 18159,
+          "cleanup": {
+            "child_reaped": true,
+            "gpu_driver_state": "not inspected; process/group receipt only",
+            "group_gone": true,
+            "identity_unknown": false,
+            "pending_os_gpu_termination": false,
+            "pid_reused": false
+          },
+          "elapsed_seconds": 256.9496954159986,
+          "execution": {
+            "child_end_seconds": 256.9472216249851,
+            "child_start_seconds": 0.010016165993874893,
+            "gate_release_seconds": 0.01095050000003539
+          },
+          "first_sample_seconds": 0.008110915980068967,
+          "host_role": "remote",
+          "last_sample_seconds": 256.9476122499909,
+          "level_counts": {
+            "1": 482,
+            "2": 7
+          },
+          "max_gap_seconds": 0.5533296250214335,
+          "nonce": "7e738c9dfccf98a0bfac529f3e72d9d2",
+          "returncode": 0,
+          "role": "rank1",
+          "samples": 489,
+          "schema": "qwen38-owned-pressure-v3"
+        },
+        "passed": true
+      },
+      "rank1_same_process_admission_before_all_six": {
+        "details": {
+          "admission_elapsed_seconds": 72.3006351669901,
+          "child_pid": 18159,
+          "first_request_elapsed_seconds": 72.3247341249953,
+          "gate_event_count": 21,
+          "last_request_done_elapsed_seconds": 256.7611269589979,
+          "request_boundary_events": 18,
+          "request_ordinals": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "passed": true
+      },
+      "rank1_small_all_reported_metrics": {
+        "details": {
+          "max_tolerance_ratio": 0.0,
+          "metric_count": 3773,
+          "nonexact_metric_count": 0
+        },
+        "passed": true
+      },
+      "rank1_small_hidden_only_prefill_metadata_and_cache_components": {
+        "details": {
+          "cache_part_comparisons": 2538,
+          "head_cache_parts": 3,
+          "owned_layers": [
+            0,
+            24
+          ],
+          "prompt_lengths": [
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "target_cache_parts_per_boundary": 54
+        },
+        "passed": true
+      },
+      "rank1_small_overlapped_prefill_metadata_and_cache_components": {
+        "details": {
+          "cache_part_comparisons": 1017,
+          "head_cache_parts_when_live": 3,
+          "owned_layers": [
+            0,
+            12
+          ],
+          "prompt_lengths": [
+            1,
+            2,
+            255,
+            256,
+            257,
+            511,
+            512,
+            513
+          ],
+          "singleton_empty_head_prefix_expected": true,
+          "target_cache_parts_per_boundary": 27
+        },
+        "passed": true
+      },
+      "rank1_stderr_disk_exact": {
+        "passed": true
+      },
+      "rank1_tensor_bindings": {
+        "details": {
+          "count": 1042,
+          "owned_layers": [
+            0,
+            36
+          ]
+        },
+        "passed": true
+      },
+      "rank1_timing_and_outputs_equal_request_done": {
+        "passed": true
+      },
+      "raw_artifact_hashes": {
+        "details": {
+          "count": 14
+        },
+        "passed": true
+      },
+      "raw_source_and_given_inputs_unchanged_at_final_check": {
+        "passed": true
+      },
+      "replicated_tensor_hash_equality": {
+        "details": {
+          "per_rank_counts": [
+            812,
+            1042
+          ],
+          "replicated_count": 7,
+          "union": 1847
+        },
+        "passed": true
+      },
+      "reviewed_source_hashes_still_current": {
+        "details": {
+          "drift": {},
+          "reviewed_files": 90
+        },
+        "passed": true
+      },
+      "sender_exact_two_statement_delta": {
+        "details": {
+          "delta": [
+            "tensor_records: del payload after resumed yield",
+            "send_records: del record after successful sendall"
+          ],
+          "executed_sha256": "936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73",
+          "original_sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+        },
+        "passed": true
+      },
+      "sender_historical_sources_unchanged": {
+        "details": {
+          "preserved_sources": 14
+        },
+        "passed": true
+      },
+      "sender_source_unchanged_lookups_preserved": {
+        "details": {
+          "config_bytes_before_after_lookup": true,
+          "note": "Exact stream_server source byte equality; completed receipt is emitted only after original lookups pass, not independent remote file readback.",
+          "size_and_mtime_before_after_lookup": true
+        },
+        "passed": true
+      },
+      "server_cleanup": {
+        "passed": true
+      },
+      "server_pressure_identity_values_and_time_coverage": {
+        "details": {
+          "actor_pid": 18144,
+          "actor_role": "server",
+          "child_pid": 18146,
+          "cleanup": {
+            "child_reaped": true,
+            "gpu_driver_state": "not inspected; process/group receipt only",
+            "group_gone": true,
+            "identity_unknown": false,
+            "pending_os_gpu_termination": false,
+            "pid_reused": false
+          },
+          "elapsed_seconds": 25.31600824999623,
+          "execution": {
+            "child_end_seconds": 25.314238332997775,
+            "child_start_seconds": 0.010362750006606802,
+            "gate_release_seconds": 0.011333375005051494
+          },
+          "first_sample_seconds": 0.008305082999868318,
+          "host_role": "remote",
+          "last_sample_seconds": 25.314334750000853,
+          "level_counts": {
+            "1": 48,
+            "2": 3
+          },
+          "max_gap_seconds": 0.521712124987971,
+          "nonce": "65d7729b8d2ec024dc88edd608ddfdd0",
+          "returncode": 0,
+          "role": "server",
+          "samples": 51,
+          "schema": "qwen38-owned-pressure-v3"
+        },
+        "passed": true
+      },
+      "source_approval": {
+        "passed": true
+      },
+      "source_snapshot_frozen_and_live": {
+        "details": {
+          "live_schedule_excluded_as_phase_specific": true,
+          "mismatches": [],
+          "source_count": 79
+        },
+        "passed": true
+      }
+    },
+    "native_binding": {
+      "original_artifact_hashes_checked": 18,
+      "original_rank_rows_directly_compared": 12,
+      "original_reference_batches_directly_parsed": [
+        0,
+        5
+      ],
+      "output_binding": "Both actual rank results match independently bound original native token IDs and stop reasons for all six pilot requests. Archived original native rank responses directly checked; native reference is not a new latency baseline.",
+      "replicated_digests_equal": true,
+      "replicated_tensor_count": 7,
+      "tensor_counts_by_rank": [
+        812,
+        1042
+      ],
+      "tensor_union_count": 1847
+    },
+    "numerical_gates": {
+      "admission_order": [
+        {
+          "admission_elapsed_seconds": 72.31469679200018,
+          "child_pid": 19467,
+          "first_request_elapsed_seconds": 72.36182837500019,
+          "gate_event_count": 21,
+          "last_request_done_elapsed_seconds": 256.7706080420003,
+          "request_boundary_events": 18,
+          "request_ordinals": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "admission_elapsed_seconds": 72.3006351669901,
+          "child_pid": 18159,
+          "first_request_elapsed_seconds": 72.3247341249953,
+          "gate_event_count": 21,
+          "last_request_done_elapsed_seconds": 256.7611269589979,
+          "request_boundary_events": 18,
+          "request_ordinals": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "all_reported_metric_objects_checked": 10864,
+      "atol": 1e-06,
+      "chunk_size": 256,
+      "coverage": "Width/prefix rollback plus hidden-only/native and serial/overlap gates; source-pinned validators and independent config-derived exact cache identity, shape, dtype, offset checks. Every live recurrent, KV key/value/offset and head component checked at all declared boundaries.",
+      "devices": [
+        "Apple M2 Pro",
+        "Apple M4"
+      ],
+      "full_final_singleton_outside_compound": true,
+      "full_head_parts_per_live_boundary": 3,
+      "full_prefix_intervals": [
+        [
+          0,
+          256
+        ],
+        [
+          256,
+          512
+        ]
+      ],
+      "full_prompt_tokens": 513,
+      "full_target_owned_layers_by_rank": [
+        [
+          36,
+          64
+        ],
+        [
+          0,
+          36
+        ]
+      ],
+      "full_target_parts_per_boundary_by_rank": [
+        63,
+        81
+      ],
+      "rtol": 1e-05,
+      "same_process_small_and_full": true,
+      "singleton_small_head_prefix": "At length1 the final empty head prefix has no initialized cache arrays; [] is required by original validator, not a waived live component.",
+      "targeted_negative_probe_results": [
+        {
+          "probe": "critical4",
+          "rejected": true
+        },
+        {
+          "probe": "missing_sample_level",
+          "rejected": true
+        },
+        {
+          "probe": "coverage_gap",
+          "rejected": true
+        },
+        {
+          "probe": "missing_KV_value",
+          "rejected": true
+        },
+        {
+          "probe": "changed_tolerance",
+          "rejected": true
+        }
+      ]
+    },
+    "passed_check_count": 61,
+    "pilot_budget": {
+      "actors": [
+        {
+          "actor_log_cap_bytes": 67108864,
+          "actual_log_bytes": [
+            1498305,
+            16469521
+          ],
+          "actual_retrieval_bytes": 19680926,
+          "projected_log_bytes_14_requests": [
+            3496045,
+            38428883
+          ],
+          "projected_retrieval_bytes_14_requests": 45922161,
+          "retrieval_cap_bytes": 134217728,
+          "role": "rank0"
+        },
+        {
+          "actor_log_cap_bytes": 67108864,
+          "actual_log_bytes": [
+            1650115,
+            20800431
+          ],
+          "actual_retrieval_bytes": 24581539,
+          "projected_log_bytes_14_requests": [
+            3850269,
+            48534339
+          ],
+          "projected_retrieval_bytes_14_requests": 57356925,
+          "retrieval_cap_bytes": 134217728,
+          "role": "rank1"
+        },
+        {
+          "actor_log_cap_bytes": 67108864,
+          "actual_log_bytes": [
+            203,
+            0
+          ],
+          "actual_retrieval_bytes": 14304,
+          "projected_log_bytes_14_requests": [
+            474,
+            0
+          ],
+          "projected_retrieval_bytes_14_requests": 33376,
+          "retrieval_cap_bytes": 134217728,
+          "role": "server"
+        }
+      ],
+      "basis": "Actual authoritative stdout/stderr UTF-8 lengths and actual JSON receipt serialized size. Projection is ceil(actual_bytes * 14 / 6), including setup/gates conservatively. Original pilot budget and downstream static launch check verified.",
+      "passed": true,
+      "requests_observed": 6,
+      "requests_projected": 14
+    },
+    "pressure_critical_samples_total": 0,
+    "pressure_observations": [
+      {
+        "actor_pid": 19465,
+        "actor_role": "rank0",
+        "child_pid": 19467,
+        "cleanup": {
+          "child_reaped": true,
+          "gpu_driver_state": "not inspected; process/group receipt only",
+          "group_gone": true,
+          "identity_unknown": false,
+          "pending_os_gpu_termination": false,
+          "pid_reused": false
+        },
+        "elapsed_seconds": 257.0859581670002,
+        "execution": {
+          "child_end_seconds": 257.0821576670005,
+          "child_start_seconds": 0.021230874999673688,
+          "gate_release_seconds": 0.02314391700019769
+        },
+        "first_sample_seconds": 0.01756745900001988,
+        "host_role": "local",
+        "last_sample_seconds": 257.08250545900046,
+        "level_counts": {
+          "1": 452,
+          "2": 34
+        },
+        "max_gap_seconds": 0.6007925419999083,
+        "nonce": "f6bc8bfe0f33b8e3505ba9c9959ef3b2",
+        "returncode": 0,
+        "role": "rank0",
+        "samples": 486,
+        "schema": "qwen38-owned-pressure-v3"
+      },
+      {
+        "actor_pid": 18157,
+        "actor_role": "rank1",
+        "child_pid": 18159,
+        "cleanup": {
+          "child_reaped": true,
+          "gpu_driver_state": "not inspected; process/group receipt only",
+          "group_gone": true,
+          "identity_unknown": false,
+          "pending_os_gpu_termination": false,
+          "pid_reused": false
+        },
+        "elapsed_seconds": 256.9496954159986,
+        "execution": {
+          "child_end_seconds": 256.9472216249851,
+          "child_start_seconds": 0.010016165993874893,
+          "gate_release_seconds": 0.01095050000003539
+        },
+        "first_sample_seconds": 0.008110915980068967,
+        "host_role": "remote",
+        "last_sample_seconds": 256.9476122499909,
+        "level_counts": {
+          "1": 482,
+          "2": 7
+        },
+        "max_gap_seconds": 0.5533296250214335,
+        "nonce": "7e738c9dfccf98a0bfac529f3e72d9d2",
+        "returncode": 0,
+        "role": "rank1",
+        "samples": 489,
+        "schema": "qwen38-owned-pressure-v3"
+      },
+      {
+        "actor_pid": 18144,
+        "actor_role": "server",
+        "child_pid": 18146,
+        "cleanup": {
+          "child_reaped": true,
+          "gpu_driver_state": "not inspected; process/group receipt only",
+          "group_gone": true,
+          "identity_unknown": false,
+          "pending_os_gpu_termination": false,
+          "pid_reused": false
+        },
+        "elapsed_seconds": 25.31600824999623,
+        "execution": {
+          "child_end_seconds": 25.314238332997775,
+          "child_start_seconds": 0.010362750006606802,
+          "gate_release_seconds": 0.011333375005051494
+        },
+        "first_sample_seconds": 0.008305082999868318,
+        "host_role": "remote",
+        "last_sample_seconds": 25.314334750000853,
+        "level_counts": {
+          "1": 48,
+          "2": 3
+        },
+        "max_gap_seconds": 0.521712124987971,
+        "nonce": "65d7729b8d2ec024dc88edd608ddfdd0",
+        "returncode": 0,
+        "role": "server",
+        "samples": 51,
+        "schema": "qwen38-owned-pressure-v3"
+      }
+    ],
+    "pressure_policy": "noncritical",
+    "pressure_warning_samples_total": 44,
+    "pure_rerun_audit_equivalent_to_original_json": true,
+    "pure_rerun_report_equivalent_to_original_json": true,
+    "raw_artifact_sha256": {
+      "actors.json": "2e87cf3597dddebf9b58f448215670f2bcf1577b8fbe235849a831a19154e658",
+      "controller_sha256.json": "8ff35e143e184a4de40aadcaaba41623b9012aa25e55cf647c0e8df87481f171",
+      "listeners.cleanup.json": "0a104fbf60407fa1cbb10da366c7852490db6df6000383439ff230aa84a39492",
+      "peer_source.json": "e112c224f8ad38144abcb9f0d2272825ad7d5276ff42ab509395d7b9f088f2a3",
+      "rank0.job.json": "509b4388680e7cf0ee7334673490a1735ce3e2f1f4033658712919c7cffa691f",
+      "rank0.receipt.json": "c55c6ffed64460c24275d675c43a3c351e2b3ff611174c8ce76821daa9295cdf",
+      "rank1.job.json": "c47c9ad485341f211c587ff5532928698e60deaa0fe20f62ae7d5526a69974a4",
+      "rank1.receipt.json": "8b4d2467648be11b8a94ed9cb4d4f762aacfd39696bf6d8832e3c7a52467b2e6",
+      "result.json": "d52575676a80404ee0cb079a0c976130628df7e51ec425813671441f88de90ca",
+      "schedule_admission.json": "da2528178a853006f1dbf7821c55ad77caca80f4f0e171e4d2dc1643d4bf08e7",
+      "server.job.json": "1b10633c3cb36d1cd88eaac674aa483c8d3594d96b503cc723fb6667ce3d28ac",
+      "server.receipt.json": "b2c30f3eb188be7ad8ed7404c67dbc5c4ed98d329ba7d4fe1296fdc6b00b44e9",
+      "source_sha256.json": "a8b3aa163810fec341b615f027c7853889570620708395ddffa794440cb3424e",
+      "startup.json": "7b7809083144b07a60f7ab05f2089088bafd1e36bf5155c2c90004c4d9cce7c9"
+    },
+    "recorded_listener_cleanup": {
+      "exact_endpoints": [
+        [
+          "169.254.198.236",
+          55287
+        ],
+        [
+          "169.254.214.155",
+          51780
+        ],
+        [
+          "169.254.214.155",
+          51781
+        ]
+      ],
+      "new_probe_performed": false,
+      "recorded_closed": [
+        true,
+        true,
+        true
+      ]
+    },
+    "rerun_architecture_metrics_valid": true,
+    "rerun_canonical025_valid": true,
+    "rerun_original_native_bound": true,
+    "rerun_pilot_physical_accepted": true,
+    "source_lifetime_change": {
+      "changes": [
+        "del payload after resumed tensor_records yield",
+        "del record after successful send_records payload sendall"
+      ],
+      "executed_stream_weights_sha256": "936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73",
+      "only_two_added_statements_verified": true,
+      "original_024_stream_weights_sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+      "payload_identity_basis": "Removing those two exact lines produces byte-identical original stream_weights.py, preserving tensor descriptors, source reads, digest calculation and sendall payload identity. Actual recorded loaded tensor hashes equal original native references. No independent live network capture or new weight execution.",
+      "source_unchanged_lookups_basis": "Executed stream_server.py is byte-identical original024. Size/mtime and config-byte before/after lookups remain before completed output. Actual server completed, 812 selected tensors, 7425163456 selected bytes, matching rank0. This audits source and receipts, not remote current filesystem state."
+    },
+    "validator_source_sha256": {
+      "benchmarks/qwen38_overlap/cli.py": "4a71a206adcc5c95cb936e11d185e4c7957c2bb6dcbe5528e58869cbf837cf76",
+      "benchmarks/qwen38_overlap/evidence.py": "83e135873133637ab02804b5b12326e996f5866515c137ff31aa58485314d7d8",
+      "benchmarks/qwen38_overlap/harness.py": "1b4664144236aba26ec7ac79c6062d7af3b76262f6c51f3dff232a64466dcc81",
+      "benchmarks/qwen38_overlap/integration025.py": "77a93335c9bc372767532c6f886f37e0f6f8e20a339d39295c1bec7c39670d49",
+      "benchmarks/qwen38_overlap/numerical025.py": "c96e4b1b1bcd6810db988bd1a1751143bf2029850702ba962f88627972eb3b5e",
+      "benchmarks/qwen38_overlap/protocol.py": "24816684d819a25efe625e58c10f4bf0bc944a61d9eeadf4766e44b838bc08e7",
+      "benchmarks/qwen38_overlap/supervisor025.py": "d568c626a7d496ca21c66904e78ebc23fe4ba7e7331feb4de6e4a9fc28d660f5",
+      "results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000/raw/sources/hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+      "results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000/raw/sources/overlap_evidence.py": "5c473a5a1639b678bc2909cb5cffb9eb7367ef317fd77158154562d5cb9c5a4f",
+      "results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000/raw/sources/overlap_gate.py": "e2294ed131308c265e1eefd633fece9ab446b1379a4a73fb46f5b33d79e2fc00",
+      "results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000/raw/sources/pressure_guard.py": "e543304ea4d61525d950136024881731a8fd82c4273fdc0cfade2e1cce4daa0a",
+      "results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000/raw/sources/stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+      "results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000/raw/sources/stream_weights.py": "936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73",
+      "results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000/raw/sources/supervise.py": "6c699f8354fca815330c2e9c0d9ef29e9c58577511d1d874621dbfb3662da383"
+    }
+  }
+}

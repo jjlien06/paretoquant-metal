@@ -1,0 +1,562 @@
+{
+  "schema": "qwen38-overlap-cpu-harness-implementation-v1",
+  "status": "CPU_VALIDATED_NORMALIZED_CONTRACT_RUNTIME_ADAPTER_PENDING_NOT_GPU_APPROVED",
+  "scope": {
+    "created_only": [
+      "benchmarks/qwen38_overlap/**",
+      "results/qwen38-prefill-overlap-v1/cpu-harness-implementation.json"
+    ],
+    "CPU_only": true,
+    "MLX_imported": false,
+    "model_executed": false,
+    "GPU_executed": false,
+    "network_or_SSH_executed": false,
+    "installed_packages": false,
+    "process_signalling": false,
+    "git_commit": false,
+    "independent_review": "pending",
+    "GPU_admission": "not_approved"
+  },
+  "entrypoint": ".venv/bin/python -m benchmarks.qwen38_overlap.cli",
+  "implemented_commands": [
+    "plan",
+    "collect",
+    "analyze",
+    "audit"
+  ],
+  "schedule": {
+    "schema": "qwen38-prefill-overlap-schedule-v1",
+    "method": "mtp for BOTH modes",
+    "source_native_order_slot": "serial hidden-only MTP",
+    "source_mtp_order_slot": "overlap hidden-only MTP",
+    "counts": {
+      "cases": 18,
+      "full": 84,
+      "measured": 72,
+      "pilot": 6
+    },
+    "warmups": 12,
+    "batch_sizes": [
+      14,
+      14,
+      14,
+      14,
+      14,
+      14
+    ],
+    "full_schedule_sha256": "06d17b2fe778c98a67b32324c1ebb702e970d6e43b40088d27873912ef331ab0",
+    "pilot_sha256": "2a899d69791cc76f0e17168bee6ff9e696c452d372d3bdd500b193c72db0b173",
+    "structured-1536_actual_formatted_prompt_tokens": 1535,
+    "prompt_bytes_caps_order_repeats_preserved": true
+  },
+  "validation": {
+    "final_pytest": {
+      "tests": 95,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "pytest_xml": "benchmarks/qwen38_overlap/verification/pytest.xml",
+    "ruff_check": "All checks passed!",
+    "ruff_format_check": "22 files already formatted",
+    "CLI_plan_freeze_verified": true,
+    "TEST_collect_and_audit_exit_code": 2,
+    "TEST_collect_missing_requests": 70,
+    "TEST_analysis_exit_code": 0,
+    "TEST_reports_not_model_results": true,
+    "all_acceptance_flags_false": true,
+    "verified_original_preservation": {
+      "preserved_original_files": 90,
+      "original_mismatches": [],
+      "frozen_artifact_hash_errors": [],
+      "frozen_plan_matches_current_producer": true,
+      "sample_report_hash_manifests_verified": [
+        "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-analyze-report",
+        "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-collect-report",
+        "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-audit-report"
+      ],
+      "historical_manifest_sha256": "b20a600c3889d62cdf15a7faa6c2ca90611084ceae15b9a8dea7f7823d5a29e6",
+      "benchmark_design_sha256": "710703230b23461193337e78c8a38e1c72675e19f6d747c614c14c7211ac95f0"
+    }
+  },
+  "TDD": {
+    "method": "Vertical RED/GREEN feature slices; mutation families per feature; plan, collect and reporting CLI paths implemented in staged RED/GREEN steps.",
+    "full_command_and_output_log": "benchmarks/qwen38_overlap/tdd-log.json",
+    "persisted_command_count": 65,
+    "commands": [
+      {
+        "label": "schedule RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_harness.py -q",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed in 0.02s"
+      },
+      {
+        "label": "schedule GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_harness.py -q",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "1 passed in 0.02s"
+      },
+      {
+        "label": "pilot RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_harness.py -q",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed, 1 passed in 0.03s"
+      },
+      {
+        "label": "pilot GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_harness.py -q",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "2 passed in 0.02s"
+      },
+      {
+        "label": "bounded input RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed, 2 passed in 0.10s"
+      },
+      {
+        "label": "bounded input GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "3 passed in 0.08s"
+      },
+      {
+        "label": "paired estimator RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed, 3 passed in 0.53s"
+      },
+      {
+        "label": "paired estimator GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "4 passed in 0.03s"
+      },
+      {
+        "label": "retain failures RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed, 4 passed in 0.05s"
+      },
+      {
+        "label": "retain failures GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "5 passed in 0.04s"
+      },
+      {
+        "label": "credit transcript RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "12 failed, 5 passed in 0.09s"
+      },
+      {
+        "label": "credit transcript GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "17 passed in 0.06s"
+      },
+      {
+        "label": "sampled pressure RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "13 failed, 17 passed in 0.08s"
+      },
+      {
+        "label": "sampled pressure GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "30 passed in 0.06s"
+      },
+      {
+        "label": "numeric inventory RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "13 failed, 30 passed in 0.09s"
+      },
+      {
+        "label": "numeric inventory GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "43 passed in 0.07s"
+      },
+      {
+        "label": "decode grammar RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "10 failed, 43 passed in 0.09s"
+      },
+      {
+        "label": "decode grammar GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "53 passed in 0.08s"
+      },
+      {
+        "label": "bound collector RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "19 failed, 53 passed in 0.18s"
+      },
+      {
+        "label": "bound collector GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "72 passed in 0.28s"
+      },
+      {
+        "label": "CLI vertical slice RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "4 failed, 72 passed in 0.32s"
+      },
+      {
+        "label": "CLI plan GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_cli.py::test_plan_default_is_pure_and_explicit_freeze_is_versioned benchmarks/qwen38_overlap/tests/test_cli.py::test_execute_requires_parent_guarded_supervisor -q --import-mode=importlib",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "2 passed in 0.04s"
+      },
+      {
+        "label": "CLI collect RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_cli.py::test_collect_and_audit_cli_bind_external_inputs -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed in 0.13s"
+      },
+      {
+        "label": "CLI collect GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_cli.py::test_collect_and_audit_cli_bind_external_inputs -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "1 passed in 0.09s"
+      },
+      {
+        "label": "CLI report RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_cli.py::test_analyze_json_csv_md_and_formula_escaping -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed in 0.12s"
+      },
+      {
+        "label": "CLI report GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "76 passed in 0.48s"
+      },
+      {
+        "label": "source snapshot hardening RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_collect.py -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "2 failed, 19 passed in 0.29s"
+      },
+      {
+        "label": "source snapshot hardening GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "78 passed in 0.40s"
+      },
+      {
+        "label": "numeric overflow RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_analysis.py -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed, 9 passed in 0.06s"
+      },
+      {
+        "label": "numeric overflow GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "86 passed in 0.43s"
+      },
+      {
+        "label": "actor pressure interval RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_collect.py -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed, 21 passed in 0.29s"
+      },
+      {
+        "label": "actor pressure interval GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "87 passed in 0.44s"
+      },
+      {
+        "label": "strict schedule and rows RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_cli.py -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "2 failed, 4 passed in 0.16s"
+      },
+      {
+        "label": "strict schedule and rows GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "89 passed in 0.46s"
+      },
+      {
+        "label": "focused Ruff initial",
+        "command": ".venv/bin/python -m ruff check --no-cache benchmarks/qwen38_overlap",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "Found 172 errors."
+      },
+      {
+        "label": "Ruff safe import fixes",
+        "command": ".venv/bin/python -m ruff check --no-cache --fix --select I,F benchmarks/qwen38_overlap --output-format concise",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "Found 7 errors (7 fixed, 0 remaining)."
+      },
+      {
+        "label": "Ruff format",
+        "command": ".venv/bin/python -m ruff format --no-cache benchmarks/qwen38_overlap",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "Ruff remaining",
+        "command": ".venv/bin/python -m ruff check --no-cache benchmarks/qwen38_overlap --output-format concise",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "Found 17 errors."
+      },
+      {
+        "label": "Ruff format second",
+        "command": ".venv/bin/python -m ruff format --no-cache benchmarks/qwen38_overlap",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "Ruff final check",
+        "command": ".venv/bin/python -m ruff check --no-cache benchmarks/qwen38_overlap --output-format concise",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "Found 1 error."
+      },
+      {
+        "label": "confinement and full CPU verification",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib -p no:cacheprovider --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "91 passed in 1.17s"
+      },
+      {
+        "label": "guard source attestation RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_collect.py -q --import-mode=importlib -p no:cacheprovider --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed, 22 passed in 0.35s"
+      },
+      {
+        "label": "guard source attestation GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib -p no:cacheprovider --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "92 passed in 0.59s"
+      },
+      {
+        "label": "Ruff format prefreeze",
+        "command": ".venv/bin/python -m ruff format --no-cache benchmarks/qwen38_overlap",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "Ruff prefreeze check",
+        "command": ".venv/bin/python -m ruff check --no-cache benchmarks/qwen38_overlap --output-format concise",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "faithful serial ACK seam RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_transcript.py::test_serial_ack_before_shifted_head_matches_024_control_seam -q --import-mode=importlib -p no:cacheprovider --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed in 0.03s"
+      },
+      {
+        "label": "faithful serial ACK seam GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib -p no:cacheprovider --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "93 passed in 0.54s"
+      },
+      {
+        "label": "public artifact redaction RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_collect.py::test_public_audit_rows_do_not_dump_private_profile_or_argv -q --import-mode=importlib -p no:cacheprovider --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed in 13.93s"
+      },
+      {
+        "label": "public artifact redaction GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib -p no:cacheprovider --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "94 passed in 0.56s"
+      },
+      {
+        "label": "Ruff after review fixes",
+        "command": ".venv/bin/python -m ruff format --no-cache benchmarks/qwen38_overlap",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "Ruff after review check",
+        "command": ".venv/bin/python -m ruff check --no-cache benchmarks/qwen38_overlap --output-format concise",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "published schema RED",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests/test_schema.py -q --import-mode=importlib -p no:cacheprovider --tb=short",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": "1 failed in 0.02s"
+      },
+      {
+        "label": "published schema GREEN",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib -p no:cacheprovider --tb=short",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "95 passed in 0.64s"
+      },
+      {
+        "label": "CLI plan exclusive freeze end-to-end",
+        "command": ".venv/bin/python -m benchmarks.qwen38_overlap.cli plan --out-dir benchmarks/qwen38_overlap/frozen-v1",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "generate explicitly TEST-only samples",
+        "command": ".venv/bin/python -c 'from pathlib import Path; import json; from benchmarks.qwen38_overlap.tests.test_collect import record_fixture; from benchmarks.qwen38_overlap.tests.test_analysis import timing_rows; from benchmarks.qwen38_overlap.cli import encoded; p=Path(\"benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS\"); p.mkdir(parents=True,exist_ok=False); h,s,t,r=record_fixture(p); t[\"schedule_sha256\"]=h.sha(encoded(s)); values={\"TEST-schedule.json\":s,\"TEST-trusted.json\":t,\"TEST-record.json\":r,\"TEST-timing-rows.json\":{\"artifact_kind\":\"TEST_FIXTURE_NOT_MODEL_RESULTS\",\"model_executed\":False,\"rows\":timing_rows()},\"PROVENANCE.json\":{\"artifact_kind\":\"TEST_FIXTURE_NOT_MODEL_RESULTS\",\"model_executed\":False,\"GPU_executed\":False,\"warning\":\"Artificial CPU fixtures, not original native outputs, physical receipts or model timing results.\"}}; [( (p/name).write_bytes(encoded(value))) for name,value in values.items()]; print(json.dumps({\"created_TEST_files\":list(values),\"model_executed\":False,\"raw_fixture_rows\":len(r[\"ranks\"][0][\"requests\"])}))' ",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "CLI TEST collect audit analyze end-to-end",
+        "command": ".venv/bin/python -c 'import subprocess,sys,json; from pathlib import Path; from benchmarks.qwen38_overlap import harness as h; p=Path(\"benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS\"); schedule=p/\"TEST-schedule.json\"; trusted=p/\"TEST-trusted.json\"; record=p/\"TEST-record.json\"; rows=p/\"TEST-timing-rows.json\"; common=[\"--schedule\",str(schedule),\"--schedule-sha256\",h.sha(schedule.read_bytes())]; bound=[\"--trusted\",str(trusted),\"--trusted-sha256\",h.sha(trusted.read_bytes()),\"--record\",str(record),\"--record-sha256\",h.sha(record.read_bytes())]; commands=[(\"collect\",common+bound,2),(\"audit\",common+bound,2),(\"analyze\",common+[\"--input\",str(rows),\"--input-sha256\",h.sha(rows.read_bytes())],0)]; summaries=[]; \nfor name,args,expected in commands:\n cmd=[sys.executable,\"-m\",\"benchmarks.qwen38_overlap.cli\",name,*args,\"--out-dir\",str(p/(\"TEST-\"+name+\"-report\"))]; result=subprocess.run(cmd,capture_output=True,text=True,check=False); report=json.loads(result.stdout); assert result.returncode==expected,(name,result.returncode,result.stderr); assert report[\"accepted\"] is False; summaries.append({\"command\":cmd,\"returncode\":result.returncode,\"artifact_kind\":report[\"artifact_kind\"],\"accepted\":report[\"accepted\"],\"coverage_complete\":report[\"coverage_complete\"],\"statistical_targets_met\":report[\"statistical_targets_met\"],\"evidence_validation\":report[\"evidence_validation\"],\"missing_requests\":len(report[\"missing_ids\"]),\"case_rows\":len(report[\"cases\"])});\nprint(json.dumps(summaries,indent=2))' ",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "final Ruff format check",
+        "command": ".venv/bin/python -m ruff format --no-cache --check benchmarks/qwen38_overlap",
+        "reported_exit_code": 1,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "final focused Ruff",
+        "command": ".venv/bin/python -m ruff check --no-cache benchmarks/qwen38_overlap --output-format concise",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "final focused CPU pytest with XML",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib -p no:cacheprovider --tb=short --junitxml=benchmarks/qwen38_overlap/verification/pytest.xml",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "95 passed in 0.58s"
+      },
+      {
+        "label": "frozen artifacts and original preservation verification",
+        "command": ".venv/bin/python -c 'import json,hashlib; from pathlib import Path; from benchmarks.qwen38_overlap.cli import plan; from benchmarks.qwen38_overlap import harness as h; root=Path(\".\"); base=Path(\"benchmarks/qwen38_overlap\"); a=json.loads(Path(\"results/qwen38-prefill-overlap-v1/acceptance.json\").read_text()); expected=a[\"source_preservation_sha256\"]; mismatches=[name for name,digest in expected.items() if not Path(name).is_file() or h.sha(Path(name).read_bytes())!=digest]; f=json.loads((base/\"frozen-v1/freeze.json\").read_text()); errors=[name for name,digest in f[\"artifact_sha256\"].items() if h.sha((base/\"frozen-v1\"/name).read_bytes())!=digest]; assert not mismatches,mismatches; assert not errors,errors; assert plan()==f; reports=[];\nfor p in (base/\"samples/TEST_ONLY_NOT_MODEL_RESULTS\").glob(\"TEST-*-report/artifacts.json\"):\n index=json.loads(p.read_text()); bad=[name for name,digest in index[\"artifact_sha256\"].items() if h.sha((p.parent/name).read_bytes())!=digest]; assert not bad,bad; reports.append(str(p.parent));\nresult={\"preserved_original_files\":len(expected),\"original_mismatches\":mismatches,\"frozen_artifact_hash_errors\":errors,\"frozen_plan_matches_current_producer\":True,\"sample_report_hash_manifests_verified\":reports,\"historical_manifest_sha256\":h.sha(Path(\"results/qwen38-broad-v1/workloads/manifest.json\").read_bytes()),\"benchmark_design_sha256\":h.sha(Path(\"results/qwen38-prefill-overlap-v1/benchmark-design-review.json\").read_bytes())}; assert result[\"historical_manifest_sha256\"]==h.HISTORICAL_SHA; assert result[\"benchmark_design_sha256\"]==h.DESIGN_SHA; (base/\"verification/preservation.json\").write_text(json.dumps(result,indent=2)+\"\\n\"); print(json.dumps(result,indent=2))' ",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "final schema formatting",
+        "command": ".venv/bin/python -m ruff format --no-cache benchmarks/qwen38_overlap/tests/test_schema.py",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "final successful Ruff format check",
+        "command": ".venv/bin/python -m ruff format --no-cache --check benchmarks/qwen38_overlap",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "final successful focused Ruff",
+        "command": ".venv/bin/python -m ruff check --no-cache benchmarks/qwen38_overlap --output-format concise",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      },
+      {
+        "label": "final successful CPU pytest",
+        "command": ".venv/bin/python -m pytest benchmarks/qwen38_overlap/tests -q --import-mode=importlib -p no:cacheprovider --tb=short --junitxml=benchmarks/qwen38_overlap/verification/pytest.xml",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": "95 passed in 0.60s"
+      },
+      {
+        "label": "verify persisted proof files",
+        "command": ".venv/bin/python -c 'import json; from pathlib import Path; from xml.etree import ElementTree as E; p=Path(\"benchmarks/qwen38_overlap\"); v=json.loads((p/\"verification/preservation.json\").read_text()); x=E.parse(p/\"verification/pytest.xml\").getroot(); suites=list(x.iter(\"testsuite\")); summary={k:sum(int(s.get(k,\"0\")) for s in suites) for k in (\"tests\",\"failures\",\"errors\",\"skipped\")}; assert summary=={\"tests\":95,\"failures\":0,\"errors\":0,\"skipped\":0},summary; print(json.dumps({\"persisted_JUnit\":summary,\"preserved_original_files\":v[\"preserved_original_files\"],\"preservation_mismatches\":v[\"original_mismatches\"]},indent=2))' ",
+        "reported_exit_code": 0,
+        "observed_pytest_summary": null
+      }
+    ],
+    "reporting_anomaly": "The source-snapshot RED tool result reported exit0 despite captured pytest text showing 2 failed / 19 passed. Failure text was observed before the fix; the final independent persisted JUnit readback is 95 tests, zero failures/errors/skips."
+  },
+  "pressure_guard": {
+    "required_flag": "--require-normal-pressure",
+    "requested_interval_seconds": 0.5,
+    "max_gap_seconds": "externally frozen within [0.5,1.0]",
+    "both_rank_timelines_required": true,
+    "pre_spawn_and_full_actor_interval_required": true,
+    "disabled_non1_missing_readerror_uncovered_rejected": true,
+    "source_attestation_required": true,
+    "claim_scope": "sampled_not_continuous",
+    "live_pressure_measured_by_this_agent": false
+  },
+  "evidence_integration": {
+    "status": "pending_runtime025_adapter_and_independent_review",
+    "normalized_contract": "benchmarks/qwen38_overlap/CONTRACT.md",
+    "structural_schema": "benchmarks/qwen38_overlap/schema.json",
+    "raw025_field_names_guessed": false,
+    "external_trusted_source_schedule_and_record_hashes_required": true,
+    "self_reported_registry_sufficient": false,
+    "physical_numerical_capability_minted": false,
+    "physical_acceptance_possible_in_current_harness": false
+  },
+  "limitations": [
+    "Sibling025 compound/credit/pressure raw receipt fields were not documented and source remained mutable. Proposed normalized events are not a raw025 adapter. Genuine positive raw025 receipt integration and independent review remain pending.",
+    "Independent architecture-derived complete small/full numerical-plan production and raw-gate semantic mapping remain parent integration work. CPU inventory mutation checks do not execute model logits/cache arithmetic or mint a live capability.",
+    "Physical PID/listener cleanup, target tensor/metadata provenance and actor watchdog interval mapping require the reviewed raw adapter; normalized booleans and hash syntax cannot independently prove those facts.",
+    "The legacy minimum runtime registry is a floor only. Parent must freeze the entire actual new transitive runtime/helper/config/Metal/supervisor/adapter/collector/reducer set and per-batch schedules immediately before any approved hardware execution.",
+    "Prompt IDs and original native output IDs/stops must come from independently trusted/tokenizer-bound parent manifests. The TEST receipt uses artificial IDs/outputs and a tiny TEST inventory, never physical provenance.",
+    "No installed parent guarded supervisor callback, GPU gate, pilot, full-suite model trial, continuous-pressure proof or simultaneous Metal-kernel evidence was exercised.",
+    "All accepted/complete-suite admission flags remain false while integration is pending; timing coverage/ratios are separately descriptive. Two repeats cannot support confidence intervals or tail/general-workload guarantees."
+  ],
+  "artifact_sha256": {
+    "benchmarks/qwen38_overlap/CONTRACT.md": "a1bc068b45cb0ed4915a16a47b46e6b3da71abc8d2959d5f45ccee37408acc55",
+    "benchmarks/qwen38_overlap/README.md": "e65f894f2d16b395c485f297ad667c4dcc34207d7272d72bbefaaf80e9ac49dd",
+    "benchmarks/qwen38_overlap/cli.py": "fdb034e9cc5b8bd961a4e7926f479d93d0a6b602917542dde4f98dc7526340d3",
+    "benchmarks/qwen38_overlap/evidence.py": "83e135873133637ab02804b5b12326e996f5866515c137ff31aa58485314d7d8",
+    "benchmarks/qwen38_overlap/frozen-v1/batch-00.json": "ddf1077de85beb84723800292ed79dc9d4bb78a7f51321243738ed3ea67cab52",
+    "benchmarks/qwen38_overlap/frozen-v1/batch-01.json": "081a890be91a6a27a2da0f2fd515e755cddf0e9d3456ada968eaae856f522cb4",
+    "benchmarks/qwen38_overlap/frozen-v1/batch-02.json": "4df57899d8e707a1b02007f4f9a66a1d1ac6ff77ccba86679f2cc297fa035246",
+    "benchmarks/qwen38_overlap/frozen-v1/batch-03.json": "9580a32a24972034d4e254e411fdf1e7d0709576666dd914ce0a40d024f22c44",
+    "benchmarks/qwen38_overlap/frozen-v1/batch-04.json": "f3600d4662993afe11c5971c4ed5a85c3c80a3ad01ff412061b58af73fe97f24",
+    "benchmarks/qwen38_overlap/frozen-v1/batch-05.json": "5677bf18d24ddcc96e1e76191ca841faf431db6eb1134ff669572be32f191e0c",
+    "benchmarks/qwen38_overlap/frozen-v1/freeze.json": "31df7ce6f172cbc6be11df941eaf45847bc8a35928639e719e3319413c468185",
+    "benchmarks/qwen38_overlap/frozen-v1/pilot.json": "2a899d69791cc76f0e17168bee6ff9e696c452d372d3bdd500b193c72db0b173",
+    "benchmarks/qwen38_overlap/frozen-v1/schedule.json": "06d17b2fe778c98a67b32324c1ebb702e970d6e43b40088d27873912ef331ab0",
+    "benchmarks/qwen38_overlap/harness.py": "1b4664144236aba26ec7ac79c6062d7af3b76262f6c51f3dff232a64466dcc81",
+    "benchmarks/qwen38_overlap/protocol.py": "24816684d819a25efe625e58c10f4bf0bc944a61d9eeadf4766e44b838bc08e7",
+    "benchmarks/qwen38_overlap/samples/README.md": "098f7c26bdc31ab2a30f5577c70efa38d79a062705d38152ff2d66fd95e011b8",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/PROVENANCE.json": "218df62eab25287779a24c1744043987693e657a222ca9ba72c944d5338a9f1f",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-analyze-report/artifacts.json": "92306e30229243e082a9bed3bbe491b321e0f416a182a343f2c9586654c2b811",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-analyze-report/report.csv": "ba6b17ba68416b187122ca25c90e075ab16f2ece798a1a91ff6b530e304c594c",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-analyze-report/report.json": "6901c903ea124716655015b2dd76d5b004e7d7deed9cff8bcf78e27fb58aebc3",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-analyze-report/report.md": "6e93981b050283644e0be0a4fc5caf0d5e42c09bf53a2d168eaf1a06e3ea2bc8",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-audit-report/artifacts.json": "d1e9059e4483aa44213750d476a7cbaec9b062d9e64d91e7651765519e4a53d6",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-audit-report/report.csv": "2c86ac758240943a56587d286cac89796806a7fe26748d8331fd773f66e7ca9a",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-audit-report/report.json": "2f585799b1c377062e9f23ef621cafd193115baa353f418e131eff5f3c0f6ecc",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-audit-report/report.md": "2b63850844f92dd3954baa7878462f7ddfbb2da33af76b2600605596d3b5c92a",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-collect-report/artifacts.json": "d1e9059e4483aa44213750d476a7cbaec9b062d9e64d91e7651765519e4a53d6",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-collect-report/report.csv": "2c86ac758240943a56587d286cac89796806a7fe26748d8331fd773f66e7ca9a",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-collect-report/report.json": "2f585799b1c377062e9f23ef621cafd193115baa353f418e131eff5f3c0f6ecc",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-collect-report/report.md": "2b63850844f92dd3954baa7878462f7ddfbb2da33af76b2600605596d3b5c92a",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-record.json": "b6a97d9219b10c4db237a138d332040126ab84e450b8cadd8ed28708ad0e141e",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-schedule.json": "06d17b2fe778c98a67b32324c1ebb702e970d6e43b40088d27873912ef331ab0",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-timing-rows.json": "a461fa351b619d87543fea5f0f70873ebc5e11ddad8b56c2e15a8b257cb34c94",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/TEST-trusted.json": "387a210a22a5445792e3d64749499eb9bbc33074113283bbf7f30d4b96351d67",
+    "benchmarks/qwen38_overlap/samples/TEST_ONLY_NOT_MODEL_RESULTS/sources/runtime.py": "369046b3e717a499cd264ff6bb784c1982fc6a6c8012b85aac404885650f6cd0",
+    "benchmarks/qwen38_overlap/schema.json": "abf2213cc7b097272b43608664c1c0924a406bc0778a52b0faecc2e95f863348",
+    "benchmarks/qwen38_overlap/tdd-log.json": "7621aa4b2d6bae9e12444e90075caf288505427e88983532e6bdc130085edf0e",
+    "benchmarks/qwen38_overlap/tests/test_analysis.py": "dcde72f37168472c2f5f3ef800de6d99ca0d2cccd4aef15b3cbb00227ea93f67",
+    "benchmarks/qwen38_overlap/tests/test_cli.py": "2c35d3e552b059f42c18bb61ad9f8f50fcfb12e578249ff3eeedc74e7a2b3b1c",
+    "benchmarks/qwen38_overlap/tests/test_collect.py": "a317f2548dcfd759e1285ee4773de3f60f220277c226a2c70fbde2bd347d7b26",
+    "benchmarks/qwen38_overlap/tests/test_confinement.py": "b28784484db7f42221e807b836679b4471ac56e32282a32805f9b3d4685b6418",
+    "benchmarks/qwen38_overlap/tests/test_decode.py": "7edb5fa6def304763d9885920e3c359922d619c5991599e6d7b5aadbfb67dad9",
+    "benchmarks/qwen38_overlap/tests/test_harness.py": "01d784e4bae10459c6102a0e036509150b063ccf6bd1b081d395fc642b9bd6dc",
+    "benchmarks/qwen38_overlap/tests/test_io.py": "44383c676ac7bf0d467a965040c27d663394562386c0776e8d3ca833874ffd12",
+    "benchmarks/qwen38_overlap/tests/test_numerics.py": "0007d78ac591784ead2b7b0b6b224c222d7b0e61ce3edb18e1919b7ed1d53165",
+    "benchmarks/qwen38_overlap/tests/test_pressure.py": "5a0bb8d8c68f46ff73fff949bb5f1e1ad019439437f6ec67701ccadf4e332d01",
+    "benchmarks/qwen38_overlap/tests/test_schema.py": "96cac18e1983abb125c4b136cb080b202baa31e82d1b0b10f846c9d91b31f5a8",
+    "benchmarks/qwen38_overlap/tests/test_transcript.py": "4034d9e399a55e15e5dea85f25e3ee5f48b0b9719f42d657cb13b2d6a9be1a60",
+    "benchmarks/qwen38_overlap/verification/preservation.json": "8f269da5cd44b6c4210a6102f18ad79793812c7b07f737d113e65304d465ee62",
+    "benchmarks/qwen38_overlap/verification/pytest.xml": "3fef6d8b04ea45a1d811ab089b148b01e49d0501f448a754fd16a4c7c03c1495"
+  },
+  "artifact_hash_scope": "Actual on-disk owned files excluding __pycache__; excludes this implementation report itself. Frozen schedules/report artifacts additionally carry their own exact-byte hash indexes."
+}

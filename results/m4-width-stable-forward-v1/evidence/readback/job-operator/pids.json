@@ -1,0 +1,1 @@
+{"actor_pid": 16244, "child_pid": 16247, "pgid": 16247, "nonce": "5e0353ba7ce5417486f3d79e9548fd88", "executed_argv": ["/Users/jeremylien/Projects/paretoquant-dual-host/.venv/bin/python", "-u", "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/010-slot-operator-1791265403999785000/operator_gate.py"], "environment_keys": []}

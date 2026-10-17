@@ -1,0 +1,144 @@
+[
+  {
+    "repo": "mlx-community/Qwen3.6-35B-A3B-4bit",
+    "url": "https://huggingface.co/api/models/mlx-community/Qwen3.6-35B-A3B-4bit?blobs=true",
+    "revision": "38740b847e4cb78f352aba30aa41c76e08e6eb46",
+    "files": [
+      {
+        "file": "model-00001-of-00004.safetensors",
+        "bytes": 5288196018
+      },
+      {
+        "file": "model-00002-of-00004.safetensors",
+        "bytes": 5368472749
+      },
+      {
+        "file": "model-00003-of-00004.safetensors",
+        "bytes": 5368324139
+      },
+      {
+        "file": "model-00004-of-00004.safetensors",
+        "bytes": 4377211365
+      }
+    ],
+    "selected_bytes": 20402204271,
+    "selected_GiB": 19.001
+  },
+  {
+    "repo": "mlx-community/GLM-4.7-Flash-4bit",
+    "url": "https://huggingface.co/api/models/mlx-community/GLM-4.7-Flash-4bit?blobs=true",
+    "revision": "1454cffb1a21737e162f508e5bc70be9def89276",
+    "files": [
+      {
+        "file": "model-00001-of-00004.safetensors",
+        "bytes": 5357453035
+      },
+      {
+        "file": "model-00002-of-00004.safetensors",
+        "bytes": 5363462379
+      },
+      {
+        "file": "model-00003-of-00004.safetensors",
+        "bytes": 5363462333
+      },
+      {
+        "file": "model-00004-of-00004.safetensors",
+        "bytes": 768064072
+      }
+    ],
+    "selected_bytes": 16852441819,
+    "selected_GiB": 15.695
+  },
+  {
+    "repo": "mlx-community/Qwen3.8-27B-4bit",
+    "url": "https://huggingface.co/api/models/mlx-community/Qwen3.8-27B-4bit?blobs=true",
+    "revision": "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+    "files": [
+      {
+        "file": "model-00001-of-00003.safetensors",
+        "bytes": 5343268662
+      },
+      {
+        "file": "model-00002-of-00003.safetensors",
+        "bytes": 5354185130
+      },
+      {
+        "file": "model-00003-of-00003.safetensors",
+        "bytes": 5357087557
+      }
+    ],
+    "selected_bytes": 16054541349,
+    "selected_GiB": 14.952
+  },
+  {
+    "repo": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+    "url": "https://huggingface.co/api/models/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF?blobs=true",
+    "revision": "ed59f92082b1e93c0e96d60a8b11aab089b52f09",
+    "files": [
+      {
+        "file": "IQ2_XS/Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+        "bytes": 39225954592
+      },
+      {
+        "file": "IQ2_XS/Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00002-of-00002.gguf",
+        "bytes": 28800138432
+      },
+      {
+        "file": "IQ3_XXS/Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00001-of-00002.gguf",
+        "bytes": 47039860096
+      },
+      {
+        "file": "IQ3_XXS/Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00002-of-00002.gguf",
+        "bytes": 28800138432
+      },
+      {
+        "file": "Q2_0/Qwen3.8-Flash-Next-GSQ-RCO-Q2_0-00001-of-00002.gguf",
+        "bytes": 37623740192
+      },
+      {
+        "file": "Q2_0/Qwen3.8-Flash-Next-GSQ-RCO-Q2_0-00002-of-00002.gguf",
+        "bytes": 28800138432
+      }
+    ],
+    "selected_bytes": 210289970176,
+    "selected_GiB": 195.848
+  },
+  {
+    "repo": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF",
+    "url": "https://huggingface.co/api/models/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF?blobs=true",
+    "revision": "5348543e0147355ac9cbcb031184a3546350988e",
+    "files": [
+      {
+        "file": "IQ1_M/Qwen3.8-Flash-Next-GSQ-RCO-IQ1_M-00001-of-00002.gguf",
+        "bytes": 29608446496
+      },
+      {
+        "file": "IQ1_M/Qwen3.8-Flash-Next-GSQ-RCO-IQ1_M-00002-of-00002.gguf",
+        "bytes": 28800138432
+      },
+      {
+        "file": "mmproj-Qwen3.8-Flash-Next-BF16.gguf",
+        "bytes": 907543008
+      }
+    ],
+    "selected_bytes": 59316127936,
+    "selected_GiB": 55.242
+  },
+  {
+    "repo": "unsloth/Qwen3-Coder-Next-GGUF",
+    "url": "https://huggingface.co/api/models/unsloth/Qwen3-Coder-Next-GGUF?blobs=true",
+    "revision": "ce09c67b53bc8739eef83fe67b2f5d293c270632",
+    "files": [
+      {
+        "file": "Qwen3-Coder-Next-UD-IQ2_M.gguf",
+        "bytes": 24962293760
+      },
+      {
+        "file": "Qwen3-Coder-Next-UD-IQ2_XXS.gguf",
+        "bytes": 23312490496
+      }
+    ],
+    "selected_bytes": 48274784256,
+    "selected_GiB": 44.959
+  }
+]

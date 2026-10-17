@@ -1,0 +1,7428 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 6,
+        "proposed": 5,
+        "accepted": 5
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 10,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 7,
+        "accepted": 7
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 6,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 9,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 19,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 8,
+        "accepted": 8
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 8,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 34,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 4,
+          "accepted": 0,
+          "proposed": 3,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 2,
+        "proposed": 9,
+        "accepted": 9
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 52,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 8,
+          "accepted": 0,
+          "proposed": 7,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 7,
+          "accepted": 0,
+          "proposed": 6,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 6,
+          "accepted": 0,
+          "proposed": 5,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 4,
+          "accepted": 0,
+          "proposed": 3,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 6,
+        "proposed": 5,
+        "accepted": 5
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 10,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 7,
+        "accepted": 7
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 6,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 9,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 19,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 8,
+        "accepted": 8
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 8,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 34,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 4,
+          "accepted": 0,
+          "proposed": 3,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 2,
+        "proposed": 9,
+        "accepted": 9
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 52,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 8,
+          "accepted": 0,
+          "proposed": 7,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 7,
+          "accepted": 0,
+          "proposed": 6,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 6,
+          "accepted": 0,
+          "proposed": 5,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 4,
+          "accepted": 0,
+          "proposed": 3,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 6,
+        "proposed": 5,
+        "accepted": 5
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 7,
+        "proposed": 6,
+        "accepted": 4
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 6,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 7,
+        "accepted": 7
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 6,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 9,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 5,
+        "proposed": 10,
+        "accepted": 6
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 8,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 8,
+        "accepted": 8
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 8,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 15,
+        "accepted": 7
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 10,
+          "actual_width": 4,
+          "accepted": 3,
+          "proposed": 3,
+          "emitted": 4,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 2,
+        "proposed": 9,
+        "accepted": 9
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 24,
+        "accepted": 8
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 6,
+        "proposed": 5,
+        "accepted": 5
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 7,
+        "proposed": 6,
+        "accepted": 4
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 5,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 6,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 7,
+        "accepted": 7
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 6,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 9,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 5,
+        "proposed": 10,
+        "accepted": 6
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 8,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 4,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 8,
+        "accepted": 8
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 8,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 15,
+        "accepted": 7
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 3,
+          "offset": 10,
+          "actual_width": 4,
+          "accepted": 3,
+          "proposed": 3,
+          "emitted": 4,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 2,
+        "proposed": 9,
+        "accepted": 9
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 24,
+        "accepted": 8
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "sequential",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    }
+  ],
+  "case_count": 80,
+  "scope": "Actual random-weight tiny 4bit FP16 Qwen2 GPU; not real-checkpoint or distributed parity",
+  "weights": "Three layers, hidden64, vocab128, group32; no model downloads",
+  "tolerance": {
+    "rtol": 0.002,
+    "atol": 0.002
+  },
+  "sources": {
+    "speculative_decode.py": "25dd62cb80b4d9bcabe78d9a396615f8a658936799908cc0b10b153f2b65b856",
+    "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+    "test_speculative_gpu.py": "19ef8ee0b6cf0a4f3707a3fc16927b838a657731af9e1151c2c46ade2c354615"
+  },
+  "peak_mlx_bytes": 1254220,
+  "device": {
+    "device_name": "Apple M4",
+    "max_recommended_working_set_size": 12713115648,
+    "memory_size": 17179869184,
+    "architecture": "applegpu_g16g",
+    "max_buffer_length": 9534832640,
+    "resource_limit": 499000
+  },
+  "verification_mode": "sequential",
+  "receipts": [
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.030479999986710027,
+      "first_token_seconds": 0.008081791995209642,
+      "wall_tokens_per_second": 360.89238860880084,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 6,
+        "proposed": 5,
+        "accepted": 5
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 6,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.05656883300980553,
+      "first_token_seconds": 0.008344250003574416,
+      "wall_tokens_per_second": 194.45336618652325,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 10,
+        "accepted": 0
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 23,
+      "target_verification_calls": 11,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.009590917004970834,
+      "first_token_seconds": 0.009590000001480803,
+      "wall_tokens_per_second": 104.2653168077374,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.007647167003597133,
+      "first_token_seconds": 0.007646333004231565,
+      "wall_tokens_per_second": 130.76738085223096,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.005849166991538368,
+      "first_token_seconds": 0.005847624997841194,
+      "wall_tokens_per_second": 170.96451536545953,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.027793667002697475,
+      "first_token_seconds": 0.010858416993869469,
+      "wall_tokens_per_second": 395.7736127058157,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 7,
+        "accepted": 7
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 4,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.06522312499873806,
+      "first_token_seconds": 0.009253915995941497,
+      "wall_tokens_per_second": 168.6518393623861,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 19,
+        "accepted": 0
+      },
+      "draft_calls": 22,
+      "target_forward_calls": 32,
+      "target_verification_calls": 11,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.00702762498985976,
+      "first_token_seconds": 0.007026874998700805,
+      "wall_tokens_per_second": 142.295583706147,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.007689040998229757,
+      "first_token_seconds": 0.007688332989346236,
+      "wall_tokens_per_second": 130.05523058470223,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.005606291000731289,
+      "first_token_seconds": 0.005605415994068608,
+      "wall_tokens_per_second": 178.3710477871304,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.026681417002691887,
+      "first_token_seconds": 0.013927291991421953,
+      "wall_tokens_per_second": 412.2719568788348,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 8,
+        "accepted": 8
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 3,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.09827674999542069,
+      "first_token_seconds": 0.013458625006023794,
+      "wall_tokens_per_second": 111.9288132799727,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 34,
+        "accepted": 0
+      },
+      "draft_calls": 37,
+      "target_forward_calls": 47,
+      "target_verification_calls": 11,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.006965916996705346,
+      "first_token_seconds": 0.006965292006498203,
+      "wall_tokens_per_second": 143.55611766160402,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.007562750004581176,
+      "first_token_seconds": 0.007562124999822117,
+      "wall_tokens_per_second": 132.2270337369667,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.005473042008816265,
+      "first_token_seconds": 0.0054722500062780455,
+      "wall_tokens_per_second": 182.7137446394797,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.02739550000114832,
+      "first_token_seconds": 0.023115499992854893,
+      "wall_tokens_per_second": 401.52579801569306,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 2,
+        "proposed": 9,
+        "accepted": 9
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 2,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.13734766699781176,
+      "first_token_seconds": 0.022719667002093047,
+      "wall_tokens_per_second": 80.08872841047423,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 52,
+        "accepted": 0
+      },
+      "draft_calls": 55,
+      "target_forward_calls": 65,
+      "target_verification_calls": 11,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.006427374988561496,
+      "first_token_seconds": 0.006426749998354353,
+      "wall_tokens_per_second": 155.58451183876062,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.007462875000783242,
+      "first_token_seconds": 0.007462207999196835,
+      "wall_tokens_per_second": 133.99661657136804,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.0052844580059172586,
+      "first_token_seconds": 0.0052837080002063885,
+      "wall_tokens_per_second": 189.2341653354521,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.020107167001697235,
+      "first_token_seconds": 0.00553320899780374,
+      "wall_tokens_per_second": 547.0686148412402,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 6,
+        "proposed": 5,
+        "accepted": 5
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 6,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.03188945900183171,
+      "first_token_seconds": 0.005019459000322968,
+      "wall_tokens_per_second": 344.94156828963975,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 10,
+        "accepted": 0
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 23,
+      "target_verification_calls": 11,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.004435875001945533,
+      "first_token_seconds": 0.00443525001173839,
+      "wall_tokens_per_second": 225.4346661169238,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.004525208001723513,
+      "first_token_seconds": 0.004524582996964455,
+      "wall_tokens_per_second": 220.98431710081186,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.003427832998568192,
+      "first_token_seconds": 0.003427124989684671,
+      "wall_tokens_per_second": 291.72949802913405,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.017495708001661114,
+      "first_token_seconds": 0.006162250007037073,
+      "wall_tokens_per_second": 628.7256279629047,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 7,
+        "accepted": 7
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 4,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.04328199999872595,
+      "first_token_seconds": 0.007001707999734208,
+      "wall_tokens_per_second": 254.14722056105992,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 19,
+        "accepted": 0
+      },
+      "draft_calls": 22,
+      "target_forward_calls": 32,
+      "target_verification_calls": 11,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.00428549999196548,
+      "first_token_seconds": 0.004284790993551724,
+      "wall_tokens_per_second": 233.3450010208412,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.0045563330058939755,
+      "first_token_seconds": 0.00455562501156237,
+      "wall_tokens_per_second": 219.4747396001173,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.0033879160037031397,
+      "first_token_seconds": 0.0033871250052470714,
+      "wall_tokens_per_second": 295.166703928597,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.018223999999463558,
+      "first_token_seconds": 0.009584749990608543,
+      "wall_tokens_per_second": 603.5996488325173,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 8,
+        "accepted": 8
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 3,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.06715737500053365,
+      "first_token_seconds": 0.009082165997824632,
+      "wall_tokens_per_second": 163.79437105623308,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 34,
+        "accepted": 0
+      },
+      "draft_calls": 37,
+      "target_forward_calls": 47,
+      "target_verification_calls": 11,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.005053083004895598,
+      "first_token_seconds": 0.005052167005487718,
+      "wall_tokens_per_second": 197.89898543743814,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.005034416986745782,
+      "first_token_seconds": 0.005033541994635016,
+      "wall_tokens_per_second": 198.6327319792384,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.0034568749979371205,
+      "first_token_seconds": 0.0034558750048745424,
+      "wall_tokens_per_second": 289.2786116352911,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.01975966700410936,
+      "first_token_seconds": 0.016953083002590574,
+      "wall_tokens_per_second": 556.6895432859452,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 2,
+        "proposed": 9,
+        "accepted": 9
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 2,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "text": "53,53,53,53,53,53,53,53,64,5,117",
+      "wall_seconds": 0.1038540000008652,
+      "first_token_seconds": 0.016946084011578932,
+      "wall_tokens_per_second": 105.91792323750997,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 52,
+        "accepted": 0
+      },
+      "draft_calls": 55,
+      "target_forward_calls": 65,
+      "target_verification_calls": 11,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.00508533300308045,
+      "first_token_seconds": 0.005084625008748844,
+      "wall_tokens_per_second": 196.6439561370412,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.005415999999968335,
+      "first_token_seconds": 0.005415249994257465,
+      "wall_tokens_per_second": 184.63810930684022,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        53
+      ],
+      "text": "53",
+      "wall_seconds": 0.004036667000036687,
+      "first_token_seconds": 0.004035916994325817,
+      "wall_tokens_per_second": 247.7291290044266,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.027259166992735118,
+      "first_token_seconds": 0.007906416998594068,
+      "wall_tokens_per_second": 403.5339745683214,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 6,
+        "proposed": 5,
+        "accepted": 5
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 6,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.03069679200416431,
+      "first_token_seconds": 0.007041207994916476,
+      "wall_tokens_per_second": 358.3436340353659,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 7,
+        "proposed": 6,
+        "accepted": 4
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 15,
+      "target_verification_calls": 7,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.006632959004491568,
+      "first_token_seconds": 0.00663229200290516,
+      "wall_tokens_per_second": 150.76227658317217,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47
+      ],
+      "text": "4,47",
+      "wall_seconds": 0.007262084007379599,
+      "first_token_seconds": 0.007261250008014031,
+      "wall_tokens_per_second": 275.4030382969456,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 4,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.005377833003876731,
+      "first_token_seconds": 0.00537712499499321,
+      "wall_tokens_per_second": 185.94850365921138,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.02740799999446608,
+      "first_token_seconds": 0.009614291004254483,
+      "wall_tokens_per_second": 401.34267375295525,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 7,
+        "accepted": 7
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 4,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.03514300000097137,
+      "first_token_seconds": 0.010103167005581781,
+      "wall_tokens_per_second": 313.00685768704875,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 5,
+        "proposed": 10,
+        "accepted": 6
+      },
+      "draft_calls": 15,
+      "target_forward_calls": 17,
+      "target_verification_calls": 5,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.008245957986218855,
+      "first_token_seconds": 0.00824537499283906,
+      "wall_tokens_per_second": 121.271537118096,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47
+      ],
+      "text": "4,47",
+      "wall_seconds": 0.009250165996490978,
+      "first_token_seconds": 0.009246415997040458,
+      "wall_tokens_per_second": 216.21233616333956,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "draft_calls": 4,
+      "target_forward_calls": 5,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.005381916009355336,
+      "first_token_seconds": 0.005381166003644466,
+      "wall_tokens_per_second": 185.80743331217153,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.027630208001937717,
+      "first_token_seconds": 0.015163291012868285,
+      "wall_tokens_per_second": 398.11499063736926,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 8,
+        "accepted": 8
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 3,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.04442008399928454,
+      "first_token_seconds": 0.013647792002302594,
+      "wall_tokens_per_second": 247.63573162484727,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 15,
+        "accepted": 7
+      },
+      "draft_calls": 19,
+      "target_forward_calls": 21,
+      "target_verification_calls": 4,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.00693958300689701,
+      "first_token_seconds": 0.006938875012565404,
+      "wall_tokens_per_second": 144.10087738789704,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47
+      ],
+      "text": "4,47",
+      "wall_seconds": 0.010325416005798616,
+      "first_token_seconds": 0.010324625007342547,
+      "wall_tokens_per_second": 193.69679622368986,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "draft_calls": 4,
+      "target_forward_calls": 5,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.005104791998746805,
+      "first_token_seconds": 0.005104041993035935,
+      "wall_tokens_per_second": 195.89436753652134,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.027153332994203083,
+      "first_token_seconds": 0.023321875007241033,
+      "wall_tokens_per_second": 405.10680594343137,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 2,
+        "proposed": 9,
+        "accepted": 9
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 2,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.060311958004604094,
+      "first_token_seconds": 0.022751958007575013,
+      "wall_tokens_per_second": 182.38505868372374,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 24,
+        "accepted": 8
+      },
+      "draft_calls": 27,
+      "target_forward_calls": 29,
+      "target_verification_calls": 3,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.006500916992081329,
+      "first_token_seconds": 0.006500292001874186,
+      "wall_tokens_per_second": 153.82445295303498,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47
+      ],
+      "text": "4,47",
+      "wall_seconds": 0.00933008300489746,
+      "first_token_seconds": 0.009329292006441392,
+      "wall_tokens_per_second": 214.360365170404,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "draft_calls": 4,
+      "target_forward_calls": 5,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.004875832994002849,
+      "first_token_seconds": 0.004875082988291979,
+      "wall_tokens_per_second": 205.09316074401536,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.018708000003243797,
+      "first_token_seconds": 0.0049485000054119155,
+      "wall_tokens_per_second": 587.9837501653143,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 6,
+        "proposed": 5,
+        "accepted": 5
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 6,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.02011816599406302,
+      "first_token_seconds": 0.004450583001016639,
+      "wall_tokens_per_second": 546.7695217966767,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 7,
+        "proposed": 6,
+        "accepted": 4
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 15,
+      "target_verification_calls": 7,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.00444066699128598,
+      "first_token_seconds": 0.004439957992872223,
+      "wall_tokens_per_second": 225.19139623897095,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47
+      ],
+      "text": "4,47",
+      "wall_seconds": 0.004924875000142492,
+      "first_token_seconds": 0.004924082997604273,
+      "wall_tokens_per_second": 406.1016776958062,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 4,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.0032500000088475645,
+      "first_token_seconds": 0.003249291010433808,
+      "wall_tokens_per_second": 307.69230685466846,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.018085666990373284,
+      "first_token_seconds": 0.0064051669905893505,
+      "wall_tokens_per_second": 608.216440447296,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 7,
+        "accepted": 7
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 4,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.022989582997979596,
+      "first_token_seconds": 0.006023207999533042,
+      "wall_tokens_per_second": 478.47757834349227,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 5,
+        "proposed": 10,
+        "accepted": 6
+      },
+      "draft_calls": 15,
+      "target_forward_calls": 17,
+      "target_verification_calls": 5,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.004511166000156663,
+      "first_token_seconds": 0.004510540995397605,
+      "wall_tokens_per_second": 221.67217964607644,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47
+      ],
+      "text": "4,47",
+      "wall_seconds": 0.005973499995889142,
+      "first_token_seconds": 0.005972749990178272,
+      "wall_tokens_per_second": 334.8120869467423,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "draft_calls": 4,
+      "target_forward_calls": 5,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.0033412500051781535,
+      "first_token_seconds": 0.003340459006722085,
+      "wall_tokens_per_second": 299.28918771424907,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.0200663750001695,
+      "first_token_seconds": 0.010455042007379234,
+      "wall_tokens_per_second": 548.1807252135517,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 8,
+        "accepted": 8
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 3,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.03230095800245181,
+      "first_token_seconds": 0.00932841599569656,
+      "wall_tokens_per_second": 340.54717507651145,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 15,
+        "accepted": 7
+      },
+      "draft_calls": 19,
+      "target_forward_calls": 21,
+      "target_verification_calls": 4,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.005196041995077394,
+      "first_token_seconds": 0.005195125006139278,
+      "wall_tokens_per_second": 192.45417972898912,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47
+      ],
+      "text": "4,47",
+      "wall_seconds": 0.006405207997886464,
+      "first_token_seconds": 0.006404499989002943,
+      "wall_tokens_per_second": 312.24590999385856,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "draft_calls": 4,
+      "target_forward_calls": 5,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.0038154580106493086,
+      "first_token_seconds": 0.003814791009062901,
+      "wall_tokens_per_second": 262.09173242344804,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.019939582998631522,
+      "first_token_seconds": 0.017114332993514836,
+      "wall_tokens_per_second": 551.6665017896785,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 2,
+        "proposed": 9,
+        "accepted": 9
+      },
+      "draft_calls": 13,
+      "target_forward_calls": 13,
+      "target_verification_calls": 2,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "text": "4,47,47,47,47,47,47,47,47,47,47",
+      "wall_seconds": 0.04689845901157241,
+      "first_token_seconds": 0.016924249997828156,
+      "wall_tokens_per_second": 234.5492843866298,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 24,
+        "accepted": 8
+      },
+      "draft_calls": 27,
+      "target_forward_calls": 29,
+      "target_verification_calls": 3,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.005411666992586106,
+      "first_token_seconds": 0.005410999990999699,
+      "wall_tokens_per_second": 184.78594513852818,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 4,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4,
+        47
+      ],
+      "text": "4,47",
+      "wall_seconds": 0.006590750010218471,
+      "first_token_seconds": 0.006589834010810591,
+      "wall_tokens_per_second": 303.455600181944,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "stop",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "draft_calls": 4,
+      "target_forward_calls": 5,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    },
+    {
+      "token_ids": [
+        4
+      ],
+      "text": "4",
+      "wall_seconds": 0.003963333001593128,
+      "first_token_seconds": 0.003962375005357899,
+      "wall_tokens_per_second": 252.31288907544064,
+      "native_generation_tps": null,
+      "prompt_tokens": 4,
+      "finish_reason": "length",
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "draft_calls": 3,
+      "target_forward_calls": 3,
+      "target_verification_calls": 1,
+      "verification_mode": "sequential"
+    }
+  ],
+  "sequential_is_diagnostic": true
+}

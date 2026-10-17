@@ -1,0 +1,95 @@
+{
+  "date_local": "October 6, 2026",
+  "bandwidth_median_Gbps": {
+    "upload": {
+      "trials": 3,
+      "median_Gbps": 37.55226983267769
+    },
+    "download": {
+      "trials": 3,
+      "median_Gbps": 37.316728473775385
+    }
+  },
+  "prior_bandwidth_Gbps": 18.93,
+  "prior_bandwidth_provenance": "Previous verified smoke reported in supplied session context; previous physical cable not rerun",
+  "bandwidth_ratios_vs_prior": {
+    "upload": 1.9837437840822867,
+    "download": 1.9713010287255883
+  },
+  "rank0_requests": [
+    {
+      "repeat": 0,
+      "tokens_including_EOS": 41,
+      "wall_seconds": 27.38726358290296,
+      "TTFT_seconds": 20.819938999949954,
+      "post_first_events_per_second": 6.090760323287379
+    },
+    {
+      "repeat": 1,
+      "tokens_including_EOS": 41,
+      "wall_seconds": 7.458738832967356,
+      "TTFT_seconds": 1.1242020420031622,
+      "post_first_events_per_second": 6.314589577734777
+    },
+    {
+      "repeat": 2,
+      "tokens_including_EOS": 41,
+      "wall_seconds": 7.466102625010535,
+      "TTFT_seconds": 1.1310374171007425,
+      "post_first_events_per_second": 6.314062868691087
+    },
+    {
+      "repeat": 3,
+      "tokens_including_EOS": 41,
+      "wall_seconds": 7.5731159169226885,
+      "TTFT_seconds": 1.138687792001292,
+      "post_first_events_per_second": 6.216558678319006
+    }
+  ],
+  "historical_group8_rank0_requests": [
+    {
+      "repeat": 0,
+      "tokens_including_EOS": 41,
+      "wall_seconds": 35.48033400007989,
+      "TTFT_seconds": 28.848073499975726,
+      "post_first_events_per_second": 6.031126189837049
+    },
+    {
+      "repeat": 1,
+      "tokens_including_EOS": 41,
+      "wall_seconds": 7.405954207992181,
+      "TTFT_seconds": 1.0261285420274362,
+      "post_first_events_per_second": 6.269763798310824
+    },
+    {
+      "repeat": 2,
+      "tokens_including_EOS": 41,
+      "wall_seconds": 7.451262334012426,
+      "TTFT_seconds": 1.1025172090157866,
+      "post_first_events_per_second": 6.300457682969463
+    },
+    {
+      "repeat": 3,
+      "tokens_including_EOS": 41,
+      "wall_seconds": 7.525272625032812,
+      "TTFT_seconds": 1.1320941660087556,
+      "post_first_events_per_second": 6.256668769122105
+    }
+  ],
+  "warm_current_median_post_first_events_per_second": 6.314062868691087,
+  "warm_historical_median_post_first_events_per_second": 6.269763798310824,
+  "warm_throughput_change_percent": 0.7065508654759522,
+  "warm_current_median_request_wall_seconds": 7.466102625010535,
+  "request_count_per_rank": 4,
+  "all_same_historical_41_token_ids": true,
+  "unique_checkpoint_tensor_count": 1671,
+  "replicated_tensor_count": 7,
+  "controller_elapsed_seconds": 70.45655150001403,
+  "cleanup_verified": true,
+  "limits": [
+    "Historical different-session comparison, not controlled same-session cable A/B",
+    "Three warmed fresh-cache requests on one short prompt, unchanged grouping/weights/source",
+    "Cable bulk smoke uses three512MiB single-stream trials per direction, with separate16MiB digest checks",
+    "No speculation, custom32B kernels, quality evaluation or general speedup claim"
+  ]
+}

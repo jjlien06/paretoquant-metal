@@ -1,0 +1,24 @@
+{
+  "fetched_sha256": {
+    "operation-trace.json": "450ddaf7b96ef123fc156c72fc7216c9f5eb2a6c9074879befdd40ff70e6650b",
+    "job-trace/startup.json": "7b43a42373090b545a637713176da69a59b0fe53d710c17542f7b382fc1e3ff6",
+    "job-trace/pids.json": "1a9648c3a64c1ed98464e1fd79ce82307b92228a320b84ce1542279edb6b510e",
+    "job-trace/result.json": "7f98d105f05d573cf265ef17bad487b1298fa75334fe1c77600b6d766f1311c1",
+    "job-trace/stdout": "7344d5ec268713eaec82e0766858634f215d0ce315c38ccd61a84ccb06675cfe",
+    "job-trace/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "draft_screen.py": "fdb9ec46cff8efe4cfda568408478bb5bc47750f2942d59e30b3bd55534871ae",
+    "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "operation_trace.py": "4a6c4ae5482115575abc804ae3265a5f713a0ee047fcb6be03dd0e0ed513eab5"
+  },
+  "guarded_unchanged": true,
+  "executed_source_exact": true,
+  "actor_cleanup": {
+    "child_reaped": true,
+    "group_gone": true,
+    "pid_reused": false,
+    "identity_unknown": false,
+    "pending_os_gpu_termination": false,
+    "gpu_driver_state": "not inspected; process/group receipt only"
+  }
+}

@@ -1,0 +1,5424 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 6,
+        "proposed": 5,
+        "accepted": 5
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 10,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 7,
+        "accepted": 7
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 6,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 9,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 19,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 8,
+        "accepted": 8
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 8,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 34,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 4,
+          "accepted": 0,
+          "proposed": 3,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 2,
+        "proposed": 9,
+        "accepted": 9
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 52,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 8,
+          "accepted": 0,
+          "proposed": 7,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 7,
+          "accepted": 0,
+          "proposed": 6,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 6,
+          "accepted": 0,
+          "proposed": 5,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 4,
+          "accepted": 0,
+          "proposed": 3,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 6,
+        "proposed": 5,
+        "accepted": 5
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 10,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 7,
+        "accepted": 7
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 6,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 9,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 19,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 8,
+        "accepted": 8
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 8,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 34,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 4,
+          "accepted": 0,
+          "proposed": 3,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "matched",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 2,
+        "proposed": 9,
+        "accepted": 9
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "different",
+      "control_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "speculative_ids": [
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        53,
+        64,
+        5,
+        117
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 11,
+        "proposed": 52,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 6,
+          "actual_width": 8,
+          "accepted": 0,
+          "proposed": 7,
+          "emitted": 1,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 7,
+          "actual_width": 7,
+          "accepted": 0,
+          "proposed": 6,
+          "emitted": 1,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 8,
+          "actual_width": 6,
+          "accepted": 0,
+          "proposed": 5,
+          "emitted": 1,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 6,
+          "offset": 9,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 7,
+          "offset": 10,
+          "actual_width": 4,
+          "accepted": 0,
+          "proposed": 3,
+          "emitted": 1,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 8,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 9,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 10,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "eos-first",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "eos-third",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": false,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "last-budget",
+      "control_ids": [
+        53
+      ],
+      "speculative_ids": [
+        53
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 6,
+        "proposed": 5,
+        "accepted": 5
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 7,
+        "proposed": 6,
+        "accepted": 4
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 6,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 1,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 7,
+        "accepted": 7
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 6,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 9,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 5,
+        "proposed": 10,
+        "accepted": 6
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 8,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 2,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 8,
+        "accepted": 8
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 8,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 15,
+        "accepted": 7
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 10,
+          "actual_width": 4,
+          "accepted": 3,
+          "proposed": 3,
+          "emitted": 4,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 4,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 2,
+        "proposed": 9,
+        "accepted": 9
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 24,
+        "accepted": 8
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 1,
+      "k": 8,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 6,
+        "proposed": 5,
+        "accepted": 5
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 7,
+        "proposed": 6,
+        "accepted": 4
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 2,
+          "accepted": 0,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 7
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 7,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 9,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 5,
+          "offset": 11,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 6,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 1,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 7,
+        "accepted": 7
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 6
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 6,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 9
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 9,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 5,
+        "proposed": 10,
+        "accepted": 6
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 3,
+          "accepted": 0,
+          "proposed": 2,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 8,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 11
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 4,
+          "offset": 11,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 3,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 2,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 8,
+        "accepted": 8
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 8
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 8,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 13
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 13,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 4,
+        "proposed": 15,
+        "accepted": 7
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 5,
+          "accepted": 0,
+          "proposed": 4,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 5,
+          "accepted": 4,
+          "proposed": 4,
+          "emitted": 5,
+          "cache_offset": 10
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 3,
+          "offset": 10,
+          "actual_width": 4,
+          "accepted": 3,
+          "proposed": 3,
+          "emitted": 4,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 4,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "matched",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 2,
+        "proposed": 9,
+        "accepted": 9
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 12
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 12,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 2,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "different",
+      "control_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": null,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 3,
+        "proposed": 24,
+        "accepted": 8
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 4
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 1,
+          "offset": 4,
+          "actual_width": 9,
+          "accepted": 0,
+          "proposed": 8,
+          "emitted": 1,
+          "cache_offset": 5
+        },
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 2,
+          "offset": 5,
+          "actual_width": 9,
+          "accepted": 8,
+          "proposed": 8,
+          "emitted": 9,
+          "cache_offset": 14
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "eos-first",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 1,
+        "accepted": 1
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 2,
+          "accepted": 1,
+          "proposed": 1,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "eos-third",
+      "control_ids": [
+        4,
+        47
+      ],
+      "speculative_ids": [
+        4,
+        47
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 2,
+        "accepted": 2
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 3,
+          "accepted": 2,
+          "proposed": 2,
+          "emitted": 2,
+          "cache_offset": 5
+        }
+      ],
+      "finish_reason": "stop",
+      "passed": true
+    },
+    {
+      "tied": true,
+      "eval_group": 8,
+      "k": 8,
+      "mode": "last-budget",
+      "control_ids": [
+        4
+      ],
+      "speculative_ids": [
+        4
+      ],
+      "token_ids_equal": true,
+      "stop_equal": true,
+      "all_layer_offsets_equal": true,
+      "teacher_live_kv_close": true,
+      "matched_draft_live_kv_close": true,
+      "accounting": true,
+      "acceptance_stats": {
+        "rounds": 1,
+        "proposed": 0,
+        "accepted": 0
+      },
+      "rounds": [
+        {
+          "phase": "speculative_round_done",
+          "verification_mode": "batch",
+          "round": 0,
+          "offset": 3,
+          "actual_width": 1,
+          "accepted": 0,
+          "proposed": 0,
+          "emitted": 1,
+          "cache_offset": 4
+        }
+      ],
+      "finish_reason": "length",
+      "passed": true
+    }
+  ],
+  "case_count": 80,
+  "scope": "Actual M2Pro random tiny packed4bitF16 teacher/draft GPU; public opt-in backend, EOS/budget/rejection/rollback/tied/untied/group1/8. Not genuine checkpoint, two-host or32B performance.",
+  "weights": "Three layers, hidden64, vocab128, group32; no model downloads",
+  "tolerance": {
+    "rtol": 0.002,
+    "atol": 0.002
+  },
+  "sources": {
+    "speculative_decode.py": "25dd62cb80b4d9bcabe78d9a396615f8a658936799908cc0b10b153f2b65b856",
+    "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+    "test_speculative_gpu.py": "19ef8ee0b6cf0a4f3707a3fc16927b838a657731af9e1151c2c46ade2c354615"
+  },
+  "peak_mlx_bytes": 1334180,
+  "device": {
+    "device_name": "Apple M2 Pro",
+    "max_recommended_working_set_size": 12713115648,
+    "memory_size": 17179869184,
+    "architecture": "applegpu_g14s",
+    "max_buffer_length": 9534832640,
+    "resource_limit": 499000
+  },
+  "backend_source_sha256": {
+    "slot_qmv.py": "bf0a643bd1dc3018a3890631862145625f4b48c12ca43a8910e9f1eb45cf7bfa",
+    "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+    "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+    "stable_attention.py": "672ad8e27382e74e7a3b26b2a32021e7c17dd8bc84d4670065f9e650095bec9f",
+    "verification_backend.py": "1d5b911b47f1c27ed462cf1ab5b0de09e74f2f3bf9a1344760b481d090ebdeaa",
+    "operator_gate.py": "6f6477a0fff5037507b69f7e694ae7c82af9d7acbb51c0c32ab925b6e90f7b68"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "direction": "upload",
+      "label": "integrity",
+      "bytes": 16777216,
+      "digest_verified": true,
+      "sha256": "341aacac661ccb210720bedaa9ead5d668fe5ea41a73532fc147c71e34040df1",
+      "seconds": null,
+      "Gbps": null,
+      "socket_local": [
+        "169.254.248.125",
+        54591
+      ],
+      "socket_peer": [
+        "169.254.169.190",
+        52642
+      ]
+    },
+    {
+      "direction": "upload",
+      "label": "warmup",
+      "bytes": 268435456,
+      "digest_verified": false,
+      "sha256": null,
+      "seconds": 0.07401358394417912,
+      "Gbps": 29.01472315703057,
+      "socket_local": [
+        "169.254.248.125",
+        54592
+      ],
+      "socket_peer": [
+        "169.254.169.190",
+        52642
+      ]
+    },
+    {
+      "direction": "upload",
+      "label": "trial-0",
+      "bytes": 536870912,
+      "digest_verified": false,
+      "sha256": null,
+      "seconds": 0.11496341694146395,
+      "Gbps": 37.35942624414925,
+      "socket_local": [
+        "169.254.248.125",
+        54593
+      ],
+      "socket_peer": [
+        "169.254.169.190",
+        52642
+      ]
+    },
+    {
+      "direction": "upload",
+      "label": "trial-1",
+      "bytes": 536870912,
+      "digest_verified": false,
+      "sha256": null,
+      "seconds": 0.11437304096762091,
+      "Gbps": 37.55226983267769,
+      "socket_local": [
+        "169.254.248.125",
+        54594
+      ],
+      "socket_peer": [
+        "169.254.169.190",
+        52642
+      ]
+    },
+    {
+      "direction": "upload",
+      "label": "trial-2",
+      "bytes": 536870912,
+      "digest_verified": false,
+      "sha256": null,
+      "seconds": 0.11425587499979883,
+      "Gbps": 37.59077855740514,
+      "socket_local": [
+        "169.254.248.125",
+        54595
+      ],
+      "socket_peer": [
+        "169.254.169.190",
+        52642
+      ]
+    },
+    {
+      "direction": "download",
+      "label": "integrity",
+      "bytes": 16777216,
+      "digest_verified": true,
+      "sha256": "341aacac661ccb210720bedaa9ead5d668fe5ea41a73532fc147c71e34040df1",
+      "seconds": null,
+      "Gbps": null,
+      "socket_local": [
+        "169.254.248.125",
+        54596
+      ],
+      "socket_peer": [
+        "169.254.169.190",
+        52642
+      ]
+    },
+    {
+      "direction": "download",
+      "label": "warmup",
+      "bytes": 268435456,
+      "digest_verified": false,
+      "sha256": null,
+      "seconds": 0.05939929105807096,
+      "Gbps": 36.153354859076344,
+      "socket_local": [
+        "169.254.248.125",
+        54597
+      ],
+      "socket_peer": [
+        "169.254.169.190",
+        52642
+      ]
+    },
+    {
+      "direction": "download",
+      "label": "trial-0",
+      "bytes": 536870912,
+      "digest_verified": false,
+      "sha256": null,
+      "seconds": 0.11509495798964053,
+      "Gbps": 37.316728473775385,
+      "socket_local": [
+        "169.254.248.125",
+        54598
+      ],
+      "socket_peer": [
+        "169.254.169.190",
+        52642
+      ]
+    },
+    {
+      "direction": "download",
+      "label": "trial-1",
+      "bytes": 536870912,
+      "digest_verified": false,
+      "sha256": null,
+      "seconds": 0.11615954095032066,
+      "Gbps": 36.97472683571365,
+      "socket_local": [
+        "169.254.248.125",
+        54599
+      ],
+      "socket_peer": [
+        "169.254.169.190",
+        52642
+      ]
+    },
+    {
+      "direction": "download",
+      "label": "trial-2",
+      "bytes": 536870912,
+      "digest_verified": false,
+      "sha256": null,
+      "seconds": 0.11495425004977733,
+      "Gbps": 37.362405427726245,
+      "socket_local": [
+        "169.254.248.125",
+        54600
+      ],
+      "socket_peer": [
+        "169.254.169.190",
+        52642
+      ]
+    }
+  ],
+  "summary": {
+    "upload": {
+      "trials": 3,
+      "median_Gbps": 37.55226983267769
+    },
+    "download": {
+      "trials": 3,
+      "median_Gbps": 37.316728473775385
+    }
+  },
+  "source_sha256": "d9d15b7321f6afeed3fac3eea3b77e87af988e87327cc03469f5aa698327ee33",
+  "scope": "Short Python single-stream TCP smoke, not maximum cable bandwidth or inference speedup",
+  "upload": "M2 Pro to M4",
+  "download": "M4 to M2 Pro",
+  "buffer_bytes": 1048576,
+  "timed_bytes_per_trial": 536870912,
+  "digest_check_separate": true,
+  "transport": "Peer-bound trusted direct bridge IPv4, no encryption/authentication",
+  "timer": "Client payload plus final acknowledgement; connect/control setup excluded"
+}

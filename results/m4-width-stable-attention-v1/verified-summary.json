@@ -1,0 +1,41 @@
+{
+  "scope": "attention",
+  "passed": true,
+  "owned_cleanup_verified": true,
+  "guarded_full32B_source_unchanged": true,
+  "executed_source_readback_exact": true,
+  "peak_mlx_bytes": 12025888,
+  "candidate_attention_SHA256": "672ad8e27382e74e7a3b26b2a32021e7c17dd8bc84d4670065f9e650095bec9f",
+  "no32B_admission_or_speed_claim": true,
+  "operator_cases": 32,
+  "all_exact_finite_and_original_tolerance_pass": true,
+  "native_cache_immutable_cases": 32,
+  "future_KV_poison_cases": 104,
+  "all_causally_earlier_outputs_unchanged": true,
+  "GQA_geometries": [
+    [
+      14,
+      2,
+      64
+    ],
+    [
+      40,
+      8,
+      128
+    ]
+  ],
+  "dtypes": [
+    "float16",
+    "float32"
+  ],
+  "query_widths": [
+    1,
+    2,
+    5,
+    9
+  ],
+  "existing_prefixes": [
+    32,
+    256
+  ]
+}

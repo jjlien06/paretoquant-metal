@@ -1,0 +1,37 @@
+usage: supervise.py [-h] --remote-root REMOTE_ROOT
+                    --remote-source REMOTE_SOURCE
+                    --local-metadata LOCAL_METADATA --output OUTPUT
+                    --ssh-key SSH_KEY --split SPLIT SPLIT
+                    [--max-tokens MAX_TOKENS] [--repeats REPEATS]
+                    [--deadline DEADLINE] [--reserve-bytes RESERVE_BYTES]
+                    [--local-address LOCAL_ADDRESS]
+                    [--remote-address REMOTE_ADDRESS]
+                    [--ssh-target SSH_TARGET] [--prompt PROMPT]
+                    [--execution {phased,upstream}]
+                    [--eval-group-size {1,2,4,8,16,32}]
+                    [--eval-group-schedule [{1,2,4,8,16,32} ...]]
+                    [--ssh-host-key-alias SSH_HOST_KEY_ALIAS] [--fast-synch]
+
+Durable bounded two-host trial controller. Never invoke via execute_code.
+
+options:
+  -h, --help            show this help message and exit
+  --remote-root REMOTE_ROOT
+  --remote-source REMOTE_SOURCE
+  --local-metadata LOCAL_METADATA
+  --output OUTPUT
+  --ssh-key SSH_KEY
+  --split SPLIT SPLIT
+  --max-tokens MAX_TOKENS
+  --repeats REPEATS
+  --deadline DEADLINE
+  --reserve-bytes RESERVE_BYTES
+  --local-address LOCAL_ADDRESS
+  --remote-address REMOTE_ADDRESS
+  --ssh-target SSH_TARGET
+  --prompt PROMPT
+  --execution {phased,upstream}
+  --eval-group-size {1,2,4,8,16,32}
+  --eval-group-schedule [{1,2,4,8,16,32} ...]
+  --ssh-host-key-alias SSH_HOST_KEY_ALIAS
+  --fast-synch          Opt in to unsafe MLX fast GPU/CPU sync

@@ -1,0 +1,2160 @@
+{
+  "scope": "Actual GPU array operator gate only; random quantized fixtures, not actual checkpoint/full32B/speculative speed admission",
+  "passed": true,
+  "case_count": 112,
+  "expected_case_count": 112,
+  "exact_case_count": 112,
+  "close_case_count": 112,
+  "cases": [
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        16
+      ]
+    },
+    {
+      "k": 32,
+      "n": 16,
+      "group_size": 32,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        16
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        24
+      ]
+    },
+    {
+      "k": 256,
+      "n": 24,
+      "group_size": 64,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        24
+      ]
+    },
+    {
+      "k": 384,
+      "n": 24,
+      "group_size": 128,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        24
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        64
+      ]
+    },
+    {
+      "k": 512,
+      "n": 64,
+      "group_size": 64,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        64
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        128
+      ]
+    },
+    {
+      "k": 896,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        128
+      ]
+    },
+    {
+      "k": 4864,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": false,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float16",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 3,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 1,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        1,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 2,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 5,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        5,
+        128
+      ]
+    },
+    {
+      "k": 5120,
+      "n": 128,
+      "group_size": 64,
+      "bits": 4,
+      "width": 9,
+      "dtype": "mlx.core.float32",
+      "fast": true,
+      "finite": true,
+      "exact": true,
+      "close": true,
+      "max_abs_error": 0.0,
+      "out_of_tolerance": 0,
+      "shape": [
+        1,
+        9,
+        128
+      ]
+    }
+  ],
+  "fatal_traceback": null,
+  "atol": 0.002,
+  "rtol": 0.002,
+  "source_sha256": {
+    "slot_qmv.py": "bf0a643bd1dc3018a3890631862145625f4b48c12ca43a8910e9f1eb45cf7bfa",
+    "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+    "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+    "operator_gate.py": "06ca7eff8eb9b3b214d2de5329646d13b48c59c02935152a12f642fb04fee252"
+  },
+  "versions": {
+    "mlx": "0.32.3",
+    "mlx-metal": "0.32.3"
+  },
+  "device": {
+    "device_name": "Apple M4",
+    "max_recommended_working_set_size": 12713115648,
+    "memory_size": 17179869184,
+    "architecture": "applegpu_g16g",
+    "max_buffer_length": 9534832640,
+    "resource_limit": 499000
+  },
+  "peak_mlx_bytes": 4436024
+}

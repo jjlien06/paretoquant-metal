@@ -1,0 +1,10 @@
+{
+  "exit_code": 1,
+  "stdout": "NUMERICAL_CONTROL slot\n",
+  "stderr": "Traceback (most recent call last):\n  File \"/Users/jeremylien/.hermes/cache/scratch/qwen38-width2-slot-v1/diagnose_width2_controls.py\", line 89, in <module>\n    diagnostic.main()\n    ~~~~~~~~~~~~~~~^^\n  File \"/Users/jeremylien/.hermes/cache/scratch/qwen38-width2-slot-v1/diagnose_width2.py\", line 77, in main\n    batched = phased_forward(model, mx.array([pair], mx.int32), right,\n                              eval_group_size=32, all_logits=True)\n  File \"/Users/jeremylien/.hermes/cache/scratch/qwen38-width2-slot-v1/diagnose_width2_controls.py\", line 83, in controlled_forward\n    return original_forward(model, inputs, cache, **kwargs)\n  File \"/Users/jeremylien/Projects/paretoquant-dual-host/spikes/012-qwen38-20261016-v1/phased_decode.py\", line 144, in phased_forward\n    h = layer(h, ssm_mask if layer.is_linear else fa_mask, state)\n  File \"/Users/jeremylien/Projects/paretoquant-dual-host/.venv/lib/python3.13/site-packages/mlx_lm/models/qwen3_5.py\", line 234, in __call__\n    r = self.linear_attn(self.input_layernorm(x), mask, cache)\n  File \"/Users/jeremylien/Projects/paretoquant-dual-host/.venv/lib/python3.13/site-packages/mlx_lm/models/qwen3_5.py\", line 144, in __call__\n    qkv = self.in_proj_qkv(inputs)\n  File \"/Users/jeremylien/Projects/paretoquant-dual-host/.venv/lib/python3.13/site-packages/mlx/nn/layers/quantized.py\", line 271, in __call__\n    x = mx.quantized_matmul(\n        x,\n    ...<6 lines>...\n        mode=self.mode,\n    )\n  File \"/Users/jeremylien/.hermes/cache/scratch/qwen38-width2-slot-v1/diagnose_width2_controls.py\", line 33, in singleton_qmm\n    w, scales, biases = args\n    ^^^^^^^^^^^^^^^^^\nValueError: not enough values to unpack (expected 3, got 1)\n",
+  "source_sha256": {
+    "diagnose_width2.py": "c7a1716c3256b3d7622c4b2bc01a755c3fcaa44ec711b5e34fb6cc5d39d10d5b",
+    "diagnose_width2_controls.py": "67b4eed157e15e931f4f1c7bc34f4d3fd5e6d8e3a17e5d060117e925d9c92712"
+  },
+  "receipt": null
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "overlap-initial-cpu-regression-v1",
+  "timestamp": 1792226329.654054,
+  "command": "PYTHONDONTWRITEBYTECODE=1 /Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B -m pytest -p no:cacheprovider benchmarks/qwen38 -q",
+  "exit_code": 0,
+  "observed_result": "276 passed, 1 skipped in 3.97s",
+  "historical_source_and_workload_files_rehashed_unchanged": 90,
+  "new_scheduler_or_harness_approved": false,
+  "model_requests_executed": 0,
+  "scope": "Original CPU benchmark-tooling regression before new implementation; not a performance or physical numerical result.",
+  "resource_guard_discovery": "Old024supervise has no directpressure enforcement; new025actor watchdogs andnewbenchmark must add explicit source-bound pre-spawn/periodic normal-pressure guard on bothhosts."
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "qwen38-broad-composed-verification-v1",
+  "status": "all six completed trials passed original numerical/source/inventory/native-output/cleanup checks plus stricter independent generation transcript audit",
+  "planned_unique_requests": 84,
+  "measured_unique_requests": 72,
+  "explicit_warmups": 12,
+  "measured_cases": 18,
+  "strict_audit_rank_requests": 168,
+  "strict_audit_sha256": "298253ce97fdc89e0a159361aaebcab9bddd769d31702bd12e93dbb4043281dc",
+  "evidence_sha256": "084aa979b13155fdb6d97fc757fc1d0eba89e4a51b9983faf2874bcf84f45e8a",
+  "analysis_sha256": "51774be8589ea20b32ac6aec51231ce5ceb5ee8af4b034e4ea6064190c50ad55",
+  "checkpoint_readback": "checkpoint-and-cleanup-readback.json",
+  "original_verifier_independent_review": "failed evidence validation checks, preserved without rewriting; covered by separate stronger post-hoc action audit",
+  "limits": "finite observed prompts and original physical numerical fixtures, not arbitrary-prompt proof, standardized quality or production reliability",
+  "optimization": "024 physical reference/candidate/reference follow-up completed; exact output and strict both-host gates passed, modest long-request benefit retained opt-in; see prefill-experiment/README.md"
+}

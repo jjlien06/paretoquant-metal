@@ -1,0 +1,29 @@
+{
+  "fetched_sha256": {
+    "tiny-batch.json": "98494156c602869cfc564583688d81010d57bd1e59cdd53b14bff9a3f3162e94",
+    "job-tiny-batch/startup.json": "93dee4b506d862a8cb1b5090d76ad8feaad9885c0fe54076e38ca94c0b22af5b",
+    "job-tiny-batch/pids.json": "33b0630bcb62061ad6269b6a39c94b481a3fe7051746a2909bd579dbc4b644b9",
+    "job-tiny-batch/result.json": "03591b6b6c333491b9462648cb89da8d2c60fe9f414876f074ce347cdf54dae4",
+    "job-tiny-batch/stdout": "1c8a309e3199178335c01b42b529a8a0aecc3d7f6a8752c4f22d1b7f913f0f2a",
+    "job-tiny-batch/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "guarded_source_sha256_after": {
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "phased_decode.py": "a75cc6777f052135211ce9f386528059d494f69ca3e264f48d920157ba71308f",
+    "probe.py": "aa81063281553bbfef92c44aae60072e6cbf855fce5f1a9929c28241aab93874",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "shard_plan.py": "968f779ef0d4793487f394f08beeb3ddcb3369f3d838a9cc4d0cb6e1bd23db44",
+    "stream_server.py": "34130f52ab1cd934d693bf890d8090fc940639f96af3e681c64bcae39b52f05d",
+    "stream_weights.py": "d4c782601de385b54374c90189251fc5a4d50fc9217fb3838d6d9c630c116ebc"
+  },
+  "guarded_unchanged": true,
+  "report_sources_bound": true,
+  "actor_cleanup": {
+    "child_reaped": true,
+    "group_gone": true,
+    "pid_reused": false,
+    "identity_unknown": false,
+    "pending_os_gpu_termination": false,
+    "gpu_driver_state": "not inspected; process/group receipt only"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "completed": true,
+  "request_count": 10,
+  "rows": [
+    {
+      "request": {
+        "direction": "upload",
+        "bytes": 16777216,
+        "verify": true
+      },
+      "receipt": {
+        "bytes": 16777216,
+        "sha256": "341aacac661ccb210720bedaa9ead5d668fe5ea41a73532fc147c71e34040df1"
+      },
+      "peer": "169.254.248.125"
+    },
+    {
+      "request": {
+        "direction": "upload",
+        "bytes": 268435456,
+        "verify": false
+      },
+      "receipt": {
+        "bytes": 268435456,
+        "sha256": null
+      },
+      "peer": "169.254.248.125"
+    },
+    {
+      "request": {
+        "direction": "upload",
+        "bytes": 536870912,
+        "verify": false
+      },
+      "receipt": {
+        "bytes": 536870912,
+        "sha256": null
+      },
+      "peer": "169.254.248.125"
+    },
+    {
+      "request": {
+        "direction": "upload",
+        "bytes": 536870912,
+        "verify": false
+      },
+      "receipt": {
+        "bytes": 536870912,
+        "sha256": null
+      },
+      "peer": "169.254.248.125"
+    },
+    {
+      "request": {
+        "direction": "upload",
+        "bytes": 536870912,
+        "verify": false
+      },
+      "receipt": {
+        "bytes": 536870912,
+        "sha256": null
+      },
+      "peer": "169.254.248.125"
+    },
+    {
+      "request": {
+        "direction": "download",
+        "bytes": 16777216,
+        "verify": true
+      },
+      "receipt": {
+        "bytes": 16777216,
+        "sha256": "341aacac661ccb210720bedaa9ead5d668fe5ea41a73532fc147c71e34040df1"
+      },
+      "peer": "169.254.248.125"
+    },
+    {
+      "request": {
+        "direction": "download",
+        "bytes": 268435456,
+        "verify": false
+      },
+      "receipt": {
+        "bytes": 268435456,
+        "sha256": null
+      },
+      "peer": "169.254.248.125"
+    },
+    {
+      "request": {
+        "direction": "download",
+        "bytes": 536870912,
+        "verify": false
+      },
+      "receipt": {
+        "bytes": 536870912,
+        "sha256": null
+      },
+      "peer": "169.254.248.125"
+    },
+    {
+      "request": {
+        "direction": "download",
+        "bytes": 536870912,
+        "verify": false
+      },
+      "receipt": {
+        "bytes": 536870912,
+        "sha256": null
+      },
+      "peer": "169.254.248.125"
+    },
+    {
+      "request": {
+        "direction": "download",
+        "bytes": 536870912,
+        "verify": false
+      },
+      "receipt": {
+        "bytes": 536870912,
+        "sha256": null
+      },
+      "peer": "169.254.248.125"
+    }
+  ],
+  "bind": "169.254.169.190",
+  "peer": "169.254.248.125",
+  "source_sha256": "d9d15b7321f6afeed3fac3eea3b77e87af988e87327cc03469f5aa698327ee33"
+}

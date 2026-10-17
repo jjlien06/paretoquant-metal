@@ -1,0 +1,28 @@
+{
+  "executed_source_exact": true,
+  "guarded_unchanged": true,
+  "actor_cleanup": {
+    "child_reaped": true,
+    "group_gone": true,
+    "pid_reused": false,
+    "identity_unknown": false,
+    "pending_os_gpu_termination": false,
+    "gpu_driver_state": "not inspected; process/group receipt only"
+  },
+  "fetched_sha256": {
+    "operator-gate.json": "4b619d05a3d0db251fc3822bfb05d03b021b3651afa200d8b7d40b94e132d7d6",
+    "job-operator/startup.json": "fbc0b279f08527aed5d78347854db4b258fbed57e63cf6c04a61daa6385f6dc4",
+    "job-operator/pids.json": "75edbc384674d8c5a795eefe9d6a63c2e01008b13ec3e2cc3751cf37005470cb",
+    "job-operator/result.json": "0426977052749fb1c69ef2e1bc0528928d7552bde52d1a1c38ecb23ef95faeb5",
+    "job-operator/stdout": "5a33b663885f396b9446698b626b39ff1435f8e2cde319dcae5eccd49c7181ff",
+    "job-operator/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "slot_qmv.py": "bf0a643bd1dc3018a3890631862145625f4b48c12ca43a8910e9f1eb45cf7bfa",
+    "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+    "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+    "LICENSE": "ccfab7ccb2ea306f71531c8ca77bb55507606cd90768b1e32b8b52ab5b48cf01",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "operator_gate.py": "ef513705b85abaeb5c7053a2a3ce0a08ead24efe44dac735fbc2d3b6776571f9",
+    "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+    "draft_screen.py": "fdb9ec46cff8efe4cfda568408478bb5bc47750f2942d59e30b3bd55534871ae"
+  }
+}

@@ -1,0 +1,7 @@
+test_exact_modes_and_bounded_configuration (__main__.Bounds) ... ok
+test_strict_sampler_requires_pressure_one_and_vm_counters (__main__.Samples) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+OK

@@ -1,0 +1,149 @@
+{
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    "Approval is restricted to the trusted local archived-trace diagnostic and narrow all-position head option. It does not admit speculative deployment, actual 32B target verification, batch-versus-sequential parity, distributed all-position deployment, speedup, performance or quality.",
+    "Keep provenance qualifications: parent receipt binds copied reference/config; persisted source inventories and stock local loader are not independent target provenance or extracted packed-array binding. This CPU-only review could compare archive config/index and source hashes, but could not re-read remote model/tokenizer files or independently regenerate tokenizer mappings. The reported 151665 common IDs were checked by the source-bound runtime, not a second tokenizer execution.",
+    "Path/resource admission is for trusted local model directories, not a hostile-input sandbox: inventories cover root regular files only, not recursively resolved loader-index references; directories/ancestors can resolve through symlinks. Keep parent source admission and external process deadline; cooperative checks cannot interrupt model loading or an in-flight GPU call.",
+    "Optional README follow-up: add a pointer to parent-owned real evidence and mark native all-position parity as same-width tiny quantized single-host parity, not batch-versus-sequential or full-32B verification. Worker-only CPU and earlier formatting/TDD statements need not be presented as the parent run status."
+  ],
+  "tests": [
+    {
+      "name": "Independent stdlib diagnostic suite",
+      "passed": true,
+      "detail": {
+        "tests": 10,
+        "returncode": 0,
+        "output": "test_archived_template_and_exact_id_mapping_not_repaired (__main__.AcceptanceTests) ... ok\ntest_cli_help_import_and_invalid_input_never_import_model_libraries (__main__.AcceptanceTests) ... ok\ntest_greedy_adapter_synchronizes_fresh_caches_and_stops_at_eos (__main__.AcceptanceTests) ... ok\ntest_inventory_hashes_regular_local_files_and_refuses_links_or_oversize (__main__.AcceptanceTests) ... ok\ntest_main_writes_new_exclusive_json_never_overwrites (__main__.AcceptanceTests) ... ok\ntest_matching_prefix_emits_bonus_capped_at_eos (__main__.AcceptanceTests) ... ok\ntest_prepare_binds_pinned_config_receipt_reference_before_runtime (__main__.AcceptanceTests) ... ok\ntest_rounds_teacher_force_only_archived_emitted_prefixes (__main__.AcceptanceTests) ... ok\ntest_runtime_loads_only_draft_and_reports_auditable_rounds (__main__.AcceptanceTests) ... ok\ntest_trace_requires_bounded_regular_json_exact_ids_prompt_and_terminal_eos (__main__.AcceptanceTests) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.278s\n\nOK\n",
+        "real_model_library_imports": "blocked; integrated adapter uses explicit synthetic sys.modules doubles only"
+      }
+    },
+    {
+      "name": "Independent per-round trace accounting and stdout summary",
+      "passed": true,
+      "detail": [
+        {
+          "k": 1,
+          "rounds": 23,
+          "accepted": 19,
+          "proposed": 23,
+          "emitted_including_eos": 41,
+          "draft_seconds": 0.7038000829779776
+        },
+        {
+          "k": 2,
+          "rounds": 18,
+          "accepted": 24,
+          "proposed": 34,
+          "emitted_including_eos": 41,
+          "draft_seconds": 0.5654244999968796
+        },
+        {
+          "k": 4,
+          "rounds": 13,
+          "accepted": 29,
+          "proposed": 45,
+          "emitted_including_eos": 41,
+          "draft_seconds": 0.5024808750094962
+        },
+        {
+          "k": 8,
+          "rounds": 12,
+          "accepted": 30,
+          "proposed": 75,
+          "emitted_including_eos": 41,
+          "draft_seconds": 0.6108865409987629
+        }
+      ]
+    },
+    {
+      "name": "Source/receipt/archive/inventory/layout bindings",
+      "passed": true,
+      "detail": "Live harness/head/test hashes match deployed receipts and real outputs; reference/config match archive; parameter byte arithmetic and 628 layouts match admission. Remote tokenizer/model bytes were not re-read."
+    },
+    {
+      "name": "Native evidence scope, case completeness and actor receipts",
+      "passed": true,
+      "detail": "Both actors exit 0, consistent PID/nonces and process-group cleanup; 16 unique tiny quantized cases, FP16 packed tied/untied, K=1/2/4/8, both all_logits modes. No rerun and no GPU-driver cleanup claim."
+    },
+    {
+      "name": "Narrow head extension semantic equivalence against frozen baseline",
+      "passed": true,
+      "detail": "All five Python files parse; extension is only exact-bool guard, False default, and full-h conditional norm/head. Removing precisely those additions yields byte-independent AST-identical approved baseline, so layer/communication/cache/last-position path is unchanged."
+    },
+    {
+      "name": "Exhaustive small acceptance/EOS fixtures with heavy import guard",
+      "passed": true,
+      "detail": {
+        "exhaustive_valid_acceptance_cases": 2160,
+        "passed": true,
+        "real_heavy_imports": false
+      }
+    },
+    {
+      "name": "Live review input SHA256 stability",
+      "passed": true,
+      "detail": {
+        "before": {
+          "/Users/jeremylien/Projects/paretoquant-metal/spikes/009-speculative-32b/draft_screen.py": "fdb9ec46cff8efe4cfda568408478bb5bc47750f2942d59e30b3bd55534871ae",
+          "/Users/jeremylien/Projects/paretoquant-metal/spikes/009-speculative-32b/test_draft_screen.py": "5f7e583fbf5c74ff1b5feff4ad8ff07ad1b479b66555f842ec6326719ca2fd56",
+          "/Users/jeremylien/Projects/paretoquant-metal/spikes/009-speculative-32b/README.md": "0fd4cf2d5e50acb95022bf53000a97470d055a1da5107487b3b3c0590b376d76",
+          "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline/phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+          "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline/test_phased_decode.py": "135b7a781df1c94d7654c5805560a21c6c7c813f6a6fc6ae52efe8366b1702bb",
+          "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline/test_phased_gpu.py": "667371ddbc2a88767f9f99006e0939368f7838f4b0f2c68dd6763503c552b5f8"
+        },
+        "after": {
+          "/Users/jeremylien/Projects/paretoquant-metal/spikes/009-speculative-32b/draft_screen.py": "fdb9ec46cff8efe4cfda568408478bb5bc47750f2942d59e30b3bd55534871ae",
+          "/Users/jeremylien/Projects/paretoquant-metal/spikes/009-speculative-32b/test_draft_screen.py": "5f7e583fbf5c74ff1b5feff4ad8ff07ad1b479b66555f842ec6326719ca2fd56",
+          "/Users/jeremylien/Projects/paretoquant-metal/spikes/009-speculative-32b/README.md": "0fd4cf2d5e50acb95022bf53000a97470d055a1da5107487b3b3c0590b376d76",
+          "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline/phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+          "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline/test_phased_decode.py": "135b7a781df1c94d7654c5805560a21c6c7c813f6a6fc6ae52efe8366b1702bb",
+          "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline/test_phased_gpu.py": "667371ddbc2a88767f9f99006e0939368f7838f4b0f2c68dd6763503c552b5f8"
+        },
+        "changed": []
+      }
+    }
+  ],
+  "source_hashes": {
+    "review_inputs_before": {
+      "/Users/jeremylien/Projects/paretoquant-metal/spikes/009-speculative-32b/draft_screen.py": "fdb9ec46cff8efe4cfda568408478bb5bc47750f2942d59e30b3bd55534871ae",
+      "/Users/jeremylien/Projects/paretoquant-metal/spikes/009-speculative-32b/test_draft_screen.py": "5f7e583fbf5c74ff1b5feff4ad8ff07ad1b479b66555f842ec6326719ca2fd56",
+      "/Users/jeremylien/Projects/paretoquant-metal/spikes/009-speculative-32b/README.md": "0fd4cf2d5e50acb95022bf53000a97470d055a1da5107487b3b3c0590b376d76",
+      "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline/phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+      "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline/test_phased_decode.py": "135b7a781df1c94d7654c5805560a21c6c7c813f6a6fc6ae52efe8366b1702bb",
+      "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline/test_phased_gpu.py": "667371ddbc2a88767f9f99006e0939368f7838f4b0f2c68dd6763503c552b5f8"
+    },
+    "review_inputs_after": {
+      "/Users/jeremylien/Projects/paretoquant-metal/spikes/009-speculative-32b/draft_screen.py": "fdb9ec46cff8efe4cfda568408478bb5bc47750f2942d59e30b3bd55534871ae",
+      "/Users/jeremylien/Projects/paretoquant-metal/spikes/009-speculative-32b/test_draft_screen.py": "5f7e583fbf5c74ff1b5feff4ad8ff07ad1b479b66555f842ec6326719ca2fd56",
+      "/Users/jeremylien/Projects/paretoquant-metal/spikes/009-speculative-32b/README.md": "0fd4cf2d5e50acb95022bf53000a97470d055a1da5107487b3b3c0590b376d76",
+      "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline/phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+      "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline/test_phased_decode.py": "135b7a781df1c94d7654c5805560a21c6c7c813f6a6fc6ae52efe8366b1702bb",
+      "/Users/jeremylien/Projects/paretoquant-metal/spikes/007-dual-host-pipeline/test_phased_gpu.py": "667371ddbc2a88767f9f99006e0939368f7838f4b0f2c68dd6763503c552b5f8"
+    },
+    "evidence_and_baseline": {
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/draft-physical-v1/draft-v1.json": "a1c6d57726670e07c3059c934f61dd1be4ab5b66a237b14f644134212d82f6c7",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/draft-screen-deployment.json": "5862780fcca5db6736db55e1c0134b78ca8ff83464a48a37536846032044241d",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/draft-harness-deployment.json": "3faed0fc8d427e59827c7e90b2e4bbae7e8020dbfe87a1d72064727b561c1289",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/all-logits-mini-deployment.json": "e9293578b6a79fc51f3c2fdd78edabbb08f92fafd10a289b61161890361636e6",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/small-draft-admission.json": "9cd6269173fd8d5bc7f990ee9369d6ea6cc895479ff672c413b43b841b3f6cbc",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/draft-physical-v1/draft-v1-actor/stdout": "d465152a2d4f772c1e797e16b201001956e239ab0270bf7a8b94959076acb447",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/draft-physical-v1/draft-v1-actor/stderr": "64531e3bb6c92346715ddeb6e4fa21056dbdd7f09fa4c521c998a6d35fa41af1",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/draft-physical-v1/draft-v1-actor/result.json": "193a7b32c8d1a0a658a276a2a724af265089c067d4bae439eb57a204cb0f9650",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/draft-physical-v1/draft-v1-actor/pids.json": "e5a725f84e22813b91f09712f5e4a3a8d0e8abb4f093950094971df13535e095",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/all-logits-mini-native/stdout": "64f58d9282ba2b0250038d025b3c34a232e98495f4ae9e5216f45b332eef2619",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/all-logits-mini-native/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/all-logits-mini-native/result.json": "a79509d3ed0462f17c93ed73447bd2e2202b2e9fbe30b441f1dbfc11a74fb581",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/all-logits-mini-native/pids.json": "35a17cf45d8d0057fc3cdd3ec3c00c6f2f85e068896f56502b105aa57aaeb702",
+      "/Users/jeremylien/Projects/paretoquant-metal/results/m2pro-m4-dual-host-phased-32b-v1/qwen32/rank0.record.json": "1f1769bf74680ab1a47edd90a79c51e4da2de02c6825208834f86cbb4a68fc53",
+      "/Users/jeremylien/Projects/paretoquant-metal/results/m2pro-m4-dual-host-phased-32b-v1/qwen32/metadata/config.json": "c027829d800805358d67ac87819a3754fd8240be973f7147840651310fd30ae3",
+      "/Users/jeremylien/Projects/paretoquant-metal/results/m2pro-m4-dual-host-phased-32b-v1/qwen32/metadata/model.safetensors.index.json": "7b6da9b2b1f3ebd698ae15f9fcf6ba3099e742ec07e5d383f28b7cb77a4d16db",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/grouped-review-1791187162875738000/manifest.json": "b03d9afe09542243fa1ad4e3ccb99a810b7e6effbbbcc980b81a6614e7c97248",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/grouped-review-1791187162875738000/phased_decode.py": "a75cc6777f052135211ce9f386528059d494f69ca3e264f48d920157ba71308f",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/grouped-review-1791187162875738000/test_phased_decode.py": "cc5cd6b7c81140508b3151e770c42b8268b880b54b3826ee9f8c4d1a29787d4a",
+      "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/grouped-review-1791187162875738000/test_phased_gpu.py": "5c41d1447b096127b08fc54ec14f7dd8439f8614265f8de3a928bbf7bdf6590d"
+    }
+  },
+  "summary": "PASS for archived-target-trace diagnostic and narrow all_logits head extension only: 10 independent stdlib tests and exhaustive EOS accounting pass, all real trace aggregates/source receipts match, 16 source-bound tiny native GPU cases are coherent, and default head execution is AST-equivalent to the approved baseline. No GPU/MLX runtime, network, SSH, installs, source edits, Git writes, speculative-engine review or new deployment performed."
+}

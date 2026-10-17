@@ -1,0 +1,37 @@
+{
+  "schema": "overlap-parent-physical-attempt-authorization-v2",
+  "pressure_policy": "noncritical",
+  "allowed_pressure_levels": [
+    1,
+    2
+  ],
+  "abort_pressure_levels": [
+    4
+  ],
+  "memory_acceptance_sha256": "a0341821118cfd83d45f0f8979152aaffae3f296b372f8dc29b58aacc35d409f",
+  "artifact_kind": "PARENT_REVIEWED_PHYSICAL_APPROVAL",
+  "approved": true,
+  "phase": "batch-00",
+  "manifest_sha256": "161349a091468906a7c699c83a9224a388403e2d3542675770e8635184f812eb",
+  "review_receipt_sha256": "fbdfe4c1a74775a7e6e98623feddb52baf6d37644e644bc7805f710eaa39e246",
+  "review_receipts": {
+    "noncritical-combined-independent-review.json": "fbdfe4c1a74775a7e6e98623feddb52baf6d37644e644bc7805f710eaa39e246"
+  },
+  "controller_sha256": "b34f6c565eacd5b79038f485f0549c91b979980cb113e944cfcce3240a89e450",
+  "timestamp": 1792272948.055536,
+  "trial_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-00-1792272946336878000",
+  "local_pressure": 1,
+  "local_route_interface": "bridge0",
+  "remote_health": {
+    "pressure": 1,
+    "route_interface": "bridge0",
+    "conflicting_project_workers": [],
+    "source_files_verified": 79,
+    "mlx_version": "0.32.3",
+    "mlx_lm_version": "0.32.0"
+  },
+  "local_mlx_version": "0.32.3",
+  "local_mlx_lm_version": "0.32.0",
+  "scope": "Authorize one bounded batch: real small/full gates precede fourteen requests; complete real pilot and byte budget independently re-audited. Not numerical or performance acceptance.",
+  "performance_accepted": false
+}

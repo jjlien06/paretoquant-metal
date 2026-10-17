@@ -1,0 +1,30 @@
+{
+  "tokens_agree": true,
+  "tensor_completeness": true,
+  "server_completed": true,
+  "receiver_weight_files": [],
+  "owned_groups_gone": true,
+  "original_controller_status": "failed",
+  "recovery_status": "verified_completed_gpu_actors",
+  "recovery_reason": "original bounded records retrieval rejects logs above8MiB; disk logs retrieved separately with SHA256 checks",
+  "ports": [
+    [
+      "169.254.47.213",
+      "49606"
+    ],
+    [
+      "169.254.214.155",
+      "49940"
+    ],
+    [
+      "169.254.214.155",
+      49941
+    ]
+  ],
+  "closed": [
+    true,
+    true,
+    true
+  ],
+  "original_receipts_unchanged": true
+}

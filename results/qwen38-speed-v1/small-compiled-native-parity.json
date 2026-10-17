@@ -1,0 +1,46 @@
+[
+  {
+    "compile_gdn": true,
+    "rank": 0,
+    "request_compiler": [
+      {
+        "compile_gdn": true,
+        "gdn_compiler": {
+          "trace_count": 3,
+          "compiled_calls": 27,
+          "compiled_functions": 3
+        }
+      },
+      {
+        "compile_gdn": true,
+        "gdn_compiler": {
+          "trace_count": 3,
+          "compiled_calls": 54,
+          "compiled_functions": 3
+        }
+      }
+    ]
+  },
+  {
+    "compile_gdn": true,
+    "rank": 1,
+    "request_compiler": [
+      {
+        "compile_gdn": true,
+        "gdn_compiler": {
+          "trace_count": 3,
+          "compiled_calls": 27,
+          "compiled_functions": 3
+        }
+      },
+      {
+        "compile_gdn": true,
+        "gdn_compiler": {
+          "trace_count": 3,
+          "compiled_calls": 54,
+          "compiled_functions": 3
+        }
+      }
+    ]
+  }
+]

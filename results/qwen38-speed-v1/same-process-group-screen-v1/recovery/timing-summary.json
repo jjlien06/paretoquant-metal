@@ -1,0 +1,165 @@
+{
+  "rows": [
+    {
+      "repeat": 0,
+      "group": 4,
+      "warmup": true,
+      "events": 49,
+      "wall_s": 13.819794500013813,
+      "first_s": 6.837364082981367,
+      "post_first_events_s": 6.874397184526493
+    },
+    {
+      "repeat": 1,
+      "group": 8,
+      "warmup": true,
+      "events": 49,
+      "wall_s": 7.79822866601171,
+      "first_s": 1.0718072910094634,
+      "post_first_events_s": 7.136038217644962
+    },
+    {
+      "repeat": 2,
+      "group": 16,
+      "warmup": true,
+      "events": 49,
+      "wall_s": 7.712969582993537,
+      "first_s": 1.0581291249836795,
+      "post_first_events_s": 7.2127950028052945
+    },
+    {
+      "repeat": 3,
+      "group": 32,
+      "warmup": true,
+      "events": 49,
+      "wall_s": 7.688632250006776,
+      "first_s": 1.052392708021216,
+      "post_first_events_s": 7.233011963525117
+    },
+    {
+      "repeat": 4,
+      "group": 32,
+      "warmup": false,
+      "events": 49,
+      "wall_s": 7.688260750030167,
+      "first_s": 1.0601927090319805,
+      "post_first_events_s": 7.241929277595527
+    },
+    {
+      "repeat": 5,
+      "group": 4,
+      "warmup": false,
+      "events": 49,
+      "wall_s": 7.977190541045275,
+      "first_s": 1.0685895410133526,
+      "post_first_events_s": 6.947861079222582
+    },
+    {
+      "repeat": 6,
+      "group": 16,
+      "warmup": false,
+      "events": 49,
+      "wall_s": 7.783538750023581,
+      "first_s": 1.0557043750304729,
+      "post_first_events_s": 7.134539485456517
+    },
+    {
+      "repeat": 7,
+      "group": 8,
+      "warmup": false,
+      "events": 49,
+      "wall_s": 7.932090457994491,
+      "first_s": 1.0570320000406355,
+      "post_first_events_s": 6.981758816096771
+    },
+    {
+      "repeat": 8,
+      "group": 8,
+      "warmup": false,
+      "events": 49,
+      "wall_s": 7.895649250014685,
+      "first_s": 1.0575839590164833,
+      "post_first_events_s": 7.019529348921015
+    },
+    {
+      "repeat": 9,
+      "group": 16,
+      "warmup": false,
+      "events": 49,
+      "wall_s": 7.820643915969413,
+      "first_s": 1.0536308749578893,
+      "post_first_events_s": 7.093232968385861
+    },
+    {
+      "repeat": 10,
+      "group": 4,
+      "warmup": false,
+      "events": 49,
+      "wall_s": 8.073006667022128,
+      "first_s": 1.0567615830223076,
+      "post_first_events_s": 6.841266150958935
+    },
+    {
+      "repeat": 11,
+      "group": 32,
+      "warmup": false,
+      "events": 49,
+      "wall_s": 7.75461979204556,
+      "first_s": 1.0663303339970298,
+      "post_first_events_s": 7.1767228827451435
+    }
+  ],
+  "groups": {
+    "4": {
+      "warm_n": 2,
+      "median_wall_s": 8.025098604033701,
+      "median_decode_events_s": 6.8945636150907585
+    },
+    "8": {
+      "warm_n": 2,
+      "median_wall_s": 7.913869854004588,
+      "median_decode_events_s": 7.000644082508893
+    },
+    "16": {
+      "warm_n": 2,
+      "median_wall_s": 7.802091332996497,
+      "median_decode_events_s": 7.113886226921188
+    },
+    "32": {
+      "warm_n": 2,
+      "median_wall_s": 7.721440271037864,
+      "median_decode_events_s": 7.209326080170335
+    }
+  },
+  "tokens_match_original27b": true,
+  "verification": {
+    "tokens_agree": true,
+    "tensor_completeness": true,
+    "server_completed": true,
+    "receiver_weight_files": [],
+    "owned_groups_gone": true,
+    "original_controller_status": "failed",
+    "recovery_status": "verified_completed_gpu_actors",
+    "recovery_reason": "original bounded records retrieval rejects logs above8MiB; disk logs retrieved separately with SHA256 checks",
+    "ports": [
+      [
+        "169.254.47.213",
+        "49606"
+      ],
+      [
+        "169.254.214.155",
+        "49940"
+      ],
+      [
+        "169.254.214.155",
+        49941
+      ]
+    ],
+    "closed": [
+      true,
+      true,
+      true
+    ],
+    "original_receipts_unchanged": true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "source012_preserved": true,
+  "changed_vs_012": [
+    "README.md",
+    "probe.py",
+    "remote_actor.py",
+    "supervise.py",
+    "test_schedule.py"
+  ],
+  "added_vs_012": [
+    "test_fast_sync.py",
+    "test_progress.py",
+    "test_remote_actor.py",
+    "test_supervise.py"
+  ],
+  "unchanged_safety_functions": [
+    "expected_inventory",
+    "verify_metadata",
+    "verify_sources",
+    "listener_closed",
+    "weight_files"
+  ],
+  "final_sha256": {
+    "README.md": "2b3908fefac83412bfd2cef63271480aab534bec6ea9a1dcfa3fe7f60d25701b",
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "fixture.py": "294fa1d687e1a6273574efaf0054c91d1141d8ec2b75ede926498197cb9cc21b",
+    "phased_decode.py": "341f5190a533dd332b84104335a373495280ec26abbb1c2f637735a0697d9628",
+    "probe.py": "9d8a433d1f51c30c5dd1a749db27effb165d620c6e77abcaf63c188d9167fca7",
+    "remote_actor.py": "034db272cb5a9f20dd1b130d661719a56c5a751829953f46219aaa355385f0c6",
+    "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+    "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+    "stream_weights.py": "4eae4f55c042b6214449cae4e9ef77d825ebf3ad53b376fc18bd75f3a577948e",
+    "supervise.py": "e9b4e117784305b085db439e8045aee3c3eaecc3a931accafb1b86a1288737f3",
+    "test_fast_sync.py": "9251df451e5ef8fb68331aa35376c0c6446711f83324391cfd1afa6b3dce454b",
+    "test_long_blocks.py": "49dd633adf1ac6dfddf44508476f2567f653b8ebde227a87d48bcc8ff0572e96",
+    "test_progress.py": "77d7bbff26ef9d6648bb13ef129e92d58ea5875eb9c5b01d6fc75ae3f19df884",
+    "test_qwen38.py": "3b616d2798aa69d7e24fdc3aff069655563981df253d7e689a7208f660144410",
+    "test_remote_actor.py": "3218d6500842f14e1a991a51cb164c9bcbb75601384eb90335c48381803a85de",
+    "test_schedule.py": "ad3dc781294d6117ba5ab88d38e72cbeba811ef1bed2ad110764b0a74d815f63",
+    "test_supervise.py": "9b870db2e0b17700df4982a49eb5c7bf3c42a6b820f587e0e2f4c9ca02018151"
+  },
+  "verification": {
+    "cpu_tests_passed": 176,
+    "subtests_passed": 52,
+    "pytest_exit_code": 0,
+    "mlx_imports_in_guarded_pytest": [],
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "gpu_ssh_model_jobs": "NOT RUN",
+    "commits": "NONE",
+    "hardware_acceptance": "parent only; no speed claim"
+  }
+}

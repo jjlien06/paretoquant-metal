@@ -1,0 +1,8 @@
+{
+  "root": "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/cable40-1791261040480150000",
+  "sources": {
+    "tcp_smoke.py": "d9d15b7321f6afeed3fac3eea3b77e87af988e87327cc03469f5aa698327ee33",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025"
+  },
+  "readback_verified": true
+}

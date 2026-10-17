@@ -1,0 +1,225 @@
+..................................................FFF                    [100%]
+=================================== FAILURES ===================================
+_ test_noncritical_completed_controller_enforces_external_policy_and_all_actors _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x106af05f0>
+
+    def test_noncritical_completed_controller_enforces_external_policy_and_all_actors(monkeypatch):
+        import supervise
+        monkeypatch.setattr(supervise, "verify_trial", lambda *a, **kw: {})
+        monkeypatch.setattr(supervise, "verify_mtp_evidence", lambda *a, **kw: {})
+        args = S(pressure_policy="noncritical", require_normal_pressure=False, benchmark_schedule=False,
+                 repeats=1, eval_group_size=32, eval_group_schedule=None, execution="phased", verification_gate_only=True)
+        results, bindings = trial_receipts()
+        common = dict(ranks=[], server={}, weight_files=[], args=args, phases={}, source_sha256={}, expected_inventory={})
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:312: Failed
+_____ test_noncritical_workload_verifier_uses_admitted_policy_and_bindings _____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1069258b0>
+
+    def test_noncritical_workload_verifier_uses_admitted_policy_and_bindings(monkeypatch):
+        import workload_evidence
+        from remote_actor import SOURCES
+        from test_workload_schedule import schedule
+        class Observed(Exception): pass
+        receipts, bindings = trial_receipts()
+        def check(receipts, *, expected_bindings=None, expected_policy="normal"):
+            assert expected_bindings == bindings and expected_policy == "noncritical"
+            raise Observed()
+        monkeypatch.setattr(pg, "verify_actor_pressures", check)
+        args = S(benchmark_schedule_sha256="a" * 64, repeats=2, pressure_policy="noncritical", require_normal_pressure=False)
+        with pytest.raises(Observed):
+>           workload_evidence.verify_schedule_trial(ranks=[dict(rank=0), dict(rank=1)], server={}, receipts=receipts,
+                weight_files=[], rows=schedule()["requests"], prompt_ids=[[1], [1]], args=args, phases={0: [], 1: []},
+                source_sha256={name: "a" * 64 for name in SOURCES}, expected_inventory={}, expected_pressure_bindings=bindings)
+
+test_pressure_noncritical.py:340: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ranks = [{'rank': 0}, {'rank': 1}], server = {}
+receipts = [{'reason': 'completed', 'require_normal_pressure': True, 'host_role': 'remote', 'actor_role': 'server', ...}, {'reaso...nk1', ...}, {'reason': 'completed', 'require_normal_pressure': True, 'host_role': 'local', 'actor_role': 'rank0', ...}]
+weight_files = []
+rows = [{'id': 'native', 'case_id': 'a', 'method': 'native', 'prompt': 'tokens:[1,2,3]', ...}, {'id': 'mtp', 'case_id': 'a', 'method': 'mtp', 'prompt': 'tokens:[1,2,3]', ...}]
+prompt_ids = [[1], [1]]
+args = namespace(benchmark_schedule_sha256='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', repeats=2, pressure_policy='noncritical', require_normal_pressure=False)
+phases = {0: [], 1: []}
+source_sha256 = {'cpu_only_runner.py': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'overlap_evidence.py': 'aaa...aaaaaaaaaaaaaaaaaaaaaa', 'overlap_prefill.py': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ...}
+expected_inventory = {}
+expected_pressure_bindings = [{'host_role': 'remote', 'actor_role': 'server', 'nonce': '11111111111111111111111111111111', 'actor_pid': 100, ...}, .....}, {'host_role': 'local', 'actor_role': 'rank0', 'nonce': '33333333333333333333333333333333', 'actor_pid': 102, ...}]
+
+    def verify_schedule_trial(
+        *,
+        ranks,
+        server,
+        receipts,
+        weight_files,
+        rows,
+        prompt_ids,
+        args,
+        phases,
+        source_sha256,
+        expected_inventory,
+        expected_pressure_bindings=None,
+    ):
+        from mtp_audit import validate_mtp_actions
+        from remote_actor import SOURCES
+        from supervise import verify_mtp_evidence, verify_sources, verify_trial
+    
+        validate_schedule(
+            {
+                "schema": OVERLAP_SCHEMA if any("prefill_mode" in r for r in rows) else SCHEMA,
+                "requests": rows,
+            }
+        )
+        if (
+            not isinstance(source_sha256, dict)
+            or set(source_sha256) != set(SOURCES)
+            or any(
+                not isinstance(v, str) or re.fullmatch("[0-9a-f]{64}", v) is None
+                for v in source_sha256.values()
+            )
+            or source_sha256["benchmark_schedule.json"] != args.benchmark_schedule_sha256
+        ):
+            raise ValueError("Missing exact registry/schedule SHA binding")
+        if (
+            not isinstance(phases, dict)
+            or set(phases) != {0, 1}
+            or len(ranks) != 2
+            or sorted(r.get("rank", -1) for r in ranks) != [0, 1]
+            or len(prompt_ids) != len(rows)
+            or args.repeats != len(rows)
+        ):
+            raise ValueError("Missing trusted schedule/rank/prompt evidence")
+        from overlap_prefill import validate_modes
+        from pressure_guard import verify_actor_pressures
+    
+        validate_modes(args, rows)
+        if getattr(args, "require_normal_pressure", False):
+            verify_actor_pressures(receipts, expected_bindings=expected_pressure_bindings)
+        by_rank = {r["rank"]: r for r in ranks}
+>       count = 0 if args.verification_gate_only else len(rows)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'types.SimpleNamespace' object has no attribute 'verification_gate_only'
+
+workload_evidence.py:101: AttributeError
+______ test_controller_run_noncritical_binds_both_hosts_including_server _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107254830>
+tmp_path = PosixPath('/Users/jeremylien/.hermes/cache/scratch/pytest-of-jeremylien/pytest-263/test_controller_run_noncritica0')
+
+    def test_controller_run_noncritical_binds_both_hosts_including_server(monkeypatch, tmp_path):
+        import hashlib
+        import json
+        from pathlib import Path
+    
+        import remote_actor
+        import supervise
+    
+        args = supervise.parser().parse_args(noncritical_argv())
+        args.output = str(tmp_path / "controller")
+        meta = tmp_path / "metadata"
+        meta.mkdir()
+        for name, data in (
+            ("config.json", {"model_type": "qwen3_5", "num_hidden_layers": 64}),
+            ("model.safetensors.index.json", {"weight_map": {"embed": "ignored"}}),
+        ):
+            (meta / name).write_text(json.dumps(data))
+        args.local_metadata = str(meta)
+        args.target_config_sha256 = hashlib.sha256((meta / "config.json").read_bytes()).hexdigest()
+        args.target_index_sha256 = hashlib.sha256(
+            (meta / "model.safetensors.index.json").read_bytes()
+        ).hexdigest()
+        captures, verified = {}, []
+    
+        class FakeController:
+            def __init__(self, args):
+                self.output = Path(args.output)
+                self.output.mkdir()
+                self.started = supervise.time.monotonic()
+                self.children = {}
+                self.control_cleanup = {}
+    
+            def check(self):
+                pass
+    
+            def launch(self, name, command, job=None):
+                captures[name] = job
+                self.children[name] = S(poll=lambda: 0)
+    
+            def call(self, command, cleanup=False):
+                hashes = json.loads((self.output / "source_sha256.json").read_text())
+                if "--inspect" in command:
+                    return dict(source_sha256=hashes, available_port=23456)
+                if "--status" in command:
+                    nonce = command[command.index("--status") + 1]
+                    name = next(k for k, job in captures.items() if job["nonce"] == nonce)
+                    return status(name)
+                return dict(stop_requested=True)
+    
+            def close(self):
+                return {}
+    
+        def status(name):
+            job = captures[name]
+            role = dict(
+                server=("remote", "server"), rank1=("remote", "rank1"), rank0=("local", "rank0")
+            )[name]
+            assert job.get("host_role") == role[0] and job.get("actor_role") == role[1]
+            _, binding, result = healthy()
+            i = ("server", "rank1", "rank0").index(name)
+            binding.update(
+                host_role=role[0],
+                actor_role=role[1],
+                nonce=job["nonce"],
+                actor_pid=100 + i,
+                child_pid=200 + i,
+            )
+            result.update(binding)
+            result.update(pressure_policy="noncritical", require_normal_pressure=False)
+            result["pressure"].update(schema=pg.NONCRITICAL_SCHEMA, policy="noncritical", allowed_levels=[1, 2])
+            result["pressure"]["samples"][1]["level"] = 2
+            result["pressure"]["binding"] = deepcopy(binding)
+            result["cleanup"] = dict(child_reaped=True, group_gone=True)
+            assert job["pressure_policy"] == "noncritical" and job["require_normal_pressure"] is False
+            out = trusted_status(binding, result)
+            out["startup"].update(pressure_policy="noncritical", require_normal_pressure=False)
+            out.update(
+                source_sha256=json.loads((Path(args.output) / "source_sha256.json").read_text()),
+                stdout=json.dumps(dict(rank=i)),
+                stderr="",
+                ready=dict(address=[args.remote_address, 23457]),
+            )
+            return out
+    
+        def verify(**kwargs):
+            from pressure_guard import verify_actor_pressures
+    
+            expected = kwargs.get("expected_pressure_bindings")
+            assert verify_actor_pressures(kwargs["receipts"], expected_bindings=expected, expected_policy="noncritical")
+            verified.append(expected)
+            return {}
+    
+        monkeypatch.setattr(supervise, "Controller", FakeController)
+        monkeypatch.setattr(supervise, "expected_inventory", lambda *a: {0: [], 1: []})
+        monkeypatch.setattr(supervise, "free_port", lambda *a: 23455)
+        monkeypatch.setattr(supervise, "listener_closed", lambda *a: True)
+        monkeypatch.setattr(remote_actor, "job_status", lambda jobs, nonce, **kw: status("rank0"))
+        monkeypatch.setattr(supervise, "verify_completed_trial", verify)
+        result = supervise.run(args, transport=lambda args, extra: list(extra))
+>       assert result["status"] == "success", result
+E       AssertionError: {'status': 'failed', 'error_type': 'KeyError', 'error_stage': 'server_readiness', 'nonce': '2ddebc555a4aae082dc79b69d3c96d31', ...}
+E       assert 'failed' == 'success'
+E         
+E         - success
+E         + failed
+
+test_pressure_noncritical.py:444: AssertionError
+=========================== short test summary info ============================
+FAILED test_pressure_noncritical.py::test_noncritical_completed_controller_enforces_external_policy_and_all_actors
+FAILED test_pressure_noncritical.py::test_noncritical_workload_verifier_uses_admitted_policy_and_bindings
+FAILED test_pressure_noncritical.py::test_controller_run_noncritical_binds_both_hosts_including_server
+3 failed, 50 passed in 1.10s

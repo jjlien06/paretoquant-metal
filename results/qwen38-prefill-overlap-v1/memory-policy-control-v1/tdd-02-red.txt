@@ -1,0 +1,15 @@
+test_exact_modes_and_bounded_configuration (__main__.Bounds) ... ok
+test_strict_sampler_requires_pressure_one_and_vm_counters (__main__.Samples) ... FAIL
+
+======================================================================
+FAIL: test_strict_sampler_requires_pressure_one_and_vm_counters (__main__.Samples)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/memory-policy-control-v1/test_control.py", line 46, in test_strict_sampler_requires_pressure_one_and_vm_counters
+    self.assertTrue(hasattr(f, 'parse_sample'), 'missing fail-closed sampler parser')
+AssertionError: False is not true : missing fail-closed sampler parser
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1)

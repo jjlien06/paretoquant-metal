@@ -1,0 +1,30 @@
+{
+  "unique_completions": 9,
+  "per_rank_request_records": 18,
+  "event_ids_per_completion": 70,
+  "same_formatted_prompt": true,
+  "same_1847_text_tensor_digests": true,
+  "seven_replicated_digests_match": true,
+  "every_owned_layer_per_request_verified": true,
+  "source_snapshots_match_admission_and_current_runtimes": true,
+  "trials": [
+    {
+      "trial": "counting-control-before-v1",
+      "status": "success",
+      "all_request_layer_and_token_counts_verified": true,
+      "cleanup_verified": true
+    },
+    {
+      "trial": "counting-fast-v1",
+      "status": "success",
+      "all_request_layer_and_token_counts_verified": true,
+      "cleanup_verified": true
+    },
+    {
+      "trial": "counting-control-after-v1",
+      "status": "success",
+      "all_request_layer_and_token_counts_verified": true,
+      "cleanup_verified": true
+    }
+  ]
+}

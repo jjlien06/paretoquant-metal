@@ -1,0 +1,169 @@
+{
+  "status": "CPU-only candidate complete; all Metal/GPU/parity/performance acceptance pending",
+  "pytest_passed": 312,
+  "stdlib_unittest_passed": 2,
+  "vertical_red_green_cycles": 18,
+  "red_exit_codes": [
+    1
+  ],
+  "green_exit_codes": [
+    0
+  ],
+  "final_commands": [
+    {
+      "phase": "FINAL RUFF FORMAT",
+      "command": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/ruff",
+        "format",
+        "--no-cache",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/slot_qmv.py",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/test_slot_qmv.py",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/cpu_smoke.py"
+      ],
+      "cwd": "/Users/jeremylien/Projects/paretoquant-metal",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+      },
+      "exit_code": 0,
+      "stdout": "1 file reformatted, 2 files left unchanged\n",
+      "stderr": ""
+    },
+    {
+      "phase": "FINAL RUFF CHECK",
+      "command": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/ruff",
+        "check",
+        "--no-cache",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/slot_qmv.py",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/test_slot_qmv.py",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/cpu_smoke.py"
+      ],
+      "cwd": "/Users/jeremylien/Projects/paretoquant-metal",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+      },
+      "exit_code": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "phase": "FINAL RUFF FORMAT CHECK",
+      "command": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/ruff",
+        "format",
+        "--check",
+        "--no-cache",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/slot_qmv.py",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/test_slot_qmv.py",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/cpu_smoke.py"
+      ],
+      "cwd": "/Users/jeremylien/Projects/paretoquant-metal",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+      },
+      "exit_code": 0,
+      "stdout": "3 files already formatted\n",
+      "stderr": ""
+    },
+    {
+      "phase": "FINAL PYTEST CPU",
+      "command": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-o",
+        "addopts=",
+        "-p",
+        "no:cacheprovider",
+        "--confcutdir=/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/test_slot_qmv.py",
+        "-q",
+        "--tb=short"
+      ],
+      "cwd": "/Users/jeremylien/Projects/paretoquant-metal",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+      },
+      "exit_code": 0,
+      "stdout": "........................................................................ [ 23%]\n........................................................................ [ 46%]\n........................................................................ [ 69%]\n........................................................................ [ 92%]\n........................                                                 [100%]\n312 passed in 0.14s\n",
+      "stderr": ""
+    },
+    {
+      "phase": "FINAL STDLIB CPU",
+      "command": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/cpu_smoke.py"
+      ],
+      "cwd": "/Users/jeremylien/Projects/paretoquant-metal",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"
+      },
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_boolean_configuration_rejected_without_runtime (__main__.CPUAdmissionSmoke.test_boolean_configuration_rejected_without_runtime) ... ok\ntest_fast_and_slow_output_contract (__main__.CPUAdmissionSmoke.test_fast_and_slow_output_contract) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.003s\n\nOK\n"
+    }
+  ],
+  "files": [
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/slot_qmv.py",
+      "sha256": "bf0a643bd1dc3018a3890631862145625f4b48c12ca43a8910e9f1eb45cf7bfa",
+      "bytes": 5503
+    },
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/slot_qmv_header.metal",
+      "sha256": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+      "bytes": 15748
+    },
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/slot_qmv_body.metal",
+      "sha256": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+      "bytes": 295
+    },
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/test_slot_qmv.py",
+      "sha256": "f116de36b95af76e3b17b4e1166a0656c206cd1ec35d1ad0f798c95222aff3bf",
+      "bytes": 17423
+    },
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/cpu_smoke.py",
+      "sha256": "f48c5ec4d8c5bb1a29088ac7b1f6cd23f0b90dfce4d70149f2e9adc0db392bb5",
+      "bytes": 2459
+    },
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/LICENSE",
+      "sha256": "ccfab7ccb2ea306f71531c8ca77bb55507606cd90768b1e32b8b52ab5b48cf01",
+      "bytes": 1066
+    },
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/ATTRIBUTION.md",
+      "sha256": "0da756ff0396b09e88a5beaecd66bcf5442bd21e31eaf8c13809b5739b4fde14",
+      "bytes": 2966
+    },
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/README.md",
+      "sha256": "3a39a66cf29f65a2256a9e6f19407fd12917527c73a22953115e16a0148daa76",
+      "bytes": 9091
+    },
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/TDD_EVIDENCE.jsonl",
+      "sha256": "49fb647ee28c68e7ddee0d6c459e367d612422d96795a7c08ba46f8709d5c008",
+      "bytes": 169480
+    }
+  ],
+  "constraints": {
+    "write_scope": "/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification",
+    "actual_array_runtime_imports": false,
+    "GPU_execution": false,
+    "Metal_compilation": false,
+    "network_SSH_installs_downloads": false,
+    "credentials_read": false,
+    "library_decoder_edits": false,
+    "attention_worker_files_touched": false
+  },
+  "parent_update": "Held-equal SDPA demonstrates projection fix alone insufficient; separately gated attention required for full admission."
+}

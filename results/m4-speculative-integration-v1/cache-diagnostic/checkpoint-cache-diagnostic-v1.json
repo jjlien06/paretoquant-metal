@@ -1,0 +1,1836 @@
+{
+  "scope": "Diagnose real-checkpoint cache difference; no tolerance changes or32B admission",
+  "all_token_ids_equal": true,
+  "all_offsets_equal": true,
+  "rows": [
+    {
+      "role": "teacher_batch",
+      "layer": 0,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.015625,
+      "max_abs": 0.015625,
+      "rmse": 0.00036919984268024564,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 0,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.000152587890625,
+      "max_abs": 0.000152587890625,
+      "rmse": 1.8395465303910896e-05,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 1,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.125,
+      "max_abs": 0.125,
+      "rmse": 0.0045813703909516335,
+      "out_of_tolerance_elements": 523
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 1,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.01318359375,
+      "max_abs": 0.01318359375,
+      "rmse": 0.0006526592187583447,
+      "out_of_tolerance_elements": 87
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 2,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.03125,
+      "max_abs": 0.03125,
+      "rmse": 0.0027301732916384935,
+      "out_of_tolerance_elements": 336
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 2,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.00848388671875,
+      "max_abs": 0.00848388671875,
+      "rmse": 0.0006665380788035691,
+      "out_of_tolerance_elements": 125
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 3,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.033203125,
+      "max_abs": 0.033203125,
+      "rmse": 0.002568039344623685,
+      "out_of_tolerance_elements": 350
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 3,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0177001953125,
+      "max_abs": 0.0177001953125,
+      "rmse": 0.001185606000944972,
+      "out_of_tolerance_elements": 361
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 4,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0234375,
+      "max_abs": 0.0234375,
+      "rmse": 0.0020985277369618416,
+      "out_of_tolerance_elements": 352
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 4,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.01318359375,
+      "max_abs": 0.01318359375,
+      "rmse": 0.0015006137546151876,
+      "out_of_tolerance_elements": 473
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 5,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0234375,
+      "max_abs": 0.0234375,
+      "rmse": 0.0020166966132819653,
+      "out_of_tolerance_elements": 366
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 5,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.01220703125,
+      "max_abs": 0.01220703125,
+      "rmse": 0.0013442100025713444,
+      "out_of_tolerance_elements": 435
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 6,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.017578125,
+      "max_abs": 0.017578125,
+      "rmse": 0.0016457163728773594,
+      "out_of_tolerance_elements": 266
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 6,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0087890625,
+      "max_abs": 0.0087890625,
+      "rmse": 0.000939754128921777,
+      "out_of_tolerance_elements": 243
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 7,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.01806640625,
+      "max_abs": 0.01806640625,
+      "rmse": 0.0018463516607880592,
+      "out_of_tolerance_elements": 289
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 7,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0087890625,
+      "max_abs": 0.0087890625,
+      "rmse": 0.001039658673107624,
+      "out_of_tolerance_elements": 273
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 8,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.125,
+      "max_abs": 0.125,
+      "rmse": 0.00274225533939898,
+      "out_of_tolerance_elements": 232
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 8,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.009033203125,
+      "max_abs": 0.009033203125,
+      "rmse": 0.000980886397883296,
+      "out_of_tolerance_elements": 255
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 9,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.04296875,
+      "max_abs": 0.04296875,
+      "rmse": 0.0026805757079273462,
+      "out_of_tolerance_elements": 325
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 9,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0146484375,
+      "max_abs": 0.0146484375,
+      "rmse": 0.0012457865523174405,
+      "out_of_tolerance_elements": 323
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 10,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.015625,
+      "max_abs": 0.015625,
+      "rmse": 0.00151637673843652,
+      "out_of_tolerance_elements": 211
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 10,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0126953125,
+      "max_abs": 0.0126953125,
+      "rmse": 0.0014738235622644424,
+      "out_of_tolerance_elements": 435
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 11,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.05078125,
+      "max_abs": 0.05078125,
+      "rmse": 0.002656341064721346,
+      "out_of_tolerance_elements": 285
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 11,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0101318359375,
+      "max_abs": 0.0101318359375,
+      "rmse": 0.001154277822934091,
+      "out_of_tolerance_elements": 296
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 12,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.015625,
+      "max_abs": 0.015625,
+      "rmse": 0.0015811906196177006,
+      "out_of_tolerance_elements": 245
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 12,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0166015625,
+      "max_abs": 0.0166015625,
+      "rmse": 0.0015565224457532167,
+      "out_of_tolerance_elements": 440
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 13,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.02685546875,
+      "max_abs": 0.02685546875,
+      "rmse": 0.0017692847177386284,
+      "out_of_tolerance_elements": 230
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 13,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.011505126953125,
+      "max_abs": 0.011505126953125,
+      "rmse": 0.0012693576281890273,
+      "out_of_tolerance_elements": 368
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 14,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.015625,
+      "max_abs": 0.015625,
+      "rmse": 0.0015937590505927801,
+      "out_of_tolerance_elements": 209
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 14,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0166015625,
+      "max_abs": 0.0166015625,
+      "rmse": 0.0015520654851570725,
+      "out_of_tolerance_elements": 453
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 15,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.015625,
+      "max_abs": 0.015625,
+      "rmse": 0.0016337574925273657,
+      "out_of_tolerance_elements": 266
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 15,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0107421875,
+      "max_abs": 0.0107421875,
+      "rmse": 0.001237731077708304,
+      "out_of_tolerance_elements": 334
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 16,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.033203125,
+      "max_abs": 0.033203125,
+      "rmse": 0.002187161473557353,
+      "out_of_tolerance_elements": 266
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 16,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.01171875,
+      "max_abs": 0.01171875,
+      "rmse": 0.0013092703884467483,
+      "out_of_tolerance_elements": 331
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 17,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.015625,
+      "max_abs": 0.015625,
+      "rmse": 0.0015306079294532537,
+      "out_of_tolerance_elements": 216
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 17,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0087890625,
+      "max_abs": 0.0087890625,
+      "rmse": 0.00121344905346632,
+      "out_of_tolerance_elements": 355
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 18,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0126953125,
+      "max_abs": 0.0126953125,
+      "rmse": 0.0014414850156754255,
+      "out_of_tolerance_elements": 240
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 18,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.01171875,
+      "max_abs": 0.01171875,
+      "rmse": 0.001274805166758597,
+      "out_of_tolerance_elements": 349
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 19,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.015625,
+      "max_abs": 0.015625,
+      "rmse": 0.0014268065569922328,
+      "out_of_tolerance_elements": 213
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 19,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.01123046875,
+      "max_abs": 0.01123046875,
+      "rmse": 0.0012405929155647755,
+      "out_of_tolerance_elements": 297
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 20,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.015869140625,
+      "max_abs": 0.015869140625,
+      "rmse": 0.001483461819589138,
+      "out_of_tolerance_elements": 173
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 20,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.014892578125,
+      "max_abs": 0.014892578125,
+      "rmse": 0.0017113264184445143,
+      "out_of_tolerance_elements": 477
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 21,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.01953125,
+      "max_abs": 0.01953125,
+      "rmse": 0.0015445814933627844,
+      "out_of_tolerance_elements": 209
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 21,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.02978515625,
+      "max_abs": 0.02978515625,
+      "rmse": 0.0029763132333755493,
+      "out_of_tolerance_elements": 636
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 22,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.015625,
+      "max_abs": 0.015625,
+      "rmse": 0.0015309996670112014,
+      "out_of_tolerance_elements": 197
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 22,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.02734375,
+      "max_abs": 0.02734375,
+      "rmse": 0.0024716025218367577,
+      "out_of_tolerance_elements": 544
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 23,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.017578125,
+      "max_abs": 0.017578125,
+      "rmse": 0.0015428541228175163,
+      "out_of_tolerance_elements": 176
+    },
+    {
+      "role": "teacher_batch",
+      "layer": 23,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": false,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0234375,
+      "max_abs": 0.0234375,
+      "rmse": 0.002289285184815526,
+      "out_of_tolerance_elements": 523
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 0,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 0,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 1,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 1,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 2,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 2,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 3,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 3,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 4,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 4,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 5,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 5,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 6,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 6,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 7,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 7,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 8,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 8,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 9,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 9,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 10,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 10,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 11,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 11,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 12,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 12,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 13,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 13,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 14,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 14,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 15,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 15,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 16,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 16,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 17,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 17,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 18,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 18,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 19,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 19,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 20,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 20,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 21,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 21,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 22,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 22,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 23,
+      "kind": "keys",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    },
+    {
+      "role": "draft_serial_native",
+      "layer": 23,
+      "kind": "values",
+      "dtype": "float16",
+      "offset": 48,
+      "shape": [
+        1,
+        2,
+        48,
+        64
+      ],
+      "close": true,
+      "prefix_max_abs": 0.0,
+      "decode_max_abs": 0.0,
+      "max_abs": 0.0,
+      "rmse": 0.0,
+      "out_of_tolerance_elements": 0
+    }
+  ],
+  "source_hashes": {
+    "speculative_decode.py": "d4043a416b82943b3b376612581a22c27b2bbd0970c4c56a820f809b573ec923",
+    "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f"
+  },
+  "peak_mlx_bytes": 344176992
+}

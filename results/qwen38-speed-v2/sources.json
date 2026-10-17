@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://github.com/ml-explore/mlx/issues/4438",
+      "title": "",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 2,
+      "url": "https://github.com/ml-explore/mlx/pull/1773",
+      "title": "",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 3,
+      "url": "https://github.com/ml-explore/mlx/blob/main/docs/src/usage/distributed.rst",
+      "title": "",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 4,
+      "url": "https://github.com/youssofal/MTPLX",
+      "title": "",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 5,
+      "url": "https://mtplx.com/releases/notes/v2.7.0",
+      "title": "",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 6,
+      "url": "https://x.com/outsource_/status/2088485622356848716",
+      "title": "",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 7,
+      "url": "https://huggingface.co/mlx-community/Qwen3.8-27B-MTP-4bit",
+      "title": "",
+      "accessed": "2026-10-16"
+    }
+  ]
+}

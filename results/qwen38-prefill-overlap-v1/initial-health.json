@@ -1,0 +1,12 @@
+{
+  "timestamp": 1792225831.631661,
+  "scope": "read-only health; no GPU imports/model load/signals",
+  "local_health": "kern.memorystatus_vm_pressure_level: 2\nvm.swapusage: total = 6144.00M  used = 5063.12M  free = 1080.88M  (encrypted)\n",
+  "remote_exit_code": 0,
+  "remote": {
+    "timestamp": 1792225831.677856,
+    "health": "kern.memorystatus_vm_pressure_level: 1\nvm.swapusage: total = 1024.00M  used = 205.12M  free = 818.88M  (encrypted)\n",
+    "disk": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   228Gi   128Gi    78Gi    63%    704k  813M    0%   /System/Volumes/Data\n"
+  },
+  "remote_error": ""
+}

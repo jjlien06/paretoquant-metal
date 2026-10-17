@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/README.md",
+      "title": "Official Qwen3.8-27B card",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 2,
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/main/README.md",
+      "title": "Official Flash-Next card",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 3,
+      "url": "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF/raw/main/README.md",
+      "title": "DASLab full Flash quantization results",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 4,
+      "url": "https://huggingface.co/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF/raw/main/README.md",
+      "title": "DASLab pruned Flash Coder results",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 5,
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-Next/raw/main/README.md",
+      "title": "Official Coder-Next card",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 6,
+      "url": "https://raw.githubusercontent.com/Niko1221/Strata/296b59d2f73c8f04a805df29c2fa97655adace78/docs/MAC.md",
+      "title": "Strata pinned Mac documentation",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 7,
+      "url": "https://huggingface.co/api/models/mlx-community/Qwen3.6-35B-A3B-4bit?blobs=true",
+      "title": "mlx-community/Qwen3.6-35B-A3B-4bit exact file sizes",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 8,
+      "url": "https://huggingface.co/api/models/mlx-community/GLM-4.7-Flash-4bit?blobs=true",
+      "title": "mlx-community/GLM-4.7-Flash-4bit exact file sizes",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 9,
+      "url": "https://huggingface.co/api/models/mlx-community/Qwen3.8-27B-4bit?blobs=true",
+      "title": "mlx-community/Qwen3.8-27B-4bit exact file sizes",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 10,
+      "url": "https://huggingface.co/api/models/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF?blobs=true",
+      "title": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF exact file sizes",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 11,
+      "url": "https://huggingface.co/api/models/ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF?blobs=true",
+      "title": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-Coder-GGUF exact file sizes",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 12,
+      "url": "https://huggingface.co/api/models/unsloth/Qwen3-Coder-Next-GGUF?blobs=true",
+      "title": "unsloth/Qwen3-Coder-Next-GGUF exact file sizes",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 13,
+      "url": "https://huggingface.co/google/gemma-4-31B/raw/main/README.md",
+      "title": "Official Gemma4 model card",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 14,
+      "url": "https://huggingface.co/api/models/mlx-community/gemma-4-31b-it-4bit?blobs=true",
+      "title": "Gemma4 exact4bit weights",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 15,
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/local-models",
+      "title": "Hermes local-model runtime and context management",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 16,
+      "url": "https://hermes-agent.nousresearch.com/docs/guides/local-llm-on-mac",
+      "title": "Hermes Mac serving guide",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 17,
+      "url": "https://huggingface.co/ornith-ai/Ornith-1.5-35B-A3B/raw/main/README.md",
+      "title": "Official Ornith1.5-35B-A3B card",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 18,
+      "url": "https://huggingface.co/api/models/ornith-ai/Ornith-1.5-35B-A3B-MLX-4bit?blobs=true",
+      "title": "Ornith first-party MLX4bit exact size",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 19,
+      "url": "https://huggingface.co/api/models/lmstudio-community/Qwen3.8-27B-MLX-6bit?blobs=true",
+      "title": "Qwen3.8-27B MLX6bit exact size",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 20,
+      "url": "https://huggingface.co/api/models/mlx-community/Qwen3.8-27B-8bit?blobs=true",
+      "title": "Qwen3.8-27B MLX8bit exact size",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 21,
+      "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B/raw/main/README.md",
+      "title": "qwen36 official card",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 22,
+      "url": "https://huggingface.co/zai-org/GLM-4.7-Flash/raw/main/README.md",
+      "title": "glm47 official card",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 23,
+      "url": "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512/raw/main/README.md",
+      "title": "devstral official card",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 24,
+      "url": "https://huggingface.co/Kwaipilot/KAT-Coder-V2.5-Dev/raw/main/README.md",
+      "title": "kat official card",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 25,
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx-lm/93e6d4a6447b3080861985947f0820e76fcb957d/mlx_lm/models/qwen3_next.py",
+      "title": "MLX-LM pinned CoderNext pipeline",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 26,
+      "url": "https://raw.githubusercontent.com/ml-explore/mlx-lm/93e6d4a6447b3080861985947f0820e76fcb957d/mlx_lm/server.py",
+      "title": "MLX-LM pinned server/cancellation gap",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 27,
+      "url": "https://raw.githubusercontent.com/Blaizzy/mlx-vlm/b8bf04c6dd7f3bd3a2a5033bbfecef6375c3bfb0/mlx_vlm/utils.py",
+      "title": "MLX-VLM pinned sharded loader",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 28,
+      "url": "https://raw.githubusercontent.com/Blaizzy/mlx-vlm/b8bf04c6dd7f3bd3a2a5033bbfecef6375c3bfb0/mlx_vlm/models/qwen3_5/language.py",
+      "title": "MLX-VLM pinned Qwen3.5-family language implementation",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 29,
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/ea0c4c2c85fb183ec0fbd30a1af4e4275a18a064/tools/rpc/README.md",
+      "title": "llama.cpp pinned RPC support/warnings",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 30,
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next/raw/de4b8e4d43b917e7706784d8bb445c9af86a3540/config.json",
+      "title": "Official full Flash config",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": 31,
+      "url": "https://huggingface.co/Jab1718/qwen3.8-flash-coder-85gb-bf16/raw/main/config.json",
+      "title": "Distinct Jab1718 text-only Flash subnet config",
+      "accessed": "2026-10-16"
+    }
+  ]
+}

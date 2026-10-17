@@ -1,0 +1,55 @@
+{
+  "phase": "batch-01",
+  "trial_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-01-1792273340516059000",
+  "audit_summary": {
+    "schema": "parent-noncritical-trial-audit-summary-v1",
+    "timestamp": 1792273735.1729002,
+    "trial_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-01-1792273340516059000",
+    "trusted_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-01-1792273340516059000-external-trust.json",
+    "trusted_sha256": "f981c125a60fa4fd55836a58b1109d92682deebbb8111f14c31c1527774ff39b",
+    "audit_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-01-1792273340516059000-raw-audit.json",
+    "audit_sha256": "b76d0cf8f899b1897a98d5e4c448ff1d6205c7e79e0342a3f03a03a207642d25",
+    "report_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-01-1792273340516059000-report.json",
+    "report_sha256": "732ca3a425b272ed34823b3ddaa7ba6bca05dc3ed72b3ac9512434112961935c",
+    "rows_verified": 14,
+    "phase_physical_accepted": true,
+    "physical_evidence_accepted": false,
+    "complete_suite": false,
+    "coverage_complete": false,
+    "statistical_targets_met": false,
+    "pilot_budget": null,
+    "pressure_observations": [
+      {
+        "host_role": "local",
+        "actor_role": "rank0",
+        "observed_levels": [
+          1,
+          2
+        ],
+        "warning_samples": 5
+      },
+      {
+        "host_role": "remote",
+        "actor_role": "rank1",
+        "observed_levels": [
+          1,
+          2
+        ],
+        "warning_samples": 4
+      },
+      {
+        "host_role": "remote",
+        "actor_role": "server",
+        "observed_levels": [
+          1
+        ],
+        "warning_samples": 0
+      }
+    ],
+    "explicit_listener_refusals": [
+      true,
+      true,
+      true
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "prefix_sensitive_fuzz_cases": 400,
+  "blocking_two_rank_wire_cases": 48,
+  "preallocation_admission_cases": 5,
+  "synchronous_catchup_timing_cases": 1,
+  "sources_unchanged": true,
+  "gpu_imports": []
+}

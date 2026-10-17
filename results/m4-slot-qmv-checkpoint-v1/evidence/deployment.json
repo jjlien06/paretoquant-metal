@@ -1,0 +1,66 @@
+{
+  "root": "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/010-slot-operator-1791264341252170000",
+  "source_sha256": {
+    "slot_qmv.py": "bf0a643bd1dc3018a3890631862145625f4b48c12ca43a8910e9f1eb45cf7bfa",
+    "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+    "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+    "LICENSE": "ccfab7ccb2ea306f71531c8ca77bb55507606cd90768b1e32b8b52ab5b48cf01",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "operator_gate.py": "ef513705b85abaeb5c7053a2a3ce0a08ead24efe44dac735fbc2d3b6776571f9",
+    "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+    "draft_screen.py": "fdb9ec46cff8efe4cfda568408478bb5bc47750f2942d59e30b3bd55534871ae"
+  },
+  "candidate_manifest": [
+    {
+      "name": "slot_qmv.py",
+      "sha256": "bf0a643bd1dc3018a3890631862145625f4b48c12ca43a8910e9f1eb45cf7bfa"
+    },
+    {
+      "name": "slot_qmv_header.metal",
+      "sha256": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa"
+    },
+    {
+      "name": "slot_qmv_body.metal",
+      "sha256": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df"
+    },
+    {
+      "name": "test_slot_qmv.py",
+      "sha256": "f116de36b95af76e3b17b4e1166a0656c206cd1ec35d1ad0f798c95222aff3bf"
+    },
+    {
+      "name": "cpu_smoke.py",
+      "sha256": "f48c5ec4d8c5bb1a29088ac7b1f6cd23f0b90dfce4d70149f2e9adc0db392bb5"
+    },
+    {
+      "name": "LICENSE",
+      "sha256": "ccfab7ccb2ea306f71531c8ca77bb55507606cd90768b1e32b8b52ab5b48cf01"
+    },
+    {
+      "name": "ATTRIBUTION.md",
+      "sha256": "0da756ff0396b09e88a5beaecd66bcf5442bd21e31eaf8c13809b5739b4fde14"
+    },
+    {
+      "name": "README.md",
+      "sha256": "3a39a66cf29f65a2256a9e6f19407fd12917527c73a22953115e16a0148daa76"
+    },
+    {
+      "name": "TDD_EVIDENCE.jsonl",
+      "sha256": "49fb647ee28c68e7ddee0d6c459e367d612422d96795a7c08ba46f8709d5c008"
+    },
+    {
+      "name": "VERIFICATION.json",
+      "sha256": "e89c11f00306fd7b95423846683719c88d51b94721fbe3adabdd2c7b8def6eb3"
+    }
+  ],
+  "readback_verified": true,
+  "guarded_before": {
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "phased_decode.py": "a75cc6777f052135211ce9f386528059d494f69ca3e264f48d920157ba71308f",
+    "stream_weights.py": "d4c782601de385b54374c90189251fc5a4d50fc9217fb3838d6d9c630c116ebc",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "stream_server.py": "34130f52ab1cd934d693bf890d8090fc940639f96af3e681c64bcae39b52f05d",
+    "probe.py": "aa81063281553bbfef92c44aae60072e6cbf855fce5f1a9929c28241aab93874",
+    "shard_plan.py": "968f779ef0d4793487f394f08beeb3ddcb3369f3d838a9cc4d0cb6e1bd23db44"
+  },
+  "scope": "Independent array operator gate; no decoder/library modification"
+}

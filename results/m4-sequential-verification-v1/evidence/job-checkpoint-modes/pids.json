@@ -1,0 +1,1 @@
+{"actor_pid": 14330, "child_pid": 14332, "pgid": 14332, "nonce": "3cb00348b106460ab62c20551499baf8", "executed_argv": ["/Users/jeremylien/Projects/paretoquant-dual-host/.venv/bin/python", "-u", "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/009-sequential-1791255950033196000/checkpoint_modes.py"], "environment_keys": []}

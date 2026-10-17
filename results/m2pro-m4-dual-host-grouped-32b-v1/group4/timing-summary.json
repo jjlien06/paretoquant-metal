@@ -1,0 +1,189 @@
+{
+  "verified": true,
+  "ranks": {
+    "rank0": {
+      "requests": [
+        {
+          "repeat": 0,
+          "tokens_including_eos": 41,
+          "first_token_seconds": 33.2766973329708,
+          "wall_seconds": 40.24208512506448,
+          "post_first_token_seconds": 6.965387792093679,
+          "post_first_token_tps": 5.742680981151326
+        },
+        {
+          "repeat": 1,
+          "tokens_including_eos": 41,
+          "first_token_seconds": 1.0977563329506665,
+          "wall_seconds": 7.805957666016184,
+          "post_first_token_seconds": 6.708201333065517,
+          "post_first_token_tps": 5.962850250608203
+        },
+        {
+          "repeat": 2,
+          "tokens_including_eos": 41,
+          "first_token_seconds": 1.132260833051987,
+          "wall_seconds": 7.675007165991701,
+          "post_first_token_seconds": 6.542746332939714,
+          "post_first_token_tps": 6.113640658605153
+        }
+      ],
+      "peak_mlx_bytes": 8068217044
+    },
+    "rank1": {
+      "requests": [
+        {
+          "repeat": 0,
+          "tokens_including_eos": 41,
+          "first_token_seconds": 33.27970616700259,
+          "wall_seconds": 40.244702542000596,
+          "post_first_token_seconds": 6.964996374998009,
+          "post_first_token_tps": 5.743003706877225
+        },
+        {
+          "repeat": 1,
+          "tokens_including_eos": 41,
+          "first_token_seconds": 1.1897855419992993,
+          "wall_seconds": 7.8979204999996,
+          "post_first_token_seconds": 6.708134958000301,
+          "post_first_token_tps": 5.962909251295687
+        },
+        {
+          "repeat": 2,
+          "tokens_including_eos": 41,
+          "first_token_seconds": 1.1475701669987757,
+          "wall_seconds": 7.690195750001294,
+          "post_first_token_seconds": 6.542625583002518,
+          "post_first_token_tps": 6.113753491246452
+        }
+      ],
+      "peak_mlx_bytes": 11372435668
+    }
+  },
+  "comparison": {
+    "old_warm_post_first_tps_median": 5.094655797793838,
+    "group4_warm_post_first_tps_median": 6.0382454546066775,
+    "ratio": 1.1852116598772868,
+    "design": "sequential unpaired 2 warmed samples per variant; different process starts/background conditions; not controlled significance",
+    "weights_tokens_unchanged": true
+  },
+  "result": {
+    "tokens_agree": true,
+    "tensor_completeness": true,
+    "server_completed": true,
+    "receiver_weight_files": [],
+    "owned_groups_gone": true,
+    "listeners_closed": true,
+    "status": "success",
+    "nonce": "dafd8d423f5287b68c264ea0cc129dec",
+    "error_type": null,
+    "metadata_sha256": {
+      "config.json": "c027829d800805358d67ac87819a3754fd8240be973f7147840651310fd30ae3",
+      "model.safetensors.index.json": "7b6da9b2b1f3ebd698ae15f9fcf6ba3099e742ec07e5d383f28b7cb77a4d16db"
+    },
+    "owned_actor_cleanup_verified": true,
+    "services_closed_verified": true,
+    "transport_cleanup": {
+      "server": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "rank1": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "rank0": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      }
+    },
+    "cleanup_errors": [],
+    "elapsed_seconds": 76.48168604099192,
+    "control_transport_cleanup": {
+      "control1": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control2": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control3": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control4": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control5": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control6": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control7": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control8": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      },
+      "control9": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      }
+    }
+  }
+}

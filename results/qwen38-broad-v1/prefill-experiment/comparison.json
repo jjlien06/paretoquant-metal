@@ -1,0 +1,189 @@
+{
+  "schema": "qwen38-hidden-prefill-comparison-v1",
+  "cases": [
+    {
+      "case": "explanation-short",
+      "variants": {
+        "reference-before-v2": {
+          "ttft_median": 1.2455378960294183,
+          "wall_median": 14.089568646013504,
+          "decode_median": 9.888463622930988,
+          "ttft_samples": [
+            1.2439420420560054,
+            1.2471337500028312
+          ],
+          "wall_samples": [
+            14.18818016705336,
+            13.990957124973647
+          ],
+          "rank_peak_bytes": [
+            7963276590,
+            9519741900
+          ]
+        },
+        "candidate-v1": {
+          "ttft_median": 1.196809375018347,
+          "wall_median": 13.830167499982053,
+          "decode_median": 10.052751679544647,
+          "ttft_samples": [
+            1.198223749990575,
+            1.195395000046119
+          ],
+          "wall_samples": [
+            13.835482833965216,
+            13.824852165998891
+          ],
+          "rank_peak_bytes": [
+            7963421772,
+            9519602636
+          ]
+        },
+        "reference-after-v1": {
+          "ttft_median": 1.2499841874814592,
+          "wall_median": 13.836454666976351,
+          "decode_median": 10.09025277365195,
+          "ttft_samples": [
+            1.249434833007399,
+            1.2505335419555195
+          ],
+          "wall_samples": [
+            13.864785874960944,
+            13.808123458991759
+          ],
+          "rank_peak_bytes": [
+            7963409710,
+            9519741900
+          ]
+        }
+      },
+      "candidate_wall_speedup_vs_before": 1.0187561825286489,
+      "candidate_wall_speedup_vs_after": 1.0004545980368138,
+      "candidate_wall_speedup_vs_bracketing_mean": 1.0096053902827313,
+      "candidate_ttft_reduction_vs_bracketing_mean_percent": 4.083447473677271
+    },
+    {
+      "case": "code-1536",
+      "variants": {
+        "reference-before-v2": {
+          "ttft_median": 28.264569562510587,
+          "wall_median": 52.02700093752355,
+          "decode_median": 10.731290088898485,
+          "ttft_samples": [
+            30.13092399999732,
+            26.398215125023853
+          ],
+          "wall_samples": [
+            53.95183245802764,
+            50.10216941701947
+          ],
+          "rank_peak_bytes": [
+            8424804027,
+            9763323957
+          ]
+        },
+        "candidate-v1": {
+          "ttft_median": 25.504566562507534,
+          "wall_median": 49.16411381249782,
+          "decode_median": 10.782434917843757,
+          "ttft_samples": [
+            27.378029541985597,
+            23.63110358302947
+          ],
+          "wall_samples": [
+            51.52331962500466,
+            46.804907999990974
+          ],
+          "rank_peak_bytes": [
+            8297602536,
+            9763336080
+          ]
+        },
+        "reference-after-v1": {
+          "ttft_median": 28.447298624989344,
+          "wall_median": 51.903556999983266,
+          "decode_median": 10.874026907634338,
+          "ttft_samples": [
+            27.3803892909782,
+            29.514207959000487
+          ],
+          "wall_samples": [
+            51.20815920794848,
+            52.59895479201805
+          ],
+          "rank_peak_bytes": [
+            8424672955,
+            9763307573
+          ]
+        }
+      },
+      "candidate_wall_speedup_vs_before": 1.0582312362212858,
+      "candidate_wall_speedup_vs_after": 1.0557203816981862,
+      "candidate_wall_speedup_vs_bracketing_mean": 1.056975808959736,
+      "candidate_ttft_reduction_vs_bracketing_mean_percent": 10.055628997497601
+    },
+    {
+      "case": "explanation-1536",
+      "variants": {
+        "reference-before-v2": {
+          "ttft_median": 26.44422862501233,
+          "wall_median": 48.05537833351991,
+          "decode_median": 9.85673665687007,
+          "ttft_samples": [
+            27.857972750032786,
+            25.03048449999187
+          ],
+          "wall_samples": [
+            49.28530141705414,
+            46.82545524998568
+          ],
+          "rank_peak_bytes": [
+            8424640184,
+            9763258256
+          ]
+        },
+        "candidate-v1": {
+          "ttft_median": 23.887634270999115,
+          "wall_median": 45.43305404152488,
+          "decode_median": 9.886105158270906,
+          "ttft_samples": [
+            23.814607749984134,
+            23.960660792014096
+          ],
+          "wall_samples": [
+            45.38497295801062,
+            45.481135125039145
+          ],
+          "rank_peak_bytes": [
+            8297557312,
+            9763266444
+          ]
+        },
+        "reference-after-v1": {
+          "ttft_median": 25.408173353993334,
+          "wall_median": 46.80074077102472,
+          "decode_median": 9.9567420925755,
+          "ttft_samples": [
+            25.616082458000164,
+            25.200264249986503
+          ],
+          "wall_samples": [
+            47.03302216704469,
+            46.56845937500475
+          ],
+          "rank_peak_bytes": [
+            8424820408,
+            9763233676
+          ]
+        }
+      },
+      "candidate_wall_speedup_vs_before": 1.0577184243348088,
+      "candidate_wall_speedup_vs_after": 1.0301033412424752,
+      "candidate_wall_speedup_vs_bracketing_mean": 1.0439108827886419,
+      "candidate_ttft_reduction_vs_bracketing_mean_percent": 7.8629596342676855
+    }
+  ],
+  "geometric_mean_whole_request_speedup_vs_bracketing_mean": 1.0366370128502809,
+  "outputs_identical_across_all42requests": true,
+  "all_physical_gates_and_owned_cleanup_passed": true,
+  "design": "Separate-process reference-candidate-reference; two measured MTP repetitions/case/start; beforecontrol earlierreceipt-onlyguards disclosedsourcecomparison; noCIorsignificanceclaim"
+}

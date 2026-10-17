@@ -1,0 +1,1 @@
+{"actor_pid": 92489, "child_pid": 92491, "pgid": 92491, "nonce": "7e5aadc904e6499492b7f135cb40ae5a", "executed_argv": ["/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python", "-u", "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/local-verification-backend-v1/job-adapter2/sources/operator_gate.py"], "environment_keys": []}

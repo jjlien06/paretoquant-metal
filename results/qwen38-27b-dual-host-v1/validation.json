@@ -1,0 +1,35 @@
+[
+  {
+    "argv": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "spikes/011-qwen38-dual-host",
+      "-q"
+    ],
+    "returncode": 0,
+    "stdout": "................................                                         [100%]\n32 passed in 2.97s\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      ".venv/bin/ruff",
+      "check",
+      "spikes/011-qwen38-dual-host"
+    ],
+    "returncode": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      ".venv/bin/ruff",
+      "format",
+      "--check",
+      "spikes/011-qwen38-dual-host"
+    ],
+    "returncode": 0,
+    "stdout": "11 files already formatted\n",
+    "stderr": ""
+  }
+]

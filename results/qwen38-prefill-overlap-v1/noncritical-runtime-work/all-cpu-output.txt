@@ -1,0 +1,9 @@
+CPU-only explicitly excluded MLX-dependent modules: test_batched_snapshot.py,test_cache_gate.py,test_config_immutability.py,test_dispatch_schedule.py,test_evidence_hardening.py,test_head.py,test_hidden_cache_inventory.py,test_hidden_control.py,test_hidden_gate.py,test_hidden_prefill.py,test_hidden_runtime.py,test_hidden_two_rank.py,test_phased_cpu.py,test_prefix_integration.py,test_prefix_rollback.py,test_two_rank_schedule.py,test_unbound_schedule.py,test_workload_cleanup.py,test_workload_evidence.py,test_workload_runtime.py,test_workload_timings.py
+....sss.s.ss.ssss....................................................... [ 17%]
+................s....................................................... [ 34%]
+........................................................................ [ 52%]
+........................................................................ [ 69%]
+........................................................................ [ 86%]
+................................................s...s.                   [100%]
+401 passed, 13 skipped, 4 deselected in 2.29s
+{"extra_guard": "forbid actual child process/network/signals", "blocked_attempts": []}

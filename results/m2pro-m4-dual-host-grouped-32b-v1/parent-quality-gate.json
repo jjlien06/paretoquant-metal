@@ -1,0 +1,19 @@
+{
+  "pytest": {
+    "passed": 778,
+    "skipped": 15,
+    "subtests_passed": 65,
+    "duration_s": 27.05,
+    "scope": "tests + spikes007 + spikes008",
+    "source": "observed foreground terminal output"
+  },
+  "ruff_check": "passed over src/tests/spikes007/spikes008",
+  "format_check": "five preexisting failures, each byte-exact to HEAD; changed scopes checked separately",
+  "unchanged_unformatted_source_sha256": {
+    "src/paretoquant/sweep.py": "b5679233373ef55a99f7889a2d060d3d4789f4c9db8c933d2c14c23bdb64f1ff",
+    "tests/test_pipeline.py": "19dd307bac10f2e1e9cc387ad1c1608765f708dd4980bce7fbbc351ec3bf0a1d",
+    "tests/test_quality.py": "6fa5d31ac848a73c93fb8bf0ab516f21318b4ec02f0d274ed05c6bb7ee8f691f",
+    "tests/test_serialization.py": "d7f4cc6725e206efbef53db8ebdb29dfff0aaf5e80a08572b1402d41ac40e52f",
+    "tests/test_sweep.py": "09a731f59baf3d6d5362532ce1ed8e8ebc6f5cd2b50b03e8e7a8890444184039"
+  }
+}

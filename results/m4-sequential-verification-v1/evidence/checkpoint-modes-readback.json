@@ -1,0 +1,29 @@
+{
+  "fetched_sha256": {
+    "checkpoint-modes.json": "b15607bbaeae9174d3b584dfb1784d249ae738215114c788338fe217b7f2a122",
+    "job-checkpoint-modes/startup.json": "df2b18e010b2ac3ffe771dbde0b63d35fd68c3db4b662f199c516fde10debefe",
+    "job-checkpoint-modes/pids.json": "47bd33eb29eb6929d7c04e6fdc171d47f51f2203080a265efa5543cd169d9a19",
+    "job-checkpoint-modes/result.json": "904b9dcede5d5a033650ad19abd208e33765198e841619127ba19b5467bcea48",
+    "job-checkpoint-modes/stdout": "395c8a3143efb2b4aec5345cb39ed4d63d45e01b02c0826e8aad7b8523baa05b",
+    "job-checkpoint-modes/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "guarded_source_sha256_after": {
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "phased_decode.py": "a75cc6777f052135211ce9f386528059d494f69ca3e264f48d920157ba71308f",
+    "probe.py": "aa81063281553bbfef92c44aae60072e6cbf855fce5f1a9929c28241aab93874",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "shard_plan.py": "968f779ef0d4793487f394f08beeb3ddcb3369f3d838a9cc4d0cb6e1bd23db44",
+    "stream_server.py": "34130f52ab1cd934d693bf890d8090fc940639f96af3e681c64bcae39b52f05d",
+    "stream_weights.py": "d4c782601de385b54374c90189251fc5a4d50fc9217fb3838d6d9c630c116ebc"
+  },
+  "guarded_unchanged": true,
+  "report_sources_bound": true,
+  "actor_cleanup": {
+    "child_reaped": true,
+    "group_gone": true,
+    "pid_reused": false,
+    "identity_unknown": false,
+    "pending_os_gpu_termination": false,
+    "gpu_driver_state": "not inspected; process/group receipt only"
+  }
+}

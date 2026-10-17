@@ -1,0 +1,15 @@
+{
+  "schema": "qwen38-hidden-prefill-final-code-review-v1",
+  "delegation": "deleg_d56dcdc8",
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "cpu_verification": "334 passed, 1 skipped, 1 GPU test deselected",
+  "manifest_sha256": "92ce80269e82ca3b3b5b2604d078ffc35c9c21d0513dc13ca64f8cfaed0752e3",
+  "source_count": 61,
+  "scope": "Final candidate code including cache-part inventories, metric consistency, mandatory action audit, scheduled numerical-mode admission and unique controller snapshots",
+  "mutation_checks": ["positive-error zero/tiny/half-lower-bound tolerance ratios rejected", "real float32 rounding cases accepted", "five scheduled singleton-containing combinations rejected before source reads", "four native/slot-qmv combinations admitted", "supervisor copied once and last"],
+  "atol": 0.000001,
+  "rtol": 0.00001,
+  "physical_validation": "pending; review itself used no GPU or SSH"
+}

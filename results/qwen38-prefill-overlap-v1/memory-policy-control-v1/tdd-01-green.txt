@@ -1,0 +1,6 @@
+test_exact_modes_and_bounded_configuration (__main__.Bounds) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK

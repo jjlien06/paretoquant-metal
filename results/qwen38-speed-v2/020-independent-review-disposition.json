@@ -1,0 +1,18 @@
+{
+  "schema": "paretoquant-experiment-review-disposition-v1",
+  "review_delegation": "deleg_64850f7f",
+  "candidate": "spikes/020-qwen38-fp16-rounded",
+  "reviewed_compute_dtype_sha256": "b0483f0550b946519719029bc1ff16282c4c08a2e850518b59f63130b8fe888c",
+  "review_passed": false,
+  "blocking_issue": "Pre-fix rounded conversion and verifier rejected legitimate protected BF16 A_log instead of preserving it unchanged.",
+  "physical_failure_evidence": "020-full-fp16-rounded-v1",
+  "generation_reached_in_reviewed_trial": false,
+  "security_concerns": [],
+  "additional_test_suggestion": "Use fresh identical models for exact-cast rejection and rounded-cast acceptance; never reuse a partially transformed model after failure.",
+  "scope": "Pre-fix 020 only. Subsequent 020 eligibility changes were not covered by this review.",
+  "disposition": "Unadopted experiment; no FP16 path is enabled by the winning configuration. Preserve original failure and review; require fresh independent review and physical admission before any future adoption.",
+  "winning_runtime": "spikes/021-qwen38-prefix-rollback",
+  "winning_compute": "Native BF16 and original packed 4-bit target weights; no FP16 conversion",
+  "winning_evidence": ["final-verification-v2.json", "launcher-verification.json"],
+  "new_inference_jobs_started": false
+}

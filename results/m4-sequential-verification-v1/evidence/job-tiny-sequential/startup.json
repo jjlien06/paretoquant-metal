@@ -1,0 +1,1 @@
+{"actor_pid": 14312, "nonce": "9c5dae55ee6d48e2b9e7c6d7ad863d73", "deadline": 120, "argv": ["/Users/jeremylien/Projects/paretoquant-dual-host/.venv/bin/python", "-u", "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/009-sequential-1791255950033196000/tiny_modes.py", "sequential"]}

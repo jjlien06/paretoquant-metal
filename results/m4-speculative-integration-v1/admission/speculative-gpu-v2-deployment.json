@@ -1,0 +1,11 @@
+{
+  "root": "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/009-spec-integration-v2-1791220091510084000",
+  "files": {
+    "speculative_decode.py": "d4043a416b82943b3b376612581a22c27b2bbd0970c4c56a820f809b573ec923",
+    "test_speculative_gpu.py": "19ef8ee0b6cf0a4f3707a3fc16927b838a657731af9e1151c2c46ade2c354615",
+    "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025"
+  },
+  "readback_verified": true,
+  "scope": "tinyGPUintegration only; priorfailedtest kept; guarded32 untouched"
+}

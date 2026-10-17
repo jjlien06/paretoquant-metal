@@ -1,0 +1,292 @@
+..............................FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 82%]
+FFFFFFFFFFFFFFF                                                          [100%]
+=================================== FAILURES ===================================
+_____ test_verifier_binds_both_rank_environments_to_trusted_option[False] ______
+spikes/015-qwen38-fast-sync/test_fast_sync.py:219: in test_verifier_binds_both_rank_environments_to_trusted_option
+    result = verify_trial(ranks, server, receipts, [], **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+______ test_verifier_binds_both_rank_environments_to_trusted_option[True] ______
+spikes/015-qwen38-fast-sync/test_fast_sync.py:219: in test_verifier_binds_both_rank_environments_to_trusted_option
+    result = verify_trial(ranks, server, receipts, [], **options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-start-0-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-start-0-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-start-1-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-start-1-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-result-0-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-result-0-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-result-1-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-result-1-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-start-0-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-start-0-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-start-1-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-start-1-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-result-0-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-result-0-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-result-1-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-result-1-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-start-0-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-start-0-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-start-1-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-start-1-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-result-0-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-result-0-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-result-1-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-result-1-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[false-start-0-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[false-start-0-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[false-start-1-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[false-start-1-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[false-result-0-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[false-result-0-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[false-result-1-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[false-result-1-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-start-0-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-start-0-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-start-1-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-start-1-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-result-0-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-result-0-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-result-1-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-result-1-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-start-0-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-start-0-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-start-1-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-start-1-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-result-0-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-result-0-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-result-1-False] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_ test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-result-1-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:247: in test_verifier_rejects_missing_unknown_or_forged_rank_env
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_____ test_verifier_rejects_both_ranks_agreeing_on_untrusted_option[False] _____
+spikes/015-qwen38-fast-sync/test_fast_sync.py:257: in test_verifier_rejects_both_ranks_agreeing_on_untrusted_option
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_____ test_verifier_rejects_both_ranks_agreeing_on_untrusted_option[True] ______
+spikes/015-qwen38-fast-sync/test_fast_sync.py:257: in test_verifier_rejects_both_ranks_agreeing_on_untrusted_option
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+____________ test_verifier_requires_strict_boolean_admission[None] _____________
+spikes/015-qwen38-fast-sync/test_fast_sync.py:267: in test_verifier_requires_strict_boolean_admission
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+______________ test_verifier_requires_strict_boolean_admission[0] ______________
+spikes/015-qwen38-fast-sync/test_fast_sync.py:267: in test_verifier_requires_strict_boolean_admission
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_____________ test_verifier_requires_strict_boolean_admission[1_0] _____________
+spikes/015-qwen38-fast-sync/test_fast_sync.py:267: in test_verifier_requires_strict_boolean_admission
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+_____________ test_verifier_requires_strict_boolean_admission[1_1] _____________
+spikes/015-qwen38-fast-sync/test_fast_sync.py:267: in test_verifier_requires_strict_boolean_admission
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+____________ test_verifier_requires_strict_boolean_admission[false] ____________
+spikes/015-qwen38-fast-sync/test_fast_sync.py:267: in test_verifier_requires_strict_boolean_admission
+    verify_trial(ranks, server, receipts, [], **options)
+E   TypeError: verify_trial() got an unexpected keyword argument 'fast_synch'
+=========================== short test summary info ============================
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_binds_both_rank_environments_to_trusted_option[False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_binds_both_rank_environments_to_trusted_option[True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-start-0-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-start-0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-start-1-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-start-1-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-result-0-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-result-0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-result-1-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_env-result-1-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-start-0-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-start-0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-start-1-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-start-1-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-result-0-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-result-0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-result-1-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[missing_bool-result-1-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-start-0-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-start-0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-start-1-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-start-1-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-result-0-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-result-0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-result-1-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[opposite-result-1-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[false-start-0-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[false-start-0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[false-start-1-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[false-start-1-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[false-result-0-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[false-result-0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[false-result-1-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[false-result-1-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-start-0-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-start-0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-start-1-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-start-1-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-result-0-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-result-0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-result-1-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[unknown-result-1-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-start-0-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-start-0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-start-1-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-start-1-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-result-0-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-result-0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-result-1-False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_missing_unknown_or_forged_rank_env[forged-result-1-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_both_ranks_agreeing_on_untrusted_option[False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_rejects_both_ranks_agreeing_on_untrusted_option[True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_requires_strict_boolean_admission[None]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_requires_strict_boolean_admission[0]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_requires_strict_boolean_admission[1_0]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_requires_strict_boolean_admission[1_1]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_verifier_requires_strict_boolean_admission[false]
+57 failed, 30 passed in 0.57s

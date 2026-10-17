@@ -1,0 +1,397 @@
+{
+  "artifact_kind": "INDEPENDENT_CPU_LAUNCH_HOOK_REVIEW_NOT_PHYSICAL_APPROVAL",
+  "created_at": "2026-10-17T19:34:50.381779+00:00",
+  "limits": [
+    "PASS applies only to the narrow executable-launch-hook repair at the exact reviewed source hashes, not a new pressure/rawcore re-audit or physical execution approval.",
+    "All seven actual guarded_run launches used explicit TEST authorization and injected no-op capture runners. For six batch plumbing checks only the already-approved raw-pilot audit return was mocked; no physical pilot receipt was constructed, admitted or represented as real. The pilot launch itself used no such mock.",
+    "Tests and pure probes do not import MLX/models, start subprocesses, run generated SSH, access the network, send signals or exercise GPUs. TEST paths/options are synthetic and are not deployment credentials or health evidence.",
+    "Source-bound freezes must be recreated after this repair and after any subsequent reviewed harness/runtime change. The fresh scratch freeze here is CPU verification only, not parent-reviewed hardware admission.",
+    "Parent owns actual code deployment/readback, valid remote project directory layout and interpreter, target/small checkpoints and sidecar, current host/bridge/headroom checks, genuine numerical gates, pilot/budget admission, physical benchmark requests and cleanup.",
+    "Original90 files and all pre-existing result artifacts were read/hash-checked and preserved. This new exclusive receipt is the only repository modification by this review. Detailed scratch evidence can be pruned; verdict, exact source hashes, observations and evidence hashes are durable here."
+  ],
+  "logic_errors": [],
+  "passed": true,
+  "resolved_prior_blocker": {
+    "finding": "Actual guarded_run emits the selected remote_root_by_phase entry as --remote-root, producing seven distinct remote_actor.py paths through real025 ssh_argv. One unchanged remote_source is emitted as --remote-source for every phase; actual controller AST passes it to stream_server --source and rank1 probe --model. No remaining first-launch-blocking defect found in the reviewed hook.",
+    "id": "REMOTE_CODE_ROOT_CHECKPOINT_ARGUMENT_MIXUP",
+    "prior_review": "results/qwen38-prefill-overlap-v1/integration-independent-review.json",
+    "prior_review_sha256": "c52c8f54924dc6ae7b2cb90a03dffbec30028c3103815413cc51ae6e5b4bafee",
+    "resolved": true
+  },
+  "schema": "qwen38-overlap-launch-hook-independent-review-v2",
+  "security_concerns": [],
+  "sourcehashes": {
+    "benchmarks/qwen38_overlap/INTEGRATION025.md": "1e19b8281ab56e2e34c31293ec25723911e64c0f94769e556db06439c1475d8d",
+    "benchmarks/qwen38_overlap/cli.py": "3e7f1adadafd1ae3445c364c3c13cea7b20395c54ea066528182a58316a01cee",
+    "benchmarks/qwen38_overlap/harness.py": "1b4664144236aba26ec7ac79c6062d7af3b76262f6c51f3dff232a64466dcc81",
+    "benchmarks/qwen38_overlap/integration025.py": "8bd48566cbbdb7b210073047d2ce1ba4603de8f43e66e6a72bdf738dfbd4cab4",
+    "benchmarks/qwen38_overlap/supervisor025.py": "fba88ddfba32e44ae378833cc7d39fdbefab02f9c778dfca75466282b9814814",
+    "benchmarks/qwen38_overlap/tests/test_supervisor025.py": "15c4b691b190eb7b78569a5590966ab38cd8fcbd6e8143eca9f8c9bbd7270a3b",
+    "benchmarks/qwen38_overlap/verification/integration025_cpu.py": "dcb3333cf9461f101aa5c23b5f0004eb43f21952cc8c1a5a192be011bea41d9f",
+    "spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b",
+    "spikes/025-qwen38-overlapped-prefill/probe.py": "4b21c1faead37933d9ebd559c19015e31c707b68dabfe66ba77a8743f2f6c702",
+    "spikes/025-qwen38-overlapped-prefill/supervise.py": "485ae42d2f5d9ff7a57359d1ff20f8a8b4283005cb1590881402204b6a6eef3c"
+  },
+  "verdict": "PASS",
+  "verification": {
+    "confinement": {
+      "denied_external_actions": [],
+      "gpu_or_live_app_activity": false,
+      "independent_probe_write_guard": "All probe file writes confined to new scratch tree",
+      "installs_builds_or_commits": false,
+      "model_or_mlx_imports": [],
+      "network_or_ssh_executed": false,
+      "scratch_evidence_only": true,
+      "signals_sent": false,
+      "subprocesses_spawned_by_tests_or_probes": false
+    },
+    "independent_pure_probes": {
+      "actual_generated_argv_parsed_for_phases": [
+        "pilot",
+        "batch-00",
+        "batch-01",
+        "batch-02",
+        "batch-03",
+        "batch-04",
+        "batch-05"
+      ],
+      "batch_boundary_isolation": "Only already-reviewed pilot audit return mocked for six batch launch plumbing probes; exact trust load, manifest read, parent guard, private profile, generated argv, actual025 parser/validate_args/ssh_argv/probe_options all real. No physical pilot receipt or acceptance minted.",
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 TMPDIR=/Users/jeremylien/.hermes/cache/scratch .venv/bin/python /Users/jeremylien/.hermes/cache/scratch/launch-hook-independent-review-v2-probes.py",
+      "default_subprocess_runner_calls": 0,
+      "exact_parser_namespace_fields_checked_per_phase": 37,
+      "exit_code": 0,
+      "failed": [],
+      "mocked_pilot_audit_boundary_calls": 6,
+      "passed": 23,
+      "probes": [
+        {
+          "name": "actual_guarded_run_parser_ssh_and_rank_options_pilot",
+          "passed": true,
+          "requests": 6
+        },
+        {
+          "name": "actual_guarded_run_parser_ssh_and_rank_options_batch-00",
+          "passed": true,
+          "requests": 14
+        },
+        {
+          "name": "actual_guarded_run_parser_ssh_and_rank_options_batch-01",
+          "passed": true,
+          "requests": 14
+        },
+        {
+          "name": "actual_guarded_run_parser_ssh_and_rank_options_batch-02",
+          "passed": true,
+          "requests": 14
+        },
+        {
+          "name": "actual_guarded_run_parser_ssh_and_rank_options_batch-03",
+          "passed": true,
+          "requests": 14
+        },
+        {
+          "name": "actual_guarded_run_parser_ssh_and_rank_options_batch-04",
+          "passed": true,
+          "requests": 14
+        },
+        {
+          "name": "actual_guarded_run_parser_ssh_and_rank_options_batch-05",
+          "passed": true,
+          "requests": 14
+        },
+        {
+          "name": "all_seven_code_roots_distinct_single_weights_source_and_exact_schedules",
+          "passed": true
+        },
+        {
+          "name": "actual_controller_weight_server_and_rank1_use_remote_source_rank0_metadata",
+          "passed": true
+        },
+        {
+          "name": "old_profile_rejected",
+          "passed": true,
+          "rejected_with": "Private profile key set differs"
+        },
+        {
+          "name": "missing_phase_directory_rejected",
+          "passed": true,
+          "rejected_with": "Private profile key set differs"
+        },
+        {
+          "name": "extra_phase_directory_rejected",
+          "passed": true,
+          "rejected_with": "Private profile key set differs"
+        },
+        {
+          "name": "duplicate_phase_directory_rejected",
+          "passed": true,
+          "rejected_with": "Remote code directories must be distinct per phase"
+        },
+        {
+          "name": "relative_selected_code_directory_rejected",
+          "passed": true,
+          "rejected_with": "Private profile/options validation failed"
+        },
+        {
+          "name": "empty_selected_code_directory_rejected",
+          "passed": true,
+          "rejected_with": "Invalid private profile values"
+        },
+        {
+          "name": "relative_weights_directory_rejected",
+          "passed": true,
+          "rejected_with": "Private profile/options validation failed"
+        },
+        {
+          "name": "invalid_other_required_option_sanitized",
+          "passed": true,
+          "rejected_with": "Private profile/options validation failed"
+        },
+        {
+          "name": "TEST_approval_without_injected_runner_no_default_subprocess",
+          "passed": true,
+          "rejected_with": "TEST approval cannot start the actual supervisor"
+        },
+        {
+          "name": "no_parent_guard_before_private_profile_read",
+          "passed": true,
+          "rejected_with": "parent_only_guarded_supervisor_unavailable"
+        },
+        {
+          "name": "wrong_manifest_guard_before_private_profile_read",
+          "passed": true,
+          "rejected_with": "Parent approval does not bind this exact plan"
+        },
+        {
+          "name": "wrong_phase_guard_before_private_profile_read",
+          "passed": true,
+          "rejected_with": "Parent approval does not bind this exact plan"
+        },
+        {
+          "name": "inert_plan_does_not_read_profile_or_write_trial",
+          "passed": true
+        },
+        {
+          "existing_result_files": 1129,
+          "name": "reviewed_sources_original90_and_prior_result_files_unchanged",
+          "original_files": 90,
+          "passed": true
+        }
+      ],
+      "result_path": "/Users/jeremylien/.hermes/cache/scratch/launch-hook-independent-review-v2-probes/probe-results.json",
+      "result_sha256": "21efd25fb480e85e197a9c2742824a03787ca08bb636ba713c9596f97a2e079a",
+      "script_sha256": "d8a8ae1c201213b23a4065bf27cabce5a4c24b384b2c30cf075bfb4cedccdab4",
+      "total": 23
+    },
+    "other_argument_semantics": {
+      "all_parser_fields_exactly_checked": true,
+      "controller": "Exact phase-frozen supervise.py; output is requested trial/raw",
+      "deadline_seconds": 900,
+      "eval_group_schedule": null,
+      "eval_group_size": 32,
+      "execution": "phased",
+      "false_flags": [
+        "verification_gate_only",
+        "dry_run"
+      ],
+      "hidden_gate_chunk_size": 256,
+      "injected_runner_timeout_seconds": 930,
+      "metadata_and_hashes": "Canonical local target and configured small-local path plus exact target/small config/index SHA256 values from fresh CPU freeze; same hashes propagated by real probe_options",
+      "private_host_and_models": "Explicit test SSH target/key/alias, both IPv4 addresses, sidecar and small-remote model preserve exact values; sidecar propagated only to rank0, small model selects local/remote by rank",
+      "public_plan_contains_no_profile_values": true,
+      "python": "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+      "rank0_verifier": "native",
+      "rank1_verifier": "slot-qmv",
+      "required_true_flags": [
+        "overlapped_prefill",
+        "hidden_only_prefill",
+        "require_normal_pressure",
+        "prefix_rollback",
+        "benchmark_schedule"
+      ],
+      "reserve_bytes": 8589934592,
+      "returncode_zero_is_not_acceptance": true,
+      "split": [
+        28,
+        36
+      ],
+      "ssh": "Actual ssh_argv keeps strict host-key checking, batch mode, identities-only, bounded connect/keepalive settings and project .venv interpreter; generated command never executed",
+      "target_revision": "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+      "width_prompt": "tokens:[1,2,3,4,5]"
+    },
+    "phase_observations": [
+      {
+        "injected_runner_only": true,
+        "max_tokens": 256,
+        "parser_validate_args_passed": true,
+        "phase": "pilot",
+        "rank0_and_rank1_probe_options_passed": true,
+        "remote_actor_command": [
+          "/TEST/project/.venv/bin/python",
+          "-u",
+          "/TEST/project/spikes/runtime-pilot/remote_actor.py",
+          "--root",
+          "/TEST/project/spikes/runtime-pilot",
+          "--inspect"
+        ],
+        "remote_root": "/TEST/project/spikes/runtime-pilot",
+        "requests": 6,
+        "schedule_sha256": "0e736d7490fd7016fe76e22d6947e94b76c88e4582ce1b7ad28b9b90e4904bc1",
+        "target_weight_source": "/TEST/project/models/pinned-27b-weights",
+        "transport_executed": false
+      },
+      {
+        "injected_runner_only": true,
+        "max_tokens": 256,
+        "parser_validate_args_passed": true,
+        "phase": "batch-00",
+        "rank0_and_rank1_probe_options_passed": true,
+        "remote_actor_command": [
+          "/TEST/project/.venv/bin/python",
+          "-u",
+          "/TEST/project/spikes/runtime-batch-00/remote_actor.py",
+          "--root",
+          "/TEST/project/spikes/runtime-batch-00",
+          "--inspect"
+        ],
+        "remote_root": "/TEST/project/spikes/runtime-batch-00",
+        "requests": 14,
+        "schedule_sha256": "ddf1077de85beb84723800292ed79dc9d4bb78a7f51321243738ed3ea67cab52",
+        "target_weight_source": "/TEST/project/models/pinned-27b-weights",
+        "transport_executed": false
+      },
+      {
+        "injected_runner_only": true,
+        "max_tokens": 256,
+        "parser_validate_args_passed": true,
+        "phase": "batch-01",
+        "rank0_and_rank1_probe_options_passed": true,
+        "remote_actor_command": [
+          "/TEST/project/.venv/bin/python",
+          "-u",
+          "/TEST/project/spikes/runtime-batch-01/remote_actor.py",
+          "--root",
+          "/TEST/project/spikes/runtime-batch-01",
+          "--inspect"
+        ],
+        "remote_root": "/TEST/project/spikes/runtime-batch-01",
+        "requests": 14,
+        "schedule_sha256": "081a890be91a6a27a2da0f2fd515e755cddf0e9d3456ada968eaae856f522cb4",
+        "target_weight_source": "/TEST/project/models/pinned-27b-weights",
+        "transport_executed": false
+      },
+      {
+        "injected_runner_only": true,
+        "max_tokens": 256,
+        "parser_validate_args_passed": true,
+        "phase": "batch-02",
+        "rank0_and_rank1_probe_options_passed": true,
+        "remote_actor_command": [
+          "/TEST/project/.venv/bin/python",
+          "-u",
+          "/TEST/project/spikes/runtime-batch-02/remote_actor.py",
+          "--root",
+          "/TEST/project/spikes/runtime-batch-02",
+          "--inspect"
+        ],
+        "remote_root": "/TEST/project/spikes/runtime-batch-02",
+        "requests": 14,
+        "schedule_sha256": "4df57899d8e707a1b02007f4f9a66a1d1ac6ff77ccba86679f2cc297fa035246",
+        "target_weight_source": "/TEST/project/models/pinned-27b-weights",
+        "transport_executed": false
+      },
+      {
+        "injected_runner_only": true,
+        "max_tokens": 256,
+        "parser_validate_args_passed": true,
+        "phase": "batch-03",
+        "rank0_and_rank1_probe_options_passed": true,
+        "remote_actor_command": [
+          "/TEST/project/.venv/bin/python",
+          "-u",
+          "/TEST/project/spikes/runtime-batch-03/remote_actor.py",
+          "--root",
+          "/TEST/project/spikes/runtime-batch-03",
+          "--inspect"
+        ],
+        "remote_root": "/TEST/project/spikes/runtime-batch-03",
+        "requests": 14,
+        "schedule_sha256": "9580a32a24972034d4e254e411fdf1e7d0709576666dd914ce0a40d024f22c44",
+        "target_weight_source": "/TEST/project/models/pinned-27b-weights",
+        "transport_executed": false
+      },
+      {
+        "injected_runner_only": true,
+        "max_tokens": 256,
+        "parser_validate_args_passed": true,
+        "phase": "batch-04",
+        "rank0_and_rank1_probe_options_passed": true,
+        "remote_actor_command": [
+          "/TEST/project/.venv/bin/python",
+          "-u",
+          "/TEST/project/spikes/runtime-batch-04/remote_actor.py",
+          "--root",
+          "/TEST/project/spikes/runtime-batch-04",
+          "--inspect"
+        ],
+        "remote_root": "/TEST/project/spikes/runtime-batch-04",
+        "requests": 14,
+        "schedule_sha256": "f3600d4662993afe11c5971c4ed5a85c3c80a3ad01ff412061b58af73fe97f24",
+        "target_weight_source": "/TEST/project/models/pinned-27b-weights",
+        "transport_executed": false
+      },
+      {
+        "injected_runner_only": true,
+        "max_tokens": 256,
+        "parser_validate_args_passed": true,
+        "phase": "batch-05",
+        "rank0_and_rank1_probe_options_passed": true,
+        "remote_actor_command": [
+          "/TEST/project/.venv/bin/python",
+          "-u",
+          "/TEST/project/spikes/runtime-batch-05/remote_actor.py",
+          "--root",
+          "/TEST/project/spikes/runtime-batch-05",
+          "--inspect"
+        ],
+        "remote_root": "/TEST/project/spikes/runtime-batch-05",
+        "requests": 14,
+        "schedule_sha256": "5677bf18d24ddcc96e1e76191ca841faf431db6eb1134ff669572be32f191e0c",
+        "target_weight_source": "/TEST/project/models/pinned-27b-weights",
+        "transport_executed": false
+      }
+    ],
+    "preservation": {
+      "existing_result_files_rechecked": 1129,
+      "historical_receipts_modified": false,
+      "implementation_or_runtime_files_modified": false,
+      "mismatches": [],
+      "original_files_rechecked": 90,
+      "original_harness_receipt_sha256": "3c7a024aba420891de1d9cf7f974e9331e7bea886fe4ec48d53fb0284ca3a513",
+      "sole_repository_write": "results/qwen38-prefill-overlap-v1/launch-hook-independent-review-v2.json",
+      "write_mode": "exclusive xb; existing target is never overwritten"
+    },
+    "regression": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 TMPDIR=/Users/jeremylien/.hermes/cache/scratch .venv/bin/python benchmarks/qwen38_overlap/verification/integration025_cpu.py --run-dir /Users/jeremylien/.hermes/cache/scratch/launch-hook-independent-review-v2-regression",
+      "counts": {
+        "errors": 0,
+        "failures": 0,
+        "integration025": 27,
+        "original_harness": 95,
+        "skipped": 0,
+        "total": 122
+      },
+      "denied_external_actions": [],
+      "exit_code": 0,
+      "forbidden_imports": [],
+      "pytest_log_final_line": "122 passed in 17.36s",
+      "pytest_log_sha256": "674c94f884bce91b06fcbce729d1558e59185beb43f0c9902060d59574af9817",
+      "pytest_xml_sha256": "56da96ea58b38f4acfb3e5c4fe09708f055397143acd6b0ffcf7594f10aec0c4",
+      "real_in_process_cli_invocations": 10,
+      "verification_path": "/Users/jeremylien/.hermes/cache/scratch/launch-hook-independent-review-v2-regression/verification.json",
+      "verification_sha256": "74bb85c4bf288b3171b00e462b9e1aac7f87853d85a676f46911565b89bb55cb",
+      "working_directory": "/Users/jeremylien/Projects/paretoquant-metal"
+    },
+    "scope": "ONLY executable-launch-hook repair, its documentation/regression and actual producer argument interpretation. Previously approved pressure/rawcore not re-audited."
+  }
+}

@@ -1,0 +1,21 @@
+....F.F................................................................. [ 79%]
+...................                                                      [100%]
+=================================== FAILURES ===================================
+_ test_supervisor_success_gate_uses_trusted_option_not_rank_claims[False-True] _
+spikes/015-qwen38-fast-sync/test_fast_sync.py:144: in test_supervisor_success_gate_uses_trusted_option_not_rank_claims
+    assert result["status"] == ("success" if observed_matches else "failed")
+E   AssertionError: assert 'success' == 'failed'
+E     
+E     - failed
+E     + success
+_ test_supervisor_success_gate_uses_trusted_option_not_rank_claims[True-True] __
+spikes/015-qwen38-fast-sync/test_fast_sync.py:144: in test_supervisor_success_gate_uses_trusted_option_not_rank_claims
+    assert result["status"] == ("success" if observed_matches else "failed")
+E   AssertionError: assert 'failed' == 'success'
+E     
+E     - success
+E     + failed
+=========================== short test summary info ============================
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_supervisor_success_gate_uses_trusted_option_not_rank_claims[False-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_supervisor_success_gate_uses_trusted_option_not_rank_claims[True-True]
+2 failed, 89 passed in 0.45s

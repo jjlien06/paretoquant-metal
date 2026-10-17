@@ -1,0 +1,15 @@
+{
+  "resources": {
+    "local": {
+      "pressure": 1,
+      "free_bytes": 12626243584,
+      "swap": "vm.swapusage: total = 4096.00M  used = 3129.06M  free = 966.94M  (encrypted)\n"
+    },
+    "remote": {
+      "pressure": 1,
+      "free_bytes": 96553533440,
+      "swap": "vm.swapusage: total = 1024.00M  used = 213.06M  free = 810.94M  (encrypted)\n"
+    }
+  },
+  "route": "   route to: 169.254.169.190\ndestination: 169.254.169.190\n  interface: bridge0\n      flags: <UP,HOST,DONE,LLINFO,STATIC,b016,WASCLONED>\n recvpipe  sendpipe  ssthresh  rtt,msec    rttvar  hopcount      mtu     expire\n       0         0         0         0         0         0      1500     -4384 \n"
+}

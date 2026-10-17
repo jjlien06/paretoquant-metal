@@ -1,0 +1,24 @@
+{
+  "tests_run": 16,
+  "subtests_observed": 1331,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "successful": true,
+  "source_hashes_before": {
+    "admission.json": "14671131a610aba0811eaecaf8393d91d5949676f2ff9bc6f48ebbc63b44305d",
+    "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+    "speculative_decode.py": "d4043a416b82943b3b376612581a22c27b2bbd0970c4c56a820f809b573ec923",
+    "test_speculative_decode.py": "0f5b6dc59261f41c60676dd6573d4084d759ca9f8e88a9aa59bce1e24232783a"
+  },
+  "source_hashes_after": {
+    "admission.json": "14671131a610aba0811eaecaf8393d91d5949676f2ff9bc6f48ebbc63b44305d",
+    "phased_decode.py": "b4857df43ce1f312bef4ec19e0afcc5c3f4e3d73af09f1ff75c49f4dd73b7d8f",
+    "speculative_decode.py": "d4043a416b82943b3b376612581a22c27b2bbd0970c4c56a820f809b573ec923",
+    "test_speculative_decode.py": "0f5b6dc59261f41c60676dd6573d4084d759ca9f8e88a9aa59bce1e24232783a"
+  },
+  "admission_hashes_match": true,
+  "sources_unchanged": true,
+  "gpu_imports": [],
+  "scope": "Frozen component and frozen stdlib CPU symbolic tests; no MLX/GPU, network, SSH, installs, credentials, live source edits or Git writes."
+}

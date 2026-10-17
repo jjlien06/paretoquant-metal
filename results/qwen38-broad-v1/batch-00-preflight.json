@@ -1,0 +1,26 @@
+{
+  "0": {
+    "timestamp": 1792178481.511332,
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "memory_bytes": 17179869184,
+    "disk_free_bytes": 83555213312,
+    "pressure_level": 1,
+    "swap": "vm.swapusage: total = 3072.00M  used = 1743.06M  free = 1328.94M  (encrypted)",
+    "route": "   route to: 169.254.214.155\ndestination: 169.254.214.155\n  interface: bridge0\n      flags: <UP,HOST,DONE,LLINFO,STATIC,b016,WASCLONED>\n recvpipe  sendpipe  ssthresh  rtt,msec    rttvar  hopcount      mtu     expire\n       0         0         0         0         0         0      1500       221 \n",
+    "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=23003235)\t100%; charged; 0:00 remaining present: true\n",
+    "thermal": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded\n",
+    "owned_inference_workers": []
+  },
+  "1": {
+    "timestamp": 1792178481.778357,
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "memory_bytes": 17179869184,
+    "disk_free_bytes": 83451760640,
+    "pressure_level": 1,
+    "swap": "vm.swapusage: total = 2048.00M  used = 322.75M  free = 1725.25M  (encrypted)",
+    "route": "   route to: 169.254.47.213\ndestination: 169.254.47.213\n  interface: bridge0\n      flags: <UP,HOST,DONE,LLINFO,STATIC,b016,WASCLONED>\n recvpipe  sendpipe  ssthresh  rtt,msec    rttvar  hopcount      mtu     expire\n       0         0  41714707         2         2         0      1500      1127 \n",
+    "power": "Now drawing from 'AC Power'\n",
+    "thermal": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded\n",
+    "owned_inference_workers": []
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "parent-noncritical-trial-audit-summary-v1",
+  "timestamp": 1792274534.353208,
+  "trial_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-03-1792274127592216000",
+  "trusted_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-03-1792274127592216000-external-trust.json",
+  "trusted_sha256": "ec7d3e63b7671238316e626bb336dc26560bdadc339f4a9047d6c17eb533018e",
+  "audit_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-03-1792274127592216000-raw-audit.json",
+  "audit_sha256": "d614f0e509d221909f7a7a8b22fbd185030da0e1140235da691030f277031e95",
+  "report_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-suite-noncritical-v1-batch-03-1792274127592216000-report.json",
+  "report_sha256": "c5416155b7fd537cb599bdb22e19bbf09ed734a20be6129e55f8adfdca268f1b",
+  "rows_verified": 14,
+  "phase_physical_accepted": true,
+  "physical_evidence_accepted": false,
+  "complete_suite": false,
+  "coverage_complete": false,
+  "statistical_targets_met": false,
+  "pilot_budget": null,
+  "pressure_observations": [
+    {
+      "host_role": "local",
+      "actor_role": "rank0",
+      "observed_levels": [
+        1,
+        2
+      ],
+      "warning_samples": 5
+    },
+    {
+      "host_role": "remote",
+      "actor_role": "rank1",
+      "observed_levels": [
+        1,
+        2
+      ],
+      "warning_samples": 7
+    },
+    {
+      "host_role": "remote",
+      "actor_role": "server",
+      "observed_levels": [
+        1,
+        2
+      ],
+      "warning_samples": 2
+    }
+  ],
+  "explicit_listener_refusals": [
+    true,
+    true,
+    true
+  ]
+}

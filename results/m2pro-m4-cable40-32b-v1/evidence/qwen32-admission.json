@@ -1,0 +1,47 @@
+{
+  "args": {
+    "remote_root": "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/007-dual-host-pipeline-guarded-1a7a2d85b186",
+    "remote_source": "/Users/jeremylien/Projects/paretoquant-dual-host/checkpoints/qwen32-2938092373e5f97b95538884112085364c2da315",
+    "local_metadata": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/qwen32-tokenizer-only",
+    "output": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/cable40-retest-v1/qwen32",
+    "ssh_key": "/Users/jeremylien/.ssh/paretoquant_mini_ed25519",
+    "split": [
+      26,
+      38
+    ],
+    "max_tokens": 64,
+    "repeats": 4,
+    "deadline": 240.0,
+    "reserve_bytes": 4294967296,
+    "local_address": "169.254.248.125",
+    "remote_address": "169.254.169.190",
+    "ssh_target": "jeremylien@fe80::431:67b7:34f0:62c9%bridge0",
+    "prompt": "What is 2 plus 2? Explain briefly.",
+    "execution": "phased",
+    "eval_group_size": 8
+  },
+  "approved_source_sha256": {
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "materialize.py": "3ebacdf6ee22c391efcd8e2d7cab23bb6deb820cee1ccaf113fcd76a54dbd688",
+    "phased_decode.py": "a75cc6777f052135211ce9f386528059d494f69ca3e264f48d920157ba71308f",
+    "probe.py": "aa81063281553bbfef92c44aae60072e6cbf855fce5f1a9929c28241aab93874",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "shard_plan.py": "968f779ef0d4793487f394f08beeb3ddcb3369f3d838a9cc4d0cb6e1bd23db44",
+    "stream_server.py": "34130f52ab1cd934d693bf890d8090fc940639f96af3e681c64bcae39b52f05d",
+    "stream_weights.py": "d4c782601de385b54374c90189251fc5a4d50fc9217fb3838d6d9c630c116ebc",
+    "supervise.py": "7a82bba5cfcc0ef0bf8f55a85ac8785a822d7ac97b0be8fb1363b3ba1bcd736d",
+    "test_cpu_communication.py": "110820befa8eebccabee7e800cdcc7cbb84bb54b1b8010d2e875b49d4c5c3447",
+    "test_materialize.py": "0c0526bfb1d282f3477b51a66713a7a7392275bc046182a5a4284dd0f4995257",
+    "test_native_headers.py": "7ad5db32558077d70de44cd75f3b617eb57f6e4df29afec257881d01ea929de1",
+    "test_phased_decode.py": "cc5cd6b7c81140508b3151e770c42b8268b880b54b3826ee9f8c4d1a29787d4a",
+    "test_phased_gpu.py": "5c41d1447b096127b08fc54ec14f7dd8439f8614265f8de3a928bbf7bdf6590d",
+    "test_probe.py": "f73f490868650efa268fa53f17145615784c2de6517990a7cf563955e31718ab",
+    "test_progress.py": "77d7bbff26ef9d6648bb13ef129e92d58ea5875eb9c5b01d6fc75ae3f19df884",
+    "test_remote_actor.py": "3218d6500842f14e1a991a51cb164c9bcbb75601384eb90335c48381803a85de",
+    "test_shard_plan.py": "8623145be55ff906396c6673fc0235b5218201c90dd87603684bc1a44edad348",
+    "test_stream_weights.py": "18c22060c3c583ef06b9af253e97ffcb260d894c97bfbe11ef6803192c6d10b1",
+    "test_supervise.py": "e57fed0c90d63fdbd22cd46690336a61dbd8c01a43981b57a50e50ab271214dd"
+  },
+  "ssh_host_key_alias": "fe80::56:c507:c02a:a630%bridge0",
+  "scope": "Unchanged approved grouped decoder; no speculation"
+}

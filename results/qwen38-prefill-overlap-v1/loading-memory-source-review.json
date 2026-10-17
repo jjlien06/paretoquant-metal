@@ -1,0 +1,1084 @@
+{
+  "schema": "qwen38-loading-memory-source-review-v1",
+  "artifact_kind": "CPU_ONLY_READ_ONLY_SOURCE_AND_ARCHIVED_RECEIPT_REVIEW",
+  "verdict": "Confirmed normal-pressure guard aborts during streamed target weight loading, not target inference. No measured causal attribution to a loader leak; active MLX follows trusted loaded-prefix bytes. A bounded Python payload lifetime inefficiency is reproduced and an allocation-reducing candidate is CPU-tested only.",
+  "scope": {
+    "repo": "/Users/jeremylien/Projects/paretoquant-metal",
+    "target_revision": "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+    "split": [
+      28,
+      36
+    ],
+    "eval_group_size": 32,
+    "rank0_host": "local M2",
+    "rank1_host": "remote M4",
+    "verifier_modes": [
+      "native",
+      "slot-qmv"
+    ],
+    "target_weights_changed": false,
+    "pressure_guard_changed": false,
+    "numerical_tolerance_changed": false,
+    "mlx_or_model_imported_by_review": false,
+    "gpu_execution": false,
+    "ssh_or_network": false,
+    "subprocess_launched_by_review": false,
+    "production_or_trial_files_modified": false,
+    "payload_reads": "Only the existing small safetensor length/header was read, not tensor data; all large-target arithmetic uses trusted preserved headers.",
+    "physical_causal_root_cause_established": false,
+    "authorizes_full_model_retry": false
+  },
+  "outcomes": [
+    "v1 rank0 independently reports pressure2 at actor elapsed22.98139275s; v1 rank1 was controller-signalled and its recorded pressure samples remain1. v2 both rank actors independently report pressure2 around23s.",
+    "All four rank observations lack target loading_done and have zero request_before events. Small same-process physical numerical/overlap gates did run before full target loading; do not confuse those with full27B inference.",
+    "812 target tensors / 7425163456bytes on rank0 and1042 /9137972032bytes on rank1 match trusted headers for frozen28/36. At abort, active MLX exceeds completed serialized prefix by only263338..313106bytes, not another multi-GB copy.",
+    "stream_weights.py and stream_server.py are byte-identical to preserved024 and successful023 snapshots. Earlier success is not an all-samples pressure1 attestation and is not a contemporaneous memory control.",
+    "Confirmed Python-level lifetime defect: tensor_records keeps the previous payload while allocating the next; send_records also keeps its prior record during next(). This is bounded overlap, not an accumulating full-checkpoint retention leak.",
+    "No target mx.load or explicit mmap exists in either actual target loading branch. Small mlx_lm.load does use mx.load before the target, with model sanitization and evaluation; exact compiled mx.load reader/mapping behavior cannot be fully established from installed declarations alone under no-network/no-MLX constraints.",
+    "v2 raw/rank*.stderr forwarding copies stop before the authoritative receipt stderr: rank0 forwarded644 vs receipt653 completed; rank1 forwarded670 vs receipt672. Calculations use receipts."
+  ],
+  "trusted_metadata_provenance": {
+    "admission_path": "/Users/jeremylien/Projects/local-agent-dual-mac/results/mlx-vision-admission/readback-admission.json",
+    "admission_sha256": "3827166d21cea9e87965c51995528d789e3064575a333cca5316a022c6ae324d",
+    "inventory_path": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-qwen38-preflight/inventory.json",
+    "inventory_sha256": "d0996b2023760e7370b939be8509e3091dfc0c9b8b9357c6fc5c01b14ba81d25",
+    "inventory_sha256_matches_admission": true,
+    "admission_headers_equal_inventory_headers": true,
+    "config_and_index_digests_match_admission_and_trial_result": true,
+    "headers_validated": "stdlib-only shard_plan.parse_safetensors_header checks dtype/shape/offset byte agreement and contiguous nonoverlapping payload ranges; merge rejects duplicates; select_pipeline_rank applies frozen split.",
+    "checkpoint_payloads_rehashed_in_review": false,
+    "trust_limit": "Relies on preserved publisher-bound whole-shard/readback admission, independently matching inventory digest and metadata bytes; no fresh remote payload read was performed.",
+    "whole_checkpoint_file_bytes": 16054541349,
+    "whole_checkpoint_tensor_count": 2180,
+    "rank_budgets": [
+      {
+        "rank": 0,
+        "layer_range_half_open": [
+          36,
+          64
+        ],
+        "stored_parameter_bytes": 7425163456,
+        "stored_parameter_GiB": 6.915222346782684,
+        "tensor_count": 812,
+        "replicated_embedding_head_norm_bytes": 1430333440,
+        "largest_tensor_bytes": 635699200,
+        "largest_tensor_MiB": 606.25,
+        "maximum_adjacent_python_payload_bytes": 675430400,
+        "maximum_adjacent_example": [
+          "language_model.model.embed_tokens.scales",
+          "language_model.model.embed_tokens.weight"
+        ],
+        "constructor_fp32_logical_shape_bytes": 52789301632,
+        "constructor_shape_bytes_are_allocated_bytes": false
+      },
+      {
+        "rank": 1,
+        "layer_range_half_open": [
+          0,
+          36
+        ],
+        "stored_parameter_bytes": 9137972032,
+        "stored_parameter_GiB": 8.510399639606476,
+        "tensor_count": 1042,
+        "replicated_embedding_head_norm_bytes": 1430333440,
+        "largest_tensor_bytes": 635699200,
+        "largest_tensor_MiB": 606.25,
+        "maximum_adjacent_python_payload_bytes": 675430400,
+        "maximum_adjacent_example": [
+          "language_model.model.embed_tokens.scales",
+          "language_model.model.embed_tokens.weight"
+        ],
+        "constructor_fp32_logical_shape_bytes": 64965899904,
+        "constructor_shape_bytes_are_allocated_bytes": false
+      }
+    ],
+    "replicated_embedding_or_head": {
+      "packed_weight_bytes_each": 635699200,
+      "affine_scales_bytes_each": 39731200,
+      "affine_biases_bytes_each": 39731200,
+      "total_per_embedding_or_head_bytes": 715161600,
+      "fp32_logical_constructor_weight_shape_bytes_each": 5085593600
+    },
+    "budget_limits": "Serialized parameter bytes and logical constructor shapes are not OS residency, safe available headroom, peak allocations, or a physical fit prediction."
+  },
+  "trial_observations": [
+    {
+      "trial": "physical-pilot-v1-1792265902105306000",
+      "rank": 0,
+      "receipt_path": "results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/rank0.receipt.json",
+      "rank_result_reason": "pressure",
+      "rank_error_type": "PressureFailure",
+      "first_non_normal_pressure_sample": {
+        "stage": "owned_child",
+        "elapsed_seconds": 22.98139274999994,
+        "level": 2
+      },
+      "last_receipt_stderr_line": 1248,
+      "last_receipt_event": {
+        "phase": "tensor_before",
+        "tensor_index": 609,
+        "tensor_name": "language_model.model.layers.56.mlp.up_proj.weight",
+        "active_mlx_bytes": 5883698346,
+        "peak_mlx_bytes": 5883698346,
+        "cache_mlx_bytes": 0,
+        "pid": 3772,
+        "rank": 0,
+        "timestamp": 1792265929.083638,
+        "elapsed_seconds": 22.88597283299987,
+        "process_maxrss": 4472422400,
+        "process_maxrss_units": "bytes (macOS)",
+        "memory_accounting": "MLX allocator bytes; not system residency"
+      },
+      "last_forwarded_stderr_line": 1248,
+      "last_forwarded_event": {
+        "phase": "tensor_before",
+        "tensor_index": 609,
+        "tensor_name": "language_model.model.layers.56.mlp.up_proj.weight",
+        "active_mlx_bytes": 5883698346,
+        "peak_mlx_bytes": 5883698346,
+        "cache_mlx_bytes": 0,
+        "pid": 3772,
+        "rank": 0,
+        "timestamp": 1792265929.083638,
+        "elapsed_seconds": 22.88597283299987,
+        "process_maxrss": 4472422400,
+        "process_maxrss_units": "bytes (macOS)",
+        "memory_accounting": "MLX allocator bytes; not system residency"
+      },
+      "receipt_forwarded_stderr_identical": true,
+      "completed_tensor_count": 609,
+      "tensor_count": 812,
+      "completed_prefix_stored_bytes": 5883435008,
+      "last_tensor_done_active_excess_over_completed_prefix_bytes": 263338,
+      "all_tensor_done_active_excess_range_bytes": [
+        4590,
+        263422
+      ],
+      "next_tensor": {
+        "name": "language_model.model.layers.56.mlp.up_proj.weight",
+        "bytes": 44564480
+      },
+      "local_or_sender_previous_plus_next_payload_bytes": 47349760,
+      "request_before_events": 0,
+      "loading_done_observed": false,
+      "owned_actor_cleanup_verified": true,
+      "services_closed_verified": true,
+      "cleanup_scope": "process/group and listener receipts; GPU driver state not inspected"
+    },
+    {
+      "trial": "physical-pilot-v1-1792265902105306000",
+      "rank": 1,
+      "receipt_path": "results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/rank1.receipt.json",
+      "rank_result_reason": "signal",
+      "rank_error_type": null,
+      "first_non_normal_pressure_sample": null,
+      "last_receipt_stderr_line": 1494,
+      "last_receipt_event": {
+        "phase": "tensor_before",
+        "tensor_index": 732,
+        "tensor_name": "language_model.model.layers.31.mlp.gate_proj.weight",
+        "active_mlx_bytes": 6840442962,
+        "peak_mlx_bytes": 6840442962,
+        "cache_mlx_bytes": 0,
+        "pid": 17279,
+        "rank": 1,
+        "timestamp": 1792265930.0104032,
+        "elapsed_seconds": 23.771245832991553,
+        "process_maxrss": 3335651328,
+        "process_maxrss_units": "bytes (macOS)",
+        "memory_accounting": "MLX allocator bytes; not system residency"
+      },
+      "last_forwarded_stderr_line": 1494,
+      "last_forwarded_event": {
+        "phase": "tensor_before",
+        "tensor_index": 732,
+        "tensor_name": "language_model.model.layers.31.mlp.gate_proj.weight",
+        "active_mlx_bytes": 6840442962,
+        "peak_mlx_bytes": 6840442962,
+        "cache_mlx_bytes": 0,
+        "pid": 17279,
+        "rank": 1,
+        "timestamp": 1792265930.0104032,
+        "elapsed_seconds": 23.771245832991553,
+        "process_maxrss": 3335651328,
+        "process_maxrss_units": "bytes (macOS)",
+        "memory_accounting": "MLX allocator bytes; not system residency"
+      },
+      "receipt_forwarded_stderr_identical": true,
+      "completed_tensor_count": 732,
+      "tensor_count": 1042,
+      "completed_prefix_stored_bytes": 6840129856,
+      "last_tensor_done_active_excess_over_completed_prefix_bytes": 313106,
+      "all_tensor_done_active_excess_range_bytes": [
+        5902,
+        313230
+      ],
+      "next_tensor": {
+        "name": "language_model.model.layers.31.mlp.gate_proj.weight",
+        "bytes": 44564480
+      },
+      "local_or_sender_previous_plus_next_payload_bytes": 47349760,
+      "request_before_events": 0,
+      "loading_done_observed": false,
+      "owned_actor_cleanup_verified": true,
+      "services_closed_verified": true,
+      "cleanup_scope": "process/group and listener receipts; GPU driver state not inspected"
+    },
+    {
+      "trial": "physical-pilot-v2-1792268153195507000",
+      "rank": 0,
+      "receipt_path": "results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/rank0.receipt.json",
+      "rank_result_reason": "pressure",
+      "rank_error_type": "PressureFailure",
+      "first_non_normal_pressure_sample": {
+        "stage": "owned_child",
+        "elapsed_seconds": 22.950526958999944,
+        "level": 2
+      },
+      "last_receipt_stderr_line": 1335,
+      "last_receipt_event": {
+        "phase": "tensor_done",
+        "tensor_index": 653,
+        "tensor_count": 812,
+        "active_mlx_bytes": 6147616286,
+        "peak_mlx_bytes": 6147616286,
+        "cache_mlx_bytes": 0,
+        "pid": 4985,
+        "rank": 0,
+        "timestamp": 1792268179.6906822,
+        "elapsed_seconds": 22.841628708999906,
+        "process_maxrss": 4076732416,
+        "process_maxrss_units": "bytes (macOS)",
+        "memory_accounting": "MLX allocator bytes; not system residency"
+      },
+      "last_forwarded_stderr_line": 1317,
+      "last_forwarded_event": {
+        "phase": "tensor_done",
+        "tensor_index": 644,
+        "tensor_count": 812,
+        "active_mlx_bytes": 6144046562,
+        "peak_mlx_bytes": 6144046578,
+        "cache_mlx_bytes": 0,
+        "pid": 4985,
+        "rank": 0,
+        "timestamp": 1792268179.6869388,
+        "elapsed_seconds": 22.837884958999894,
+        "process_maxrss": 4076732416,
+        "process_maxrss_units": "bytes (macOS)",
+        "memory_accounting": "MLX allocator bytes; not system residency"
+      },
+      "receipt_forwarded_stderr_identical": false,
+      "completed_tensor_count": 653,
+      "tensor_count": 812,
+      "completed_prefix_stored_bytes": 6147320448,
+      "last_tensor_done_active_excess_over_completed_prefix_bytes": 295838,
+      "all_tensor_done_active_excess_range_bytes": [
+        4590,
+        295838
+      ],
+      "next_tensor": {
+        "name": "language_model.model.layers.58.linear_attn.in_proj_qkv.weight",
+        "bytes": 26214400
+      },
+      "local_or_sender_previous_plus_next_payload_bytes": 27852800,
+      "request_before_events": 0,
+      "loading_done_observed": false,
+      "owned_actor_cleanup_verified": true,
+      "services_closed_verified": true,
+      "cleanup_scope": "process/group and listener receipts; GPU driver state not inspected"
+    },
+    {
+      "trial": "physical-pilot-v2-1792268153195507000",
+      "rank": 1,
+      "receipt_path": "results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/rank1.receipt.json",
+      "rank_result_reason": "pressure",
+      "rank_error_type": "PressureFailure",
+      "first_non_normal_pressure_sample": {
+        "stage": "owned_child",
+        "elapsed_seconds": 23.174526874994626,
+        "level": 2
+      },
+      "last_receipt_stderr_line": 1373,
+      "last_receipt_event": {
+        "phase": "tensor_done",
+        "tensor_index": 672,
+        "tensor_count": 1042,
+        "active_mlx_bytes": 6359647186,
+        "peak_mlx_bytes": 6359647190,
+        "cache_mlx_bytes": 0,
+        "pid": 17631,
+        "rank": 1,
+        "timestamp": 1792268179.928274,
+        "elapsed_seconds": 23.127447000006214,
+        "process_maxrss": 2889744384,
+        "process_maxrss_units": "bytes (macOS)",
+        "memory_accounting": "MLX allocator bytes; not system residency"
+      },
+      "last_forwarded_stderr_line": 1369,
+      "last_forwarded_event": {
+        "phase": "tensor_done",
+        "tensor_index": 670,
+        "tensor_count": 1042,
+        "active_mlx_bytes": 6359626714,
+        "peak_mlx_bytes": 6359626730,
+        "cache_mlx_bytes": 0,
+        "pid": 17631,
+        "rank": 1,
+        "timestamp": 1792268179.927686,
+        "elapsed_seconds": 23.12685900001088,
+        "process_maxrss": 2889744384,
+        "process_maxrss_units": "bytes (macOS)",
+        "memory_accounting": "MLX allocator bytes; not system residency"
+      },
+      "receipt_forwarded_stderr_identical": false,
+      "completed_tensor_count": 672,
+      "tensor_count": 1042,
+      "completed_prefix_stored_bytes": 6359350144,
+      "last_tensor_done_active_excess_over_completed_prefix_bytes": 297042,
+      "all_tensor_done_active_excess_range_bytes": [
+        5902,
+        297150
+      ],
+      "next_tensor": {
+        "name": "language_model.model.layers.3.mlp.down_proj.biases",
+        "bytes": 2785280
+      },
+      "local_or_sender_previous_plus_next_payload_bytes": 2795520,
+      "request_before_events": 0,
+      "loading_done_observed": false,
+      "owned_actor_cleanup_verified": true,
+      "services_closed_verified": true,
+      "cleanup_scope": "process/group and listener receipts; GPU driver state not inspected"
+    }
+  ],
+  "successful_baseline_observations": [
+    {
+      "path": "results/qwen38-broad-v1/batch-00-v1",
+      "controller_status": "success",
+      "ranks": [
+        {
+          "rank": 0,
+          "loading_boundaries": [
+            {
+              "stderr_line": 8,
+              "phase": "tensor_loading_before",
+              "active_mlx_bytes": 4646,
+              "peak_mlx_bytes": 590879178,
+              "cache_mlx_bytes": 5904,
+              "process_maxrss": 1094778880,
+              "elapsed_seconds": 3.1189502089982852,
+              "parameter_bytes": 7425163456
+            },
+            {
+              "stderr_line": 1633,
+              "phase": "tensor_loading_done",
+              "active_mlx_bytes": 7425507546,
+              "peak_mlx_bytes": 7425507550,
+              "cache_mlx_bytes": 0,
+              "process_maxrss": 3868983296,
+              "elapsed_seconds": 13.227947334002238,
+              "parameter_bytes": 7425163456
+            },
+            {
+              "stderr_line": 1634,
+              "phase": "loading_done",
+              "active_mlx_bytes": 7425507530,
+              "peak_mlx_bytes": 7425507550,
+              "cache_mlx_bytes": 16,
+              "process_maxrss": 3868983296,
+              "elapsed_seconds": 15.336744542000815,
+              "parameter_bytes": 7425163456
+            }
+          ]
+        },
+        {
+          "rank": 1,
+          "loading_boundaries": [
+            {
+              "stderr_line": 8,
+              "phase": "tensor_loading_before",
+              "active_mlx_bytes": 5958,
+              "peak_mlx_bytes": 590911946,
+              "cache_mlx_bytes": 4592,
+              "process_maxrss": 1088159744,
+              "elapsed_seconds": 3.066031916998327,
+              "parameter_bytes": 9137972032
+            },
+            {
+              "stderr_line": 2093,
+              "phase": "tensor_loading_done",
+              "active_mlx_bytes": 9138414426,
+              "peak_mlx_bytes": 9138414430,
+              "cache_mlx_bytes": 0,
+              "process_maxrss": 3320348672,
+              "elapsed_seconds": 14.64612795800349,
+              "parameter_bytes": 9137972032
+            },
+            {
+              "stderr_line": 2094,
+              "phase": "loading_done",
+              "active_mlx_bytes": 9138414410,
+              "peak_mlx_bytes": 9138414430,
+              "cache_mlx_bytes": 16,
+              "process_maxrss": 3320348672,
+              "elapsed_seconds": 15.287472042000445,
+              "parameter_bytes": 9137972032
+            }
+          ]
+        }
+      ],
+      "normal_pressure_at_all_samples_attested": false
+    },
+    {
+      "path": "results/qwen38-broad-v1/prefill-experiment/candidate-v1",
+      "controller_status": "success",
+      "ranks": [
+        {
+          "rank": 0,
+          "loading_boundaries": [
+            {
+              "stderr_line": 21,
+              "phase": "tensor_loading_before",
+              "active_mlx_bytes": 4654,
+              "peak_mlx_bytes": 1044963756,
+              "cache_mlx_bytes": 155840272,
+              "process_maxrss": 1092141056,
+              "elapsed_seconds": 10.656313624989707,
+              "parameter_bytes": 7425163456
+            },
+            {
+              "stderr_line": 1646,
+              "phase": "tensor_loading_done",
+              "active_mlx_bytes": 7425507554,
+              "peak_mlx_bytes": 7425507558,
+              "cache_mlx_bytes": 0,
+              "process_maxrss": 7498629120,
+              "elapsed_seconds": 21.111282541998662,
+              "parameter_bytes": 7425163456
+            },
+            {
+              "stderr_line": 1647,
+              "phase": "loading_done",
+              "active_mlx_bytes": 7425507538,
+              "peak_mlx_bytes": 7425507558,
+              "cache_mlx_bytes": 16,
+              "process_maxrss": 7498629120,
+              "elapsed_seconds": 23.369158792018425,
+              "parameter_bytes": 7425163456
+            }
+          ]
+        },
+        {
+          "rank": 1,
+          "loading_boundaries": [
+            {
+              "stderr_line": 21,
+              "phase": "tensor_loading_before",
+              "active_mlx_bytes": 5966,
+              "peak_mlx_bytes": 981501332,
+              "cache_mlx_bytes": 155838960,
+              "process_maxrss": 1088667648,
+              "elapsed_seconds": 10.609746833004465,
+              "parameter_bytes": 9137972032
+            },
+            {
+              "stderr_line": 2106,
+              "phase": "tensor_loading_done",
+              "active_mlx_bytes": 9138414434,
+              "peak_mlx_bytes": 9138414438,
+              "cache_mlx_bytes": 0,
+              "process_maxrss": 4611391488,
+              "elapsed_seconds": 22.63381470800232,
+              "parameter_bytes": 9137972032
+            },
+            {
+              "stderr_line": 2107,
+              "phase": "loading_done",
+              "active_mlx_bytes": 9138414418,
+              "peak_mlx_bytes": 9138414438,
+              "cache_mlx_bytes": 16,
+              "process_maxrss": 4611391488,
+              "elapsed_seconds": 23.32628454099904,
+              "parameter_bytes": 9137972032
+            }
+          ]
+        }
+      ],
+      "normal_pressure_at_all_samples_attested": false
+    },
+    {
+      "path": "results/qwen38-broad-v1/prefill-experiment/reference-before-v2",
+      "controller_status": "success",
+      "ranks": [
+        {
+          "rank": 0,
+          "loading_boundaries": [
+            {
+              "stderr_line": 8,
+              "phase": "tensor_loading_before",
+              "active_mlx_bytes": 4646,
+              "peak_mlx_bytes": 590928330,
+              "cache_mlx_bytes": 5904,
+              "process_maxrss": 1092632576,
+              "elapsed_seconds": 3.422656167007517,
+              "parameter_bytes": 7425163456
+            },
+            {
+              "stderr_line": 1633,
+              "phase": "tensor_loading_done",
+              "active_mlx_bytes": 7425507546,
+              "peak_mlx_bytes": 7425507550,
+              "cache_mlx_bytes": 0,
+              "process_maxrss": 3501588480,
+              "elapsed_seconds": 13.441610332985874,
+              "parameter_bytes": 7425163456
+            },
+            {
+              "stderr_line": 1634,
+              "phase": "loading_done",
+              "active_mlx_bytes": 7425507530,
+              "peak_mlx_bytes": 7425507550,
+              "cache_mlx_bytes": 16,
+              "process_maxrss": 3501588480,
+              "elapsed_seconds": 15.733690374996513,
+              "parameter_bytes": 7425163456
+            }
+          ]
+        },
+        {
+          "rank": 1,
+          "loading_boundaries": [
+            {
+              "stderr_line": 8,
+              "phase": "tensor_loading_before",
+              "active_mlx_bytes": 5958,
+              "peak_mlx_bytes": 590944714,
+              "cache_mlx_bytes": 4592,
+              "process_maxrss": 1088634880,
+              "elapsed_seconds": 3.39615487500123,
+              "parameter_bytes": 9137972032
+            },
+            {
+              "stderr_line": 2093,
+              "phase": "tensor_loading_done",
+              "active_mlx_bytes": 9138414426,
+              "peak_mlx_bytes": 9138414430,
+              "cache_mlx_bytes": 0,
+              "process_maxrss": 3895705600,
+              "elapsed_seconds": 15.082659749998129,
+              "parameter_bytes": 9137972032
+            },
+            {
+              "stderr_line": 2094,
+              "phase": "loading_done",
+              "active_mlx_bytes": 9138414410,
+              "peak_mlx_bytes": 9138414430,
+              "cache_mlx_bytes": 16,
+              "process_maxrss": 3895705600,
+              "elapsed_seconds": 15.711493916001928,
+              "parameter_bytes": 9137972032
+            }
+          ]
+        }
+      ],
+      "normal_pressure_at_all_samples_attested": false
+    }
+  ],
+  "source_comparison": [
+    {
+      "path": "spikes/024-qwen38-hidden-prefill/stream_weights.py",
+      "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+      "identical_current025": true
+    },
+    {
+      "path": "spikes/024-qwen38-hidden-prefill/stream_server.py",
+      "sha256": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+      "identical_current025": true
+    },
+    {
+      "path": "spikes/023-qwen38-workload-bench/stream_weights.py",
+      "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+      "identical_current025": true
+    },
+    {
+      "path": "spikes/023-qwen38-workload-bench/stream_server.py",
+      "sha256": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+      "identical_current025": true
+    },
+    {
+      "path": "results/qwen38-broad-v1/batch-00-v1/sources/stream_weights.py",
+      "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+      "identical_current025": true
+    },
+    {
+      "path": "results/qwen38-broad-v1/batch-00-v1/sources/stream_server.py",
+      "sha256": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+      "identical_current025": true
+    },
+    {
+      "path": "results/qwen38-broad-v1/prefill-experiment/candidate-v1/sources/stream_weights.py",
+      "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+      "identical_current025": true
+    },
+    {
+      "path": "results/qwen38-broad-v1/prefill-experiment/candidate-v1/sources/stream_server.py",
+      "sha256": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+      "identical_current025": true
+    },
+    {
+      "path": "results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/sources/stream_weights.py",
+      "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+      "identical_current025": true
+    },
+    {
+      "path": "results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/sources/stream_server.py",
+      "sha256": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+      "identical_current025": true
+    },
+    {
+      "path": "results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/sources/stream_weights.py",
+      "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+      "identical_current025": true
+    },
+    {
+      "path": "results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/sources/stream_server.py",
+      "sha256": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+      "identical_current025": true
+    }
+  ],
+  "actual_loading_trace": [
+    {
+      "stage": "Process setup and small checkpoint",
+      "evidence": [
+        "spikes/025-qwen38-overlapped-prefill/probe.py:542-553",
+        "spikes/025-qwen38-overlapped-prefill/probe.py:167-199",
+        "spikes/025-qwen38-overlapped-prefill/mtp_runtime.py:13-89"
+      ],
+      "finding": "Process-local recommended wired limit is set before generation. Strict group init and reporting precede small_gate. Small mlx_lm.load defaults lazy=False. Hidden gate creates a small head;025 additionally pipeline-shards the small model and runs overlap gates. small_gate returns receipt dictionaries, not its model. Local module/output/small_head bindings survive del model and the in-function gc/clear_cache until the helper returns; their late destruction can refill the allocator cache."
+    },
+    {
+      "stage": "Upstream small mx.load, sanitization, eval",
+      "evidence": [
+        ".venv/lib/python3.13/site-packages/mlx_lm/utils.py:448-455,480-507,571-577",
+        ".venv/lib/python3.13/site-packages/mlx_lm/models/qwen3_5.py:346-368,425-439"
+      ],
+      "finding": "Upstream loader collects mx.load arrays into a weights dict, constructs Model, calls sanitize, quantizes modules, assigns all weights, and evaluates only final model.parameters when lazy=False. Sanitization makes Python dicts that reuse array objects; canonical conv [dim,kernel,1] and norms are not numerically transformed. Raw-HF conv layouts can create moveaxis/+1 lazy arrays, but target streamed canonical tensors bypass sanitizer entirely. Small model weights dict is local to load_model and is not returned; tokenizer and model references end with small_gate. No full27B upstream loader is reached in these trials."
+    },
+    {
+      "stage": "Actual rank0 server and receiver",
+      "evidence": [
+        "spikes/025-qwen38-overlapped-prefill/stream_server.py:26-43,65-79",
+        "spikes/025-qwen38-overlapped-prefill/probe.py:237-266",
+        "spikes/025-qwen38-overlapped-prefill/stream_weights.py:14-48,182-191,204-223"
+      ],
+      "finding": "Remote CPU server reads headers only for admission, selects rank0 tensors, then per sorted name opens a file, seeks, reads one payload, closes file before yield, hashes, and sends it. Local receiver validates config/rank/split, allocates one exact-sized bytearray with recv_into, yields a record, and assigns it through load_from_tensors. No target shard is mmap-loaded; there is no mx.load call in server or stream_weights. Hashlib digests do not create a full tensor copy."
+    },
+    {
+      "stage": "Actual rank1 local stream",
+      "evidence": [
+        "spikes/025-qwen38-overlapped-prefill/probe.py:217-236",
+        "spikes/025-qwen38-overlapped-prefill/stream_weights.py:14-48"
+      ],
+      "finding": "Rank1 opens the same remote checkpoint via local-file stream records in its own process, not mlx_lm.load. Metadata maps cover all headers but contain no weight bytes. Each tensor read can populate OS file cache independently of Python heap lifetime. Concurrent CPU server reads rank0 payloads on this same host; remote file-cache/process overlap is therefore plausible but not measured."
+    },
+    {
+      "stage": "Constructor and pipeline selection",
+      "evidence": [
+        "spikes/025-qwen38-overlapped-prefill/stream_weights.py:51-113",
+        ".venv/lib/python3.13/site-packages/mlx_lm/models/qwen3_5.py:242-264,317-324,404-409",
+        ".venv/lib/python3.13/site-packages/mlx_lm/models/pipeline.py:15-40",
+        ".venv/lib/python3.13/site-packages/mlx/nn/layers/quantized.py:92-100,122-147,185-202,228-260,286-307"
+      ],
+      "finding": "Model creates full64-layer random FP32 lazy graph plus replicated embedding and head; eval() switches training mode, not mx.eval. pipeline removes nonowned layer references before nn.quantize. Quantize traverses/replaces retained leaf modules; from_linear/from_embedding temporarily instantiate another quantized module then replace its random graph with quantization of the original random float weight. These are source-level lazy graph lifetimes, not demonstrated allocated full-precision tensors. Before first target record, observed active memory is only4654/5966bytes, directly inconsistent with an eagerly allocated52.8/65.0GB retained constructor or full target copy."
+    },
+    {
+      "stage": "Parameter validation lifetime",
+      "evidence": [
+        "spikes/025-qwen38-overlapped-prefill/stream_weights.py:98-113",
+        ".venv/lib/python3.13/site-packages/mlx/nn/layers/base.py:274-283",
+        ".venv/lib/python3.13/site-packages/mlx/utils.py:177-190"
+      ],
+      "finding": "expected holds initial parameter array references only through metadata validation and is deleted before loading. Python loop variable initial is not deleted and retains the last initial array until function exit; it can prolong an unevaluated random quantization graph. No operation in the loop evaluates initial. Its actual graph/storage size is not measured, and it cannot be treated as a measured multi-GB resident duplicate."
+    },
+    {
+      "stage": "Per-tensor assignment/evaluation boundary",
+      "evidence": [
+        "spikes/025-qwen38-overlapped-prefill/stream_weights.py:124-171",
+        ".venv/lib/python3.13/site-packages/mlx/nn/layers/base.py:175-206,325-336",
+        ".venv/lib/python3.13/site-packages/mlx/include/mlx/array.h:616-640"
+      ],
+      "finding": "np.frombuffer(...).reshape is a view over the Python payload; mx.array(view) creates the runtime array, BF16 uses a dtype view, mx.eval(array) completes that tensor, and load_weights(list,strict=False) directly replaces the named array rather than opening files or sanitizing. Loader deletes consumer references and clears free allocator cache after every tensor. Full model.parameters is evaluated only after exact complete loaded-name coverage. The C++ iterator array initializer allocates/copies, but the installed Python numpy binding implementation was not available; exact numpy-binding ownership and staging-copy count were not executed or asserted. Budget a current tensor CPU source plus runtime destination; do not assert persistent two-model duplication."
+    },
+    {
+      "stage": "Target inference and full sidecar not reached",
+      "evidence": [
+        "spikes/025-qwen38-overlapped-prefill/probe.py:267-312",
+        "spikes/025-qwen38-overlapped-prefill/mtp_runtime.py:111-119",
+        "spikes/025-qwen38-overlapped-prefill/mtp_head.py:102,118-146"
+      ],
+      "finding": "Final tokenizer setup, parameters list, target loading_done, run_loaded, actual27B sidecar load, target numerical gates, and requests occur after loading returns. None is a candidate cause of these mid-loop aborts. The persistent probe.parameters list cannot retain old target weights before the loop because it is not created yet."
+    }
+  ],
+  "mapping_and_copy_limits": {
+    "target_explicit_mmap": false,
+    "target_mx_load": false,
+    "target_file_handle_lifetime": "tensor_records with-block closes before yield; checkpoint_inventory header/base reads use short with-blocks.",
+    "small_mx_load": "Reached once before target. Installed Load primitive owns shared_ptr<io::Reader>; ParallelFileReader opens FD in constructor and closes in destructor. Deferred load readers may survive until lazy load graphs are evaluated/released.",
+    "small_mx_load_evidence": [
+      ".venv/lib/python3.13/site-packages/mlx/include/mlx/primitives.h:1293-1313",
+      ".venv/lib/python3.13/site-packages/mlx/include/mlx/io/load.h:63-71,119-130"
+    ],
+    "mmap_claim_limit": "The compiled loader/Python binding .cpp implementations were not found locally. These declarations are not proof that mx.load uses mmap, or that every underlying read buffer/mapping releases at a particular point. No such mapping was measured. In any event this cannot introduce a full27B mx.load mapping in a target path that never calls mx.load.",
+    "observed_cache_at_target_start": {
+      "rank0_bytes": 155840272,
+      "rank1_bytes": 155838960
+    },
+    "observed_cache_at_abort_bytes": 0,
+    "interpretation": "Post-small free cache is a concrete short-lived overhead; the first tensor_done clear_cache removes it. It is not the cache reported at the pressure-abort boundary. Any OS file cache, compression, physical footprint, paging or retired Metal allocations is distinct and unmeasured here."
+  },
+  "ranked_falsifiable_hypotheses": [
+    {
+      "rank": 1,
+      "hypothesis": "Normal accumulated target weights plus host-wide resource state cross the pressure1 boundary; not a new025 multi-GB MLX weight leak.",
+      "support": "Active MLX matches the exact trusted completed prefix within <314KB on both trials. Cache is0 at abort. Same loader bytes previously completed both full shards. Different abort tensor positions with pressure2 are compatible with different host headroom/residency, not a fixed tensor corruption.",
+      "not_proven": "No per-host available/resident/wired/compressed/file-cache ledger was captured alongside these loading events; host background state, actual residency, wired-limit policy and file-cache contribution cannot be separated. OS pressure is global, MLX active is not RSS, and maxRSS is a high-water process statistic.",
+      "prediction": "A complete ledger would place most active allocation in unique completed parameters and show no persistent second target copy; missing capacity would be explained by other resident/wired/compressed/cache consumers.",
+      "smallest_next_diagnostic": "Use this CPU prefix-ledger analysis and existing baseline receipts first. Only the parent hardware owner may later passively sample host-wide memory around already-authorized work; this audit requests no launch or full-model retry."
+    },
+    {
+      "rank": 2,
+      "hypothesis": "Avoidable adjacent Python payload overlap adds transient CPU memory on rank1 and remote CPU server, amplifying global pressure.",
+      "support": "Exact source-function CPU fixture proves previous payload is live when next file read allocates; server additionally holds previous record. Trusted headers bound maximum adjacent payload sum675430400bytes instead of maximum single635699200bytes. Both were already present in023/024.",
+      "not_proven": "This is not an accumulating leak, not a measured physical pressure cause, and not the maximum transient at the observed late failure. Around the v2 final boundary rank1 previous+next is2795520bytes; rank0 server/receiver schedule may differ and is unlogged.",
+      "prediction": "Explicit release before advancing generator reduces tracked previous+next allocations while preserving yielded bytes, hashes and truncation errors.",
+      "smallest_next_diagnostic": "Already executed8 tiny CPU cases from exact AST-extracted functions, with no actual checkpoint payload/GPU/network. Candidate reduces peak tracked fixture payload6144->4096bytes. No full model needed."
+    },
+    {
+      "rank": 3,
+      "hypothesis": "Current Python payload plus runtime destination/staging copies, or delayed OS release, contributes a transient peak not visible in tensor_done active counts.",
+      "support": "The CPU source remains live through mx.array(view)/mx.eval(array), then loader drops consumer references. Largest source tensor635699200bytes per header. At v1 rank0 observed before pending44.6MB projection; v2 final record is smaller/different. These logs miss the middle of array conversion.",
+      "not_proven": "No Python-binding memory-transfer probe, per-operation resident measurement, or vm-region inspection was performed; standard array API shape and C++ iterator copying do not establish the exact numpy-binding allocation count.",
+      "prediction": "A bounded one-array ownership probe would show whether an extra source/staging buffer remains after destination evaluation and source release, without constructing any model.",
+      "smallest_next_diagnostic": "If separately authorized to import MLX later, the hardware owner can investigate a KiB-sized U32/BF16 array only, never a27B constructor/retry. This review intentionally does not execute it."
+    },
+    {
+      "rank": 4,
+      "hypothesis": "Small-gate resource/cache lifetime or lazy initial-parameter graph prolongs memory into target loading.",
+      "support": "small_gate clears cache before all function locals die; observed target-start cache is155.84MB. Validation leaves initial bound.025 adds8 overlap small cases before target but stores only metric receipts on return.",
+      "against": "Target-start active4654/5966bytes and abort cache0 argue against a retained evaluated small model/head or eager constructor weight bank.024 candidate without025 overlap has the exact same target-start active/cache values and completed loading.",
+      "prediction": "Post-helper gc/clear_cache would remove only start-cache overhead. Removing last initial binding would drop an unevaluated graph, not multi-GB of measured active allocation.",
+      "smallest_next_diagnostic": "CPU weakref/scoped-lifetime tests can verify helper and loop-local ownership; do not insert an mx.eval on constructor parameters, which would create the very large allocation being investigated."
+    },
+    {
+      "rank": 5,
+      "hypothesis": "Full checkpoint mmap retention, repeated target sanitization/transposition, full sidecar load or overlap target execution causes failure.",
+      "assessment": "Contradicted by executed target branches and phase ordering; retain only as a falsification check, not a leading explanation.",
+      "prediction": "Such a cause requires an mx.load/sanitize/sidecar/full-gate call before tensor loading ends, absent from these actual source paths and receipts.",
+      "smallest_next_diagnostic": "Static call-path/AST review already performed. No new physical experiment is needed to exclude those paths at this boundary."
+    }
+  ],
+  "confirmed_cpu_lifetime_bug_and_candidate": {
+    "bug": "The disk record generator local payload survives consumer del and overlaps next read. The sender for-loop record also survives evaluation of next(records).",
+    "evidence": [
+      "spikes/025-qwen38-overlapped-prefill/stream_weights.py:33-48,124-151,204-209"
+    ],
+    "classification": "Bounded avoidable Python payload lifetime; CPU-reproduced; physical relevance unmeasured; inherited023/024 behavior.",
+    "candidate_not_applied": [
+      {
+        "location": "stream_weights.tensor_records immediately after yield dictionary resumes",
+        "candidate": "del payload",
+        "effect": "Releases generator ownership before next handle.read. Consumer still retains exactly the yielded current payload as needed."
+      },
+      {
+        "location": "stream_weights.send_records immediately after sock.sendall(record[\"payload\"])",
+        "candidate": "del record",
+        "effect": "Releases sender previous record before for-loop next(records); both changes are necessary on server."
+      }
+    ],
+    "does_not_change": [
+      "target bytes/digests/dtypes",
+      "rank placement",
+      "evaluation group32",
+      "native/slot-qmv modes",
+      "normal pressure1 gate",
+      "numerical tolerances",
+      "transport cap"
+    ],
+    "cpu_regression_probe": {
+      "path": "/Users/jeremylien/.hermes/cache/scratch/loading-memory-lifetime-review/probe_lifetimes.py",
+      "sha256": "b55d0280ea0c4c693cbe029d85aab101fc5d6c356b7dd2300a344d637282cce5",
+      "execution": "exec(compile(path.read_text(), str(path), \"exec\"), namespace); namespace[\"main\"]() in existing Python tool kernel, not a subprocess",
+      "result": {
+        "passed": true,
+        "scope": "stdlib Python ownership only; not an MLX memory or pressure reproduction",
+        "cases": {
+          "local_original": {
+            "peak_fixture_payload_bytes": 6144,
+            "live_previous_payload_at_each_read": [
+              0,
+              1024,
+              2048
+            ],
+            "retained_after_consumer_delete": [
+              1024,
+              2048,
+              4096
+            ],
+            "after_close_live_payload_bytes": 0,
+            "digests": [
+              "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+              "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad",
+              "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+            ],
+            "error": null
+          },
+          "local_release_generator": {
+            "peak_fixture_payload_bytes": 4096,
+            "live_previous_payload_at_each_read": [
+              0,
+              0,
+              0
+            ],
+            "retained_after_consumer_delete": [
+              1024,
+              2048,
+              4096
+            ],
+            "after_close_live_payload_bytes": 0,
+            "digests": [
+              "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+              "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad",
+              "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+            ],
+            "error": null
+          },
+          "server_original": {
+            "peak_fixture_payload_bytes": 6144,
+            "live_previous_payload_at_each_read": [
+              0,
+              1024,
+              2048
+            ],
+            "retained_after_consumer_delete": [],
+            "after_close_live_payload_bytes": 0,
+            "digests": [
+              "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+              "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad",
+              "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+            ],
+            "error": null
+          },
+          "server_release_generator_only": {
+            "peak_fixture_payload_bytes": 6144,
+            "live_previous_payload_at_each_read": [
+              0,
+              1024,
+              2048
+            ],
+            "retained_after_consumer_delete": [],
+            "after_close_live_payload_bytes": 0,
+            "digests": [
+              "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+              "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad",
+              "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+            ],
+            "error": null
+          },
+          "server_release_both": {
+            "peak_fixture_payload_bytes": 4096,
+            "live_previous_payload_at_each_read": [
+              0,
+              0,
+              0
+            ],
+            "retained_after_consumer_delete": [],
+            "after_close_live_payload_bytes": 0,
+            "digests": [
+              "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+              "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad",
+              "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+            ],
+            "error": null
+          },
+          "network_receiver_original": {
+            "peak_fixture_payload_bytes": 4096,
+            "live_previous_payload_at_each_read": [
+              0,
+              0,
+              0
+            ],
+            "retained_after_consumer_delete": [
+              0,
+              0,
+              0
+            ],
+            "after_close_live_payload_bytes": 0,
+            "digests": [
+              "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+              "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad",
+              "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+            ],
+            "error": null
+          },
+          "local_original_truncated": {
+            "peak_fixture_payload_bytes": 1023,
+            "live_previous_payload_at_each_read": [
+              0
+            ],
+            "retained_after_consumer_delete": [],
+            "after_close_live_payload_bytes": 0,
+            "digests": [],
+            "error": "Source payload truncated"
+          },
+          "local_candidate_truncated": {
+            "peak_fixture_payload_bytes": 1023,
+            "live_previous_payload_at_each_read": [
+              0
+            ],
+            "retained_after_consumer_delete": [],
+            "after_close_live_payload_bytes": 0,
+            "digests": [],
+            "error": "Source payload truncated"
+          }
+        }
+      }
+    },
+    "limits": "Fixture uses weak-referenceable bytearray stand-ins for real bytes/bytearray payloads and fake read/send boundaries; executes production function bodies extracted by AST without importing the module or MLX. It establishes Python ownership, not allocator/RSS reduction on physical hosts. No source patch has been applied, and this is not a root-cause fix certification."
+  },
+  "smallest_safe_diagnostic_and_followup": {
+    "completed": "Metadata-only exact-prefix allocation ledger plus8 bounded CPU ownership/truncation cases; maximum payload fixture allocation6144bytes, no model import. This is the allocation-reducing diagnostic and avoids another full-model retry.",
+    "safe_next_source_change_if_parent_approves": "Apply only the two proven del statements in a new candidate source snapshot, promote the tiny CPU lifetime/truncation regression, and rerun existing CPU loader/protocol tests before any physical consideration. Do not edit preserved023/024 or trial snapshots.",
+    "not_requested_or_authorized": [
+      "full27B retry",
+      "smaller/different target or split",
+      "weaker pressure guard",
+      "looser numerical tolerance",
+      "eager eval of initial full-precision constructor",
+      "concurrent GPU/SSH/process work"
+    ],
+    "unresolved": "Precise host-wide physical-memory consumer that first caused pressure2 remains unidentified by archived MLX/RSS/source evidence alone."
+  },
+  "input_fingerprints": {
+    "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/stream_weights.py": {
+      "bytes": 9020,
+      "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/stream_server.py": {
+      "bytes": 3567,
+      "sha256": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/probe.py": {
+      "bytes": 22925,
+      "sha256": "4b21c1faead37933d9ebd559c19015e31c707b68dabfe66ba77a8743f2f6c702"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/mtp_runtime.py": {
+      "bytes": 12595,
+      "sha256": "20c9d920ee9c2096007082fc029fb5a349cecc08d6587ec6de923c95dc07830d"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/shard_plan.py": {
+      "bytes": 13950,
+      "sha256": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/mlx_lm/models/qwen3_5.py": {
+      "bytes": 20014,
+      "sha256": "10c59a71d8d739b8cdff38c7e9c7345deb9a9688e821ac37cb774d3086cac42e"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/mlx_lm/models/pipeline.py": {
+      "bytes": 1572,
+      "sha256": "5897f414f550584442594c766fc91ca53d72a8eb1e242ffbc5bababcd7a4ae35"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/mlx_lm/utils.py": {
+      "bytes": 39296,
+      "sha256": "d442babbfd891bfa61ec9c6feead9024e206a333a357c5e4a07554c4ea138965"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/mlx/nn/layers/quantized.py": {
+      "bytes": 14991,
+      "sha256": "1797a3571484ad3134224354b7f130c0931f495691aa8e54eb55329d674bb00b"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/mlx/nn/layers/base.py": {
+      "bytes": 26169,
+      "sha256": "ec749e1d50fd1a5e57e0aedc8e6eb13fc697e630f59333a0e24aee62a8dc7f0f"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/mlx/utils.py": {
+      "bytes": 12100,
+      "sha256": "c33a787a429a2736eb10783b087931cdfd0bab9edcf0ad57d48bcbc33b9e49a2"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/mlx/include/mlx/io/load.h": {
+      "bytes": 5347,
+      "sha256": "65fd4f1c215515d42ce98266ad31d6505e437b5391b96899af0c298ab0943548"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/mlx/include/mlx/primitives.h": {
+      "bytes": 71263,
+      "sha256": "53f9d2354a417b87a185c45ecb4e277cf545f2d962788dfa663939f393347725"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/mlx/include/mlx/array.h": {
+      "bytes": 18552,
+      "sha256": "543d9096f3ea52870087059db5f793925dfb5e00097638776bc52b01e6189c3b"
+    },
+    "/Users/jeremylien/Projects/local-agent-dual-mac/results/mlx-vision-admission/readback-admission.json": {
+      "bytes": 556050,
+      "sha256": "3827166d21cea9e87965c51995528d789e3064575a333cca5316a022c6ae324d"
+    },
+    "/Users/jeremylien/.hermes/cache/scratch/paretoquant-qwen38-preflight/inventory.json": {
+      "bytes": 521610,
+      "sha256": "d0996b2023760e7370b939be8509e3091dfc0c9b8b9357c6fc5c01b14ba81d25"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/models/qwen3.8-27b-4bit-tokenizer-only/config.json": {
+      "bytes": 4932,
+      "sha256": "14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/models/qwen3.8-27b-4bit-tokenizer-only/model.safetensors.index.json": {
+      "bytes": 218281,
+      "sha256": "13b840162b4cb35c66fef7df072f7dbb4717908204364f5e5d9f9655a2758fa8"
+    },
+    "/Users/jeremylien/.hermes/cache/scratch/loading-memory-lifetime-review/probe_lifetimes.py": {
+      "bytes": 6179,
+      "sha256": "b55d0280ea0c4c693cbe029d85aab101fc5d6c356b7dd2300a344d637282cce5"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/rank0.receipt.json": {
+      "bytes": 826553,
+      "sha256": "7289759e0625601fc2b5861e896734b39788b4ed7f6a4d1b6efe32d6c892614b"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/rank0.stderr": {
+      "bytes": 743977,
+      "sha256": "5aaaa64036813943a7fd8d421b03fa1927e94aab11dea4f112b723ada06d966f"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/result.json": {
+      "bytes": 2571,
+      "sha256": "394b43e841e0bdcffb7644cfc409ffc99d170f0016c823824a7c5242bb3edfe8"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/rank1.receipt.json": {
+      "bytes": 937701,
+      "sha256": "3207053964b1cd22ad4d8649ce8777f47c39d0925926bee7d75bf9cc554a4f8c"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/rank1.stderr": {
+      "bytes": 847049,
+      "sha256": "500eec49ab4bab426df3ba4cd203bc020e063ea69294be177bf57323d9039755"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/rank0.receipt.json": {
+      "bytes": 865374,
+      "sha256": "dae2c4278c9b9e16038f5b8e42d07d6c114012f5781beff6a033d4ead0d55be8"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/rank0.stderr": {
+      "bytes": 772411,
+      "sha256": "bd2f3e8147d1783e79202949cb57ed1762e02e8f4bc3c5b0d5da7ce2473d195f"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/result.json": {
+      "bytes": 2571,
+      "sha256": "29189fd28c24ebb1df34b32716d4ea8dec33a411d94ce59ea8b18aaeb6289c8d"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/rank1.receipt.json": {
+      "bytes": 883732,
+      "sha256": "1e1a264af1a69e64bfd333150e087b48e374a71eefb141b749247a46becffdd4"
+    },
+    "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/rank1.stderr": {
+      "bytes": 795608,
+      "sha256": "2b92b2699101577d476b5842f6d1f5743154912d5b449d425ddaa32dc6643135"
+    }
+  },
+  "publication": {
+    "exclusive_new_file": true,
+    "path": "results/qwen38-prefill-overlap-v1/loading-memory-source-review.json",
+    "only_other_created_file": "/Users/jeremylien/.hermes/cache/scratch/loading-memory-lifetime-review/probe_lifetimes.py"
+  }
+}

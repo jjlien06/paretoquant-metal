@@ -1,0 +1,22 @@
+{
+  "schema": "parent-full-suite-execution-plan-v1",
+  "manifest_sha256": "161349a091468906a7c699c83a9224a388403e2d3542675770e8635184f812eb",
+  "pressure_policy": "noncritical",
+  "memory_acceptance_sha256": "a0341821118cfd83d45f0f8979152aaffae3f296b372f8dc29b58aacc35d409f",
+  "phases": [
+    "batch-00",
+    "batch-01",
+    "batch-02",
+    "batch-03",
+    "batch-04",
+    "batch-05"
+  ],
+  "planned_requests": 84,
+  "pilot_excluded": true,
+  "runner_sha256": "b34f6c565eacd5b79038f485f0549c91b979980cb113e944cfcce3240a89e450",
+  "auditor_sha256": "5ff4763898bcf922983cd491a6cfa8d9f80f45d3091112fdeac147d99f2224dc",
+  "controller_sha256": "cf255fd1e43a28ca6b950d27fc01fa9e1e84b844fdcad904e098ec540d08cca2",
+  "pilot_audit_summary_sha256": "8b168769a54e4210764417a8b58b085cbaeb79a9ed2fb804211e6bc1de865b5d",
+  "sequential_hardware_owner": true,
+  "performance_accepted": false
+}

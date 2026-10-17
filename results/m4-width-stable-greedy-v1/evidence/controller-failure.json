@@ -1,0 +1,7 @@
+{
+  "parent_exit_code": 1,
+  "exception": "KeyError: source_sha256",
+  "line": 102,
+  "GPU_actor_returncode": 0,
+  "effect": "Parent reporting adapter only; deployed GPU payload completed all6 cases and cleanup. Exact readbacks were saved and independently verified."
+}

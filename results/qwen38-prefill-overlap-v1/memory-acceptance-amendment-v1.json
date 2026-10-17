@@ -1,0 +1,77 @@
+{
+  "schema": "qwen38-overlap-memory-acceptance-amendment-v1",
+  "timestamp": 1792270909.843136,
+  "artifact_kind": "USER_AUTHORIZED_CRITERION_AMENDMENT_NOT_PHYSICAL_APPROVAL",
+  "original_acceptance_file": "acceptance.json",
+  "original_acceptance_sha256": "22b37500f5141e8a105b336751b32f27eb08c101b4ffcca81e0f206d078143af",
+  "user_authorization_verbatim": "memory is fucking clear i have nothing else open, high memory is ok as long as u dont crash my shit do what you can to ooptimize my memory as well",
+  "pressure_policy": "noncritical",
+  "allowed_pressure_levels": [
+    1,
+    2
+  ],
+  "abort_pressure_levels": [
+    4
+  ],
+  "invalid_or_missing_pressure": "abort, never assume safe",
+  "warning_pressure_handling": "Retain actual level2 observations; permitted by this amendment, never describe as normal-pressure qualification.",
+  "sample_interval_seconds": 0.5,
+  "sampler_timeout_seconds": 0.25,
+  "maximum_sample_gap_seconds": 1.0,
+  "hard_job_deadline_seconds_max": 900,
+  "unchanged_criteria": {
+    "case_ids": [
+      "code-short",
+      "code-512",
+      "code-1536",
+      "explanation-short",
+      "explanation-512",
+      "explanation-1536",
+      "math-short",
+      "math-512",
+      "math-1536",
+      "chinese-short",
+      "chinese-512",
+      "chinese-1536",
+      "spanish-short",
+      "spanish-512",
+      "spanish-1536",
+      "structured-short",
+      "structured-512",
+      "structured-1536"
+    ],
+    "long_case_ids": [
+      "code-1536",
+      "explanation-1536",
+      "math-1536",
+      "chinese-1536",
+      "spanish-1536",
+      "structured-1536"
+    ],
+    "latency_acceptance": "each of all six 1536-target prompt cases, not pooled categories",
+    "ttft_reduction_min": 0.3,
+    "request_elapsed_reduction_min": 0.15,
+    "estimator": "For each case and metric, median of paired candidate/reference elapsed-time ratios across repeat IDs; reduction = 1 - median_ratio. Both thresholds must hold for each long case.",
+    "numerics": {
+      "atol": 1e-06,
+      "rtol": 1e-05,
+      "matching_output_ids": true,
+      "matching_stop_reasons": true,
+      "every_live_cache_component": true,
+      "same_process_small_full_and_native256_gates": true
+    },
+    "precision": "unchanged original affine Q4/BF16",
+    "split": [
+      28,
+      36
+    ],
+    "max_simultaneous_chunks": 2,
+    "max_pending_handoffs": 1,
+    "no_unrelated_process_termination": true
+  },
+  "memory_optimization_scope": "Reduce unnecessary loader buffers without altering serialized weights/dtypes, model, split, kernels, prompts, or numerical tolerances. Do not change global VM/wired limits or terminate unrelated applications.",
+  "risk_limit": "Sampled critical-pressure and responsiveness/deadline guards reduce risk but cannot guarantee prevention of OS/GPU-driver stalls or crashes. Stop owned work on guard failure; preserve failure evidence and verify cleanup.",
+  "old_trials": "Unchanged. The two pressure1-contract failures remain failed under their original criterion; this amendment does not relabel them successful.",
+  "physical_execution_approved": false,
+  "performance_accepted": false
+}

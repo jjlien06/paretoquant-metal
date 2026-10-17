@@ -1,0 +1,548 @@
+{
+  "clock_rule": "All durations are same-rank monotonic elapsed_seconds deltas. Host clocks never subtracted.",
+  "timer_semantics": "stdout timer starts after tokenization/cache creation, immediately before prefill_before; TTFT sampled before token_done reporter; request wall sampled before tokenizer.decode/request_done.",
+  "ranks": {
+    "0": {
+      "receipt_path": "/Users/jeremylien/Projects/paretoquant-metal/results/m2pro-m4-dual-host-phased-32b-v1/qwen32/rank0.receipt.json",
+      "receipt_sha256": "f1c9e1eb68fd37e3fe17786796e6cb8a8e1795b866a22d1b3380efb6c753cc16",
+      "source_hashes_verified": 7,
+      "event_count": 3849,
+      "ignored_non_json_lines": 0,
+      "event_counts": {
+        "process_start": 1,
+        "distributed_init_before": 1,
+        "distributed_init_done": 1,
+        "loading_before": 1,
+        "tensor_loading_before": 1,
+        "tensor_before": 683,
+        "tensor_done": 683,
+        "tensor_loading_done": 1,
+        "loading_done": 1,
+        "request_before": 1,
+        "prefill_before": 1,
+        "handoff_receive_before": 42,
+        "handoff_receive_done": 42,
+        "layer_before": 1092,
+        "layer_done": 1092,
+        "prefill_last_before": 1,
+        "head_before": 41,
+        "head_done": 41,
+        "token_send_before": 41,
+        "token_done": 41,
+        "decode_before": 40,
+        "request_done": 1
+      },
+      "host": "Apple M2 Pro",
+      "parameter_bytes": 8007776256,
+      "request": {
+        "repeat": 0,
+        "wall_seconds": 64.8776459590299,
+        "first_token_seconds": 56.52299320907332,
+        "wall_tokens_per_second": 0.6319588109884784,
+        "native_generation_tps": null,
+        "prompt_tokens": 40,
+        "finish_reason": "stop"
+      },
+      "generated_token_count": 41,
+      "startup": {
+        "process_start_marker_seconds": 0.008675541961565614,
+        "loading_before_seconds": 1.8177215839968994,
+        "loading_done_seconds": 18.618441084050573,
+        "loading_span_seconds": 16.800719500053674,
+        "tensor_loading_span_seconds": 15.11926866590511,
+        "tensor_loading_done_to_loading_done_seconds": 1.6477294591022655,
+        "request_before_seconds": 18.65966208395548,
+        "request_before_to_prefill_before_seconds": 0.0027625830844044685
+      },
+      "first_token": {
+        "prefill_before_seconds": 18.662424667039886,
+        "token_done_seconds": 75.18544991698582,
+        "event_delta_seconds": 56.52302524994593,
+        "event_delta_minus_stdout_timer_seconds": 3.204087261110544e-05,
+        "prefill_39_to_prefill_last_seconds": 56.38712420791853,
+        "prefill_last_to_token_done_seconds": 0.13590104202739894,
+        "disjoint_partition_seconds": {
+          "handoff_receive": 8.22375095798634,
+          "first_chunk_first_layer": 47.74206379195675,
+          "prefill_39_other_layers": 0.41532579297199845,
+          "prefill_last_1_other_layers": 0.10646062658634037,
+          "head": 0.0033017919631674886,
+          "token_send": 0.0003507080255076289,
+          "unbracketed_seconds": 0.03177158045582473
+        }
+      },
+      "first_chunk_first_layer": {
+        "kind": "layer",
+        "stage": "prefill_39",
+        "layer_index": 38,
+        "start_seconds": 26.879186125006527,
+        "end_seconds": 74.62124991696328,
+        "duration_seconds": 47.74206379195675
+      },
+      "first_chunk_layers_aggregate": {
+        "count": 26,
+        "sum_seconds": 48.15738958492875,
+        "median_seconds": 0.014893686980940402,
+        "min_seconds": 0.01413899997714907,
+        "max_seconds": 47.74206379195675
+      },
+      "first_chunk_other_layers_aggregate": {
+        "count": 25,
+        "sum_seconds": 0.41532579297199845,
+        "median_seconds": 0.014893415966071188,
+        "min_seconds": 0.01413899997714907,
+        "max_seconds": 0.05674729193560779
+      },
+      "largest_nonwait_first_token_span": {
+        "kind": "layer",
+        "stage": "prefill_39",
+        "layer_index": 38,
+        "start_seconds": 26.879186125006527,
+        "end_seconds": 74.62124991696328,
+        "duration_seconds": 47.74206379195675
+      },
+      "span_aggregates": {
+        "decode/handoff_receive": {
+          "count": 40,
+          "sum_seconds": 5.041405334020965,
+          "median_seconds": 0.12228418746963143,
+          "min_seconds": 0.12006991601083428,
+          "max_seconds": 0.26742762490175664
+        },
+        "decode/head": {
+          "count": 40,
+          "sum_seconds": 0.13669474958442152,
+          "median_seconds": 0.0032218124251812696,
+          "min_seconds": 0.0025876249419525266,
+          "max_seconds": 0.007522249943576753
+        },
+        "decode/layer": {
+          "count": 1040,
+          "sum_seconds": 2.9923533756518736,
+          "median_seconds": 0.0026962089468725026,
+          "min_seconds": 0.0018233750015497208,
+          "max_seconds": 0.027390250004827976
+        },
+        "decode/token_send": {
+          "count": 40,
+          "sum_seconds": 0.013020710903219879,
+          "median_seconds": 0.0002221250324510038,
+          "min_seconds": 9.162502828985453e-05,
+          "max_seconds": 0.0023397080367431045
+        },
+        "prefill_39/handoff_receive": {
+          "count": 1,
+          "sum_seconds": 8.214672832982615,
+          "median_seconds": 8.214672832982615,
+          "min_seconds": 8.214672832982615,
+          "max_seconds": 8.214672832982615
+        },
+        "prefill_39/layer": {
+          "count": 26,
+          "sum_seconds": 48.15738958492875,
+          "median_seconds": 0.014893686980940402,
+          "min_seconds": 0.01413899997714907,
+          "max_seconds": 47.74206379195675
+        },
+        "prefill_last_1/handoff_receive": {
+          "count": 1,
+          "sum_seconds": 0.00907812500372529,
+          "median_seconds": 0.00907812500372529,
+          "min_seconds": 0.00907812500372529,
+          "max_seconds": 0.00907812500372529
+        },
+        "prefill_last_1/head": {
+          "count": 1,
+          "sum_seconds": 0.0033017919631674886,
+          "median_seconds": 0.0033017919631674886,
+          "min_seconds": 0.0033017919631674886,
+          "max_seconds": 0.0033017919631674886
+        },
+        "prefill_last_1/layer": {
+          "count": 26,
+          "sum_seconds": 0.10646062658634037,
+          "median_seconds": 0.0020962085691280663,
+          "min_seconds": 0.0019018329912796617,
+          "max_seconds": 0.04967333399690688
+        },
+        "prefill_last_1/token_send": {
+          "count": 1,
+          "sum_seconds": 0.0003507080255076289,
+          "median_seconds": 0.0003507080255076289,
+          "min_seconds": 0.0003507080255076289,
+          "max_seconds": 0.0003507080255076289
+        }
+      },
+      "memory_snapshots": [
+        {
+          "phase": "tensor_loading_done",
+          "elapsed_seconds": 16.970711624948308,
+          "active_mlx_bytes": 8007776280,
+          "peak_mlx_bytes": 8007776284,
+          "cache_mlx_bytes": 0,
+          "process_maxrss": 2101018624
+        },
+        {
+          "phase": "loading_done",
+          "elapsed_seconds": 18.618441084050573,
+          "active_mlx_bytes": 8007776264,
+          "peak_mlx_bytes": 8007776284,
+          "cache_mlx_bytes": 16,
+          "process_maxrss": 2101018624
+        },
+        {
+          "phase": "request_before",
+          "elapsed_seconds": 18.65966208395548,
+          "active_mlx_bytes": 8007776264,
+          "peak_mlx_bytes": 8007776284,
+          "cache_mlx_bytes": 24,
+          "process_maxrss": 2101018624
+        },
+        {
+          "phase": "layer_before",
+          "elapsed_seconds": 26.879186125006527,
+          "active_mlx_bytes": 8008186020,
+          "peak_mlx_bytes": 8008186020,
+          "cache_mlx_bytes": 24,
+          "process_maxrss": 2101018624
+        },
+        {
+          "phase": "layer_done",
+          "elapsed_seconds": 74.62124991696328,
+          "active_mlx_bytes": 8009234596,
+          "peak_mlx_bytes": 8017950896,
+          "cache_mlx_bytes": 8716316,
+          "process_maxrss": 2101018624
+        }
+      ],
+      "post_first_token": {
+        "event_interval_seconds": 8.35120687505696,
+        "remaining_events": 40,
+        "event_tokens_per_second": 4.789726874024682,
+        "stdout_wall_minus_ttft_seconds": 8.354652749956585
+      }
+    },
+    "1": {
+      "receipt_path": "/Users/jeremylien/Projects/paretoquant-metal/results/m2pro-m4-dual-host-phased-32b-v1/qwen32/rank1.receipt.json",
+      "receipt_sha256": "3a9383ffec79378bce498ef49541e627c61b24d9f2a34edf9a2ebe53074c599e",
+      "source_hashes_verified": 7,
+      "event_count": 5483,
+      "ignored_non_json_lines": 0,
+      "event_counts": {
+        "process_start": 1,
+        "distributed_init_before": 1,
+        "distributed_init_done": 1,
+        "loading_before": 1,
+        "tensor_loading_before": 1,
+        "tensor_before": 995,
+        "tensor_done": 995,
+        "tensor_loading_done": 1,
+        "loading_done": 1,
+        "request_before": 1,
+        "prefill_before": 1,
+        "embedding_before": 42,
+        "embedding_done": 42,
+        "layer_before": 1596,
+        "layer_done": 1596,
+        "handoff_send_before": 42,
+        "handoff_send_done": 42,
+        "prefill_last_before": 1,
+        "token_receive_before": 41,
+        "token_done": 41,
+        "decode_before": 40,
+        "request_done": 1
+      },
+      "host": "Apple M4",
+      "parameter_bytes": 11299411968,
+      "request": {
+        "repeat": 0,
+        "wall_seconds": 64.91061704100139,
+        "first_token_seconds": 56.559479540999746,
+        "wall_tokens_per_second": 0.6316378100997249,
+        "native_generation_tps": null,
+        "prompt_tokens": 40,
+        "finish_reason": "stop"
+      },
+      "generated_token_count": 41,
+      "startup": {
+        "process_start_marker_seconds": 0.004296291997889057,
+        "loading_before_seconds": 1.774761791999481,
+        "loading_done_seconds": 18.570885375000216,
+        "loading_span_seconds": 16.796123583000735,
+        "tensor_loading_span_seconds": 14.89510220900047,
+        "tensor_loading_done_to_loading_done_seconds": 1.8475929580017691,
+        "request_before_seconds": 18.578404916999716,
+        "request_before_to_prefill_before_seconds": 0.0002140830001735594
+      },
+      "first_token": {
+        "prefill_before_seconds": 18.57861899999989,
+        "token_done_seconds": 75.13811820800038,
+        "event_delta_seconds": 56.55949920800049,
+        "event_delta_minus_stdout_timer_seconds": 1.966700074262917e-05,
+        "prefill_39_to_prefill_last_seconds": 8.252774749998935,
+        "prefill_last_to_token_done_seconds": 48.306724458001554,
+        "disjoint_partition_seconds": {
+          "embedding": 7.508305666000524,
+          "first_chunk_first_layer": 0.02714620799815748,
+          "prefill_39_other_layers": 0.7154739219949988,
+          "handoff_send": 0.0012291249986446928,
+          "prefill_last_1_other_layers": 0.12252179201095714,
+          "token_receive": 48.182300000000396,
+          "unbracketed_seconds": 0.0025224949968105648
+        }
+      },
+      "first_chunk_first_layer": {
+        "kind": "layer",
+        "stage": "prefill_39",
+        "layer_index": 0,
+        "start_seconds": 26.086339749999752,
+        "end_seconds": 26.11348595799791,
+        "duration_seconds": 0.02714620799815748
+      },
+      "first_chunk_layers_aggregate": {
+        "count": 38,
+        "sum_seconds": 0.7426201299931563,
+        "median_seconds": 0.01931797949873726,
+        "min_seconds": 0.01925808400119422,
+        "max_seconds": 0.02714620799815748
+      },
+      "first_chunk_other_layers_aggregate": {
+        "count": 37,
+        "sum_seconds": 0.7154739219949988,
+        "median_seconds": 0.01931720900029177,
+        "min_seconds": 0.01925808400119422,
+        "max_seconds": 0.019451624997600447
+      },
+      "largest_nonwait_first_token_span": {
+        "kind": "embedding",
+        "stage": "prefill_39",
+        "layer_index": null,
+        "start_seconds": 18.578663791999134,
+        "end_seconds": 26.086230375000014,
+        "duration_seconds": 7.50756658300088
+      },
+      "span_aggregates": {
+        "decode/embedding": {
+          "count": 40,
+          "sum_seconds": 0.17438803899131017,
+          "median_seconds": 0.0007400000013149111,
+          "min_seconds": 0.0006417920012609102,
+          "max_seconds": 0.14535016599984374
+        },
+        "decode/handoff_send": {
+          "count": 40,
+          "sum_seconds": 0.0024243310144811403,
+          "median_seconds": 6.0832999224658124e-05,
+          "min_seconds": 3.5832999856211245e-05,
+          "max_seconds": 0.00010558299982221797
+        },
+        "decode/layer": {
+          "count": 1520,
+          "sum_seconds": 4.805970883997361,
+          "median_seconds": 0.003150125001411652,
+          "min_seconds": 0.003028040999197401,
+          "max_seconds": 0.004185917001450434
+        },
+        "decode/token_receive": {
+          "count": 40,
+          "sum_seconds": 3.323722708002606,
+          "median_seconds": 0.07846027099913044,
+          "min_seconds": 0.05583320799996727,
+          "max_seconds": 0.1701608750008745
+        },
+        "prefill_39/embedding": {
+          "count": 1,
+          "sum_seconds": 7.50756658300088,
+          "median_seconds": 7.50756658300088,
+          "min_seconds": 7.50756658300088,
+          "max_seconds": 7.50756658300088
+        },
+        "prefill_39/handoff_send": {
+          "count": 1,
+          "sum_seconds": 0.0011615000003075693,
+          "median_seconds": 0.0011615000003075693,
+          "min_seconds": 0.0011615000003075693,
+          "max_seconds": 0.0011615000003075693
+        },
+        "prefill_39/layer": {
+          "count": 38,
+          "sum_seconds": 0.7426201299931563,
+          "median_seconds": 0.01931797949873726,
+          "min_seconds": 0.01925808400119422,
+          "max_seconds": 0.02714620799815748
+        },
+        "prefill_last_1/embedding": {
+          "count": 1,
+          "sum_seconds": 0.0007390829996438697,
+          "median_seconds": 0.0007390829996438697,
+          "min_seconds": 0.0007390829996438697,
+          "max_seconds": 0.0007390829996438697
+        },
+        "prefill_last_1/handoff_send": {
+          "count": 1,
+          "sum_seconds": 6.762499833712354e-05,
+          "median_seconds": 6.762499833712354e-05,
+          "min_seconds": 6.762499833712354e-05,
+          "max_seconds": 6.762499833712354e-05
+        },
+        "prefill_last_1/layer": {
+          "count": 38,
+          "sum_seconds": 0.12252179201095714,
+          "median_seconds": 0.003184750003129011,
+          "min_seconds": 0.003069791000598343,
+          "max_seconds": 0.004861541001446312
+        },
+        "prefill_last_1/token_receive": {
+          "count": 1,
+          "sum_seconds": 48.182300000000396,
+          "median_seconds": 48.182300000000396,
+          "min_seconds": 48.182300000000396,
+          "max_seconds": 48.182300000000396
+        }
+      },
+      "memory_snapshots": [
+        {
+          "phase": "tensor_loading_done",
+          "elapsed_seconds": 16.723292416998447,
+          "active_mlx_bytes": 11299411992,
+          "peak_mlx_bytes": 11299411996,
+          "cache_mlx_bytes": 0,
+          "process_maxrss": 2961588224
+        },
+        {
+          "phase": "loading_done",
+          "elapsed_seconds": 18.570885375000216,
+          "active_mlx_bytes": 11299411976,
+          "peak_mlx_bytes": 11299411996,
+          "cache_mlx_bytes": 16,
+          "process_maxrss": 2961588224
+        },
+        {
+          "phase": "request_before",
+          "elapsed_seconds": 18.578404916999716,
+          "active_mlx_bytes": 11299411976,
+          "peak_mlx_bytes": 11299411996,
+          "cache_mlx_bytes": 24,
+          "process_maxrss": 2961588224
+        },
+        {
+          "phase": "embedding_before",
+          "elapsed_seconds": 18.578663791999134,
+          "active_mlx_bytes": 11299412132,
+          "peak_mlx_bytes": 11299412132,
+          "cache_mlx_bytes": 24,
+          "process_maxrss": 2961588224
+        },
+        {
+          "phase": "embedding_done",
+          "elapsed_seconds": 26.086230375000014,
+          "active_mlx_bytes": 11299948900,
+          "peak_mlx_bytes": 11299948900,
+          "cache_mlx_bytes": 24,
+          "process_maxrss": 2961588224
+        }
+      ],
+      "post_first_token": {
+        "event_interval_seconds": 8.351107041999057,
+        "remaining_events": 40,
+        "event_tokens_per_second": 4.789784132670505,
+        "stdout_wall_minus_ttft_seconds": 8.351137500001641
+      }
+    }
+  },
+  "rank0_first_layer_percent_of_ttft": 84.46485417954297,
+  "supervisor_elapsed_seconds": 89.17915283399634,
+  "small_control": {
+    "0": {
+      "ttft_seconds": 0.18852170801255852,
+      "first_compute_span_seconds": 0.111881791963242,
+      "note": "Different 0.5B model; not a controlled warm/cold 32B comparison."
+    },
+    "1": {
+      "ttft_seconds": 0.1922685419995105,
+      "first_compute_span_seconds": 0.00357616700057406,
+      "note": "Different 0.5B model; not a controlled warm/cold 32B comparison."
+    }
+  },
+  "warm_baseline": {
+    "0": {
+      "receipt_path": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/qwen32-phased-warm-baseline-v1/rank0.receipt.json",
+      "receipt_sha256": "673991402ae22adeaba637af0be70132bd834076908d5dd587e3010bb2145825",
+      "same_source_and_tensor_hashes": true,
+      "same_41_tokens_all_3_requests": true,
+      "single_load_3_fresh_cache_requests": true,
+      "requests": [
+        {
+          "repeat": 0,
+          "ttft_seconds": 40.10006774996873,
+          "wall_seconds": 49.10257641703356,
+          "post_first_seconds": 9.00250866706483,
+          "post_first_tps": 4.443205941732413,
+          "first_layer_seconds": 34.67822499992326,
+          "first_handoff_receive_seconds": 4.767766999895684
+        },
+        {
+          "repeat": 1,
+          "ttft_seconds": 1.0320183329749852,
+          "wall_seconds": 9.059602749999613,
+          "post_first_seconds": 8.027584417024627,
+          "post_first_tps": 4.982818980410765,
+          "first_layer_seconds": 0.02305020799394697,
+          "first_handoff_receive_seconds": 0.5686151669360697
+        },
+        {
+          "repeat": 2,
+          "ttft_seconds": 1.2354627080494538,
+          "wall_seconds": 8.918177917017601,
+          "post_first_seconds": 7.682715208968148,
+          "post_first_tps": 5.206492615176911,
+          "first_layer_seconds": 0.07071720797102898,
+          "first_handoff_receive_seconds": 0.6697247080737725
+        }
+      ]
+    },
+    "1": {
+      "receipt_path": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/qwen32-phased-warm-baseline-v1/rank1.receipt.json",
+      "receipt_sha256": "3c6581f4479a4af63eb5899c096aefdedd9337b78fb834ce181a3d053379b4d5",
+      "same_source_and_tensor_hashes": true,
+      "same_41_tokens_all_3_requests": true,
+      "single_load_3_fresh_cache_requests": true,
+      "requests": [
+        {
+          "repeat": 0,
+          "ttft_seconds": 40.10916145900046,
+          "wall_seconds": 49.10887637500127,
+          "post_first_seconds": 8.999714916000812,
+          "post_first_tps": 4.444585231125824,
+          "first_layer_seconds": 0.032355583000025945,
+          "first_embedding_seconds": 4.0243072919984115,
+          "first_token_receive_wait_seconds": 35.209945958999015
+        },
+        {
+          "repeat": 1,
+          "ttft_seconds": 1.2052403330017114,
+          "wall_seconds": 9.231851875003485,
+          "post_first_seconds": 8.026611542001774,
+          "post_first_tps": 4.983422928926783,
+          "first_layer_seconds": 0.02542541699949652,
+          "first_embedding_seconds": 0.0007032089997665025,
+          "first_token_receive_wait_seconds": 0.34307245899981353
+        },
+        {
+          "repeat": 2,
+          "ttft_seconds": 1.3159740839982987,
+          "wall_seconds": 8.997697833998245,
+          "post_first_seconds": 7.6817237499999464,
+          "post_first_tps": 5.207164602866678,
+          "first_layer_seconds": 0.025289000001066597,
+          "first_embedding_seconds": 0.0007399999994959217,
+          "first_token_receive_wait_seconds": 0.45546291699793073
+        }
+      ]
+    }
+  },
+  "warm_baseline_rank0_cold_to_warm_ttft_speedups": [
+    38.855964539285665,
+    32.45752987014771
+  ]
+}

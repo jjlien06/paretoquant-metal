@@ -1,0 +1,18 @@
+{
+  "reason": "completed",
+  "nonce": "015f340cf5de462a9db67730b51898d3",
+  "actor_pid": 46487,
+  "child_pid": 46494,
+  "returncode": 0,
+  "cleanup": {
+    "child_reaped": true,
+    "group_gone": true,
+    "pid_reused": false,
+    "identity_unknown": false,
+    "pending_os_gpu_termination": false,
+    "gpu_driver_state": "not inspected; process/group receipt only"
+  },
+  "error_type": null,
+  "elapsed": 0.9833050000015646,
+  "forwarded_bytes_dropped": 0
+}

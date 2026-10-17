@@ -1,0 +1,24 @@
+{
+  "model": "mlx-community/Qwen3.8-27B-4bit",
+  "revision": "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+  "download_bytes": 16081490933,
+  "text_parameter_bytes": 15132802048,
+  "excluded_vision_parameter_bytes": 921460192,
+  "replicated_parameter_bytes_per_rank": 1430333440,
+  "split": [
+    24,
+    40
+  ],
+  "per_rank_parameter_bytes": [
+    6568759168,
+    9994376320
+  ],
+  "local_bridge_ipv4": "169.254.47.213",
+  "remote_bridge_ipv4": "169.254.214.155",
+  "link_gbps": 40,
+  "control_model": "mlx-community/Qwen3.5-0.8B-4bit",
+  "control_revision": "da28692b5f139cb0ec58a356b437486b7dac7462",
+  "control_native_token_ids_match_both_physical_hosts": true,
+  "model_fits_unified_pool": false,
+  "full27b_generation_verified": false
+}

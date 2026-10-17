@@ -1,0 +1,22 @@
+{
+  "delegation_id": "deleg_18d147f9",
+  "review": {
+    "passed": true,
+    "security_concerns": [],
+    "logic_errors": [],
+    "suggestions": [
+      "Add a regression test confirming that an exception from inputs.shape propagates by identity without patch writes or original-forward invocation.",
+      "Add nested absent/False and width-one calls to explicitly verify the documented behavior that bypass does not undo enclosing patches."
+    ],
+    "summary": "Read-only review of all four files found no blocking defects. Explicit CPU execution passed 20 tests and 61 subtests; Ruff lint and format checks passed. Recorded artifact hashes and the 26-command count match. Boolean/metadata/width admission, forwarding preservation, strict affine QMM contract, exception cleanup, partial-setup cleanup, and nested restoration are correct for the documented single-threaded isolated-process scope. Process-global patches remain explicitly unsafe for concurrent use. No files were modified, and no actual MLX/NumPy/model imports, GPU operations, or network access were performed. Approval is limited to source and CPU structural correctness\u2014not GPU, full-32B, numerical, distributed, or performance admission."
+  },
+  "parent_reverified_current_source_sha256": {
+    "verification_backend.py": "1d5b911b47f1c27ed462cf1ab5b0de09e74f2f3bf9a1344760b481d090ebdeaa",
+    "test_verification_backend.py": "1a3d291684b79dec142e1a8dc86bbbf7e79a72cd721196ff8764a678a28783e6",
+    "verification-backend-TDD.json": "d0aecb2c38641f7f5a236fe26cb1de3e5bca0a03fd905b2f4a6e64d5290c9279",
+    "verification_backend_README.md": "b3100a3dd97639c804c16b2c69026ff69f9e65682f3248e5d1d4098a529b8d18"
+  },
+  "scope": "Independent source/CPU structural review only. Separate actual M2 packed GPU80-case qualification is archived; genuine-checkpoint public-adapter and distributed32B gates remain uncompleted.",
+  "prior_review_attempt": "deleg_fbbf48bf failed with provider HTTP429 before verdict; no prior approval is claimed.",
+  "transcript": "/Users/jeremylien/.hermes/cache/delegation/live/deleg_18d147f9/task-0.log"
+}

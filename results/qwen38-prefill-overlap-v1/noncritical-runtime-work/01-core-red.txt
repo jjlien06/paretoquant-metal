@@ -1,0 +1,14 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___ test_optin_warning_is_sampled_and_externally_verified_without_relabeling ___
+
+    def test_optin_warning_is_sampled_and_externally_verified_without_relabeling():
+        options = S(pressure_policy="noncritical", require_normal_pressure=False)
+>       assert pg.policy_name(options) == "noncritical"
+               ^^^^^^^^^^^^^^
+E       AttributeError: module 'pressure_guard' has no attribute 'policy_name'
+
+test_pressure_noncritical.py:22: AttributeError
+=========================== short test summary info ============================
+FAILED test_pressure_noncritical.py::test_optin_warning_is_sampled_and_externally_verified_without_relabeling
+1 failed in 0.04s

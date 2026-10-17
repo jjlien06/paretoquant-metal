@@ -1,0 +1,51 @@
+{
+  "schema": "two-mac-agent-model-research-v1",
+  "date": "2026-10-16",
+  "research_status": "complete",
+  "deployment_status": "not implemented or qualified by this research",
+  "primary_allround_target": "Qwen/Qwen3.8-27B",
+  "configuration": "Known MLX4bit reference;6bit only a conditional memory/quality candidate; both Macs remain in scope",
+  "sparse_coding_challenger": "ornith-ai/Ornith-1.5-35B-A3B",
+  "higher_ceiling_research_challenger": "Qwen/Qwen3.8-Flash-Next",
+  "exact_quantized_coding_quality_verified_here": false,
+  "full_vision_two_host_generation_verified_here": false,
+  "no_steering_autonomy_verified_here": false,
+  "24h_soak_verified_here": false,
+  "new_model_downloads_or_services": false,
+  "parent_primary_checks": [
+    "Official27B andFlash tables parsed with headers",
+    "Quantized actual publisher-file byte metadata",
+    "ExternalNVMe actual USB10Gb/s link andExFAT capacity",
+    "MLX-VLM specific model ancestry andloader support checks",
+    "MLX-LM distributed cancellation source",
+    "Different Flash Coder releases explicitly reconciled"
+  ],
+  "subagent_dispositions": [
+    {
+      "task": "capability shortlist",
+      "status": "used with scaffold/precision qualifiers"
+    },
+    {
+      "task": "engine feasibility",
+      "status": "source-verified selected findings; Jab1718 text-only subnet is NOT DASLab pruned VLM; Unsloth minimum not global DASLab minimum; capacity-first80B recommendation superseded by combined-modality evidence"
+    },
+    {
+      "task": "visual computer-use",
+      "status": "core recommendation andmultimodal support gap independently checked"
+    }
+  ],
+  "json_artifacts_parsed": [
+    "hardware-discovery.json",
+    "model-file-metadata.json",
+    "official-selected-tables.json",
+    "per-variant-storage.json",
+    "autonomy-acceptance.json",
+    "sources.json",
+    "additional-model-metadata.json"
+  ],
+  "report_sha256": "36018495023346ce0b9b11a0ce699a5675dae1523480e0c770190e300c4c7ce5",
+  "citation_verification": {
+    "exit_code": 0,
+    "output": "info: stats: 106 prose sentence(s), 25 with declared provenance (24%) \u2014 25 cited, 0 marked [unverified] (a sentence may be both); 31 distinct source(s) cited, 31 in ledger (0 with evidence quotes)\ncitations OK\n"
+  }
+}

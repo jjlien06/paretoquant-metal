@@ -1,0 +1,26 @@
+{
+  "candidate_and_after_sources_identical": true,
+  "before_source_differences": [
+    "hidden_prefill_gate.py",
+    "supervise.py",
+    "test_cli_schedule.py",
+    "test_hidden_cache_inventory.py",
+    "test_hidden_cli.py"
+  ],
+  "all_runtime_arithmetic_files_identical": [
+    "mlx_backend.py",
+    "phased_decode.py",
+    "mtp_head.py",
+    "mtp_runtime.py",
+    "speculative.py",
+    "prefix_rollback.py",
+    "cache_state.py",
+    "slot_qmv.py",
+    "slot_qmv_body.metal",
+    "slot_qmv_header.metal",
+    "verification.py",
+    "verifier.py",
+    "rank_control.py"
+  ],
+  "scope": "Before control preceded last receipt-consistency and unsupported-scheduled-mode rejection guards; candidate and after control use exact same source bytes. All paired controls retain identical model arithmetic and options except candidate prefill flag."
+}

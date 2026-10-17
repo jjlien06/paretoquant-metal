@@ -1,0 +1,50 @@
+{
+  "schema": "paretoquant-qwen38-fast-profile-v1",
+  "status": "verified bounded warm-request pilot; opt-in, not universal speed guarantee",
+  "model": "mlx-community/Qwen3.8-27B-4bit",
+  "revision": "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+  "local_runtime_root": "/Users/jeremylien/Projects/paretoquant-metal/spikes/012-qwen38-scheduling",
+  "remote_runtime_root": "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/012-qwen38-20261016-v1",
+  "local_metadata": "/Users/jeremylien/Projects/paretoquant-metal/models/qwen3.8-27b-4bit-tokenizer-only",
+  "remote_checkpoint": "/Users/jeremylien/Projects/paretoquant-dual-host/checkpoints/qwen38-27b-10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+  "parameters": {
+    "split": [
+      36,
+      28
+    ],
+    "eval_group_size": 32,
+    "execution": "phased",
+    "compile_gdn": false,
+    "max_tokens": 96,
+    "repeats": 3,
+    "deadline": 240,
+    "reserve_bytes": 8589934592
+  },
+  "observed_peak_mlx_bytes": [
+    9354430698,
+    7603670726
+  ],
+  "runtime_sha256": {
+    "probe.py": "9fafafcde51b84f8b4e9ae53416ccc5948524ca84d7e1e35211426a11052ba72",
+    "stream_weights.py": "4eae4f55c042b6214449cae4e9ef77d825ebf3ad53b376fc18bd75f3a577948e",
+    "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+    "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "phased_decode.py": "341f5190a533dd332b84104335a373495280ec26abbb1c2f637735a0697d9628",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025",
+    "supervise.py": "f03484239c4124299ed084d43075959382986f026ac620a13208eacfafe3a2fc"
+  },
+  "evidence": "counting-comparison.json",
+  "serialized_text_weights_unchanged": true,
+  "matched_output_events": 70,
+  "all9_completions_identical": true,
+  "warm_decode_throughput_gain_pct": 12.82172474058909,
+  "warm_request_wall_reduction_pct": 10.146671865253786,
+  "cautions": [
+    "Recheck memory pressure and disk; larger local shard needs more MacBook headroom",
+    "Rediscover bridge addresses and routes; preserve pinned SSH identity",
+    "Warm loaded-model result; loading and first-use latency not improved",
+    "Other prompts can change greedy wording when layers move between GPU architectures",
+    "Use fallback split24/40 if local memory pressure returns; no unrelated app termination"
+  ]
+}

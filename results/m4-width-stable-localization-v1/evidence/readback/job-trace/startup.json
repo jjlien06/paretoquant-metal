@@ -1,0 +1,1 @@
+{"actor_pid": 15644, "nonce": "1f7f62aaa99646898fec2a4949e5e3a1", "deadline": 150, "argv": ["/Users/jeremylien/Projects/paretoquant-dual-host/.venv/bin/python", "-u", "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/010-optrace-1791262229943502000/operation_trace.py"]}

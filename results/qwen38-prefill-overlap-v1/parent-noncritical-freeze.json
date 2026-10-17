@@ -1,0 +1,34 @@
+{
+  "schema": "parent-noncritical-freeze-verification-v1",
+  "timestamp": 1792272046.048548,
+  "freeze_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/freeze-noncritical-1792272045472674000/integration-freeze.json",
+  "freeze_sha256": "161349a091468906a7c699c83a9224a388403e2d3542675770e8635184f812eb",
+  "pressure_policy": "noncritical",
+  "memory_acceptance_sha256": "a0341821118cfd83d45f0f8979152aaffae3f296b372f8dc29b58aacc35d409f",
+  "phase_counts": {
+    "batch-00": 14,
+    "batch-01": 14,
+    "batch-02": 14,
+    "batch-03": 14,
+    "batch-04": 14,
+    "batch-05": 14,
+    "pilot": 6
+  },
+  "source_counts": {
+    "batch-00": 79,
+    "batch-01": 79,
+    "batch-02": 79,
+    "batch-03": 79,
+    "batch-04": 79,
+    "batch-05": 79,
+    "pilot": 79
+  },
+  "all_source_bytes_rehashed": true,
+  "all_seven_plans_explicit_noncritical_without_normal_flag": true,
+  "original90_unchanged": true,
+  "parent_runtime_tests": "402passed13skipped4deselected2.25s",
+  "parent_harness_tests": "160passed31.85s",
+  "independent_combined_review": "pending deleg_75761f04",
+  "physical_execution_approved": false,
+  "performance_accepted": false
+}

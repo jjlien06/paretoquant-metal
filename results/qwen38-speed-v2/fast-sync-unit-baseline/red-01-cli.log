@@ -1,0 +1,15 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_fast_synch_cli_is_explicit_boolean_and_defaults_off ___________
+
+    def test_fast_synch_cli_is_explicit_boolean_and_defaults_off():
+        from supervise import validate_args
+    
+>       assert args_for().fast_synch is False
+               ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Namespace' object has no attribute 'fast_synch'
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:11: AttributeError
+=========================== short test summary info ============================
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_fast_synch_cli_is_explicit_boolean_and_defaults_off
+1 failed in 0.04s

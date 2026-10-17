@@ -1,0 +1,28 @@
+{
+  "schema": "overlap-launch-hook-repair-parent-v1",
+  "timestamp": 1792265599.2569542,
+  "fix": "single remote_source pinned weights; seven immutable code remote_root_by_phase",
+  "red": "Before fix real guarded_run rejects repaired profile with ValueError: Private profile key set differs.",
+  "green": "Focused regression1passed; full122passed16.03s; Rufflint and35fileformat passed. Regression exercises actual producer parser and pure ssh_argv.",
+  "reviewed_files_sha256": {
+    "benchmarks/qwen38_overlap/supervisor025.py": "fba88ddfba32e44ae378833cc7d39fdbefab02f9c778dfca75466282b9814814",
+    "benchmarks/qwen38_overlap/tests/test_supervisor025.py": "15c4b691b190eb7b78569a5590966ab38cd8fcbd6e8143eca9f8c9bbd7270a3b",
+    "benchmarks/qwen38_overlap/INTEGRATION025.md": "1e19b8281ab56e2e34c31293ec25723911e64c0f94769e556db06439c1475d8d"
+  },
+  "test_xml_sha256": "bf7da590c59eb0ad55aa843baa382d923865fa5cd156dab953196de4584b9523",
+  "freeze_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/freeze-launch-repair-1792265598869587000/integration-freeze.json",
+  "freeze_sha256": "3c3104004c9acb6505ad690d04dfca5f0ea70fecfdee82f98ca558f4538f04cd",
+  "phase_counts": {
+    "batch-00": 14,
+    "batch-01": 14,
+    "batch-02": 14,
+    "batch-03": 14,
+    "batch-04": 14,
+    "batch-05": 14,
+    "pilot": 6
+  },
+  "old90_source_hashes_unchanged": true,
+  "independent_launch_review": "pending deleg_5fd89e52",
+  "hardware_executed": false,
+  "performance_accepted": false
+}

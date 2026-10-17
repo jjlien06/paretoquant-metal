@@ -1,0 +1,5 @@
+{
+  "command": "../../.venv/bin/python -B ../../results/qwen38-prefill-overlap-v1/noncritical-runtime-work/run_guarded_cpu.py --all-cpu -q -k \"not test_hidden_cli_default_control_optin_both_ranks_and_chunk_bounds and not test_cli_exports_exclusively_and_preserves_raw and not test_cli_refuses_output_inside_trial and not test_standalone_cli_and_exact_registry\" --junitxml=../../results/qwen38-prefill-overlap-v1/noncritical-runtime-work/all-cpu-tests.xml",
+  "workdir": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill",
+  "exit_code": 0
+}

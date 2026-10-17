@@ -1,0 +1,52 @@
+...........................F............F                                [100%]
+=================================== FAILURES ===================================
+_ test_noncritical_verifier_retains_policy_identity_and_sampling_gates[bool_allowed] _
+
+mutation = 'bool_allowed'
+
+    @pytest.mark.parametrize("mutation", ["normal_schema", "missing_policy", "normal_policy", "missing_allowed", "forged_allowed", "bool_allowed", "missing_actor_policy", "normal_actor_policy", "legacy_flag", "gap", "replay", "critical", "missing_level", "bool_level", "malformed_level", "missing_required", "missing_samples"])
+    def test_noncritical_verifier_retains_policy_identity_and_sampling_gates(mutation):
+        receipt, binding, result = noncritical()
+        if mutation == "normal_schema": receipt["schema"] = pg.SCHEMA
+        elif mutation == "missing_policy": del receipt["policy"]
+        elif mutation == "normal_policy": receipt["policy"] = "normal"
+        elif mutation == "missing_allowed": del receipt["allowed_levels"]
+        elif mutation == "forged_allowed": receipt["allowed_levels"] = [1, 2, 4]
+        elif mutation == "bool_allowed": receipt["allowed_levels"] = [True, 2]
+        elif mutation == "missing_actor_policy": del result["pressure_policy"]
+        elif mutation == "normal_actor_policy": result["pressure_policy"] = "normal"
+        elif mutation == "legacy_flag": result["require_normal_pressure"] = True
+        elif mutation == "gap": receipt["samples"][-1]["elapsed_seconds"] += 2
+        elif mutation == "replay": receipt["binding"]["nonce"] = "b" * 32
+        elif mutation == "critical": receipt["samples"][1]["level"] = 4
+        elif mutation == "missing_level": del receipt["samples"][1]["level"]
+        elif mutation == "bool_level": receipt["samples"][1]["level"] = True
+        elif mutation == "malformed_level": receipt["samples"][1]["level"] = "2"
+        elif mutation == "missing_required": del receipt["required"]
+        elif mutation == "missing_samples": receipt["samples"] = []
+>       with pytest.raises(ValueError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:99: Failed
+_____ test_external_noncritical_policy_binds_startup_and_all_three_owners ______
+
+    def test_external_noncritical_policy_binds_startup_and_all_three_owners():
+        results, bindings = trial_receipts()
+        for result in results:
+            result.update(pressure_policy="noncritical", require_normal_pressure=False)
+            result["pressure"].update(schema=pg.NONCRITICAL_SCHEMA, policy="noncritical", allowed_levels=[1, 2])
+            result["pressure"]["samples"][1]["level"] = 2
+        for result, binding in zip(results, bindings):
+            status = trusted_status(binding, result)
+            status["startup"].update(pressure_policy="noncritical", require_normal_pressure=False)
+            kwargs = {k: binding[k] for k in ("nonce", "host_role", "actor_role")}
+>           assert pg.expected_pressure_binding(status, **kwargs, expected_policy="noncritical") == binding
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           TypeError: expected_pressure_binding() got an unexpected keyword argument 'expected_policy'
+
+test_pressure_noncritical.py:127: TypeError
+=========================== short test summary info ============================
+FAILED test_pressure_noncritical.py::test_noncritical_verifier_retains_policy_identity_and_sampling_gates[bool_allowed]
+FAILED test_pressure_noncritical.py::test_external_noncritical_policy_binds_startup_and_all_three_owners
+2 failed, 39 passed in 0.06s

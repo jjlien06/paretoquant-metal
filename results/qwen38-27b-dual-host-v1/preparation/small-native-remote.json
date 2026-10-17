@@ -1,0 +1,28 @@
+{
+  "verified_files": 12,
+  "prompt": "<|im_start|>user\nWhat is 2 plus 2? Answer in one short sentence.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "token_ids": [
+    17,
+    5346,
+    220,
+    17,
+    16327,
+    220,
+    19,
+    13,
+    248046
+  ],
+  "text": "2 plus 2 equals 4.",
+  "finish_reason": "stop",
+  "wall_seconds": 1.0395736250000027,
+  "peak_mlx_bytes": 530846476,
+  "device": {
+    "device_name": "Apple M4",
+    "max_recommended_working_set_size": 12713115648,
+    "memory_size": 17179869184,
+    "architecture": "applegpu_g16g",
+    "max_buffer_length": 9534832640,
+    "resource_limit": 499000
+  },
+  "token_parity_with_m2pro": true
+}

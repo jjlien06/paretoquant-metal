@@ -1,0 +1,133 @@
+.FF                                                                      [100%]
+=================================== FAILURES ===================================
+_____ test_supervisor_binds_option_and_forwards_only_to_both_ranks[False] ______
+
+tmp_path = PosixPath('/private/var/folders/mh/yfjz9x9j7dz16r_pzbdjp6tw0000gp/T/pytest-of-jeremylien/pytest-155/test_supervisor_binds_option_a0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a75efd0>
+enabled = False
+
+    @pytest.mark.parametrize("enabled", [False, True])
+    def test_supervisor_binds_option_and_forwards_only_to_both_ranks(tmp_path, monkeypatch, enabled):
+        """Stop at the launch seam; no rank code, SSH or MLX is executed."""
+        import supervise
+        from remote_actor import source_hashes
+        from test_schedule import evidence
+    
+        metadata = tmp_path / "metadata"
+        metadata.mkdir()
+        _, _, _, options = evidence()
+        names = options["expected_inventory"][0] | options["expected_inventory"][1]
+        (metadata / "config.json").write_text(
+            json.dumps(dict(model_type="qwen3_5", num_hidden_layers=2))
+        )
+        (metadata / "model.safetensors.index.json").write_text(
+            json.dumps({"weight_map": {n: "model.safetensors" for n in names}})
+        )
+        args = args_for()
+        args.local_metadata, args.output = str(metadata), str(tmp_path / "trial")
+        args.reserve_bytes, args.split, args.fast_synch = 0, [1, 1], enabled
+        args.local_address = args.remote_address = "127.0.0.1"
+        hashes, jobs = source_hashes(supervise.ROOT), {}
+    
+        def launch(self, name, argv, *, job=None):
+            jobs[name] = job
+            if name == "rank0":
+                raise RuntimeError("CPU-only stop before any probe execution")
+            return SimpleNamespace(poll=lambda: 0)
+    
+        def call(self, argv, **kwargs):
+            if "--inspect" in argv:
+                return {"source_sha256": hashes, "available_port": 12345}
+            if "--status" in argv:
+                return {"source_sha256": hashes, "ready": {"address": ["127.0.0.1", 12347]}}
+            return {}
+    
+        monkeypatch.setenv("MLX_METAL_FAST_SYNCH", "1")
+        monkeypatch.setattr(supervise.Controller, "launch", launch)
+        monkeypatch.setattr(supervise.Controller, "call", call)
+        monkeypatch.setattr(supervise, "free_port", lambda _: 12346)
+        monkeypatch.setattr(supervise, "listener_closed", lambda *_: True)
+        result = supervise.run(args, transport=lambda _, argv: argv)
+        assert result["status"] == "failed"
+        assert result["error_stage"] == "rank_execution"
+        assert set(jobs) == {"server", "rank0", "rank1"}
+        assert "MLX_METAL_FAST_SYNCH" not in jobs["server"]["env"]
+        for rank in (0, 1):
+            env = jobs[f"rank{rank}"]["env"]
+            assert env["MLX_RANK"] == str(rank)
+            assert env.get("MLX_METAL_FAST_SYNCH") == ("1" if enabled else None)
+            saved = json.loads((tmp_path / f"trial/rank{rank}.job.json").read_text())
+            assert saved["env"].get("MLX_METAL_FAST_SYNCH") == ("1" if enabled else None)
+        startup = json.loads((tmp_path / "trial/startup.json").read_text())
+        saved = json.loads((tmp_path / "trial/result.json").read_text())
+        assert startup["args"]["fast_synch"] is enabled
+>       assert startup["fast_synch"] is enabled
+               ^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'fast_synch'
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:79: KeyError
+______ test_supervisor_binds_option_and_forwards_only_to_both_ranks[True] ______
+
+tmp_path = PosixPath('/private/var/folders/mh/yfjz9x9j7dz16r_pzbdjp6tw0000gp/T/pytest-of-jeremylien/pytest-155/test_supervisor_binds_option_a1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a75fe10>
+enabled = True
+
+    @pytest.mark.parametrize("enabled", [False, True])
+    def test_supervisor_binds_option_and_forwards_only_to_both_ranks(tmp_path, monkeypatch, enabled):
+        """Stop at the launch seam; no rank code, SSH or MLX is executed."""
+        import supervise
+        from remote_actor import source_hashes
+        from test_schedule import evidence
+    
+        metadata = tmp_path / "metadata"
+        metadata.mkdir()
+        _, _, _, options = evidence()
+        names = options["expected_inventory"][0] | options["expected_inventory"][1]
+        (metadata / "config.json").write_text(
+            json.dumps(dict(model_type="qwen3_5", num_hidden_layers=2))
+        )
+        (metadata / "model.safetensors.index.json").write_text(
+            json.dumps({"weight_map": {n: "model.safetensors" for n in names}})
+        )
+        args = args_for()
+        args.local_metadata, args.output = str(metadata), str(tmp_path / "trial")
+        args.reserve_bytes, args.split, args.fast_synch = 0, [1, 1], enabled
+        args.local_address = args.remote_address = "127.0.0.1"
+        hashes, jobs = source_hashes(supervise.ROOT), {}
+    
+        def launch(self, name, argv, *, job=None):
+            jobs[name] = job
+            if name == "rank0":
+                raise RuntimeError("CPU-only stop before any probe execution")
+            return SimpleNamespace(poll=lambda: 0)
+    
+        def call(self, argv, **kwargs):
+            if "--inspect" in argv:
+                return {"source_sha256": hashes, "available_port": 12345}
+            if "--status" in argv:
+                return {"source_sha256": hashes, "ready": {"address": ["127.0.0.1", 12347]}}
+            return {}
+    
+        monkeypatch.setenv("MLX_METAL_FAST_SYNCH", "1")
+        monkeypatch.setattr(supervise.Controller, "launch", launch)
+        monkeypatch.setattr(supervise.Controller, "call", call)
+        monkeypatch.setattr(supervise, "free_port", lambda _: 12346)
+        monkeypatch.setattr(supervise, "listener_closed", lambda *_: True)
+        result = supervise.run(args, transport=lambda _, argv: argv)
+        assert result["status"] == "failed"
+        assert result["error_stage"] == "rank_execution"
+        assert set(jobs) == {"server", "rank0", "rank1"}
+        assert "MLX_METAL_FAST_SYNCH" not in jobs["server"]["env"]
+        for rank in (0, 1):
+            env = jobs[f"rank{rank}"]["env"]
+            assert env["MLX_RANK"] == str(rank)
+>           assert env.get("MLX_METAL_FAST_SYNCH") == ("1" if enabled else None)
+E           AssertionError: assert None == '1'
+E            +  where None = <built-in method get of dict object at 0x10a8b05c0>('MLX_METAL_FAST_SYNCH')
+E            +    where <built-in method get of dict object at 0x10a8b05c0> = {'PARETOQUANT_WEIGHT_TOKEN': '[REDACTED SYNTHETIC UNIT TOKEN]', 'MLX_RANK': '0'}.get
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:73: AssertionError
+=========================== short test summary info ============================
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_supervisor_binds_option_and_forwards_only_to_both_ranks[False]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_supervisor_binds_option_and_forwards_only_to_both_ranks[True]
+2 failed, 1 passed in 0.08s

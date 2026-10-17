@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/009-spec-integration-1791220012915010000/test_speculative_gpu.py", line 205, in <module>
+    report = run_cases()
+  File "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/009-spec-integration-1791220012915010000/test_speculative_gpu.py", line 120, in run_cases
+    kv_close = all(
+        np.allclose(
+    ...<6 lines>...
+        for left, right in zip(a.state, b.state)
+    )
+  File "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/009-spec-integration-1791220012915010000/test_speculative_gpu.py", line 122, in <genexpr>
+    np.array(left[..., :offset, :]),
+             ~~~~^^^^^^^^^^^^^^^^^
+TypeError: 'int' object is not subscriptable

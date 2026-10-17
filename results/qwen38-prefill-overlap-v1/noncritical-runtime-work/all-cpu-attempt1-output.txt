@@ -1,0 +1,44 @@
+CPU-only explicitly excluded MLX-dependent modules: test_batched_snapshot.py,test_cache_gate.py,test_config_immutability.py,test_dispatch_schedule.py,test_evidence_hardening.py,test_head.py,test_hidden_cache_inventory.py,test_hidden_control.py,test_hidden_gate.py,test_hidden_prefill.py,test_hidden_runtime.py,test_hidden_two_rank.py,test_phased_cpu.py,test_prefix_integration.py,test_prefix_rollback.py,test_two_rank_schedule.py,test_unbound_schedule.py,test_workload_cleanup.py,test_workload_evidence.py,test_workload_runtime.py,test_workload_timings.py
+....sss.sF.ss.ssss...................................................... [ 17%]
+.................s...................................................... [ 34%]
+........................................................................ [ 52%]
+........................................................................ [ 69%]
+........................................................................ [ 86%]
+.................................................s...s.                  [100%]
+=================================== FAILURES ===================================
+____________________ test_standalone_cli_and_exact_registry ____________________
+
+    def test_standalone_cli_and_exact_registry():
+        assert (ROOT / "supervise.py").is_file(), "standalone supervisor missing"
+>       result = subprocess.run(
+            [sys.executable, str(ROOT / "supervise.py"), "--help"], capture_output=True, text=True
+        )
+
+test_integration.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py:556: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py:1038: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py:1842: in _execute_child
+    sys.audit("subprocess.Popen", executable, args, cwd, env)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+event = 'subprocess.Popen'
+args = ('/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python', ['/Users/jeremylien/Projects/paretoquant-metal/.venv.../Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/supervise.py', '--help'], None, None)
+
+    def audit(event, args):
+        if event in {
+            "subprocess.Popen", "os.system", "os.posix_spawn", "os.fork", "os.forkpty",
+            "socket.__new__", "os.kill", "os.killpg",
+        }:
+            blocked.append(event)
+>           raise RuntimeError("No actual process/network/signals: " + event)
+E           RuntimeError: No actual process/network/signals: subprocess.Popen
+
+../../results/qwen38-prefill-overlap-v1/noncritical-runtime-work/run_guarded_cpu.py:19: RuntimeError
+=========================== short test summary info ============================
+FAILED test_integration.py::test_standalone_cli_and_exact_registry - RuntimeE...
+1 failed, 401 passed, 13 skipped, 3 deselected in 2.45s
+{"extra_guard": "forbid actual child process/network/signals", "blocked_attempts": ["subprocess.Popen"]}

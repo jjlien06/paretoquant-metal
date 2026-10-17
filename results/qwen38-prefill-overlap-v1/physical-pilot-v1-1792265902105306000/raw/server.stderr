@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/jeremylien/.hermes/cache/scratch/68b0509357c188838c5386a5f1be393d/sources/stream_server.py", line 100, in <module>
+    main()
+    ~~~~^^
+  File "/Users/jeremylien/.hermes/cache/scratch/68b0509357c188838c5386a5f1be393d/sources/stream_server.py", line 75, in main
+    send_records(connection, tensor_records(selected, provenance))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jeremylien/.hermes/cache/scratch/68b0509357c188838c5386a5f1be393d/sources/stream_weights.py", line 208, in send_records
+    sock.sendall(record["payload"])
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe

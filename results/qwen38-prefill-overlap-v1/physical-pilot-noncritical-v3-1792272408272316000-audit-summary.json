@@ -1,0 +1,92 @@
+{
+  "schema": "parent-noncritical-trial-audit-summary-v1",
+  "timestamp": 1792272718.2664871,
+  "trial_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000",
+  "trusted_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000-external-trust.json",
+  "trusted_sha256": "875aa7174d5f3654b3415d784f99354959a9ba0fcc605dfc8a1f267deeb3e40d",
+  "audit_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000-raw-audit.json",
+  "audit_sha256": "ecf43c3bb5bf62dbe15c0be341efb1a45067315c6531c704c91dbace51da4caf",
+  "report_path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-noncritical-v3-1792272408272316000-report.json",
+  "report_sha256": "877aaf45c8bec965c9f6712a282df66fa52b71787bcfdd31ca2ebae7ae64245d",
+  "rows_verified": 6,
+  "physical_evidence_accepted": true,
+  "complete_suite": false,
+  "coverage_complete": true,
+  "statistical_targets_met": false,
+  "pilot_budget": {
+    "passed": true,
+    "actor_log_cap_bytes": 67108864,
+    "retrieval_cap_bytes": 134217728,
+    "requests_observed": 6,
+    "requests_planned": 14,
+    "actors": [
+      {
+        "actual_log_bytes": [
+          1498305,
+          16469521
+        ],
+        "projected_log_bytes": [
+          3496045,
+          38428883
+        ],
+        "actual_retrieval_bytes": 19680926
+      },
+      {
+        "actual_log_bytes": [
+          1650115,
+          20800431
+        ],
+        "projected_log_bytes": [
+          3850269,
+          48534339
+        ],
+        "actual_retrieval_bytes": 24581539
+      },
+      {
+        "actual_log_bytes": [
+          203,
+          0
+        ],
+        "projected_log_bytes": [
+          474,
+          0
+        ],
+        "actual_retrieval_bytes": 14304
+      }
+    ]
+  },
+  "pressure_observations": [
+    {
+      "host_role": "local",
+      "actor_role": "rank0",
+      "observed_levels": [
+        1,
+        2
+      ],
+      "warning_samples": 34
+    },
+    {
+      "host_role": "remote",
+      "actor_role": "rank1",
+      "observed_levels": [
+        1,
+        2
+      ],
+      "warning_samples": 7
+    },
+    {
+      "host_role": "remote",
+      "actor_role": "server",
+      "observed_levels": [
+        1,
+        2
+      ],
+      "warning_samples": 3
+    }
+  ],
+  "explicit_listener_refusals": [
+    true,
+    true,
+    true
+  ]
+}

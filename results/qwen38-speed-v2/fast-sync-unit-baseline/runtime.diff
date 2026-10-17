@@ -1,0 +1,167 @@
+--- 012/probe.py
++++ 015/probe.py
+@@ -23,6 +23,14 @@
+ )
+ 
+ _PROCESS_STARTED = time.monotonic()
++
++
++def fast_synch_environment():
++    """Read only the actual process environment, before any MLX import."""
++    actual = os.environ.get("MLX_METAL_FAST_SYNCH")
++    if actual not in (None, "1"):
++        raise ValueError("MLX_METAL_FAST_SYNCH must be unset or exactly 1")
++    return {"fast_synch": actual == "1", "environment": {"MLX_METAL_FAST_SYNCH": actual}}
+ 
+ 
+ def phased_options(args):
+@@ -399,11 +407,13 @@
+         phased_options(args)
+     except ValueError as exc:
+         parser.error(str(exc))
++    synchronization = fast_synch_environment()
+     from remote_actor import source_hashes
+ 
+     phase_reporter(rank=int(os.environ.get("MLX_RANK", "0")))(
+         {
+             "phase": "process_start",
++            **synchronization,
+             "source_sha256": source_hashes(Path(__file__).parent),
+             "execution": (
+                 "explicit synchronized layers/CPU handoffs; stock quantized ops; "
+@@ -432,6 +442,7 @@
+         finally:
+             mx.synchronize()
+             mx.set_wired_limit(previous)
++    result.update(fast_synch_environment())
+     print(json.dumps(result, allow_nan=False))
+ 
+ 
+--- 012/remote_actor.py
++++ 015/remote_actor.py
+@@ -376,10 +376,16 @@
+         raise ValueError("Invalid argv")
+     if (
+         not isinstance(env, dict)
+-        or set(env) - {"PARETOQUANT_WEIGHT_TOKEN", "MLX_RANK"}
++        or set(env) - {"PARETOQUANT_WEIGHT_TOKEN", "MLX_RANK", "MLX_METAL_FAST_SYNCH"}
+         or any(not isinstance(x, str) for x in env.values())
+     ):
+         raise ValueError("Invalid environment")
++    if "MLX_METAL_FAST_SYNCH" in env and (
++        env["MLX_METAL_FAST_SYNCH"] != "1"
++        or job["entrypoint"] != "probe.py"
++        or "MLX_RANK" not in env
++    ):
++        raise ValueError("Fast synch requires value 1 and an explicit probe rank")
+     if "MLX_RANK" in env and (env["MLX_RANK"] not in {"0", "1"} or "hostfile" not in job):
+         raise ValueError("Require valid rank and owned hostfile")
+     token = env.get("PARETOQUANT_WEIGHT_TOKEN")
+--- 012/supervise.py
++++ 015/supervise.py
+@@ -41,10 +41,15 @@
+     p.add_argument("--eval-group-size", type=int, choices=(1, 2, 4, 8, 16, 32), default=1)
+     p.add_argument("--eval-group-schedule", type=int, nargs="*", choices=(1, 2, 4, 8, 16, 32))
+     p.add_argument("--ssh-host-key-alias")
++    p.add_argument(
++        "--fast-synch", action="store_true", help="Opt in to unsafe MLX fast GPU/CPU sync"
++    )
+     return p
+ 
+ 
+ def validate_args(args):
++    if type(args.fast_synch) is not bool:
++        raise ValueError("Require boolean fast_synch")
+     validate_eval_schedule(
+         args.eval_group_size,
+         getattr(args, "eval_group_schedule", None),
+@@ -182,6 +187,12 @@
+         raise ValueError("Admitted metadata changed during trial")
+ 
+ 
++def verify_fast_synch(record, fast_synch):
++    expected = {"MLX_METAL_FAST_SYNCH": "1" if fast_synch else None}
++    if record.get("fast_synch") is not fast_synch or record.get("environment") != expected:
++        raise ValueError("Rank fast synch environment differs from admitted execution")
++
++
+ def verify_trial(
+     ranks,
+     server,
+@@ -195,14 +206,17 @@
+     phases=None,
+     source_sha256=None,
+     execution="phased",
++    fast_synch=False,
+ ):
++    if type(fast_synch) is not bool:
++        raise ValueError("Require boolean admitted fast_synch")
+     if execution not in ("phased", "upstream"):
+         raise ValueError("Invalid admitted execution")
+     admitted_groups = validate_eval_schedule(
+         eval_group_size, eval_group_schedule, repeats, execution == "phased"
+     )
+     admitted_schedule = list(eval_group_schedule or [])
+-    if admitted_schedule or phases is not None:
++    if admitted_schedule or phases is not None or fast_synch:
+         if (
+             not isinstance(phases, dict)
+             or set(phases) != {0, 1}
+@@ -216,6 +230,7 @@
+             if len(starts) != 1 or starts[0].get("rank") != rank_id:
+                 raise ValueError("Missing actual rank process-start evidence")
+             verify_sources(source_sha256, starts[0])
++            verify_fast_synch(starts[0], fast_synch)
+             boundaries = []
+             for event in events:
+                 if "repeat" not in event:
+@@ -264,6 +279,7 @@
+     reference = None
+     prompt_reference, prompt_tokens_reference = None, None
+     for rank in ranks:
++        verify_fast_synch(rank, fast_synch)
+         actual_group = rank.get("eval_group_size", 1)
+         if type(actual_group) is not int or actual_group != eval_group_size:
+             raise ValueError("Evaluation group differs from admitted execution")
+@@ -366,6 +382,8 @@
+     if server.get("selected_bytes") != by_rank[0]["parameter_bytes"]:
+         raise ValueError("Server/receiver parameter bytes differ")
+     return {
++        "fast_synch": fast_synch,
++        "rank_environment_verified": True,
+         "tokens_agree": True,
+         "tensor_completeness": True,
+         "server_completed": True,
+@@ -566,6 +584,7 @@
+         "controller_pid": os.getpid(),
+         "nonce": trial_nonce,
+         "args": vars(args),
++        "fast_synch": args.fast_synch,
+         "status": "started",
+         "token": "[REDACTED]",
+     }
+@@ -590,6 +609,8 @@
+             job["env"]["PARETOQUANT_WEIGHT_TOKEN"] = token
+         if rank is not None:
+             job["env"]["MLX_RANK"] = str(rank)
++            if args.fast_synch:
++                job["env"]["MLX_METAL_FAST_SYNCH"] = "1"
+             job["hostfile"] = hostfile
+         jobs[name] = {"nonce": job["nonce"], "remote": remote}
+         write_json(output / "actors.json", jobs)
+@@ -784,6 +805,7 @@
+             },
+             source_sha256=hashes,
+             execution=args.execution,
++            fast_synch=args.fast_synch,
+         )
+         ports = [
+             (args.local_address, local_port),
+@@ -854,6 +876,7 @@
+         final.update(
+             {
+                 "nonce": trial_nonce,
++                "fast_synch": args.fast_synch,
+                 "error_type": error_type,
+                 "metadata_sha256": metadata_sha256,
+                 "owned_actor_cleanup_verified": owned_clean,

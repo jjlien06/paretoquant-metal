@@ -1,0 +1,147 @@
+................................................F...F................... [ 94%]
+....                                                                     [100%]
+=================================== FAILURES ===================================
+______ test_probe_process_start_reports_noncritical_without_normal_claim _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108803350>
+capsys = <_pytest.capture.CaptureFixture object at 0x1086cd950>
+
+    def test_probe_process_start_reports_noncritical_without_normal_claim(monkeypatch, capsys):
+        import sys
+    
+        import probe
+    
+        reports = []
+        monkeypatch.setattr(
+            sys, "argv", ["probe.py", "--mode", "collective", "--pressure-policy", "noncritical"]
+        )
+        monkeypatch.setattr(probe, "phase_reporter", lambda **kw: reports.append)
+        monkeypatch.setattr(probe, "collective", lambda: dict(mode="collective", mocked=True))
+        probe.main()
+        import json
+    
+        output = json.loads(capsys.readouterr().out)
+>       assert output["pressure_policy"] == "noncritical" and output["require_normal_pressure"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'pressure_policy'
+
+test_pressure_noncritical.py:424: KeyError
+______ test_controller_run_noncritical_binds_both_hosts_including_server _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108652970>
+tmp_path = PosixPath('/Users/jeremylien/.hermes/cache/scratch/pytest-of-jeremylien/pytest-272/test_controller_run_noncritica0')
+
+    def test_controller_run_noncritical_binds_both_hosts_including_server(monkeypatch, tmp_path):
+        import hashlib
+        import json
+        from pathlib import Path
+    
+        import remote_actor
+        import supervise
+    
+        args = supervise.parser().parse_args(noncritical_argv())
+        args.output = str(tmp_path / "controller")
+        meta = tmp_path / "metadata"
+        meta.mkdir()
+        for name, data in (
+            ("config.json", {"model_type": "qwen3_5", "num_hidden_layers": 64}),
+            ("model.safetensors.index.json", {"weight_map": {"embed": "ignored"}}),
+        ):
+            (meta / name).write_text(json.dumps(data))
+        args.local_metadata = str(meta)
+        args.target_config_sha256 = hashlib.sha256((meta / "config.json").read_bytes()).hexdigest()
+        args.target_index_sha256 = hashlib.sha256(
+            (meta / "model.safetensors.index.json").read_bytes()
+        ).hexdigest()
+        captures, verified = {}, []
+    
+        class FakeController:
+            def __init__(self, args):
+                self.output = Path(args.output)
+                self.output.mkdir()
+                self.started = supervise.time.monotonic()
+                self.children = {}
+                self.control_cleanup = {}
+    
+            def check(self):
+                pass
+    
+            def launch(self, name, command, job=None):
+                captures[name] = job
+                self.children[name] = S(poll=lambda: 0)
+    
+            def call(self, command, cleanup=False):
+                hashes = json.loads((self.output / "source_sha256.json").read_text())
+                if "--inspect" in command:
+                    return dict(source_sha256=hashes, available_port=23456)
+                if "--status" in command:
+                    nonce = command[command.index("--status") + 1]
+                    name = next(k for k, job in captures.items() if job["nonce"] == nonce)
+                    return status(name)
+                return dict(stop_requested=True)
+    
+            def close(self):
+                return {}
+    
+        def status(name):
+            job = captures[name]
+            role = dict(
+                server=("remote", "server"), rank1=("remote", "rank1"), rank0=("local", "rank0")
+            )[name]
+            assert job.get("host_role") == role[0] and job.get("actor_role") == role[1]
+            _, binding, result = healthy()
+            i = ("server", "rank1", "rank0").index(name)
+            binding.update(
+                host_role=role[0],
+                actor_role=role[1],
+                nonce=job["nonce"],
+                actor_pid=100 + i,
+                child_pid=200 + i,
+            )
+            result.update(binding)
+            result.update(pressure_policy="noncritical", require_normal_pressure=False)
+            result["pressure"].update(
+                schema=pg.NONCRITICAL_SCHEMA, policy="noncritical", allowed_levels=[1, 2]
+            )
+            result["pressure"]["samples"][1]["level"] = 2
+            result["pressure"]["binding"] = deepcopy(binding)
+            result["cleanup"] = dict(child_reaped=True, group_gone=True)
+            assert job["pressure_policy"] == "noncritical" and job["require_normal_pressure"] is False
+            out = trusted_status(binding, result)
+            out["startup"].update(pressure_policy="noncritical", require_normal_pressure=False)
+            out.update(
+                source_sha256=json.loads((Path(args.output) / "source_sha256.json").read_text()),
+                stdout=json.dumps(dict(rank=i)),
+                stderr="",
+                ready=dict(address=[args.remote_address, 23457]),
+            )
+            return out
+    
+        def verify(**kwargs):
+            from pressure_guard import verify_actor_pressures
+    
+            expected = kwargs.get("expected_pressure_bindings")
+            assert verify_actor_pressures(
+                kwargs["receipts"], expected_bindings=expected, expected_policy="noncritical"
+            )
+            verified.append(expected)
+            return {}
+    
+        monkeypatch.setattr(supervise, "Controller", FakeController)
+        monkeypatch.setattr(supervise, "expected_inventory", lambda *a: {0: [], 1: []})
+        monkeypatch.setattr(supervise, "free_port", lambda *a: 23455)
+        monkeypatch.setattr(supervise, "listener_closed", lambda *a: True)
+        monkeypatch.setattr(remote_actor, "job_status", lambda jobs, nonce, **kw: status("rank0"))
+        monkeypatch.setattr(supervise, "verify_completed_trial", verify)
+        result = supervise.run(args, transport=lambda args, extra: list(extra))
+        assert result["status"] == "success", result
+>       assert result["pressure_policy"] == "noncritical" and result["require_normal_pressure"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'pressure_policy'
+
+test_pressure_noncritical.py:674: KeyError
+=========================== short test summary info ============================
+FAILED test_pressure_noncritical.py::test_probe_process_start_reports_noncritical_without_normal_claim
+FAILED test_pressure_noncritical.py::test_controller_run_noncritical_binds_both_hosts_including_server
+2 failed, 74 passed in 2.26s
+{"extra_guard": "forbid actual child process/network/signals", "blocked_attempts": []}

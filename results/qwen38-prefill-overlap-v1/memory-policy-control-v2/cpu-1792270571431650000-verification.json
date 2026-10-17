@@ -1,0 +1,25 @@
+{
+  "schema": "wired-policy-control-v2-cpu-verification",
+  "passed": true,
+  "tests": 25,
+  "failures": 0,
+  "errors": 0,
+  "forbidden_attempts": [],
+  "hardware_executed": false,
+  "source_sha256": {
+    "fixture.py": "4ad969f59d3b4bf9e1b0ff8076490474dc6c91dd1e96ba9509bd49c6f5a2ced8",
+    "harness.py": "0a409ca1a8e77dd554447d565db4de40c91aa4045e425fa7fe24ba6ed678f88f",
+    "test_control.py": "e28d7a11f4ad2722a5d4c0428201646386b4bfbf592c1b7b128771ae9c033f6b",
+    "run_cpu_tests.py": "108bca9cf4bcadeed356dca2684f2b3288645a0bea168ef87f1029c14c36d1e8"
+  },
+  "guard_sha256": "3d9004b712c16495210a94e7b6a6d841e7d34c1450c9d111e7c0f4b121720f35",
+  "original_sha256": {
+    "remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+    "pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20"
+  },
+  "correction": "Use installed MLX single-argument advisory API, not unsupported relaxed=False. Structural64MiB retention and observed192MiB cap are not a strict allocator ceiling. Pressure1 watchdog unchanged.",
+  "red": "api-red.txt and parent terminal regression show the original TypeError; v1 preserved.",
+  "limits": "CPU only; physical review and bounded execution remain pending.",
+  "output_log": "cpu-1792270571431650000-output.txt",
+  "receipt": "cpu-1792270571431650000-verification.json"
+}

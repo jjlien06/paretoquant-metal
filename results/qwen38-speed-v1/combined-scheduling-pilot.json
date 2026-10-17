@@ -1,0 +1,73 @@
+{
+  "trials": [
+    {
+      "trial": "pilot-baseline-g4-24x40",
+      "requests": [
+        {
+          "wall_s": 14.318924916966353,
+          "first_s": 7.299651791981887,
+          "events": 49,
+          "decode_events_s": 6.8383149003204275,
+          "text": "Thunderbolt links provide high-bandwidth data transfer but do not create a unified physical address space, preventing direct peer-to-peer memory access. Consequently, the operating system treats them as separate devices, requiring explicit data copying rather than shared memory operations."
+        },
+        {
+          "wall_s": 8.053060750011355,
+          "first_s": 1.0783424580004066,
+          "events": 49,
+          "decode_events_s": 6.881998381924707,
+          "text": "Thunderbolt links provide high-bandwidth data transfer but do not create a unified physical address space, preventing direct peer-to-peer memory access. Consequently, the operating system treats them as separate devices, requiring explicit data copying rather than shared memory operations."
+        },
+        {
+          "wall_s": 8.001325083023403,
+          "first_s": 1.0743411660077982,
+          "events": 49,
+          "decode_events_s": 6.929422758163431,
+          "text": "Thunderbolt links provide high-bandwidth data transfer but do not create a unified physical address space, preventing direct peer-to-peer memory access. Consequently, the operating system treats them as separate devices, requiring explicit data copying rather than shared memory operations."
+        }
+      ],
+      "warm_wall_median_s": 8.027192916517379,
+      "warm_decode_median": 6.90571057004407,
+      "peak_GiB": [
+        6.21870245039463,
+        9.44905461370945
+      ]
+    },
+    {
+      "trial": "pilot-g32-36x28",
+      "requests": [
+        {
+          "wall_s": 13.379824000003282,
+          "first_s": 7.009131541999523,
+          "events": 50,
+          "decode_events_s": 7.69147158225152,
+          "text": "Thunderbolt links provide high-bandwidth data transfer but do not establish the low-latency, coherent memory interconnect required for unified address spaces. Consequently, each Mac retains its own independent operating system and memory management, preventing direct hardware-level GPU sharing."
+        },
+        {
+          "wall_s": 7.405463250004686,
+          "first_s": 1.0940441669663414,
+          "events": 50,
+          "decode_events_s": 7.763705650871022,
+          "text": "Thunderbolt links provide high-bandwidth data transfer but do not establish the low-latency, coherent memory interconnect required for unified address spaces. Consequently, each Mac retains its own independent operating system and memory management, preventing direct hardware-level GPU sharing."
+        },
+        {
+          "wall_s": 7.392489749996457,
+          "first_s": 1.099304666975513,
+          "events": 50,
+          "decode_events_s": 7.786200366520656,
+          "text": "Thunderbolt links provide high-bandwidth data transfer but do not establish the low-latency, coherent memory interconnect required for unified address spaces. Consequently, each Mac retains its own independent operating system and memory management, preventing direct hardware-level GPU sharing."
+        }
+      ],
+      "warm_wall_median_s": 7.398976500000572,
+      "warm_decode_median": 7.774953008695839,
+      "peak_GiB": [
+        8.714101564139128,
+        7.083120919764042
+      ]
+    }
+  ],
+  "decode_ratio": 1.1258729901630125,
+  "request_wall_ratio": 1.0849058537375755,
+  "same_serialized_text_tensors": true,
+  "identical_output_not_claimed": true,
+  "design": "separate-process exploratory pilot with different token counts; not randomized paired quality-matched benchmark"
+}

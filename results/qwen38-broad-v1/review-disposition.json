@@ -1,0 +1,20 @@
+{
+  "schema": "qwen38-broad-review-disposition-v1",
+  "review": "deleg_9ecc7bcd/task-1",
+  "review_passed": false,
+  "status": "Physical source/gate/output evidence retained; final certification pending stricter post-hoc action audit",
+  "issues": [
+    {
+      "issue": "Generation-level MTP action/output progression not fully bound",
+      "scope": "Evidence verifier can accept deliberately contradictory synthetic transcript; not a demonstrated omission in real hardware execution",
+      "action": "Implement independent strict action auditor, test negative mutations, audit every raw rank request and preserve new audit receipt separately"
+    },
+    {
+      "issue": "Per-request MTP verifier_mode not checked against admitted rank mode",
+      "scope": "Evidence consistency gap; top-level physical numerical gates and source binding remain present",
+      "action": "Require exact expected per-rank request mode in post-hoc audit and future candidate runtime"
+    }
+  ],
+  "immutable_evidence_policy": "Do not rewrite original result.json or source snapshots, and do not label the original verifier independently approved. Preserve original completion fields as historical outputs and report the stronger audit separately.",
+  "benchmark_driver_review_fixes": "benchmarks/qwen38/review-fixes.json"
+}

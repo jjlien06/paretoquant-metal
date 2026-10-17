@@ -1,0 +1,62 @@
+{
+  "archive_manifests": [
+    {
+      "manifest": "results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/actors/7a2e3ecb7ed58e36895a7f741f8aed74/source_sha256.json",
+      "checked": 77,
+      "mismatches": []
+    },
+    {
+      "manifest": "results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/source_sha256.json",
+      "checked": 77,
+      "mismatches": []
+    },
+    {
+      "manifest": "results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/actors/9f4512e062215f2b0501be7ec3b86d6c/source_sha256.json",
+      "checked": 77,
+      "mismatches": []
+    },
+    {
+      "manifest": "results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/source_sha256.json",
+      "checked": 77,
+      "mismatches": []
+    },
+    {
+      "manifest": "results/qwen38-prefill-overlap-v1/freeze-1792232305143360000/integration-freeze.json",
+      "checked": 539,
+      "mismatches": []
+    },
+    {
+      "manifest": "results/qwen38-prefill-overlap-v1/freeze-launch-repair-1792265598869587000/integration-freeze.json",
+      "checked": 539,
+      "mismatches": []
+    }
+  ],
+  "archive_hashes_checked": 1386,
+  "original_acceptance_sha256": "22b37500f5141e8a105b336751b32f27eb08c101b4ffcca81e0f206d078143af",
+  "unmodified_numerical_and_protocol_sources": {
+    "verification.py": true,
+    "width_gate.py": true,
+    "numerical_gate.py": true,
+    "hidden_prefill_gate.py": true,
+    "overlap_gate.py": true,
+    "phased_decode.py": true,
+    "rank_control.py": true,
+    "overlap_evidence.py": true,
+    "benchmark_schedule.json": true
+  },
+  "owned_terminate_ast_identical_to_archived_v2": true,
+  "baseline_file_count": 82,
+  "changed_since_baseline": [
+    "spikes/025-qwen38-overlapped-prefill/workload_evidence.py",
+    "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+    "spikes/025-qwen38-overlapped-prefill/stream_weights.py",
+    "spikes/025-qwen38-overlapped-prefill/remote_actor.py",
+    "spikes/025-qwen38-overlapped-prefill/pressure_guard.py",
+    "spikes/025-qwen38-overlapped-prefill/INTERFACE-OVERLAP.md",
+    "spikes/025-qwen38-overlapped-prefill/README.md",
+    "spikes/025-qwen38-overlapped-prefill/probe.py",
+    "spikes/025-qwen38-overlapped-prefill/overlap_prefill.py",
+    "spikes/025-qwen38-overlapped-prefill/mtp_runtime.py",
+    "spikes/025-qwen38-overlapped-prefill/supervise.py"
+  ]
+}

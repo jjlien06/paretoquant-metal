@@ -1,0 +1,86 @@
+{
+  "checkpoint": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-qwen38-preflight/small-control",
+  "atol": 1e-06,
+  "rtol": 1e-05,
+  "rows": [
+    {
+      "prompt": "Reply with the number four.",
+      "prompt_tokens": 18,
+      "token_ids": [
+        40,
+        1044,
+        1167,
+        16451
+      ],
+      "text": "I am Qwen",
+      "max_abs_logits": 0.0,
+      "compiler": {
+        "trace_count": 6,
+        "compiled_calls": 30,
+        "compiled_functions": 6
+      },
+      "active_mlx_bytes": 471124254,
+      "peak_mlx_bytes": 569477534,
+      "cache_mlx_bytes": 174706469
+    },
+    {
+      "prompt": "Say hi.",
+      "prompt_tokens": 15,
+      "token_ids": [
+        9419,
+        0,
+        2500,
+        628
+      ],
+      "text": "Hello! How can",
+      "max_abs_logits": 0.0,
+      "compiler": {
+        "trace_count": 6,
+        "compiled_calls": 54,
+        "compiled_functions": 6
+      },
+      "active_mlx_bytes": 471107870,
+      "peak_mlx_bytes": 569477534,
+      "cache_mlx_bytes": 267041749
+    },
+    {
+      "prompt": "Reply with the number four.",
+      "prompt_tokens": 18,
+      "token_ids": [
+        40,
+        1044,
+        1167,
+        16451
+      ],
+      "text": "I am Qwen",
+      "max_abs_logits": 0.0,
+      "compiler": {
+        "trace_count": 6,
+        "compiled_calls": 84,
+        "compiled_functions": 6
+      },
+      "active_mlx_bytes": 470796574,
+      "peak_mlx_bytes": 569592302,
+      "cache_mlx_bytes": 262179173
+    }
+  ],
+  "source_sha256": {
+    "probe.py": "2bb04d9fe4324691b5d077178b613161b1e72bf54f52e84aa70ecb5b1d42a453",
+    "stream_weights.py": "4eae4f55c042b6214449cae4e9ef77d825ebf3ad53b376fc18bd75f3a577948e",
+    "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+    "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "phased_decode.py": "3a638f5460013e816f20087cb87f325ec7f696b7018848fa02594449cde957e6",
+    "compiler.py": "7186a78056085f799a39cf9defa44e746d78f4be8592d9899c10971eaa51d711",
+    "remote_actor.py": "82266cdc310323aa9a7d8097a084dd06c30be14d38dd1f2cc8d85bb5a7c0abc5"
+  },
+  "device": {
+    "device_name": "Apple M2 Pro",
+    "max_recommended_working_set_size": 12713115648,
+    "memory_size": 17179869184,
+    "architecture": "applegpu_g14s",
+    "max_buffer_length": 9534832640,
+    "resource_limit": 499000
+  },
+  "memory_accounting": "MLX allocator bytes, not system residency"
+}

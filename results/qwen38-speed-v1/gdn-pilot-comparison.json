@@ -1,0 +1,162 @@
+{
+  "trials": [
+    {
+      "trial": "gdn-control-before-v1",
+      "requests": [
+        {
+          "wall_s": 11.368840666022152,
+          "first_s": 4.462143915996421,
+          "events": 49,
+          "decode_events_s": 6.949776678673662
+        },
+        {
+          "wall_s": 7.867370249994565,
+          "first_s": 1.0633210000232793,
+          "events": 49,
+          "decode_events_s": 7.054622657265829
+        },
+        {
+          "wall_s": 7.84636641695397,
+          "first_s": 1.0618931249482557,
+          "events": 49,
+          "decode_events_s": 7.074978105752056
+        }
+      ],
+      "warm_wall_median_s": 7.856868333474267,
+      "warm_decode_median": 7.064800381508942,
+      "rank_compilers": [
+        [
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null
+        ]
+      ],
+      "peak_GiB": [
+        6.21870245039463,
+        9.44905461370945
+      ]
+    },
+    {
+      "trial": "gdn-compiled-v1",
+      "requests": [
+        {
+          "wall_s": 11.22307379200356,
+          "first_s": 4.383217709022574,
+          "events": 49,
+          "decode_events_s": 7.01769151538644
+        },
+        {
+          "wall_s": 7.798778124968521,
+          "first_s": 1.060734041966498,
+          "events": 49,
+          "decode_events_s": 7.123728994455376
+        },
+        {
+          "wall_s": 8.025357167003676,
+          "first_s": 1.0616833749809302,
+          "events": 49,
+          "decode_events_s": 6.892913343382989
+        }
+      ],
+      "warm_wall_median_s": 7.912067645986099,
+      "warm_decode_median": 7.008321168919182,
+      "rank_compilers": [
+        [
+          {
+            "trace_count": 6,
+            "compiled_calls": 294,
+            "compiled_functions": 6
+          },
+          {
+            "trace_count": 6,
+            "compiled_calls": 588,
+            "compiled_functions": 6
+          },
+          {
+            "trace_count": 6,
+            "compiled_calls": 882,
+            "compiled_functions": 6
+          }
+        ],
+        [
+          {
+            "trace_count": 10,
+            "compiled_calls": 490,
+            "compiled_functions": 10
+          },
+          {
+            "trace_count": 10,
+            "compiled_calls": 980,
+            "compiled_functions": 10
+          },
+          {
+            "trace_count": 10,
+            "compiled_calls": 1470,
+            "compiled_functions": 10
+          }
+        ]
+      ],
+      "peak_GiB": [
+        6.218702517449856,
+        9.44905461370945
+      ]
+    },
+    {
+      "trial": "gdn-control-after-v1",
+      "requests": [
+        {
+          "wall_s": 10.309497333946638,
+          "first_s": 3.466596291982569,
+          "events": 49,
+          "decode_events_s": 7.014568778013908
+        },
+        {
+          "wall_s": 8.091492333973292,
+          "first_s": 1.064865791995544,
+          "events": 49,
+          "decode_events_s": 6.831158552862223
+        },
+        {
+          "wall_s": 8.048710959032178,
+          "first_s": 1.0667625420028344,
+          "events": 49,
+          "decode_events_s": 6.874871759711866
+        }
+      ],
+      "warm_wall_median_s": 8.070101646502735,
+      "warm_decode_median": 6.853015156287045,
+      "rank_compilers": [
+        [
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null
+        ]
+      ],
+      "peak_GiB": [
+        6.21870245039463,
+        9.44905461370945
+      ]
+    }
+  ],
+  "native_warm_n": 4,
+  "compiled_warm_n": 2,
+  "native_warm_wall_median_s": 7.958040604513371,
+  "compiled_warm_wall_median_s": 7.912067645986099,
+  "wall_ratio_native_over_compiled": 1.0058104860302346,
+  "native_decode_median": 6.964747208488847,
+  "compiled_decode_median": 7.008321168919182,
+  "decode_ratio_compiled_over_native": 1.006256359222518,
+  "tokens_and_weights_unchanged": true,
+  "verdict": "no useful observed full-model compilation speedup; do not enable by default",
+  "design": "separate process bracketing pilot, not randomized paired significance"
+}

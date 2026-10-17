@@ -1,0 +1,32 @@
+test_exact_modes_and_bounded_configuration (__main__.Bounds) ... ok
+test_only_physical_runtime_can_import_mlx_or_subprocess (__main__.CpuBoundary) ... ok
+test_cleanup_sync_exception_does_not_skip_restoration (__main__.ErrorRestoration) ... ok
+test_deadline_stops_before_next_allocation_and_restores (__main__.ErrorRestoration) ... ok
+test_evaluation_failure_restores_and_frees (__main__.ErrorRestoration) ... ok
+test_oversize_active_counter_fails_and_restores (__main__.ErrorRestoration) ... ok
+test_pressure_two_during_run_restores_policy (__main__.ErrorRestoration) ... ok
+test_roundtrip_error_restores_previous_nonzero_limit (__main__.ErrorRestoration) ... ok
+test_sampler_is_required_and_abnormal_before_prevents_setters (__main__.ErrorRestoration) ... ok
+test_admission_binds_external_originals_hashes_nonce_role_and_deadline (__main__.Harness) ... ok
+test_collection_uses_original_pressure_verifier_and_independent_records (__main__.Harness) ... ok
+test_execute_loads_byte_exact_originals_and_restores_import_scope_on_error (__main__.Harness) ... ok
+test_owned_call_scopes_sources_and_always_requires_pressure (__main__.Harness) ... ok
+test_parent_cli_requires_external_admission_before_executor (__main__.Harness) ... ok
+test_stage_exact_three_sources_against_external_expected_hashes (__main__.Harness) ... ok
+test_adapter_enforces_strict_allocator_and_reports_device (__main__.PhysicalBoundary) ... ok
+test_entrypoint_uses_fixed_payload_and_injected_runtime_only (__main__.PhysicalBoundary) ... ok
+test_physical_cli_has_no_payload_size_escape (__main__.PhysicalBoundary) ... usage: test_control.py [-h] --mode {recommended,unwired} --nonce NONCE
+                       --host-role {local,remote}
+test_control.py: error: unrecognized arguments: --total-bytes 16
+ok
+test_bool_policy_readback_is_not_integer_zero (__main__.Runs) ... ok
+test_cleanup_residual_active_memory_fails_closed (__main__.Runs) ... ok
+test_retained_payload_is_revalidated_after_last_allocation (__main__.Runs) ... ok
+test_small_roundtrip_records_actual_policy_and_restores (__main__.Runs) ... ok
+test_strict_sampler_requires_pressure_one_and_vm_counters (__main__.Samples) ... ok
+test_vm_field_population_is_bounded_before_retention (__main__.Samples) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.099s
+
+OK

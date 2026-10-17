@@ -1,0 +1,8 @@
+{
+  "scope": "parent crosscheck against retained metadata and authentic published successful physical-run tensor inventory; not new independent checkpoint extraction",
+  "config_sha256": "c027829d800805358d67ac87819a3754fd8240be973f7147840651310fd30ae3",
+  "metadata_bytes_match": true,
+  "nine_raw_hashes_match_published_rank1": true,
+  "published_checkpoint_revision": "2938092373e5f97b95538884112085364c2da315",
+  "independent_review_limitation_preserved": true
+}

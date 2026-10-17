@@ -1,0 +1,53 @@
+{
+  "listener_closed": true,
+  "server_actor": {
+    "reason": "completed",
+    "nonce": "533b37232cb64124bd2e8d563033e1d6",
+    "actor_pid": 15246,
+    "child_pid": 15247,
+    "returncode": 0,
+    "cleanup": {
+      "child_reaped": true,
+      "group_gone": true,
+      "pid_reused": false,
+      "identity_unknown": false,
+      "pending_os_gpu_termination": false,
+      "gpu_driver_state": "not inspected; process/group receipt only"
+    },
+    "error_type": null,
+    "elapsed": 1.0175948749965755,
+    "forwarded_bytes_dropped": 0
+  },
+  "client_actor": {
+    "reason": "completed",
+    "nonce": "015f340cf5de462a9db67730b51898d3",
+    "actor_pid": 46487,
+    "child_pid": 46494,
+    "returncode": 0,
+    "cleanup": {
+      "child_reaped": true,
+      "group_gone": true,
+      "pid_reused": false,
+      "identity_unknown": false,
+      "pending_os_gpu_termination": false,
+      "gpu_driver_state": "not inspected; process/group receipt only"
+    },
+    "error_type": null,
+    "elapsed": 0.9833050000015646,
+    "forwarded_bytes_dropped": 0
+  },
+  "source_hashes": {
+    "tcp_smoke.py": "d9d15b7321f6afeed3fac3eea3b77e87af988e87327cc03469f5aa698327ee33",
+    "remote_actor.py": "907d6c759a78be53b5cae220d707d2d323b2aa98dbc5421067bcc46aff8ad025"
+  },
+  "fetched_sha256": {
+    "server.json": "c1e509bcf5455b67a2df1d7a6690f9571199da2b8fee21b0e19ea7e5a06e1a62",
+    "job-server/startup.json": "10948e37d05721b5af955efe1d39b073094851458c76365be5259409abda80ba",
+    "job-server/pids.json": "2c8f1f8cb3a26f6d3721c7b2cc3d66995640d178e953fac8d106fd91ce33cf33",
+    "job-server/result.json": "c8abc9df84fd3b870be753beb146781aafffe44f7b88d6174fc3d13fc6b77425",
+    "job-server/stdout": "c26131f0bee3a8acccb480e8c15477491e071ff3390df7f95dc842f3faf5e8e6",
+    "job-server/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "route": "   route to: 169.254.169.190\ndestination: 169.254.169.190\n  interface: bridge0\n      flags: <UP,HOST,DONE,LLINFO,STATIC,b016,WASCLONED>\n recvpipe  sendpipe  ssthresh  rtt,msec    rttvar  hopcount      mtu     expire\n       0         0         0         0         0         0      1500     -4384 \n",
+  "all_byte_counts_and_untimed_digests_match": true
+}

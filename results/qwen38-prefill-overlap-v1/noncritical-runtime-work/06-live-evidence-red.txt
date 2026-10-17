@@ -1,0 +1,372 @@
+.....................................................FFFFFFFFFFFFFFFF.   [100%]
+=================================== FAILURES ===================================
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[missing_policy-rank] _
+
+record = 'rank', mutation = 'missing_policy'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[missing_policy-verification] _
+
+record = 'verification', mutation = 'missing_policy'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[missing_policy-process_start] _
+
+record = 'process_start', mutation = 'missing_policy'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[missing_policy-numerical_admission_done] _
+
+record = 'numerical_admission_done', mutation = 'missing_policy'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[wrong_policy-rank] _
+
+record = 'rank', mutation = 'wrong_policy'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[wrong_policy-verification] _
+
+record = 'verification', mutation = 'wrong_policy'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[wrong_policy-process_start] _
+
+record = 'process_start', mutation = 'wrong_policy'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[wrong_policy-numerical_admission_done] _
+
+record = 'numerical_admission_done', mutation = 'wrong_policy'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_true-rank] _
+
+record = 'rank', mutation = 'legacy_true'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_true-verification] _
+
+record = 'verification', mutation = 'legacy_true'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_true-process_start] _
+
+record = 'process_start', mutation = 'legacy_true'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_true-numerical_admission_done] _
+
+record = 'numerical_admission_done', mutation = 'legacy_true'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_missing-rank] _
+
+record = 'rank', mutation = 'legacy_missing'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_missing-verification] _
+
+record = 'verification', mutation = 'legacy_missing'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_missing-process_start] _
+
+record = 'process_start', mutation = 'legacy_missing'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+_ test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_missing-numerical_admission_done] _
+
+record = 'numerical_admission_done', mutation = 'legacy_missing'
+
+    @pytest.mark.parametrize("record", ["rank", "verification", "process_start", "numerical_admission_done"])
+    @pytest.mark.parametrize("mutation", ["missing_policy", "wrong_policy", "legacy_true", "legacy_missing"])
+    def test_live_probe_verifier_rejects_unbound_or_conflicting_policy(record, mutation):
+        import supervise
+        ranks, phases, args = numerical_envelopes()
+        assert supervise.verify_mtp_evidence(ranks, phases, args)["strict_numerical_admission"]
+        for rid in (0, 1):
+            bad_ranks, bad_phases = deepcopy(ranks), deepcopy(phases)
+            target = bad_ranks[rid] if record == "rank" else bad_ranks[rid]["verification"] if record == "verification" else next(e for e in bad_phases[rid] if e["phase"] == record)
+            if mutation == "missing_policy": del target["pressure_policy"]
+            elif mutation == "wrong_policy": target["pressure_policy"] = "normal"
+            elif mutation == "legacy_true": target["require_normal_pressure"] = True
+            else: del target["require_normal_pressure"]
+>           with pytest.raises(ValueError, match="pressure"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+test_pressure_noncritical.py:484: Failed
+=========================== short test summary info ============================
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[missing_policy-rank]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[missing_policy-verification]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[missing_policy-process_start]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[missing_policy-numerical_admission_done]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[wrong_policy-rank]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[wrong_policy-verification]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[wrong_policy-process_start]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[wrong_policy-numerical_admission_done]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_true-rank]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_true-verification]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_true-process_start]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_true-numerical_admission_done]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_missing-rank]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_missing-verification]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_missing-process_start]
+FAILED test_pressure_noncritical.py::test_live_probe_verifier_rejects_unbound_or_conflicting_policy[legacy_missing-numerical_admission_done]
+16 failed, 54 passed in 0.26s

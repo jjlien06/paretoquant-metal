@@ -1,0 +1,348 @@
+{
+  "candidate": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill",
+  "files_created_in_repository": [
+    "results/qwen38-prefill-overlap-v1/pressure-independent-review-v2.json"
+  ],
+  "generated_at": "2026-10-17T06:22:58.360158-04:00",
+  "gpu_execution_approved": false,
+  "hardware_executed": false,
+  "implementation_receipt": "results/qwen38-prefill-overlap-v1/pressure-fix-implementation.json",
+  "implementation_receipt_sha256": "bdab864e53d1cac7de8f2e1cbef23b6ba7cdf4f34140ca841c0bed6d01afe5da",
+  "limits": [
+    "CPU/source approval only, for this exact receipt and 77-source manifest. No approval of 026 or unrelated dirty work.",
+    "No actual sysctl, process launch, SSH/network, signal delivery, model load, MLX import or GPU operation was performed by the tests; external boundaries were mocked and guarded.",
+    "Normal-pressure evidence is sampled only: it does not certify pressure between samples.",
+    "The trusted boundary is externally admitted job descriptors plus separately retrieved source-bound startup/PID/result records. This is not protection against a compromised actor rewriting all trusted evidence.",
+    "Parent owns real bootstrap/stop/deadline behavior, both-host deployment/health and physical numerical gates. Those remain unexecuted and required.",
+    "Raw-adapter/benchmark integration is outside this review and remains subject to its separate sibling review.",
+    "No TTFT/wall improvement, 30%/15% target, long-case/suite acceptance, pilot budget or GPU performance acceptance is claimed."
+  ],
+  "logic_errors": [],
+  "passed": true,
+  "production_or_existing_result_files_modified": [],
+  "publication_mode": "Exclusive O_CREAT|O_EXCL; refuse overwrite of an existing review result.",
+  "schema": "qwen38-pressure-independent-review-v2",
+  "security_concerns": [],
+  "source_sha256": {
+    "benchmark_schedule.json": "6d052c75f9ee86c8d2182d237b80698f8a39608ae1524458aa048a8df728c857",
+    "cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b",
+    "distributed_control.py": "fcef87a378bf54f61e2357c01c9f145e4f1c1ec19a55481da64dbfa029f8542e",
+    "hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+    "mlx_backend.py": "8a7adc03903485a733fa12efdfa065b639eeed480ad7b3ed558ef2bf70b8d639",
+    "mtp_audit.py": "6b96425edfa476114a00083cf52521c42e82ae029c41816325ad79b6b1c6c090",
+    "mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+    "mtp_runtime.py": "20c9d920ee9c2096007082fc029fb5a349cecc08d6587ec6de923c95dc07830d",
+    "numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+    "overlap_evidence.py": "5c473a5a1639b678bc2909cb5cffb9eb7367ef317fd77158154562d5cb9c5a4f",
+    "overlap_gate.py": "e2294ed131308c265e1eefd633fece9ab446b1379a4a73fb46f5b33d79e2fc00",
+    "overlap_prefill.py": "d00a29b3cd1790a4c16c77ae2a448aa68b33f1af71618900d0d3b5d50dfec1d6",
+    "phased_decode.py": "7e586790b59ce3d1613452b378d7ce3309c5c54e169226d48b3aea1f117ed2aa",
+    "prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+    "pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20",
+    "probe.py": "4b21c1faead37933d9ebd559c19015e31c707b68dabfe66ba77a8743f2f6c702",
+    "rank_control.py": "cfaea89fefecea5e95ba9005fafacda5adae7b1a9cc7f9ee8ab1c4f719f04f80",
+    "remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+    "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+    "sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+    "slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+    "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+    "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+    "speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+    "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+    "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+    "supervise.py": "485ae42d2f5d9ff7a57359d1ff20f8a8b4283005cb1590881402204b6a6eef3c",
+    "test_batched_snapshot.py": "be1002feb6fd661085b73bf4ef0f31bbb6bba2312231314cd90a1959bfb12b66",
+    "test_cache_gate.py": "5ce8116c15a22f44a191b04b1fcf69b523f690ceaf7ebd88589340f52a7a6c42",
+    "test_cli_schedule.py": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c",
+    "test_config_immutability.py": "30e281bae3adc0c2c493cb88600d69630b8f6103e0c8065257e81defba854d69",
+    "test_controller_snapshot.py": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab",
+    "test_dispatch_schedule.py": "05ca31b22aa6af70538cb12dd145db30903fcad7ca162c8d901935bc005e6b9c",
+    "test_evidence_hardening.py": "f495a0ec7fae35b9172749fc28c2aa77931b6bf8bd2109a23acbc939ffa88a2a",
+    "test_head.py": "bf976833baa25e5da6ddff8bb59338ab046950864cf3a4f2ae30b1ea0e651485",
+    "test_hidden_cache_inventory.py": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493",
+    "test_hidden_cli.py": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f",
+    "test_hidden_control.py": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232",
+    "test_hidden_evidence.py": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137",
+    "test_hidden_gate.py": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a",
+    "test_hidden_prefill.py": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50",
+    "test_hidden_runtime.py": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3",
+    "test_hidden_two_rank.py": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5",
+    "test_integration.py": "c77b6ba8fbe9334d584b72e1ff0ea61fe098351d585f1efb33b7e0ec66df255d",
+    "test_mtp_audit.py": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3",
+    "test_overlap_backend.py": "8c49ec58f77a6989da71f6b13998d4f19e26595cec5bba78974872d2d485705d",
+    "test_overlap_bounds.py": "ed90f36077e830e3a9819e4e25b96e3dfe66b1ccadf124fab225be4c6cb83fe4",
+    "test_overlap_cli.py": "e2fe29aa0725442ae63668d5490690f6d9d0478669c3e859fb3c63cf4387a403",
+    "test_overlap_evidence.py": "a2e79c68c1b82d7f7cafd72e20d8ccc8ea320954138f2b9dee7548499083fb6d",
+    "test_overlap_failure.py": "e8993292ddfa1da7d486f55395b5e643faa751533370f4f9177257cd57e3fa96",
+    "test_overlap_gate.py": "9b74b2ea65221e4012336ead2b61e100418183ff0a000f11bd7014d53ae13a94",
+    "test_overlap_protocol.py": "cb4dad711613aaaf42df3fdc7561fe0da2a0f17eebc0c1c4d35893aa6db3e0c6",
+    "test_overlap_schedule.py": "358002dedf3e79ed45c7b39e8687623a37968071731527ca73fa0444d3f6759a",
+    "test_overlap_wiring.py": "87f456be57084f69073a65e53eb8866b8feec9dbcb60a4db951af6d1e02a5271",
+    "test_phased_cpu.py": "7b65176cc4751ba82ff92ec2ae257a22d501344dd0e901c1d245cc42dddf910e",
+    "test_prefix_integration.py": "377d62e2ed2ff9f09196afd32a1aa788be54b39550060dab0ef042254c8532d5",
+    "test_prefix_rollback.py": "d0f6f040542e4a4ed2bed704bf8af9b5cc15f63d6c4aadd7885b61e8283724d7",
+    "test_pressure_guard.py": "f182ba69d412b8dd7fdb97890aa77f74bad2d327dc855215025fe0e833fcccd5",
+    "test_pressure_v2.py": "50bb735f9ff927581200e5621126ad633297ed2456d8bdb9931a0812a7c3dbcf",
+    "test_speculative.py": "9cd3a4b0b956284e21801ac6805f93e5bd1fdc76b4f60d9cfd7bde1d77fdea17",
+    "test_two_rank_schedule.py": "b67f9a1025738e22b7da3a0f7eb0f9041aa83cc81c03dbb0a063ad6ad4f7a708",
+    "test_unbound_schedule.py": "f446a36ba5fe48f1cc88f1558c5ad4647af9c286e7bc004bd0cc7b85ae866f5a",
+    "test_workload_caps.py": "117e18df911429b210bc96ed998dcbcac6e23304223758ebe3c4b9b9467fa503",
+    "test_workload_cleanup.py": "e478df18900b76dc5dc949d8808db6e6f0cea2e977468d5538fc124b7300f9de",
+    "test_workload_evidence.py": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6",
+    "test_workload_runtime.py": "5a9e95b2e207bdf11410218771959224b683ed6bb4c306696018c3f38c24e267",
+    "test_workload_schedule.py": "ae27e162390368b19d943f0c6f974722481d59a40b9aa18d8e00d34b0470f2d4",
+    "test_workload_snapshot.py": "e8d26f9e3841f320b118a4ec8b148768cb60d72027b1e626fe5234bd71bc120f",
+    "test_workload_timings.py": "761027cf05c067526ad2267a1a81bcd4f36774bdabc5e802abdec1cf7a00e748",
+    "verification.py": "05f2ce291252c9fd276fb029ebef5f5939177b46262dfe5569744326a15981e8",
+    "verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+    "width_gate.py": "81528ae022bed8c910b9d1dcf045990cf9a8968a3978e106becdda14a4ee403c",
+    "workload_evidence.py": "28f0e79a81bec5b418cef501432efc190c1e531bc632bf7c4c5940ba95324f11",
+    "workload_runtime.py": "6d4b8efe2e12ca616069370f3bc31cfefd086f7966c813cd6a4e951b30178446",
+    "workload_schedule.py": "938b74339de27496e3187150e624937338013d57cc650cf10867c3685511113e"
+  },
+  "summary": "PASS for the exact 025 pressure-v2 CPU/source repair only. Original acceptance holes no longer reproduce; no GPU, deployment, physical pressure or performance approval.",
+  "verification": {
+    "actual_mocked_actor_controller_outcomes": {
+      "controller_healthy": {
+        "job_roles": {
+          "rank0": [
+            "local",
+            "rank0"
+          ],
+          "rank1": [
+            "remote",
+            "rank1"
+          ],
+          "server": [
+            "remote",
+            "server"
+          ]
+        },
+        "physical_verifier_reached": true,
+        "status": "success"
+      },
+      "controller_replay_job": {
+        "job_roles": {
+          "rank0": [
+            "local",
+            "rank0"
+          ],
+          "rank1": [
+            "remote",
+            "rank1"
+          ],
+          "server": [
+            "remote",
+            "server"
+          ]
+        },
+        "physical_verifier_reached": false,
+        "status": "failed"
+      },
+      "controller_result_self_expected": {
+        "job_roles": {
+          "rank0": [
+            "local",
+            "rank0"
+          ],
+          "rank1": [
+            "remote",
+            "rank1"
+          ],
+          "server": [
+            "remote",
+            "server"
+          ]
+        },
+        "physical_verifier_reached": false,
+        "status": "failed"
+      },
+      "controller_startup_flag_missing": {
+        "job_roles": {
+          "rank0": [
+            "local",
+            "rank0"
+          ],
+          "rank1": [
+            "remote",
+            "rank1"
+          ],
+          "server": [
+            "remote",
+            "server"
+          ]
+        },
+        "physical_verifier_reached": false,
+        "status": "failed"
+      },
+      "delay_before_popen_healthy": {
+        "cleanup_pids": [
+          55555
+        ],
+        "gate_released": true,
+        "reason": "completed",
+        "spawn_count": 1
+      },
+      "expired_before_popen": {
+        "cleanup_pids": [],
+        "gate_released": false,
+        "reason": "deadline",
+        "spawn_count": 0
+      },
+      "popen_start_gate_delay": {
+        "cleanup_pids": [
+          55555
+        ],
+        "gate_released": false,
+        "reason": "deadline",
+        "spawn_count": 1
+      },
+      "stop_after_popen": {
+        "cleanup_pids": [
+          55555
+        ],
+        "gate_released": false,
+        "reason": "signal",
+        "spawn_count": 1
+      },
+      "stop_before_popen": {
+        "cleanup_pids": [],
+        "gate_released": false,
+        "reason": "signal",
+        "spawn_count": 0
+      }
+    },
+    "all_implementation_artifact_hashes_match": true,
+    "all_registered_sources_match_receipt_before_and_after": true,
+    "artifacts_sha256": {
+      "/Users/jeremylien/.hermes/cache/scratch/pressure-parent-failure-zryb3prc/pressure_guard_reviewed.py": "748823fe86fbf63361bff43a4e6710483bfa322d90c8b117a11a2815218e03cc",
+      "/Users/jeremylien/.hermes/cache/scratch/pressure-v2-independent-observations.json": "d72c9de860108e81140064187db7a31ef4b712a88cb13c5a21ec95651d6be05a",
+      "/Users/jeremylien/.hermes/cache/scratch/pressure-v2-review-focused.log": "9399ef9a72938e1d782a6b1ea0b9f1de0cafb6adf701cf4e2eae098d0a8ceb5d",
+      "/Users/jeremylien/.hermes/cache/scratch/pressure-v2-review-focused.xml": "7f15fb6794a8abaaaf572012863bf3ad6689c20ce1418eddfcaabd6594640709",
+      "/Users/jeremylien/.hermes/cache/scratch/pressure-v2-review-independent.log": "9f4ced4f199a2f7298d259b498e81d44097924755676cafef207e3841b79abbf",
+      "/Users/jeremylien/.hermes/cache/scratch/pressure-v2-review-independent.xml": "a7627b316905391eafffef26d24a7f86701178a35e46bbb99c3d6e74b330b931",
+      "/Users/jeremylien/.hermes/cache/scratch/pressure-v2-review-original.log": "73d9c7f9443c133444999e60c614affab5eabadc7a8d1d6f8ef59fa383ec4495",
+      "/Users/jeremylien/.hermes/cache/scratch/pressure-v2-review-original.xml": "0a909dc290fa905ec2b18159bbbffe4ea85d8c19e92a682ac6c300270be66053",
+      "/Users/jeremylien/.hermes/cache/scratch/pressure-v2-review-red.log": "c39649a8f1bcb3a145dea9adb974bd7b77fa34808b94389e68fa2b0e0625c027",
+      "/Users/jeremylien/.hermes/cache/scratch/pressure-v2-review-red.xml": "57c340159e7f05c32c222b252671dd5bfcb91e7dc305110928ccfb8af54096ef",
+      "/Users/jeremylien/.hermes/cache/scratch/pressure_independent_review_025.py": "c0d6cd5d46de0811cff420cb506892f9d5d7356d45d052d70a30be688c8ce555",
+      "/Users/jeremylien/.hermes/cache/scratch/pressure_v2_independent_probes.py": "421806eb754acd316302aebba9ed75e20394dbbee91e4cba4defeed2f9bab65c",
+      "/Users/jeremylien/.hermes/cache/scratch/pressure_v2_review_runner.py": "33263b9c91a3e9f61bba7f389f403ff3575a531991d9dc4e98522c8834d7b541"
+    },
+    "counts_not_a_full_suite_claim": "These are separate focused runs with overlapping behavioral coverage, not an all-runtime/physical suite approval.",
+    "exact_implementation_receipt_hash_matches": true,
+    "execution_guard": {
+      "candidate_cpu_only_runner_main_not_invoked": "Avoids its append to repository overlap-command-history.jsonl.",
+      "forbidden_live_action_attempts": [],
+      "mlx_imported": false,
+      "mlx_mlx_lm_mlx_vlm": "import-blocked; none imported",
+      "network_executed": false,
+      "real_sysctl_executed": false,
+      "real_test_children_launched": false,
+      "runner": "/Users/jeremylien/.hermes/cache/scratch/pressure_v2_review_runner.py",
+      "signals_sent": false,
+      "subprocess_popen_os_system_posix_spawn_fork_network_signals_ctypes_dlopen": "audit-blocked",
+      "test_writes": "scratch-only, with /dev/null allowed for pytest logging; bytecode/cacheprovider disabled"
+    },
+    "focused_candidate_fixtures": {
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "files": [
+        "test_pressure_guard.py",
+        "test_pressure_v2.py",
+        "test_overlap_cli.py"
+      ],
+      "skipped": 0,
+      "tests": 67
+    },
+    "independent_new_probes": {
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "file": "/Users/jeremylien/.hermes/cache/scratch/pressure_v2_independent_probes.py",
+      "skipped": 0,
+      "tests": 58
+    },
+    "independent_red_green": {
+      "counterexamples": [
+        "short historical unbound timeline",
+        "wrong sampler timeout",
+        "unknown stage"
+      ],
+      "note": "Additional bound-v2 tests separately mutate timeout/stages/coverage with valid v2 baselines; GREEN is not based solely on rejecting the old schema.",
+      "red": {
+        "errors": 0,
+        "exit_code": 1,
+        "expected_failure": "All three tests failed DID NOT RAISE ValueError on the preserved original guard, not import/setup errors.",
+        "failures": 3,
+        "skipped": 0,
+        "tests": 3
+      },
+      "red_snapshot_sha256": "748823fe86fbf63361bff43a4e6710483bfa322d90c8b117a11a2815218e03cc",
+      "same_three_tests_current_candidate": "3 passed within the 58-probe independent run"
+    },
+    "method": "Independent manual API/source review plus mock-only behavioral probes; candidate tests alone were not treated as approval. No production code changed.",
+    "original_mock_ownership_pressure_subset": {
+      "deselected": 5,
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "note": "Five historical assertions embody old defects/old API; current expected rejection/launch behavior is exercised separately, not grandfathered.",
+      "skipped": 0,
+      "tests": 9
+    },
+    "outcome_label_note": "physical_verifier_reached in scratch observations means a verification stub was reached, NEVER a GPU or model operation.",
+    "ownership": {
+      "no_real_signals": true,
+      "ownership_helpers_ast_equal_to_024_predecessor": {
+        "group_alive": true,
+        "pid_present": true,
+        "terminate": true
+      },
+      "single_owner_unreaped_popen_anchor_preserved": true,
+      "stale_reaped_or_reused_handle_mock_probe": "no mocked killpg calls; cleanup remains pending",
+      "unreaped_owned_handle_mock_probe": "exact owned PID only, no broad process matching"
+    },
+    "registered_source_count": 77,
+    "required_negative_results": {
+      "both_host_actual_controller_tampering": "replayed job nonce, changed result/pressure child PID, missing startup watchdog flag all failed at verification before acceptance",
+      "both_host_actual_jobs": "server remote/server, rank1 remote/rank1, rank0 local/rank0; every actor watchdog flag true; both probe argv flags present",
+      "expired_during_initial_sampler": "zero mocked Popen calls; no gate release",
+      "healthy_bounded_setup_delay": "actual run_owned producer completed and external startup/PID-bound receipt verified",
+      "invalid_stage_boundary_times_gaps_levels_identity_or_missing_execution": "rejected",
+      "missing_coverage_before_physical_acceptance": "rejected before numerical/schedule verification stubs are reached",
+      "missing_external_bindings": "rejected in controller and direct workload path",
+      "popen_start_gate_delay_past_deadline": "one mocked Popen; zero bootstrap release writes; cleanup only exact owned fake child",
+      "replayed_other_job_including_consistently_relabelled_result_and_pressure_claims": "rejected against fixed controller/job identity",
+      "short_timeline_for_900_second_execution": "rejected",
+      "short_timeline_for_independently_reported_900_second_actor_elapsed": "rejected",
+      "stop_after_popen_before_gate": "one mocked Popen; zero bootstrap release writes; cleanup only exact owned fake child",
+      "stop_during_initial_sampler": "zero mocked Popen calls; no gate release",
+      "valid_900_second_sampled_timeline": "accepted positive control; 1801 samples within 2048 cap; no real 900-second workload",
+      "wrong_or_missing_sampler_timeout": "rejected"
+    },
+    "reviewed_runtime_files": [
+      "pressure_guard.py",
+      "remote_actor.py",
+      "supervise.py",
+      "workload_evidence.py"
+    ],
+    "reviewer_setup_issue": "Initial scratch runner overblocked pytest logging to /dev/null; allowed that null sink and reran cleanly. No candidate change or failed candidate test was hidden.",
+    "source_review_locations": {
+      "actual_end_independent_elapsed_and_receipt_production": "remote_actor.py:312-315,360-396",
+      "controller_admitted_flag_and_roles": "supervise.py:1085-1130",
+      "controller_binding_not_pressure_self_expectation": "supervise.py:1312-1341",
+      "controller_pressure_before_evidence_acceptance": "supervise.py:831-882",
+      "direct_workload_pressure_before_physical_verification": "workload_evidence.py:51-100",
+      "distinct_both_host_roles_nonces_per_host_pids": "pressure_guard.py:208-235",
+      "independent_job_startup_pid_origin_reconciliation": "pressure_guard.py:176-205",
+      "post_popen_pre_bootstrap_stop_and_deadline": "remote_actor.py:247-269",
+      "post_sampler_pre_popen_stop_and_deadline": "remote_actor.py:228-244",
+      "source_clock_before_setup": "remote_actor.py:154-170",
+      "strict_v2_grammar_timeout_identity_and_execution_coverage": "pressure_guard.py:82-173"
+    }
+  }
+}

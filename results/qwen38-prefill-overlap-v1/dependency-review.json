@@ -1,0 +1,588 @@
+{
+  "scope": "Read-only architecture diagnosis. No MLX/vlm import, model execution, SSH, network, hardware inspection, process signalling, installation, git action or repository code edit. The only repository write is this new exclusive report.",
+  "verdict": "Prefer one explicit bounded prefill_pipeline command over per-chunk preissue. It reuses unchanged phased_forward and native collective scheduling; one ACK after all nonfinal chunks, then ordinary final-token forward. Under rendezvous it overlaps rank1 next target chunk with rank0 current target and shifted MTP head, with at most two chunk epochs resident/in progress. Actual installed API does NOT document receiver-consumed rendezvous: strict <=2 outstanding-chunk admission requires stronger transport proof or one receive-credit per chunk at the existing receive-before-GPU seam.",
+  "identity": {
+    "target_revision": "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+    "placement": "rank0 M2 final28 / rank1 M4 first36",
+    "evaluation_group": 32,
+    "arithmetic": "Unchanged target BF16/Q4; native prefill on both ranks; native rank0 / slot-qmv rank1 only on explicit width2 verify. Do not change placement, projection kernels, head, cache math, weights or chunking. Baseline and candidate must BOTH enable existing 024 hidden-only MTP prefill."
+  },
+  "actual_names": "The requested conceptual Backend/Control.exchange/Dispatcher/PhasedDecoder/head.prefill correspond here to MTPBackend._command / Channel.begin+finish / serve_request+Worker.handle+Rank1Target.dispatch / phased_forward / BoundHead.forward(logits=False). Those alternate class/method names do not exist in the inspected 024/023 paths.",
+  "source_locations": {
+    "024_serial_backend": "mlx_backend.py:64-124 command begin -> local phased_forward -> finish ACK; 126-143 fresh reset -> each nonfinal _command -> shifted head.forward -> ordinary singleton forward.",
+    "023_serial_backend": "mlx_backend.py:55-112 command; 114-129 fresh; same dependency but nonfinal op forward always evaluates discarded logits.",
+    "control_transport": "distributed_control.py:8 MAX_FRAME65536; 34-47 send evaluates length then bytes separately, stream=mx.cpu;49-59 receive length then bytes;61-66 begin/finish;69-77 worker receive -> full dispatch -> report -> send ACK.",
+    "worker": "rank_control.py:18-43 old per-command token cap256;56-92 validate/sequence/state -> dispatch -> ACK; ACK is emitted only after dispatch returns.",
+    "rank1": "mlx_backend.py:223-254 dispatch -> phased_forward(logits=False), no MTP head or vocabulary projection.",
+    "forward_boundaries": "phased_decode.py:111-121 rank0 recv hidden, mx.eval(h) before local graph;123-126 rank1 embedding eval;133-154 native local layers and complete cache evaluation;155-161 rank1 evaluated CPU send;162-171 hidden-only full-position native norm;172-181 final vocabulary head.",
+    "head": "mtp_head.py:83-98 checks native head offset, mixes shifted-token embedding and normalized hidden, native attention/cache update, mx.eval(h,cache.state,out), even logits=False synchronizes useful head work.",
+    "native_reuse": "phased_decode.py:231-241 both ranks loop known nonfinal chunks with logits=False and no commands/ACKs;242-255 final token;256-267 token exchange gates decode;workload_runtime.py:59-71 actually invokes this collective path.",
+    "existing_queue_test_not_rendezvous": "test_hidden_two_rank.py:38-48 uses unbounded Queue.put and returns immediately; actual model CPU tests but not blocking-send or <=2 inflight proof.",
+    "existing_gates": "hidden_prefill_gate.py:305-329 small lengths256,257,511,512,513; full 2*chunk+1; reduced full width adds257 at256;333-523 exercises direct collective forwards, not new runtime compound command. Existing257 representative covers one prefix chunk only, not overlap.",
+    "caps": "remote_actor.py:15-16 actor log64MiB, response128MiB;346-408 fixed source registry."
+  },
+  "old_dependency_graph": [
+    "rank0 begin CMD_i(length then JSON) <-> rank1 receive CMD_i",
+    "rank1 embed_i -> owned native layers_i + evaluated owned caches_i -> evaluated CPU SEND(hidden_i)",
+    "rank0 evaluated RECV(hidden_i) -> owned native layers_i + evaluated owned caches_i -> norm_i (024 hidden-only;023 full norm+vocab)",
+    "rank1 SEND(hidden_i) return -> dispatch return -> Worker ACK_i -> evaluated CPU SEND(ACK_i); under rendezvous this ACK waits while rank0 executes local target",
+    "rank0 target_i return -> RECV/validate ACK_i -> rank_action_i -> shifted head_i and evaluated head KV -> begin CMD_i+1",
+    "Consequently rank1 next chunk cannot begin before rank0 entire current target/head returns. Removing discarded vocabulary projection alone does not remove this barrier."
+  ],
+  "recommended_compound_protocol": [
+    "Admit explicit opt-in and same-process pipeline numerical capability on BOTH ranks. Existing hidden-only capability alone is insufficient. Freeze same-source disabled/enabled serial-hidden-only controls.",
+    "Reset exactly as before and receive its ACK. Rank0 sends one prefill_pipeline Command(request,sequence,tokens=full bounded prompt), command length and JSON are received by rank1 before either starts hidden traffic.",
+    "Validate prompt token IDs against actual vocabulary, 1<=length<=2048 (or bypass compound for length1), derive immutable chunk bounds range(0,len(prompt)-1,256); final prompt ID is metadata only here. Do not let whole-prompt transport imply whole-prompt forward arithmetic.",
+    "Rank1 dispatch loops those chunks in order through unchanged native phased_forward(logits=False). Each chunk evaluates all owned caches and CPU-send result. No Channel frames and no ACK are interleaved inside this raw-hidden loop in the simple version.",
+    "Rank0 dispatch loops exactly the same bounds through unchanged phased_forward(logits=False,return_hidden=True,all_logits=True); immediately head.forward(normalized_hidden,prompt[start+1:end+1],same_mtp_cache,position=start,logits=False). Fully evaluate head before next rank0 chunk; drop prior temporary hidden refs. Rank1 next chunk is independent of rank0 current head.",
+    "Under synchronous rendezvous: rank0 RECV hidden_i releases rank1 SEND_i; rank1 computes i+1 while rank0 does local target_i and head_i; rank1 next SEND waits for rank0 next RECV. Thus no nonblocking send, queue or second CPU stream is required.",
+    "Only after rank1 entire prefix loop returns does Worker emit ONE ACK for the compound command. Rank0 drains and validates this ACK only AFTER its entire prefix/head loop completes. For the last prefix send, rank1 may block sending this ACK while rank0 computes last local target/head; that is intentional and safe.",
+    "After compound ACK, require target prefix offsets len(prompt)-1 on each KV layer and head KV offset len(prompt)-1. Then send ordinary forward([prompt[-1]]) exactly once, with original ACK and final projection/argmax/TTFT boundary. No head-prefill call on final prompt hidden; first draft pairs that hidden with first generated token as before.",
+    "On ordinary prefill/decode/snapshot/rollback/finish keep existing op names, sequence, numerical modes, cache order and validation; one compound consumes one command sequence, not one per internal chunk. Audit expands only this known compound into the exact trusted prefix intervals."
+  ],
+  "bounds_and_state": {
+    "opcode_only": "Add prefill_pipeline to Command allowed ops and token-presence set; limit only this op to2048, keep existing max256, verify width2 and commit_prefix payload constraints untouched. Check full prompt <=context_limit and target vocab before send or mutation. Fail closed on unsupported opt-in rather than relaxing global limits.",
+    "frame_example_bytes": 14430,
+    "frame_example_kib": 14.091796875,
+    "frame_note": "2048 maximum six-digit target IDs,32-character request nonce,sequence1:14430 bytes, about14.09KiB, not literally<=14KiB; comfortably below64KiB. Encode exact real frame before launch and preserve MAX_FRAME. Existing unbounded integer sequence validation is not a general maximum-JSON-size proof; encode_frame remains authoritative.",
+    "max_nonfinal_chunks_at_prompt_cap": 8,
+    "minimum_state": "Existing request nonce/sequence/caches plus immutable admitted prompt, derived cursor/start/end, explicit pipeline mode/capability, phase guard allowing exactly one initial prefix operation, one outstanding compound descriptor, max-inflight/count summaries, and bounded rolling evidence digest. No array list/producer queue, no threads. A request phase guard rejects duplicate compound, compound after final/decode, reset while active, unrelated op inside compound.",
+    "rendezvous_bound": "Rank0 current chunk and rank1 next chunk; rank1 cannot complete send of next until rank0 receives it. Per-rank target caches intentionally differ by up to one chunk; compare corresponding logical boundaries, not contemporaneous offsets.",
+    "actual_transport_caveat": "Installed mlx0.32.3 distributed.pyi:158-174 only says send is performed when output is evaluated. The installed ring.h contains declarations only; distributed_impl.h:27/45 is an abstract send API. These plain files do not certify receiver-consumed semantics. An evaluated blocking send could still complete after copying into bounded TCP/kernel buffers. Then rank1 may run ahead more than one chunk despite no Python queue; the compound is still finite (8 prefix chunks), but strict in-flight<=2 is not established.",
+    "strict_bound_fallback": "If no exact deployed ring backend proof exists, add one tiny request/sequence/chunk-tagged receive-credit: rank0 sends credit_i immediately AFTER evaluated hidden receive_i and BEFORE constructing its local GPU graph; rank1 waits for credit_i AFTER evaluated send_i and BEFORE next embedding. This is a credit, not a completion ACK. Keep one final compound ACK. It guarantees <=2 logical chunk epochs with eager OR rendezvous transport. Needs one explicit receive-boundary hook, no new thread/stream and no arithmetic change. Alternatively return to per-command preissue at the same receive-boundary, with more ACK/descriptor state."
+  },
+  "preissue_alternative": {
+    "correct_order": "receive/evaluate current hidden -> receive and validate CURRENT ACK_i (rank1 has returned from current send/dispatch) -> send NEXT command -> compute rank0 current target/native norm -> shifted head current -> receive next hidden. Do not receive next ACK before its hidden. Store current ACK so _command does not finish it twice.",
+    "safe_lower_gain": "A smaller begin-next-after-_command-current but before head-current change retains current ACK order and avoids forward hook, but overlaps ONLY next rank1 target with current MTP head, not with rank0 target layers. Archived current head-adjacent gap is small compared with local target work; 30% TTFT is not a supported hypothesis for that tiny-only overlap.",
+    "comparison": "Compound is simpler and mirrors physically exercised native collective prefill, keeps ordinary phased_forward intact, eliminates per-chunk controls and ACK drain state. Prefer compound if finite prompt bound suffices or rendezvous is established; use receive-credit compound for unconditional strict<=2. Do not deploy a bare compound while claiming a rendezvous bound that has not been established."
+  },
+  "deadlocks_and_failures": [
+    "Preissue before current hidden receive: rank0 blocks sending next command while rank1 blocks sending current hidden.",
+    "Preissue after hidden but before current ACK drain: rank0 command SEND and rank1 ACK SEND both rendezvous waiting.",
+    "Expect per-chunk ACK inside simple compound: rank0 consumes raw hidden as frame-length or waits for ACK while rank1 waits for next hidden receive. Shared CPU-stream ordering makes this fatal, not merely slow.",
+    "Send final ordinary forward before draining compound ACK: symmetric SEND/SEND deadlock.",
+    "Insert credit only after local target or head without matching sender wait/ordering: can reserialize or cause send/send deadlock; the full-overlap credit must be at evaluated receive before local graph.",
+    "Rank1/0 disagree on prompt length, chunk cap, bounds, op capability or final singleton: mismatched raw recv shape/count, cache divergence or deadlock. Admit before first hidden operation.",
+    "Any rank exception while peer is in raw hidden send/recv: do not try a normal JSON error ACK on the raw tensor channel or enqueue reset/finish. Fail closed and let existing owned bounded supervisor deadline/cleanup act; never claim recoverable request protocol without explicit abort design.",
+    "Do not wait for a peer ACK on a GPU stream, change default streams, introduce worker threads around process-global numerical_mode hooks, or retain full prompt activation queues."
+  ],
+  "evidence": {
+    "existing_reuse": "Native phased_generate is working evidence of the same direct collective loop and no per-chunk command barrier on this source/runtime; archived rank1 own-clock gaps below confirm immediate next-stage starts. It is NOT evidence that MTP head overlap preserves all states, that ring send consumption is rendezvous, or that candidate meets requested thresholds.",
+    "archived_phase_samples": [
+      {
+        "rank": 0,
+        "request": "prefill-code-1536-mtp-r0",
+        "method": "mtp",
+        "prefix_gap_seconds": [],
+        "first_six_prefix_block_seconds": [
+          2.0495657499996014,
+          4.038472082989756,
+          1.8209808330284432,
+          1.7772240409976803,
+          1.9057270000339486,
+          1.8520784169668332
+        ]
+      },
+      {
+        "rank": 0,
+        "request": "prefill-code-1536-native-r0",
+        "method": "native",
+        "prefix_gap_seconds": [],
+        "first_six_prefix_block_seconds": [
+          1.7176172499894165,
+          1.5425629999954253,
+          1.5467984159477055,
+          1.5486740000196733,
+          1.5533328750170767,
+          1.5805675419978797
+        ]
+      },
+      {
+        "rank": 0,
+        "request": "prefill-code-1536-native-r1",
+        "method": "native",
+        "prefix_gap_seconds": [],
+        "first_six_prefix_block_seconds": [
+          1.6602028339984827,
+          1.5429250410525128,
+          1.5518337919493206,
+          1.5470090830349363,
+          1.5535832080058753,
+          1.5798768749809824
+        ]
+      },
+      {
+        "rank": 0,
+        "request": "prefill-code-1536-mtp-r1",
+        "method": "mtp",
+        "prefix_gap_seconds": [],
+        "first_six_prefix_block_seconds": [
+          1.6379263330018148,
+          1.6477986670215614,
+          1.6320505840121768,
+          1.5578675839933567,
+          1.6465952079743147,
+          1.6708921660319902
+        ]
+      },
+      {
+        "rank": 0,
+        "request": "prefill-explanation-1536-native-r0",
+        "method": "native",
+        "prefix_gap_seconds": [],
+        "first_six_prefix_block_seconds": [
+          1.6212365830433555,
+          1.5456235829624347,
+          1.5435528340167366,
+          1.5480288329999894,
+          1.5489673750125803,
+          1.5798261670279317
+        ]
+      },
+      {
+        "rank": 0,
+        "request": "prefill-explanation-1536-mtp-r0",
+        "method": "mtp",
+        "prefix_gap_seconds": [],
+        "first_six_prefix_block_seconds": [
+          1.6511142080416903,
+          1.6285889169666916,
+          1.6579714579856955,
+          1.6359457910293713,
+          1.6474404169712216,
+          1.6741527079720981
+        ]
+      },
+      {
+        "rank": 0,
+        "request": "prefill-explanation-1536-mtp-r1",
+        "method": "mtp",
+        "prefix_gap_seconds": [],
+        "first_six_prefix_block_seconds": [
+          1.6409862079890445,
+          1.6494110409985296,
+          1.6440085410140455,
+          1.6445601669838652,
+          1.6672543329768814,
+          1.7224916669656523
+        ]
+      },
+      {
+        "rank": 0,
+        "request": "prefill-explanation-1536-native-r1",
+        "method": "native",
+        "prefix_gap_seconds": [],
+        "first_six_prefix_block_seconds": [
+          1.6460680830059573,
+          1.5389332079794258,
+          1.5444157079909928,
+          1.5476193340145983,
+          1.554480082995724,
+          1.5816482500522397
+        ]
+      },
+      {
+        "rank": 1,
+        "request": "prefill-code-1536-mtp-r0",
+        "method": "mtp",
+        "prefix_gap_seconds": [
+          2.123617416000343,
+          4.112283458001912,
+          1.8933110409998335,
+          1.8548909579985775,
+          1.9834154580021277
+        ],
+        "first_six_prefix_block_seconds": [
+          1.951012042001821,
+          0.24333941700024297,
+          1.9500278749983408,
+          0.24414233400602825,
+          1.9583213339938084,
+          0.24480975000187755,
+          1.9642405420017894,
+          0.24498495800071396,
+          1.9647616669972194,
+          0.2455763329999172,
+          1.9777123340027174,
+          0.24686716699943645
+        ]
+      },
+      {
+        "rank": 1,
+        "request": "prefill-code-1536-native-r0",
+        "method": "native",
+        "prefix_gap_seconds": [
+          7.712500519119203e-05,
+          7.17919974704273e-05,
+          8.595899998908862e-05,
+          8.054100180743262e-05,
+          7.62919953558594e-05
+        ],
+        "first_six_prefix_block_seconds": [
+          1.9492337919946294,
+          0.24786783299350645,
+          1.948046166995482,
+          0.2438313750026282,
+          1.961703499997384,
+          0.24872245799633674,
+          1.9977694580011303,
+          0.2539803749968996,
+          2.0249995830017724,
+          0.25482512500457233,
+          2.053334415999416,
+          0.2576572079997277
+        ]
+      },
+      {
+        "rank": 1,
+        "request": "prefill-code-1536-native-r1",
+        "method": "native",
+        "prefix_gap_seconds": [
+          6.208400009199977e-05,
+          7.587499567307532e-05,
+          8.912500197766349e-05,
+          7.120800000848249e-05,
+          6.641599611612037e-05
+        ],
+        "first_six_prefix_block_seconds": [
+          1.9496179159978055,
+          0.2438155839990941,
+          1.9524275840012706,
+          0.24712495800486067,
+          1.9968757910028216,
+          0.25172658399969805,
+          2.033539292002388,
+          0.25595254200015916,
+          2.0540620000028866,
+          0.2599912919977214,
+          2.082472250003775,
+          0.26487741700111656
+        ]
+      },
+      {
+        "rank": 1,
+        "request": "prefill-code-1536-mtp-r1",
+        "method": "mtp",
+        "prefix_gap_seconds": [
+          1.7049211659978027,
+          1.711887666999246,
+          1.6975122080039,
+          1.6311768750019837,
+          1.7149571670015575
+        ],
+        "first_six_prefix_block_seconds": [
+          1.9486602499964647,
+          0.2439481670007808,
+          1.952401791997545,
+          0.2451370419948944,
+          1.9583114580018446,
+          0.25117470899567707,
+          1.9638299170037499,
+          0.24924058400210924,
+          1.9737812079983996,
+          0.25018491599621484,
+          1.9865638750052312,
+          0.2507093329986674
+        ]
+      },
+      {
+        "rank": 1,
+        "request": "prefill-explanation-1536-native-r0",
+        "method": "native",
+        "prefix_gap_seconds": [
+          8.529099432053044e-05,
+          7.537499914178625e-05,
+          7.42920019547455e-05,
+          6.791699706809595e-05,
+          6.77920033922419e-05
+        ],
+        "first_six_prefix_block_seconds": [
+          1.952228832997207,
+          0.2504449999978533,
+          2.0084572920022765,
+          0.25458537499798695,
+          2.05147920899617,
+          0.25817320899659535,
+          2.079855416995997,
+          0.264740750004421,
+          2.100788208001177,
+          0.2664843749953434,
+          2.1167429170018295,
+          0.2652302919959766
+        ]
+      },
+      {
+        "rank": 1,
+        "request": "prefill-explanation-1536-mtp-r0",
+        "method": "mtp",
+        "prefix_gap_seconds": [
+          1.7192972499979078,
+          1.7023459579941118,
+          1.7259484579990385,
+          1.7024358329945244,
+          1.71805341700383
+        ],
+        "first_six_prefix_block_seconds": [
+          1.950011375003669,
+          0.24712858299608342,
+          1.9610269999975571,
+          0.24847725000290666,
+          1.9677765420055948,
+          0.25051862499822164,
+          1.976644624999608,
+          0.2548866669967538,
+          1.9854217089960002,
+          0.25320712499524234,
+          1.99743779200071,
+          0.2556997499996214
+        ]
+      },
+      {
+        "rank": 1,
+        "request": "prefill-explanation-1536-mtp-r1",
+        "method": "mtp",
+        "prefix_gap_seconds": [
+          1.7105180830039899,
+          1.715855083995848,
+          1.7133382909960346,
+          1.7201742500037653,
+          1.7363280839999788
+        ],
+        "first_six_prefix_block_seconds": [
+          1.9610471249980037,
+          0.25239129200053867,
+          1.9683648749996792,
+          0.25366929200390587,
+          1.978461625003547,
+          0.25363354100409197,
+          1.9844243330007885,
+          0.25448816700372845,
+          1.9905797079991316,
+          0.25526358400384197,
+          2.002929416994448,
+          0.25733512500301003
+        ]
+      },
+      {
+        "rank": 1,
+        "request": "prefill-explanation-1536-native-r1",
+        "method": "native",
+        "prefix_gap_seconds": [
+          6.66250052745454e-05,
+          6.383299478329718e-05,
+          7.337499846471474e-05,
+          7.783299952279776e-05,
+          0.00012479200086090714
+        ],
+        "first_six_prefix_block_seconds": [
+          1.968048540999007,
+          0.2524097920031636,
+          2.041269249995821,
+          0.26154474999930244,
+          2.0826057090016548,
+          0.26185170800454216,
+          2.0974669169954723,
+          0.26512658299907343,
+          2.10319687500305,
+          0.2640372500027297,
+          2.115284249994147,
+          0.26497741699859034
+        ]
+      }
+    ],
+    "clock_rule": "Use only within-rank monotonic durations and causal command/hidden/ACK IDs. Never subtract rank0 timestamps from rank1 timestamps; receive wall time includes upstream compute, Python and waiting, not cable transfer time.",
+    "concurrent_progress_observables": "Bind each internal chunk to request+compound sequence+chunk index+start/end; record synchronized embedding/block/cache completion and rank0 norm/head completion. Under rendezvous/receive-credit, rank1 send_i -> embedding_i+1 gaps should collapse while rank0 current target/head still completes normally; next SEND wait is expected bounded backpressure. For offset-independent overlap witness, rank0 measures full compound epoch from BEFORE sending command to AFTER draining final ACK. Both ranks local synchronized target-block/head intervals are causally contained in that epoch. If their nonoverlapping-within-rank duration sum exceeds epoch duration beyond measured CPU/reporting/clock-rate uncertainty, stage execution envelopes overlap without clock-offset subtraction. This establishes concurrent stage progress, not exact GPU kernel occupancy.",
+    "gpu_caveat": "Existing before/done wall events bracket mx.eval and cache completion, so they show real synchronized work, but include graph construction, synchronization and host overhead. CPU-command timestamps or a small send-gap alone cannot prove simultaneous Metal kernels. Strict GPU-kernel concurrency requires per-device GPU timelines plus bounded common-epoch/clock calibration or equivalent device evidence; do not claim that from present logs.",
+    "receipt_budget": "Keep compact per-chunk integer/phase/dtype/shape/offset summaries, constant-size rolling digest and max-inflight counters, never arrays or repeated whole prompt/metric trees per chunk. For2048 prompt <=8 prefix chunks. Enforce frame65536, actor log64MiB and retrieval128MiB plus controller limits; current candidate rank1.stderr about59MB leaves little64MiB headroom. Budget pilot before full suite and reject overflow, never truncate."
+  },
+  "vertical_tdd_plan": [
+    "First RED: stdlib-only actual Command/Worker/serve_request seam with strict zero-capacity synchronous rendezvous transport and two symbolic stages. Hold rank0 chunk0 local completion behind an event; assert rank1 chunk1 evaluated-stage progress occurs while held, then drain. Existing per-chunk flow fails that progress assertion. No Queue.put-unbounded transport and no wall-time sleep assertion.",
+    "GREEN minimally add only bounded compound op+same-bounds rank dispatch loops+one ACK after prefix; keep actual arithmetic calls opaque and unchanged. Test rank0 head pairing/position and final ordinary singleton. This is a protocol vertical slice, not physical GPU proof.",
+    "Next separate RED/GREEN slices: opcode-specific2048 versus legacy256 and exact frame size; one-token no-prefix;256/257/258/511/512/513 boundaries; mixed per-rank mode preserving native prefill; duplicate/wrong nonce/sequence/frame/chunk/final rejection.",
+    "Next RED: eager-send model demonstrates >2 generated-minus-consumed chunks on bare compound; either document exact deployed transport proof as prerequisite or GREEN receive-credit at pre-local-GPU receive seam. Assert max<=2, no outstanding work at final ACK, and completion under rank0-slow,rank1-slow, alternating progress stalls.",
+    "Next slices: bounded transcript expansion/action audit rejects reordered/missing/duplicate chunk, shifted IDs, false head offsets, fake max-inflight or missing completion; exceptions do not emit JSON into raw tensors and owned external deadline remains finite. No extra protocol queue or reset-on-broken-channel.",
+    "Retain existing MLX CPU tests for later authorized owner execution; new CPU control test itself must import no MLX/vlm. No test or implementation was run/created in this diagnosis."
+  ],
+  "physical_acceptance_plan": [
+    "Parent alone does build/deploy/SSH/GPU. Proceed only after BOTH hosts pressure1 and normal existing admission; current pressure2 blocker is not resolved by this read-only diagnosis. Do not kill anything or move layer placement.",
+    "Run existing physical small and same-loaded full width2,prefix0/1/2,continuation,hidden-only/cache-inventory gates unchanged ATOL1e-6 RTOL1e-5. Add same-process scheduler-specific serial-hidden-only versus actual compound runtime path on both physical owners; original direct-forward gates alone do not exercise new opcode.",
+    "Small cases length1,2,256,257,258,511,512,513 plus tail mismatch/forced continuation; exact cache keys,values,offsets, recurrent/conv states and normalized hidden; head shifted-prefix KV and draft logits; final target full logits/first ID and continuation. Use bounded short-gate snapshots or local comparisons, not timing-time barriers.",
+    "Mandatory FULL actual chunk256 with prompt513 => two256-token prefix chunks plus final singleton, so the new overlap is genuinely exercised on the same loaded28/36 shards. Reduced-width full17 plus representative257 alone is insufficient for new overlap. Also cover ragged prefix length512 or258 and one-token bypass. Preserve exact target/sidecar bytes and native arithmetic source hashes.",
+    "Then frozen same-best-hidden-only MTP serial vs hidden-only compound paired trials, fresh caches, explicit warmups/first long shapes, counterbalanced order and bracketing controls. Native output path remains an unchanged regression comparator, not the speedup denominator.",
+    "All six existing1536-token long cases must EACH reduce TTFT>=30% AND complete-request elapsed>=15%, exact corresponding output IDs/stops and all strict gates; report elapsed reduction not throughput gain. Then full18-case suite including the12 shorter regressions, audit all expected rows and both-rank target hashes/modes/memory/cleanup. Failure in any required long case means user goal unmet; no aggregate rescue or baseline023 substitution."
+  ],
+  "performance_hypothesis": {
+    "claim": "Plausible for genuine target-stage overlap, not demonstrated. Scope cannot promise30% on every long case or15% complete request.",
+    "why": "Archived enabled-hidden-only MTP rank1 first two blocks per256chunk total roughly2.2s while rank0 native block is roughly1.6-1.7s plus a small head update. Six prefix chunks offer a sizeable serial bubble; same-trial native collective runs show near-zero send-done -> next-embedding gaps instead of ~1.7s warm MTP gaps.",
+    "ideal_formula": "For constant stage costs A(rank1) and B(rank0 target+head), K prefix chunks: serial K*(A+B); perfect two-stage pipeline A+B+(K-1)*max(A,B), plus unchanged final singleton/control overhead. No isolated phase addition is used as a measured speedup.",
+    "balanced_six_theoretical_prefix_reduction_percent": 41.666666666666664,
+    "end_to_end_condition": "If only prefill changes, absolute saved time Delta must satisfy Delta>=0.30*baseline_TTFT and Delta>=0.15*baseline_wall for EACH case. Decode/output work and final singleton remain. Contention, shape/thermal warming, imbalance and actual transport can erase ideal gain; native no-head TTFT is not the candidate forecast."
+  },
+  "source_hashes_sha256": {
+    "024-qwen38-hidden-prefill": {
+      "benchmark_schedule.json": "6d052c75f9ee86c8d2182d237b80698f8a39608ae1524458aa048a8df728c857",
+      "cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+      "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+      "distributed_control.py": "894403782594e8ffc7fb832f336fdd2600925dd0ba330403a701a8a47f695f4e",
+      "hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+      "mlx_backend.py": "bb269f19696f8a3d84971c44b27ceef743585362c284f916f98de1815334f443",
+      "mtp_audit.py": "00e64c72453f24b48ed9880fd42d4d3581bfb5790e00108265df005ee4c68671",
+      "mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+      "mtp_runtime.py": "ea03fa19a04a83d633ee5dc217168329387460f3dd49ceb949d73cbdb53423fe",
+      "numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+      "phased_decode.py": "97a056ee6db36ae51012c66be2fd305a069d882b928049dab708cd488461a555",
+      "prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+      "probe.py": "716d30974848c99b09cb3455adae25ec9cb2e297686d017a744da4d10b5ecfd7",
+      "rank_control.py": "ce6656dd0ff351b5a66e25f738776817b0dab9374f6f7dceeeec2b40f9b64b28",
+      "remote_actor.py": "daa2480a11bd62a3283f24e6a1b7f1175303dbc8205dff159b63b3710713950c",
+      "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+      "sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+      "slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+      "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+      "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+      "speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+      "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+      "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+      "supervise.py": "5854ad8fd98c1ab7c1f9659457459b12e1fc982af3bd5cca0899f8045395d624",
+      "test_batched_snapshot.py": "be1002feb6fd661085b73bf4ef0f31bbb6bba2312231314cd90a1959bfb12b66",
+      "test_cache_gate.py": "5ce8116c15a22f44a191b04b1fcf69b523f690ceaf7ebd88589340f52a7a6c42",
+      "test_cli_schedule.py": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c",
+      "test_config_immutability.py": "30e281bae3adc0c2c493cb88600d69630b8f6103e0c8065257e81defba854d69",
+      "test_controller_snapshot.py": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab",
+      "test_dispatch_schedule.py": "05ca31b22aa6af70538cb12dd145db30903fcad7ca162c8d901935bc005e6b9c",
+      "test_evidence_hardening.py": "f495a0ec7fae35b9172749fc28c2aa77931b6bf8bd2109a23acbc939ffa88a2a",
+      "test_head.py": "bf976833baa25e5da6ddff8bb59338ab046950864cf3a4f2ae30b1ea0e651485",
+      "test_hidden_cache_inventory.py": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493",
+      "test_hidden_cli.py": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f",
+      "test_hidden_control.py": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232",
+      "test_hidden_evidence.py": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137",
+      "test_hidden_gate.py": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a",
+      "test_hidden_prefill.py": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50",
+      "test_hidden_runtime.py": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3",
+      "test_hidden_two_rank.py": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5",
+      "test_integration.py": "c77b6ba8fbe9334d584b72e1ff0ea61fe098351d585f1efb33b7e0ec66df255d",
+      "test_mtp_audit.py": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3",
+      "test_phased_cpu.py": "7b65176cc4751ba82ff92ec2ae257a22d501344dd0e901c1d245cc42dddf910e",
+      "test_prefix_integration.py": "377d62e2ed2ff9f09196afd32a1aa788be54b39550060dab0ef042254c8532d5",
+      "test_prefix_rollback.py": "d0f6f040542e4a4ed2bed704bf8af9b5cc15f63d6c4aadd7885b61e8283724d7",
+      "test_speculative.py": "9cd3a4b0b956284e21801ac6805f93e5bd1fdc76b4f60d9cfd7bde1d77fdea17",
+      "test_two_rank_schedule.py": "b67f9a1025738e22b7da3a0f7eb0f9041aa83cc81c03dbb0a063ad6ad4f7a708",
+      "test_unbound_schedule.py": "f446a36ba5fe48f1cc88f1558c5ad4647af9c286e7bc004bd0cc7b85ae866f5a",
+      "test_workload_caps.py": "117e18df911429b210bc96ed998dcbcac6e23304223758ebe3c4b9b9467fa503",
+      "test_workload_cleanup.py": "e478df18900b76dc5dc949d8808db6e6f0cea2e977468d5538fc124b7300f9de",
+      "test_workload_evidence.py": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6",
+      "test_workload_runtime.py": "5a9e95b2e207bdf11410218771959224b683ed6bb4c306696018c3f38c24e267",
+      "test_workload_schedule.py": "ae27e162390368b19d943f0c6f974722481d59a40b9aa18d8e00d34b0470f2d4",
+      "test_workload_snapshot.py": "e8d26f9e3841f320b118a4ec8b148768cb60d72027b1e626fe5234bd71bc120f",
+      "test_workload_timings.py": "761027cf05c067526ad2267a1a81bcd4f36774bdabc5e802abdec1cf7a00e748",
+      "verification.py": "832c9eadfb8540a9ae2f2d645c13a3a2af5c04c057ad3f0f6b07b469e9bc33d2",
+      "verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+      "width_gate.py": "81528ae022bed8c910b9d1dcf045990cf9a8968a3978e106becdda14a4ee403c",
+      "workload_evidence.py": "6958f44b4e1df2c1c3f50583d63f06984a4c67138d06dec4931e1eb2cd07f7bb",
+      "workload_runtime.py": "1cc117eef382a123f448bcbf4022a6be03f7cb3b69e6e5432d0be3ef337ab9c6",
+      "workload_schedule.py": "0bad9bead01dd6fd78e8d1c732fa5ef83a1101deb950aded42333c09dabeeb9a"
+    },
+    "023-qwen38-workload-bench": {
+      "workload_schedule.py": "0bad9bead01dd6fd78e8d1c732fa5ef83a1101deb950aded42333c09dabeeb9a",
+      "workload_runtime.py": "67dd60dee8c67618b7311c8ef4662b42c0486347d7354bf23063e860dc620a16",
+      "workload_evidence.py": "fd352236657af89f5295a0a07030eb8dbf4134a949b9e10484517670a415f3ae",
+      "benchmark_schedule.json": "6d052c75f9ee86c8d2182d237b80698f8a39608ae1524458aa048a8df728c857",
+      "mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+      "mlx_backend.py": "507c6be2abbd44d80debb9ff5dc7e46b25c349d85e1f0f3202796a6e2c22ed47",
+      "cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+      "prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+      "speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+      "rank_control.py": "e522ed335ebd5775132a29044170cedb8d65eb057a316f37ed408d485b1771b5",
+      "distributed_control.py": "894403782594e8ffc7fb832f336fdd2600925dd0ba330403a701a8a47f695f4e",
+      "verification.py": "df7bdaa0eb811caa6f70cc51f479103c1e526d85e4b24913e875e0cd8a444478",
+      "verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+      "numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+      "sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+      "mtp_runtime.py": "3517a8c44877e9b3175c5a6ee411752d74ed9279be58591bec2418f6205330cf",
+      "slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+      "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+      "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+      "probe.py": "8bf2ac39f1171815bd7f952e0fdc1b8976e5c8668371bd576f5bca17006301ca",
+      "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+      "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+      "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+      "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+      "phased_decode.py": "b54cd54f56f51480716e77a76bb947290719d8647d6326bceae87ccf50b9b790",
+      "remote_actor.py": "21b3b77319947d824cd9d3836f0695d184d2fce6181016b0f88f15cb0045a3d0"
+    }
+  },
+  "current024_vs_archived_candidate_matching_sources": {
+    "benchmark_schedule.json": false,
+    "cache_state.py": true,
+    "cpu_communication.py": true,
+    "distributed_control.py": true,
+    "hidden_prefill_gate.py": true,
+    "mlx_backend.py": true,
+    "mtp_audit.py": true,
+    "mtp_head.py": true,
+    "mtp_runtime.py": true,
+    "numerical_gate.py": true,
+    "phased_decode.py": true,
+    "prefix_rollback.py": true,
+    "probe.py": true,
+    "rank_control.py": true,
+    "remote_actor.py": true,
+    "shard_plan.py": true,
+    "sidecar_config.json": true,
+    "slot_qmv.py": true,
+    "slot_qmv_body.metal": true,
+    "slot_qmv_header.metal": true,
+    "speculative.py": true,
+    "stream_server.py": true,
+    "stream_weights.py": true,
+    "test_batched_snapshot.py": true,
+    "test_cache_gate.py": true,
+    "test_cli_schedule.py": true,
+    "test_config_immutability.py": true,
+    "test_controller_snapshot.py": true,
+    "test_dispatch_schedule.py": true,
+    "test_evidence_hardening.py": true,
+    "test_head.py": true,
+    "test_hidden_cache_inventory.py": true,
+    "test_hidden_cli.py": true,
+    "test_hidden_control.py": true,
+    "test_hidden_evidence.py": true,
+    "test_hidden_gate.py": true,
+    "test_hidden_prefill.py": true,
+    "test_hidden_runtime.py": true,
+    "test_hidden_two_rank.py": true,
+    "test_integration.py": true,
+    "test_mtp_audit.py": true,
+    "test_phased_cpu.py": true,
+    "test_prefix_integration.py": true,
+    "test_prefix_rollback.py": true,
+    "test_speculative.py": true,
+    "test_two_rank_schedule.py": true,
+    "test_unbound_schedule.py": true,
+    "test_workload_caps.py": true,
+    "test_workload_cleanup.py": true,
+    "test_workload_evidence.py": true,
+    "test_workload_runtime.py": true,
+    "test_workload_schedule.py": true,
+    "test_workload_snapshot.py": true,
+    "test_workload_timings.py": true,
+    "verification.py": true,
+    "verifier.py": true,
+    "width_gate.py": true,
+    "workload_evidence.py": true,
+    "workload_runtime.py": true,
+    "workload_schedule.py": true,
+    "supervise.py": true
+  },
+  "installed_primary_contracts": {
+    "mlx/core/distributed.pyi": {
+      "sha256": "82c2d62feeb04572be299524ba45a4e4708895cad2135e415cbb0924817138e1"
+    },
+    "mlx/include/mlx/distributed/ring/ring.h": {
+      "sha256": "479128ad5372e19caf560965dd6f81b1584b8780d310a72ff810d718eb806fc2"
+    },
+    "mlx/include/mlx/distributed/distributed_impl.h": {
+      "sha256": "292a9af7a1faee6d59b34fc9d210fddae40f042af82c1b78c1a62437e8995a0b"
+    }
+  }
+}

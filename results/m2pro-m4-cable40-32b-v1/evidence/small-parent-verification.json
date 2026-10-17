@@ -1,0 +1,20 @@
+{
+  "historical_tokens_equal": true,
+  "all_rank_tensor_hashes_equal_historical": true,
+  "request_count_per_rank": 1,
+  "token_count_including_EOS": 9,
+  "approved_sources_unchanged": true,
+  "actors_and_listeners_clean": true,
+  "after_resources": {
+    "local": {
+      "pressure": 1,
+      "free_bytes": 12619173888,
+      "swap": "vm.swapusage: total = 4096.00M  used = 3129.06M  free = 966.94M  (encrypted)\n"
+    },
+    "remote": {
+      "pressure": 1,
+      "free_bytes": 96551399424,
+      "swap": "vm.swapusage: total = 1024.00M  used = 213.06M  free = 810.94M  (encrypted)\n"
+    }
+  }
+}

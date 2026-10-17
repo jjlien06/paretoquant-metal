@@ -1,0 +1,86 @@
+{
+  "schema": "overlap-first-physical-trial-disposition-v1",
+  "timestamp": 1792266027.584859,
+  "trial": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000",
+  "status": "rejected-memory-pressure-during-weight-load",
+  "roles": {
+    "rank0": {
+      "receipt_sha256": "7289759e0625601fc2b5861e896734b39788b4ed7f6a4d1b6efe32d6c892614b",
+      "reason": "pressure",
+      "returncode": -15,
+      "elapsed_seconds": 23.080283624999993,
+      "pressure_levels": [
+        1,
+        2
+      ],
+      "pressure_failure_samples": [
+        {
+          "stage": "owned_child",
+          "elapsed_seconds": 22.98139274999994,
+          "level": 2
+        }
+      ],
+      "request_start_events": 0,
+      "final_phase": "tensor_before",
+      "owned_cleanup": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      }
+    },
+    "rank1": {
+      "receipt_sha256": "3207053964b1cd22ad4d8649ce8777f47c39d0925926bee7d75bf9cc554a4f8c",
+      "reason": "signal",
+      "returncode": -15,
+      "elapsed_seconds": 23.882785250025336,
+      "pressure_levels": [
+        1
+      ],
+      "pressure_failure_samples": [],
+      "request_start_events": 0,
+      "final_phase": "tensor_before",
+      "owned_cleanup": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      }
+    },
+    "server": {
+      "receipt_sha256": "9dde7c2581e7ac3f73e141a3498b34962a9dc0b54c8483fc697570d806dbd7bb",
+      "reason": "child_failure",
+      "returncode": 1,
+      "elapsed_seconds": 23.665404667000985,
+      "pressure_levels": [
+        1
+      ],
+      "pressure_failure_samples": [],
+      "request_start_events": 0,
+      "final_phase": null,
+      "owned_cleanup": {
+        "child_reaped": true,
+        "group_gone": true,
+        "pid_reused": false,
+        "identity_unknown": false,
+        "pending_os_gpu_termination": false,
+        "gpu_driver_state": "not inspected; process/group receipt only"
+      }
+    }
+  },
+  "benchmark_request_starts": 0,
+  "same_process_numerical_admission_completed": false,
+  "closed_endpoint_count": 3,
+  "all_endpoint_refusals_rechecked": true,
+  "fresh_post_cleanup_health": {
+    "local_pressure": 1,
+    "remote_pressure": 1
+  },
+  "source_deployment_layout": "corrected flat siblings verified before execution",
+  "conclusion": "Laptop pressure warning2 aborts before weight loading completes. No prefill timing, output or speedup result exists. Normal unloaded pressure does not prove loading headroom. No retry and no unrelated process termination.",
+  "next_prerequisite": "Reduce unrelated laptop memory use before re-admitting a new large load. Preserve pressure1 requirement, exact model/split and failed trial."
+}

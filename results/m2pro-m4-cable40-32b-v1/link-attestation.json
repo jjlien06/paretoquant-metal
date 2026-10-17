@@ -1,0 +1,27 @@
+{
+  "observed_local_time": "2026-10-06T00:35:16.227805-04:00",
+  "local": [
+    {
+      "host": "MacBook Pro",
+      "bus": "thunderboltusb4_bus_2",
+      "peer_models": [
+        "Mac16,10"
+      ],
+      "current_speed": "40 Gb/s",
+      "status": "receptacle_connected"
+    }
+  ],
+  "remote": [
+    {
+      "host": "Mac mini",
+      "bus": "thunderboltusb4_bus_3",
+      "peer_models": [
+        "Mac14,10"
+      ],
+      "current_speed": "40 Gb/s",
+      "status": "receptacle_connected"
+    }
+  ],
+  "source": "Live system_profiler SPThunderboltDataType -json on both actual hosts",
+  "strict_prior_ssh_host_key_alias": "fe80::56:c507:c02a:a630%bridge0"
+}

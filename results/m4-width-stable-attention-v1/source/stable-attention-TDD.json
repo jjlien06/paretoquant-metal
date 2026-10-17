@@ -1,0 +1,218 @@
+{
+  "status": "CPU structural candidate complete; GPU and performance unadmitted",
+  "scope": "CPU-only structural tests; no GPU, numerical or performance admission",
+  "commands": [
+    {
+      "phase": "01 RED: pure prefix planning",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "F                                                                        [100%]\n=================================== FAILURES ===================================\n_______________ test_plan_uses_position_specific_causal_prefixes _______________\n\n    def test_plan_uses_position_specific_causal_prefixes():\n>       component = load_component()\n                    ^^^^^^^^^^^^^^^^\n\nspikes/010-width-stable-verification/test_stable_attention.py:54: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def load_component():\n        path = Path(__file__).with_name(\"stable_attention.py\")\n>       assert path.is_file(), \"isolated attention component has not been implemented\"\nE       AssertionError: isolated attention component has not been implemented\nE       assert False\nE        +  where False = is_file()\nE        +    where is_file = PosixPath('/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/stable_attention.py').is_file\n\nspikes/010-width-stable-verification/test_stable_attention.py:30: AssertionError\n=========================== short test summary info ============================\nFAILED spikes/010-width-stable-verification/test_stable_attention.py::test_plan_uses_position_specific_causal_prefixes\n1 failed in 0.03s",
+      "exit_code": 1,
+      "error": null
+    },
+    {
+      "phase": "01 GREEN: pure prefix planning",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": ".                                                                        [100%]\n1 passed in 0.01s",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "02 RED: per-query native calls",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py -k structural_single",
+      "output": "FFF                                                                      [100%]\n=================================== FAILURES ===================================\n_ test_structural_single_query_calls_preserve_causal_prefix_and_cache[2-2-14-2-64] _\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x106abb230>, width = 2\nlength = 2, heads = 14, kv_heads = 2, dim = 64\n\n    @pytest.mark.parametrize(\"width,length,heads,kv_heads,dim\", [\n        (2, 2, 14, 2, 64), (5, 12, 14, 2, 64), (9, 19, 20, 4, 128),\n    ])\n    def test_structural_single_query_calls_preserve_causal_prefix_and_cache(\n        monkeypatch, width, length, heads, kv_heads, dim,\n    ):\n        component = load_component()\n>       assert callable(getattr(component, \"stable_causal_attention\", None)), \"missing runtime wrapper\"\nE       AssertionError: missing runtime wrapper\nE       assert False\nE        +  where False = callable(None)\nE        +    where None = getattr(<module 'isolated_stable_attention' from '/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/stable_attention.py'>, 'stable_causal_attention', None)\n\nspikes/010-width-stable-verification/test_stable_attention.py:121: AssertionError\n_ test_structural_single_query_calls_preserve_causal_prefix_and_cache[5-12-14-2-64] _\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x106aba3f0>, width = 5\nlength = 12, heads = 14, kv_heads = 2, dim = 64\n\n    @pytest.mark.parametrize(\"width,length,heads,kv_heads,dim\", [\n        (2, 2, 14, 2, 64), (5, 12, 14, 2, 64), (9, 19, 20, 4, 128),\n    ])\n    def test_structural_single_query_calls_preserve_causal_prefix_and_cache(\n        monkeypatch, width, length, heads, kv_heads, dim,\n    ):\n        component = load_component()\n>       assert callable(getattr(component, \"stable_causal_attention\", None)), \"missing runtime wrapper\"\nE       AssertionError: missing runtime wrapper\nE       assert False\nE        +  where False = callable(None)\nE        +    where None = getattr(<module 'isolated_stable_attention' from '/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/stable_attention.py'>, 'stable_causal_attention', None)\n\nspikes/010-width-stable-verification/test_stable_attention.py:121: AssertionError\n_ test_structural_single_query_calls_preserve_causal_prefix_and_cache[9-19-20-4-128] _\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x106b430b0>, width = 9\nlength = 19, heads = 20, kv_heads = 4, dim = 128\n\n    @pytest.mark.parametrize(\"width,length,heads,kv_heads,dim\", [\n        (2, 2, 14, 2, 64), (5, 12, 14, 2, 64), (9, 19, 20, 4, 128),\n    ])\n    def test_structural_single_query_calls_preserve_causal_prefix_and_cache(\n        monkeypatch, width, length, heads, kv_heads, dim,\n    ):\n        component = load_component()\n>       assert callable(getattr(component, \"stable_causal_attention\", None)), \"missing runtime wrapper\"\nE       AssertionError: missing runtime wrapper\nE       assert False\nE        +  where False = callable(None)\nE        +    where None = getattr(<module 'isolated_stable_attention' from '/Users/jeremylien/Projects/paretoquant-metal/spikes/010-width-stable-verification/stable_attention.py'>, 'stable_causal_attention', None)\n\nspikes/010-width-stable-verification/test_stable_attention.py:121: AssertionError\n=========================== short test summary info ============================\nFAILED spikes/010-width-stable-verification/test_stable_attention.py::test_structural_single_query_calls_preserve_causal_prefix_and_cache[2-2-14-2-64]\nFAILED spikes/010-width-stable-verification/test_stable_attention.py::test_structural_single_query_calls_preserve_causal_prefix_and_cache[5-12-14-2-64]\nFAILED spikes/010-width-stable-verification/test_stable_attention.py::test_structural_single_query_calls_preserve_causal_prefix_and_cache[9-19-20-4-128]\n3 failed, 1 deselected in 0.03s",
+      "exit_code": 1,
+      "error": null
+    },
+    {
+      "phase": "02 GREEN: per-query native calls",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "....                                                                     [100%]\n4 passed in 0.01s",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "03 RED: width-one original passthrough",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py -k width_one",
+      "output": "FF                                                                       [100%]\n=================================== FAILURES ===================================\n_______ test_width_one_is_original_native_call_without_transforms[None] ________\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a0af100>\nmask = None\n\n    @pytest.mark.parametrize(\"mask\", [None, \"causal\"])\n    def test_width_one_is_original_native_call_without_transforms(monkeypatch, mask):\n        component = load_component()\n        runtime = StructuralRuntime()\n        monkeypatch.setattr(component, \"_load_mx\", lambda: runtime)\n        q = StructuralArray((1, 14, 1, 64))\n        k = StructuralArray((1, 2, 13, 64))\n        v = StructuralArray(k.shape)\n        cache = ReadOnlyCache(13)\n        result = component.stable_causal_attention(q, k, v, cache=cache, scale=1, mask=mask)\n        assert len(runtime.calls) == 1\n        sq, sk, sv, options, output = runtime.calls[0]\n>       assert sq is q and sk is k and sv is v and result is output\nE       assert (<test_stable_attention.StructuralArray object at 0x10a0aefd0> is <test_stable_attention.StructuralArray object at 0x10a0ff4d0>)\n\nspikes/010-width-stable-verification/test_stable_attention.py:159: AssertionError\n______ test_width_one_is_original_native_call_without_transforms[causal] _______\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a0af490>\nmask = 'causal'\n\n    @pytest.mark.parametrize(\"mask\", [None, \"causal\"])\n    def test_width_one_is_original_native_call_without_transforms(monkeypatch, mask):\n        component = load_component()\n        runtime = StructuralRuntime()\n        monkeypatch.setattr(component, \"_load_mx\", lambda: runtime)\n        q = StructuralArray((1, 14, 1, 64))\n        k = StructuralArray((1, 2, 13, 64))\n        v = StructuralArray(k.shape)\n        cache = ReadOnlyCache(13)\n        result = component.stable_causal_attention(q, k, v, cache=cache, scale=1, mask=mask)\n        assert len(runtime.calls) == 1\n        sq, sk, sv, options, output = runtime.calls[0]\n>       assert sq is q and sk is k and sv is v and result is output\nE       assert (<test_stable_attention.StructuralArray object at 0x10a200050> is <test_stable_attention.StructuralArray object at 0x10a1b0c50>)\n\nspikes/010-width-stable-verification/test_stable_attention.py:159: AssertionError\n=========================== short test summary info ============================\nFAILED spikes/010-width-stable-verification/test_stable_attention.py::test_width_one_is_original_native_call_without_transforms[None]\nFAILED spikes/010-width-stable-verification/test_stable_attention.py::test_width_one_is_original_native_call_without_transforms[causal]\n2 failed, 4 deselected in 0.03s",
+      "exit_code": 1,
+      "error": null
+    },
+    {
+      "phase": "03 GREEN: width-one original passthrough",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "......                                                                   [100%]\n6 passed in 0.01s",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "04 RED: fail-closed shape contract",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py -k invalid_shapes -x",
+      "output": "F\n=================================== FAILURES ===================================\n___________ test_invalid_shapes_fail_before_lazy_import[overrides0] ____________\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a543100>\noverrides = {'query_shape': (14, 5, 64)}\n\n    @pytest.mark.parametrize(\"overrides\", [\n        dict(query_shape=(14, 5, 64)),\n        dict(query_shape=(1, 14, 5, 64, 1)),\n        dict(query_shape=None),\n        dict(key_shape=\"bad\"),\n        dict(value_shape=(1, 2, 12)),\n        dict(query_shape=(True, 14, 5, 64)),\n        dict(key_shape=(1, True, 12, 64)),\n        dict(value_shape=(1, 2, 12, False)),\n        dict(query_shape=(1, 14.0, 5, 64)),\n        dict(key_shape=(1, 2, 12.0, 64)),\n        dict(query_shape=(1, 0, 5, 64)),\n        dict(query_shape=(1, -1, 5, 64)),\n        dict(key_shape=(1, 0, 12, 64)),\n        dict(key_shape=(1, 2, 0, 64)),\n        dict(query_shape=(1, 14, 5, 0)),\n        dict(query_shape=(2, 14, 5, 64)),\n        dict(key_shape=(2, 2, 12, 64)),\n        dict(value_shape=(2, 2, 12, 64)),\n        dict(query_shape=(1, 13, 5, 64)),\n        dict(query_shape=(1, 14, 0, 64)),\n        dict(query_shape=(1, 14, 10, 64)),\n        dict(key_shape=(1, 2, 4, 64), value_shape=(1, 2, 4, 64)),\n        dict(key_shape=(1, 2, 12, 128), value_shape=(1, 2, 12, 128)),\n        dict(value_shape=(1, 2, 11, 64)),\n        dict(value_shape=(1, 3, 12, 64)),\n        dict(value_shape=(1, 2, 12, 128)),\n    ])\n    def test_invalid_shapes_fail_before_lazy_import(monkeypatch, overrides):\n>       assert_invalid_before_runtime(monkeypatch, overrides, \"shape\")\n\nspikes/010-width-stable-verification/test_stable_attention.py:210: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a543100>\noverrides = {'query_shape': (14, 5, 64)}, message = 'shape'\n\n    def assert_invalid_before_runtime(monkeypatch, overrides, message):\n        component = load_component()\n        data = metadata(**overrides)\n        def forbidden_loader():\n            pytest.fail(\"invalid metadata reached lazy MLX import\")\n        monkeypatch.setattr(component, \"_load_mx\", forbidden_loader)\n>       with pytest.raises(ValueError, match=message):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\nspikes/010-width-stable-verification/test_stable_attention.py:172: Failed\n=========================== short test summary info ============================\nFAILED spikes/010-width-stable-verification/test_stable_attention.py::test_invalid_shapes_fail_before_lazy_import[overrides0]\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 failed, 6 deselected in 0.03s",
+      "exit_code": 1,
+      "error": null
+    },
+    {
+      "phase": "04 GREEN: fail-closed shape contract",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "................................                                         [100%]\n32 passed in 0.02s",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "05 RED: exact floating dtype contract",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py -k invalid_dtypes -x",
+      "output": "F\n=================================== FAILURES ===================================\n___________ test_invalid_dtypes_fail_before_lazy_import[overrides0] ____________\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108103100>\noverrides = {'query_dtype': 'float64'}\n\n    @pytest.mark.parametrize(\"overrides\", [\n        dict(query_dtype=\"float64\"), dict(key_dtype=\"bfloat16\"), dict(value_dtype=\"int16\"),\n        dict(query_dtype=\"Float16\"), dict(query_dtype=\"prefix.float16\"),\n        dict(query_dtype=\"mlx.core.float16.extra\"), dict(query_dtype=\"float16 \"),\n        dict(query_dtype=None), dict(key_dtype=True),\n        dict(query_dtype=\"float32\"), dict(value_dtype=\"mlx.core.float32\"),\n    ])\n    def test_invalid_dtypes_fail_before_lazy_import(monkeypatch, overrides):\n>       assert_invalid_before_runtime(monkeypatch, overrides, \"dtype\")\n\nspikes/010-width-stable-verification/test_stable_attention.py:221: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x108103100>\noverrides = {'query_dtype': 'float64'}, message = 'dtype'\n\n    def assert_invalid_before_runtime(monkeypatch, overrides, message):\n        component = load_component()\n        data = metadata(**overrides)\n        def forbidden_loader():\n            pytest.fail(\"invalid metadata reached lazy MLX import\")\n        monkeypatch.setattr(component, \"_load_mx\", forbidden_loader)\n>       with pytest.raises(ValueError, match=message):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\nspikes/010-width-stable-verification/test_stable_attention.py:172: Failed\n=========================== short test summary info ============================\nFAILED spikes/010-width-stable-verification/test_stable_attention.py::test_invalid_dtypes_fail_before_lazy_import[overrides0]\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 failed, 36 deselected in 0.03s",
+      "exit_code": 1,
+      "error": null
+    },
+    {
+      "phase": "05 GREEN: exact floating dtype contract",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "...............................................                          [100%]\n47 passed in 0.03s",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "06 RED: already-updated floating cache contract",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py -k incompatible_cache -x",
+      "output": "F\n=================================== FAILURES ===================================\n____________ test_incompatible_cache_fails_before_lazy_import[None] ____________\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10863b100>\ncache = None\n\n    @pytest.mark.parametrize(\"cache\", [\n        None, object(), SimpleNamespace(offset=True), SimpleNamespace(offset=12.0),\n        SimpleNamespace(offset=11), SimpleNamespace(offset=13), SimpleNamespace(offset=-1),\n        SimpleNamespace(offset=12, bits=4), SimpleNamespace(offset=12, bits=None),\n        SimpleNamespace(offset=100, max_size=12),\n    ])\n    def test_incompatible_cache_fails_before_lazy_import(monkeypatch, cache):\n>       assert_invalid_before_runtime(monkeypatch, dict(cache=cache), \"cache\")\n\nspikes/010-width-stable-verification/test_stable_attention.py:239: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10863b100>\noverrides = {'cache': None}, message = 'cache'\n\n    def assert_invalid_before_runtime(monkeypatch, overrides, message):\n        component = load_component()\n        data = metadata(**overrides)\n        def forbidden_loader():\n            pytest.fail(\"invalid metadata reached lazy MLX import\")\n        monkeypatch.setattr(component, \"_load_mx\", forbidden_loader)\n>       with pytest.raises(ValueError, match=message):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\nspikes/010-width-stable-verification/test_stable_attention.py:172: Failed\n=========================== short test summary info ============================\nFAILED spikes/010-width-stable-verification/test_stable_attention.py::test_incompatible_cache_fails_before_lazy_import[None]\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 failed, 47 deselected in 0.03s",
+      "exit_code": 1,
+      "error": null
+    },
+    {
+      "phase": "06 GREEN: already-updated floating cache contract",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": ".........................................................                [100%]\n57 passed in 0.05s",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "07 RED: exact causal mask and no sinks",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py -k \"requires_exact_causal or rejects_noncausal or sinks_are\" -x",
+      "output": "F\n=================================== FAILURES ===================================\n_____________ test_multi_query_requires_exact_causal_string[None] ______________\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a2cf100>\nmask = None\n\n    @pytest.mark.parametrize(\"mask\", [None, \"CAUSAL\", \"causal \", \"\", False, [], ArrayLikeMask(), CausalSubclass(\"causal\")])\n    def test_multi_query_requires_exact_causal_string(monkeypatch, mask):\n>       assert_invalid_before_runtime(monkeypatch, dict(mask=mask), \"mask\")\n\nspikes/010-width-stable-verification/test_stable_attention.py:253: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a2cf100>\noverrides = {'mask': None}, message = 'mask'\n\n    def assert_invalid_before_runtime(monkeypatch, overrides, message):\n        component = load_component()\n        data = metadata(**overrides)\n        def forbidden_loader():\n            pytest.fail(\"invalid metadata reached lazy MLX import\")\n        monkeypatch.setattr(component, \"_load_mx\", forbidden_loader)\n>       with pytest.raises(ValueError, match=message):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\nspikes/010-width-stable-verification/test_stable_attention.py:172: Failed\n=========================== short test summary info ============================\nFAILED spikes/010-width-stable-verification/test_stable_attention.py::test_multi_query_requires_exact_causal_string[None]\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 failed, 57 deselected in 0.04s",
+      "exit_code": 1,
+      "error": null
+    },
+    {
+      "phase": "07 GREEN: exact causal mask and no sinks",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "........................................................................ [ 97%]\n..                                                                       [100%]\n74 passed in 0.04s",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "08 RED: positive finite scale",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py -k scale_must -x",
+      "output": "F\n=================================== FAILURES ===================================\n________________ test_scale_must_be_positive_finite_real[True] _________________\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10ab83100>\nscale = True\n\n    @pytest.mark.parametrize(\"scale\", [True, False, None, \"0.125\", 0, -1, -0.0, float(\"nan\"), float(\"inf\"), -float(\"inf\"), 1j, 10**400])\n    def test_scale_must_be_positive_finite_real(monkeypatch, scale):\n>       assert_invalid_before_runtime(monkeypatch, dict(scale=scale), \"scale\")\n\nspikes/010-width-stable-verification/test_stable_attention.py:268: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10ab83100>\noverrides = {'scale': True}, message = 'scale'\n\n    def assert_invalid_before_runtime(monkeypatch, overrides, message):\n        component = load_component()\n        data = metadata(**overrides)\n        def forbidden_loader():\n            pytest.fail(\"invalid metadata reached lazy MLX import\")\n        monkeypatch.setattr(component, \"_load_mx\", forbidden_loader)\n>       with pytest.raises(ValueError, match=message):\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       Failed: DID NOT RAISE ValueError\n\nspikes/010-width-stable-verification/test_stable_attention.py:172: Failed\n=========================== short test summary info ============================\nFAILED spikes/010-width-stable-verification/test_stable_attention.py::test_scale_must_be_positive_finite_real[True]\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 failed, 77 deselected in 0.03s",
+      "exit_code": 1,
+      "error": null
+    },
+    {
+      "phase": "08 GREEN: positive finite scale",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "........................................................................ [ 80%]\n.................                                                        [100%]\n89 passed in 0.10s",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "09 RED: missing array metadata is fail-closed",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py -k missing_array -x",
+      "output": "F\n=================================== FAILURES ===================================\n___________ test_missing_array_metadata_is_validation_error[q-shape] ___________\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1089ff100>\nwhich = 'q', attribute = 'shape'\n\n    @pytest.mark.parametrize(\"which,attribute\", [(\"q\", \"shape\"), (\"k\", \"shape\"), (\"v\", \"shape\"), (\"q\", \"dtype\"), (\"k\", \"dtype\"), (\"v\", \"dtype\")])\n    def test_missing_array_metadata_is_validation_error(monkeypatch, which, attribute):\n        component = load_component()\n        def forbidden_loader():\n            pytest.fail(\"missing metadata reached runtime\")\n        monkeypatch.setattr(component, \"_load_mx\", forbidden_loader)\n        arrays = dict(q=StructuralArray((1, 14, 5, 64)), k=StructuralArray((1, 2, 12, 64)), v=StructuralArray((1, 2, 12, 64)))\n        delattr(arrays[which], attribute)\n        with pytest.raises(ValueError, match=attribute):\n>           component.stable_causal_attention(arrays[\"q\"], arrays[\"k\"], arrays[\"v\"], cache=ReadOnlyCache(12), scale=0.125, mask=\"causal\")\n\nspikes/010-width-stable-verification/test_stable_attention.py:286: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nqueries = <test_stable_attention.StructuralArray object at 0x108a4f620>\nkeys = <test_stable_attention.StructuralArray object at 0x108ad5450>\nvalues = <test_stable_attention.StructuralArray object at 0x108ad56d0>\ncache = <test_stable_attention.ReadOnlyCache object at 0x108a4f8c0>\nscale = 0.125, mask = 'causal', sinks = None\n\n    def stable_causal_attention(queries, keys, values, *, cache, scale, mask, sinks=None):\n        \"\"\"Use already-updated KV tensors without changing their native cache.\"\"\"\n        prefixes = plan_causal_prefixes(\n>           queries.shape, keys.shape, values.shape,\n            ^^^^^^^^^^^^^\n            str(queries.dtype), str(keys.dtype), str(values.dtype),\n            cache=cache, scale=scale, mask=mask, sinks=sinks,\n        )\nE       AttributeError: 'StructuralArray' object has no attribute 'shape'\n\nspikes/010-width-stable-verification/stable_attention.py:66: AttributeError\n=========================== short test summary info ============================\nFAILED spikes/010-width-stable-verification/test_stable_attention.py::test_missing_array_metadata_is_validation_error[q-shape]\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 failed, 89 deselected in 0.03s",
+      "exit_code": 1,
+      "error": null
+    },
+    {
+      "phase": "09 GREEN: missing array metadata is fail-closed",
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -q spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "........................................................................ [ 75%]\n.......................                                                  [100%]\n95 passed in 0.05s",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "Regression: native dtype repr and CPU import isolation",
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -p no:cacheprovider -q spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "........................................................................ [ 72%]\n...........................                                              [100%]\n99 passed in 0.07s",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "REFACTOR: Ruff format",
+      "command": ".venv/bin/ruff format --no-cache spikes/010-width-stable-verification/stable_attention.py spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "2 files reformatted",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "Verification: Ruff check",
+      "command": ".venv/bin/ruff check --no-cache spikes/010-width-stable-verification/stable_attention.py spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "All checks passed!",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "Verification: Ruff format check",
+      "command": ".venv/bin/ruff format --no-cache --check spikes/010-width-stable-verification/stable_attention.py spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "2 files already formatted",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "Final CPU verification after format/refactor",
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -m pytest --noconftest -p no:cacheprovider -q spikes/010-width-stable-verification/test_stable_attention.py",
+      "output": "........................................................................ [ 72%]\n...........................                                              [100%]\n99 passed in 0.23s",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "Environment versions",
+      "command": ".venv/bin/python --version && .venv/bin/python -m pytest --version && .venv/bin/ruff --version",
+      "output": "Python 3.13.2\npytest 9.1.1\nruff 0.16.10",
+      "exit_code": 0,
+      "error": null
+    },
+    {
+      "phase": "Verified deliverable hashes (excluding self-referential artifact)",
+      "command": ".venv/bin/python -c 'import hashlib,json,pathlib\nbase=pathlib.Path(\"spikes/010-width-stable-verification\")\nnames=(\"stable_attention.py\",\"test_stable_attention.py\",\"stable_attention_README.md\")\nprint(json.dumps({name:{\"sha256\":hashlib.sha256((base/name).read_bytes()).hexdigest(),\"bytes\":(base/name).stat().st_size} for name in names},indent=2))'",
+      "output": "{\n  \"stable_attention.py\": {\n    \"sha256\": \"672ad8e27382e74e7a3b26b2a32021e7c17dd8bc84d4670065f9e650095bec9f\",\n    \"bytes\": 5300\n  },\n  \"test_stable_attention.py\": {\n    \"sha256\": \"93cd6bb2f191854b8aad4f8216ef0793be9ed06805244e94e887955971ef396c\",\n    \"bytes\": 13657\n  },\n  \"stable_attention_README.md\": {\n    \"sha256\": \"3cef9e7592e49ef9a145510d65f6cb5c510af11c663e3c578d27a98440882da0\",\n    \"bytes\": 6380\n  }\n}",
+      "exit_code": 0,
+      "error": null,
+      "approval": "Command was flagged (script execution via -e/-c flag) and auto-approved by smart approval."
+    }
+  ],
+  "summary": {
+    "vertical_red_green_cycles": 9,
+    "final_cpu_tests_passed": 99,
+    "ruff_check": "passed",
+    "ruff_format_check": "passed",
+    "actual_mlx_numpy_model_modules_loaded": false,
+    "gpu_executed": false,
+    "decoder_integrated": false,
+    "performance_admitted": false
+  },
+  "deliverables": {
+    "stable_attention.py": {
+      "sha256": "672ad8e27382e74e7a3b26b2a32021e7c17dd8bc84d4670065f9e650095bec9f",
+      "bytes": 5300
+    },
+    "test_stable_attention.py": {
+      "sha256": "93cd6bb2f191854b8aad4f8216ef0793be9ed06805244e94e887955971ef396c",
+      "bytes": 13657
+    },
+    "stable_attention_README.md": {
+      "sha256": "3cef9e7592e49ef9a145510d65f6cb5c510af11c663e3c578d27a98440882da0",
+      "bytes": 6380
+    }
+  },
+  "artifact_hash_note": "SHA-256 of this JSON artifact is reported externally to avoid a self-reference.",
+  "pending_gates": [
+    "Real GPU held-equal Q/K/V numerical/bit-exact replay",
+    "Native cache/offset/future-token isolation validation",
+    "Independent projection plus teacher/decoder end-to-end parity",
+    "Matched-work synchronized whole-pipeline performance and memory gates"
+  ],
+  "test_limitations": [
+    "Slicing/runtime doubles contain no numerical data and prove structure only.",
+    "Invalid-metadata RED runs stop on the first failing parameter; every parameter runs in cumulative GREEN verification.",
+    "Blocked lazy-import attempts test guards; actual MLX/MLX-LM/NumPy never load."
+  ]
+}

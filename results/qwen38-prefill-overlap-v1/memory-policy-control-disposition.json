@@ -1,0 +1,16 @@
+{
+  "schema": "memory-policy-control-disposition-v1",
+  "timestamp": 1792270979.564211,
+  "review_file": "memory-policy-control-independent-review-v2.json",
+  "review_sha256": "9dc256ac9d0403674a2dccf0872c731df0fba22052a1fdd3acbf9a4e2dc75610",
+  "cpu_review_passed": true,
+  "physical_control_executed": false,
+  "status": "parked-superseded-priority-not-authorized-for-execution",
+  "reason": "Latest user allows high memory/warning pressure2. Do not resume the old pressure1 allocation-control detour from its delayed review completion.",
+  "active_work": "Opt-in noncritical pressure policy withcritical4/missing-sample/deadline aborts plus bounded loader payload lifetime reduction.",
+  "active_memory_amendment": "memory-acceptance-amendment-v1.json",
+  "active_memory_amendment_sha256": "a0341821118cfd83d45f0f8979152aaffae3f296b372f8dc29b58aacc35d409f",
+  "delegate_batch": "deleg_827f44ec",
+  "old_physical_failures_preserved": true,
+  "full_model_new_policy_admission": false
+}

@@ -1,0 +1,1211 @@
+{
+  "actual_check_commands": [
+    {
+      "command": ".venv/bin/python -m ruff format spikes/025-qwen38-overlapped-prefill/pressure_guard.py spikes/025-qwen38-overlapped-prefill/remote_actor.py spikes/025-qwen38-overlapped-prefill/supervise.py spikes/025-qwen38-overlapped-prefill/workload_evidence.py spikes/025-qwen38-overlapped-prefill/test_pressure_guard.py spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/format.log",
+      "name": "format"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' -q -p no:cacheprovider spikes/025-qwen38-overlapped-prefill/test_pressure_guard.py spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py spikes/025-qwen38-overlapped-prefill/test_overlap_cli.py --tb=short",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/focused.log",
+      "name": "focused"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' --all-cpu -q -p no:cacheprovider spikes/025-qwen38-overlapped-prefill --tb=short -k 'not test_standalone_cli_and_exact_registry and not test_hidden_cli_default_control_optin_both_ranks_and_chunk_bounds and not test_cli_exports_exclusively_and_preserves_raw and not test_cli_refuses_output_inside_trial'",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/all-permitted-cpu.log",
+      "name": "all-permitted-cpu"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' -q -p no:cacheprovider /Users/jeremylien/.hermes/cache/scratch/pressure_independent_review_025.py --tb=short -k 'adversarial or sysctl_contract or stale_handle or unreaped_handle or controller_deadline or parent_cleanup or both_host_actual or pressure_cap'",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/original-independent-probe-compatible-subset.log",
+      "name": "original-independent-probe-compatible-subset"
+    },
+    {
+      "command": ".venv/bin/python -m ruff check spikes/025-qwen38-overlapped-prefill",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/ruff-check.log",
+      "name": "ruff-check"
+    },
+    {
+      "command": ".venv/bin/python -m ruff format --check spikes/025-qwen38-overlapped-prefill",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/ruff-format-check.log",
+      "name": "ruff-format-check"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' --guarded-cli spikes/025-qwen38-overlapped-prefill/supervise.py --help",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/supervise-help.log",
+      "name": "supervise-help"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' --guarded-cli spikes/025-qwen38-overlapped-prefill/probe.py --help",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/probe-help.log",
+      "name": "probe-help"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' --guarded-cli spikes/025-qwen38-overlapped-prefill/remote_actor.py --help",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/remote_actor-help.log",
+      "name": "remote_actor-help"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; from test_overlap_cli import argv; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__,\"--guarded-cli\",'\"'\"'spikes/025-qwen38-overlapped-prefill/supervise.py'\"'\"']+argv(); c.main()'",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/supervise-dry-run.log",
+      "name": "supervise-dry-run"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' -q -p no:cacheprovider spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py -k zero_child_interval --tb=short",
+      "exit_code": 1,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/red-zero-child-interval.log",
+      "name": "red-zero-child-interval"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' -q -p no:cacheprovider spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py -k zero_child_interval --tb=short",
+      "exit_code": 1,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/red-coerced-clock-origin.log",
+      "name": "red-coerced-clock-origin"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' -q -p no:cacheprovider spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py -k zero_child_interval --tb=short",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/green-zero-child-and-clock-origin.log",
+      "name": "green-zero-child-and-clock-origin"
+    },
+    {
+      "command": ".venv/bin/python -m ruff format spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/format-final.log",
+      "name": "format-final"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' -q -p no:cacheprovider spikes/025-qwen38-overlapped-prefill/test_pressure_guard.py spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py spikes/025-qwen38-overlapped-prefill/test_overlap_cli.py --tb=short --junitxml=spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/focused-final.xml",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/focused-final.log",
+      "name": "focused-final"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__]+sys.argv[1:]; c.main()' --all-cpu -q -p no:cacheprovider spikes/025-qwen38-overlapped-prefill --tb=short -k 'not test_standalone_cli_and_exact_registry and not test_hidden_cli_default_control_optin_both_ranks_and_chunk_bounds and not test_cli_exports_exclusively_and_preserves_raw and not test_cli_refuses_output_inside_trial' --junitxml=spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/all-permitted-cpu-final.xml",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/all-permitted-cpu-final.log",
+      "name": "all-permitted-cpu-final"
+    },
+    {
+      "command": ".venv/bin/python -m ruff check spikes/025-qwen38-overlapped-prefill",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/ruff-check-final.log",
+      "name": "ruff-check-final"
+    },
+    {
+      "command": ".venv/bin/python -m ruff format --check spikes/025-qwen38-overlapped-prefill",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/ruff-format-check-final.log",
+      "name": "ruff-format-check-final"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 .venv/bin/python -c 'import sys; sys.path.insert(0,'\"'\"'spikes/025-qwen38-overlapped-prefill'\"'\"'); import cpu_only_runner as c; from test_overlap_cli import argv; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(RuntimeError(\"forbidden live process: \"+event)) if event in {\"subprocess.Popen\",\"os.system\",\"os.posix_spawn\"} else None); sys.argv=[c.__file__,\"--guarded-cli\",'\"'\"'spikes/025-qwen38-overlapped-prefill/supervise.py'\"'\"']+argv(); c.main()'",
+      "exit_code": 0,
+      "log": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/supervise-dry-run-final.log",
+      "name": "supervise-dry-run-final"
+    }
+  ],
+  "artifact_sha256": {
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/all-permitted-cpu-final.log": "f496b00b14790668b1dba7b19e1c6482c7d1375421b90bbc69e975adbca22784",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/all-permitted-cpu-final.xml": "58a26db45fcaff6b12b89f2b00d44ab82c993c74e2a45c0db71a4550059ab02b",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/all-permitted-cpu.log": "e705fe8f53301c9c398ab55c3b00d50e5730e0ff98601164705de23cbade6628",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/focused-final.log": "66ac370c7a1637c2217c6a559f37656647c22783d555253055fdbbabf25fe561",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/focused-final.xml": "6f92dfa5f973bd3f1f8a965ab1669b6e78c33c3db60e6915a577222d1f46a517",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/focused.log": "3da684c0d2af5cb1ed48ecd576aea25c638b59d762ccbbb9ee1ba3e240f1bf6e",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/format-final.log": "81eb25fe32022fc91f4c85412c2186018ceae32f8fa254e071d6d5c3f539590c",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/format.log": "7cf5cd56264dcd9ca21539091068c9a345b274385022131225fc05fc5590faba",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/green-zero-child-and-clock-origin.log": "451f03747c2fbe9d562b1f1e8b1edb55edece1b949e0d0a31247872364ce6eb2",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/original-independent-probe-compatible-subset.log": "c77a28d70848dbef9948b21109af2934ad9da983d97b78ef55cb775ba984b2ca",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/probe-help.log": "bdbd807a6172e628d1812d00cc1f487433ecaab0abb8043b014ccce118622d9f",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/red-coerced-clock-origin.log": "1391e6a2c5dfad554011dd08522c5c343b335016e42185b498b92324d56f6245",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/red-zero-child-interval.log": "9cf577f6f2c1bd66f4009e8580a241612fcb8ab22e264d7ccc45ec983b4a40e8",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/remote_actor-help.log": "cff6b8ecaf87e9dc74e1f35492bf69a4582ef87863d334b26688e3d9a7a3f34d",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/ruff-check-final.log": "217a9ad62ab3bde8a5409aa93dfbef2fa51665441dae48139c96e73feb49b8ee",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/ruff-check.log": "217a9ad62ab3bde8a5409aa93dfbef2fa51665441dae48139c96e73feb49b8ee",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/ruff-format-check-final.log": "0da0cbbb521636d6ecee43bf1e34d5b13d5858aba3b390a535f517db3097474b",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/ruff-format-check.log": "0da0cbbb521636d6ecee43bf1e34d5b13d5858aba3b390a535f517db3097474b",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/supervise-dry-run-final.log": "969bc6dd624fac0e0f3d92d0d67551b663d3b0ba5e522adccfeacf1ae8904664",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/supervise-dry-run.log": "c2434191cd7b19170315277285d94f67add667352520ac8730d6cb8e59f50cb1",
+    "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/supervise-help.log": "79b97e949eaa77ffff293b8f36f91b85002b670219915b192b54479a1754795e"
+  },
+  "changed_registered_sources": [
+    "pressure_guard.py",
+    "test_pressure_guard.py",
+    "test_pressure_v2.py",
+    "remote_actor.py",
+    "supervise.py",
+    "workload_evidence.py"
+  ],
+  "changes": {
+    "INTERFACE-OVERLAP.md": "public v2 API and raw-adapter integration contract",
+    "TDD-OVERLAP.md": "repair-specific RED/GREEN and fixture-version ledger",
+    "pressure_guard.py": "v2 identity, exact grammar/timeout/types, actual child/actor interval coverage, independent startup/PID reconciliation and three-role deduplication APIs",
+    "remote_actor.py": "capture origin before guard/setup, record real child start/gate/end boundaries, produce identity-bound receipts, pre-Popen and pre-gate stop/deadline checks, exact role job admission/forwarding; register new test helper",
+    "supervise.py": "source admitted roles/nonces from controller jobs; reconcile independent startup/PID records; pass expected bindings to pressure and schedule admission",
+    "test_pressure_guard.py": "update one current025 positive fixture to explicit v2 trusted identity/execution fields; no historical result files rewritten",
+    "test_pressure_v2.py": "new deterministic mock-only producer, replay, grammar, type, interval, controller, workload, job and launch regressions",
+    "workload_evidence.py": "require/forward same external bindings for scheduled pressure admission"
+  },
+  "command_history": [
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230705.4956632
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230727.213814
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230750.599585
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230770.3430479
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "prelaunch",
+        "--tb=short"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230801.1541
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "prelaunch",
+        "--tb=short"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230818.5428648
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "actual_actor",
+        "--tb=short"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230818.699702
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "--tb=short"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230849.9755461
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "expected_binding",
+        "--tb=short"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230899.0390558
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "expected_binding",
+        "--tb=short"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230921.788243
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "controller_rejects or three_actor",
+        "--tb=short"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230922.42516
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "--tb=short"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230948.9570801
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "gated_bootstrap",
+        "--tb=short"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230985.3134668
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "--tb=short"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792230994.784406
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "job_admission or controller_run",
+        "--tb=short"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231031.742613
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "--tb=short"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231055.731621
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "source_registry or schedule_verifier",
+        "--tb=short"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231097.581064
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "--tb=short"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231111.620173
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_guard.py",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "spikes/025-qwen38-overlapped-prefill/test_overlap_cli.py",
+        "--tb=short"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231127.797986
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "coercion or 900",
+        "--tb=short"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231166.5084732
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_guard.py",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "spikes/025-qwen38-overlapped-prefill/test_overlap_cli.py",
+        "--tb=short"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231177.803307
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "--all-cpu",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill",
+        "--tb=short",
+        "-k",
+        "not test_hidden_cli_default_control_optin_both_ranks_and_chunk_bounds and not test_cli_exports_exclusively_and_preserves_raw and not test_cli_refuses_output_inside_trial"
+      ],
+      "excluded_mlx_modules": [
+        "test_batched_snapshot.py",
+        "test_cache_gate.py",
+        "test_config_immutability.py",
+        "test_dispatch_schedule.py",
+        "test_evidence_hardening.py",
+        "test_head.py",
+        "test_hidden_cache_inventory.py",
+        "test_hidden_control.py",
+        "test_hidden_gate.py",
+        "test_hidden_prefill.py",
+        "test_hidden_runtime.py",
+        "test_hidden_two_rank.py",
+        "test_phased_cpu.py",
+        "test_prefix_integration.py",
+        "test_prefix_rollback.py",
+        "test_two_rank_schedule.py",
+        "test_unbound_schedule.py",
+        "test_workload_cleanup.py",
+        "test_workload_evidence.py",
+        "test_workload_runtime.py",
+        "test_workload_timings.py"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "test_counts": {
+        "failed": 1,
+        "passed": 290,
+        "skipped": 13
+      },
+      "timestamp": 1792231193.488013
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "/Users/jeremylien/.hermes/cache/scratch/pressure_independent_review_025.py",
+        "--tb=short",
+        "-k",
+        "adversarial or sysctl_contract or stale_handle or unreaped_handle or controller_deadline or parent_cleanup or both_host_actual or pressure_cap"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231195.556737
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "--all-cpu",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill",
+        "--tb=short",
+        "-k",
+        "not test_standalone_cli_and_exact_registry and not test_hidden_cli_default_control_optin_both_ranks_and_chunk_bounds and not test_cli_exports_exclusively_and_preserves_raw and not test_cli_refuses_output_inside_trial"
+      ],
+      "excluded_mlx_modules": [
+        "test_batched_snapshot.py",
+        "test_cache_gate.py",
+        "test_config_immutability.py",
+        "test_dispatch_schedule.py",
+        "test_evidence_hardening.py",
+        "test_head.py",
+        "test_hidden_cache_inventory.py",
+        "test_hidden_control.py",
+        "test_hidden_gate.py",
+        "test_hidden_prefill.py",
+        "test_hidden_runtime.py",
+        "test_hidden_two_rank.py",
+        "test_phased_cpu.py",
+        "test_prefix_integration.py",
+        "test_prefix_rollback.py",
+        "test_two_rank_schedule.py",
+        "test_unbound_schedule.py",
+        "test_workload_cleanup.py",
+        "test_workload_evidence.py",
+        "test_workload_runtime.py",
+        "test_workload_timings.py"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "test_counts": {
+        "passed": 290,
+        "skipped": 13
+      },
+      "timestamp": 1792231209.6219342
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_guard.py",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "spikes/025-qwen38-overlapped-prefill/test_overlap_cli.py",
+        "--tb=short"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231298.5282822
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "--all-cpu",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill",
+        "--tb=short",
+        "-k",
+        "not test_standalone_cli_and_exact_registry and not test_hidden_cli_default_control_optin_both_ranks_and_chunk_bounds and not test_cli_exports_exclusively_and_preserves_raw and not test_cli_refuses_output_inside_trial"
+      ],
+      "excluded_mlx_modules": [
+        "test_batched_snapshot.py",
+        "test_cache_gate.py",
+        "test_config_immutability.py",
+        "test_dispatch_schedule.py",
+        "test_evidence_hardening.py",
+        "test_head.py",
+        "test_hidden_cache_inventory.py",
+        "test_hidden_control.py",
+        "test_hidden_gate.py",
+        "test_hidden_prefill.py",
+        "test_hidden_runtime.py",
+        "test_hidden_two_rank.py",
+        "test_phased_cpu.py",
+        "test_prefix_integration.py",
+        "test_prefix_rollback.py",
+        "test_two_rank_schedule.py",
+        "test_unbound_schedule.py",
+        "test_workload_cleanup.py",
+        "test_workload_evidence.py",
+        "test_workload_runtime.py",
+        "test_workload_timings.py"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "test_counts": {
+        "passed": 292,
+        "skipped": 13
+      },
+      "timestamp": 1792231299.690167
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "/Users/jeremylien/.hermes/cache/scratch/pressure_independent_review_025.py",
+        "--tb=short",
+        "-k",
+        "adversarial or sysctl_contract or stale_handle or unreaped_handle or controller_deadline or parent_cleanup or both_host_actual or pressure_cap"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231301.7870631
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "--guarded-cli",
+        "spikes/025-qwen38-overlapped-prefill/supervise.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231318.2155242
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "--guarded-cli",
+        "spikes/025-qwen38-overlapped-prefill/probe.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231318.666985
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "--guarded-cli",
+        "spikes/025-qwen38-overlapped-prefill/remote_actor.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231319.0226188
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "--guarded-cli",
+        "spikes/025-qwen38-overlapped-prefill/supervise.py",
+        "--remote-root",
+        "/remote/025",
+        "--remote-source",
+        "/weights",
+        "--local-metadata",
+        "/meta",
+        "--output",
+        "/never-created",
+        "--ssh-key",
+        "/keys/k",
+        "--split",
+        "28",
+        "36",
+        "--target-revision",
+        "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+        "--target-config-sha256",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "--target-index-sha256",
+        "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "--sidecar",
+        "/head",
+        "--small-model-local",
+        "/small",
+        "--small-model-remote",
+        "/remote/small",
+        "--small-config-sha256",
+        "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "--small-index-sha256",
+        "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "--max-tokens",
+        "5",
+        "--repeats",
+        "1",
+        "--eval-group-size",
+        "32",
+        "--rank0-verifier",
+        "native",
+        "--rank1-verifier",
+        "slot-qmv",
+        "--prefix-rollback",
+        "--hidden-only-prefill",
+        "--overlapped-prefill",
+        "--require-normal-pressure",
+        "--verification-gate-only",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231319.526999
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "zero_child_interval",
+        "--tb=short"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231365.224475
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "zero_child_interval",
+        "--tb=short"
+      ],
+      "exit_code": 1,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231374.350341
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "-k",
+        "zero_child_interval",
+        "--tb=short"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231382.850373
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_guard.py",
+        "spikes/025-qwen38-overlapped-prefill/test_pressure_v2.py",
+        "spikes/025-qwen38-overlapped-prefill/test_overlap_cli.py",
+        "--tb=short",
+        "--junitxml=spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/focused-final.xml"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231427.455261
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "--all-cpu",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "spikes/025-qwen38-overlapped-prefill",
+        "--tb=short",
+        "-k",
+        "not test_standalone_cli_and_exact_registry and not test_hidden_cli_default_control_optin_both_ranks_and_chunk_bounds and not test_cli_exports_exclusively_and_preserves_raw and not test_cli_refuses_output_inside_trial",
+        "--junitxml=spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/all-permitted-cpu-final.xml"
+      ],
+      "excluded_mlx_modules": [
+        "test_batched_snapshot.py",
+        "test_cache_gate.py",
+        "test_config_immutability.py",
+        "test_dispatch_schedule.py",
+        "test_evidence_hardening.py",
+        "test_head.py",
+        "test_hidden_cache_inventory.py",
+        "test_hidden_control.py",
+        "test_hidden_gate.py",
+        "test_hidden_prefill.py",
+        "test_hidden_runtime.py",
+        "test_hidden_two_rank.py",
+        "test_phased_cpu.py",
+        "test_prefix_integration.py",
+        "test_prefix_rollback.py",
+        "test_two_rank_schedule.py",
+        "test_unbound_schedule.py",
+        "test_workload_cleanup.py",
+        "test_workload_evidence.py",
+        "test_workload_runtime.py",
+        "test_workload_timings.py"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "test_counts": {
+        "passed": 293,
+        "skipped": 13
+      },
+      "timestamp": 1792231428.744436
+    },
+    {
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+        "--guarded-cli",
+        "spikes/025-qwen38-overlapped-prefill/supervise.py",
+        "--remote-root",
+        "/remote/025",
+        "--remote-source",
+        "/weights",
+        "--local-metadata",
+        "/meta",
+        "--output",
+        "/never-created",
+        "--ssh-key",
+        "/keys/k",
+        "--split",
+        "28",
+        "36",
+        "--target-revision",
+        "10c35caafbb80f7dc6a7a432cdd11af10a6d4818",
+        "--target-config-sha256",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "--target-index-sha256",
+        "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "--sidecar",
+        "/head",
+        "--small-model-local",
+        "/small",
+        "--small-model-remote",
+        "/remote/small",
+        "--small-config-sha256",
+        "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "--small-index-sha256",
+        "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "--max-tokens",
+        "5",
+        "--repeats",
+        "1",
+        "--eval-group-size",
+        "32",
+        "--rank0-verifier",
+        "native",
+        "--rank1-verifier",
+        "slot-qmv",
+        "--prefix-rollback",
+        "--hidden-only-prefill",
+        "--overlapped-prefill",
+        "--require-normal-pressure",
+        "--verification-gate-only",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "guard": "forbid mlx/mlx_lm/mlx_vlm/network/signals",
+      "mlx_imported": false,
+      "timestamp": 1792231431.8490539
+    }
+  ],
+  "documentation_sha256": {
+    "INTERFACE-OVERLAP.md": "ab525d4cd9cf1827ee0532223ff19208330ed87d2b1d1d20594e05a9f9fb8455",
+    "TDD-OVERLAP.md": "b9db96814cb49c901df4d23b6d3b94166f08b3c0bbd304c9259711ee03e39c2d"
+  },
+  "forbidden_dryrun_output_exists": false,
+  "frozen_input_checks": {
+    "PROTOCOL.md": true,
+    "acceptance.json": true,
+    "architecture-decision.json": true,
+    "benchmark-design-review.json": true,
+    "dependency-review.json": true
+  },
+  "generated_at": "2026-10-17T06:04:14.156664-04:00",
+  "gpu_numerical_admission_executed": false,
+  "hardware_executed": false,
+  "historical_runtime_independent_review_sha256": "1b031dc1fe6621b1331257f67b8a3d9fcb4338bfa4e6eac681c1e840d8a992f2",
+  "independent_approval": "NOT_ISSUED; historical core CPU approval does not approve these changed pressure sources",
+  "limits_and_next_gates": [
+    "Fresh independent CPU pressure/ownership review is mandatory; no self-approval.",
+    "Parent alone must exercise real gated bootstrap/stop/deadline pressure behavior and both-host hardware admission.",
+    "Raw-adapter sibling must use documented external startup/PID/job binding API before real trials; this child did not edit benchmarks.",
+    "No physical GPU model gates, deployment, pilot, performance acceptance, TTFT/wall improvement or continuous-pressure certification is claimed.",
+    "Top-level requested new receipt publication is delegated back to parent to respect strict025-only file ownership."
+  ],
+  "live_test_child_processes_launched": false,
+  "mlx_imported": false,
+  "observed_issues": [
+    "One initial full permitted scan attempted a historical standalone-help subprocess; the supplemental audit refused it before spawn. Retry explicitly deselected all four historical subprocess-CLI tests.",
+    "One historical positive current025 fixture needed explicit v2 independent fields. This was updated, not silently grandfathered.",
+    "Initial Ruff check failed on formatting/imports in new code/tests; formatter and import fixes applied, final whole025 checks clean."
+  ],
+  "old_runtime_implementation_sha256": "b6749f4c9cf070081f89b9714c11691caefa0a6492ca22c992e2e2c30eca8f7b",
+  "original_frozen_files_count": 90,
+  "original_frozen_files_unchanged": true,
+  "original_frozen_mismatches": [],
+  "protocol": {
+    "compatibility": "Default serial behavior and pressure opt-out remain unchanged. New pressure-required jobs require exact roles. Historical v1 receipts remain immutable but cannot pass current pressure admission.",
+    "controller_workload_keyword": "expected_pressure_bindings",
+    "coverage": "same source-captured actor monotonic origin before setup/guard; bracket actual pre-Popen start, gated release and observed child completion; final sample no later than actor elapsed and no more than 1 second earlier",
+    "external_binding": "expected_pressure_binding(status, nonce=admitted_job_nonce, host_role=admitted_host_role, actor_role=admitted_actor_role) reconciles startup/pids/result; never derive expectation from pressure.binding",
+    "interval_seconds": 0.5,
+    "ownership": "Existing single-owner unreaped Popen termination logic unchanged; reaped/reused PID does not authorize a signal",
+    "prelaunch": "recheck stopfile/handled signal and elapsed deadline after potentially blocking initial sampler before Popen; recheck before gated bootstrap release",
+    "public_api": "verify_pressure(receipt, *, expected_binding=None, actor_result=None); verify_actor_pressures(receipts, *, expected_bindings=None)",
+    "required_exact_identity_fields": [
+      "host_role",
+      "actor_role",
+      "nonce",
+      "actor_pid",
+      "child_pid"
+    ],
+    "roles": [
+      [
+        "local",
+        "rank0"
+      ],
+      [
+        "remote",
+        "rank1"
+      ],
+      [
+        "remote",
+        "server"
+      ]
+    ],
+    "sample_cap": 2048,
+    "sample_time_policy": "finite nonnegative strictly increasing; positive span; every adjacent gap <= 1 second",
+    "sampler_timeout_seconds": 0.25,
+    "schema": "qwen38-owned-pressure-v2",
+    "stage_grammar": "pre_spawn, owned_child*, post_child"
+  },
+  "publication": {
+    "actual_staged_target": "spikes/025-qwen38-overlapped-prefill/results/qwen38-prefill-overlap-v1/pressure-fix-implementation.json",
+    "reason": "Subagent file ownership is strictly limited to spikes/025-qwen38-overlapped-prefill/**. Parent must publish this new receipt at requested repo-level target.",
+    "requested_target": "results/qwen38-prefill-overlap-v1/pressure-fix-implementation.json"
+  },
+  "real_sysctl_executed": false,
+  "red_green_outcomes": [
+    {
+      "green": "2 passed",
+      "red": "2 failed; missing v2 API and historical0.01s receipt accepted",
+      "slice": "bound receipt coverage / historical unbound receipt"
+    },
+    {
+      "green": "27 passed",
+      "red": "10 failed,17 passed; malformed evidence still admitted or raised AttributeError",
+      "slice": "grammar timeout stages times identity"
+    },
+    {
+      "green": "3 passed,28 deselected",
+      "red": "3 failed; mocked Popen reached after stop/deadline",
+      "slice": "prelaunch stop/deadline during initial sampler"
+    },
+    {
+      "green": "31 cumulative passed; final suite parametrizes all three host/actor roles",
+      "red": "1 failed; host_role argument absent",
+      "slice": "actual run_owned bound producer"
+    },
+    {
+      "green": "1 passed,37 deselected",
+      "red": "1 failed; helper absent",
+      "slice": "startup/PID external identity"
+    },
+    {
+      "green": "38 cumulative passed",
+      "red": "6 failed; missing external binding APIs",
+      "slice": "both-host replay and controller coverage"
+    },
+    {
+      "green": "40 cumulative passed",
+      "red": "2 failed; observed actual mocked gate b1 write",
+      "slice": "stop/deadline after PID record before gated release"
+    },
+    {
+      "green": "42 cumulative passed",
+      "red": "2 failed; roles absent/rejected",
+      "slice": "job/role admission and controller real descriptor path"
+    },
+    {
+      "green": "44 cumulative passed",
+      "red": "2 failed; helper unregistered and workload keyword absent",
+      "slice": "registration and schedule external binding forwarding"
+    },
+    {
+      "green": "64 focused passed at then-current test version",
+      "red": "4 failed; coercion/failure accepted",
+      "slice": "exact binding types and successful actor completion"
+    },
+    {
+      "green": "child interval fixed before separate next clock-origin RED",
+      "red": "1 failed,51 deselected; zero actual child interval accepted",
+      "slice": "zero child interval"
+    },
+    {
+      "green": "1 passed,51 deselected",
+      "red": "1 failed,51 deselected; bool clock origin accepted by equality",
+      "slice": "coerced receipt clock origin"
+    }
+  ],
+  "registered_source_count": 77,
+  "registry_matches_all_code_config_kernel_files": true,
+  "schema": "qwen38-pressure-fix-implementation-v2",
+  "scope": "spikes/025-qwen38-overlapped-prefill",
+  "source_sha256": {
+    "benchmark_schedule.json": "6d052c75f9ee86c8d2182d237b80698f8a39608ae1524458aa048a8df728c857",
+    "cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+    "cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+    "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b",
+    "distributed_control.py": "fcef87a378bf54f61e2357c01c9f145e4f1c1ec19a55481da64dbfa029f8542e",
+    "hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+    "mlx_backend.py": "8a7adc03903485a733fa12efdfa065b639eeed480ad7b3ed558ef2bf70b8d639",
+    "mtp_audit.py": "6b96425edfa476114a00083cf52521c42e82ae029c41816325ad79b6b1c6c090",
+    "mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+    "mtp_runtime.py": "20c9d920ee9c2096007082fc029fb5a349cecc08d6587ec6de923c95dc07830d",
+    "numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+    "overlap_evidence.py": "5c473a5a1639b678bc2909cb5cffb9eb7367ef317fd77158154562d5cb9c5a4f",
+    "overlap_gate.py": "e2294ed131308c265e1eefd633fece9ab446b1379a4a73fb46f5b33d79e2fc00",
+    "overlap_prefill.py": "d00a29b3cd1790a4c16c77ae2a448aa68b33f1af71618900d0d3b5d50dfec1d6",
+    "phased_decode.py": "7e586790b59ce3d1613452b378d7ce3309c5c54e169226d48b3aea1f117ed2aa",
+    "prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+    "pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20",
+    "probe.py": "4b21c1faead37933d9ebd559c19015e31c707b68dabfe66ba77a8743f2f6c702",
+    "rank_control.py": "cfaea89fefecea5e95ba9005fafacda5adae7b1a9cc7f9ee8ab1c4f719f04f80",
+    "remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+    "shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+    "sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+    "slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+    "slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+    "slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+    "speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+    "stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+    "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+    "supervise.py": "485ae42d2f5d9ff7a57359d1ff20f8a8b4283005cb1590881402204b6a6eef3c",
+    "test_batched_snapshot.py": "be1002feb6fd661085b73bf4ef0f31bbb6bba2312231314cd90a1959bfb12b66",
+    "test_cache_gate.py": "5ce8116c15a22f44a191b04b1fcf69b523f690ceaf7ebd88589340f52a7a6c42",
+    "test_cli_schedule.py": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c",
+    "test_config_immutability.py": "30e281bae3adc0c2c493cb88600d69630b8f6103e0c8065257e81defba854d69",
+    "test_controller_snapshot.py": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab",
+    "test_dispatch_schedule.py": "05ca31b22aa6af70538cb12dd145db30903fcad7ca162c8d901935bc005e6b9c",
+    "test_evidence_hardening.py": "f495a0ec7fae35b9172749fc28c2aa77931b6bf8bd2109a23acbc939ffa88a2a",
+    "test_head.py": "bf976833baa25e5da6ddff8bb59338ab046950864cf3a4f2ae30b1ea0e651485",
+    "test_hidden_cache_inventory.py": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493",
+    "test_hidden_cli.py": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f",
+    "test_hidden_control.py": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232",
+    "test_hidden_evidence.py": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137",
+    "test_hidden_gate.py": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a",
+    "test_hidden_prefill.py": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50",
+    "test_hidden_runtime.py": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3",
+    "test_hidden_two_rank.py": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5",
+    "test_integration.py": "c77b6ba8fbe9334d584b72e1ff0ea61fe098351d585f1efb33b7e0ec66df255d",
+    "test_mtp_audit.py": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3",
+    "test_overlap_backend.py": "8c49ec58f77a6989da71f6b13998d4f19e26595cec5bba78974872d2d485705d",
+    "test_overlap_bounds.py": "ed90f36077e830e3a9819e4e25b96e3dfe66b1ccadf124fab225be4c6cb83fe4",
+    "test_overlap_cli.py": "e2fe29aa0725442ae63668d5490690f6d9d0478669c3e859fb3c63cf4387a403",
+    "test_overlap_evidence.py": "a2e79c68c1b82d7f7cafd72e20d8ccc8ea320954138f2b9dee7548499083fb6d",
+    "test_overlap_failure.py": "e8993292ddfa1da7d486f55395b5e643faa751533370f4f9177257cd57e3fa96",
+    "test_overlap_gate.py": "9b74b2ea65221e4012336ead2b61e100418183ff0a000f11bd7014d53ae13a94",
+    "test_overlap_protocol.py": "cb4dad711613aaaf42df3fdc7561fe0da2a0f17eebc0c1c4d35893aa6db3e0c6",
+    "test_overlap_schedule.py": "358002dedf3e79ed45c7b39e8687623a37968071731527ca73fa0444d3f6759a",
+    "test_overlap_wiring.py": "87f456be57084f69073a65e53eb8866b8feec9dbcb60a4db951af6d1e02a5271",
+    "test_phased_cpu.py": "7b65176cc4751ba82ff92ec2ae257a22d501344dd0e901c1d245cc42dddf910e",
+    "test_prefix_integration.py": "377d62e2ed2ff9f09196afd32a1aa788be54b39550060dab0ef042254c8532d5",
+    "test_prefix_rollback.py": "d0f6f040542e4a4ed2bed704bf8af9b5cc15f63d6c4aadd7885b61e8283724d7",
+    "test_pressure_guard.py": "f182ba69d412b8dd7fdb97890aa77f74bad2d327dc855215025fe0e833fcccd5",
+    "test_pressure_v2.py": "50bb735f9ff927581200e5621126ad633297ed2456d8bdb9931a0812a7c3dbcf",
+    "test_speculative.py": "9cd3a4b0b956284e21801ac6805f93e5bd1fdc76b4f60d9cfd7bde1d77fdea17",
+    "test_two_rank_schedule.py": "b67f9a1025738e22b7da3a0f7eb0f9041aa83cc81c03dbb0a063ad6ad4f7a708",
+    "test_unbound_schedule.py": "f446a36ba5fe48f1cc88f1558c5ad4647af9c286e7bc004bd0cc7b85ae866f5a",
+    "test_workload_caps.py": "117e18df911429b210bc96ed998dcbcac6e23304223758ebe3c4b9b9467fa503",
+    "test_workload_cleanup.py": "e478df18900b76dc5dc949d8808db6e6f0cea2e977468d5538fc124b7300f9de",
+    "test_workload_evidence.py": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6",
+    "test_workload_runtime.py": "5a9e95b2e207bdf11410218771959224b683ed6bb4c306696018c3f38c24e267",
+    "test_workload_schedule.py": "ae27e162390368b19d943f0c6f974722481d59a40b9aa18d8e00d34b0470f2d4",
+    "test_workload_snapshot.py": "e8d26f9e3841f320b118a4ec8b148768cb60d72027b1e626fe5234bd71bc120f",
+    "test_workload_timings.py": "761027cf05c067526ad2267a1a81bcd4f36774bdabc5e802abdec1cf7a00e748",
+    "verification.py": "05f2ce291252c9fd276fb029ebef5f5939177b46262dfe5569744326a15981e8",
+    "verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+    "width_gate.py": "81528ae022bed8c910b9d1dcf045990cf9a8968a3978e106becdda14a4ee403c",
+    "workload_evidence.py": "28f0e79a81bec5b418cef501432efc190c1e531bc632bf7c4c5940ba95324f11",
+    "workload_runtime.py": "6d4b8efe2e12ca616069370f3bc31cfefd086f7966c813cd6a4e951b30178446",
+    "workload_schedule.py": "938b74339de27496e3187150e624937338013d57cc650cf10867c3685511113e"
+  },
+  "ssh_network_signals_install_commit_actions_performed": false,
+  "status": "CPU_IMPLEMENTED_AND_VERIFIED_FRESH_INDEPENDENT_REVIEW_REQUIRED",
+  "verification": {
+    "all_permitted_cpu": {
+      "deselected": 4,
+      "log": "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/all-permitted-cpu-final.log",
+      "mlx_dependent_modules_excluded": 21,
+      "passed": 293,
+      "skipped": 13,
+      "xml": "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/all-permitted-cpu-final.xml"
+    },
+    "deselected_live_subprocess_cli_tests": [
+      "test_standalone_cli_and_exact_registry",
+      "test_hidden_cli_default_control_optin_both_ranks_and_chunk_bounds",
+      "test_cli_exports_exclusively_and_preserves_raw",
+      "test_cli_refuses_output_inside_trial"
+    ],
+    "focused": {
+      "log": "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/focused-final.log",
+      "passed": 67,
+      "xml": "spikes/025-qwen38-overlapped-prefill/pressure-fix-evidence/focused-final.xml"
+    },
+    "guarded_dry_run_exit_code": 0,
+    "guarded_help": [
+      "supervise.py",
+      "probe.py",
+      "remote_actor.py"
+    ],
+    "not_additive": "Focused and scratch tests overlap full suite; do not sum counts",
+    "original_scratch_probe_compatible_subset": {
+      "claim": "Implementation regression execution only, not a new independent approval",
+      "deselected": 5,
+      "passed": 9
+    },
+    "ruff_check": "All checks passed!",
+    "ruff_format_check": "78 files already formatted",
+    "scope_guard": "MLX/model imports, network and signals blocked by cpu_only_runner; supplemental audit additionally blocks subprocess.Popen/os.system/os.posix_spawn"
+  }
+}

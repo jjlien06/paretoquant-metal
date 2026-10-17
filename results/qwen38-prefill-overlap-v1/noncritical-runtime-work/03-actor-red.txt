@@ -1,0 +1,210 @@
+.........................................FFFFF                           [100%]
+=================================== FAILURES ===================================
+_ test_actual_actor_noncritical_monitors_and_binds_truthful_policy[local-rank0] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10ae02c40>
+tmp_path = PosixPath('/Users/jeremylien/.hermes/cache/scratch/pytest-of-jeremylien/pytest-254/test_actual_actor_noncritical_0')
+host = 'local', role = 'rank0'
+
+    @pytest.mark.parametrize("host,role", [("local", "rank0"), ("remote", "rank1"), ("remote", "server")])
+    def test_actual_actor_noncritical_monitors_and_binds_truthful_policy(monkeypatch, tmp_path, host, role):
+        import json
+        import os
+        import remote_actor as actor
+    
+        now = [100.0]
+        monkeypatch.setattr(actor.time, "monotonic", lambda: now[0])
+        monkeypatch.setattr(actor.signal, "signal", lambda *a: None)
+        ends = []
+        class Child:
+            pid = 456
+            returncode = None
+            def __init__(self):
+                for name in ("stdout", "stderr"):
+                    read, write = os.pipe()
+                    os.close(write)
+                    setattr(self, name, os.fdopen(read, "rb", buffering=0))
+            def poll(self):
+                return self.returncode
+        child = Child()
+        def popen(*args, **kwargs):
+            ends.append(os.dup(kwargs["pass_fds"][0]))
+            now[0] += 0.02
+            return child
+        def sampler():
+            now[0] += 0.01
+            return 2
+        def tick(child):
+            now[0] += 0.1
+            child.returncode = 0
+        monkeypatch.setattr(actor.subprocess, "Popen", popen)
+        monkeypatch.setattr(actor, "terminate", lambda owned: dict(child_reaped=True, group_gone=True))
+        try:
+>           result = actor.run_owned(["MOCK"], tmp_path / "job", deadline=2, tick=tick, nonce="a" * 32,
+                                     host_role=host, actor_role=role, pressure_policy="noncritical",
+                                     require_normal_pressure=False, pressure_sampler=sampler)
+E                                    TypeError: run_owned() got an unexpected keyword argument 'pressure_policy'
+
+test_pressure_noncritical.py:175: TypeError
+_ test_actual_actor_noncritical_monitors_and_binds_truthful_policy[remote-rank1] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b6990f0>
+tmp_path = PosixPath('/Users/jeremylien/.hermes/cache/scratch/pytest-of-jeremylien/pytest-254/test_actual_actor_noncritical_1')
+host = 'remote', role = 'rank1'
+
+    @pytest.mark.parametrize("host,role", [("local", "rank0"), ("remote", "rank1"), ("remote", "server")])
+    def test_actual_actor_noncritical_monitors_and_binds_truthful_policy(monkeypatch, tmp_path, host, role):
+        import json
+        import os
+        import remote_actor as actor
+    
+        now = [100.0]
+        monkeypatch.setattr(actor.time, "monotonic", lambda: now[0])
+        monkeypatch.setattr(actor.signal, "signal", lambda *a: None)
+        ends = []
+        class Child:
+            pid = 456
+            returncode = None
+            def __init__(self):
+                for name in ("stdout", "stderr"):
+                    read, write = os.pipe()
+                    os.close(write)
+                    setattr(self, name, os.fdopen(read, "rb", buffering=0))
+            def poll(self):
+                return self.returncode
+        child = Child()
+        def popen(*args, **kwargs):
+            ends.append(os.dup(kwargs["pass_fds"][0]))
+            now[0] += 0.02
+            return child
+        def sampler():
+            now[0] += 0.01
+            return 2
+        def tick(child):
+            now[0] += 0.1
+            child.returncode = 0
+        monkeypatch.setattr(actor.subprocess, "Popen", popen)
+        monkeypatch.setattr(actor, "terminate", lambda owned: dict(child_reaped=True, group_gone=True))
+        try:
+>           result = actor.run_owned(["MOCK"], tmp_path / "job", deadline=2, tick=tick, nonce="a" * 32,
+                                     host_role=host, actor_role=role, pressure_policy="noncritical",
+                                     require_normal_pressure=False, pressure_sampler=sampler)
+E                                    TypeError: run_owned() got an unexpected keyword argument 'pressure_policy'
+
+test_pressure_noncritical.py:175: TypeError
+_ test_actual_actor_noncritical_monitors_and_binds_truthful_policy[remote-server] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10affd5b0>
+tmp_path = PosixPath('/Users/jeremylien/.hermes/cache/scratch/pytest-of-jeremylien/pytest-254/test_actual_actor_noncritical_2')
+host = 'remote', role = 'server'
+
+    @pytest.mark.parametrize("host,role", [("local", "rank0"), ("remote", "rank1"), ("remote", "server")])
+    def test_actual_actor_noncritical_monitors_and_binds_truthful_policy(monkeypatch, tmp_path, host, role):
+        import json
+        import os
+        import remote_actor as actor
+    
+        now = [100.0]
+        monkeypatch.setattr(actor.time, "monotonic", lambda: now[0])
+        monkeypatch.setattr(actor.signal, "signal", lambda *a: None)
+        ends = []
+        class Child:
+            pid = 456
+            returncode = None
+            def __init__(self):
+                for name in ("stdout", "stderr"):
+                    read, write = os.pipe()
+                    os.close(write)
+                    setattr(self, name, os.fdopen(read, "rb", buffering=0))
+            def poll(self):
+                return self.returncode
+        child = Child()
+        def popen(*args, **kwargs):
+            ends.append(os.dup(kwargs["pass_fds"][0]))
+            now[0] += 0.02
+            return child
+        def sampler():
+            now[0] += 0.01
+            return 2
+        def tick(child):
+            now[0] += 0.1
+            child.returncode = 0
+        monkeypatch.setattr(actor.subprocess, "Popen", popen)
+        monkeypatch.setattr(actor, "terminate", lambda owned: dict(child_reaped=True, group_gone=True))
+        try:
+>           result = actor.run_owned(["MOCK"], tmp_path / "job", deadline=2, tick=tick, nonce="a" * 32,
+                                     host_role=host, actor_role=role, pressure_policy="noncritical",
+                                     require_normal_pressure=False, pressure_sampler=sampler)
+E                                    TypeError: run_owned() got an unexpected keyword argument 'pressure_policy'
+
+test_pressure_noncritical.py:175: TypeError
+______ test_actor_job_admission_carries_policy_and_cannot_disable_monitor ______
+
+    def test_actor_job_admission_carries_policy_and_cannot_disable_monitor():
+        from pathlib import Path
+        import remote_actor as actor
+        root = Path(actor.__file__).parent
+        base = dict(entrypoint="probe.py", argv=[], nonce="a" * 32, deadline=2,
+                    pressure_policy="noncritical", require_normal_pressure=False, host_role="local", actor_role="rank0")
+>       assert actor.validate_job(base, root) == base
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_pressure_noncritical.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+job = {'entrypoint': 'probe.py', 'argv': [], 'nonce': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'deadline': 2, ...}
+root = PosixPath('/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill')
+
+    def validate_job(job, root):
+        import re
+    
+        if not isinstance(job, dict) or set(job) - {
+            "entrypoint",
+            "argv",
+            "env",
+            "nonce",
+            "deadline",
+            "reserve_bytes",
+            "require_normal_pressure",
+            "host_role",
+            "actor_role",
+            "hostfile",
+            "source_sha256",
+        }:
+>           raise ValueError("Invalid job fields")
+E           ValueError: Invalid job fields
+
+remote_actor.py:519: ValueError
+____________ test_actual_actor_main_forwards_noncritical_descriptor ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10ae4abe0>
+tmp_path = PosixPath('/Users/jeremylien/.hermes/cache/scratch/pytest-of-jeremylien/pytest-254/test_actual_actor_main_forward0')
+
+    def test_actual_actor_main_forwards_noncritical_descriptor(monkeypatch, tmp_path):
+        from pathlib import Path
+        import sys
+        import remote_actor as actor
+        job = dict(entrypoint="stream_server.py", argv=[], nonce="a" * 32, deadline=2,
+                   pressure_policy="noncritical", require_normal_pressure=False, host_role="remote", actor_role="server")
+        monkeypatch.setattr(sys, "argv", ["remote_actor.py", "--root", str(Path(actor.__file__).parent), "--jobs", str(tmp_path)])
+        monkeypatch.setattr(sys, "stdin", S(fileno=lambda: 0))
+        monkeypatch.setattr(actor, "read_job", lambda fd: job)
+        monkeypatch.setattr(actor.os, "set_blocking", lambda *a: None)
+        seen = []
+        def run(*a, **kw):
+            seen.append(kw)
+            return dict(reason="completed", cleanup=dict(group_gone=True))
+        monkeypatch.setattr(actor, "run_owned", run)
+>       assert actor.main() == 0
+E       AssertionError: assert 1 == 0
+E        +  where 1 = <function main at 0x10b043f60>()
+E        +    where <function main at 0x10b043f60> = <module 'remote_actor' from '/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/remote_actor.py'>.main
+
+test_pressure_noncritical.py:220: AssertionError
+=========================== short test summary info ============================
+FAILED test_pressure_noncritical.py::test_actual_actor_noncritical_monitors_and_binds_truthful_policy[local-rank0]
+FAILED test_pressure_noncritical.py::test_actual_actor_noncritical_monitors_and_binds_truthful_policy[remote-rank1]
+FAILED test_pressure_noncritical.py::test_actual_actor_noncritical_monitors_and_binds_truthful_policy[remote-server]
+FAILED test_pressure_noncritical.py::test_actor_job_admission_carries_policy_and_cannot_disable_monitor
+FAILED test_pressure_noncritical.py::test_actual_actor_main_forwards_noncritical_descriptor
+5 failed, 41 passed in 0.15s

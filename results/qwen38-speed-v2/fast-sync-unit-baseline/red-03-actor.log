@@ -1,0 +1,84 @@
+....F.F..............                                                    [100%]
+=================================== FAILURES ===================================
+____ test_actor_cli_delivers_exact_child_env_without_ambient_leaks[0-True] _____
+
+tmp_path = PosixPath('/Users/jeremylien/.hermes/cache/scratch/pytest-of-jeremylien/pytest-1/test_actor_cli_delivers_exact_1')
+enabled = True, rank = 0
+
+    @pytest.mark.parametrize("enabled", [False, True])
+    @pytest.mark.parametrize("rank", [0, 1])
+    def test_actor_cli_delivers_exact_child_env_without_ambient_leaks(tmp_path, enabled, rank):
+        """Real actor/exec subprocess, but a stdlib-only substitute probe, never MLX."""
+        import remote_actor as actor
+    
+        root, jobs = tmp_path / "source", tmp_path / "jobs"
+        root.mkdir()
+        jobs.mkdir()
+        for name in actor.SOURCES:
+            (root / name).write_text("")
+        (root / "probe.py").write_text(
+            "import json,os\n"
+            "print(json.dumps({k:os.environ.get(k) for k in "
+            "('MLX_RANK','MLX_METAL_FAST_SYNCH','UNTRUSTED_ENV','MLX_HOSTFILE')}),flush=True)\n"
+        )
+        job = rank_job(rank)
+        job["source_sha256"] = actor.source_hashes(root)
+        if not enabled:
+            job["env"].pop("MLX_METAL_FAST_SYNCH")
+        result = subprocess.run(
+            [sys.executable, actor.__file__, "--root", str(root), "--jobs", str(jobs)],
+            input=json.dumps(job) + "\n",
+            env={**os.environ, "MLX_METAL_FAST_SYNCH": "1", "UNTRUSTED_ENV": "no"},
+            capture_output=True,
+            text=True,
+            timeout=8,
+        )
+>       assert result.returncode == 0, result.stderr
+E       AssertionError: 
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python', '/Users/jeremylien/Projects/pa...cache/scratch/pytest-of-jeremylien/pytest-1/test_actor_cli_delivers_exact_1/jobs'], returncode=1, stdout='', stderr='').returncode
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:126: AssertionError
+____ test_actor_cli_delivers_exact_child_env_without_ambient_leaks[1-True] _____
+
+tmp_path = PosixPath('/Users/jeremylien/.hermes/cache/scratch/pytest-of-jeremylien/pytest-1/test_actor_cli_delivers_exact_3')
+enabled = True, rank = 1
+
+    @pytest.mark.parametrize("enabled", [False, True])
+    @pytest.mark.parametrize("rank", [0, 1])
+    def test_actor_cli_delivers_exact_child_env_without_ambient_leaks(tmp_path, enabled, rank):
+        """Real actor/exec subprocess, but a stdlib-only substitute probe, never MLX."""
+        import remote_actor as actor
+    
+        root, jobs = tmp_path / "source", tmp_path / "jobs"
+        root.mkdir()
+        jobs.mkdir()
+        for name in actor.SOURCES:
+            (root / name).write_text("")
+        (root / "probe.py").write_text(
+            "import json,os\n"
+            "print(json.dumps({k:os.environ.get(k) for k in "
+            "('MLX_RANK','MLX_METAL_FAST_SYNCH','UNTRUSTED_ENV','MLX_HOSTFILE')}),flush=True)\n"
+        )
+        job = rank_job(rank)
+        job["source_sha256"] = actor.source_hashes(root)
+        if not enabled:
+            job["env"].pop("MLX_METAL_FAST_SYNCH")
+        result = subprocess.run(
+            [sys.executable, actor.__file__, "--root", str(root), "--jobs", str(jobs)],
+            input=json.dumps(job) + "\n",
+            env={**os.environ, "MLX_METAL_FAST_SYNCH": "1", "UNTRUSTED_ENV": "no"},
+            capture_output=True,
+            text=True,
+            timeout=8,
+        )
+>       assert result.returncode == 0, result.stderr
+E       AssertionError: 
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python', '/Users/jeremylien/Projects/pa...cache/scratch/pytest-of-jeremylien/pytest-1/test_actor_cli_delivers_exact_3/jobs'], returncode=1, stdout='', stderr='').returncode
+
+spikes/015-qwen38-fast-sync/test_fast_sync.py:126: AssertionError
+=========================== short test summary info ============================
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_actor_cli_delivers_exact_child_env_without_ambient_leaks[0-True]
+FAILED spikes/015-qwen38-fast-sync/test_fast_sync.py::test_actor_cli_delivers_exact_child_env_without_ambient_leaks[1-True]
+2 failed, 19 passed in 0.32s

@@ -1,0 +1,146 @@
+E501 Line too long (102 > 100)
+  --> spikes/015-qwen38-fast-sync/supervise.py:44:101
+   |
+42 |     p.add_argument("--eval-group-schedule", type=int, nargs="*", choices=(1, 2, 4, 8, 16, 32))
+43 |     p.add_argument("--ssh-host-key-alias")
+44 |     p.add_argument("--fast-synch", action="store_true", help="Opt in to unsafe MLX fast GPU/CPU sync")
+   |                                                                                                     ^^
+45 |     return p
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> spikes/015-qwen38-fast-sync/test_fast_sync.py:3:1
+   |
+ 1 |   """CPU-only fast-synchronization contracts; never GPU/performance evidence."""
+ 2 |
+ 3 | / import json
+ 4 | | import os
+ 5 | | import subprocess
+ 6 | | import sys
+ 7 | | from pathlib import Path
+ 8 | | from types import SimpleNamespace
+ 9 | |
+10 | | import pytest
+11 | |
+12 | | from test_schedule import args_for
+   | |__________________________________^
+help: Organize imports
+   |
+10 | import pytest
+   -
+11 | from test_schedule import args_for
+   |
+
+E501 Line too long (105 > 100)
+   --> spikes/015-qwen38-fast-sync/test_fast_sync.py:272:101
+    |
+271 |     ranks, server, receipts, options = evidence()
+272 |     observed = {"fast_synch": enabled, "environment": {"MLX_METAL_FAST_SYNCH": "1" if enabled else None}}
+    |                                                                                                     ^^^^^
+273 |     for rank in ranks:
+274 |         rank.update(observed)
+    |
+
+E501 Line too long (109 > 100)
+   --> spikes/015-qwen38-fast-sync/test_fast_sync.py:292:101
+    |
+290 | @pytest.mark.parametrize("rank", [0, 1])
+291 | @pytest.mark.parametrize("location", ["start", "result"])
+292 | @pytest.mark.parametrize("tamper", ["missing_env", "missing_bool", "opposite", "false", "unknown", "forged"])
+    |                                                                                                     ^^^^^^^^^
+293 | def test_verifier_rejects_missing_unknown_or_forged_rank_env(enabled, rank, location, tamper):
+294 |     from supervise import verify_trial
+    |
+
+E501 Line too long (102 > 100)
+  --> spikes/015-qwen38-fast-sync/test_supervise.py:35:101
+   |
+33 |     }
+34 |     inventories = {
+35 |         rank: replicated | {f"language_model.model.layers.{1 - rank}.{suffix}" for suffix in suffixes}
+   |                                                                                                     ^^
+36 |         for rank in (0, 1)
+37 |     }
+   |
+
+E501 Line too long (107 > 100)
+   --> spikes/015-qwen38-fast-sync/test_supervise.py:303:101
+    |
+301 |         cases = [
+302 |             (config, set(), [1, 1]),
+303 |             (config, names - {n for n in names if n.startswith("language_model.model.layers.0.")}, [1, 1]),
+    |                                                                                                     ^^^^^^^
+304 |             (config, names - {"language_model.model.norm.weight"}, [1, 1]),
+305 |             (config, names - {"language_model.lm_head.weight"}, [1, 1]),
+    |
+
+E501 Line too long (105 > 100)
+   --> spikes/015-qwen38-fast-sync/test_supervise.py:330:101
+    |
+328 |         self.assertEqual(
+329 |             supervise.expected_inventory(config, tied_names, [1, 1]),
+330 |             {rank: selected - {"language_model.lm_head.weight"} for rank, selected in inventory.items()},
+    |                                                                                                     ^^^^^
+331 |         )
+    |
+
+Found 7 errors.
+[*] 1 fixable with the `--fix` option.
+unformatted: File would be reformatted
+  --> spikes/015-qwen38-fast-sync/supervise.py:44:20
+   |
+43 |     p.add_argument("--ssh-host-key-alias")
+   -     p.add_argument("--fast-synch", action="store_true", help="Opt in to unsafe MLX fast GPU/CPU sync")
+44 +     p.add_argument(
+45 +         "--fast-synch", action="store_true", help="Opt in to unsafe MLX fast GPU/CPU sync"
+46 +     )
+47 |     return p
+   |
+
+unformatted: File would be reformatted
+   --> spikes/015-qwen38-fast-sync/test_fast_sync.py:272:17
+    |
+271 |     ranks, server, receipts, options = evidence()
+    -     observed = {"fast_synch": enabled, "environment": {"MLX_METAL_FAST_SYNCH": "1" if enabled else None}}
+272 +     observed = {
+273 +         "fast_synch": enabled,
+274 +         "environment": {"MLX_METAL_FAST_SYNCH": "1" if enabled else None},
+275 +     }
+276 |     for rank in ranks:
+--------------------------------------------------------------------------------
+294 | @pytest.mark.parametrize("location", ["start", "result"])
+    - @pytest.mark.parametrize("tamper", ["missing_env", "missing_bool", "opposite", "false", "unknown", "forged"])
+295 + @pytest.mark.parametrize(
+296 +     "tamper", ["missing_env", "missing_bool", "opposite", "false", "unknown", "forged"]
+297 + )
+298 | def test_verifier_rejects_missing_unknown_or_forged_rank_env(enabled, rank, location, tamper):
+    |
+
+unformatted: File would be reformatted
+   --> spikes/015-qwen38-fast-sync/test_supervise.py:35:25
+    |
+34  |     inventories = {
+    -         rank: replicated | {f"language_model.model.layers.{1 - rank}.{suffix}" for suffix in suffixes}
+35  +         rank: replicated
+36  +         | {f"language_model.model.layers.{1 - rank}.{suffix}" for suffix in suffixes}
+37  |         for rank in (0, 1)
+--------------------------------------------------------------------------------
+303 |             (config, set(), [1, 1]),
+    -             (config, names - {n for n in names if n.startswith("language_model.model.layers.0.")}, [1, 1]),
+304 +             (
+305 +                 config,
+306 +                 names - {n for n in names if n.startswith("language_model.model.layers.0.")},
+307 +                 [1, 1],
+308 +             ),
+309 |             (config, names - {"language_model.model.norm.weight"}, [1, 1]),
+--------------------------------------------------------------------------------
+334 |             supervise.expected_inventory(config, tied_names, [1, 1]),
+    -             {rank: selected - {"language_model.lm_head.weight"} for rank, selected in inventory.items()},
+335 +             {
+336 +                 rank: selected - {"language_model.lm_head.weight"}
+337 +                 for rank, selected in inventory.items()
+338 +             },
+339 |         )
+    |
+
+3 files would be reformatted, 14 files already formatted

@@ -1,0 +1,15 @@
+{
+  "schema": "wired-policy-control-source-registry-v1",
+  "classification": "CONTROL_NOT_MODEL_GATE",
+  "scope": "CPU_AUDIT_ONLY_NOT_PARENT_ADMISSION",
+  "sources": ["fixture.py", "remote_actor.py", "pressure_guard.py"],
+  "source_sha256": {
+    "fixture.py": "960263023c2a9a0532fd0cbc612cd8281e0783e33355d367f935c2b705af2cfc",
+    "remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+    "pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20"
+  },
+  "separately_admitted_harness_sha256": "0a409ca1a8e77dd554447d565db4de40c91aa4045e425fa7fe24ba6ed678f88f",
+  "original_root": "spikes/025-qwen38-overlapped-prefill",
+  "external_parent_hashes_required": true,
+  "physical_execution_approved": false
+}

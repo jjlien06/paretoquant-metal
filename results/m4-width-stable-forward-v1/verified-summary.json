@@ -1,0 +1,15 @@
+{
+  "scope": "forward",
+  "passed": true,
+  "owned_cleanup_verified": true,
+  "guarded_full32B_source_unchanged": true,
+  "executed_source_readback_exact": true,
+  "peak_mlx_bytes": 367669616,
+  "candidate_attention_SHA256": "672ad8e27382e74e7a3b26b2a32021e7c17dd8bc84d4670065f9e650095bec9f",
+  "no32B_admission_or_speed_claim": true,
+  "cases": 4,
+  "all_recorded_operators_exact": true,
+  "all_logits_exact": true,
+  "every_live_KV_exact": true,
+  "same_mode_observer_witnesses_exact": true
+}

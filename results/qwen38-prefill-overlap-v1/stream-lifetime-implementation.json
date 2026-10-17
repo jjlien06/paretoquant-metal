@@ -1,0 +1,757 @@
+{
+  "schema": "qwen38-stream-lifetime-implementation-v1",
+  "artifact_kind": "CPU_ONLY_TWO_PAYLOAD_LIFETIME_RELEASES",
+  "status": "implemented_and_guarded_cpu_verified_only",
+  "scope": {
+    "modified_production_files": [
+      "spikes/025-qwen38-overlapped-prefill/stream_weights.py"
+    ],
+    "new_test_file": "spikes/025-qwen38-overlapped-prefill/test_stream_lifetime.py",
+    "mlx_or_models_imported": false,
+    "gpu_execution": false,
+    "network_or_ssh": false,
+    "child_process_or_signal_by_tests": false,
+    "full_model_retry": false,
+    "guard_registry_modified": false
+  },
+  "production_changes": [
+    {
+      "function": "tensor_records",
+      "change": "del payload immediately after resumed yield, before next file.read"
+    },
+    {
+      "function": "send_records",
+      "change": "del record immediately after successful full payload sendall, before next(records)"
+    }
+  ],
+  "exact_two_statement_diff_verified_against_frozen024": true,
+  "unchanged": [
+    "wire bytes/order/framing/terminator",
+    "tensor bytes/descriptors/SHA256",
+    "source truncation and transport exception behavior",
+    "loader consumer del payload/view/array/record and clear_cache",
+    "quantization/dtypes/placement",
+    "numerical/pressure gates and transport bounds"
+  ],
+  "vertical_tdd": [
+    {
+      "red": "tensor-red-v2",
+      "expected_failure": "before_read [0,1024,2048] != [0,0,0]",
+      "minimal_patch": "del payload",
+      "green": "tensor-green"
+    },
+    {
+      "red": "sender-red",
+      "expected_failure": "before_next [0,1024,2048,4096] != [0,0,0,0]",
+      "minimal_patch": "del record",
+      "green": "sender-green"
+    }
+  ],
+  "verification": {
+    "new_focused_tests": {
+      "passed": 32,
+      "run": "focused-green-v2"
+    },
+    "relevant_existing_tests": {
+      "passed": 73,
+      "skipped": 1,
+      "deselected": 43,
+      "run": "relevant-existing-v2"
+    },
+    "combined": {
+      "passed": 105,
+      "skipped": 1,
+      "deselected": 43,
+      "run": "final-combined"
+    },
+    "skip_reason": "optional parent-supplied Qwen32 metadata-only fixtures not available",
+    "guards": "Unmodified cpu_only_runner.install_guard/CPUPlugin imported without main, with additional in-process audit denial of Popen/system/spawn/fork/exec. No pytest cache, bytecode writes, model imports, real sockets, SSH or signals. No original history ledger written."
+  },
+  "fixture_measurements": {
+    "disk": {
+      "frozen024": {
+        "peak_live_tagged_payload_bytes": 6144,
+        "live_previous_tagged_payload_bytes_before_read": [
+          0,
+          1024,
+          2048
+        ],
+        "after_close_live_tagged_payload_bytes": 0,
+        "error": null,
+        "records": [
+          {
+            "name": "tensor_0",
+            "descriptor": {
+              "dtype": "U8",
+              "shape": [
+                1024
+              ],
+              "data_offsets": [
+                0,
+                1024
+              ]
+            },
+            "payload_bytes": 1024,
+            "sha256": "5a648d8015900d89664e00e125df179636301a2d8fa191c1aa2bd9358ea53a69"
+          },
+          {
+            "name": "tensor_1",
+            "descriptor": {
+              "dtype": "U8",
+              "shape": [
+                2048
+              ],
+              "data_offsets": [
+                1024,
+                3072
+              ]
+            },
+            "payload_bytes": 2048,
+            "sha256": "87c6ef44094279a252bdd25434f8dd51e22ca6d231011229e9be95d9ac7771b7"
+          },
+          {
+            "name": "tensor_2",
+            "descriptor": {
+              "dtype": "U8",
+              "shape": [
+                4096
+              ],
+              "data_offsets": [
+                3072,
+                7168
+              ]
+            },
+            "payload_bytes": 4096,
+            "sha256": "4539cc1fbc3c22bb131672c62f20ff87f3f587ba2d3d4c5b161c271c98c07b38"
+          }
+        ]
+      },
+      "current025": {
+        "peak_live_tagged_payload_bytes": 4096,
+        "live_previous_tagged_payload_bytes_before_read": [
+          0,
+          0,
+          0
+        ],
+        "after_close_live_tagged_payload_bytes": 0,
+        "error": null,
+        "records": [
+          {
+            "name": "tensor_0",
+            "descriptor": {
+              "dtype": "U8",
+              "shape": [
+                1024
+              ],
+              "data_offsets": [
+                0,
+                1024
+              ]
+            },
+            "payload_bytes": 1024,
+            "sha256": "5a648d8015900d89664e00e125df179636301a2d8fa191c1aa2bd9358ea53a69"
+          },
+          {
+            "name": "tensor_1",
+            "descriptor": {
+              "dtype": "U8",
+              "shape": [
+                2048
+              ],
+              "data_offsets": [
+                1024,
+                3072
+              ]
+            },
+            "payload_bytes": 2048,
+            "sha256": "87c6ef44094279a252bdd25434f8dd51e22ca6d231011229e9be95d9ac7771b7"
+          },
+          {
+            "name": "tensor_2",
+            "descriptor": {
+              "dtype": "U8",
+              "shape": [
+                4096
+              ],
+              "data_offsets": [
+                3072,
+                7168
+              ]
+            },
+            "payload_bytes": 4096,
+            "sha256": "4539cc1fbc3c22bb131672c62f20ff87f3f587ba2d3d4c5b161c271c98c07b38"
+          }
+        ]
+      }
+    },
+    "disk_sender": {
+      "frozen024": {
+        "peak_live_tagged_payload_bytes": 6144,
+        "live_previous_tagged_payload_bytes_before_read": [
+          0,
+          1024,
+          2048
+        ],
+        "after_close_live_tagged_payload_bytes": 0,
+        "error": null,
+        "wire_sha256": "a89d32bfde33b52a7f463a93764dff6e79d9757dff40d0d329c6512b59ef8b7f",
+        "wire_bytes": 7688
+      },
+      "current025": {
+        "peak_live_tagged_payload_bytes": 4096,
+        "live_previous_tagged_payload_bytes_before_read": [
+          0,
+          0,
+          0
+        ],
+        "after_close_live_tagged_payload_bytes": 0,
+        "error": null,
+        "wire_sha256": "a89d32bfde33b52a7f463a93764dff6e79d9757dff40d0d329c6512b59ef8b7f",
+        "wire_bytes": 7688
+      }
+    },
+    "isolated_sender": {
+      "frozen024": {
+        "before_next_live_tagged_payload_bytes": [
+          0,
+          1024,
+          2048,
+          4096
+        ],
+        "peak_live_tagged_payload_bytes": 6144,
+        "after_send_live_tagged_payload_bytes": 0,
+        "wire_sha256": "a89d32bfde33b52a7f463a93764dff6e79d9757dff40d0d329c6512b59ef8b7f"
+      },
+      "current025": {
+        "before_next_live_tagged_payload_bytes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "peak_live_tagged_payload_bytes": 4096,
+        "after_send_live_tagged_payload_bytes": 0,
+        "wire_sha256": "a89d32bfde33b52a7f463a93764dff6e79d9757dff40d0d329c6512b59ef8b7f"
+      }
+    }
+  },
+  "measurement_limits": "Live tagged Python payload bytes only: 1024/2048/4096-byte fake reads with weakref ownership tracking. Excludes fixture input bytes, golden captures/socket wire copies, metadata and interpreter overhead; not total CPU RSS, OS residency, MLX allocation, numerical validation, host pressure, multi-GB leak, or measured physical benefit. Both releases are required for disk->sender overlap reduction. No pressure-cause attribution or full27B retry approval.",
+  "issues_preserved": [
+    {
+      "run": "tensor-red",
+      "issue": "Scratch Tee wrapper lacked isatty; pytest internal error exit3. Added transparent delegation before the real RED; no production edit preceded real RED."
+    },
+    {
+      "run": "focused-green",
+      "issue": "Additional truncation regression used cut7730 for actual7688-byte fixture. Changed test-only terminal cut to -1; production unchanged."
+    },
+    {
+      "run": "relevant-existing",
+      "issue": "Broad legacy007 planner selection includes8 Qwen2-positive tests incompatible with unchanged025 qwen3_5-only planner. No production/guard changes; selected applicable storage/header/merge and current protocol/controller regressions. Preserved full failed output; final compatible subset passes."
+    }
+  ],
+  "sources": [
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/stream_weights.py",
+      "bytes": 9059,
+      "sha256": "936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73"
+    },
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/test_stream_lifetime.py",
+      "bytes": 12708,
+      "sha256": "3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff"
+    },
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/shard_plan.py",
+      "bytes": 13950,
+      "sha256": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465"
+    },
+    {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/025-qwen38-overlapped-prefill/cpu_only_runner.py",
+      "bytes": 5251,
+      "sha256": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b"
+    },
+    {
+      "path": "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py",
+      "bytes": 2656,
+      "sha256": "ee67b061882d08a9b4fb71f853d5e08bd397c558794c471e7cedb902d0775b4c"
+    },
+    {
+      "path": "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/publish_receipt.py",
+      "bytes": 9011,
+      "sha256": "6c8b7cce1eee4a78dd417df9f6f280feaf593ec9ac8b354f41b1cefdddfcdcc6"
+    }
+  ],
+  "original90_preservation": {
+    "manifest": {
+      "path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/acceptance.json",
+      "bytes": 77287,
+      "sha256": "22b37500f5141e8a105b336751b32f27eb08c101b4ffcca81e0f206d078143af"
+    },
+    "count": 90,
+    "mismatches": [],
+    "expected_and_readback_sha256": {
+      "spikes/024-qwen38-hidden-prefill/test_config_immutability.py": "30e281bae3adc0c2c493cb88600d69630b8f6103e0c8065257e81defba854d69",
+      "spikes/024-qwen38-hidden-prefill/workload_schedule.py": "0bad9bead01dd6fd78e8d1c732fa5ef83a1101deb950aded42333c09dabeeb9a",
+      "spikes/024-qwen38-hidden-prefill/source-sha256.txt": "92ce80269e82ca3b3b5b2604d078ffc35c9c21d0513dc13ca64f8cfaed0752e3",
+      "spikes/024-qwen38-hidden-prefill/cpu-hidden-prefill-proof.txt": "0be085a1d906aa833b2ade048519ecf911986cb301563e42e9298f6f40f15acd",
+      "spikes/024-qwen38-hidden-prefill/test_cache_gate.py": "5ce8116c15a22f44a191b04b1fcf69b523f690ceaf7ebd88589340f52a7a6c42",
+      "spikes/024-qwen38-hidden-prefill/cpu-original-regression.txt": "664a69a7dcfb3f4e31c98de776067cb509d7bcc8e819699e066feb4c1d7e9be8",
+      "spikes/024-qwen38-hidden-prefill/rank_control.py": "ce6656dd0ff351b5a66e25f738776817b0dab9374f6f7dceeeec2b40f9b64b28",
+      "spikes/024-qwen38-hidden-prefill/hidden_prefill_gate.py": "f8f9357b00ded79452b1b8a0ffa5ed1353e0cf6c455cb91426be8d3d2202d23c",
+      "spikes/024-qwen38-hidden-prefill/width_gate.py": "81528ae022bed8c910b9d1dcf045990cf9a8968a3978e106becdda14a4ee403c",
+      "spikes/024-qwen38-hidden-prefill/speculative.py": "6b94c442fbfd917b003c02001802f7e81a009a4c5874d5bc807c6b3156b770d7",
+      "spikes/024-qwen38-hidden-prefill/cpu_communication.py": "43f5223f52aafe748ccee1478a96c0a61bb65d86815bfb8294375bd063b98e67",
+      "spikes/024-qwen38-hidden-prefill/mtp_audit.py": "00e64c72453f24b48ed9880fd42d4d3581bfb5790e00108265df005ee4c68671",
+      "spikes/024-qwen38-hidden-prefill/verification.py": "832c9eadfb8540a9ae2f2d645c13a3a2af5c04c057ad3f0f6b07b469e9bc33d2",
+      "spikes/024-qwen38-hidden-prefill/workload_evidence.py": "6958f44b4e1df2c1c3f50583d63f06984a4c67138d06dec4931e1eb2cd07f7bb",
+      "spikes/024-qwen38-hidden-prefill/cpu-cache-regression.txt": "63107cb4c1b09ecf2cbfbb572dd177e0cab4b0a75e4aaae5e970be528cd651cf",
+      "spikes/024-qwen38-hidden-prefill/test_hidden_prefill.py": "fd3d4238484363e69f17364ea06911270fda6fd3dc8321e3085439c41d482e50",
+      "spikes/024-qwen38-hidden-prefill/test_phased_cpu.py": "7b65176cc4751ba82ff92ec2ae257a22d501344dd0e901c1d245cc42dddf910e",
+      "spikes/024-qwen38-hidden-prefill/test_prefix_integration.py": "377d62e2ed2ff9f09196afd32a1aa788be54b39550060dab0ef042254c8532d5",
+      "spikes/024-qwen38-hidden-prefill/phased_decode.py": "97a056ee6db36ae51012c66be2fd305a069d882b928049dab708cd488461a555",
+      "spikes/024-qwen38-hidden-prefill/test_controller_snapshot.py": "487691325f5447df0d12aa00b812eb5860fb0c91ea1e921a693c105a6d0a90ab",
+      "spikes/024-qwen38-hidden-prefill/benchmark_schedule.json": "6d052c75f9ee86c8d2182d237b80698f8a39608ae1524458aa048a8df728c857",
+      "spikes/024-qwen38-hidden-prefill/cpu-cache-inventory-proof.txt": "564eef01664f00b854a9f645d5eb1ac65eaf2bfff53350f1ffc0e096e671370c",
+      "spikes/024-qwen38-hidden-prefill/cpu-regression.txt": "7015243a0235e93f182ae01cb346c446da2767124bad67ba9a087fd935716fa3",
+      "spikes/024-qwen38-hidden-prefill/test_evidence_hardening.py": "f495a0ec7fae35b9172749fc28c2aa77931b6bf8bd2109a23acbc939ffa88a2a",
+      "spikes/024-qwen38-hidden-prefill/stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+      "spikes/024-qwen38-hidden-prefill/test_hidden_cache_inventory.py": "6dfeb35df032a3478e6cba5d22fd617054260f86998e9d75ca4d032207fcb493",
+      "spikes/024-qwen38-hidden-prefill/test_two_rank_schedule.py": "b67f9a1025738e22b7da3a0f7eb0f9041aa83cc81c03dbb0a063ad6ad4f7a708",
+      "spikes/024-qwen38-hidden-prefill/slot_qmv_body.metal": "03f9ac57ad8fb1ab3d9424a2d677477e8cb81d5ca7527680a34b9dd18b6525df",
+      "spikes/024-qwen38-hidden-prefill/test_batched_snapshot.py": "be1002feb6fd661085b73bf4ef0f31bbb6bba2312231314cd90a1959bfb12b66",
+      "spikes/024-qwen38-hidden-prefill/test_speculative.py": "9cd3a4b0b956284e21801ac6805f93e5bd1fdc76b4f60d9cfd7bde1d77fdea17",
+      "spikes/024-qwen38-hidden-prefill/mlx_backend.py": "bb269f19696f8a3d84971c44b27ceef743585362c284f916f98de1815334f443",
+      "spikes/024-qwen38-hidden-prefill/remote_actor.py": "daa2480a11bd62a3283f24e6a1b7f1175303dbc8205dff159b63b3710713950c",
+      "spikes/024-qwen38-hidden-prefill/test_workload_runtime.py": "5a9e95b2e207bdf11410218771959224b683ed6bb4c306696018c3f38c24e267",
+      "spikes/024-qwen38-hidden-prefill/mtp_head.py": "95d05fc38dd532874ec820c39a0e1ec8e0a684906a896213b19609c721713d48",
+      "spikes/024-qwen38-hidden-prefill/test_workload_cleanup.py": "e478df18900b76dc5dc949d8808db6e6f0cea2e977468d5538fc124b7300f9de",
+      "spikes/024-qwen38-hidden-prefill/distributed_control.py": "894403782594e8ffc7fb832f336fdd2600925dd0ba330403a701a8a47f695f4e",
+      "spikes/024-qwen38-hidden-prefill/test_prefix_rollback.py": "d0f6f040542e4a4ed2bed704bf8af9b5cc15f63d6c4aadd7885b61e8283724d7",
+      "spikes/024-qwen38-hidden-prefill/test_workload_timings.py": "761027cf05c067526ad2267a1a81bcd4f36774bdabc5e802abdec1cf7a00e748",
+      "spikes/024-qwen38-hidden-prefill/README.md": "39e8cd4f2001b9c6a5fae582ce344ecda8f0e6d777be5ec1e435c0be34e13711",
+      "spikes/024-qwen38-hidden-prefill/test_workload_schedule.py": "ae27e162390368b19d943f0c6f974722481d59a40b9aa18d8e00d34b0470f2d4",
+      "spikes/024-qwen38-hidden-prefill/test_workload_caps.py": "117e18df911429b210bc96ed998dcbcac6e23304223758ebe3c4b9b9467fa503",
+      "spikes/024-qwen38-hidden-prefill/TDD.md": "c23af20e841c6c737ff238219e6e3ba855f8910af8ad26a4357bf304f3b705ed",
+      "spikes/024-qwen38-hidden-prefill/stream_server.py": "6d1d4bbb47e2f3c2f969388dba9f7dfa9f0524813c187ab8bf16a9af4d91caa1",
+      "spikes/024-qwen38-hidden-prefill/slot_qmv.py": "3ee7b0cc9a522b13e576fd288c9ed615a9380a956f4c7a5a8cf1da0637c65454",
+      "spikes/024-qwen38-hidden-prefill/test_head.py": "bf976833baa25e5da6ddff8bb59338ab046950864cf3a4f2ae30b1ea0e651485",
+      "spikes/024-qwen38-hidden-prefill/test_hidden_cli.py": "46ed341c547a775ec3072392f8c780a3645818eacc9af81141ee6da5f2f0e43f",
+      "spikes/024-qwen38-hidden-prefill/workload_runtime.py": "1cc117eef382a123f448bcbf4022a6be03f7cb3b69e6e5432d0be3ef337ab9c6",
+      "spikes/024-qwen38-hidden-prefill/test_unbound_schedule.py": "f446a36ba5fe48f1cc88f1558c5ad4647af9c286e7bc004bd0cc7b85ae866f5a",
+      "spikes/024-qwen38-hidden-prefill/test_dispatch_schedule.py": "05ca31b22aa6af70538cb12dd145db30903fcad7ca162c8d901935bc005e6b9c",
+      "spikes/024-qwen38-hidden-prefill/changed-source-sha256.txt": "7f25f91ef22727f29a942f098acf18cc68a7c1ba903cf59bf6cace0dbc68adf8",
+      "spikes/024-qwen38-hidden-prefill/cpu-tests.xml": "87cdf52f49ec7e5a798dd7ae0eed4dfb814a9e0e258540fe74d5acf5470c53ab",
+      "spikes/024-qwen38-hidden-prefill/probe.py": "716d30974848c99b09cb3455adae25ec9cb2e297686d017a744da4d10b5ecfd7",
+      "spikes/024-qwen38-hidden-prefill/test_mtp_audit.py": "fd0867bd23d84615dd6e23960e7fca47256bf15245718320275da1a12d9018c3",
+      "spikes/024-qwen38-hidden-prefill/test_workload_evidence.py": "5d64e28a27a8282ae17de34daa0bce9ebf431624675852dc9c4745a5ff002ee6",
+      "spikes/024-qwen38-hidden-prefill/test_hidden_two_rank.py": "36b9a79d10f0be07aa2b83f5c251545c33416a8c84451e3e441248526accfbf5",
+      "spikes/024-qwen38-hidden-prefill/test_workload_snapshot.py": "e8d26f9e3841f320b118a4ec8b148768cb60d72027b1e626fe5234bd71bc120f",
+      "spikes/024-qwen38-hidden-prefill/slot_qmv_header.metal": "936aa5fefd86bb53bf3ae8ba66a512145f9d04e22350097dad7c4abfabd3c7aa",
+      "spikes/024-qwen38-hidden-prefill/test_integration.py": "c77b6ba8fbe9334d584b72e1ff0ea61fe098351d585f1efb33b7e0ec66df255d",
+      "spikes/024-qwen38-hidden-prefill/prefix_rollback.py": "2aa7defa57238aa4abfc90a31def2d4ed6852caef7f7ec8a95140474bc0f7130",
+      "spikes/024-qwen38-hidden-prefill/mtp_runtime.py": "ea03fa19a04a83d633ee5dc217168329387460f3dd49ceb949d73cbdb53423fe",
+      "spikes/024-qwen38-hidden-prefill/numerical_gate.py": "43c95b98143466a8c4ee5a4dae3401f33bfc76f398b9db81e1f14a760a177e8c",
+      "spikes/024-qwen38-hidden-prefill/test_hidden_control.py": "561a0ef3419e160cfa55cad5d26c65343ca03ce548ef2045e7db8ac66e7ee232",
+      "spikes/024-qwen38-hidden-prefill/test_hidden_evidence.py": "518b662bb9f7de4befc9c332d379bf9c6ace23f833677abf38a0c7bf2ef23137",
+      "spikes/024-qwen38-hidden-prefill/test_hidden_gate.py": "1ab84aad354f03e48674b9a6a301d9b0d2cefb14c2794bc110c260d250b03f5a",
+      "spikes/024-qwen38-hidden-prefill/supervise.py": "5854ad8fd98c1ab7c1f9659457459b12e1fc982af3bd5cca0899f8045395d624",
+      "spikes/024-qwen38-hidden-prefill/shard_plan.py": "231645bb2e7f90637a3f8ce0a543bbdb1d5d8800960870b1d3cfdaee9942d465",
+      "spikes/024-qwen38-hidden-prefill/verifier.py": "ab5b3c25ebe14f17d6b1f1127b99e20d32b3fecee3d4fccd403f6100977a172f",
+      "spikes/024-qwen38-hidden-prefill/test_cli_schedule.py": "fba7b9823382b9465be7a4b17bf702fde706f969e45fd601d11de5b957f2a10c",
+      "spikes/024-qwen38-hidden-prefill/cache_state.py": "cdc01b5dc1dd91b44b4c8b454832a4f3fd44b9111f981239b19821ed712e3837",
+      "spikes/024-qwen38-hidden-prefill/sidecar_config.json": "16094efa6177985ab3725a9d6d61d6ab248b71e4b42a114efddcdb2aaddc0a55",
+      "spikes/024-qwen38-hidden-prefill/test_hidden_runtime.py": "38f2f0e7308af5e9a2332f147e0eeb3342e3064462d5ce5ace5fe2d5e0c2c2b3",
+      "spikes/024-qwen38-hidden-prefill/cpu-cache-tests.xml": "7475865b17c9636b9f633302042a90ec1c8a287bc781e076068d3746bd4871f1",
+      "benchmarks/qwen38/mtp_audit.py": "cd60f5d747fef5df31ad9947ca3fbb7abd23f3768922cd795a41a0153b11bef7",
+      "benchmarks/qwen38/ATTRIBUTION.md": "b1e9236d0a0f0b364bc673ccaf901a0a9f061b67169443daf7f3333780f331ac",
+      "benchmarks/qwen38/workloads.py": "36f24e179745c41921ac83f04f86b5b3e854226a0a1e375053e2b793c71ead75",
+      "benchmarks/qwen38/run_bench.py": "d8ba86699415c6465e637cd43f4ef17923623557e4c87573441be23712b42b5b",
+      "benchmarks/qwen38/README.md": "74c215552f6d85c2e52c32e898b43cd0ca2918dc1810cc3d7a6c2ecc7ec5ea87",
+      "benchmarks/qwen38/review-fixes.json": "b8e3868bd0bb1fa63c2b22a5eaba99b9e10e738e74e25cee99579df6913b40c4",
+      "benchmarks/qwen38/test_mtp_audit.py": "1b1d8385a0ef2641b285b0b605c81a2d1ea1d7483e2a39714cb87e03acea2882",
+      "benchmarks/qwen38/test_run_bench.py": "93db202834a8291d677ecd97b94b8de56e77833605abcf3fa58d779016bc8d2d",
+      "benchmarks/qwen38/test_analyze.py": "9a5fb44f400d931d73f48c976a7215059d833b5e792dd56e0f16e5c990cf719e",
+      "benchmarks/qwen38/analyze.py": "7b859d58609f64dfff83b63e563e37793d75d6359575f778f26b47323d3d4f83",
+      "benchmarks/qwen38/test_workloads.py": "c1ff22b4a64a94e2ee4d5e264dc6d3073eae85177383f4f635d072a5d52de98e",
+      "results/qwen38-broad-v1/workloads/schedule-01.json": "557f406ed196a695626646281f693b865b34d339a7e54d73ad0b7bacab22e4d2",
+      "results/qwen38-broad-v1/workloads/schedule-00.json": "9794402e6fbfc6f680cd64a6579044103f0c83bd21664a50094187140d77072a",
+      "results/qwen38-broad-v1/workloads/schedule-05.json": "6ada5280a4ae4889e8b257e86ba0a17316d304d8f2f916da9b31687a9ce52af2",
+      "results/qwen38-broad-v1/workloads/schedule-04.json": "55a599b4986542a7d0db03aa9981f97bb222db702a5cd1b88b630e4516e08533",
+      "results/qwen38-broad-v1/workloads/manifest.json": "b20a600c3889d62cdf15a7faa6c2ca90611084ceae15b9a8dea7f7823d5a29e6",
+      "results/qwen38-broad-v1/workloads/schedule-03.json": "78ec6bd11f5eb54fbc32175712456565fdada3e409fba878200ba6591c865288",
+      "results/qwen38-broad-v1/workloads/schedule-02.json": "11c5fe99205bed6cf64bfb7b4b2470c3bb74218f4d5f4f70a8d1f77e49855fc1"
+    }
+  },
+  "old_stream_source_preservation": {
+    "count": 14,
+    "all_sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+    "files": [
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/023-qwen38-broad-20261016-b00-v1/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/023-qwen38-broad-20261016-b01-v1/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/023-qwen38-broad-20261016-b02-v1/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/023-qwen38-broad-20261016-b03-v1/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/023-qwen38-broad-20261016-b04-v1/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/023-qwen38-broad-20261016-b05-v1/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/023-qwen38-broad-hidden-prefill-candidate-v1/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/023-qwen38-broad-prefill-reference-after-v1/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/023-qwen38-broad-prefill-reference-before-v1/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/023-qwen38-broad-prefill-reference-before-v2/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/023-qwen38-workload-bench/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/spikes/024-qwen38-hidden-prefill/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v1-1792265902105306000/raw/sources/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      },
+      {
+        "path": "/Users/jeremylien/Projects/paretoquant-metal/results/qwen38-prefill-overlap-v1/physical-pilot-v2-1792268153195507000/raw/sources/stream_weights.py",
+        "bytes": 9020,
+        "sha256": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9"
+      }
+    ],
+    "prior_frozen025_physical_trials_unchanged": true
+  },
+  "runs": [
+    {
+      "label": "tensor-red",
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "-B",
+        "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py",
+        "tensor-red",
+        "test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read",
+        "-q"
+      ],
+      "exit_code": 3,
+      "source_sha256": {
+        "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+        "test_stream_lifetime.py": "94587619c26b99a259e73773cbe23f1c48681fa277e07bd6b26785430a10f89c",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b"
+      },
+      "model_imported": false,
+      "blocked_child_attempts": [],
+      "guard": "existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache",
+      "command": "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B /Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py tensor-red test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read -q",
+      "output": "ARGS ['test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read', '-q']\nSOURCE_SHA256 {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9\", \"test_stream_lifetime.py\": \"94587619c26b99a259e73773cbe23f1c48681fa277e07bd6b26785430a10f89c\"}\nINTERNALERROR> Traceback (most recent call last):\nINTERNALERROR>   File \"/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/_pytest/main.py\", line 326, in wrap_session\nINTERNALERROR>     config._do_configure()\nINTERNALERROR>     ~~~~~~~~~~~~~~~~~~~~^^\nINTERNALERROR>   File \"/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/_pytest/config/__init__.py\", line 1205, in _do_configure\nINTERNALERROR>     self.hook.pytest_configure.call_historic(kwargs=dict(config=self))\nINTERNALERROR>     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\nINTERNALERROR>   File \"/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/pluggy/_hooks.py\", line 534, in call_historic\nINTERNALERROR>     res = self._hookexec(self.name, self._hookimpls.copy(), kwargs, False)\nINTERNALERROR>   File \"/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/pluggy/_manager.py\", line 120, in _hookexec\nINTERNALERROR>     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)\nINTERNALERROR>            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nINTERNALERROR>   File \"/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/pluggy/_callers.py\", line 167, in _multicall\nINTERNALERROR>     raise exception\nINTERNALERROR>   File \"/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/pluggy/_callers.py\", line 121, in _multicall\nINTERNALERROR>     res = hook_impl.function(*args)\nINTERNALERROR>   File \"/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/_pytest/terminal.py\", line 292, in pytest_configure\nINTERNALERROR>     reporter = TerminalReporter(config, sys.stdout)\nINTERNALERROR>   File \"/Users/jeremylien/Projects/paretoquant-metal/.venv/lib/python3.13/site-packages/_pytest/terminal.py\", line 402, in __init__\nINTERNALERROR>     self.isatty = compat.CallableBool(file.isatty())\nINTERNALERROR>                                       ^^^^^^^^^^^\nINTERNALERROR> AttributeError: 'Tee' object has no attribute 'isatty'\nCPU_RUN_FACTS {\"argv\": [\"/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python\", \"-B\", \"/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py\", \"tensor-red\", \"test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read\", \"-q\"], \"blocked_child_attempts\": [], \"exit_code\": 3, \"guard\": \"existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache\", \"label\": \"tensor-red\", \"model_imported\": false, \"source_sha256\": {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9\", \"test_stream_lifetime.py\": \"94587619c26b99a259e73773cbe23f1c48681fa277e07bd6b26785430a10f89c\"}}\n",
+      "log": {
+        "path": "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/tensor-red.txt",
+        "bytes": 3309,
+        "sha256": "37a7ac6ab62baab4654174867b2c2b369d416c4f404a8356f3ddbc50e558676d"
+      }
+    },
+    {
+      "label": "tensor-red-v2",
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "-B",
+        "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py",
+        "tensor-red-v2",
+        "test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read",
+        "-q"
+      ],
+      "exit_code": 1,
+      "source_sha256": {
+        "stream_weights.py": "b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9",
+        "test_stream_lifetime.py": "94587619c26b99a259e73773cbe23f1c48681fa277e07bd6b26785430a10f89c",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b"
+      },
+      "model_imported": false,
+      "blocked_child_attempts": [],
+      "guard": "existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache",
+      "command": "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B /Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py tensor-red-v2 test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read -q",
+      "output": "ARGS ['test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read', '-q']\nSOURCE_SHA256 {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9\", \"test_stream_lifetime.py\": \"94587619c26b99a259e73773cbe23f1c48681fa277e07bd6b26785430a10f89c\"}\nF                                                                        [100%]\n=================================== FAILURES ===================================\n____________ test_tensor_records_releases_payload_before_next_read _____________\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a9bb360>\n\n    def test_tensor_records_releases_payload_before_next_read(monkeypatch):\n        frozen = original_module()\n        # Byte/descriptor/digest/order/file-close/truncation behavior stays exact.\n        for truncate in (None, \"tensor_0\", \"tensor_1\", \"tensor_2\"):\n            expected, old_tracker = observe_disk(frozen, monkeypatch, truncate)\n            actual, tracker = observe_disk(stream, monkeypatch, truncate)\n            assert actual == expected\n            if truncate is not None:\n                assert actual[\"error\"] == (\"ValueError\", \"Source payload truncated\")\n            else:\n                assert old_tracker.before_read == [0, 1024, 2048]\n                assert old_tracker.peak == 6144\n                happy_tracker = tracker\n>       assert happy_tracker.before_read == [0, 0, 0], \"Previous payload survives into next file.read\"\nE       AssertionError: Previous payload survives into next file.read\nE       assert [0, 1024, 2048] == [0, 0, 0]\nE         \nE         At index 1 diff: 1024 != 0\nE         Use -v to get more diff\n\ntest_stream_lifetime.py:147: AssertionError\n=========================== short test summary info ============================\nFAILED test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read\n1 failed in 0.02s\nCPU_RUN_FACTS {\"argv\": [\"/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python\", \"-B\", \"/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py\", \"tensor-red-v2\", \"test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read\", \"-q\"], \"blocked_child_attempts\": [], \"exit_code\": 1, \"guard\": \"existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache\", \"label\": \"tensor-red-v2\", \"model_imported\": false, \"source_sha256\": {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"b3bc1687a12fd91eea7802402bba5fb854dcfa343431e64bb7104c7091c761f9\", \"test_stream_lifetime.py\": \"94587619c26b99a259e73773cbe23f1c48681fa277e07bd6b26785430a10f89c\"}}\n",
+      "log": {
+        "path": "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/tensor-red-v2.txt",
+        "bytes": 2777,
+        "sha256": "5b493bacf9d9ad4e2e1f45160f2d57b3c7d777dc74912245fc6c66a5c1b3c2a6"
+      }
+    },
+    {
+      "label": "tensor-green",
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "-B",
+        "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py",
+        "tensor-green",
+        "test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read",
+        "-q"
+      ],
+      "exit_code": 0,
+      "source_sha256": {
+        "stream_weights.py": "a6784b079e0e98108d720ee2ffa3381b3afbfcda0350908b12763affa47a8f5f",
+        "test_stream_lifetime.py": "94587619c26b99a259e73773cbe23f1c48681fa277e07bd6b26785430a10f89c",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b"
+      },
+      "model_imported": false,
+      "blocked_child_attempts": [],
+      "guard": "existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache",
+      "command": "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B /Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py tensor-green test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read -q",
+      "output": "ARGS ['test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read', '-q']\nSOURCE_SHA256 {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"a6784b079e0e98108d720ee2ffa3381b3afbfcda0350908b12763affa47a8f5f\", \"test_stream_lifetime.py\": \"94587619c26b99a259e73773cbe23f1c48681fa277e07bd6b26785430a10f89c\"}\n.                                                                        [100%]\n1 passed in 0.02s\nCPU_RUN_FACTS {\"argv\": [\"/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python\", \"-B\", \"/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py\", \"tensor-green\", \"test_stream_lifetime.py::test_tensor_records_releases_payload_before_next_read\", \"-q\"], \"blocked_child_attempts\": [], \"exit_code\": 0, \"guard\": \"existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache\", \"label\": \"tensor-green\", \"model_imported\": false, \"source_sha256\": {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"a6784b079e0e98108d720ee2ffa3381b3afbfcda0350908b12763affa47a8f5f\", \"test_stream_lifetime.py\": \"94587619c26b99a259e73773cbe23f1c48681fa277e07bd6b26785430a10f89c\"}}\n",
+      "log": {
+        "path": "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/tensor-green.txt",
+        "bytes": 1282,
+        "sha256": "17a74f5f4b21e37096466e744a597393226b9accf8a97d15928fb58a91b5d793"
+      }
+    },
+    {
+      "label": "sender-red",
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "-B",
+        "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py",
+        "sender-red",
+        "test_stream_lifetime.py::test_send_records_releases_record_before_generator_next",
+        "-q"
+      ],
+      "exit_code": 1,
+      "source_sha256": {
+        "stream_weights.py": "a6784b079e0e98108d720ee2ffa3381b3afbfcda0350908b12763affa47a8f5f",
+        "test_stream_lifetime.py": "167c186a18a9cabc07c544dcaa0757c32f7d26cb4acc809b51afdec0eb114ded",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b"
+      },
+      "model_imported": false,
+      "blocked_child_attempts": [],
+      "guard": "existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache",
+      "command": "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B /Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py sender-red test_stream_lifetime.py::test_send_records_releases_record_before_generator_next -q",
+      "output": "ARGS ['test_stream_lifetime.py::test_send_records_releases_record_before_generator_next', '-q']\nSOURCE_SHA256 {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"a6784b079e0e98108d720ee2ffa3381b3afbfcda0350908b12763affa47a8f5f\", \"test_stream_lifetime.py\": \"167c186a18a9cabc07c544dcaa0757c32f7d26cb4acc809b51afdec0eb114ded\"}\nF                                                                        [100%]\n=================================== FAILURES ===================================\n___________ test_send_records_releases_record_before_generator_next ____________\n\n    def test_send_records_releases_record_before_generator_next():\n        old_wire, old_records, old_tracker = observe_sender(original_module())\n        wire, records, tracker = observe_sender(stream)\n        assert wire == old_wire\n        assert old_records.before_next == [0, 1024, 2048, 4096]\n        assert old_tracker.peak == 6144\n>       assert records.before_next == [0, 0, 0, 0], \"Sender retains record during next(records)\"\nE       AssertionError: Sender retains record during next(records)\nE       assert [0, 1024, 2048, 4096] == [0, 0, 0, 0]\nE         \nE         At index 1 diff: 1024 != 0\nE         Use -v to get more diff\n\ntest_stream_lifetime.py:218: AssertionError\n=========================== short test summary info ============================\nFAILED test_stream_lifetime.py::test_send_records_releases_record_before_generator_next\n1 failed in 0.03s\nCPU_RUN_FACTS {\"argv\": [\"/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python\", \"-B\", \"/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py\", \"sender-red\", \"test_stream_lifetime.py::test_send_records_releases_record_before_generator_next\", \"-q\"], \"blocked_child_attempts\": [], \"exit_code\": 1, \"guard\": \"existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache\", \"label\": \"sender-red\", \"model_imported\": false, \"source_sha256\": {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"a6784b079e0e98108d720ee2ffa3381b3afbfcda0350908b12763affa47a8f5f\", \"test_stream_lifetime.py\": \"167c186a18a9cabc07c544dcaa0757c32f7d26cb4acc809b51afdec0eb114ded\"}}\n",
+      "log": {
+        "path": "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/sender-red.txt",
+        "bytes": 2296,
+        "sha256": "ebd084eda0eab7880a2627e883105e0a42eae2d43b62984305a47bcfc04ea21a"
+      }
+    },
+    {
+      "label": "sender-green",
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "-B",
+        "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py",
+        "sender-green",
+        "test_stream_lifetime.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "source_sha256": {
+        "stream_weights.py": "936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73",
+        "test_stream_lifetime.py": "167c186a18a9cabc07c544dcaa0757c32f7d26cb4acc809b51afdec0eb114ded",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b"
+      },
+      "model_imported": false,
+      "blocked_child_attempts": [],
+      "guard": "existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache",
+      "command": "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B /Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py sender-green test_stream_lifetime.py -q",
+      "output": "ARGS ['test_stream_lifetime.py', '-q']\nSOURCE_SHA256 {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73\", \"test_stream_lifetime.py\": \"167c186a18a9cabc07c544dcaa0757c32f7d26cb4acc809b51afdec0eb114ded\"}\n..                                                                       [100%]\n2 passed in 0.03s\nCPU_RUN_FACTS {\"argv\": [\"/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python\", \"-B\", \"/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py\", \"sender-green\", \"test_stream_lifetime.py\", \"-q\"], \"blocked_child_attempts\": [], \"exit_code\": 0, \"guard\": \"existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache\", \"label\": \"sender-green\", \"model_imported\": false, \"source_sha256\": {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73\", \"test_stream_lifetime.py\": \"167c186a18a9cabc07c544dcaa0757c32f7d26cb4acc809b51afdec0eb114ded\"}}\n",
+      "log": {
+        "path": "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/sender-green.txt",
+        "bytes": 1172,
+        "sha256": "40b8a982d98ee4d4bd8f33de7084e743c6537b7b8f76b782ce2ee4a9f4cc2d68"
+      }
+    },
+    {
+      "label": "focused-green",
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "-B",
+        "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py",
+        "focused-green",
+        "test_stream_lifetime.py",
+        "-q"
+      ],
+      "exit_code": 1,
+      "source_sha256": {
+        "stream_weights.py": "936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73",
+        "test_stream_lifetime.py": "f6436074730662379faaf4245acd993d2ffb0a5721acf0cd553364a71e802bc7",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b"
+      },
+      "model_imported": false,
+      "blocked_child_attempts": [],
+      "guard": "existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache",
+      "command": "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B /Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py focused-green test_stream_lifetime.py -q",
+      "output": "ARGS ['test_stream_lifetime.py', '-q']\nSOURCE_SHA256 {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73\", \"test_stream_lifetime.py\": \"f6436074730662379faaf4245acd993d2ffb0a5721acf0cd553364a71e802bc7\"}\n.........................F......                                         [100%]\n=================================== FAILURES ===================================\n_______________ test_receiver_truncation_errors_unchanged[7730] ________________\n\ncut = 7730\n\n    @pytest.mark.parametrize(\"cut\", [0, 1, 3, 4, 5, 180, 1200, 4000, 7730])\n    def test_receiver_truncation_errors_unchanged(cut):\n        tensors, _, payloads = fixture_data()\n        wire = b\"\".join(expected_wire(tensors, payloads))\n>       assert cut < len(wire)\nE       assert 7730 < 7688\nE        +  where 7688 = len(b'\\x00\\x00\\x00\\xa2{\"name\":\"tensor_0\",\"descriptor\":{\"dtype\":\"U8\",\"shape\":[1024],\"data_offsets\":[0,1024]},\"sha256\":\"5a64...03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x03\\x00\\x00\\x00\\x0c{\"end\":true}')\n\ntest_stream_lifetime.py:287: AssertionError\n=========================== short test summary info ============================\nFAILED test_stream_lifetime.py::test_receiver_truncation_errors_unchanged[7730]\n1 failed, 31 passed in 0.06s\nCPU_RUN_FACTS {\"argv\": [\"/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python\", \"-B\", \"/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py\", \"focused-green\", \"test_stream_lifetime.py\", \"-q\"], \"blocked_child_attempts\": [], \"exit_code\": 1, \"guard\": \"existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache\", \"label\": \"focused-green\", \"model_imported\": false, \"source_sha256\": {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73\", \"test_stream_lifetime.py\": \"f6436074730662379faaf4245acd993d2ffb0a5721acf0cd553364a71e802bc7\"}}\n",
+      "log": {
+        "path": "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/focused-green.txt",
+        "bytes": 2131,
+        "sha256": "25dec4d67e8ee48ca7543404c8d9b8ba6fbdfdbf6abac05aded5b3cd65071e0f"
+      }
+    },
+    {
+      "label": "focused-green-v2",
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "-B",
+        "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py",
+        "focused-green-v2",
+        "test_stream_lifetime.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "source_sha256": {
+        "stream_weights.py": "936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73",
+        "test_stream_lifetime.py": "3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b"
+      },
+      "model_imported": false,
+      "blocked_child_attempts": [],
+      "guard": "existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache",
+      "command": "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B /Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py focused-green-v2 test_stream_lifetime.py -q",
+      "output": "ARGS ['test_stream_lifetime.py', '-q']\nSOURCE_SHA256 {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73\", \"test_stream_lifetime.py\": \"3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff\"}\n................................                                         [100%]\n32 passed in 0.04s\nCPU_RUN_FACTS {\"argv\": [\"/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python\", \"-B\", \"/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py\", \"focused-green-v2\", \"test_stream_lifetime.py\", \"-q\"], \"blocked_child_attempts\": [], \"exit_code\": 0, \"guard\": \"existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache\", \"label\": \"focused-green-v2\", \"model_imported\": false, \"source_sha256\": {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73\", \"test_stream_lifetime.py\": \"3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff\"}}\n",
+      "log": {
+        "path": "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/focused-green-v2.txt",
+        "bytes": 1181,
+        "sha256": "6da6c50dcf8c4c09821bf9a7f5ec92200aac2c2ddaaa28e7ef692445574c3642"
+      }
+    },
+    {
+      "label": "relevant-existing",
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "-B",
+        "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py",
+        "relevant-existing",
+        "--all-cpu",
+        "../007-dual-host-pipeline/test_shard_plan.py",
+        "../007-dual-host-pipeline/test_native_headers.py",
+        "test_overlap_protocol.py",
+        "test_overlap_failure.py",
+        "test_controller_snapshot.py",
+        "-q"
+      ],
+      "exit_code": 1,
+      "source_sha256": {
+        "stream_weights.py": "936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73",
+        "test_stream_lifetime.py": "3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b"
+      },
+      "model_imported": false,
+      "blocked_child_attempts": [],
+      "guard": "existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache",
+      "command": "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B /Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py relevant-existing --all-cpu ../007-dual-host-pipeline/test_shard_plan.py ../007-dual-host-pipeline/test_native_headers.py test_overlap_protocol.py test_overlap_failure.py test_controller_snapshot.py -q",
+      "output": "ARGS ['../007-dual-host-pipeline/test_shard_plan.py', '../007-dual-host-pipeline/test_native_headers.py', 'test_overlap_protocol.py', 'test_overlap_failure.py', 'test_controller_snapshot.py', '-q']\nSOURCE_SHA256 {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73\", \"test_stream_lifetime.py\": \"3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff\"}\n......................................................F................. [ 61%]\n....FFF.............FFFF.s...................                            [100%]\n=================================== FAILURES ===================================\n_ test_rank_zero_selects_last_layers_and_all_nonlayer_quantization_parameters __\n\n    def test_rank_zero_selects_last_layers_and_all_nonlayer_quantization_parameters():\n        tensors = qwen_tensors()\n>       rank = planner().select_pipeline_rank(\n            tensors, model_type=\"qwen2\", num_hidden_layers=6, split=[2, 4], rank=0\n        )\n\n../007-dual-host-pipeline/test_shard_plan.py:212: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nshard_plan.py:242: in select_pipeline_rank\n    _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmodel_type = 'qwen2', num_hidden_layers = 6, split = [2, 4]\ntie_word_embeddings = False\n\n    def _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings):\n        if model_type != \"qwen3_5\":\n>           raise ValueError(\"only model_type='qwen3_5' is supported\")\nE           ValueError: only model_type='qwen3_5' is supported\n\nshard_plan.py:181: ValueError\n________ test_uneven_multirank_splits_follow_reverse_numbering[split0] _________\n\nsplit = (6,)\n\n    @pytest.mark.parametrize(\"split\", [(6,), (1, 2, 3), (2, 1, 1, 2)])\n    def test_uneven_multirank_splits_follow_reverse_numbering(split):\n        for rank_index, count in enumerate(split):\n>           rank = planner().select_pipeline_rank(\n                qwen_tensors(), model_type=\"qwen2\", num_hidden_layers=6, split=split, rank=rank_index\n            )\n\n../007-dual-host-pipeline/test_shard_plan.py:271: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nshard_plan.py:242: in select_pipeline_rank\n    _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmodel_type = 'qwen2', num_hidden_layers = 6, split = (6,)\ntie_word_embeddings = False\n\n    def _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings):\n        if model_type != \"qwen3_5\":\n>           raise ValueError(\"only model_type='qwen3_5' is supported\")\nE           ValueError: only model_type='qwen3_5' is supported\n\nshard_plan.py:181: ValueError\n________ test_uneven_multirank_splits_follow_reverse_numbering[split1] _________\n\nsplit = (1, 2, 3)\n\n    @pytest.mark.parametrize(\"split\", [(6,), (1, 2, 3), (2, 1, 1, 2)])\n    def test_uneven_multirank_splits_follow_reverse_numbering(split):\n        for rank_index, count in enumerate(split):\n>           rank = planner().select_pipeline_rank(\n                qwen_tensors(), model_type=\"qwen2\", num_hidden_layers=6, split=split, rank=rank_index\n            )\n\n../007-dual-host-pipeline/test_shard_plan.py:271: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nshard_plan.py:242: in select_pipeline_rank\n    _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmodel_type = 'qwen2', num_hidden_layers = 6, split = (1, 2, 3)\ntie_word_embeddings = False\n\n    def _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings):\n        if model_type != \"qwen3_5\":\n>           raise ValueError(\"only model_type='qwen3_5' is supported\")\nE           ValueError: only model_type='qwen3_5' is supported\n\nshard_plan.py:181: ValueError\n________ test_uneven_multirank_splits_follow_reverse_numbering[split2] _________\n\nsplit = (2, 1, 1, 2)\n\n    @pytest.mark.parametrize(\"split\", [(6,), (1, 2, 3), (2, 1, 1, 2)])\n    def test_uneven_multirank_splits_follow_reverse_numbering(split):\n        for rank_index, count in enumerate(split):\n>           rank = planner().select_pipeline_rank(\n                qwen_tensors(), model_type=\"qwen2\", num_hidden_layers=6, split=split, rank=rank_index\n            )\n\n../007-dual-host-pipeline/test_shard_plan.py:271: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nshard_plan.py:242: in select_pipeline_rank\n    _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmodel_type = 'qwen2', num_hidden_layers = 6, split = (2, 1, 1, 2)\ntie_word_embeddings = False\n\n    def _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings):\n        if model_type != \"qwen3_5\":\n>           raise ValueError(\"only model_type='qwen3_5' is supported\")\nE           ValueError: only model_type='qwen3_5' is supported\n\nshard_plan.py:181: ValueError\n______________ test_tied_embeddings_have_no_separate_head_replica ______________\n\n    def test_tied_embeddings_have_no_separate_head_replica():\n>       rank = planner().select_pipeline_rank(\n            qwen_tensors(tied=True),\n            model_type=\"qwen2\",\n            num_hidden_layers=6,\n            split=[2, 4],\n            rank=0,\n            tie_word_embeddings=True,\n        )\n\n../007-dual-host-pipeline/test_shard_plan.py:318: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nshard_plan.py:242: in select_pipeline_rank\n    _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmodel_type = 'qwen2', num_hidden_layers = 6, split = [2, 4]\ntie_word_embeddings = True\n\n    def _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings):\n        if model_type != \"qwen3_5\":\n>           raise ValueError(\"only model_type='qwen3_5' is supported\")\nE           ValueError: only model_type='qwen3_5' is supported\n\nshard_plan.py:181: ValueError\n_ test_plan_reports_exhaustive_disjoint_layers_and_replication_overhead[split0] _\n\nsplit = [6]\n\n    @pytest.mark.parametrize(\"split\", [[6], [2, 4], [1, 2, 3]])\n    def test_plan_reports_exhaustive_disjoint_layers_and_replication_overhead(split):\n        tensors = qwen_tensors()\n>       plan = planner().plan_qwen2_pipeline(\n            tensors, model_type=\"qwen2\", num_hidden_layers=6, split=split\n        )\n\n../007-dual-host-pipeline/test_shard_plan.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nshard_plan.py:269: in plan_qwen2_pipeline\n    _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmodel_type = 'qwen2', num_hidden_layers = 6, split = [6]\ntie_word_embeddings = False\n\n    def _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings):\n        if model_type != \"qwen3_5\":\n>           raise ValueError(\"only model_type='qwen3_5' is supported\")\nE           ValueError: only model_type='qwen3_5' is supported\n\nshard_plan.py:181: ValueError\n_ test_plan_reports_exhaustive_disjoint_layers_and_replication_overhead[split1] _\n\nsplit = [2, 4]\n\n    @pytest.mark.parametrize(\"split\", [[6], [2, 4], [1, 2, 3]])\n    def test_plan_reports_exhaustive_disjoint_layers_and_replication_overhead(split):\n        tensors = qwen_tensors()\n>       plan = planner().plan_qwen2_pipeline(\n            tensors, model_type=\"qwen2\", num_hidden_layers=6, split=split\n        )\n\n../007-dual-host-pipeline/test_shard_plan.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nshard_plan.py:269: in plan_qwen2_pipeline\n    _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmodel_type = 'qwen2', num_hidden_layers = 6, split = [2, 4]\ntie_word_embeddings = False\n\n    def _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings):\n        if model_type != \"qwen3_5\":\n>           raise ValueError(\"only model_type='qwen3_5' is supported\")\nE           ValueError: only model_type='qwen3_5' is supported\n\nshard_plan.py:181: ValueError\n_ test_plan_reports_exhaustive_disjoint_layers_and_replication_overhead[split2] _\n\nsplit = [1, 2, 3]\n\n    @pytest.mark.parametrize(\"split\", [[6], [2, 4], [1, 2, 3]])\n    def test_plan_reports_exhaustive_disjoint_layers_and_replication_overhead(split):\n        tensors = qwen_tensors()\n>       plan = planner().plan_qwen2_pipeline(\n            tensors, model_type=\"qwen2\", num_hidden_layers=6, split=split\n        )\n\n../007-dual-host-pipeline/test_shard_plan.py:341: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nshard_plan.py:269: in plan_qwen2_pipeline\n    _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nmodel_type = 'qwen2', num_hidden_layers = 6, split = [1, 2, 3]\ntie_word_embeddings = False\n\n    def _validate_configuration(model_type, num_hidden_layers, split, tie_word_embeddings):\n        if model_type != \"qwen3_5\":\n>           raise ValueError(\"only model_type='qwen3_5' is supported\")\nE           ValueError: only model_type='qwen3_5' is supported\n\nshard_plan.py:181: ValueError\n=========================== short test summary info ============================\nFAILED ../007-dual-host-pipeline/test_shard_plan.py::test_rank_zero_selects_last_layers_and_all_nonlayer_quantization_parameters\nFAILED ../007-dual-host-pipeline/test_shard_plan.py::test_uneven_multirank_splits_follow_reverse_numbering[split0]\nFAILED ../007-dual-host-pipeline/test_shard_plan.py::test_uneven_multirank_splits_follow_reverse_numbering[split1]\nFAILED ../007-dual-host-pipeline/test_shard_plan.py::test_uneven_multirank_splits_follow_reverse_numbering[split2]\nFAILED ../007-dual-host-pipeline/test_shard_plan.py::test_tied_embeddings_have_no_separate_head_replica\nFAILED ../007-dual-host-pipeline/test_shard_plan.py::test_plan_reports_exhaustive_disjoint_layers_and_replication_overhead[split0]\nFAILED ../007-dual-host-pipeline/test_shard_plan.py::test_plan_reports_exhaustive_disjoint_layers_and_replication_overhead[split1]\nFAILED ../007-dual-host-pipeline/test_shard_plan.py::test_plan_reports_exhaustive_disjoint_layers_and_replication_overhead[split2]\n8 failed, 108 passed, 1 skipped in 0.82s\nCPU_RUN_FACTS {\"argv\": [\"/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python\", \"-B\", \"/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py\", \"relevant-existing\", \"--all-cpu\", \"../007-dual-host-pipeline/test_shard_plan.py\", \"../007-dual-host-pipeline/test_native_headers.py\", \"test_overlap_protocol.py\", \"test_overlap_failure.py\", \"test_controller_snapshot.py\", \"-q\"], \"blocked_child_attempts\": [], \"exit_code\": 1, \"guard\": \"existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache\", \"label\": \"relevant-existing\", \"model_imported\": false, \"source_sha256\": {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73\", \"test_stream_lifetime.py\": \"3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff\"}}\n",
+      "log": {
+        "path": "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/relevant-existing.txt",
+        "bytes": 11911,
+        "sha256": "20b4646c5ce07af9c117254d9b44aaea996582650b7482808fc36fc9c2b36b8a"
+      }
+    },
+    {
+      "label": "relevant-existing-v2",
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "-B",
+        "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py",
+        "relevant-existing-v2",
+        "--all-cpu",
+        "../007-dual-host-pipeline/test_shard_plan.py",
+        "../007-dual-host-pipeline/test_native_headers.py",
+        "test_overlap_protocol.py",
+        "test_overlap_failure.py",
+        "test_controller_snapshot.py",
+        "-k",
+        "header or tensor_storage or storage_width or payload_layout or borrowed_stream or merge_independent or overlap or controller",
+        "-q"
+      ],
+      "exit_code": 0,
+      "source_sha256": {
+        "stream_weights.py": "936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73",
+        "test_stream_lifetime.py": "3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b"
+      },
+      "model_imported": false,
+      "blocked_child_attempts": [],
+      "guard": "existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache",
+      "command": "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B /Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py relevant-existing-v2 --all-cpu ../007-dual-host-pipeline/test_shard_plan.py ../007-dual-host-pipeline/test_native_headers.py test_overlap_protocol.py test_overlap_failure.py test_controller_snapshot.py -k 'header or tensor_storage or storage_width or payload_layout or borrowed_stream or merge_independent or overlap or controller' -q",
+      "output": "ARGS ['../007-dual-host-pipeline/test_shard_plan.py', '../007-dual-host-pipeline/test_native_headers.py', 'test_overlap_protocol.py', 'test_overlap_failure.py', 'test_controller_snapshot.py', '-k', 'header or tensor_storage or storage_width or payload_layout or borrowed_stream or merge_independent or overlap or controller', '-q']\nSOURCE_SHA256 {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73\", \"test_stream_lifetime.py\": \"3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff\"}\n......................................................s................. [ 97%]\n..                                                                       [100%]\n73 passed, 1 skipped, 43 deselected in 0.55s\nCPU_RUN_FACTS {\"argv\": [\"/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python\", \"-B\", \"/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py\", \"relevant-existing-v2\", \"--all-cpu\", \"../007-dual-host-pipeline/test_shard_plan.py\", \"../007-dual-host-pipeline/test_native_headers.py\", \"test_overlap_protocol.py\", \"test_overlap_failure.py\", \"test_controller_snapshot.py\", \"-k\", \"header or tensor_storage or storage_width or payload_layout or borrowed_stream or merge_independent or overlap or controller\", \"-q\"], \"blocked_child_attempts\": [], \"exit_code\": 0, \"guard\": \"existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache\", \"label\": \"relevant-existing-v2\", \"model_imported\": false, \"source_sha256\": {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73\", \"test_stream_lifetime.py\": \"3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff\"}}\n",
+      "log": {
+        "path": "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/relevant-existing-v2.txt",
+        "bytes": 1894,
+        "sha256": "3ae85760815b7216df0753550b670f0b7bc0291603a6ed8eefbdcadb63fc4537"
+      }
+    },
+    {
+      "label": "final-combined",
+      "argv": [
+        "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python",
+        "-B",
+        "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py",
+        "final-combined",
+        "--all-cpu",
+        "test_stream_lifetime.py",
+        "../007-dual-host-pipeline/test_shard_plan.py",
+        "../007-dual-host-pipeline/test_native_headers.py",
+        "test_overlap_protocol.py",
+        "test_overlap_failure.py",
+        "test_controller_snapshot.py",
+        "-k",
+        "stream_lifetime or header or tensor_storage or storage_width or payload_layout or borrowed_stream or merge_independent or overlap or controller",
+        "-q",
+        "-rs"
+      ],
+      "exit_code": 0,
+      "source_sha256": {
+        "stream_weights.py": "936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73",
+        "test_stream_lifetime.py": "3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff",
+        "cpu_only_runner.py": "d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b"
+      },
+      "model_imported": false,
+      "blocked_child_attempts": [],
+      "guard": "existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache",
+      "command": "/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python -B /Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py final-combined --all-cpu test_stream_lifetime.py ../007-dual-host-pipeline/test_shard_plan.py ../007-dual-host-pipeline/test_native_headers.py test_overlap_protocol.py test_overlap_failure.py test_controller_snapshot.py -k 'stream_lifetime or header or tensor_storage or storage_width or payload_layout or borrowed_stream or merge_independent or overlap or controller' -q -rs",
+      "output": "ARGS ['test_stream_lifetime.py', '../007-dual-host-pipeline/test_shard_plan.py', '../007-dual-host-pipeline/test_native_headers.py', 'test_overlap_protocol.py', 'test_overlap_failure.py', 'test_controller_snapshot.py', '-k', 'stream_lifetime or header or tensor_storage or storage_width or payload_layout or borrowed_stream or merge_independent or overlap or controller', '-q', '-rs']\nSOURCE_SHA256 {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73\", \"test_stream_lifetime.py\": \"3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff\"}\n........................................................................ [ 67%]\n..............s...................                                       [100%]\n=========================== short test summary info ============================\nSKIPPED [1] ../007-dual-host-pipeline/test_shard_plan.py:413: optional parent-supplied Qwen32 metadata-only fixtures not available\n105 passed, 1 skipped, 43 deselected in 0.57s\nCPU_RUN_FACTS {\"argv\": [\"/Users/jeremylien/Projects/paretoquant-metal/.venv/bin/python\", \"-B\", \"/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/run_guarded.py\", \"final-combined\", \"--all-cpu\", \"test_stream_lifetime.py\", \"../007-dual-host-pipeline/test_shard_plan.py\", \"../007-dual-host-pipeline/test_native_headers.py\", \"test_overlap_protocol.py\", \"test_overlap_failure.py\", \"test_controller_snapshot.py\", \"-k\", \"stream_lifetime or header or tensor_storage or storage_width or payload_layout or borrowed_stream or merge_independent or overlap or controller\", \"-q\", \"-rs\"], \"blocked_child_attempts\": [], \"exit_code\": 0, \"guard\": \"existing CPU guard plus audit-denied Popen/system/spawn/fork/exec; disabled bytecode, plugins and pytest cache\", \"label\": \"final-combined\", \"model_imported\": false, \"source_sha256\": {\"cpu_only_runner.py\": \"d8c0ec597210e6ae3bd5a7469cbb34ac2fe2ef2d0bec790b5d0191e8decceb5b\", \"stream_weights.py\": \"936faad92496f9f72f602e032fa3412de7464f4a7c2f564eb2ea76ef2385eb73\", \"test_stream_lifetime.py\": \"3d4b208bca868b8c9c1b2c454edaefad0263fc840333273f1bbe93655d0afeff\"}}\n",
+      "log": {
+        "path": "/Users/jeremylien/.hermes/cache/scratch/stream-lifetime-implementation/final-combined.txt",
+        "bytes": 2201,
+        "sha256": "c5353d432f816e9fe74dda72daf7e0a6d7d27ba60e60410a9b94590b71ff1955"
+      }
+    }
+  ],
+  "independent_review": "not performed by this implementation agent"
+}

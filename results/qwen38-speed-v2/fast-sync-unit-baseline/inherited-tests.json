@@ -1,0 +1,8 @@
+{
+  "source": "spikes/007-dual-host-pipeline",
+  "byte_exact_before_fixture_adaptation": {
+    "test_remote_actor.py": "3218d6500842f14e1a991a51cb164c9bcbb75601384eb90335c48381803a85de",
+    "test_progress.py": "77d7bbff26ef9d6648bb13ef129e92d58ea5875eb9c5b01d6fc75ae3f19df884",
+    "test_supervise.py": "e57fed0c90d63fdbd22cd46690336a61dbd8c01a43981b57a50e50ab271214dd"
+  }
+}

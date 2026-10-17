@@ -1,0 +1,518 @@
+{
+  "schema": "memory-policy-control-independent-review-v1",
+  "passed": false,
+  "classification": "CONTROL_NOT_MODEL_GATE",
+  "verdict": "BLOCKED: v1 fails closed but cannot launch its payload with the parent-confirmed installed MLX API. No additional critical first-launch or safety blocker found in this focused CPU/source review.",
+  "security_concerns": [],
+  "logic_errors": [
+    {
+      "id": "API-001",
+      "severity": "blocking",
+      "location": "memory-policy-control-v1/fixture.py:215-217; test_control.py:173-184; README.md:24,33",
+      "finding": "The adapter unconditionally calls mx.set_memory_limit(value, relaxed=False). The parent independently confirmed installed MLX 0.32.3 exposes only set_memory_limit(limit: int); the actual zero-array call raises TypeError for the unsupported keyword. The fake backend accepts this invented installed signature, so the passing adapter test does not establish compatibility.",
+      "evidence_origin": "Parent direct steering during this review: live zero-array installed API/docs check, no allocations; not reproduced by this CPU-only reviewer.",
+      "effect": "run_control catches the setter TypeError before allocating or setting the wired policy; cleanup is attempted, ok remains false, fixture returns 1, and the original actor/collector cannot approve this physical case. All eight proposed v1 physical cases are blocked.",
+      "disposition": "No fix made. Parent owns a separate narrow TDD repair. A compatible one-argument advisory setter plus structural 64 MiB retention and observed 192 MiB checkpoints must explicitly revise the strict-ceiling claim, not silently fall back. Normal-pressure requirement remains unchanged."
+    }
+  ],
+  "verification": {
+    "scope": [
+      "fixture.py",
+      "harness.py",
+      "test_control.py",
+      "cpu-receipt.json",
+      "README.md"
+    ],
+    "dependency_inspection": "Read only run_cpu_tests.py, recorded CPU output and selected hashed TDD logs for receipt verification, plus approved original actor/pressure guard solely for source snapshot, record grammar and pressure-codec compatibility. No unrelated benchmark audited.",
+    "independent_cpu_run": {
+      "tests_run": 25,
+      "failures": 0,
+      "errors": 0,
+      "success": true,
+      "elapsed_seconds": 0.07040416700056085,
+      "forbidden_attempts": [],
+      "forbidden_modules_loaded": [],
+      "log": "test_exact_modes_and_bounded_configuration (test_control.Bounds.test_exact_modes_and_bounded_configuration) ... ok\ntest_host_payload_budget_includes_retained_input_lifetimes (test_control.Bounds.test_host_payload_budget_includes_retained_input_lifetimes) ... ok\ntest_only_physical_runtime_can_import_mlx_or_subprocess (test_control.CpuBoundary.test_only_physical_runtime_can_import_mlx_or_subprocess) ... ok\ntest_cleanup_sync_exception_does_not_skip_restoration (test_control.ErrorRestoration.test_cleanup_sync_exception_does_not_skip_restoration) ... ok\ntest_deadline_stops_before_next_allocation_and_restores (test_control.ErrorRestoration.test_deadline_stops_before_next_allocation_and_restores) ... ok\ntest_evaluation_failure_restores_and_frees (test_control.ErrorRestoration.test_evaluation_failure_restores_and_frees) ... ok\ntest_oversize_active_counter_fails_and_restores (test_control.ErrorRestoration.test_oversize_active_counter_fails_and_restores) ... ok\ntest_pressure_two_during_run_restores_policy (test_control.ErrorRestoration.test_pressure_two_during_run_restores_policy) ... ok\ntest_roundtrip_error_restores_previous_nonzero_limit (test_control.ErrorRestoration.test_roundtrip_error_restores_previous_nonzero_limit) ... ok\ntest_sampler_is_required_and_abnormal_before_prevents_setters (test_control.ErrorRestoration.test_sampler_is_required_and_abnormal_before_prevents_setters) ... ok\ntest_admission_binds_external_originals_hashes_nonce_role_and_deadline (test_control.Harness.test_admission_binds_external_originals_hashes_nonce_role_and_deadline) ... ok\ntest_collection_uses_original_pressure_verifier_and_independent_records (test_control.Harness.test_collection_uses_original_pressure_verifier_and_independent_records) ... ok\ntest_execute_loads_byte_exact_originals_and_restores_import_scope_on_error (test_control.Harness.test_execute_loads_byte_exact_originals_and_restores_import_scope_on_error) ... ok\ntest_owned_call_scopes_sources_and_always_requires_pressure (test_control.Harness.test_owned_call_scopes_sources_and_always_requires_pressure) ... ok\ntest_parent_cli_requires_external_admission_before_executor (test_control.Harness.test_parent_cli_requires_external_admission_before_executor) ... ok\ntest_stage_exact_three_sources_against_external_expected_hashes (test_control.Harness.test_stage_exact_three_sources_against_external_expected_hashes) ... ok\ntest_adapter_enforces_strict_allocator_and_reports_device (test_control.PhysicalBoundary.test_adapter_enforces_strict_allocator_and_reports_device) ... ok\ntest_entrypoint_uses_fixed_payload_and_injected_runtime_only (test_control.PhysicalBoundary.test_entrypoint_uses_fixed_payload_and_injected_runtime_only) ... ok\ntest_physical_cli_has_no_payload_size_escape (test_control.PhysicalBoundary.test_physical_cli_has_no_payload_size_escape) ... ok\ntest_bool_policy_readback_is_not_integer_zero (test_control.Runs.test_bool_policy_readback_is_not_integer_zero) ... ok\ntest_cleanup_residual_active_memory_fails_closed (test_control.Runs.test_cleanup_residual_active_memory_fails_closed) ... ok\ntest_retained_payload_is_revalidated_after_last_allocation (test_control.Runs.test_retained_payload_is_revalidated_after_last_allocation) ... ok\ntest_small_roundtrip_records_actual_policy_and_restores (test_control.Runs.test_small_roundtrip_records_actual_policy_and_restores) ... ok\ntest_strict_sampler_requires_pressure_one_and_vm_counters (test_control.Samples.test_strict_sampler_requires_pressure_one_and_vm_counters) ... ok\ntest_vm_field_population_is_bounded_before_retention (test_control.Samples.test_vm_field_population_is_bounded_before_retention) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 0.070s\n\nOK\n",
+      "temporary_directories_redirected_to_scratch": 6,
+      "temporary_directories_cleaned": true
+    },
+    "execution_method": "Executed the exact test_control.py suite in the existing Python kernel using the reviewed install_guards(), without invoking run_cpu_tests.main() (which would overwrite the existing receipt). Disabled bytecode writes. Redirected only TemporaryDirectory destinations to scratch so tests did not create transient repository files. Actual full unittest output embedded above.",
+    "existing_receipt": {
+      "tests_run": 25,
+      "failures": 0,
+      "errors": 0,
+      "forbidden_attempts": [],
+      "source_hashes_match": {
+        "fixture.py": true,
+        "harness.py": true,
+        "test_control.py": true,
+        "run_cpu_tests.py": true
+      },
+      "original_hashes_match": {
+        "remote_actor.py": true,
+        "pressure_guard.py": true
+      },
+      "recorded_output_success": true,
+      "tdd_log_checks": [
+        {
+          "cycle": 1,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 2,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 3,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 4,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 5,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 6,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 7,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 8,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 9,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 10,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 11,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 12,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 13,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 14,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 15,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 16,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 17,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        },
+        {
+          "cycle": 18,
+          "red_hash_matches": true,
+          "green_hash_matches": true,
+          "red_has_failure": true,
+          "green_ends_ok": true
+        }
+      ]
+    },
+    "source_binding": {
+      "original_actor_hash_matches_parent_pin": true,
+      "original_pressure_hash_matches_parent_pin": true,
+      "actual_actor_snapshot_expression_tested": true,
+      "rewritten_argv": [
+        "/approved/python",
+        "-B",
+        "-u",
+        "/approved/private/trials/fresh-trial/sources/fixture.py",
+        "--mode",
+        "unwired",
+        "--nonce",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "--host-role",
+        "local"
+      ],
+      "actual_actor_record_keys": {
+        "job_dir / 'startup.json'": [
+          "actor_pid",
+          "nonce",
+          "deadline",
+          "host_role",
+          "actor_role",
+          "actor_started_monotonic",
+          "require_normal_pressure",
+          "argv"
+        ],
+        "result.json": [
+          "reason",
+          "log_cap_bytes",
+          "log_cap_exceeded",
+          "log_evidence_complete",
+          "nonce",
+          "actor_pid",
+          "child_pid",
+          "returncode",
+          "cleanup",
+          "error_type",
+          "elapsed",
+          "actor_started_monotonic",
+          "host_role",
+          "actor_role",
+          "execution",
+          "forwarded_bytes_dropped",
+          "require_normal_pressure",
+          "pressure"
+        ],
+        "job_dir / 'pids.json'": [
+          "actor_pid",
+          "child_pid",
+          "pgid",
+          "host_role",
+          "actor_role",
+          "actor_started_monotonic",
+          "child_start_seconds",
+          "nonce",
+          "executed_argv",
+          "environment_keys"
+        ]
+      },
+      "collector_grammar_compatible": true,
+      "pressure_codec_executed_in_cpu_suite": true,
+      "real_run_owned_executed": false
+    },
+    "owned_execution_review": {
+      "verified": true,
+      "details": "stage writes a new private three-file root and reads bytes back against external expected fixture/original hashes. _admit validates exact nonce/mode/host role, finite <=45 s deadline, exact source registries and harness hash. execute compiles the admitted original guard/actor bytes, restores pressure_guard binding even on error, scopes only actor.SOURCES and restores it in finally. _invoke_owned passes the original run_owned library seam, parent interpreter, -B/-u, pressure=True, literal nonce and host rank mapping. The unchanged actor snapshots all three admitted sources and its actual argv rewrite targets the snapshot fixture. The original CLI is correctly not used. Default admission.json is not part of the child registry and does not break the actor snapshot loop.",
+      "collector": "Reads exact result.json/source_sha256.json/startup.json/pids.json/stdout; requires returned-result readback equality, child exit 0, completed logs and reaped/gone/nonpending cleanup. The original expected_pressure_binding calls verify_pressure against independent startup/PID/execution records and the controller-admitted labels. Actual original actor record keys, stage names and child binding grammar match this collector. Real run_owned was not executed."
+    },
+    "payload_and_cleanup": {
+      "verified_cpu_source": true,
+      "details": "Physical main fixes 64 x 1 MiB deterministic little-endian U32 chunks, with no size CLI escape. It compares exact generated and returned bytes, SHA-256 and endpoints, retains every chunk, then verifies all retained buffers again. Setter-returned old wired policy is recorded, idempotent wired readback is checked, and prior wired/cache/memory numeric limits are restored with idempotent readbacks. Independent cleanup attempts continue after synchronization exceptions. Existing CPU tests cover retained corruption, readback booleans, residual active bytes, evaluation/roundtrip/pressure/deadline failures and restoration. Additional setter/roundtrip exceptions below all failed closed with finite return and no retained fake arrays.",
+      "additional_failure_probes": [
+        {
+          "probe": "memory_setter_failure",
+          "failed_closed": true,
+          "returned_seconds": 0.003117083000688581,
+          "retained_active_after": 0,
+          "wired_after": 37,
+          "memory_after": 999,
+          "cache_after": 42,
+          "errors": [
+            {
+              "stage": "run",
+              "type": "RuntimeError"
+            }
+          ],
+          "cleanup": [
+            {
+              "step": "synchronize_before_free",
+              "ok": true
+            },
+            {
+              "step": "clear_cache",
+              "ok": true
+            },
+            {
+              "step": "synchronize_after_free",
+              "ok": true
+            },
+            {
+              "step": "after_memory",
+              "ok": true
+            },
+            {
+              "step": "after_sample",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "probe": "cache_setter_failure",
+          "failed_closed": true,
+          "returned_seconds": 0.003568334000192408,
+          "retained_active_after": 0,
+          "wired_after": 37,
+          "memory_after": 999,
+          "cache_after": 42,
+          "errors": [
+            {
+              "stage": "run",
+              "type": "RuntimeError"
+            }
+          ],
+          "cleanup": [
+            {
+              "step": "synchronize_before_free",
+              "ok": true
+            },
+            {
+              "step": "clear_cache",
+              "ok": true
+            },
+            {
+              "step": "synchronize_after_free",
+              "ok": true
+            },
+            {
+              "step": "restore_memory",
+              "ok": true
+            },
+            {
+              "step": "after_memory",
+              "ok": true
+            },
+            {
+              "step": "after_sample",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "probe": "wired_setter_failure",
+          "failed_closed": true,
+          "returned_seconds": 0.002840415999344259,
+          "retained_active_after": 0,
+          "wired_after": 37,
+          "memory_after": 999,
+          "cache_after": 42,
+          "errors": [
+            {
+              "stage": "run",
+              "type": "RuntimeError"
+            }
+          ],
+          "cleanup": [
+            {
+              "step": "synchronize_before_free",
+              "ok": true
+            },
+            {
+              "step": "clear_cache",
+              "ok": true
+            },
+            {
+              "step": "synchronize_after_free",
+              "ok": true
+            },
+            {
+              "step": "restore_cache",
+              "ok": true
+            },
+            {
+              "step": "restore_memory",
+              "ok": true
+            },
+            {
+              "step": "after_memory",
+              "ok": true
+            },
+            {
+              "step": "after_sample",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "probe": "roundtrip_exception",
+          "failed_closed": true,
+          "returned_seconds": 0.0030163339997670846,
+          "retained_active_after": 0,
+          "wired_after": 37,
+          "memory_after": 999,
+          "cache_after": 42,
+          "errors": [
+            {
+              "stage": "run",
+              "type": "RuntimeError"
+            }
+          ],
+          "cleanup": [
+            {
+              "step": "synchronize_before_free",
+              "ok": true
+            },
+            {
+              "step": "clear_cache",
+              "ok": true
+            },
+            {
+              "step": "synchronize_after_free",
+              "ok": true
+            },
+            {
+              "step": "restore_wired",
+              "ok": true
+            },
+            {
+              "step": "restore_cache",
+              "ok": true
+            },
+            {
+              "step": "restore_memory",
+              "ok": true
+            },
+            {
+              "step": "after_memory",
+              "ok": true
+            },
+            {
+              "step": "after_sample",
+              "ok": true
+            }
+          ]
+        }
+      ],
+      "nonfinite_deadlines_rejected": true
+    },
+    "os_sampler": {
+      "commands": [
+        [
+          "/usr/sbin/sysctl",
+          "-n",
+          "kern.memorystatus_vm_pressure_level"
+        ],
+        [
+          "/usr/bin/vm_stat"
+        ],
+        [
+          "/usr/sbin/sysctl",
+          "-n",
+          "hw.memsize"
+        ],
+        [
+          "/bin/ps",
+          "-o",
+          "rss=",
+          "-p",
+          "CHILD_PID"
+        ]
+      ],
+      "timeout_seconds_each": 0.25,
+      "accepted_output_caps": {
+        "pressure": 64,
+        "vm_stat": 65536,
+        "mem_total": 64,
+        "rss": 64
+      },
+      "checks": "Fixed list argv, no shell and no sysctl writes. Strict ASCII/stderr checks; exact pressure 1 newline; bounded VM text, field count, names, unsigned counters and required fields. RSS is labeled RSS, not footprint. No sampler command was executed during this review.",
+      "caveat": "capture_output collects before the accepted-output size check; this is not a streaming hard output-memory cap. These are fixed trusted OS commands, bounded by timeout, not arbitrary producers. The 30 s budget is cooperative; original <=45 s owned watchdog covers stuck backend calls/cleanup, with separate bounded termination work."
+    },
+    "reviewed_inputs_unchanged": true,
+    "physical_executed": false,
+    "model_loaded": false,
+    "mlx_or_numpy_imported": false,
+    "network_ssh_subprocess_or_signals_executed": false,
+    "files_created_or_modified": [
+      "results/qwen38-prefill-overlap-v1/memory-policy-control-independent-review.json"
+    ]
+  },
+  "sourcehashes": {
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v1/fixture.py": "960263023c2a9a0532fd0cbc612cd8281e0783e33355d367f935c2b705af2cfc",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v1/harness.py": "0a409ca1a8e77dd554447d565db4de40c91aa4045e425fa7fe24ba6ed678f88f",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v1/test_control.py": "ff10ef9d07facaee8c3a975240069d09939afdf91b557213ca94a968727f1353",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v1/cpu-receipt.json": "0b561990d15b506fc7a18966d0b2d1cbd53ee4b5d6efa8b5aa57c793a5fde646",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v1/README.md": "2a6f872d5160c8681567c555ae2324dc63922829cceef9c151c7d3345b97a07f",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v1/run_cpu_tests.py": "3d9004b712c16495210a94e7b6a6d841e7d34c1450c9d111e7c0f4b121720f35",
+    "results/qwen38-prefill-overlap-v1/memory-policy-control-v1/cpu-test-output-reviewed.txt": "54fa9623ccee2afa1f502b65d9f3917c1ed57a52f61e626c56bc75010bc6c239",
+    "spikes/025-qwen38-overlapped-prefill/remote_actor.py": "3bacf37ba85de04fecc7dee67abccead5f7aa805bc4a4e45fbb4bf90302bf81c",
+    "spikes/025-qwen38-overlapped-prefill/pressure_guard.py": "17402e9c8c043b31f42325f1e255484385ef6bd38b9e99a5a1f44c203456fb20"
+  },
+  "limits": {
+    "retained_bytes": 67108864,
+    "physical_chunk_bytes": 1048576,
+    "physical_allocation_iterations": 64,
+    "physical_retained_verification_iterations": 64,
+    "generic_injected_iteration_ceiling": 128,
+    "requested_allocator_limit_bytes": 201326592,
+    "strict_allocator_ceiling_verified": false,
+    "strict_allocator_ceiling_status": "Requested via unsupported keyword; not established on installed MLX.",
+    "memory_checkpoint_ceiling_bytes": 201326592,
+    "logical_host_payload_cap_bytes": 142606336,
+    "child_import_and_work_budget_seconds": 30,
+    "parent_actor_deadline_seconds": 45,
+    "deadline_semantics": "Cooperative child checks include import budget; not an interruptible C-call bound. Parent actor deadline plus bounded cleanup is separate.",
+    "pressure_gate": "Original guard and child samples must all be normal level 1; sampled evidence only.",
+    "global_settings_changed": false,
+    "roundtrip_api_semantics": "Adapter numpy/MLX conversion paths inspected in source only. No installed MLX/NumPy import. Parent installed API confirmation is authoritative for the known setter blocker; remaining physical conversion behavior is not established by fake tests.",
+    "parent_owned_remaining_gates": [
+      "Repair unsupported allocator API and accurately revise cap semantics, with focused regression tests and renewed admission hashes.",
+      "Inspect installed wired/cache setters, device-info keys and conversion API semantics before physical admission.",
+      "Parent exclusively owns real pressure-1 admission, serial local/remote physical controls and process cleanup."
+    ],
+    "claims_excluded": [
+      "model feasibility",
+      "full model reload approval",
+      "model memory fit",
+      "causality of earlier pressure warning",
+      "speedup",
+      "strict allocator enforcement on installed MLX",
+      "continuous pressure proof"
+    ]
+  }
+}

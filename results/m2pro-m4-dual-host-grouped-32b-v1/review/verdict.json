@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [],
+  "summary": "Pass for bounded opt-in evaluation groups 1/2/4/8 against the supplied working32B baseline diff (dd6f19f47c5bd4f94d76281b00dfad6265327a20). The default layer loop is unchanged. CPU receive completes before local layer graphs; final block hidden state and every live block KV state complete before CPU send. Ragged blocks, intermediate dtype checks, fresh caches and post-evaluation completion events are preserved. Both peers receive the admitted flag and receipts are checked against that admission, not merely peer agreement. No consequential regression or security issue found. This is scheduling/admission approval, not a physical 32B parity or performance result; those runs remain pending with the parent.",
+  "tests": [
+    {
+      "name": "Independent CPU-only stdlib unittest run: test_supervise and test_progress",
+      "status": "passed",
+      "tests_run": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "details": "Audit guards prohibited MLX/MLX-LM imports, network connect/bind/name resolution, SSH and download/install/Git tools. No blocked operations occurred and no MLX runtime modules were imported. Local subprocess cleanup and durable failure receipts passed."
+    },
+    {
+      "name": "Independent CLI admission and receipt-binding matrix",
+      "status": "passed",
+      "checks": 59,
+      "details": "Covered all admitted sizes, matching and identically mismatched peer receipts, bool/float/string/null receipt rejection, missing fields on each rank, invalid controller options before launch/transport, and invalid probe CLI before generation. Missing eval_group_size is accepted only as legacy default 1; it cannot satisfy a grouped admission."
+    },
+    {
+      "name": "Baseline-aware diff and static verification",
+      "status": "passed",
+      "details": "Validated all seven unified-diff sections against frozen current files and parsed all 20 Python files without imports. Reconstructed pre-change source only in memory. Default per-layer loop AST and phased-forward distributed-call AST match the supplied baseline diff exactly. Added-line scan found no shell injection, unsafe deserialization or dynamic-code execution."
+    },
+    {
+      "name": "Grouped scheduling, KV and truthful completion review",
+      "status": "reviewed",
+      "details": "Inspected production logic and existing real-model parity, failure-injection, ragged-block and mocked-handoff test source. Block evaluation includes final h plus every current block cache.state; all layer_done events follow successful evaluation. Receive is evaluated on its CPU stream before layers are constructed, and all local block evaluations precede send on the CPU stream. Generation forwards the option through prefill and decode. Numerical MLX/GPU tests were read, not executed in this independent review."
+    },
+    {
+      "name": "Frozen snapshot integrity",
+      "status": "passed",
+      "files": 20,
+      "details": "Every Python file matched manifest SHA-256 before and after review/testing, with no source edits."
+    }
+  ],
+  "hashes_verified": true,
+  "snapshot": "/Users/jeremylien/.hermes/cache/scratch/paretoquant-dual-host/acceleration-32b/grouped-review-1791187162875738000"
+}

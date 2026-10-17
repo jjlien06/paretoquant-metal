@@ -1,0 +1,59 @@
+{
+  "case_count": 4,
+  "operator_comparisons": 96,
+  "same_mode_observer_exact": true,
+  "owned_cleanup_verified": true,
+  "guarded_unchanged": true,
+  "scope": "Held-equal actual checkpoint SDPA diagnosis, not candidate dispatch or speedup",
+  "cases": [
+    {
+      "prompt_index": 0,
+      "verification_width": 2,
+      "exact_layers": 24,
+      "within_tolerance_layers": 24,
+      "failing_layers": [],
+      "max_abs_error": 0.0
+    },
+    {
+      "prompt_index": 0,
+      "verification_width": 5,
+      "exact_layers": 0,
+      "within_tolerance_layers": 17,
+      "failing_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        8,
+        23
+      ],
+      "max_abs_error": 0.010040283203125
+    },
+    {
+      "prompt_index": 0,
+      "verification_width": 9,
+      "exact_layers": 0,
+      "within_tolerance_layers": 24,
+      "failing_layers": [],
+      "max_abs_error": 0.0009765625
+    },
+    {
+      "prompt_index": 1,
+      "verification_width": 5,
+      "exact_layers": 0,
+      "within_tolerance_layers": 16,
+      "failing_layers": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        8,
+        14,
+        23
+      ],
+      "max_abs_error": 0.00830078125
+    }
+  ]
+}

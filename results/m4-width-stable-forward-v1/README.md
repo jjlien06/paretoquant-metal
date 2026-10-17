@@ -1,0 +1,7 @@
+# Width-stable verification: forward physical gate
+
+Four authentic mixed3/4bit0.5B forced-prefix forwards now have exactly equal values in all recorded operators, every live teacher KV prefix and all logits against concatenated stock width-one calls. Widths2/5/9 on arithmetic and width5 on a second prompt cover the original failures. Same-mode instrumented/uninstrumented cache, offset and logits witnesses were exact. This is forward admission for these cases, not universal speculation or32B admission.
+
+The components remain opt-in and isolated; default decoder/library files were not edited. Original atol=rtol=.002 is unchanged. Exactness means element equality, not independently audited storage-byte identity. No synchronized timing comparison was performed. Peak MLX allocation is not system residency. Owned actor cleanup, exact deployed source readbacks and unchanged guarded full32B source hashes passed. Independent reviews and physical distributed small/full32B gates remain required before claiming accelerated32B generation.
+
+The attention's nine actual RED/GREEN cycles and the QMV's existing TDD/CPU artifacts are retained. Parent independently ran447 combined CPU tests with1 opt-in GPU skip and2653 subtests; Ruff/format passed for attention. `evidence/` preserves executed GPU sources/reports/process/startup/preflight/cleanup receipts; `source/` snapshots candidate/test/license/TDD files. `verified-summary.json` is computed from receipts; `integrity.json` hashes all archive files excluding itself.

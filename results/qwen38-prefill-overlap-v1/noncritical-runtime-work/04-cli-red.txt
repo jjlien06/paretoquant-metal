@@ -1,0 +1,184 @@
+..............................................FFFF                       [100%]
+=================================== FAILURES ===================================
+____ test_supervisor_noncritical_cli_reaches_both_probe_options_and_dryrun _____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10871acf0>
+capsys = <_pytest.capture.CaptureFixture object at 0x108851400>
+
+    def test_supervisor_noncritical_cli_reaches_both_probe_options_and_dryrun(monkeypatch, capsys):
+        import json
+        import sys
+        import supervise
+>       args = supervise.parser().parse_args(noncritical_argv())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_pressure_noncritical.py:234: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/argparse.py:1893: in parse_args
+    self.error(msg)
+/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/argparse.py:2645: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ArgumentParser(prog='cpu_only_runner.py', usage=None, description='Durable bounded two-host trial controller. Never invoke via execute_code.', formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+status = 2
+message = 'cpu_only_runner.py: error: unrecognized arguments: --pressure-policy noncritical\n'
+
+    def exit(self, status=0, message=None):
+        if message:
+            self._print_message(message, _sys.stderr)
+>       _sys.exit(status)
+E       SystemExit: 2
+
+/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/argparse.py:2632: SystemExit
+----------------------------- Captured stderr call -----------------------------
+usage: cpu_only_runner.py [-h] --remote-root REMOTE_ROOT
+                          --remote-source REMOTE_SOURCE
+                          --local-metadata LOCAL_METADATA --output OUTPUT
+                          --ssh-key SSH_KEY --split SPLIT SPLIT
+                          [--max-tokens MAX_TOKENS] [--repeats REPEATS]
+                          [--deadline DEADLINE]
+                          [--reserve-bytes RESERVE_BYTES]
+                          [--local-address LOCAL_ADDRESS]
+                          [--remote-address REMOTE_ADDRESS]
+                          [--ssh-target SSH_TARGET] [--prompt PROMPT]
+                          [--execution {phased,upstream}]
+                          [--eval-group-size {1,2,4,8,16,32}]
+                          [--eval-group-schedule [{1,2,4,8,16,32} ...]]
+                          [--ssh-host-key-alias SSH_HOST_KEY_ALIAS]
+                          [--benchmark-schedule]
+                          [--benchmark-schedule-sha256 BENCHMARK_SCHEDULE_SHA256]
+                          [--verification-gate-only] [--prefix-rollback]
+                          [--hidden-only-prefill] [--overlapped-prefill]
+                          [--require-normal-pressure] [--dry-run]
+                          [--hidden-gate-chunk-size HIDDEN_GATE_CHUNK_SIZE]
+                          [--rank0-verifier {native,singleton-qmm,slot-qmv}]
+                          [--rank1-verifier {native,singleton-qmm,slot-qmv}]
+                          --target-revision TARGET_REVISION
+                          --target-config-sha256 TARGET_CONFIG_SHA256
+                          --target-index-sha256 TARGET_INDEX_SHA256
+                          --sidecar SIDECAR
+                          --small-model-local SMALL_MODEL_LOCAL
+                          --small-model-remote SMALL_MODEL_REMOTE
+                          --small-config-sha256 SMALL_CONFIG_SHA256
+                          --small-index-sha256 SMALL_INDEX_SHA256
+cpu_only_runner.py: error: unrecognized arguments: --pressure-policy noncritical
+______ test_overlap_effective_guard_required_and_policy_conflict_rejected ______
+
+    def test_overlap_effective_guard_required_and_policy_conflict_rejected():
+        from overlap_prefill import validate_modes
+        good = S(overlapped_prefill=True, hidden_only_prefill=True, prefix_rollback=True,
+                 hidden_gate_chunk_size=256, pressure_policy="noncritical", require_normal_pressure=False)
+>       validate_modes(good)
+
+test_pressure_noncritical.py:252: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = namespace(overlapped_prefill=True, hidden_only_prefill=True, prefix_rollback=True, hidden_gate_chunk_size=256, pressure_policy='noncritical', require_normal_pressure=False)
+rows = None
+
+    def validate_modes(args, rows=None):
+        enabled = getattr(args, "overlapped_prefill", False)
+        pressure = getattr(args, "require_normal_pressure", False)
+        if type(enabled) is not bool or type(pressure) is not bool:
+            raise ValueError("Overlap/pressure flags must be exact bool")
+        new_schedule = rows is not None and any("prefill_mode" in row for row in rows)
+        if new_schedule and not enabled:
+            raise ValueError("Overlap schedule requires explicit capability flag")
+        if enabled:
+            if not pressure:
+>               raise ValueError("Overlap requires normal-pressure watchdog")
+E               ValueError: Overlap requires normal-pressure watchdog
+
+overlap_prefill.py:62: ValueError
+______ test_probe_process_start_reports_noncritical_without_normal_claim _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10895f350>
+capsys = <_pytest.capture.CaptureFixture object at 0x108ef8a50>
+
+    def test_probe_process_start_reports_noncritical_without_normal_claim(monkeypatch, capsys):
+        import sys
+        import probe
+        reports = []
+        monkeypatch.setattr(sys, "argv", ["probe.py", "--mode", "collective", "--pressure-policy", "noncritical"])
+        monkeypatch.setattr(probe, "phase_reporter", lambda **kw: reports.append)
+        monkeypatch.setattr(probe, "collective", lambda: dict(mode="collective", mocked=True))
+>       probe.main()
+
+test_pressure_noncritical.py:273: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+probe.py:512: in main
+    args = parser.parse_args()
+           ^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/argparse.py:1893: in parse_args
+    self.error(msg)
+/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/argparse.py:2645: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ArgumentParser(prog='probe.py', usage=None, description='Standalone strict two-rank MLX ring communication smoke probe.', formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+status = 2
+message = 'probe.py: error: unrecognized arguments: --pressure-policy noncritical\n'
+
+    def exit(self, status=0, message=None):
+        if message:
+            self._print_message(message, _sys.stderr)
+>       _sys.exit(status)
+E       SystemExit: 2
+
+/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/argparse.py:2632: SystemExit
+----------------------------- Captured stderr call -----------------------------
+usage: probe.py [-h] --mode {collective,generate} [--model MODEL]
+                [--verification-gate-only] [--benchmark-schedule]
+                [--benchmark-schedule-sha256 BENCHMARK_SCHEDULE_SHA256]
+                [--prefix-rollback] [--hidden-only-prefill]
+                [--overlapped-prefill] [--require-normal-pressure]
+                [--hidden-gate-chunk-size HIDDEN_GATE_CHUNK_SIZE]
+                [--verifier-mode {native,singleton-qmm,slot-qmv}]
+                [--target-revision TARGET_REVISION]
+                [--target-config-sha256 TARGET_CONFIG_SHA256]
+                [--target-index-sha256 TARGET_INDEX_SHA256]
+                [--small-model SMALL_MODEL]
+                [--small-config-sha256 SMALL_CONFIG_SHA256]
+                [--small-index-sha256 SMALL_INDEX_SHA256] [--sidecar SIDECAR]
+                [--phased] [--eval-group-size {1,2,4,8,16,32}]
+                [--eval-group-schedule [{1,2,4,8,16,32} ...]] [--single-host]
+                [--cpu-communication] [--stream-local |
+                --weight-server WEIGHT_SERVER]
+                [--weight-client-bind WEIGHT_CLIENT_BIND]
+                [--split SPLIT [SPLIT ...]] [--max-tokens MAX_TOKENS]
+                [--repeats REPEATS]
+                [--parameter-budget-bytes PARAMETER_BUDGET_BYTES]
+                [--prompt PROMPT]
+probe.py: error: unrecognized arguments: --pressure-policy noncritical
+____ test_probe_verification_producer_carries_policy_cpu_mocked_model_seams ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10895f750>
+
+    def test_probe_verification_producer_carries_policy_cpu_mocked_model_seams(monkeypatch):
+        import sys
+        import types
+        import mtp_runtime
+        for name, fields in {
+            "mlx_backend": ("MTPBackend", "Rank1Target"),
+            "mtp_head": ("load_trusted_head",),
+        }.items():
+            mod = types.ModuleType(name)
+            for field in fields: setattr(mod, field, lambda *a, **kw: pytest.fail("model seam called"))
+            monkeypatch.setitem(sys.modules, name, mod)
+        events = []
+        args = S(verifier_mode="native", verification_gate_only=True, target_revision="mock",
+                 pressure_policy="noncritical", require_normal_pressure=False)
+        result = mtp_runtime.run_loaded(None, None, [], args, group=None, small={}, eval_groups=[], report=events.append)
+        for record in (result["verification"], events[0]):
+>           assert record["pressure_policy"] == "noncritical" and record["require_normal_pressure"] is False
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'pressure_policy'
+
+test_pressure_noncritical.py:300: KeyError
+=========================== short test summary info ============================
+FAILED test_pressure_noncritical.py::test_supervisor_noncritical_cli_reaches_both_probe_options_and_dryrun
+FAILED test_pressure_noncritical.py::test_overlap_effective_guard_required_and_policy_conflict_rejected
+FAILED test_pressure_noncritical.py::test_probe_process_start_reports_noncritical_without_normal_claim
+FAILED test_pressure_noncritical.py::test_probe_verification_producer_carries_policy_cpu_mocked_model_seams
+4 failed, 46 passed in 0.23s
