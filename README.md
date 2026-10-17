@@ -6,6 +6,52 @@ An ML systems project: calibration, a constrained precision allocator, packed GP
 shape-specific launch tuning, model serialization, and reproducible end-to-end measurements.
 Built on MLX/MLX-LM; this is not a new model or a claim to have invented mixed precision.
 
+## Two-Mac Qwen3.8-27B workload benchmark
+
+The unchanged Qwen3.8-27B Q4 checkpoint now runs across a 16 GB M2 Pro and 16 GB M4
+connected by Thunderbolt. A correctness-checked native-MTP path was compared with
+native width-one phased decoding at the same layer placement and group size.
+
+Across **18 authored cases and 84 requests** (72 measured, 12 explicit warmups),
+the equal-case geometric-mean speedup was **1.429× warm post-first decode** and
+**1.128× complete-request speed**, excluding loading and numerical admission.
+Complete requests improved in 13 of 18 cases; five regressed because prefill
+cost outweighed decode savings. MTP decode ranged **9.49–11.34 tok/s**; 11 of 36
+measured MTP requests were below 10. This is not a universal 10 tok/s floor.
+
+All observed native/MTP output IDs and stop reasons matched, target tensor hashes
+were unchanged, and cleanup was verified. Original physical numerical evidence is
+combined with a separate independently reviewed action audit; the original 023
+transcript verifier itself was not approved. Two repeats per case are descriptive,
+not tail-reliability or task-quality proof. A separate opt-in hidden-prefill
+follow-up passed physical gates and improved whole-request throughput by 5.57%
+on long code and 3.01% on long explanation versus its same-source after control;
+short requests were effectively flat. That three-case screen does not replace
+the original broad-suite numbers. [Follow-up evidence](results/qwen38-broad-v1/prefill-experiment/README.md).
+
+[Full results and limitations](results/qwen38-broad-v1/README.md) ·
+[Runnable benchmark and audit](benchmarks/qwen38/README.md) ·
+[Upstream versus project contributions](benchmarks/qwen38/ATTRIBUTION.md)
+
+### Overlapped two-Mac prefill
+
+A bounded overlapped-prefill scheduler (≤2 chunks in flight, 256-token chunks) was
+compared with the already-validated serialized hidden-only MTP prefill at the same
+placement, weights and kernels. Across **18 cases / 84 requests** (12 warmups + 72
+measured, two paired repeats per case), **all six ~1536-token cases met both preset
+targets individually**: **34.1–39.5% lower time-to-first-token** and **16.4–20.1%
+lower complete-request latency** (median paired ratio per case). 512-token cases
+improved 22–26% TTFT; short prompts regressed by 0.05–0.60% in request latency, and
+those results are retained. Output IDs/stop reasons matched exactly and strict
+numerical/cache gates passed; a final independent audit passed 481/481 checks.
+Loaded-model timings only — not cold start, vision or agent readiness.
+[Full-suite report](results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/README.md) ·
+[Protocol](results/qwen38-prefill-overlap-v1/PROTOCOL.md)
+
+Raw rank receipts/logs over 50 MB are published as a
+[release asset](https://github.com/jjlien06/paretoquant-metal/releases/tag/evidence-raw-2026-10-17);
+paths and SHA-256 are in [the manifest](results/LARGE-RAW-EVIDENCE-MANIFEST.json).
+
 ## Verified results, not projections
 
 Measured on an Apple M2 Pro with 16 GB unified memory using Qwen2.5-0.5B-Instruct
@@ -183,6 +229,29 @@ Earlier failed attempts and their limitations are retained.
 [Read the 32B result and exact evidence](results/m2pro-m4-dual-host-phased-32b-v1/README.md)
 · [Runner, controls and limitations](spikes/007-dual-host-pipeline/README.md)
 · [Preserved failed attempts](results/m2pro-m4-dual-host-32b-attempts-v1/)
+
+#### Warm reuse and opt-in grouped evaluation
+
+Follow-up requests keep the same weights loaded but create fresh KV caches.
+Eight-layer local evaluation blocks measured **6.270 post-first token events/s**
+versus **5.573** for pooled bracketing per-layer controls: **12.5% observed higher
+warmed decode throughput**. The identical 41-event response took **7.41–7.53 s**
+in three warm group-8 samples; all 15 requests in the four follow-up full-model
+trials matched the original tokens and unchanged tensor digests.
+
+This is a **short-prompt, separate-process bracketed pilot**, not randomized paired
+significance, a universal speedup, or a comparison with a single-host/native engine.
+Use `--execution phased --eval-group-size 8`; default remains 1. Only scheduling
+changes: the operators and packed weights stay stock. Cold first-use latency is
+still large; reuse and grouping must not be conflated.
+
+The existing custom fusion was also screened on real 32B layer-0 weights on both
+GPUs. Gate/up latency improved only about 3%, below the preset 5% selection margin;
+all full-MLP fused candidates failed the preset parity tolerance on two inputs.
+They were rejected, not integrated or relabeled as a full-model win.
+
+[Grouped 32B measurements and controls](results/m2pro-m4-dual-host-grouped-32b-v1/README.md)
+· [Actual-weight negative kernel screen](results/m2pro-m4-32b-kernel-screen-v1/README.md)
 
 ## Quick start
 
