@@ -6,6 +6,39 @@ from phased_decode import validate_options
 
 
 class OptionsTests(unittest.TestCase):
+    def test_grouped_phased_options_validate_before_runtime(self):
+        from types import SimpleNamespace
+
+        import probe
+
+        self.assertTrue(callable(getattr(probe, "phased_options", None)))
+        args = SimpleNamespace(phased=True, eval_group_size=4)
+        self.assertEqual(probe.phased_options(args), {"eval_group_size": 4})
+        for value in (0, 3, True):
+            args.eval_group_size = value
+            with self.assertRaises(ValueError):
+                probe.phased_options(args)
+        args.eval_group_size = 4
+        args.phased = False
+        with self.assertRaises(ValueError):
+            probe.phased_options(args)
+
+    def test_probe_accepts_explicit_default_eval_group_without_gpu_import(self):
+        import contextlib
+        import io
+        from unittest.mock import patch
+
+        import probe
+
+        with (
+            patch("sys.argv", ["probe.py", "--mode", "collective", "--eval-group-size", "1"]),
+            patch.object(probe, "collective", return_value={"unit_fixture": True}) as collect,
+            patch.object(probe, "phase_reporter", return_value=lambda event: None),
+            contextlib.redirect_stdout(io.StringIO()),
+        ):
+            probe.main()
+        collect.assert_called_once_with()
+
     def test_generation_is_bounded(self):
         for cap in (0, -1, 513, True):
             with self.assertRaises(ValueError):

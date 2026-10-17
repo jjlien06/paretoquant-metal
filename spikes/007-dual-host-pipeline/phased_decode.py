@@ -34,10 +34,33 @@ def ownership(model, group):
     return rank, size
 
 
-def phased_forward(model, inputs, cache, *, group=None, progress=None, logits=True):
+def validate_eval_group_size(eval_group_size):
+    if type(eval_group_size) is not int or eval_group_size not in (1, 2, 4, 8):
+        raise ValueError("eval_group_size must be an integer in {1, 2, 4, 8}")
+
+
+def phased_forward(
+    model,
+    inputs,
+    cache,
+    *,
+    group=None,
+    progress=None,
+    logits=True,
+    eval_group_size=1,
+    all_logits=False,
+):
+    """Evaluate local blocks; progress intervals are original [start_idx, end_idx).
+
+    Grouped layer_done events attest block completion, not individual layer timing.
+    Communication remains outside the local lazy layer graphs.
+    """
     import mlx.core as mx
     from mlx_lm.models.base import create_attention_mask
 
+    validate_eval_group_size(eval_group_size)
+    if type(all_logits) is not bool:
+        raise ValueError("all_logits must be a bool")
     rank, size = ownership(model, group)
     core = model.model
     layers = core.pipeline_layers
@@ -71,13 +94,28 @@ def phased_forward(model, inputs, cache, *, group=None, progress=None, logits=Tr
     if h.dtype != dtype:
         raise ValueError("Hidden state dtype differs from embedding compute dtype")
     mask = create_attention_mask(h, cache[0])
-    for index, (layer, state) in enumerate(zip(layers, cache), core.start_idx):
-        emit({"phase": "layer_before", "layer_index": index})
-        h = layer(h, mask, state)
-        mx.eval(h, state.state)
-        if h.dtype != dtype:
-            raise ValueError("Layer changed hidden state dtype")
-        emit({"phase": "layer_done", "layer_index": index})
+    if eval_group_size == 1:
+        for index, (layer, state) in enumerate(zip(layers, cache), core.start_idx):
+            emit({"phase": "layer_before", "layer_index": index})
+            h = layer(h, mask, state)
+            mx.eval(h, state.state)
+            if h.dtype != dtype:
+                raise ValueError("Layer changed hidden state dtype")
+            emit({"phase": "layer_done", "layer_index": index})
+    else:
+        for start in range(0, len(layers), eval_group_size):
+            end = min(start + eval_group_size, len(layers))
+            interval = {"start_idx": core.start_idx + start, "end_idx": core.start_idx + end}
+            emit({"phase": "block_before", **interval})
+            for layer, state in zip(layers[start:end], cache[start:end]):
+                h = layer(h, mask, state)
+                if h.dtype != dtype:
+                    raise ValueError("Layer changed hidden state dtype")
+            mx.eval(h, [state.state for state in cache[start:end]])
+            emit({"phase": "block_done", **interval})
+            # Completion evidence, not per-layer timings; eval covers every live KV state.
+            for index in range(interval["start_idx"], interval["end_idx"]):
+                emit({"phase": "layer_done", "layer_index": index})
     if size == 2 and rank == 1:
         mx.eval(h)
         emit({"phase": "handoff_send_before"})
@@ -88,7 +126,7 @@ def phased_forward(model, inputs, cache, *, group=None, progress=None, logits=Tr
     if not logits:
         return None
     emit({"phase": "head_before"})
-    h = core.norm(h[:, -1:, :])
+    h = core.norm(h if all_logits else h[:, -1:, :])
     out = embedding.as_linear(h) if model.args.tie_word_embeddings else model.lm_head(h)
     mx.eval(out)
     emit({"phase": "head_done"})
@@ -118,11 +156,13 @@ def phased_generate(
     progress=None,
     prefill_step_size=256,
     context_limit=4096,
+    eval_group_size=1,
 ):
     """One fresh-cache greedy request; EOS is included in the token receipt."""
     import mlx.core as mx
     from mlx_lm.models.cache import make_prompt_cache
 
+    validate_eval_group_size(eval_group_size)
     rank, size = ownership(model, group)
     if isinstance(prompt, str):
         bos = getattr(tokenizer, "bos_token", None)
@@ -147,6 +187,7 @@ def phased_generate(
             group=group,
             progress=progress,
             logits=False,
+            eval_group_size=eval_group_size,
         )
     current = mx.array([[ids[-1]]], dtype=mx.int32)
     tokens, first = [], None
@@ -159,7 +200,9 @@ def phased_generate(
                 "token_index": index,
             }
         )
-        scores = phased_forward(model, current, cache, group=group, progress=progress)
+        scores = phased_forward(
+            model, current, cache, group=group, progress=progress, eval_group_size=eval_group_size
+        )
         if rank == 0:
             sampled = mx.argmax(scores[:, -1, :], axis=-1).astype(mx.int32)
             mx.eval(sampled)

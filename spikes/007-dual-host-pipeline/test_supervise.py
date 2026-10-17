@@ -106,6 +106,28 @@ def metadata_args(metadata, output):
 
 
 class TensorEvidenceTests(unittest.TestCase):
+    def test_trial_rejects_unadmitted_eval_group(self):
+        ranks, server, receipts, inventory = tensor_fixture()
+        for rank in ranks:
+            rank["eval_group_size"] = 4
+        with self.assertRaises(ValueError):
+            self.verify(ranks, server, receipts, inventory)
+
+    def test_trial_admits_matching_group_and_rejects_rank_disagreement(self):
+        ranks, server, receipts, inventory = tensor_fixture()
+        for rank in ranks:
+            rank["eval_group_size"] = 4
+        self.assertTrue(
+            supervise.verify_trial(
+                ranks, server, receipts, [], expected_inventory=inventory, eval_group_size=4
+            )["tokens_agree"]
+        )
+        ranks[1]["eval_group_size"] = 2
+        with self.assertRaises(ValueError):
+            supervise.verify_trial(
+                ranks, server, receipts, [], expected_inventory=inventory, eval_group_size=4
+            )
+
     def verify(self, ranks, server, receipts, inventory):
         return supervise.verify_trial(ranks, server, receipts, [], expected_inventory=inventory)
 
@@ -297,6 +319,60 @@ class MetadataInventoryTests(unittest.TestCase):
 
 
 class ContractTests(unittest.TestCase):
+    def test_probe_argv_carries_admitted_eval_group(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            args = metadata_args(root / "metadata", root / "output")
+            args.eval_group_size = 4
+            self.assertTrue(callable(getattr(supervise, "probe_options", None)))
+            argv = supervise.probe_options(args)
+            self.assertEqual(argv[argv.index("--eval-group-size") + 1], "4")
+            self.assertIn("--phased", argv)
+            args.eval_group_size = 1
+            args.execution = "upstream"
+            self.assertNotIn("--phased", supervise.probe_options(args))
+
+    def test_controller_eval_group_defaults_to_one_and_admits_four(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            args = metadata_args(root / "metadata", root / "output")
+            self.assertEqual(vars(args).get("eval_group_size"), 1)
+            grouped = supervise.parser().parse_args(
+                [
+                    "--remote-root",
+                    "/tmp/root",
+                    "--remote-source",
+                    "/tmp/model",
+                    "--local-metadata",
+                    str(root / "metadata"),
+                    "--output",
+                    str(root / "output"),
+                    "--split",
+                    "1",
+                    "1",
+                    "--ssh-key",
+                    "/tmp/key",
+                    "--eval-group-size",
+                    "4",
+                ]
+            )
+            self.assertEqual(grouped.eval_group_size, 4)
+            supervise.validate_args(grouped)
+
+    def test_controller_rejects_invalid_or_upstream_group_before_launch(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            for group in (0, 3, 16, True):
+                args = metadata_args(root / "metadata", root / "output")
+                args.eval_group_size = group
+                with self.subTest(group=group), self.assertRaises(ValueError):
+                    supervise.validate_args(args)
+            args = metadata_args(root / "metadata", root / "output")
+            args.eval_group_size = 4
+            args.execution = "upstream"
+            with self.assertRaises(ValueError):
+                supervise.validate_args(args)
+
     def test_delayed_peer_refusal_still_verifies_closed_listener(self):
         import errno
         from unittest.mock import patch

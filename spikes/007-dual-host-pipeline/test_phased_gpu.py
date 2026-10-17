@@ -21,8 +21,10 @@ def test_cpu_parity_fixture_restores_default_device():
         mx.set_default_device(previous)
 
 
+@pytest.mark.parametrize("all_logits", [False, True])
+@pytest.mark.parametrize("eval_group_size", [1, 2, 4, 8])
 @pytest.mark.parametrize("tied", [False, True])
-def test_real_quantized_gpu_prefill_and_cached_decode_parity(tied):
+def test_real_quantized_gpu_prefill_and_cached_decode_parity(tied, eval_group_size, all_logits):
     previous = mx.default_device()
     mx.set_default_device(mx.gpu)
     try:
@@ -51,11 +53,20 @@ def test_real_quantized_gpu_prefill_and_cached_decode_parity(tied):
         phases = []
         for ids in [[[1, 2, 3]], [[4]], [[5, 6]], [[7]]]:
             inputs = mx.array(ids, dtype=mx.int32)
-            expected = model(inputs, cache=native_cache)[:, -1:, :]
-            actual = phased_forward(model, inputs, explicit_cache, progress=phases.append)
+            expected = model(inputs, cache=native_cache)
+            if not all_logits:
+                expected = expected[:, -1:, :]
+            actual = phased_forward(
+                model,
+                inputs,
+                explicit_cache,
+                progress=phases.append,
+                eval_group_size=eval_group_size,
+                all_logits=all_logits,
+            )
             mx.eval(expected, actual)
             np.testing.assert_allclose(np.array(actual), np.array(expected), rtol=0.002, atol=0.002)
-            assert mx.argmax(expected).item() == mx.argmax(actual).item()
+            assert mx.array_equal(mx.argmax(expected, axis=-1), mx.argmax(actual, axis=-1)).item()
             for left, right in zip(native_cache, explicit_cache):
                 assert left.offset == right.offset
                 for a, b in zip(left.state, right.state):

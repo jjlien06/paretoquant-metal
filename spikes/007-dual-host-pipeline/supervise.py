@@ -36,10 +36,17 @@ def parser():
     p.add_argument("--ssh-target", default="jeremylien@fe80::56:c507:c02a:a630%bridge0")
     p.add_argument("--prompt", default="What is 2 plus 2? Explain briefly.")
     p.add_argument("--execution", choices=("phased", "upstream"), default="phased")
+    p.add_argument("--eval-group-size", type=int, choices=(1, 2, 4, 8), default=1)
     return p
 
 
 def validate_args(args):
+    if (
+        type(args.eval_group_size) is not int
+        or args.eval_group_size not in (1, 2, 4, 8)
+        or (args.execution != "phased" and args.eval_group_size != 1)
+    ):
+        raise ValueError("Grouped evaluation requires phased execution and size 1, 2, 4 or 8")
     if not 0 < args.deadline <= 240 or not 1 <= args.max_tokens <= 512 or args.repeats < 1:
         raise ValueError("Invalid deadline/token/repeat bounds")
     if any(x <= 0 for x in args.split) or args.reserve_bytes < 0:
@@ -53,6 +60,27 @@ def validate_args(args):
         raise ValueError("SSH key filename must be outside repository")
     if args.ssh_target.startswith("-") or any(c.isspace() for c in args.ssh_target):
         raise ValueError("Invalid SSH target")
+
+
+def probe_options(args):
+    validate_args(args)
+    common = [
+        "--mode",
+        "generate",
+        "--split",
+        *[str(value) for value in args.split],
+        "--max-tokens",
+        str(args.max_tokens),
+        "--repeats",
+        str(args.repeats),
+        "--prompt",
+        args.prompt,
+        "--eval-group-size",
+        str(args.eval_group_size),
+    ]
+    if args.execution == "phased":
+        common.append("--phased")
+    return common
 
 
 def ssh_argv(args, actor_args):
@@ -140,7 +168,11 @@ def verify_metadata(metadata, admitted_sha256):
         raise ValueError("Admitted metadata changed during trial")
 
 
-def verify_trial(ranks, server, receipts, weight_files, *, repeats=1, expected_inventory=None):
+def verify_trial(
+    ranks, server, receipts, weight_files, *, repeats=1, expected_inventory=None, eval_group_size=1
+):
+    if type(eval_group_size) is not int or eval_group_size not in (1, 2, 4, 8):
+        raise ValueError("Invalid admitted evaluation group")
     if (
         not isinstance(expected_inventory, dict)
         or set(expected_inventory) != {0, 1}
@@ -166,6 +198,9 @@ def verify_trial(ranks, server, receipts, weight_files, *, repeats=1, expected_i
     reference = None
     prompt_reference, prompt_tokens_reference = None, None
     for rank in ranks:
+        actual_group = rank.get("eval_group_size", 1)
+        if type(actual_group) is not int or actual_group != eval_group_size:
+            raise ValueError("Evaluation group differs from admitted execution")
         loading = rank.get("weight_loading") or {}
         requests = rank.get("requests") or []
         hashes = loading.get("tensor_sha256") or {}
@@ -621,20 +656,7 @@ def run(args, *, transport=ssh_argv):
                 raise TimeoutError("Weight server readiness deadline")
             time.sleep(0.1)
         stage = "rank_execution"
-        common = [
-            "--mode",
-            "generate",
-            "--split",
-            *split,
-            "--max-tokens",
-            str(args.max_tokens),
-            "--repeats",
-            str(args.repeats),
-            "--prompt",
-            args.prompt,
-        ]
-        if args.execution == "phased":
-            common.append("--phased")
+        common = probe_options(args)
         start(
             "rank1", "probe.py", [*common, "--model", args.remote_source, "--stream-local"], rank=1
         )
@@ -676,6 +698,7 @@ def run(args, *, transport=ssh_argv):
             weight_files(metadata),
             repeats=args.repeats,
             expected_inventory=inventory,
+            eval_group_size=args.eval_group_size,
         )
         ports = [
             (args.local_address, local_port),

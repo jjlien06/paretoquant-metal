@@ -24,6 +24,15 @@ from stream_weights import (
 _PROCESS_STARTED = time.monotonic()
 
 
+def phased_options(args):
+    size = getattr(args, "eval_group_size", 1)
+    if type(size) is not int or size not in (1, 2, 4, 8):
+        raise ValueError("Evaluation group must be 1, 2, 4 or 8")
+    if size != 1 and not args.phased:
+        raise ValueError("Grouped evaluation requires phased execution")
+    return {"eval_group_size": size}
+
+
 def phase_reporter(*, rank, output=None, memory=None):
     """MLX allocation is allocator accounting, not system residency."""
     output = sys.stderr if output is None else output
@@ -244,6 +253,7 @@ def generation(args):
                     max_tokens=args.max_tokens,
                     group=group,
                     progress=lambda event: report({**event, "repeat": repeat}),
+                    **phased_options(args),
                 )
                 requests.append({"repeat": repeat, **request})
                 report({"phase": "request_done", "repeat": repeat})
@@ -295,6 +305,7 @@ def generation(args):
     return {
         "mode": "generate",
         "execution": "phased" if args.phased else "upstream",
+        "eval_group_size": phased_options(args)["eval_group_size"],
         "rank": rank,
         "world_size": size,
         "model_path": str(model_path),
@@ -346,6 +357,7 @@ def main():
     parser.add_argument("--mode", choices=["collective", "generate"], required=True)
     parser.add_argument("--model")
     parser.add_argument("--phased", action="store_true")
+    parser.add_argument("--eval-group-size", type=int, choices=(1, 2, 4, 8), default=1)
     parser.add_argument("--single-host", action="store_true")
     parser.add_argument(
         "--cpu-communication",
@@ -362,6 +374,10 @@ def main():
     parser.add_argument("--parameter-budget-bytes", type=int, default=0)
     parser.add_argument("--prompt", default="What is 2 plus 2? Explain briefly.")
     args = parser.parse_args()
+    try:
+        phased_options(args)
+    except ValueError as exc:
+        parser.error(str(exc))
     from remote_actor import source_hashes
 
     phase_reporter(rank=int(os.environ.get("MLX_RANK", "0")))(
