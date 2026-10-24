@@ -20,6 +20,10 @@ concurrency:
   group: gpu-rtx4070
   cancel-in-progress: false
 
+defaults:
+  run:
+    shell: bash  # -eo pipefail, so a failing command before a pipe fails the step
+
 jobs:
   cuda:
     runs-on: [self-hosted, linux, x64, gpu, rtx4070]
