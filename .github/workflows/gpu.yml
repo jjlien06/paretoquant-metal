@@ -1,0 +1,84 @@
+name: CUDA on RTX 4070 (self-hosted)
+
+# Runs only on pushes to main and manual dispatch, never on pull_request:
+# the self-hosted GPU runner must not execute code from forks.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'scripts/**'
+      - 'pyproject.toml'
+      - '.github/workflows/gpu.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gpu-rtx4070
+  cancel-in-progress: false
+
+jobs:
+  cuda:
+    runs-on: [self-hosted, linux, x64, gpu, rtx4070]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: GPU and toolkit
+        run: |
+          nvidia-smi --query-gpu=name,memory.total,memory.used,driver_version,clocks.max.memory --format=csv
+          nvcc --version | tail -2
+
+      - name: CUDA smoke test (compile for sm_89, run, check results on the host)
+        run: |
+          cat > /tmp/smoke.cu <<'CU'
+          #include <cstdio>
+          #include <cstdlib>
+          #include <cmath>
+          __global__ void saxpy(int n, float a, const float* x, float* y) {
+            int i = blockIdx.x * blockDim.x + threadIdx.x;
+            if (i < n) y[i] = a * x[i] + y[i];
+          }
+          int main() {
+            const int n = 1 << 24; size_t bytes = n * sizeof(float);
+            float *hx = (float*)malloc(bytes), *hy = (float*)malloc(bytes), *dx, *dy;
+            for (int i = 0; i < n; ++i) { hx[i] = (float)(i % 1000); hy[i] = 1.0f; }
+            if (cudaMalloc(&dx, bytes) || cudaMalloc(&dy, bytes)) { puts("cudaMalloc failed"); return 1; }
+            cudaMemcpy(dx, hx, bytes, cudaMemcpyHostToDevice);
+            cudaMemcpy(dy, hy, bytes, cudaMemcpyHostToDevice);
+            cudaEvent_t s, e; cudaEventCreate(&s); cudaEventCreate(&e);
+            saxpy<<<(n + 255) / 256, 256>>>(n, 2.0f, dx, dy);
+            cudaEventRecord(s);
+            for (int r = 0; r < 20; ++r) saxpy<<<(n + 255) / 256, 256>>>(n, 0.0f, dx, dy);
+            cudaEventRecord(e); cudaEventSynchronize(e);
+            float ms; cudaEventElapsedTime(&ms, s, e);
+            if (cudaGetLastError() != cudaSuccess) { puts("kernel failed"); return 1; }
+            cudaMemcpy(hy, dy, bytes, cudaMemcpyDeviceToHost);
+            int bad = 0;
+            for (int i = 0; i < n; ++i) if (fabsf(hy[i] - (2.0f * (i % 1000) + 1.0f)) > 0) ++bad;
+            printf("mismatches=%d of %d, saxpy bandwidth=%.1f GB/s\n", bad, n, 3.0 * bytes * 20 / (ms * 1e6));
+            return bad != 0;
+          }
+          CU
+          nvcc -O3 -arch=sm_89 -o /tmp/smoke /tmp/smoke.cu
+          /tmp/smoke
+
+      - name: Install package
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -q --upgrade pip
+          .venv/bin/python -m pip install -q '.[dev]'
+
+      - name: CUDA backend tests (must run on the GPU, not skip)
+        run: |
+          if [ ! -f tests/test_cuda_backend.py ]; then
+            echo "::notice::No CUDA backend tests on this commit yet; smoke test above covered the runner."
+            exit 0
+          fi
+          .venv/bin/python -m pytest -q -rs tests/test_cuda_backend.py | tee pytest-cuda.txt
+          if grep -q "SKIPPED" pytest-cuda.txt; then
+            echo "::error::CUDA tests were skipped on the GPU runner"; exit 1
+          fi
