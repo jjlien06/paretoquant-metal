@@ -48,9 +48,37 @@ Loaded-model timings only — not cold start, vision or agent readiness.
 [Full-suite report](results/qwen38-prefill-overlap-v1/suite-noncritical-v1-1792272946165796000/README.md) ·
 [Protocol](results/qwen38-prefill-overlap-v1/PROTOCOL.md)
 
-Raw rank receipts/logs over 50 MB are published as a
-[release asset](https://github.com/jjlien06/paretoquant-metal/releases/tag/evidence-raw-2026-10-17);
-paths and SHA-256 are in [the manifest](results/LARGE-RAW-EVIDENCE-MANIFEST.json).
+### Adaptive draft depth with a retuned width-3 verify kernel (opt-in)
+
+A chained second MTP draft is accepted 79.5% of the time given the first (1098/1382),
+but 0.81–0.97 on code, math and structured cases and 0.56–0.74 on prose, Spanish and
+Chinese ([acceptance](results/qwen38-mtp-depth2-acceptance-v1/README.md)). Adaptive
+depth 1/2 (draft the second token only when the head is confident) was first bit-exact
+but only 1.015× faster, because width-3 verify cost 228.3 ms/round vs 163.3 ms
+([030](results/qwen38-adaptive-mtp-v1/README.md)). Profiling traced most of the M4 cost
+to the slot-QMV launch shape; a retuned launch, admitted only if bitwise equal to stock
+QMV, cut width-3 verify to 194.4 ms. Across **18 cases × 2 samples**, adaptive vs
+single-draft MTP is **1.105× warm decode / 1.059× whole request** (code 1.164×, math
+1.210×, structured 1.185×; prose/Spanish/Chinese 1.00–1.05×), with all 72 accelerated
+outputs identical to native. Median warm decode: native 7.2, MTP 10.4, adaptive
+**11.2 tok/s** (code 12.7). Two samples per case; tau was not tuned on this suite.
+[Report](results/qwen38-width3-kernel-v1/README.md)
+
+Negative and comparison results from the same day:
+[tensor parallelism rejected](results/tp-allreduce-screen-v1/README.md) (Thunderbolt
+all-reduce ~1.0 ms vs ~0.4 ms break-even) ·
+[mixed 3/4-bit 27B plan](results/qwen38-mixed-3-4-plan-v1/README.md) (≤1.27× predicted;
+synthetic proxy cannot rank layers yet) ·
+[same model on an RTX 4070 Laptop 8 GB](results/msi-27b-offload-v1/README.md)
+(llama.cpp Q4_K_M with CPU offload: ~3.3 tok/s, ≤3.6 tuned) ·
+[placement/group re-tune](results/qwen38-tune-20261105/README.md) (saved 28/36 group-32
+profile already at plateau).
+
+Raw rank receipts/logs over 50 MB are published as release assets
+([2026-10-17](https://github.com/jjlien06/paretoquant-metal/releases/tag/evidence-raw-2026-10-17),
+[2026-11-05](https://github.com/jjlien06/paretoquant-metal/releases/tag/evidence-raw-2026-11-05));
+paths and SHA-256 are in the manifests
+([1](results/LARGE-RAW-EVIDENCE-MANIFEST.json), [2](results/LARGE-RAW-EVIDENCE-MANIFEST-2026-11-05.json)).
 
 ## Verified results, not projections
 
