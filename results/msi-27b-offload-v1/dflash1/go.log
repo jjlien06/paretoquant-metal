@@ -1,0 +1,10 @@
+2026/11/05  ?? 11:20                 0 STOP
+[2026-11-06 07:46:33] INFO  GPU leased to paretoquant for 120 min
+leased
+vram 256
+bench done Fri Nov  6 03:14:52 EST 2026
+[2026-11-06 08:14:53] INFO  GPU lease released by paretoquant
+released
+{"released": true}
+0
+cleanup done Fri Nov  6 03:14:54 EST 2026

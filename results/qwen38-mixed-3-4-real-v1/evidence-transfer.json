@@ -1,0 +1,47 @@
+{
+  "q3-hf-metadata.json": {
+    "bytes": 14549,
+    "sha256": "a59e584a01ea6962e6fad4ba4bad4a3f227ce83ba17991dd6bb983f58589e9c3",
+    "remote_sha256_equal": true
+  },
+  "q3-download-receipt.json": {
+    "bytes": 3256,
+    "sha256": "2ed9fc814469a1771f26032d682025c74298fe4fffebe2f3ac996fb8627f1be2",
+    "remote_sha256_equal": true
+  },
+  "download-guard.jsonl": {
+    "bytes": 33221,
+    "sha256": "5d2a2acf21aa454360d28b2ae991b4d68e702d310033729bc97feb932200c326",
+    "remote_sha256_equal": true
+  },
+  "download.log": {
+    "bytes": 2707,
+    "sha256": "5f8c62dcf904572d66248f2e2bc3c9370efe54448e6a94e961b725c14c73041d",
+    "remote_sha256_equal": true
+  },
+  "small-guard.jsonl": {
+    "bytes": 1589,
+    "sha256": "0eb8aa8e30ae730c314365c6897ba0ff76a2d06621f25f9a247858f932df7a8f",
+    "remote_sha256_equal": true
+  },
+  "small.log": {
+    "bytes": 854,
+    "sha256": "fdc0f663977466f1fb36c9e18cab9849db545fa8dd12d654f57f75b7f831fc10",
+    "remote_sha256_equal": true
+  },
+  "small-guard-r2.jsonl": {
+    "bytes": 1892,
+    "sha256": "fcfdfafe3d521e05d3b2da6b732de7c195a4459f490e3177334c2e7d5d95d018",
+    "remote_sha256_equal": true
+  },
+  "small-r2.log": {
+    "bytes": 21538,
+    "sha256": "32079a9399db457476a49905e0f06b72495e85d1fd4b05d4b86a248045c3c0ab",
+    "remote_sha256_equal": true
+  },
+  "small-parity-r2.json": {
+    "bytes": 487,
+    "sha256": "1f5e64b1e636244eb219222e8cb8e8dcc04c193414d75fe5141392fcf6d2f151",
+    "remote_sha256_equal": true
+  }
+}

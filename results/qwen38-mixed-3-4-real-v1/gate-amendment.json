@@ -1,0 +1,14 @@
+{
+  "authority": "Jeremy continuation request",
+  "preserve_original_failure": "remote-evidence/small-parity-r2.json",
+  "amended_gate": {
+    "authorized_by": "Jeremy continuation request",
+    "argmax_equal": true,
+    "max_abs_diff": 0.125,
+    "mean_abs_diff": 0.001,
+    "compute": "BF16"
+  },
+  "candidate": "stream_v2.py",
+  "result": "all three cases bit exact, including layer hidden state",
+  "scope": "small control only; not 27B full-forward equivalence"
+}

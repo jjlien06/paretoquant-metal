@@ -1,0 +1,21 @@
+{
+  "allocate_real.py": "c106705ad997b9aa15a19720286c970cbd5434a283c4f3488a7ceaa338839dfd",
+  "build_mixed.py": "8caef96f5035e3767fe2088a7a19d4335461415360ce00fafc4f621c30404167",
+  "download_q3.py": "af7e1b2a0a7fb6c7efbfa4b20e324d5a3d59792931749eb5b438ef4ed2e4d573",
+  "guard.py": "9bb1e19c89a9a56d0c2c9a112f6bf9d1355b9669799dd221658e656275b02a9d",
+  "remote.py": "c4d5dca4492837bbf9ca5599cf3aeb66d44046894404a886a1654261e6378961",
+  "test_allocation_build.py": "4f4b6a5c01a7cce3a366ad8996e178d48e1cbb23b87fa4f7a39794e62372e009",
+  "dependency/paretoquant/allocator.py": "ef456570525346934febd4280f4344b5f12a8248cf77eb3391cc36a9c6aa7346",
+  "dependency/paretoquant/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finish_stages.py": "7e16fec70cf6994d09907e57dc14343e8d758e6b0633fc67f2289bc3ebb87967",
+  "stream_v2.py": "1dd116f8dd98d371ef6fa9a5fdb165cbe18878b88940fcd426cc6b52c1ca67a2",
+  "assure.py": "8bf4bd98c6ada181b41b6dcd8a98744358e8202c314791f55bd5715a8dd83dec",
+  "stream.py": "c9ed6d6a6409d20623222f24b1e9869c9c0623b047ffd5233e9a7f92e57508cf",
+  "data/train.json": "46021a8c6becde39c9f1b91cc645c0e0f7146b93484d7727c79d06bc8a5adde9",
+  "data/test.json": "f70a3da5d72b09f5ae71a2c43ff8de02f36d3d14b38eb86dcc97eeacdd642e56",
+  "data/manifest.json": "6f16c38f83d1960fc09f9fc750daed4de6a740dcec0882d970c68c6e1c632907",
+  "cleanup_check.py": "163a88df1ac7bea448df8c604c083a75e390c6025f52c69f555850eda660bb1c",
+  "audit_inputs.py": "3c3d6cbff9ec977bc4ce8dc28c761a7397fb17ab417629f30f3a230bf6722757",
+  "allocator-plans-v2.json": "98db68104f61cfaf127ea81d0b100856fccdf667ca8058589fe81b478c1ee13b",
+  "cleanup_check_v2.py": "c39a9a021b526b006df014d53b9db5e6d643531bbb738dad2aeb3a8c66d5d84f"
+}

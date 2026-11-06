@@ -1,0 +1,25 @@
+{
+  "scope": "uncached native full forward vs one-decoder-layer-resident, same source bytes",
+  "atol": 1e-05,
+  "rtol": 1e-05,
+  "cases": [
+    {
+      "length": 17,
+      "logits_shape": [
+        1,
+        17,
+        248320
+      ],
+      "max_abs_diff": 0.0625,
+      "mean_abs_diff": 0.0005839725490659475,
+      "next_token_equal": true,
+      "allclose": false
+    }
+  ],
+  "versions": {
+    "mlx": "0.32.3",
+    "mlx-lm": "0.32.0",
+    "numpy": "2.5.3"
+  },
+  "passed": false
+}

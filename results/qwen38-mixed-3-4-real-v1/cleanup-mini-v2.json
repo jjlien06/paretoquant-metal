@@ -1,0 +1,70 @@
+{
+  "time": 1793950533.421244,
+  "pgrep": {
+    "argv": [
+      "pgrep",
+      "-fl",
+      "033-qwen38-mixed-3-4-real|(^|[ /])(guard|stream|download_q3|allocate_real|build_mixed)\\.py([[:space:]]|$)"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "excluded_current_and_ancestor_pids": [
+    1,
+    25282,
+    25285,
+    25286
+  ],
+  "remaining_experiment_processes": [],
+  "passed": true,
+  "pressure": {
+    "argv": [
+      "sysctl",
+      "kern.memorystatus_vm_pressure_level",
+      "vm.swapusage"
+    ],
+    "returncode": 0,
+    "stdout": "kern.memorystatus_vm_pressure_level: 2\nvm.swapusage: total = 4096.00M  used = 3533.75M  free = 562.25M  (encrypted)\n",
+    "stderr": ""
+  },
+  "memory_pressure": {
+    "argv": [
+      "memory_pressure"
+    ],
+    "returncode": 0,
+    "stdout": "The system has 17179869184 (1048576 pages with a page size of 16384).\n\nStats: \nPages free: 8707 \nPages purgeable: 2466 \nPages purged: 1330139 \n\nSwap I/O:\nSwapins: 1856900 \nSwapouts: 2149925 \n\nPage Q counts:\nPages active: 182826 \nPages inactive: 169092 \nPages speculative: 14919 \nPages throttled: 0 \nPages wired down: 136263 \n\nCompressor Stats:\nPages used by compressor: 502239 \nPages decompressed: 24671635 \nPages compressed: 30272886 \n\nFile I/O:\nPageins: 33620817 \nPageouts: 94640 \n\nSystem-wide memory free percentage: 36%\n",
+    "stderr": ""
+  },
+  "disk": {
+    "argv": [
+      "df",
+      "-h",
+      "/System/Volumes/Data"
+    ],
+    "returncode": 0,
+    "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   228Gi   146Gi    57Gi    73%    907k  594M    0%   /System/Volumes/Data\n",
+    "stderr": ""
+  },
+  "chat_process_readback": {
+    "argv": [
+      "pgrep",
+      "-fl",
+      "chat_rank.py"
+    ],
+    "returncode": 0,
+    "stdout": "22670 /Users/jeremylien/Projects/paretoquant-dual-host/.venv/bin/python -u /Users/jeremylien/.hermes/cache/scratch/8cfc53d89bd75d1b78b9d34e759ec53e/sources/chat_rank.py --split 28 36 --eval-group-size 32 --target-revision 10c35caafbb80f7dc6a7a432cdd11af10a6d4818 --target-config-sha256 14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85 --target-index-sha256 13b840162b4cb35c66fef7df072f7dbb4717908204364f5e5d9f9655a2758fa8 --small-config-sha256 ba7770da23eae5ebd6827571f086e331956b33f4442a9e876fb4aa10969a6772 --small-index-sha256 6e48f2fa5d6f033a6d77bf833abfa9698ca24d1715ecea4c67447bcfaee44650 --adaptive-tau 0.5 --verifier-mode slot-qmv-tuned-m4 --small-model /Users/jeremylien/Projects/paretoquant-dual-host/checkpoints/control-qwen35-08b-da28692b5f139cb0ec58a356b437486b7dac7462 --model /Users/jeremylien/Projects/paretoquant-dual-host/checkpoints/qwen38-27b-10c35caafbb80f7dc6a7a432cdd11af10a6d4818 --stream-local\n",
+    "stderr": ""
+  },
+  "chat_listener_readback": {
+    "argv": [
+      "lsof",
+      "-nP",
+      "-iTCP:8780",
+      "-sTCP:LISTEN"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  }
+}

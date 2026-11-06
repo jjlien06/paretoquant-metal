@@ -1,0 +1,10 @@
+{
+  "inventory_sha256": "cbe1b6617ac832daad3a487a60b31300bdfe2eb84d5879a4bd02fc4faccc90a0",
+  "sensitivity_sha256": "1d63ae9c23d036435ce70fc98755030f19c9e1ea053e6ffef860dbb0b2f7e823",
+  "plans_sha256": "98db68104f61cfaf127ea81d0b100856fccdf667ca8058589fe81b478c1ee13b",
+  "config_hashes_equal": true,
+  "selected_build_plan_indices": [
+    0,
+    2
+  ]
+}

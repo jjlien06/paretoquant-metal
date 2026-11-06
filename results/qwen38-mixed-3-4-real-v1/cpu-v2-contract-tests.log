@@ -1,0 +1,9 @@
+test_all_positions_projected_once_per_sequence (test_v2_contract.EvaluationContract.test_all_positions_projected_once_per_sequence) ... ok
+test_nll_sequence_totals (test_v2_contract.EvaluationContract.test_nll_sequence_totals) ... ok
+test_no_cross_window_target (test_v2_contract.EvaluationContract.test_no_cross_window_target) ... ok
+test_shifted_nll_matches_independent_scalar_reference (test_v2_contract.EvaluationContract.test_shifted_nll_matches_independent_scalar_reference) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.012s
+
+OK

@@ -1,0 +1,2216 @@
+OpenAI Codex v0.167.0
+--------
+workdir: /Users/jeremylien/Projects/paretoquant-metal
+model: gpt-6.1-sol
+provider: openai
+approval: on-request
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 01a1afdc-655d-76b3-a52f-1ac07ae2ac86
+--------
+user
+Read-only independent review. No writes, GPU, MLX imports, network/SSH, installs or commits. Review spikes/033-qwen38-mixed-3-4-real/assure_v2.py and results/qwen38-mixed-3-4-real-v1/continuation-evidence/final-assurance-v2.json, necessary source/receipts only. Bounded claims: calibration64real layers exact allocator64units; mixed checkpoint byte source equality; capped WikiText2 PPL q4=12.560952378355207,mixed05=12.667576221486906,mixed15=12.981187525647247,q3=14.307830324705597, all6120 targets. No measuredspeed/generalquality claims. Original assure.py review HOLD led to assure_v2 fixes: actual source/mixed tensor hash rereads, exact inventory/header match, mixed config bit overrides, actual token digests/metadata, small case/layer coverage, sequenceNLLsum, nonempty guard samples/gaps, both source fullshard pinnedLFS hashes. Actual v2 checker passed on mini, receipt copied with digest checks. Evaluate evidence linkage correctness and concrete remaining blockers for these bounded claims. Output explicit APPROVE or HOLD plus concise findings. Do not demand malicious-runner cryptographic attestation; trust verified exclusive deployment and unchanged sources but label scope. Cleanup is being checked separately by parent. Keep local memory low, use plain file reads only.
+hook: SessionStart
+hook: SessionStart Completed
+hook: UserPromptSubmit
+hook: UserPromptSubmit Completed
+codex
+I’ll read the checker, receipt, and necessary supporting sources to assess the bounded claims. I’ll keep the review read-only and avoid model imports or execution.
+exec
+/bin/zsh -lc 'cat AGENTS.md; wc -l spikes/033-qwen38-mixed-3-4-real/assure_v2.py; cat results/qwen38-mixed-3-4-real-v1/continuation-evidence/final-assurance-v2.json' in /Users/jeremylien/Projects/paretoquant-metal
+ succeeded in 0ms:
+cat: AGENTS.md: No such file or directory
+     107 spikes/033-qwen38-mixed-3-4-real/assure_v2.py
+{
+  "schema_version": 1,
+  "time": 1793951638.2486532,
+  "checks": {
+    "small_gate_bit_exact": true,
+    "calibration_64_layers": true,
+    "allocation_recomputed_identically": true,
+    "actual_token_digests_verified": true,
+    "four_matched_quality_populations": true,
+    "calibration_source_tensor_hashes_equal_quality_sources": true,
+    "mixed05_every_loaded_tensor_matches_selected_source": true,
+    "mixed15_every_loaded_tensor_matches_selected_source": true,
+    "both_sources_current_shards_match_pinned_lfs": true
+  },
+  "scope": "source/data/allocation/build/reload/resource evidence linkage; no timing or general task quality claim",
+  "lfs_shards": {
+    "q4": [
+      {
+        "file": "model-00001-of-00003.safetensors",
+        "size": 5343268662,
+        "sha256": "6cc1508e96fb5d0865dfd5753a79f4ec60651bf3e2a82844a7e8ae9c60528c0d",
+        "lfs_equal": true
+      },
+      {
+        "file": "model-00002-of-00003.safetensors",
+        "size": 5354185130,
+        "sha256": "83f2a20ca8058f486a3634a27faf99587f4cd3c156a83dee34fb99e6ac178670",
+        "lfs_equal": true
+      },
+      {
+        "file": "model-00003-of-00003.safetensors",
+        "size": 5357087557,
+        "sha256": "31b8c91ef899f79efaaa69e3d2c096f6e2ebeb2ff20e29222abbd9ebc79e560a",
+        "lfs_equal": true
+      }
+    ],
+    "q3": [
+      {
+        "file": "model-00001-of-00003.safetensors",
+        "size": 5357835580,
+        "sha256": "c7dc04780ba5616be8f00ea9b4669c3e42522205cc511f04d51d56fe46f5355c",
+        "lfs_equal": true
+      },
+      {
+        "file": "model-00002-of-00003.safetensors",
+        "size": 5368439377,
+        "sha256": "4739a929dd9515ac6922aa85d866561427c028e971bc2a82de5fb96792754b79",
+        "lfs_equal": true
+      },
+      {
+        "file": "model-00003-of-00003.safetensors",
+        "size": 1966597268,
+        "sha256": "46b1c69035fd973c06ad8ce438aaf62efa92c86589c8d1a770b107cbe14731e0",
+        "lfs_equal": true
+      }
+    ]
+  },
+  "guards": {
+    "small-v2": {
+      "samples": 7,
+      "peak_sampled_rss_bytes": 923516928,
+      "pressures": [
+        2
+      ],
+      "reaped": true
+    },
+    "calibration-v2": {
+      "samples": 163,
+      "peak_sampled_rss_bytes": 1059782656,
+      "pressures": [
+        2
+      ],
+      "reaped": true
+    },
+    "input-audit": {
+      "samples": 1,
+      "peak_sampled_rss_bytes": 3162112,
+      "pressures": [
+        2
+      ],
+      "reaped": true
+    },
+    "eval-q4-v2": {
+      "samples": 157,
+      "peak_sampled_rss_bytes": 1449852928,
+      "pressures": [
+        2
+      ],
+      "reaped": true
+    },
+    "build-mixed05-v2": {
+      "samples": 30,
+      "peak_sampled_rss_bytes": 74940416,
+      "pressures": [
+        2
+      ],
+      "reaped": true
+    },
+    "eval-mixed05-v2": {
+      "samples": 156,
+      "peak_sampled_rss_bytes": 1454014464,
+      "pressures": [
+        2
+      ],
+      "reaped": true
+    },
+    "build-mixed15-v2": {
+      "samples": 30,
+      "peak_sampled_rss_bytes": 71843840,
+      "pressures": [
+        2
+      ],
+      "reaped": true
+    },
+    "eval-mixed15-v2": {
+      "samples": 155,
+      "peak_sampled_rss_bytes": 1412497408,
+      "pressures": [
+        2
+      ],
+      "reaped": true
+    },
+    "eval-q3-v2": {
+      "samples": 156,
+      "peak_sampled_rss_bytes": 1172094976,
+      "pressures": [
+        2
+      ],
+      "reaped": true
+    }
+  },
+  "artifact_sha256": {
+    "stream_v2.py": "1dd116f8dd98d371ef6fa9a5fdb165cbe18878b88940fcd426cc6b52c1ca67a2",
+    "allocate_real.py": "c106705ad997b9aa15a19720286c970cbd5434a283c4f3488a7ceaa338839dfd",
+    "build_mixed.py": "8caef96f5035e3767fe2088a7a19d4335461415360ce00fafc4f621c30404167",
+    "actual-inventory-v2.json": "cbe1b6617ac832daad3a487a60b31300bdfe2eb84d5879a4bd02fc4faccc90a0",
+    "sensitivity-v2.json": "1d63ae9c23d036435ce70fc98755030f19c9e1ea053e6ffef860dbb0b2f7e823",
+    "allocator-plans-v2.json": "98db68104f61cfaf127ea81d0b100856fccdf667ca8058589fe81b478c1ee13b",
+    "test.json": "f70a3da5d72b09f5ae71a2c43ff8de02f36d3d14b38eb86dcc97eeacdd642e56",
+    "train.json": "46021a8c6becde39c9f1b91cc645c0e0f7146b93484d7727c79d06bc8a5adde9"
+  },
+  "trusted_deployment_files_checked": 19,
+  "passed": true
+}
+exec
+/bin/zsh -lc 'cat spikes/033-qwen38-mixed-3-4-real/assure_v2.py; rg --files results/qwen38-mixed-3-4-real-v1/continuation-evidence spikes/033-qwen38-mixed-3-4-real' in /Users/jeremylien/Projects/paretoquant-metal
+ succeeded in 214ms:
+"""Independent post-hoc evidence linkage, not a replacement for physical gates."""
+import hashlib,json,math,pathlib,time,urllib.request
+from build_mixed import scan_checkpoint,hash_range
+from allocate_real import allocate_inventory,text_tensor,layer_of,nbytes
+ROOT=pathlib.Path(__file__).resolve().parent
+
+def read(name):return json.loads((ROOT/name).read_text())
+def sha(path):
+    h=hashlib.sha256()
+    with pathlib.Path(path).open('rb') as f:
+        for b in iter(lambda:f.read(8*2**20),b''):h.update(b)
+    return h.hexdigest()
+def require(condition,message):
+    if not condition:raise RuntimeError(message)
+if __name__=='__main__':
+    verdict={'schema_version':1,'time':time.time(),'checks':{},'scope':'source/data/allocation/build/reload/resource evidence linkage; no timing or general task quality claim'}
+    c=verdict['checks'];gate=read('small-parity-v2.json');sens=read('sensitivity-v2.json');inv=read('actual-inventory-v2.json');plans=read('allocator-plans-v2.json')
+    require(gate['passed'] and [x['length'] for x in gate['cases']]==[17,64,256],'small gate exact case coverage')
+    require(all([y['layer'] for y in x['per_layer_hidden']]==list(range(24)) and x['capture_witness_vs_pristine']['max_abs_diff']==0 and x['compute_dtype']=='mlx.core.bfloat16' for x in gate['cases']),'small exact hidden/witness coverage')
+    require(all(x['bit_exact'] and all(y['relative_rmse']==0 for y in x['per_layer_hidden']) for x in gate['cases']),'actual exact witnesses')
+    require(sens['passed'] and [x['layer'] for x in sens['layers']]==list(range(64)),'calibration coverage/spread')
+    c['small_gate_bit_exact']=True;c['calibration_64_layers']=True
+    require(allocate_inventory(inv,sens)['plans']==plans['plans'],'independent exact allocation recomputation')
+    c['allocation_recomputed_identically']=True
+    train=read('data/train.json');test=read('data/test.json')
+    for d,n in [(train,3072),(test,6144)]:
+        require(len(d['tokens'])==n and d['sequence_length']==256,'data sizing')
+        require(hashlib.sha256(json.dumps(d['tokens'],separators=(',',':')).encode()).hexdigest()==d['selected_token_sha256'],'actual token digest')
+    require(train['split']=='train' and test['split']=='test' and train['source_parquet_sha256']!=test['source_parquet_sha256'],'disjoint source splits')
+    require(sens['data']=={k:v for k,v in train.items() if k!='tokens'},'calibration actual population metadata')
+    c['actual_token_digests_verified']=True
+    evals={name:read('eval-'+name+'-v2.json') for name in ['q4','mixed05','mixed15','q3']}
+    for name,e in evals.items():
+        require(e['data']=={k:v for k,v in test.items() if k!='tokens'},name+' evaluation metadata')
+        require((e['input_tokens'],e['scored_tokens'],e['independent_sequences'],e['sequence_length'])==(6144,6120,24,256),name+' eval protocol counts')
+        require([r['sequence'] for r in e['sequences']]==list(range(24)) and all(r['scored_tokens']==255 for r in e['sequences']),name+' sequence coverage')
+        require(math.isclose(sum(r['nll_sum'] for r in e['sequences']),e['nll_sum'],abs_tol=1e-8),name+' NLL per-sequence sum')
+        require(not e['checkpoint']['missing'],name+' loaded tensor coverage')
+        require(math.isclose(e['perplexity'],math.exp(e['nll_sum']/6120),rel_tol=1e-14),name+' perplexity calculation')
+    c['four_matched_quality_populations']=True
+    source_hashes={}
+    for name in ['q4','q3']:
+        e=evals[name];cp=e['checkpoint'];source_hashes[name]=cp['loaded_tensor_sha256']
+        require(cp['config_sha256']==inv[name]['config_sha256']==sens[name+'_checkpoint']['config_sha256'],name+' source config binding')
+        actual=scan_checkpoint(pathlib.Path(cp['path']))
+        require(actual==inv[name]['tensors'],name+' actual inventory exact header binding')
+        require(sha(pathlib.Path(cp['path'])/'config.json')==cp['config_sha256'],name+' actual config digest')
+        for tensor,h in source_hashes[name].items():require(hash_range(actual[tensor])==h,name+' actual source bytes '+tensor)
+        require(set(source_hashes[name])=={n for n in actual if text_tensor(n)},name+' exact trusted text set')
+        for tensor,h in sens[name+'_checkpoint']['loaded_tensor_sha256'].items():
+            require(source_hashes[name].get(tensor)==h,name+' sensitivity/evaluation tensor hash '+tensor)
+    c['calibration_source_tensor_hashes_equal_quality_sources']=True
+    for name,idx in [('mixed05',0),('mixed15',2)]:
+        m=read('checkpoint-'+name+'/mixed-manifest.json');cp=evals[name]['checkpoint']
+        require(m['complete'] and m['all_tensor_hashes_verified'] and m['plan']==plans['plans'][idx],name+' build plan')
+        require(m['q3_layers']==plans['plans'][idx]['q3_layers'],name+' selected layers')
+        require(set(m['tensors'])==set(cp['loaded_tensor_sha256'])==set(source_hashes['q4']),name+' exact tensor inventory')
+        actual=scan_checkpoint(pathlib.Path(cp['path']));cfg=read('checkpoint-'+name+'/config.json')
+        require(sha(pathlib.Path(cp['path'])/'config.json')==cp['config_sha256'],name+' mixed loaded config digest')
+        require(sum(nbytes(v) for v in actual.values())==m['text_stored_bytes']==plans['plans'][idx]['text_stored_bytes'],name+' actual stored bytes')
+        baseline=sum(nbytes(v) for n,v in inv['q4']['tensors'].items() if text_tensor(n))
+        require(baseline-m['text_stored_bytes']==m['actual_saved_bytes'],name+' actual savings')
+        modules={n[:-7] for n in actual if n.endswith('.scales')}
+        overrides=cfg['quantization']
+        require(set(overrides)==modules|{'bits','group_size','mode'},name+' exact override module set')
+        require(cfg['text_config']['quantization']==overrides,name+' nested overrides')
+        for module in modules:
+            bits=3 if layer_of(module) in m['q3_layers'] else 4
+            require(overrides[module]=={'bits':bits,'group_size':64,'mode':'affine'},name+' explicit quant interpretation '+module)
+        for tensor,record in m['tensors'].items():
+            require(hash_range(actual[tensor])==record['sha256'],name+' actual mixed bytes '+tensor)
+            require(all(actual[tensor][k]==record[k] for k in ['shape','dtype','start','end']),name+' actual mixed metadata '+tensor)
+            require(record['sha256']==source_hashes[record['source']][tensor]==cp['loaded_tensor_sha256'][tensor],name+' loaded/source tensor hash '+tensor)
+            expected='q3' if layer_of(tensor) in m['q3_layers'] and tensor.rsplit('.',1)[0]+'.scales' in inv['q3']['tensors'] else 'q4'
+            require(record['source']==expected,name+' source selection '+tensor)
+        c[name+'_every_loaded_tensor_matches_selected_source']=True
+    # Rebind current complete checkpoint shard bytes to pinned upstream metadata.
+    lfs={}
+    for name,repo,rev in [('q4','mlx-community/Qwen3.8-27B-4bit','10c35caafbb80f7dc6a7a432cdd11af10a6d4818'),('q3','lukaskremla/Qwen3.8-27B-3bit-MLX','b3503b31b36125107e12a2b57fbe690c37bfc053')]:
+        with urllib.request.urlopen(f'https://huggingface.co/api/models/{repo}/revision/{rev}?blobs=true',timeout=60) as f:api=json.load(f)
+        require(api['sha']==rev,'pinned revision')
+        with (ROOT/('assurance-hf-'+name+'.json')).open('x') as f:json.dump(api,f,indent=1)
+        cp=pathlib.Path(evals[name]['checkpoint']['path']);entries=[]
+        for file in api['siblings']:
+            if not file['rfilename'].endswith('.safetensors'):continue
+            p=cp/file['rfilename'];actual=sha(p)
+            require(p.stat().st_size==file['size'] and actual==file['lfs']['sha256'],name+' LFS shard '+file['rfilename'])
+            entries.append({'file':file['rfilename'],'size':p.stat().st_size,'sha256':actual,'lfs_equal':True})
+        lfs[name]=entries
+    verdict['lfs_shards']=lfs;c['both_sources_current_shards_match_pinned_lfs']=True
+    guards={}
+    for name in ['small-v2','calibration-v2','input-audit','eval-q4-v2','build-mixed05-v2','eval-mixed05-v2','build-mixed15-v2','eval-mixed15-v2','eval-q3-v2']:
+        rows=[json.loads(x) for x in (ROOT/(name+'-guard.jsonl')).read_text().splitlines()]
+        require(rows[-1]['event']=='exit' and rows[-1]['returncode']==0 and rows[-1]['failure'] is None and rows[-1]['child_reaped'],name+' guard exit')
+        samples=[x for x in rows if x['event']=='sample']
+        require(bool(samples) and all(x['pressure'] in (1,2) and x['rss_bytes']<3*2**30 for x in samples),name+' guard samples')
+        timestamps=[rows[0]['time']]+[x['time'] for x in samples]+[rows[-1]['time']]
+        require(all(0<=b-a<=8 for a,b in zip(timestamps,timestamps[1:])),name+' observation gaps')
+        guards[name]={'samples':len(samples),'peak_sampled_rss_bytes':max((x['rss_bytes'] for x in samples),default=0),'pressures':sorted({x['pressure'] for x in samples}),'reaped':True}
+    verdict['guards']=guards
+    verdict['artifact_sha256']={p.name:sha(p) for p in [ROOT/'stream_v2.py',ROOT/'allocate_real.py',ROOT/'build_mixed.py',ROOT/'actual-inventory-v2.json',ROOT/'sensitivity-v2.json',ROOT/'allocator-plans-v2.json',ROOT/'data/test.json',ROOT/'data/train.json']}
+    trusted=read('trusted-deployment-v2.json')
+    for name,h in trusted.items():require(sha(ROOT/name)==h,'deployment-source/data equality '+name)
+    verdict['trusted_deployment_files_checked']=len(trusted)
+    verdict['passed']=True
+    with (ROOT/'final-assurance-v2.json').open('x') as f:json.dump(verdict,f,indent=2)
+    print(json.dumps(verdict,indent=2))
+spikes/033-qwen38-mixed-3-4-real/write_report.py
+spikes/033-qwen38-mixed-3-4-real/stream_v2.py
+spikes/033-qwen38-mixed-3-4-real/cleanup_check.py
+spikes/033-qwen38-mixed-3-4-real/deploy_extra.py
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/small-v2.log
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-q3-v2-guard.jsonl
+spikes/033-qwen38-mixed-3-4-real/data/manifest.json
+spikes/033-qwen38-mixed-3-4-real/data/train.json
+spikes/033-qwen38-mixed-3-4-real/data/test.json
+spikes/033-qwen38-mixed-3-4-real/data/test.parquet
+spikes/033-qwen38-mixed-3-4-real/data/train.parquet
+spikes/033-qwen38-mixed-3-4-real/finish_stages.py
+spikes/033-qwen38-mixed-3-4-real/assure_v2.py
+spikes/033-qwen38-mixed-3-4-real/cleanup_check_v2.py
+spikes/033-qwen38-mixed-3-4-real/cleanup_final.py
+spikes/033-qwen38-mixed-3-4-real/guard.py
+spikes/033-qwen38-mixed-3-4-real/allocate_real.py
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/checkpoint-mixed05/model.safetensors.index.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/checkpoint-mixed05/mixed-manifest.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/checkpoint-mixed05/config.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-mixed15-v2.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-mixed05-v2.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/calibration-v2-guard.jsonl
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-q4-v2-guard.jsonl
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-q4-v2.log
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/assurance-hf-q4.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/small-v2-guard.jsonl
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/final-assurance-v2.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/build-mixed05-v2-guard.jsonl
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/assurance-hf-q3.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/assurance-v2.log
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/input-audit.log
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/build-mixed15-v2-guard.jsonl
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-q3-v2.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/build-mixed05-v2.log
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-mixed15-v2.log
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/calibration-v2.log
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/input-audit-guard.jsonl
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-mixed05-v2-guard.jsonl
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-mixed05-v2.log
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/build-mixed15-v2.log
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-mixed15-v2-guard.jsonl
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-q3-v2.log
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-q4-v2.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/finish-stages-v2.log
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/checkpoint-mixed15/model.safetensors.index.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/checkpoint-mixed15/mixed-manifest.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/checkpoint-mixed15/config.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/sensitivity-v2.json.partial.jsonl
+spikes/033-qwen38-mixed-3-4-real/audit_inputs.py
+spikes/033-qwen38-mixed-3-4-real/assure.py
+spikes/033-qwen38-mixed-3-4-real/make_assure_v2.py
+spikes/033-qwen38-mixed-3-4-real/dependency/paretoquant/allocator.py
+spikes/033-qwen38-mixed-3-4-real/dependency/paretoquant/__init__.py
+spikes/033-qwen38-mixed-3-4-real/test_v2_contract.py
+spikes/033-qwen38-mixed-3-4-real/remote.py
+spikes/033-qwen38-mixed-3-4-real/prepare_data.py
+spikes/033-qwen38-mixed-3-4-real/collect_v2.py
+spikes/033-qwen38-mixed-3-4-real/collect.py
+spikes/033-qwen38-mixed-3-4-real/trusted-deployment-v2.json
+spikes/033-qwen38-mixed-3-4-real/test_allocation_build.py
+spikes/033-qwen38-mixed-3-4-real/README.md
+spikes/033-qwen38-mixed-3-4-real/stream.py
+spikes/033-qwen38-mixed-3-4-real/allocator-plans-v2.json
+spikes/033-qwen38-mixed-3-4-real/build_mixed.py
+spikes/033-qwen38-mixed-3-4-real/make_v2.py
+spikes/033-qwen38-mixed-3-4-real/download_q3.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow-26.0.1.dist-info/METADATA
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow-26.0.1.dist-info/INSTALLER
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow-26.0.1.dist-info/REQUESTED
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow-26.0.1.dist-info/WHEEL
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow-26.0.1.dist-info/licenses/LICENSE.txt
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow-26.0.1.dist-info/licenses/NOTICE.txt
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow-26.0.1.dist-info/RECORD
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_s3fs.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tensor.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/flight.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/util.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/ipc.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_flight.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_parquet_encryption.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_acero.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_dataset.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/config.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_csv.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_acero.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_azurefs.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_compute_docstrings.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_parquet.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_orc.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/benchmark.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_cuda.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_gcsfs.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_generated_version.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/array.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_dataset.2600.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/conftest.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/lib.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/builder.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_orc.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_compute.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/orc.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_dataset_parquet_encryption.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_python_parquet_encryption.2600.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/io.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/public-api.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_csv.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_fs.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/types.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/__init__.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_s3.2600.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/interchange/column.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/interchange/buffer.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/interchange/__init__.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/interchange/dataframe.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/interchange/from_dataframe.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_json.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_parquet.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_pyarrow_cpp_tests.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/lib.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libarrow_fs.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libarrow_cuda.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libarrow.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libarrow_substrait.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libarrow_dataset.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libarrow_dataset_parquet.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libarrow_flight.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libparquet.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libarrow_python.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libgandiva.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/__init__.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libparquet_encryption.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libarrow_acero.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/libarrow_feather.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/includes/common.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/config.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/arrow_to_pandas.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/pyarrow.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/numpy_to_arrow.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/benchmark.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/extension_type.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/arrow_to_pandas.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/gdb.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/platform.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/helpers.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/type_traits.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/visibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/iterators.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/numpy_convert.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/benchmark.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/numpy_convert.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/udf.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/decimal.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_substrait.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_types.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_gdb.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_scalars.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_csv.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_strategies.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/vendored/pythoncapi_compat.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/vendored/CMakeLists.txt
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/extension_type.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/io.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/config_internal.h.cmake
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/ipc.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/common.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/util.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/parquet_encryption.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/flight.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/io.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/async.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/numpy_to_arrow.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/filesystem.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/python_to_arrow.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/numpy_init.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/csv.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/inference.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/decimal.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/pyarrow_api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/gdb.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/pyarrow_lib.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/datetime.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/arrow_to_python_internal.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/numpy_internal.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/python_test.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/python_test.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/ipc.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/common.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/helpers.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/config.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/numpy_interop.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/flight.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/CMakeLists.txt
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/parquet_encryption.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/python_to_arrow.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/udf.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/numpy_init.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/pyarrow.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/datetime.cc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/inference.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/filesystem.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/src/arrow/python/csv.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow.2600.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/compute.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/benchmark.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/device.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_dataset_parquet.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_python_parquet_encryption.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_python_flight.2600.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_hdfs.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_orc.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_compute.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/json.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_python.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_gcsfs.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/error.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/parquet/core.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/parquet/__init__.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/parquet/encryption.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_feather.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_cuda.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_csv.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_python.2600.1.0.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_hdfs.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/scalar.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/jvm.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_dataset.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_dataset.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_acero.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_parquet_encryption.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_json.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libparquet.2600.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_azurefs.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/parquet/v0.7.1.parquet
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/parquet/v0.7.1.some-named-index.parquet
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/parquet/v0.7.1.column-metadata-handling.parquet
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/parquet/v0.7.1.all-named-index.parquet
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/vendored/docscrape.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/vendored/__init__.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/vendored/version.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_python.2600.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_dataset_parquet.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/table.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_s3fs.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_compute.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/csv.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_flight.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/pandas-shim.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/acero.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/fs.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/pandas_compat.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_python_flight.2600.1.0.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/memory.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/feather.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_substrait.2600.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/cuda.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_pyarrow_cpp_tests.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/lib.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_parquet_encryption.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_feather.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_parquet.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_json.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/gandiva.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_substrait.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_dataset_parquet_encryption.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_flight.2600.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_compute.2600.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_python_parquet_encryption.2600.1.0.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/ipc.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_substrait.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/types.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_python_flight.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/dataset.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_dlpack.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/compat.pxi
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_fs.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_fs.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/orc/TestOrcFile.emptyFile.orc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/orc/TestOrcFile.testDate1900.jsn.gz
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/orc/decimal.jsn.gz
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/orc/TestOrcFile.testDate1900.orc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/orc/README.md
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/orc/TestOrcFile.test1.jsn.gz
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/orc/decimal.orc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/orc/TestOrcFile.test1.orc
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/orc/TestOrcFile.emptyFile.jsn.gz
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/data/feather/v0.17.0.version.2-compression.lz4.feather
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_compute.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/interchange/test_interchange_spec.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/interchange/test_conversion.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/interchange/__init__.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_deprecations.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_without_numpy.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_array.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_table.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_orc.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/util.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/arrow_7980.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_adhoc_memory_leak.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/strategies.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/bound_function_visit_strings.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_gandiva.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_acero.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/arrow_16597.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/arrow_39313.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_misc.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/pyarrow_cython_example.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_convert_builtin.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/conftest.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_flight_async.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/wsgi_examples.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_ipc.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_tensor.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_pyarrow_cpp_tests.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/test_encryption.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/test_compliant_nested_type.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/test_parquet_file.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/test_pandas.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/test_data_types.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/test_dataset.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/common.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/test_datetime.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/__init__.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/test_metadata.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/test_parquet_writer.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/encryption.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/conftest.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/parquet/test_basic.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_json.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/extensions.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_dlpack.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/read_record_batch.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_device.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_flight.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_exec_plan.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_memory.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_pandas.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_feather.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_extension_type.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_cuda.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_dataset_encryption.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_builder.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_dataset.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_sparse_tensor.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_cython.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/pandas_examples.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/pandas_threaded_import.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_udf.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_fs.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_jvm.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_schema.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_cffi.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_cpp_internals.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_cuda_numba_interop.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_util.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/test_io.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/tests/__init__.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/cffi.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/__init__.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_dataset_parquet.pxd
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_dataset_orc.cpython-313-darwin.so
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/substrait.py
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/libarrow_acero.2600.dylib
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/_dataset_orc.pyx
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/properties.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/test_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/page_index.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/level_comparison.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/geospatial/statistics.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/platform.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/windows_compatibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/column_page.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/exception.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/windows_fixup.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/benchmark_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/level_comparison_inc.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/column_scanner.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/column_reader.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/api/writer.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/api/io.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/api/schema.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/api/reader.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/bloom_filter_reader.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/statistics.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/visit_type_inline.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/file_writer.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/stream_writer.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/size_statistics.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/level_conversion.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/level_conversion_inc.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/index_location.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/hasher.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/metadata.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/schema.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/parquet_version.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encoding.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/xxhasher.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/arrow/test_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/arrow/writer.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/arrow/schema.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/arrow/reader.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/types.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/stream_reader.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/file_reader.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/bloom_filter.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/column_writer.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/printer.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/bloom_filter_writer.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/key_toolkit.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/file_key_wrapper.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/key_material.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/file_key_unwrapper.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/file_key_material_store.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/local_wrap_kms_client.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/key_metadata.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/crypto_factory.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/test_in_memory_kms.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/kms_client_factory.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/encryption.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/key_encryption_key.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/two_level_cache_with_expiration.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/kms_client.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/file_system_key_material_store.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/parquet/encryption/test_encryption_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/visitor_generate.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/extension_type.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/pretty_print.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/tensor.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/c/helpers.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/c/abi.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/c/dlpack.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/c/bridge.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/c/dlpack_abi.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/engine/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/engine/substrait/test_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/engine/substrait/serde.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/engine/substrait/visibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/engine/substrait/util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/engine/substrait/test_plan_builder.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/engine/substrait/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/engine/substrait/extension_set.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/engine/substrait/options.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/engine/substrait/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/engine/substrait/extension_types.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/engine/substrait/relation.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/type_traits.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/table_builder.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/chunked_array.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/telemetry/logging.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/device_allocation_type_set.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/tensor/converter.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/ipc/writer.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/ipc/util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/ipc/dictionary.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/ipc/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/ipc/options.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/ipc/message.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/ipc/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/ipc/test_common.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/ipc/reader.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/ipc/feather.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/table.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/safeint/safe_math.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/safeint/safe_math_impl.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/xxhash/xxhash.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/double-conversion/fast-dtoa.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/double-conversion/bignum.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/double-conversion/ieee.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/double-conversion/double-conversion.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/double-conversion/cached-powers.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/double-conversion/diy-fp.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/double-conversion/strtod.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/double-conversion/double-to-string.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/double-conversion/bignum-dtoa.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/double-conversion/fixed-dtoa.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/double-conversion/utils.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/double-conversion/string-to-double.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/datetime.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/portable-snippets/debug-trap.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/strptime.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/datetime/tz.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/datetime/visibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/datetime/date.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/datetime/ios.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/datetime/tz_private.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/ProducerConsumerQueue.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/pcg/pcg_random.hpp
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/pcg/pcg_uint128.hpp
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/pcg/pcg_extras.hpp
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/vendored/xxhash.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/builder.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/stl_allocator.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/csv/invalid_row.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/csv/column_builder.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/csv/writer.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/csv/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/csv/options.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/csv/converter.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/csv/parser.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/csv/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/csv/chunker.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/csv/test_common.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/csv/reader.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/csv/column_decoder.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/visit_type_inline.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/function.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/function_options.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/visibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/exec.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/initialize.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/kernel.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/api_vector.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/cast.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/api_aggregate.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/expression.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/row/grouper.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/ordering.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/registry.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compute/api_scalar.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/buffer_builder.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/json/chunked_builder.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/json/rapidjson_defs.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/json/from_string.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/json/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/json/options.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/json/converter.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/json/parser.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/json/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/json/chunker.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/json/test_common.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/json/reader.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/compare.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/buffer.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/adapters/orc/options.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/adapters/orc/adapter.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/adapters/tensorflow/convert.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/extension_type.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/random.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/generator.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/gtest_compat.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/visibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/math.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/process.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/builder.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/async_test_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/future_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/matchers.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/examplefs.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/fixed_width_test_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/executor_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/gtest_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/testing/uniform_real.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/datum.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/stl.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/visitor.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/scalar.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/test_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/filesystem_library.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/gcsfs.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/s3fs.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/s3_visibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/s3_test_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/path_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/azurefs.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/localfs.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/mockfs.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/filesystem.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/filesystem/hdfs.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/sparse_tensor.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/record_batch.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/memory_pool_test.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/visit_scalar_inline.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/result.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/stdio.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/memory.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/transform.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/slow.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/compressed.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/mman.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/file.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/caching.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/concurrency.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/test_common.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/buffered.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/io/interfaces.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/visit_data_inline.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/server_tracing_middleware.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/test_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/otel_logging.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/platform.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/server.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/visibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/client_auth.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/server_auth.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/transport.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/test_auth_handlers.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/types_async.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/middleware.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/transport_server.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/client_tracing_middleware.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/client_cookie_middleware.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/test_flight_server.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/types.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/test_definitions.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/client.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/client_middleware.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/flight/server_middleware.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/plan.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/parquet_encryption_config.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/visibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/file_parquet.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/file_ipc.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/partition.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/scanner.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/file_csv.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/dataset.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/file_json.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/dataset_writer.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/projector.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/file_orc.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/discovery.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/dataset/file_base.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/builder_primitive.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/builder_decimal.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/builder_time.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/array_decimal.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/array_nested.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/statistics.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/builder_nested.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/diff.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/validate.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/concatenate.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/builder_union.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/array_base.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/array_primitive.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/builder_binary.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/array_binary.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/builder_base.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/data.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/builder_adaptive.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/builder_dict.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/builder_run_end.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/array_run_end.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/array/array_dict.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/arrow_to_pandas.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/extension_type.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/gdb.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/platform.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/helpers.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/type_traits.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/visibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/iterators.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/numpy_convert.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/benchmark.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/udf.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/vendored/pythoncapi_compat.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/io.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/common.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/async.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/lib_api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/numpy_to_arrow.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/lib.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/numpy_init.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/decimal.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/pyarrow_api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/pyarrow_lib.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/datetime.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/python_test.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/ipc.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/config.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/numpy_interop.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/flight.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/parquet_encryption.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/python_to_arrow.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/pyarrow.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/inference.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/filesystem.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/python/csv.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/config.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/hash_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/string.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/unreachable.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/async_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/align_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/bitmap_generate.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/tracing.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/queue.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/utf8.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/secure_string.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/iterator.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/windows_compatibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/delimiting.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/parallel.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/crc32.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/bit_run_reader.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/bitmap.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/vector.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/type_traits.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/visibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/windows_fixup.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/bit_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/logger.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/basic_decimal.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/bitmap_visit.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/mutex.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/benchmark_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/cpu_info.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/hashing.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/aligned_storage.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/concurrent_map.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/value_parsing.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/bitmap_builders.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/async_generator.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/simd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/float16.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/cancel.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/macros.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/rows_to_batches.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/list_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/bitmap_writer.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/compare.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/key_value_metadata.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/launder.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/async_generator_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/binary_view_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/thread_pool.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/functional.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/compression.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/byte_size.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/logging.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/decimal.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/converter.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/regex.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/bit_block_counter.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/int_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/ubsan.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/task_group.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/uri.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/io_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/endian.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/pcg_random.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/bitmap_reader.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/string_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/small_vector.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/config.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/ree_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/int_util_overflow.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/union_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/base64.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/algorithm.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/bitmap_ops.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/future.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/math_constants.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/checked_cast.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/test_common.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/debug.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/range.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/prefetch.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/formatting.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/util/time.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/stl_iterator.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/chunk_resolver.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/extension/parquet_variant.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/extension/json.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/extension/fixed_shape_tensor.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/extension/opaque.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/extension/bool8.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/extension/uuid.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/extension/variable_shape_tensor.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/task_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/partition_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/time_series_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/query_context.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/visibility.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/hash_join.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/benchmark_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/hash_join_dict.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/test_nodes.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/tpch_node.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/map_node.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/api.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/exec_plan.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/options.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/asof_join_node.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/order_by_impl.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/schema_util.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/accumulation_queue.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/type_fwd.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/hash_join_node.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/aggregate_node.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/bloom_filter.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/acero/backpressure_handler.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/status.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/device.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/memory_pool.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/visit_array_inline.h
+spikes/033-qwen38-mixed-3-4-real/deps/pyarrow/include/arrow/type.h
+
+exec
+/bin/zsh -lc 'cat spikes/033-qwen38-mixed-3-4-real/allocate_real.py; cat spikes/033-qwen38-mixed-3-4-real/build_mixed.py; cat spikes/033-qwen38-mixed-3-4-real/collect_v2.py; cat spikes/033-qwen38-mixed-3-4-real/trusted-deployment-v2.json' in /Users/jeremylien/Projects/paretoquant-metal
+ succeeded in 0ms:
+"""Exact per-decoder-layer allocation using measured activation relative MSE.
+
+No model imports or hardware work. Byte counts are tensor payload bytes, not
+safetensors headers. The speedup is a bandwidth-model prediction, not timing.
+"""
+import argparse
+import json
+import math
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "src"))
+from paretoquant.allocator import (  # noqa: E402
+    FrontierOverflow, InfeasibleBudget, Option, Unit, allocate,
+)
+
+PFX = "language_model.model.layers."
+EMBED = "language_model.model.embed_tokens."
+HEAD = "language_model.lm_head."
+NORM = "language_model.model.norm."
+PARTS = ("weight", "scales", "biases")
+GIB = 2**30
+
+
+def layer_of(name):
+    if not name.startswith(PFX):
+        return None
+    token, sep, _ = name[len(PFX):].partition(".")
+    if not sep or not token.isdigit():
+        raise ValueError(f"Malformed decoder tensor name: {name}")
+    return int(token)
+
+
+def text_tensor(name):
+    return name.startswith((PFX, EMBED, HEAD, NORM))
+
+
+def nbytes(info):
+    size = info["end"] - info["start"]
+    if size < 0:
+        raise ValueError("Negative tensor length")
+    return size
+
+
+def decoder_modules(tensors):
+    """Identify quantized decoder linears by their real affine tensor triplets."""
+    modules = set()
+    for name in tensors:
+        if layer_of(name) is None or not name.endswith(".scales"):
+            continue
+        module = name[:-len(".scales")]
+        for part in PARTS:
+            if f"{module}.{part}" not in tensors:
+                raise ValueError(f"Incomplete quantized module: {module}")
+        weight = tensors[module + ".weight"]
+        if weight["dtype"] != "U32" or len(weight["shape"]) != 2:
+            raise ValueError(f"Not a packed quantized linear: {module}")
+        modules.add(module)
+    return modules
+
+
+def allocate_inventory(inventory, sensitivity, max_states=10000,
+                       targets_gib=(0.5, 1.0, 1.5, 2.0), expected_layers=64):
+    q4, q3 = inventory["q4"]["tensors"], inventory["q3"]["tensors"]
+    modules = decoder_modules(q4)
+    if modules != decoder_modules(q3):
+        raise ValueError("q3/q4 decoder quantized module sets differ")
+    layers = set(range(expected_layers))
+    if {layer_of(n) for n in q4 if n.startswith(PFX)} != layers:
+        raise ValueError(f"Expected exactly decoder layers 0..{expected_layers - 1}")
+    if {layer_of(m) for m in modules} != layers:
+        raise ValueError("Every decoder layer must have quantized linears")
+    errors = {}
+    for row in sensitivity["layers"]:
+        layer, loss = row["layer"], row["relative_mse"]
+        if isinstance(layer, bool) or not isinstance(layer, int) or layer in errors:
+            raise ValueError("Sensitivity layer IDs must be unique integers")
+        if isinstance(loss, bool) or not isinstance(loss, (float, int)) or not math.isfinite(loss) or loss < 0:
+            raise ValueError(f"Invalid relative_mse for layer {layer}")
+        errors[layer] = loss
+    if set(errors) != layers:
+        raise ValueError(f"Sensitivity must cover exactly layers 0..{expected_layers - 1}")
+    costs = {i: {"q4": 0, "q3": 0} for i in layers}
+    for module in modules:
+        layer = layer_of(module)
+        assert layer is not None
+        for part in PARTS:
+            name = f"{module}.{part}"
+            for label, tensors in (("q4", q4), ("q3", q3)):
+                costs[layer][label] += nbytes(tensors[name])
+    units = [Unit(f"L{i:02d}", (
+        Option("q4", 4, costs[i]["q4"], 0.0, 0.0),
+        Option("q3", 3, costs[i]["q3"], 0.0, errors[i]),
+    )) for i in sorted(layers)]
+    base_units = sum(c["q4"] for c in costs.values())
+    total = sum(nbytes(v) for n, v in q4.items() if text_tensor(n))
+    embed = sum(nbytes(v) for n, v in q4.items() if n.startswith(EMBED))
+    head = sum(nbytes(v) for n, v in q4.items() if n.startswith(HEAD))
+    if not embed or not head or not any(n.startswith(NORM) for n in q4):
+        raise ValueError("Inventory requires q4 embedding, lm_head, and final norm")
+    fixed = total - base_units
+    result = {
+        "schema_version": 1, "n_units": expected_layers,
+        "loss_metric": "sum of measured per-layer activation relative_mse; q4=0",
+        "exact": True, "max_states": max_states,
+        "uniform_q4_text_stored_bytes": total, "unit_bytes_q4": base_units,
+        "fixed_q4_bytes": fixed, "embed_bytes": embed, "lm_head_bytes": head,
+        "uniform_q4_decode_bytes": total - embed,
+        "speedup_model": "payload bandwidth only; includes q4 head and norm; excludes embedding read",
+        "layer_bytes": {str(i): costs[i] for i in sorted(layers)},
+        "plans": [],
+    }
+    for target in targets_gib:
+        saving = int(target * GIB)
+        budget = base_units - saving
+        item = {"target_savings_gib": target, "target_saved_bytes": saving,
+                "budget_bytes": budget}
+        if budget < 0:
+            item["error"] = "Infeasible savings target exceeds decoder payload"
+            result["plans"].append(item)
+            continue
+        try:
+            plan = allocate(units, budget, max_states=max_states)
+        except InfeasibleBudget as exc:
+            item["error"] = str(exc)
+            result["plans"].append(item)
+            continue
+        # FrontierOverflow intentionally propagates: no approximate fallback.
+        selected = [i for i in sorted(layers) if plan.choices[f"L{i:02d}"].label == "q3"]
+        actual = base_units - plan.memory_bytes
+        stored = fixed + plan.memory_bytes
+        item.update({"exact": plan.exact, "q3_layers": selected,
+                     "n_q3_layers": len(selected), "unit_bytes": plan.memory_bytes,
+                     "q3_layer_bytes": sum(costs[i]["q3"] for i in selected),
+                     "saved_bytes_vs_uniform_q4": actual, "actual_saved_bytes": actual,
+                     "text_stored_bytes": stored, "predicted_decode_bytes": stored - embed,
+                     "predicted_bytes_speedup": (total - embed) / (stored - embed),
+                     "activation_relative_mse_loss": plan.loss,
+                     "states_considered": plan.states_considered})
+        result["plans"].append(item)
+    return result
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--inventory", type=Path, required=True)
+    parser.add_argument("--sensitivity", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--max-states", type=int, default=10000)
+    args = parser.parse_args()
+    try:
+        result = allocate_inventory(json.loads(args.inventory.read_text()),
+                                    json.loads(args.sensitivity.read_text()), args.max_states)
+    except (ValueError, KeyError, FrontierOverflow) as exc:
+        parser.exit(2, f"Exact allocation failed (no approximation): {exc}\n")
+    result["inventory_path"] = str(args.inventory.resolve())
+    result["sensitivity_path"] = str(args.sensitivity.resolve())
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with args.output.open("x") as handle:
+        json.dump(result, handle, indent=2, allow_nan=False)
+        handle.write("\n")
+    print(json.dumps({"output": str(args.output), "plans": len(result["plans"])}))
+
+
+if __name__ == "__main__":
+    main()
+"""Assemble a text-only mixed affine checkpoint with bounded raw CPU I/O.
+
+Installed mlx_lm/utils.py load_model._quantize.class_predicate returns
+config['quantization'][module_path] for per-module overrides. Paths retain
+language_model.*, as used by mlx_lm/models/qwen3_5.py Model.
+No MLX imports, tensor decoding, mmap, or shard-sized reads are used.
+"""
+import argparse
+import hashlib
+import json
+import math
+import shutil
+import struct
+from collections import defaultdict
+from pathlib import Path
+
+from allocate_real import (EMBED, HEAD, NORM, PARTS, PFX, decoder_modules,
+                           layer_of, nbytes, text_tensor)
+
+CHUNK = 8 * 1024 * 1024
+DTYPE_BYTES = {"BOOL": 1, "U8": 1, "I8": 1, "F8_E4M3": 1, "F8_E5M2": 1,
+               "I16": 2, "U16": 2, "F16": 2, "BF16": 2,
+               "I32": 4, "U32": 4, "F32": 4, "I64": 8, "U64": 8, "F64": 8}
+
+
+def safe_path(root, name):
+    path = root / name
+    if not path.resolve().is_relative_to(root.resolve()):
+        raise ValueError(f"Path escapes checkpoint directory: {name}")
+    return path
+
+
+def unique_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"Duplicate JSON key: {key}")
+        result[key] = value
+    return result
+
+
+def read_header(path):
+    """Validate a safetensors shard and return absolute payload byte ranges."""
+    size = path.stat().st_size
+    with path.open("rb") as handle:
+        raw = handle.read(8)
+        if len(raw) != 8:
+            raise ValueError(f"Truncated safetensors header: {path}")
+        length = struct.unpack("<Q", raw)[0]
+        if length > min(size - 8, CHUNK):
+            raise ValueError(f"Invalid or >8MiB safetensors header: {path}")
+        header = json.loads(handle.read(length), object_pairs_hook=unique_object)
+    base = 8 + length
+    result, ranges = {}, []
+    for name, info in header.items():
+        if name == "__metadata__":
+            continue
+        shape, dtype = info["shape"], info["dtype"]
+        offsets = info["data_offsets"]
+        if (not isinstance(shape, list) or any(type(x) is not int or x < 0 for x in shape)
+                or dtype not in DTYPE_BYTES or len(offsets) != 2
+                or any(type(x) is not int for x in offsets)):
+            raise ValueError(f"Invalid shape/dtype/offsets: {path}:{name}")
+        start, end = offsets
+        if start < 0 or end < start or base + end > size:
+            raise ValueError(f"Out-of-bounds tensor: {path}:{name}")
+        if end - start != math.prod(shape) * DTYPE_BYTES[dtype]:
+            raise ValueError(f"Tensor byte length disagrees with shape/dtype: {name}")
+        result[name] = {"file": str(path), "start": base + start, "end": base + end,
+                        "shape": shape, "dtype": dtype}
+        ranges.append((start, end))
+    cursor = 0
+    for start, end in sorted(ranges):
+        if start != cursor:
+            raise ValueError(f"Overlapping tensors or payload gaps: {path}")
+        cursor = end
+    if base + cursor != size:
+        raise ValueError(f"Unindexed payload bytes: {path}")
+    return result
+
+
+def scan_checkpoint(root):
+    index = root / "model.safetensors.index.json"
+    weight_map = json.loads(index.read_text())["weight_map"] if index.exists() else None
+    files = sorted(set(weight_map.values())) if weight_map is not None else sorted(
+        p.name for p in root.glob("*.safetensors"))
+    if not files:
+        raise ValueError(f"No safetensors shards in {root}")
+    tensors = {}
+    for name in files:
+        shard = read_header(safe_path(root, name))
+        if tensors.keys() & shard.keys():
+            raise ValueError("Duplicate tensors across shards")
+        if weight_map is not None:
+            for tensor in shard:
+                if weight_map.get(tensor) != name:
+                    raise ValueError(f"Index/header mismatch: {tensor}")
+        tensors.update(shard)
+    if weight_map is not None and set(weight_map) != set(tensors):
+        raise ValueError("Index references missing tensors")
+    return tensors
+
+
+def hash_range(info):
+    digest = hashlib.sha256()
+    left = nbytes(info)
+    with Path(info["file"]).open("rb") as handle:
+        handle.seek(info["start"])
+        while left:
+            chunk = handle.read(min(CHUNK, left))
+            if not chunk:
+                raise ValueError("Source tensor truncated during hashing")
+            digest.update(chunk)
+            left -= len(chunk)
+    return digest.hexdigest()
+
+
+def write_shard(path, tensors):
+    offset = 0
+    header: dict[str, dict] = {"__metadata__": {"format": "mlx"}}
+    for name, info in sorted(tensors.items()):
+        end = offset + nbytes(info)
+        header[name] = {"dtype": info["dtype"], "shape": info["shape"],
+                        "data_offsets": [offset, end]}
+        offset = end
+    raw = json.dumps(header, separators=(",", ":")).encode()
+    raw += b" " * (-len(raw) % 8)
+    if len(raw) > CHUNK:
+        raise ValueError("Output header exceeds bounded header size")
+    hashes = {}
+    with path.open("xb") as dest:
+        dest.write(struct.pack("<Q", len(raw)))
+        dest.write(raw)
+        for name, info in sorted(tensors.items()):
+            digest, left = hashlib.sha256(), nbytes(info)
+            with Path(info["file"]).open("rb") as source:
+                source.seek(info["start"])
+                while left:
+                    chunk = source.read(min(CHUNK, left))
+                    if not chunk:
+                        raise ValueError(f"Source tensor truncated while copying: {name}")
+                    dest.write(chunk)
+                    digest.update(chunk)
+                    left -= len(chunk)
+            hashes[name] = digest.hexdigest()
+    # Read the exact output back independently; compare bytes and full metadata.
+    actual = read_header(path)
+    if set(actual) != set(tensors):
+        raise ValueError("Output header tensor set changed")
+    for name, info in actual.items():
+        if any(info[k] != tensors[name][k] for k in ("shape", "dtype")):
+            raise ValueError(f"Output tensor metadata mismatch: {name}")
+        if nbytes(info) != nbytes(tensors[name]) or hash_range(info) != hashes[name]:
+            raise ValueError(f"Output tensor hash/length mismatch: {name}")
+    return actual, hashes
+
+
+def quant_config(config, module, bits):
+    q = config.get("quantization") or config.get("text_config", {}).get("quantization")
+    if not isinstance(q, dict):
+        raise ValueError("Source requires affine quantization config")
+    effective = q.get(module, q)
+    if not isinstance(effective, dict):
+        raise ValueError(f"Quantized module disabled in source config: {module}")
+    result = {"bits": effective.get("bits", q.get("bits")),
+              "group_size": effective.get("group_size", q.get("group_size")),
+              "mode": effective.get("mode", q.get("mode", "affine"))}
+    if result["bits"] != bits or result["mode"] != "affine" or type(result["group_size"]) is not int or result["group_size"] <= 0:
+        raise ValueError(f"Expected affine q{bits} config for {module}: {result}")
+    return result
+
+
+def copy_assets(source, output):
+    """Copy discovered non-weight assets recursively, including tokenizer subdirs."""
+    copied = []
+    for path in sorted(source.rglob("*")):
+        rel = path.relative_to(source)
+        if any(part.startswith(".") for part in rel.parts) or not path.is_file():
+            continue
+        if (rel.as_posix() == "config.json" or path.name.endswith(".safetensors.index.json")
+                or path.suffix in (".safetensors", ".bin", ".pt", ".pth", ".gguf")):
+            continue
+        target = safe_path(output, rel)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("rb") as src, target.open("xb") as dst:
+            shutil.copyfileobj(src, dst, CHUNK)
+        if hash_range({"file": str(path), "start": 0, "end": path.stat().st_size}) != hash_range(
+                {"file": str(target), "start": 0, "end": target.stat().st_size}):
+            raise ValueError(f"Asset copy verification failed: {rel}")
+        copied.append(rel.as_posix())
+    return copied
+
+
+def dump(path, value):
+    with path.open("x") as handle:
+        json.dump(value, handle, indent=2, allow_nan=False)
+        handle.write("\n")
+
+
+def build(q4_dir, q3_dir, plan_document, plan_index, output):
+    q4_dir, q3_dir, output = Path(q4_dir), Path(q3_dir), Path(output)
+    if output.exists():
+        raise FileExistsError(f"Output must be a new directory: {output}")
+    if any(output.resolve().is_relative_to(source.resolve()) for source in (q4_dir, q3_dir)):
+        raise ValueError("Output cannot be nested inside a source checkpoint")
+    if plan_index < 0 or plan_index >= len(plan_document["plans"]):
+        raise ValueError("plan-index out of range")
+    plan = plan_document["plans"][plan_index]
+    if "error" in plan:
+        raise ValueError(f"Cannot build infeasible plan: {plan['error']}")
+    chosen = plan["q3_layers"]
+    if not isinstance(chosen, list) or any(type(i) is not int for i in chosen) or len(set(chosen)) != len(chosen):
+        raise ValueError("q3_layers must be a list of unique integer layer IDs")
+    q4, q3 = scan_checkpoint(q4_dir), scan_checkpoint(q3_dir)
+    layers = {layer_of(n) for n in q4 if n.startswith(PFX)}
+    if not layers or layers != set(range(len(layers))) or not set(chosen) <= layers:
+        raise ValueError("Noncontiguous decoder layers or selected layer out of range")
+    if plan_document.get("n_units", len(layers)) != len(layers):
+        raise ValueError("Plan layer count disagrees with actual headers")
+    mods4, mods3 = decoder_modules(q4), decoder_modules(q3)
+    if mods4 != mods3 or {layer_of(m) for m in mods4} != layers:
+        raise ValueError("q3/q4 decoder module sets differ or a layer lacks linears")
+    cfg4 = json.loads((q4_dir / "config.json").read_text())
+    cfg3 = json.loads((q3_dir / "config.json").read_text())
+    if cfg4.get("text_config") and cfg3.get("text_config"):
+        # Only quantization metadata may differ between source text architectures.
+        strip = lambda c: {k: v for k, v in c.items() if k not in ("quantization", "quantization_config", "torch_dtype")}
+        if strip(cfg4["text_config"]) != strip(cfg3["text_config"]):
+            raise ValueError("q3/q4 text model configurations disagree")
+    selected_names = {f"{m}.{p}" for m in mods4 if layer_of(m) in chosen for p in PARTS}
+    tensors = {n: dict(q3[n] if n in selected_names else v) for n, v in q4.items() if text_tensor(n)}
+    labels = {n: "q3" if n in selected_names else "q4" for n in tensors}
+    for prefix in (EMBED, HEAD, NORM):
+        if not any(n.startswith(prefix) for n in tensors):
+            raise ValueError(f"Missing fixed text tensors: {prefix}")
+    # Validate selected quant modules have matching logical affine dimensions.
+    for m in mods4:
+        for part in ("scales", "biases"):
+            a, b = q4[m + "." + part], q3[m + "." + part]
+            if a["shape"] != b["shape"] or a["dtype"] != b["dtype"]:
+                raise ValueError(f"Incompatible affine metadata: {m}.{part}")
+        if q4[m + ".weight"]["shape"][0] != q3[m + ".weight"]["shape"][0]:
+            raise ValueError(f"Incompatible output dimension: {m}")
+    all_modules = sorted(n[:-7] for n in tensors if n.endswith(".scales"))
+    quant = {"bits": 4, "group_size": quant_config(cfg4, all_modules[0], 4)["group_size"], "mode": "affine"}
+    for module in all_modules:
+        use3 = layer_of(module) in chosen
+        quant[module] = quant_config(cfg3 if use3 else cfg4, module, 3 if use3 else 4)
+    total = sum(nbytes(v) for v in tensors.values())
+    baseline = sum(nbytes(v) for n, v in q4.items() if text_tensor(n))
+    for key, actual in (("text_stored_bytes", total), ("actual_saved_bytes", baseline - total),
+                        ("saved_bytes_vs_uniform_q4", baseline - total)):
+        if key in plan and plan[key] != actual:
+            raise ValueError(f"Plan {key} disagrees with actual source headers: {plan[key]} != {actual}")
+    groups = defaultdict(dict)
+    for name, info in tensors.items():
+        layer = layer_of(name)
+        group = f"layer-{layer:02d}" if layer is not None else (
+            "embed" if name.startswith(EMBED) else "head" if name.startswith(HEAD) else "norm")
+        groups[group][name] = info
+    # mkdir is exclusive; partial builds remain conspicuously incomplete on error.
+    output.mkdir(parents=True, exist_ok=False)
+    dump(output / "BUILD_INCOMPLETE.json", {"plan_index": plan_index})
+    manifest, weight_map = {}, {}
+    for group, members in sorted(groups.items()):
+        filename = f"{group}.safetensors"
+        actual, hashes = write_shard(output / filename, members)
+        for name, info in actual.items():
+            weight_map[name] = filename
+            manifest[name] = {"source": labels[name], "source_file": tensors[name]["file"],
+                              "source_start": tensors[name]["start"], "source_end": tensors[name]["end"],
+                              "sha256": hashes[name], "file": filename,
+                              "start": info["start"], "end": info["end"],
+                              "shape": info["shape"], "dtype": info["dtype"]}
+    assets = copy_assets(q4_dir, output)
+    config = dict(cfg4)
+    config.pop("vision_config", None)
+    config.pop("quantization_config", None)
+    config["quantization"] = quant
+    if "text_config" in config:
+        config["text_config"] = dict(config["text_config"])
+        config["text_config"].pop("quantization_config", None)
+        config["text_config"]["quantization"] = quant
+    dump(output / "config.json", config)
+    dump(output / "model.safetensors.index.json", {"metadata": {"total_size": total}, "weight_map": weight_map})
+    # Validate index/header agreement through the same public reader.
+    if set(scan_checkpoint(output)) != set(tensors):
+        raise ValueError("Final checkpoint index verification failed")
+    report = {"schema_version": 1, "complete": True, "text_only": True,
+              "q4": str(q4_dir.resolve()), "q3": str(q3_dir.resolve()),
+              "plan_index": plan_index, "plan": plan, "q3_layers": sorted(chosen),
+              "text_stored_bytes": total, "actual_saved_bytes": baseline - total,
+              "max_copy_chunk_bytes": CHUNK, "all_tensor_hashes_verified": True,
+              "assets": assets, "tensors": manifest}
+    dump(output / "mixed-manifest.json", report)
+    (output / "BUILD_INCOMPLETE.json").unlink()
+    return report
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    for arg in ("q4", "q3", "plan", "output"):
+        parser.add_argument("--" + arg, type=Path, required=True)
+    parser.add_argument("--plan-index", type=int, required=True)
+    args = parser.parse_args()
+    try:
+        report = build(args.q4, args.q3, json.loads(args.plan.read_text()), args.plan_index, args.output)
+    except (ValueError, KeyError, OSError) as exc:
+        parser.exit(2, f"Mixed build failed; no output overwritten: {exc}\n")
+    print(json.dumps({"output": str(args.output), "text_stored_bytes": report["text_stored_bytes"],
+                      "tensors_verified": len(report["tensors"])}))
+
+
+if __name__ == "__main__":
+    main()
+"""Collect stage receipts without transferring checkpoints; verify exact bytes."""
+import hashlib,json,pathlib,shlex,subprocess
+from remote import SSH,REMOTE,RESULT
+if __name__=='__main__':
+    files=['small-v2-guard.jsonl','small-v2.log','calibration-v2-guard.jsonl','calibration-v2.log','sensitivity-v2.json.partial.jsonl','input-audit-guard.jsonl','input-audit.log','finish-stages-v2.log','final-assurance-v2.json','assurance-hf-q3.json','assurance-hf-q4.json','assurance-v2.log']
+    for name in ['q4','mixed05','mixed15','q3']:
+        files += ['eval-'+name+'-v2.json','eval-'+name+'-v2.log','eval-'+name+'-v2-guard.jsonl']
+    for name in ['mixed05','mixed15']:
+        files += ['build-'+name+'-v2.log','build-'+name+'-v2-guard.jsonl','checkpoint-'+name+'/mixed-manifest.json','checkpoint-'+name+'/config.json','checkpoint-'+name+'/model.safetensors.index.json']
+    out=RESULT/'continuation-evidence';out.mkdir(exist_ok=False);rows={}
+    for name in files:
+        target=REMOTE+'/'+name
+        r=subprocess.run(SSH+['/bin/cat '+shlex.quote(target)],capture_output=True,timeout=90);r.check_returncode()
+        data=r.stdout;h=hashlib.sha256(data).hexdigest()
+        r=subprocess.run(SSH+['shasum -a 256 '+shlex.quote(target)],capture_output=True,text=True,timeout=30);r.check_returncode();assert h in r.stdout
+        p=out/name;p.parent.mkdir(parents=True,exist_ok=True)
+        with p.open('xb') as f:f.write(data)
+        rows[name]={'sha256':h,'bytes':len(data),'remote_sha256_equal':True}
+    with (RESULT/'continuation-transfer.json').open('x') as f:json.dump(rows,f,indent=2)
+    print(json.dumps({'files':len(rows),'all_transfers_hash_equal':True}))
+{
+  "allocate_real.py": "c106705ad997b9aa15a19720286c970cbd5434a283c4f3488a7ceaa338839dfd",
+  "build_mixed.py": "8caef96f5035e3767fe2088a7a19d4335461415360ce00fafc4f621c30404167",
+  "download_q3.py": "af7e1b2a0a7fb6c7efbfa4b20e324d5a3d59792931749eb5b438ef4ed2e4d573",
+  "guard.py": "9bb1e19c89a9a56d0c2c9a112f6bf9d1355b9669799dd221658e656275b02a9d",
+  "remote.py": "c4d5dca4492837bbf9ca5599cf3aeb66d44046894404a886a1654261e6378961",
+  "test_allocation_build.py": "4f4b6a5c01a7cce3a366ad8996e178d48e1cbb23b87fa4f7a39794e62372e009",
+  "dependency/paretoquant/allocator.py": "ef456570525346934febd4280f4344b5f12a8248cf77eb3391cc36a9c6aa7346",
+  "dependency/paretoquant/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "finish_stages.py": "7e16fec70cf6994d09907e57dc14343e8d758e6b0633fc67f2289bc3ebb87967",
+  "stream_v2.py": "1dd116f8dd98d371ef6fa9a5fdb165cbe18878b88940fcd426cc6b52c1ca67a2",
+  "assure.py": "8bf4bd98c6ada181b41b6dcd8a98744358e8202c314791f55bd5715a8dd83dec",
+  "stream.py": "c9ed6d6a6409d20623222f24b1e9869c9c0623b047ffd5233e9a7f92e57508cf",
+  "data/train.json": "46021a8c6becde39c9f1b91cc645c0e0f7146b93484d7727c79d06bc8a5adde9",
+  "data/test.json": "f70a3da5d72b09f5ae71a2c43ff8de02f36d3d14b38eb86dcc97eeacdd642e56",
+  "data/manifest.json": "6f16c38f83d1960fc09f9fc750daed4de6a740dcec0882d970c68c6e1c632907",
+  "cleanup_check.py": "163a88df1ac7bea448df8c604c083a75e390c6025f52c69f555850eda660bb1c",
+  "audit_inputs.py": "3c3d6cbff9ec977bc4ce8dc28c761a7397fb17ab417629f30f3a230bf6722757",
+  "allocator-plans-v2.json": "98db68104f61cfaf127ea81d0b100856fccdf667ca8058589fe81b478c1ee13b",
+  "cleanup_check_v2.py": "c39a9a021b526b006df014d53b9db5e6d643531bbb738dad2aeb3a8c66d5d84f"
+}
+exec
+/bin/zsh -lc 'cat spikes/033-qwen38-mixed-3-4-real/stream_v2.py' in /Users/jeremylien/Projects/paretoquant-metal
+ succeeded in 0ms:
+"""One-layer-resident native Qwen3.5-family calibration and capped WikiText NLL.
+
+No model arithmetic is reimplemented: native DecoderLayer, Embedding, RMSNorm,
+quantized Linear, mask helpers and uncached GDN/SDPA paths are used verbatim.
+Independent 256-token sequences reset positions/state; no cross-window cache.
+"""
+import argparse,copy,gc,hashlib,importlib.metadata,json,math,pathlib,resource,sys,time
+import numpy as np
+import mlx.core as mx
+import mlx.nn as nn
+from mlx.utils import tree_flatten
+from mlx_lm.models.qwen3_5 import TextModelArgs,DecoderLayer
+from mlx_lm.models.base import create_attention_mask,create_ssm_mask
+from build_mixed import scan_checkpoint,hash_range
+from guard import preflight
+
+ROOT=pathlib.Path(__file__).resolve().parent
+PFX='language_model.model.layers.'
+EMBED='language_model.model.embed_tokens'
+HEAD='language_model.lm_head'
+NORM='language_model.model.norm'
+mx.set_cache_limit(64*2**20)
+mx.set_memory_limit(2300*2**20)
+mx.set_wired_limit(1600*2**20)
+DT={'U32':np.uint32,'F32':np.float32,'F16':np.float16,'BF16':np.uint16}
+
+def dump(path,value):
+    with pathlib.Path(path).open('x') as f:json.dump(value,f,indent=2,allow_nan=False)
+
+def release():
+    gc.collect();mx.clear_cache()
+
+def health(event):
+    row=preflight();row.update(event=event,mlx_active=mx.get_active_memory(),mlx_peak=mx.get_peak_memory(),maxrss_bytes=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
+    print(json.dumps(row),flush=True)
+    if row['maxrss_bytes']>=3*2**30:raise RuntimeError('process RSS high-water exceeds 3GiB')
+    if row['mlx_peak']>=2300*2**20:raise RuntimeError('MLX peak exceeds bound')
+    return row
+
+class Checkpoint:
+    def __init__(self,path):
+        self.root=pathlib.Path(path);self.config=json.loads((self.root/'config.json').read_text())
+        self.args=TextModelArgs.from_dict(copy.deepcopy(self.config.get('text_config',self.config)))
+        self.inv=scan_checkpoint(self.root)
+        self.quant=self.config['quantization']
+        self.loaded_hashes={}
+        self.nlayers=self.args.num_hidden_layers
+        assert self.config['model_type']=='qwen3_5'
+        assert self.args.num_experts==0
+        types=self.config.get('text_config',self.config).get('layer_types')
+        if types:assert types==['full_attention' if (i+1)%self.args.full_attention_interval==0 else 'linear_attention' for i in range(self.nlayers)]
+        self.expected={n for n in self.inv if n.startswith(PFX) or n.startswith(EMBED+'.') or n.startswith(HEAD+'.') or n.startswith(NORM+'.')}
+        assert all(not n.startswith('language_model.') or n in self.expected for n in self.inv),'unrecognized language model weights'
+    def tensor(self,name):
+        info=self.inv[name];size=info['end']-info['start'];assert size<=768*2**20
+        with open(info['file'],'rb') as f:
+            f.seek(info['start']);raw=f.read(size)
+        assert len(raw)==size
+        self.loaded_hashes[name]=hashlib.sha256(raw).hexdigest()
+        assert info['dtype'] in DT,(name,info['dtype'])
+        a=mx.array(np.frombuffer(raw,dtype=DT[info['dtype']]).reshape(info['shape']))
+        if info['dtype']=='BF16':a=a.view(mx.bfloat16)
+        mx.eval(a)
+        return a
+    def qcfg(self,path):
+        v=self.quant.get(path,{k:self.quant[k] for k in ('bits','group_size','mode') if k in self.quant})
+        assert isinstance(v,dict) and v['bits'] in (3,4) and v['group_size']==64 and v.get('mode','affine')=='affine',(path,v)
+        return v
+    def quantize(self,module,prefix):
+        # These random initialization graphs are overwritten before any evaluation.
+        def pred(path,m):
+            p=prefix+('.'+path if path else '')
+            if p+'.scales' not in self.inv:return False
+            assert hasattr(m,'to_quantized')
+            return self.qcfg(p)
+        nn.quantize(module,group_size=64,bits=self.quant['bits'],mode='affine',class_predicate=pred)
+    def assign(self,module,prefix,other=None,only_quantized_other=False):
+        names=sorted(n for n in self.inv if n.startswith(prefix+'.'))
+        selected=[]
+        for n in names:
+            use=other if other is not None and (not only_quantized_other or (n.rsplit('.',1)[0]+'.scales') in other.inv) else self
+            if use is other and only_quantized_other:
+                assert self.inv[n]['dtype']==other.inv[n]['dtype']
+                if not n.endswith('.weight'):assert self.inv[n]['shape']==other.inv[n]['shape']
+            selected.append((n[len(prefix)+1:],use.tensor(n)))
+        module.load_weights(selected,strict=True);module.eval();mx.eval(module.parameters())
+        return module
+    def layer(self,i,other=None):
+        prefix=PFX+str(i)
+        health(f'before-layer-{i}')
+        layer=DecoderLayer(self.args,i)
+        # For demotions, use q3 quantized modules but q4 floating tensors.
+        (other or self).quantize(layer,prefix)
+        self.assign(layer,prefix,other,only_quantized_other=other is not None)
+        return layer
+    def embedding(self):
+        health('before-embedding')
+        module=nn.QuantizedEmbedding(self.args.vocab_size,self.args.hidden_size,**self.qcfg(EMBED))
+        return self.assign(module,EMBED)
+    def norm(self):
+        return self.assign(nn.RMSNorm(self.args.hidden_size,eps=self.args.rms_norm_eps),NORM)
+    def head(self):
+        health('before-head')
+        if self.args.tie_word_embeddings:return self.embedding()
+        return self.assign(nn.QuantizedLinear(self.args.hidden_size,self.args.vocab_size,bias=False,**self.qcfg(HEAD)),HEAD)
+    def manifest(self):
+        return {'path':str(self.root),'config_sha256':hashlib.sha256((self.root/'config.json').read_bytes()).hexdigest(),'loaded_tensor_sha256':self.loaded_hashes,'expected_text_tensor_count':len(self.expected),'loaded_tensor_count':len(self.loaded_hashes),'missing':sorted(self.expected-self.loaded_hashes.keys())}
+
+def embed(cp,ids):
+    module=cp.embedding();h=module(mx.array(ids));mx.eval(h);del module;release();return h
+
+def apply_layer(layer,h):
+    outputs=[]
+    for j in range(h.shape[0]):
+        x=h[j:j+1]
+        mask=create_ssm_mask(x,None) if layer.is_linear else create_attention_mask(x,None)
+        y=layer(x,mask=mask,cache=None);mx.eval(y);outputs.append(y)
+    result=mx.concatenate(outputs,axis=0);mx.eval(result)
+    return result
+
+def streamed_hidden(cp,ids,progress=None):
+    h=embed(cp,ids)
+    for i in range(cp.nlayers):
+        layer=cp.layer(i);y=apply_layer(layer,h);del layer,h;h=y;release()
+        if progress:progress(i)
+    module=cp.norm();h=module(h);mx.eval(h);del module;release();return h
+
+def project(cp,h):
+    module=cp.head();fn=module.as_linear if cp.args.tie_word_embeddings else module
+    logits=fn(h);mx.eval(logits);del module;release();return logits
+
+def gate_small(cp,out):
+    from mlx_lm.utils import load_model
+    report={'scope':'uncached native full forward vs one-decoder-layer-resident; full sequence projection widths',
+        'amended_gate':{'authorized_by':'Jeremy continuation request','argmax_equal':True,'max_abs_diff':0.125,'mean_abs_diff':0.001,'compute':'BF16'},
+        'original_gate':{'atol':1e-5,'rtol':1e-5,'failure_preserved':'small-parity-r2.json'},
+        'cases':[],'versions':{k:importlib.metadata.version(k) for k in ('mlx','mlx-lm','numpy')}}
+    original_call=DecoderLayer.__call__
+    for length in (17,64,256):
+        health('before-small-native')
+        model,cfg=load_model(cp.root,lazy=True);model.eval();mx.eval(model.parameters())
+        ids=np.array([[101+(i*173)%4000 for i in range(length)]],dtype=np.int32)
+        expected=model(mx.array(ids));mx.eval(expected)
+        assert expected.dtype==mx.bfloat16,str(expected.dtype)
+        ref=np.asarray(expected.astype(mx.float32)).copy();del expected
+        native_hidden=[]
+        def capture(layer,x,*args,**kwargs):
+            y=original_call(layer,x,*args,**kwargs);mx.eval(y)
+            native_hidden.append(np.asarray(y.astype(mx.float32)).copy())
+            return y
+        try:
+            DecoderLayer.__call__=capture
+            witnessed=model(mx.array(ids));mx.eval(witnessed)
+            witness=np.asarray(witnessed.astype(mx.float32));wdiff=np.abs(witness-ref)
+            witness_metrics={'max_abs_diff':float(wdiff.max()),'mean_abs_diff':float(wdiff.mean()),'argmax_equal':bool(np.array_equal(witness.argmax(-1),ref.argmax(-1)))}
+            del witnessed,witness,wdiff
+        finally:DecoderLayer.__call__=original_call
+        del model;release()
+        assert len(native_hidden)==cp.nlayers
+        h=embed(cp,ids);layer_errors=[]
+        for i in range(cp.nlayers):
+            layer=cp.layer(i);y=apply_layer(layer,h)
+            actual_hidden=np.asarray(y.astype(mx.float32));reference_hidden=native_hidden[i]
+            delta=actual_hidden-reference_hidden
+            layer_errors.append({'layer':i,'relative_rmse':float(np.sqrt(np.sum(delta.astype(np.float64)**2)/np.sum(reference_hidden.astype(np.float64)**2))),
+                'max_abs_diff':float(np.abs(delta).max()),'dtype':str(y.dtype)})
+            assert y.dtype==mx.bfloat16
+            del layer,h,actual_hidden,reference_hidden,delta;h=y;release()
+        del native_hidden
+        norm=cp.norm();h=norm(h);mx.eval(h);del norm;release()
+        logits=project(cp,h);actual=np.asarray(logits.astype(mx.float32));diff=np.abs(actual-ref)
+        row={'length':length,'logits_shape':list(ref.shape),'max_abs_diff':float(diff.max()),'mean_abs_diff':float(diff.mean()),
+            'next_token_equal':bool(np.array_equal(actual.argmax(-1),ref.argmax(-1))),
+            'original_allclose':bool(np.allclose(actual,ref,atol=1e-5,rtol=1e-5)),
+            'bit_exact':bool(np.array_equal(actual,ref)),'per_layer_hidden':layer_errors,'capture_witness_vs_pristine':witness_metrics,'compute_dtype':str(logits.dtype)}
+        row['passed']=row['next_token_equal'] and row['max_abs_diff']<=.125 and row['mean_abs_diff']<=.001
+        report['cases'].append(row);print(json.dumps(row),flush=True)
+        del logits,h,actual,ref,diff;release()
+        if not row['passed']:
+            report['passed']=False;dump(out,report);raise RuntimeError('amended small streaming gate failed')
+    report['passed']=True;report['checkpoint']=cp.manifest();report['health']=health('small-finished');dump(out,report)
+
+def data_ids(path):
+    d=json.loads(pathlib.Path(path).read_text());ids=np.array(d['tokens'],dtype=np.int32);size=d['sequence_length'];assert len(ids)%size==0
+    return ids.reshape(-1,size),d
+
+def calibrate(cp,q3,data,out):
+    ids,meta=data_ids(data);h=embed(cp,ids);rows=[]
+    with pathlib.Path(str(out)+'.partial.jsonl').open('x') as log:
+        for i in range(cp.nlayers):
+            start=time.monotonic();layer=cp.layer(i);ref=apply_layer(layer,h);del layer;release()
+            layer=cp.layer(i,q3);cand=apply_layer(layer,h);del layer;release()
+            numerator=mx.sum((cand.astype(mx.float32)-ref.astype(mx.float32))**2)
+            denominator=mx.sum(ref.astype(mx.float32)**2)
+            residual=mx.sum((ref.astype(mx.float32)-h.astype(mx.float32))**2)
+            mx.eval(numerator,denominator,residual)
+            mse=float(numerator.item())/float(denominator.item());rerr=float(numerator.item())/float(residual.item())
+            assert math.isfinite(mse) and mse>0
+            row={'layer':i,'type':'linear_attention' if (i+1)%cp.args.full_attention_interval else 'full_attention','relative_mse':mse,'relative_rmse':math.sqrt(mse),'residual_relative_mse':rerr,'squared_error_sum':numerator.item(),'reference_squared_sum':denominator.item(),'wall_seconds':time.monotonic()-start}
+            rows.append(row);log.write(json.dumps(row)+'\n');log.flush();print(json.dumps(row),flush=True)
+            del h,cand,numerator,denominator,residual;h=ref;release()
+    losses=np.array([r['relative_mse'] for r in rows]);p10,p90=np.quantile(losses,[.1,.9]);spread={'minimum':float(losses.min()),'median':float(np.median(losses)),'maximum':float(losses.max()),'max_min_ratio':float(losses.max()/losses.min()),'p90_p10_ratio':float(p90/p10),'coefficient_of_variation':float(losses.std()/losses.mean())}
+    # Predeclared meaningful spread: >=1.5 interdecile ratio and >=0.15 CV.
+    passed=spread['p90_p10_ratio']>=1.5 and spread['coefficient_of_variation']>=.15
+    dump(out,{'layers':rows,'spread':spread,'passed':passed,'spread_gate':{'p90_p10_ratio_minimum':1.5,'coefficient_of_variation_minimum':.15},'data':{k:v for k,v in meta.items() if k!='tokens'},'q4_checkpoint':cp.manifest(),'q3_checkpoint':q3.manifest(),'method':'sum ||layer3(h4)-layer4(h4)||^2 / sum ||layer4(h4)||^2; h4 is actual uncached native q4 hidden state; quantized decoder linears only demoted; no Fisher or final-logit KL claim','health':health('calibration-finished')})
+    if not passed:raise RuntimeError('sensitivities do not meaningfully differ')
+
+def evaluate(cp,data,out):
+    ids,meta=data_ids(data);start=time.monotonic();h=streamed_hidden(cp,ids)
+    module=cp.head();fn=module.as_linear if cp.args.tie_word_embeddings else module
+    total=0.;count=0;seqs=[]
+    for j in range(ids.shape[0]):
+        seq_nll=0.
+        logits=fn(h[j:j+1]).astype(mx.float32)
+        labels=mx.array(ids[j:j+1,1:])
+        targets=logits[:,:-1,:]
+        selected=mx.take_along_axis(targets,labels[...,None],axis=-1).squeeze(-1)
+        nll=mx.sum(mx.logsumexp(targets,axis=-1)-selected);mx.eval(nll)
+        value=float(nll.item());assert math.isfinite(value)
+        seq_nll+=value;count+=ids.shape[1]-1
+        del logits,labels,targets,selected,nll
+        total+=seq_nll;seqs.append({'sequence':j,'nll_sum':seq_nll,'scored_tokens':ids.shape[1]-1})
+    assert count==ids.shape[0]*(ids.shape[1]-1)
+    del module,h;release();manifest=cp.manifest();assert not manifest['missing'],manifest['missing']
+    dump(out,{'perplexity':math.exp(total/count),'mean_nll':total/count,'nll_sum':total,'scored_tokens':count,'input_tokens':int(ids.size),'independent_sequences':ids.shape[0],'sequence_length':ids.shape[1],'context_reset':'each nonoverlapping 256-token sequence, no BOS; first token in each unscored','sequences':seqs,'wall_seconds':time.monotonic()-start,'data':{k:v for k,v in meta.items() if k!='tokens'},'checkpoint':manifest,'health':health('evaluation-finished')})
+
+if __name__=='__main__':
+    ap=argparse.ArgumentParser();ap.add_argument('mode',choices=['small','calibrate','evaluate']);ap.add_argument('--model',required=True);ap.add_argument('--q3');ap.add_argument('--data');ap.add_argument('--output',required=True);a=ap.parse_args()
+    health('startup');cp=Checkpoint(a.model)
+    if a.mode=='small':gate_small(cp,a.output)
+    elif a.mode=='calibrate':calibrate(cp,Checkpoint(a.q3),a.data,a.output)
+    else:evaluate(cp,a.data,a.output)
+
+codex
+The checker rereads source and mixed tensor bytes and binds evaluation records to the token data, configs, and tensor inventories. I’ll now check the copied receipts and allocator inputs, including the four PPL values and 6,120-target counts.
+exec
+/bin/zsh -lc "cat spikes/033-qwen38-mixed-3-4-real/prepare_data.py; cat spikes/033-qwen38-mixed-3-4-real/dependency/paretoquant/allocator.py; rg --files results/qwen38-mixed-3-4-real-v1 -g '*.json' -g '"'!continuation-evidence/**'"' | head -45" in /Users/jeremylien/Projects/paretoquant-metal
+ succeeded in 0ms:
+"""Pinned WikiText2 raw split data; no MLX import or expected labels."""
+import hashlib,json,pathlib,sys,urllib.request
+ROOT=pathlib.Path(__file__).resolve().parent
+sys.path.insert(0,str(ROOT/'deps'))
+import pyarrow.parquet as pq
+from tokenizers import Tokenizer
+REV='b08601e04326c79dfdd32d625aee71d232d685c3'
+REPO='Salesforce/wikitext'
+def sha(b):return hashlib.sha256(b).hexdigest()
+if __name__=='__main__':
+    out=ROOT/'data';out.mkdir(exist_ok=False)
+    tokpath=ROOT.parents[1]/'models/qwen3.8-27b-4bit-tokenizer-only/tokenizer.json'
+    tokenizer=Tokenizer.from_file(str(tokpath));meta={'repo':REPO,'revision':REV,'tokenizer_sha256':sha(tokpath.read_bytes()),'sequence_length':256,'add_special_tokens':False,'splits':{}}
+    for split,n in [('train',3072),('test',6144)]:
+        name=f'wikitext-2-raw-v1/{split}-00000-of-00001.parquet';url=f'https://huggingface.co/datasets/{REPO}/resolve/{REV}/{name}'
+        with urllib.request.urlopen(url,timeout=120) as src:raw=src.read()
+        path=out/(split+'.parquet');path.write_bytes(raw)
+        texts=pq.read_table(path,columns=['text'])['text'].to_pylist()
+        text='\n\n'.join(texts);ids=tokenizer.encode(text,add_special_tokens=False).ids[:n]
+        assert len(ids)==n
+        record={'split':split,'tokens':ids,'sequence_length':256,'source_revision':REV,'source_parquet_sha256':sha(raw),'selected_token_sha256':sha(json.dumps(ids,separators=(',',':')).encode()),'all_text_sha256':sha(text.encode()),'selected_token_offset':0,'source_text_rows':len(texts),'requested_tokens':n}
+        (out/(split+'.json')).write_text(json.dumps(record))
+        meta['splits'][split]={k:v for k,v in record.items() if k!='tokens'}
+    assert meta['splits']['train']['source_parquet_sha256']!=meta['splits']['test']['source_parquet_sha256']
+    (out/'manifest.json').write_text(json.dumps(meta,indent=2))
+    print(json.dumps(meta,indent=2))
+"""Pure-Python allocation of supplied precision costs; no hardware is measured here."""
+
+from bisect import bisect_left
+from collections.abc import Iterable
+from dataclasses import asdict, dataclass
+from math import isfinite
+
+
+class InfeasibleBudget(ValueError):
+    """No complete selection fits the supplied budgets."""
+
+
+class FrontierOverflow(RuntimeError):
+    """The exact Pareto frontier exceeds the configured state limit."""
+
+
+@dataclass(frozen=True)
+class Option:
+    label: str
+    bits: int
+    memory_bytes: int
+    latency_ms: float
+    loss: float
+    backend: str = "stock"
+
+
+@dataclass(frozen=True)
+class Unit:
+    name: str
+    options: tuple[Option, ...]
+
+
+@dataclass(frozen=True)
+class Plan:
+    choices: dict[str, Option]
+    memory_bytes: int
+    latency_ms: float
+    loss: float
+    exact: bool
+    states_considered: int
+
+    def to_dict(self) -> dict:
+        """Return JSON-compatible primitive values, including each option's metadata."""
+        return asdict(self)
+
+
+def _rank(state: Plan) -> tuple:
+    return (
+        state.loss,
+        state.latency_ms,
+        state.memory_bytes,
+        tuple(option.label for option in state.choices.values()),
+    )
+
+
+def _pareto(
+    candidates: list[Plan],
+    unit_name: str,
+    max_states: int,
+    preserve_labels: bool,
+) -> list[Plan]:
+    """Loss-sorted O(n log n) dominance sweep with float-safe partial ties.
+
+    Adding the same large float can erase a strict loss/latency advantage.
+    Until the last unit, equal-memory states therefore dominate only when
+    their label prefix also wins. Strictly smaller integer memory remains
+    decisive if both floating-point advantages disappear.
+    """
+    ordered = sorted(candidates, key=_rank)
+    latencies = sorted({state.latency_ms for state in ordered})
+    # Prefix minimum (memory, labels) over compressed latency ranks.
+    minima: list[tuple[int, tuple[str, ...]] | None] = [None] * (len(latencies) + 1)
+    frontier = []
+    for state in ordered:
+        index = bisect_left(latencies, state.latency_ms) + 1
+        labels = tuple(option.label for option in state.choices.values())
+        current = (state.memory_bytes, labels)
+        cursor = index
+        dominated = False
+        while cursor:
+            previous = minima[cursor]
+            if previous is not None and (
+                previous <= current if preserve_labels else previous[0] <= current[0]
+            ):
+                dominated = True
+                break
+            cursor -= cursor & -cursor
+        if dominated:
+            continue
+        frontier.append(state)
+        if len(frontier) > max_states:
+            raise FrontierOverflow(
+                f"Exact frontier at unit {unit_name!r} exceeds max_states={max_states}; "
+                "increase the limit or reduce candidate options"
+            )
+        cursor = index
+        while cursor < len(minima):
+            previous = minima[cursor]
+            if previous is None or current < previous:
+                minima[cursor] = current
+            cursor += cursor & -cursor
+    return frontier
+
+
+def _integer(value: object, field: str, minimum: int = 0) -> None:
+    if isinstance(value, bool) or not isinstance(value, int) or value < minimum:
+        raise ValueError(f"{field} must be an integer >= {minimum}")
+
+
+def _finite_cost(value: object, field: str) -> None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError(f"{field} must be a finite nonnegative number")
+    try:
+        finite = isfinite(value)
+    except OverflowError:
+        finite = False
+    if not finite or value < 0:
+        raise ValueError(f"{field} must be a finite nonnegative number")
+
+
+def _text(value: object, field: str) -> None:
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"{field} must be a nonempty string")
+
+
+def _validate(units: tuple[Unit, ...]) -> None:
+    names = set()
+    for unit in units:
+        _text(unit.name, "Unit.name")
+        if unit.name in names:
+            raise ValueError(f"Duplicate unit name: {unit.name!r}")
+        names.add(unit.name)
+        labels = set()
+        for option in unit.options:
+            _text(option.label, "Option.label")
+            _text(option.backend, "Option.backend")
+            _integer(option.bits, "Option.bits", 1)
+            _integer(option.memory_bytes, "Option.memory_bytes")
+            _finite_cost(option.latency_ms, "Option.latency_ms")
+            _finite_cost(option.loss, "Option.loss")
+            if option.label in labels:
+                raise ValueError(f"Duplicate option label {option.label!r} in unit {unit.name!r}")
+            labels.add(option.label)
+
+
+def allocate(
+    units: Iterable[Unit],
+    memory_budget_bytes: int,
+    latency_budget_ms: float | None = None,
+    max_states: int = 10000,
+) -> Plan:
+    _integer(memory_budget_bytes, "memory_budget_bytes")
+    _integer(max_states, "max_states", 1)
+    if latency_budget_ms is not None:
+        _finite_cost(latency_budget_ms, "latency_budget_ms")
+    units = tuple(units)
+    _validate(units)
+    frontier = [Plan({}, 0, 0.0, 0.0, True, 0)]
+    considered = 0
+    units = tuple(sorted(units, key=lambda unit: unit.name))
+    for position, unit in enumerate(units):
+        candidates = []
+        for state in frontier:
+            for option in unit.options:
+                considered += 1
+                memory = state.memory_bytes + option.memory_bytes
+                latency = state.latency_ms + option.latency_ms
+                if memory > memory_budget_bytes:
+                    continue
+                if latency_budget_ms is not None and latency > latency_budget_ms:
+                    continue
+                loss = state.loss + option.loss
+                if not isfinite(latency):
+                    raise ValueError(f"Accumulated latency_ms is nonfinite at unit {unit.name!r}")
+                if not isfinite(loss):
+                    raise ValueError(f"Accumulated loss is nonfinite at unit {unit.name!r}")
+                candidates.append(
+                    Plan(
+                        {**state.choices, unit.name: option},
+                        memory,
+                        latency,
+                        loss,
+                        True,
+                        considered,
+                    )
+                )
+        if not candidates:
+            raise InfeasibleBudget(f"No selection fits the budgets at unit {unit.name!r}")
+        frontier = _pareto(candidates, unit.name, max_states, position < len(units) - 1)
+    best = min(frontier, key=_rank)
+    return Plan(best.choices, best.memory_bytes, best.latency_ms, best.loss, True, considered)
+results/qwen38-mixed-3-4-real-v1/actual-inventory-v2.json
+results/qwen38-mixed-3-4-real-v1/cleanup-mini.json
+results/qwen38-mixed-3-4-real-v1/deployment-d6adcacdb394bec6.json
+results/qwen38-mixed-3-4-real-v1/status.json
+results/qwen38-mixed-3-4-real-v1/deployment-36ac88b01f272cb6.json
+results/qwen38-mixed-3-4-real-v1/deployment-299ad5f230520917.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/checkpoint-mixed05/model.safetensors.index.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/checkpoint-mixed05/mixed-manifest.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/checkpoint-mixed05/config.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-mixed15-v2.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-mixed05-v2.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/assurance-hf-q4.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/final-assurance-v2.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/assurance-hf-q3.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-q3-v2.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/eval-q4-v2.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/checkpoint-mixed15/model.safetensors.index.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/checkpoint-mixed15/mixed-manifest.json
+results/qwen38-mixed-3-4-real-v1/continuation-evidence/checkpoint-mixed15/config.json
+results/qwen38-mixed-3-4-real-v1/deployment-2caef6821facf6f0.json
+results/qwen38-mixed-3-4-real-v1/sensitivity-v2.json
+results/qwen38-mixed-3-4-real-v1/deployed-source-hashes.json
+results/qwen38-mixed-3-4-real-v1/evidence-transfer.json
+results/qwen38-mixed-3-4-real-v1/cleanup-mini-final.json
+results/qwen38-mixed-3-4-real-v1/continuation-transfer.json
+results/qwen38-mixed-3-4-real-v1/gate-amendment.json
+results/qwen38-mixed-3-4-real-v1/allocator-plans-v2.json
+results/qwen38-mixed-3-4-real-v1/cleanup-m2-v2.json
+results/qwen38-mixed-3-4-real-v1/deployment-245cfb3b425ac24e.json
+results/qwen38-mixed-3-4-real-v1/small-parity-v2.json
+results/qwen38-mixed-3-4-real-v1/deployment-7a6f6c1ae8e3ed9d.json
+results/qwen38-mixed-3-4-real-v1/deployment-9f6044ca9cbea55e.json
+results/qwen38-mixed-3-4-real-v1/deployment-491fe0d3856e827a.json
+results/qwen38-mixed-3-4-real-v1/deployment-6d7d10c10b04b13b.json
+results/qwen38-mixed-3-4-real-v1/deployment-85b774e337857dcc.json
+results/qwen38-mixed-3-4-real-v1/cleanup-mini-v2.json
+results/qwen38-mixed-3-4-real-v1/cleanup-m2.json
+results/qwen38-mixed-3-4-real-v1/allocation-input-binding.json
+results/qwen38-mixed-3-4-real-v1/deployment-62f6128b2cc49ef0.json
+results/qwen38-mixed-3-4-real-v1/eval-q4-v2.json
+results/qwen38-mixed-3-4-real-v1/remote-evidence/q3-hf-metadata.json
+results/qwen38-mixed-3-4-real-v1/remote-evidence/q3-download-receipt.json
+results/qwen38-mixed-3-4-real-v1/remote-evidence/small-parity-r2.json
+
+exec
+/bin/zsh -lc "python3 -B -c 'import json,pathlib,hashlib
+s=pathlib.Path(\"spikes/033-qwen38-mixed-3-4-real\");r=pathlib.Path(\"results/qwen38-mixed-3-4-real-v1\");e=r/\"continuation-evidence\"
+def rd(p):return json.loads(p.read_text())
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+f=rd(e/\"final-assurance-v2.json\");tr=rd(r/\"continuation-transfer.json\")
+print(\"transfer mismatches\",[n for n,v in tr.items() if sha(e/n)"'!=v["sha256"] or (e/n).stat().st_size!=v["bytes"] or not v["remote_sha256_equal"]])
+for n,h in f["artifact_sha256"].items():
+ p=s/("data/"+n if n in ("train.json","test.json") else n)
+ if not p.exists():p=r/n
+ print("artifact",n,sha(p)==h)
+print("trusted mismatches",[n for n,h in rd(s/"trusted-deployment-v2.json").items() if sha(s/n)!=h])
+for n in ("q4","mixed05","mixed15","q3"):
+ v=rd(e/("eval-"+n+"-v2.json"));print(n,v["perplexity"],v["scored_tokens"],sum(x["nll_sum"] for x in v["sequences"])==v["nll_sum"],len(v["checkpoint"]["loaded_tensor_sha256"]),v["checkpoint"]["missing"])
+for n in ("q4","q3"):
+ a=rd(e/("assurance-hf-"+n+".json"));print("lfs",n,all(any(x["rfilename"]==z["file"] and x["size"]==z["size"] and x["lfs"]["sha256"]==z["sha256"] for x in a["siblings"]) for z in f["lfs_shards"][n]))
+sens=rd(r/"sensitivity-v2.json");plans=rd(r/"allocator-plans-v2.json");print("calibration",len(sens["layers"]),sens["passed"],sens["spread"]);print("plans",plans["n_units"],[(p["target_savings_gib"],p.get("exact"),p.get("n_q3_layers"),p.get("error")) for p in plans["plans"]])
+g=rd(r/"small-parity-v2.json");print("gate",[(x["length"],x["bit_exact"],len(x["per_layer_hidden"])) for x in g["cases"]])
+for n in ("mixed05","mixed15"):
+ m=rd(e/("checkpoint-"+n+"/mixed-manifest.json"));cp=rd(e/("eval-"+n+"-v2.json"))["checkpoint"];src={x:rd(e/("eval-"+x+"-v2.json"))["checkpoint"]["loaded_tensor_sha256"] for x in ("q4","q3")};print("manifest",n,len(m["tensors"]),set(m["tensors"])==set(cp["loaded_tensor_sha256"]),all(v["sha256"]==src[v["source"]][k]==cp["loaded_tensor_sha256"][k] for k,v in m["tensors"].items()))
+'"'" in /Users/jeremylien/Projects/paretoquant-metal
+ succeeded in 444ms:
+transfer mismatches []
+artifact stream_v2.py True
+artifact allocate_real.py True
+artifact build_mixed.py True
+artifact actual-inventory-v2.json True
+artifact sensitivity-v2.json True
+artifact allocator-plans-v2.json True
+artifact test.json True
+artifact train.json True
+trusted mismatches []
+q4 12.560952378355207 6120 True 1847 []
+mixed05 12.667576221486906 6120 True 1847 []
+mixed15 12.981187525647247 6120 True 1847 []
+q3 14.307830324705597 6120 True 1847 []
+lfs q4 True
+lfs q3 True
+calibration 64 True {'minimum': 0.0012270420410177695, 'median': 0.00592888063101551, 'maximum': 0.01586385555385591, 'max_min_ratio': 12.928534657783722, 'p90_p10_ratio': 5.147801820789831, 'coefficient_of_variation': 0.5375977312904103}
+plans 64 [(0.5, True, 12, None), (1.0, True, 23, None), (1.5, True, 34, None), (2.0, True, 45, None)]
+gate [(17, True, 24), (64, True, 24), (256, True, 24)]
+manifest mixed05 1847 True True
+manifest mixed15 1847 True True
+
+exec
+/bin/zsh -lc "python3 -B -c 'import json,pathlib,hashlib,math
+s=pathlib.Path(\"spikes/033-qwen38-mixed-3-4-real\");r=pathlib.Path(\"results/qwen38-mixed-3-4-real-v1\");e=r/\"continuation-evidence\"
+def rd(p):return json.loads(p.read_text())
+f=rd(e/\"final-assurance-v2.json\")
+for n,v in f[\"guards\"].items():
+ rows=[json.loads(x) for x in (e/(n+\"-guard.jsonl\")).read_text().splitlines()];samples=[x for x in rows if x[\"event\"]==\"sample\"];ts=[rows[0][\"time\"]]+[x[\"time\"] for x in samples]+[rows[-1][\"time\"]];print(n,len(samples)==v[\"samples\"],all(0<=b-a<=8 for a,b in zip(ts,ts[1:])),rows[-1][\"returncode\"],rows[-1][\"child_reaped\"])
+for split in (\"train\",\"test\"):
+ d=rd(s/(\"data/\"+split+\".json\"));h=hashlib.sha256(json.dumps(d[\"tokens\"],separators=(\",\",\":\")).encode()).hexdigest();print(\"tokens\",split,len(d[\"tokens\"]),h==d[\"selected_token_sha256\"])
+print(\"assurance log matches\",rd(e/\"assurance-v2.log\")==f)
+'" in /Users/jeremylien/Projects/paretoquant-metal
+ succeeded in 271ms:
+small-v2 True True 0 True
+calibration-v2 True True 0 True
+input-audit True True 0 True
+eval-q4-v2 True True 0 True
+build-mixed05-v2 True True 0 True
+eval-mixed05-v2 True True 0 True
+build-mixed15-v2 True True 0 True
+eval-mixed15-v2 True True 0 True
+eval-q3-v2 True True 0 True
+tokens train 3072 True
+tokens test 6144 True
+assurance log matches True
+
+codex
+**APPROVE** for the stated bounded claims. No concrete remaining evidence-linkage blocker found.
+
+- Calibration covers all 64 layers; allocation uses 64 units with exact frontier computation and no approximate fallback.
+- V2 links actual source/mixed tensor rereads, inventories, configs, selected sources, and evaluation-loaded hashes. Both mixed manifests cover all 1,847 loaded text tensors.
+- Token digests, receipt transfers, artifact hashes, deployment hashes, and pinned-LFS shard receipts agree.
+- All four evaluations score 6,120 targets; sequence NLL sums reconcile. PPL matches exactly: q4 **12.560952378355207**, mixed05 **12.667576221486906**, mixed15 **12.981187525647247**, q3 **14.307830324705597**.
+
+Scope: trusted exclusive deployment and unchanged sources, plus the recorded mini checker execution. This review used local file reads only; it did not rerun checkpoint checks. Approval supports capped WikiText2 results and byte-source equality, with no measured-speed or general-quality claim. Cleanup excluded.
+tokens used
+51,106
+**APPROVE** for the stated bounded claims. No concrete remaining evidence-linkage blocker found.
+
+- Calibration covers all 64 layers; allocation uses 64 units with exact frontier computation and no approximate fallback.
+- V2 links actual source/mixed tensor rereads, inventories, configs, selected sources, and evaluation-loaded hashes. Both mixed manifests cover all 1,847 loaded text tensors.
+- Token digests, receipt transfers, artifact hashes, deployment hashes, and pinned-LFS shard receipts agree.
+- All four evaluations score 6,120 targets; sequence NLL sums reconcile. PPL matches exactly: q4 **12.560952378355207**, mixed05 **12.667576221486906**, mixed15 **12.981187525647247**, q3 **14.307830324705597**.
+
+Scope: trusted exclusive deployment and unchanged sources, plus the recorded mini checker execution. This review used local file reads only; it did not rerun checkpoint checks. Approval supports capped WikiText2 results and byte-source equality, with no measured-speed or general-quality claim. Cleanup excluded.

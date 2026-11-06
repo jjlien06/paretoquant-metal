@@ -1,0 +1,8 @@
+**APPROVE** for the stated bounded claims. No concrete remaining evidence-linkage blocker found.
+
+- Calibration covers all 64 layers; allocation uses 64 units with exact frontier computation and no approximate fallback.
+- V2 links actual source/mixed tensor rereads, inventories, configs, selected sources, and evaluation-loaded hashes. Both mixed manifests cover all 1,847 loaded text tensors.
+- Token digests, receipt transfers, artifact hashes, deployment hashes, and pinned-LFS shard receipts agree.
+- All four evaluations score 6,120 targets; sequence NLL sums reconcile. PPL matches exactly: q4 **12.560952378355207**, mixed05 **12.667576221486906**, mixed15 **12.981187525647247**, q3 **14.307830324705597**.
+
+Scope: trusted exclusive deployment and unchanged sources, plus the recorded mini checker execution. This review used local file reads only; it did not rerun checkpoint checks. Approval supports capped WikiText2 results and byte-source equality, with no measured-speed or general-quality claim. Cleanup excluded.

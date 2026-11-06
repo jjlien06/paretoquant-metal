@@ -1,0 +1,6 @@
+curl=0
+1a25c56858e1ebe93f2718ac1d49d1151f9323325c1bbfd6209370f4db131ebd  Qwen3.8-27B-DFlash2-Q4_K_M.gguf
+total 18532324
+-rw-r--r-- 1 root root  1143006816 Nov  6 07:19 Qwen3.8-27B-DFlash2-Q4_K_M.gguf
+-r--r--r-- 1 root root 16464440224 Nov  5 20:18 Qwen3.8-27B-UD-Q4_K_M.gguf
+-r--r--r-- 1 root root  1369590656 Nov  5 22:05 mtp-Qwen3.8-27B-Q4_0.gguf

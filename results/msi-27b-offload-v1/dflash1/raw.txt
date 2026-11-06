@@ -1,0 +1,89 @@
+### BEGIN D1_off 2026-11-06T07:46:34Z
+ROW {"rep": 0, "prompt": 0, "wall": 89.84, "n": 256, "pp_tps": 11.724134465773066, "tg_tps": 2.9163075319714795, "draft_n": null, "draft_acc": null, "head": "```python\ndef merge_sorted_lists(list1: list, list2: list) -> list:\n    \"\"\"\n    "}
+ROW {"rep": 0, "prompt": 1, "wall": 90.69, "n": 256, "pp_tps": 14.898614925432431, "tg_tps": 2.88913433060661, "draft_n": null, "draft_acc": null, "head": "Hello! As an engineering student, you likely understand the basic thermodynamic "}
+ROW {"rep": 0, "prompt": 2, "wall": 88.81, "n": 256, "pp_tps": 15.013844217321036, "tg_tps": 2.9467592368161672, "draft_n": null, "draft_acc": null, "head": "Here are the first 40 prime numbers, followed by an analysis of the gaps between"}
+ROW {"rep": 0, "prompt": 3, "wall": 89.56, "n": 256, "pp_tps": 14.659518929561928, "tg_tps": 2.924446075508051, "draft_n": null, "draft_acc": null, "head": "The 2008 financial crisis was primarily driven by a combination of lax regulator"}
+### LOG 2.01.337.694 I slot print_timing: id  0 | task 0 |   graph reallocs =          1    /     0        (same size) / (changed size)
+### LOG 3.32.029.129 I slot print_timing: id  0 | task 258 |   graph reallocs =          2    /     0        (same size) / (changed size)
+### LOG 5.00.841.190 I slot print_timing: id  0 | task 516 |   graph reallocs =          3    /     0        (same size) / (changed size)
+### LOG 6.30.406.032 I slot print_timing: id  0 | task 774 |   graph reallocs =          4    /     0        (same size) / (changed size)
+### TAIL 6.30.406.032 I slot print_timing: id  0 | task 774 |   graph reallocs =          4    /     0        (same size) / (changed size)
+### TAIL 6.30.406.065 I slot      release: id  0 | task 774 | stop processing: n_tokens = 287, truncated = 0
+### TAIL 6.30.414.305 I srv    operator(): operator(): cleaning up before exit...
+### END D1_off
+### BEGIN D2_dflash7 2026-11-06T07:53:06Z
+ROW {"rep": 0, "prompt": 0, "wall": 40.26, "n": 256, "pp_tps": 4.406437868675248, "tg_tps": 7.5244258354082305, "draft_n": 240, "draft_acc": 220, "head": "```python\ndef merge_sorted_lists(list1: list, list2: list) -> list:\n    \"\"\"\n    "}
+ROW {"rep": 0, "prompt": 1, "wall": 79.55, "n": 256, "pp_tps": 13.757354452401012, "tg_tps": 3.322328132252528, "draft_n": 559, "draft_acc": 174, "head": "Hello! As an engineering student, you likely understand the basic thermodynamic "}
+ROW {"rep": 0, "prompt": 2, "wall": 40.36, "n": 256, "pp_tps": 13.250218842324106, "tg_tps": 6.780109689412216, "draft_n": 272, "draft_acc": 215, "head": "Here are the first 40 prime numbers, followed by an analysis of the gaps between"}
+ROW {"rep": 0, "prompt": 3, "wall": 90.82, "n": 256, "pp_tps": 13.2666573247288, "tg_tps": 2.897544101842744, "draft_n": 636, "draft_acc": 163, "head": "The 2008 financial crisis was primarily driven by a combination of lax regulator"}
+### LOG 0.00.751.052 E llama_init_from_model: failed to initialize the context: dflash requires ctx_other to be set (this warning is normal during memory fitting)
+### LOG 0.16.479.036 I common_speculative_init_result: loading draft model '/models/Qwen3.8-27B-DFlash2-Q4_K_M.gguf'
+### LOG 0.17.809.863 I common_speculative_impl_draft_dflash: adding speculative implementation 'draft-dflash'
+### LOG 0.17.809.864 I common_speculative_impl_draft_dflash: - n_max=7, n_min=0, p_min=0.00
+### LOG 0.17.809.865 I common_speculative_impl_draft_dflash: - block_size=8, mask_token_id=248070, n_extract=5, sample_from_anchor=true
+### LOG 0.59.667.336 I slot print_timing: id  0 | task 0 |   graph reallocs =          1    /     0        (same size) / (changed size)
+### LOG 2.19.214.783 I slot print_timing: id  0 | task 38 |   graph reallocs =          2    /     0        (same size) / (changed size)
+### LOG 2.59.578.617 I slot print_timing: id  0 | task 122 |   graph reallocs =          3    /     0        (same size) / (changed size)
+### LOG 4.30.401.815 I slot print_timing: id  0 | task 165 |   graph reallocs =          4    /     0        (same size) / (changed size)
+### ACC 0.59.667.356 I slot print_timing: id  0 | task 0 | draft acceptance = 0.91667 (  220 accepted /   240 generated), mean len =  7.29
+### ACC 2.19.214.787 I slot print_timing: id  0 | task 38 | draft acceptance = 0.31127 (  174 accepted /   559 generated), mean len =  3.15
+### ACC 2.59.578.622 I slot print_timing: id  0 | task 122 | draft acceptance = 0.79044 (  215 accepted /   272 generated), mean len =  6.51
+### ACC 4.30.401.820 I slot print_timing: id  0 | task 165 | draft acceptance = 0.25629 (  163 accepted /   636 generated), mean len =  2.77
+### TAIL 4.30.401.820 I slot print_timing: id  0 | task 165 | draft acceptance = 0.25629 (  163 accepted /   636 generated), mean len =  2.77
+### TAIL 4.30.401.869 I slot      release: id  0 | task 165 | stop processing: n_tokens = 287, truncated = 0
+### TAIL 4.30.412.121 I srv    operator(): operator(): cleaning up before exit...
+### END D2_dflash7
+### BEGIN D3_dflash15 2026-11-06T07:57:37Z
+ROW {"rep": 0, "prompt": 0, "wall": 41.04, "n": 256, "pp_tps": 4.811038722160625, "tg_tps": 7.244962407168591, "draft_n": 240, "draft_acc": 220, "head": "```python\ndef merge_sorted_lists(list1: list, list2: list) -> list:\n    \"\"\"\n    "}
+ROW {"rep": 0, "prompt": 1, "wall": 79.38, "n": 256, "pp_tps": 13.417901350776065, "tg_tps": 3.334490641320493, "draft_n": 559, "draft_acc": 174, "head": "Hello! As an engineering student, you likely understand the basic thermodynamic "}
+ROW {"rep": 0, "prompt": 2, "wall": 40.81, "n": 256, "pp_tps": 12.844549871036575, "tg_tps": 6.744333351609154, "draft_n": 272, "draft_acc": 215, "head": "Here are the first 40 prime numbers, followed by an analysis of the gaps between"}
+ROW {"rep": 0, "prompt": 3, "wall": 109.86, "n": 256, "pp_tps": 1.5807126969216065, "tg_tps": 2.8560735815948974, "draft_n": 636, "draft_acc": 163, "head": "The 2008 financial crisis was primarily driven by a combination of lax regulator"}
+### LOG 0.00.767.410 E llama_init_from_model: failed to initialize the context: dflash requires ctx_other to be set (this warning is normal during memory fitting)
+### LOG 0.17.450.854 I common_speculative_init_result: loading draft model '/models/Qwen3.8-27B-DFlash2-Q4_K_M.gguf'
+### LOG 0.18.863.563 I common_speculative_impl_draft_dflash: adding speculative implementation 'draft-dflash'
+### LOG 0.18.863.588 I common_speculative_impl_draft_dflash: - n_max=15, n_min=0, p_min=0.00
+### LOG 0.18.863.588 I common_speculative_impl_draft_dflash: - block_size=8, mask_token_id=248070, n_extract=5, sample_from_anchor=true
+### LOG 0.18.863.589 W common_speculative_impl_draft_dflash: requested draft size (n_max=15, n_min=0) exceeds the trained block size 8 -- clamping to 7
+### LOG 1.02.086.597 I slot print_timing: id  0 | task 0 |   graph reallocs =          1    /     0        (same size) / (changed size)
+### LOG 2.21.471.256 I slot print_timing: id  0 | task 38 |   graph reallocs =          2    /     0        (same size) / (changed size)
+### LOG 3.02.281.088 I slot print_timing: id  0 | task 122 |   graph reallocs =          3    /     0        (same size) / (changed size)
+### LOG 4.52.140.006 I slot print_timing: id  0 | task 165 |   graph reallocs =          4    /     0        (same size) / (changed size)
+### ACC 1.02.086.601 I slot print_timing: id  0 | task 0 | draft acceptance = 0.91667 (  220 accepted /   240 generated), mean len =  7.29
+### ACC 2.21.471.259 I slot print_timing: id  0 | task 38 | draft acceptance = 0.31127 (  174 accepted /   559 generated), mean len =  3.15
+### ACC 3.02.281.093 I slot print_timing: id  0 | task 122 | draft acceptance = 0.79044 (  215 accepted /   272 generated), mean len =  6.51
+### ACC 4.52.140.010 I slot print_timing: id  0 | task 165 | draft acceptance = 0.25629 (  163 accepted /   636 generated), mean len =  2.77
+### TAIL 4.52.140.010 I slot print_timing: id  0 | task 165 | draft acceptance = 0.25629 (  163 accepted /   636 generated), mean len =  2.77
+### TAIL 4.52.140.090 I slot      release: id  0 | task 165 | stop processing: n_tokens = 287, truncated = 0
+### TAIL 4.52.153.849 I srv    operator(): operator(): cleaning up before exit...
+### END D3_dflash15
+### BEGIN D4_mtp3 2026-11-06T08:02:31Z
+ROW {"rep": 0, "prompt": 0, "wall": 93.42, "n": 256, "pp_tps": 0.6873021950419297, "tg_tps": 4.841054419621648, "draft_n": 199, "draft_acc": 187, "head": "```python\ndef merge_sorted_lists(list1: list, list2: list) -> list:\n    \"\"\"\n    "}
+ROW {"rep": 0, "prompt": 1, "wall": 76.03, "n": 256, "pp_tps": 15.206083908092584, "tg_tps": 3.4619107344280713, "draft_n": 288, "draft_acc": 158, "head": "Hello! As an engineering student, you likely understand the basic thermodynamic "}
+ROW {"rep": 0, "prompt": 2, "wall": 72.44, "n": 256, "pp_tps": 13.642895022323739, "tg_tps": 3.6476400326862874, "draft_n": 214, "draft_acc": 182, "head": "Here are the first 40 prime numbers, followed by an analysis of the gaps between"}
+ROW {"rep": 0, "prompt": 3, "wall": 81.01, "n": 256, "pp_tps": 13.993879426985622, "tg_tps": 3.25755664677032, "draft_n": 296, "draft_acc": 156, "head": "The 2008 financial crisis was primarily driven by a combination of lax regulator"}
+### LOG 0.35.707.467 I common_speculative_init_result: loading draft model '/models/mtp-Qwen3.8-27B-Q4_0.gguf'
+### LOG 2.10.891.446 I slot print_timing: id  0 | task 0 |   graph reallocs =          2    /     0        (same size) / (changed size)
+### LOG 3.26.922.846 I slot print_timing: id  0 | task 71 |   graph reallocs =          4    /     0        (same size) / (changed size)
+### LOG 4.39.349.908 I slot print_timing: id  0 | task 171 |   graph reallocs =          6    /     0        (same size) / (changed size)
+### LOG 6.00.373.229 I slot print_timing: id  0 | task 247 |   graph reallocs =          8    /     0        (same size) / (changed size)
+### ACC 2.10.891.450 I slot print_timing: id  0 | task 0 | draft acceptance = 0.93970 (  187 accepted /   199 generated), mean len =  3.79
+### ACC 3.26.922.850 I slot print_timing: id  0 | task 71 | draft acceptance = 0.54861 (  158 accepted /   288 generated), mean len =  2.63
+### ACC 4.39.349.933 I slot print_timing: id  0 | task 171 | draft acceptance = 0.85047 (  182 accepted /   214 generated), mean len =  3.53
+### ACC 6.00.373.232 I slot print_timing: id  0 | task 247 | draft acceptance = 0.52703 (  156 accepted /   296 generated), mean len =  2.58
+### TAIL 6.00.373.232 I slot print_timing: id  0 | task 247 | draft acceptance = 0.52703 (  156 accepted /   296 generated), mean len =  2.58
+### TAIL 6.00.373.409 I slot      release: id  0 | task 247 | stop processing: n_tokens = 287, truncated = 0
+### TAIL 6.00.387.704 I srv    operator(): operator(): cleaning up before exit...
+### END D4_mtp3
+### BEGIN D5_off_repeat 2026-11-06T08:08:33Z
+ROW {"rep": 0, "prompt": 0, "wall": 89.07, "n": 256, "pp_tps": 12.079212021231802, "tg_tps": 2.939600851313018, "draft_n": null, "draft_acc": null, "head": "```python\ndef merge_sorted_lists(list1: list, list2: list) -> list:\n    \"\"\"\n    "}
+ROW {"rep": 0, "prompt": 1, "wall": 89.95, "n": 256, "pp_tps": 15.206006833487312, "tg_tps": 2.9112355047158194, "draft_n": null, "draft_acc": null, "head": "Hello! As an engineering student, you likely understand the basic thermodynamic "}
+ROW {"rep": 0, "prompt": 2, "wall": 88.88, "n": 256, "pp_tps": 14.355507189330616, "tg_tps": 2.9469751796042694, "draft_n": null, "draft_acc": null, "head": "Here are the first 40 prime numbers, followed by an analysis of the gaps between"}
+ROW {"rep": 0, "prompt": 3, "wall": 88.78, "n": 256, "pp_tps": 15.113937837318295, "tg_tps": 2.9485945836121346, "draft_n": null, "draft_acc": null, "head": "The 2008 financial crisis was primarily driven by a combination of lax regulator"}
+### LOG 1.50.079.122 I slot print_timing: id  0 | task 0 |   graph reallocs =          1    /     0        (same size) / (changed size)
+### LOG 3.20.025.808 I slot print_timing: id  0 | task 258 |   graph reallocs =          2    /     0        (same size) / (changed size)
+### LOG 4.48.908.202 I slot print_timing: id  0 | task 516 |   graph reallocs =          3    /     0        (same size) / (changed size)
+### LOG 6.17.689.924 I slot print_timing: id  0 | task 774 |   graph reallocs =          4    /     0        (same size) / (changed size)
+### TAIL 6.17.689.924 I slot print_timing: id  0 | task 774 |   graph reallocs =          4    /     0        (same size) / (changed size)
+### TAIL 6.17.689.961 I slot      release: id  0 | task 774 | stop processing: n_tokens = 287, truncated = 0
+### TAIL 6.17.698.986 I srv    operator(): operator(): cleaning up before exit...
+### END D5_off_repeat

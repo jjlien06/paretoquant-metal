@@ -1,0 +1,32 @@
+{"event": "preflight", "time": 1793951183.4222999, "pressure": 2, "memory_pressure": "The system has 17179869184 (1048576 pages with a page size of 16384).\n\nStats: \nPages free: 123745 \nPages purgeable: 134 \nPages purged: 1447735 \n\nSwap I/O:\nSwapins: 1878844 \nSwapouts: 2247969 \n\nPage Q counts:\nPages active: 129351 \nPages inactive: 151230 \nPages speculative: 3993 \nPages throttled: 0 \nPages wired down: 137493 \n\nCompressor Stats:\nPages used by compressor: 468248 \nPages decompressed: 24981640 \nPages compressed: 30700864 \n\nFile I/O:\nPageins: 36166519 \nPageouts: 96157 \n\nSystem-wide memory free percentage: 40%\n"}
+{"event": "sample", "time": 1793951183.426273, "pid": 27501, "pressure": 2, "rss_bytes": 1949696}
+{"event": "sample", "time": 1793951184.190491, "pid": 27501, "pressure": 2, "rss_bytes": 49577984}
+{"event": "sample", "time": 1793951184.957536, "pid": 27501, "pressure": 2, "rss_bytes": 58015744}
+{"event": "sample", "time": 1793951185.7258902, "pid": 27501, "pressure": 2, "rss_bytes": 74563584}
+{"event": "sample", "time": 1793951186.489871, "pid": 27501, "pressure": 2, "rss_bytes": 74940416}
+{"event": "sample", "time": 1793951187.260789, "pid": 27501, "pressure": 2, "rss_bytes": 66584576}
+{"event": "sample", "time": 1793951188.0252779, "pid": 27501, "pressure": 2, "rss_bytes": 66633728}
+{"event": "sample", "time": 1793951188.8059971, "pid": 27501, "pressure": 2, "rss_bytes": 66895872}
+{"event": "sample", "time": 1793951189.576533, "pid": 27501, "pressure": 2, "rss_bytes": 67747840}
+{"event": "sample", "time": 1793951190.341012, "pid": 27501, "pressure": 2, "rss_bytes": 64372736}
+{"event": "sample", "time": 1793951191.1086621, "pid": 27501, "pressure": 2, "rss_bytes": 64421888}
+{"event": "sample", "time": 1793951191.8749912, "pid": 27501, "pressure": 2, "rss_bytes": 61538304}
+{"event": "sample", "time": 1793951192.640533, "pid": 27501, "pressure": 2, "rss_bytes": 61636608}
+{"event": "sample", "time": 1793951193.399859, "pid": 27501, "pressure": 2, "rss_bytes": 61702144}
+{"event": "sample", "time": 1793951194.168187, "pid": 27501, "pressure": 2, "rss_bytes": 61734912}
+{"event": "sample", "time": 1793951194.9479208, "pid": 27501, "pressure": 2, "rss_bytes": 61767680}
+{"event": "sample", "time": 1793951195.7135391, "pid": 27501, "pressure": 2, "rss_bytes": 61816832}
+{"event": "sample", "time": 1793951196.477844, "pid": 27501, "pressure": 2, "rss_bytes": 61898752}
+{"event": "sample", "time": 1793951197.2449222, "pid": 27501, "pressure": 2, "rss_bytes": 69320704}
+{"event": "sample", "time": 1793951198.009098, "pid": 27501, "pressure": 2, "rss_bytes": 69353472}
+{"event": "sample", "time": 1793951198.776381, "pid": 27501, "pressure": 2, "rss_bytes": 69435392}
+{"event": "sample", "time": 1793951199.540562, "pid": 27501, "pressure": 2, "rss_bytes": 70434816}
+{"event": "sample", "time": 1793951200.308418, "pid": 27501, "pressure": 2, "rss_bytes": 65765376}
+{"event": "sample", "time": 1793951201.072545, "pid": 27501, "pressure": 2, "rss_bytes": 65814528}
+{"event": "sample", "time": 1793951201.845144, "pid": 27501, "pressure": 2, "rss_bytes": 64045056}
+{"event": "sample", "time": 1793951202.616016, "pid": 27501, "pressure": 2, "rss_bytes": 64077824}
+{"event": "sample", "time": 1793951203.38044, "pid": 27501, "pressure": 2, "rss_bytes": 64126976}
+{"event": "sample", "time": 1793951204.145697, "pid": 27501, "pressure": 2, "rss_bytes": 63946752}
+{"event": "sample", "time": 1793951204.9219909, "pid": 27501, "pressure": 2, "rss_bytes": 62898176}
+{"event": "sample", "time": 1793951205.715669, "pid": 27501, "pressure": 2, "rss_bytes": 65765376}
+{"event": "exit", "time": 1793951206.495744, "returncode": 0, "failure": null, "peak_rss_bytes": 74940416, "post": {"time": 1793951206.495728, "pressure": 2, "memory_pressure": "The system has 17179869184 (1048576 pages with a page size of 16384).\n\nStats: \nPages free: 6879 \nPages purgeable: 18 \nPages purged: 1455639 \n\nSwap I/O:\nSwapins: 1880940 \nSwapouts: 2247969 \n\nPage Q counts:\nPages active: 203145 \nPages inactive: 197872 \nPages speculative: 6231 \nPages throttled: 0 \nPages wired down: 141107 \n\nCompressor Stats:\nPages used by compressor: 458806 \nPages decompressed: 25004477 \nPages compressed: 30705869 \n\nFile I/O:\nPageins: 37080402 \nPageouts: 96277 \n\nSystem-wide memory free percentage: 40%\n"}, "child_reaped": true}

@@ -1,0 +1,172 @@
+{
+  "small-v2-guard.jsonl": {
+    "sha256": "24904802e955ec3bc96651973998a46a3084e5114bdf4931aedead9d9e103a2b",
+    "bytes": 2090,
+    "remote_sha256_equal": true
+  },
+  "small-v2.log": {
+    "sha256": "7eafee6c5b120d3d137ed0d2deeb15e5ead88303e8e5aa8cef8c95c363cb0556",
+    "bytes": 68945,
+    "remote_sha256_equal": true
+  },
+  "calibration-v2-guard.jsonl": {
+    "sha256": "60baf2577eb2838cbbee6d7786a74a24f75aad04bd4d3dea29592c04e5ca5781",
+    "bytes": 17734,
+    "remote_sha256_equal": true
+  },
+  "calibration-v2.log": {
+    "sha256": "98a678e5751171d0c0dd2a5ce3f70946c198c2129ab73201cd365eae33a3bb4b",
+    "bytes": 111412,
+    "remote_sha256_equal": true
+  },
+  "sensitivity-v2.json.partial.jsonl": {
+    "sha256": "e3360ec53d1080a287a72766b4c3915b470f02debda48e8d3b6019b5306159cf",
+    "bytes": 17348,
+    "remote_sha256_equal": true
+  },
+  "input-audit-guard.jsonl": {
+    "sha256": "d9801009bc52b207a5052e567886a8e5e48c820e94575243ed15295c273431d4",
+    "bytes": 1486,
+    "remote_sha256_equal": true
+  },
+  "input-audit.log": {
+    "sha256": "dea73d0f665dd5e851a5450207e752c37bcfa8ab335810e69ebf00d09e18c940",
+    "bytes": 188,
+    "remote_sha256_equal": true
+  },
+  "finish-stages-v2.log": {
+    "sha256": "37441fb2e48d7fc6a2abb441f40d65be0eeb8576252a0cfb2cd265fa732b4a08",
+    "bytes": 127,
+    "remote_sha256_equal": true
+  },
+  "final-assurance-v2.json": {
+    "sha256": "04a70b47fb40c92927d06980ea39bc769f336f0e021961285212b157cd2b3b56",
+    "bytes": 4200,
+    "remote_sha256_equal": true
+  },
+  "assurance-hf-q3.json": {
+    "sha256": "1614f79a9520cfcc457309b8fcb79fe58f65590bed3d9eb7134afc200c3b343c",
+    "bytes": 14035,
+    "remote_sha256_equal": true
+  },
+  "assurance-hf-q4.json": {
+    "sha256": "9d7c696a30db3d1ab6912c3a9e96baa5e6e2ab954b7695efe434ed3c0c4c0a6f",
+    "bytes": 13369,
+    "remote_sha256_equal": true
+  },
+  "assurance-v2.log": {
+    "sha256": "985107ee95d445a7628e3bfaa3f7cdd722f0fbb78140074f4a9085ed030e8dd8",
+    "bytes": 4201,
+    "remote_sha256_equal": true
+  },
+  "eval-q4-v2.json": {
+    "sha256": "d6afcdc7b17f33bcc5b57a3ef603b5d69f1c872a79cf78a6ef122063ab206ace",
+    "bytes": 249418,
+    "remote_sha256_equal": true
+  },
+  "eval-q4-v2.log": {
+    "sha256": "20ff8935d35ced704407c8e22091f871442784142b502b93781fea8c3c5be613",
+    "bytes": 48873,
+    "remote_sha256_equal": true
+  },
+  "eval-q4-v2-guard.jsonl": {
+    "sha256": "356e3ef711056e51f80ed18dc86599561c29a7845978f03576c4d64531a6b47a",
+    "bytes": 17130,
+    "remote_sha256_equal": true
+  },
+  "eval-mixed05-v2.json": {
+    "sha256": "19c26615683a0b4cd9ae2d34b3670601d8888dff99d8eb4f6140ccbbe0939513",
+    "bytes": 249398,
+    "remote_sha256_equal": true
+  },
+  "eval-mixed05-v2.log": {
+    "sha256": "00d51fd1fa40861e91e56f741ef1ecf1d9ad4fc5fb676a63cf6812a2abcc3eda",
+    "bytes": 48836,
+    "remote_sha256_equal": true
+  },
+  "eval-mixed05-v2-guard.jsonl": {
+    "sha256": "84248cc806889960a6a8fa81fc821baa884dd706c42cf7ea878c701dfb3cdd0d",
+    "bytes": 17024,
+    "remote_sha256_equal": true
+  },
+  "eval-mixed15-v2.json": {
+    "sha256": "5defc06c584cf4d082c554d3e516ce8b82317a106ab4578cd53b641e8029bb95",
+    "bytes": 249406,
+    "remote_sha256_equal": true
+  },
+  "eval-mixed15-v2.log": {
+    "sha256": "eb202886997b1a8a6d434c1afb105ba4684f5873eb6c081a12127fc2eddacc32",
+    "bytes": 48873,
+    "remote_sha256_equal": true
+  },
+  "eval-mixed15-v2-guard.jsonl": {
+    "sha256": "864160d9113fa54b74375c8d124f2b2cf04e22beecf4fc9a601253c07cd7888c",
+    "bytes": 16924,
+    "remote_sha256_equal": true
+  },
+  "eval-q3-v2.json": {
+    "sha256": "3fe8923c64393a378de0d05f9cac412bfe356978ae42941c82176bd61bedb94c",
+    "bytes": 249391,
+    "remote_sha256_equal": true
+  },
+  "eval-q3-v2.log": {
+    "sha256": "de8d9662dc10cdc292031c09d62ceb334e195261cfa98092e6750a826ac84f89",
+    "bytes": 48880,
+    "remote_sha256_equal": true
+  },
+  "eval-q3-v2-guard.jsonl": {
+    "sha256": "94993a747a820e741f917f26349d37160d2560897af62dec187ffcf1a20a0179",
+    "bytes": 17029,
+    "remote_sha256_equal": true
+  },
+  "build-mixed05-v2.log": {
+    "sha256": "849f33568278ca5e79ad9f136cae55a738dc444dad9c9b3edba9b15db6a98aae",
+    "bytes": 238,
+    "remote_sha256_equal": true
+  },
+  "build-mixed05-v2-guard.jsonl": {
+    "sha256": "4919a98431f3481d8210f8384edd4818f13fc967c5c01e3527fc9f93b064e0dc",
+    "bytes": 4371,
+    "remote_sha256_equal": true
+  },
+  "checkpoint-mixed05/mixed-manifest.json": {
+    "sha256": "401c11d645e74296fa7ca0fb7ba95391ba5be0a5fb97171478cb7d1ae33a7ea8",
+    "bytes": 1047575,
+    "remote_sha256_equal": true
+  },
+  "checkpoint-mixed05/config.json": {
+    "sha256": "a40b0a68570da36f3ffc9c1bea46c2546daa1808c06fb5bd7958e68e8e8e305f",
+    "bytes": 137059,
+    "remote_sha256_equal": true
+  },
+  "checkpoint-mixed05/model.safetensors.index.json": {
+    "sha256": "07200aee963e6964b85ee86113e53948b0b7ecafe8c4503248c5afbefbf50502",
+    "bytes": 160160,
+    "remote_sha256_equal": true
+  },
+  "build-mixed15-v2.log": {
+    "sha256": "f7eaf8043ac0f42e49439875fe65acb0a2f89667bc8c9eb969404e0f50373f81",
+    "bytes": 238,
+    "remote_sha256_equal": true
+  },
+  "build-mixed15-v2-guard.jsonl": {
+    "sha256": "0ee0653f13ac58d8c5261268b2e906fe7324d0db54f6f937639ddfc7648d2b70",
+    "bytes": 4366,
+    "remote_sha256_equal": true
+  },
+  "checkpoint-mixed15/mixed-manifest.json": {
+    "sha256": "5a38083e6d70091157096b4fbe5683ccd0680e139d5d02954c9bd138300ec0ae",
+    "bytes": 1036871,
+    "remote_sha256_equal": true
+  },
+  "checkpoint-mixed15/config.json": {
+    "sha256": "079e72ee2935c336fe3d403b1948b65f70a0ee5e123cfa3bc45a7fa364ed02f4",
+    "bytes": 137059,
+    "remote_sha256_equal": true
+  },
+  "checkpoint-mixed15/model.safetensors.index.json": {
+    "sha256": "46c73ac11ec29888e2350609d367bc58ec77f110ee0956c127a8af5ffdd6b35f",
+    "bytes": 160160,
+    "remote_sha256_equal": true
+  }
+}

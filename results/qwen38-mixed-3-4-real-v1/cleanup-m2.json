@@ -1,0 +1,72 @@
+{
+  "time": 1793950487.8565462,
+  "pgrep": {
+    "argv": [
+      "pgrep",
+      "-fl",
+      "033-qwen38-mixed-3-4-real|(^|/)(guard|stream|download_q3|allocate_real|build_mixed)\\.py([[:space:]]|$)"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "excluded_current_and_ancestor_pids": [
+    1,
+    6157,
+    6159,
+    6175,
+    6251,
+    6262
+  ],
+  "remaining_experiment_processes": [],
+  "passed": true,
+  "pressure": {
+    "argv": [
+      "sysctl",
+      "kern.memorystatus_vm_pressure_level",
+      "vm.swapusage"
+    ],
+    "returncode": 0,
+    "stdout": "kern.memorystatus_vm_pressure_level: 2\nvm.swapusage: total = 8192.00M  used = 7465.56M  free = 726.44M  (encrypted)\n",
+    "stderr": ""
+  },
+  "memory_pressure": {
+    "argv": [
+      "memory_pressure"
+    ],
+    "returncode": 0,
+    "stdout": "The system has 17179869184 (1048576 pages with a page size of 16384).\n\nStats: \nPages free: 3828 \nPages purgeable: 22 \nPages purged: 655373403 \n\nSwap I/O:\nSwapins: 37038439 \nSwapouts: 45964355 \n\nPage Q counts:\nPages active: 175094 \nPages inactive: 168825 \nPages speculative: 5528 \nPages throttled: 0 \nPages wired down: 237151 \n\nCompressor Stats:\nPages used by compressor: 416537 \nPages decompressed: 3547304975 \nPages compressed: 4022333076 \n\nFile I/O:\nPageins: 411263477 \nPageouts: 5897948 \n\nSystem-wide memory free percentage: 34%\n",
+    "stderr": ""
+  },
+  "disk": {
+    "argv": [
+      "df",
+      "-h",
+      "/System/Volumes/Data"
+    ],
+    "returncode": 0,
+    "stdout": "Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on\n/dev/disk3s5   460Gi   380Gi    50Gi    89%    4.3M  523M    1%   /System/Volumes/Data\n",
+    "stderr": ""
+  },
+  "chat_process_readback": {
+    "argv": [
+      "pgrep",
+      "-fl",
+      "chat_rank.py"
+    ],
+    "returncode": 0,
+    "stdout": "91269 /opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/Resources/Python.app/Contents/MacOS/Python -u /Users/jeremylien/Projects/paretoquant-metal/spikes/032-qwen38-chat-server/runs/run-20261106-021237/actors/0f6e577a6becc4af535deccdb7e4e2ef/sources/chat_rank.py --split 28 36 --eval-group-size 32 --target-revision 10c35caafbb80f7dc6a7a432cdd11af10a6d4818 --target-config-sha256 14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85 --target-index-sha256 13b840162b4cb35c66fef7df072f7dbb4717908204364f5e5d9f9655a2758fa8 --small-config-sha256 ba7770da23eae5ebd6827571f086e331956b33f4442a9e876fb4aa10969a6772 --small-index-sha256 6e48f2fa5d6f033a6d77bf833abfa9698ca24d1715ecea4c67447bcfaee44650 --adaptive-tau 0.5 --verifier-mode native --small-model /Users/jeremylien/Projects/paretoquant-metal/models/control-qwen35-08b-da28692b5f139cb0ec58a356b437486b7dac7462 --model /Users/jeremylien/Projects/paretoquant-metal/models/qwen3.8-27b-4bit-tokenizer-only --sidecar /Users/jeremylien/Projects/paretoquant-metal/models/qwen3.8-27b-mtp-4bit-b643c01b6d3b094e325edb6ebd832e16c486c575 --weight-server 169.254.130.250:50002 --weight-client-bind 169.254.201.199 --http-port 8780 --ui /Users/jeremylien/Projects/paretoquant-metal/apps/chat-ui/index.html\n",
+    "stderr": ""
+  },
+  "chat_listener_readback": {
+    "argv": [
+      "lsof",
+      "-nP",
+      "-iTCP:8780",
+      "-sTCP:LISTEN"
+    ],
+    "returncode": 0,
+    "stdout": "COMMAND   PID       USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nPython  91269 jeremylien    7u  IPv4 0x901d1f1c9a65a49e      0t0  TCP 127.0.0.1:8780 (LISTEN)\n",
+    "stderr": ""
+  }
+}

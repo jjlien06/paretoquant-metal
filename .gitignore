@@ -83,3 +83,7 @@ results/**/keras-qwen-docs.html
 /results/qwen38-width3-kernel-v1/run-s2d/control9.stdout
 /results/qwen38-width3-kernel-v1/run-s2d/rank1.receipt.json
 /results/qwen38-width3-kernel-v1/run-s2d/rank1.stderr
+
+# vendored binary deps / live chat run receipts
+/spikes/033-qwen38-mixed-3-4-real/deps/
+/spikes/032-qwen38-chat-server/runs/

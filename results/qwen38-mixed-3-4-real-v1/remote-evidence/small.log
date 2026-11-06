@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/033-qwen38-mixed-3-4-real/stream.py", line 14, in <module>
+    from build_mixed import scan_checkpoint,hash_range
+  File "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/033-qwen38-mixed-3-4-real/build_mixed.py", line 17, in <module>
+    from allocate_real import (EMBED, HEAD, NORM, PARTS, PFX, decoder_modules,
+                               layer_of, nbytes, text_tensor)
+  File "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/033-qwen38-mixed-3-4-real/allocate_real.py", line 14, in <module>
+    from paretoquant.allocator import (  # noqa: E402
+        FrontierOverflow, InfeasibleBudget, Option, Unit, allocate,
+    )
+ModuleNotFoundError: No module named 'paretoquant'
+{"returncode": 1, "failure": null, "peak_rss_bytes": 83591168}

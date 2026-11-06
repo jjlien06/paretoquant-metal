@@ -1,0 +1,15 @@
+{"download_bytes": 12719810876, "free_bytes": 73594068992, "reserve_bytes": 8589934592}
+{"file": "chat_template.jinja", "bytes": 8952, "sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041", "expected_lfs_sha256": null, "verified": true}
+{"file": "config.json", "bytes": 4932, "sha256": "536085b9e9cb68a5924193f84271c129e22c2296d88b7f3fe88fb24a89231382", "expected_lfs_sha256": null, "verified": true}
+{"file": "generation_config.json", "bytes": 202, "sha256": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e", "expected_lfs_sha256": null, "verified": true}
+{"file": "model-00001-of-00003.safetensors", "bytes": 5357835580, "sha256": "c7dc04780ba5616be8f00ea9b4669c3e42522205cc511f04d51d56fe46f5355c", "expected_lfs_sha256": "c7dc04780ba5616be8f00ea9b4669c3e42522205cc511f04d51d56fe46f5355c", "verified": true}
+{"file": "model-00002-of-00003.safetensors", "bytes": 5368439377, "sha256": "4739a929dd9515ac6922aa85d866561427c028e971bc2a82de5fb96792754b79", "expected_lfs_sha256": "4739a929dd9515ac6922aa85d866561427c028e971bc2a82de5fb96792754b79", "verified": true}
+{"file": "model-00003-of-00003.safetensors", "bytes": 1966597268, "sha256": "46b1c69035fd973c06ad8ce438aaf62efa92c86589c8d1a770b107cbe14731e0", "expected_lfs_sha256": "46b1c69035fd973c06ad8ce438aaf62efa92c86589c8d1a770b107cbe14731e0", "verified": true}
+{"file": "model.safetensors.index.json", "bytes": 209550, "sha256": "b57a5e102cae198e64f168a547181cd7b44318d0973ac6579e45090aa8212452", "expected_lfs_sha256": null, "verified": true}
+{"file": "preprocessor_config.json", "bytes": 390, "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516", "expected_lfs_sha256": null, "verified": true}
+{"file": "processor_config.json", "bytes": 991, "sha256": "45fc17c8dd2474af6b493b52483c26c0584b0082d368c480f9fa611e73070040", "expected_lfs_sha256": null, "verified": true}
+{"file": "tokenizer.json", "bytes": 19989325, "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523", "expected_lfs_sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523", "verified": true}
+{"file": "tokenizer_config.json", "bytes": 1165, "sha256": "792fa3f0cb88b111e54ef3134c873531008c4df471d108da17903426e308aa7b", "expected_lfs_sha256": null, "verified": true}
+{"file": "video_preprocessor_config.json", "bytes": 385, "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13", "expected_lfs_sha256": null, "verified": true}
+{"file": "vocab.json", "bytes": 6722759, "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003", "expected_lfs_sha256": null, "verified": true}
+{"returncode": 0, "failure": null, "peak_rss_bytes": 45088768}

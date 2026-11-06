@@ -1,0 +1,2 @@
+{"output": "/Users/jeremylien/Projects/paretoquant-dual-host/spikes/033-qwen38-mixed-3-4-real/checkpoint-mixed05", "text_stored_bytes": 14562085888, "tensors_verified": 1847}
+{"returncode": 0, "failure": null, "peak_rss_bytes": 74940416}

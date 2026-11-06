@@ -1,0 +1,31 @@
+{
+  "repo": "Salesforce/wikitext",
+  "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "tokenizer_sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+  "sequence_length": 256,
+  "add_special_tokens": false,
+  "splits": {
+    "train": {
+      "split": "train",
+      "sequence_length": 256,
+      "source_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+      "source_parquet_sha256": "e83889baabc497075506f91975be5fac0d45c5290b6b20582c8cd1e853d0c9f7",
+      "selected_token_sha256": "0fd808ac003f00e94c24bdfc09ca4cac8bc633eb3f5384fc438fccfe5fb49fb8",
+      "all_text_sha256": "aee724fa58bfbdeb3fc6803297fb6bab27b203d7c40b39ddef9b9770e5d52fe5",
+      "selected_token_offset": 0,
+      "source_text_rows": 36718,
+      "requested_tokens": 3072
+    },
+    "test": {
+      "split": "test",
+      "sequence_length": 256,
+      "source_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+      "source_parquet_sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+      "selected_token_sha256": "b083e3c825044006861eb47f99ab61981ccdc15692a78121f3ad64d8cb7a2a75",
+      "all_text_sha256": "696cca6b65a171b0a358a4be6732cdfdf2dd6164a32e20fd70e3c13fc4dfae83",
+      "selected_token_offset": 0,
+      "source_text_rows": 4358,
+      "requested_tokens": 6144
+    }
+  }
+}

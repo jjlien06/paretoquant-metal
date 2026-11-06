@@ -1,0 +1,19 @@
+test_build_cli (test_allocation_build.AllocationTests.test_build_cli) ... ok
+test_build_selection_and_overrides (test_allocation_build.AllocationTests.test_build_selection_and_overrides) ... ok
+test_chunk_bound_on_large_tensor (test_allocation_build.AllocationTests.test_chunk_bound_on_large_tensor) ... ok
+test_cli_64_units_and_exclusive_output (test_allocation_build.AllocationTests.test_cli_64_units_and_exclusive_output) ... ok
+test_exact_plan_matches_exhaustive_search_and_speedup (test_allocation_build.AllocationTests.test_exact_plan_matches_exhaustive_search_and_speedup) ... ok
+test_hash_verification_failure_keeps_incomplete_marker (test_allocation_build.AllocationTests.test_hash_verification_failure_keeps_incomplete_marker) ... ok
+test_infeasible_target_explicit (test_allocation_build.AllocationTests.test_infeasible_target_explicit) ... ok
+test_loader_override_contract_without_importing_mlx (test_allocation_build.AllocationTests.test_loader_override_contract_without_importing_mlx) ... ok
+test_malformed_header_rejected (test_allocation_build.AllocationTests.test_malformed_header_rejected) ... ok
+test_missing_duplicate_nonfinite_and_negative_sensitivity (test_allocation_build.AllocationTests.test_missing_duplicate_nonfinite_and_negative_sensitivity) ... ok
+test_output_nested_in_source_rejected (test_allocation_build.AllocationTests.test_output_nested_in_source_rejected) ... ok
+test_overflow_is_real_and_never_approximated (test_allocation_build.AllocationTests.test_overflow_is_real_and_never_approximated) ... ok
+test_safetensors_reference_cpu_reader (test_allocation_build.AllocationTests.test_safetensors_reference_cpu_reader) ... ok
+test_stale_plan_fails_before_output_creation (test_allocation_build.AllocationTests.test_stale_plan_fails_before_output_creation) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.252s
+
+OK

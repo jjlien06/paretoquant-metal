@@ -1,0 +1,2 @@
+{"tensor_count": 2180, "decoder_quantized_modules": 496, "nonquantized_tensors_checked": 353, "all_nonquantized_equal": true}
+{"returncode": 0, "failure": null, "peak_rss_bytes": 3162112}
