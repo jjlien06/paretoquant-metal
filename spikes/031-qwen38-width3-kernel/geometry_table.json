@@ -1,0 +1,126 @@
+{
+ "note": "031 width-3 launch table; selected = fastest bitwise-exact (vs stock singleton QMV) candidate per (N,K,W) from tune-*-w23.json; native allowed only on M2 rank0 (030-admitted native verifier); defaults: unlisted shapes/width2 keep the 030-admitted rank mode (m2 native, m4 030 slot-qmv). lm_head native on m2 (tune-m2-lmhead.json: stock 10.71 ms < best exact slot 11.62 ms); m4 0.8B-control shapes use fixed 2x2 mode1 (op-exact on M4: small-shapes-exact-m4.json) so the small physical gate exercises the new kernel",
+ "tables": {
+  "m2": {
+   "10240,5120,3": [
+    4,
+    1,
+    1
+   ],
+   "6144,5120,3": [
+    4,
+    1,
+    1
+   ],
+   "48,5120,3": "native",
+   "5120,6144,3": [
+    4,
+    1,
+    1
+   ],
+   "17408,5120,3": [
+    4,
+    1,
+    1
+   ],
+   "5120,17408,3": [
+    4,
+    4,
+    1
+   ],
+   "12288,5120,3": [
+    4,
+    2,
+    1
+   ],
+   "1024,5120,3": "native",
+   "248320,5120,3": "native"
+  },
+  "m4": {
+   "10240,5120,3": [
+    2,
+    2,
+    1
+   ],
+   "6144,5120,3": [
+    2,
+    4,
+    1
+   ],
+   "48,5120,3": [
+    2,
+    2,
+    1
+   ],
+   "5120,6144,3": [
+    2,
+    1,
+    1
+   ],
+   "17408,5120,3": [
+    2,
+    4,
+    1
+   ],
+   "5120,17408,3": [
+    2,
+    2,
+    1
+   ],
+   "12288,5120,3": [
+    2,
+    2,
+    1
+   ],
+   "1024,5120,3": [
+    2,
+    1,
+    1
+   ],
+   "6144,1024,3": [
+    2,
+    2,
+    1
+   ],
+   "2048,1024,3": [
+    2,
+    2,
+    1
+   ],
+   "16,1024,3": [
+    2,
+    2,
+    1
+   ],
+   "1024,2048,3": [
+    2,
+    2,
+    1
+   ],
+   "3584,1024,3": [
+    2,
+    2,
+    1
+   ],
+   "1024,3584,3": [
+    2,
+    2,
+    1
+   ],
+   "4096,1024,3": [
+    2,
+    2,
+    1
+   ],
+   "512,1024,3": [
+    2,
+    2,
+    1
+   ]
+  }
+ },
+ "defaults": {
+  "m2": "native",
+  "m4": "slot-qmv"
+ }
+}
