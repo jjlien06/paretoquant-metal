@@ -1,0 +1,147 @@
+{
+ "pooled": {
+  "rounds": 1627,
+  "a1": 1391,
+  "alpha1": 0.8549477566072526,
+  "a2_given_a1_n": 1382,
+  "a2": 1098,
+  "p_a2_given_a1": 0.7945007235890015,
+  "a3_given_a2_n": 1092,
+  "a3": 869,
+  "p_a3_given_a2": 0.7957875457875457
+ },
+ "equal_case_mean": {
+  "alpha1": 0.8596590273318254,
+  "p_a2_given_a1": 0.7813341240899574,
+  "p_a3_given_a2": 0.7679243659309785
+ },
+ "parity_all": true,
+ "archived_equal": {
+  "chinese-1536": true,
+  "chinese-512": true,
+  "chinese-short": true,
+  "code-1536": true,
+  "code-512": true,
+  "code-short": true,
+  "explanation-1536": true,
+  "explanation-512": true,
+  "explanation-short": true,
+  "math-1536": true,
+  "math-512": true,
+  "math-short": true,
+  "spanish-1536": true,
+  "spanish-512": true,
+  "spanish-short": true,
+  "structured-1536": true,
+  "structured-512": true,
+  "structured-short": true
+ },
+ "per_case": {
+  "chinese-1536": [
+   0.753,
+   0.688,
+   0.64
+  ],
+  "chinese-512": [
+   0.841,
+   0.655,
+   0.632
+  ],
+  "chinese-short": [
+   0.74,
+   0.556,
+   0.621
+  ],
+  "code-1536": [
+   0.932,
+   0.886,
+   0.87
+  ],
+  "code-512": [
+   0.939,
+   0.902,
+   0.873
+  ],
+  "code-short": [
+   0.924,
+   0.902,
+   0.815
+  ],
+  "explanation-1536": [
+   0.754,
+   0.681,
+   0.629
+  ],
+  "explanation-512": [
+   0.814,
+   0.561,
+   0.516
+  ],
+  "explanation-short": [
+   0.789,
+   0.643,
+   0.75
+  ],
+  "math-1536": [
+   0.903,
+   0.884,
+   0.83
+  ],
+  "math-512": [
+   0.882,
+   0.814,
+   0.771
+  ],
+  "math-short": [
+   0.91,
+   0.9,
+   0.926
+  ],
+  "spanish-1536": [
+   0.79,
+   0.741,
+   0.711
+  ],
+  "spanish-512": [
+   0.764,
+   0.691,
+   0.711
+  ],
+  "spanish-short": [
+   0.753,
+   0.704,
+   0.632
+  ],
+  "structured-1536": [
+   0.984,
+   0.936,
+   0.914
+  ],
+  "structured-512": [
+   1.0,
+   0.952,
+   1.0
+  ],
+  "structured-short": [
+   1.0,
+   0.968,
+   0.984
+  ]
+ },
+ "agg": {
+  "dw_full/k1": 1.4333945515603945,
+  "dw_full/k2": 1.5892747542416015,
+  "dw_full/k3": 1.6186994549658242,
+  "dw_half/k1": 1.4333945515603945,
+  "dw_half/k2": 1.6973175510815246,
+  "dw_half/k3": 1.8136488906131918
+ },
+ "d2/d1": {
+  "dw_full": 1.1087489850659162,
+  "dw_half": 1.1841244612195736
+ },
+ "d3/d1": {
+  "dw_full": 1.1292769692780726,
+  "dw_half": 1.2652823946057643
+ }
+}

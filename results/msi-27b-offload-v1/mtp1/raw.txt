@@ -1,0 +1,23 @@
+### BEGIN B1_off 2026-11-05T22:41:13Z
+ROW {"rep": 0, "prompt": 0, "wall": 85.54, "n": 256, "pp_tps": 11.51878466948493, "tg_tps": 3.068741986672273, "draft_n": null, "draft_acc": null, "head": "```python\ndef merge_sorted_lists(list1: list, list2: list) -> list:\n    \"\"\"\n    "}
+ROW {"rep": 0, "prompt": 1, "wall": 85.41, "n": 256, "pp_tps": 15.90903503024886, "tg_tps": 3.0664966921579926, "draft_n": null, "draft_acc": null, "head": "Hello! As an engineering student, you likely understand the basic thermodynamic "}
+ROW {"rep": 0, "prompt": 2, "wall": 94.67, "n": 256, "pp_tps": 15.045914306237743, "tg_tps": 2.7586914792826382, "draft_n": null, "draft_acc": null, "head": "Here are the first 40 prime numbers, followed by an analysis of the gaps between"}
+ROW {"rep": 0, "prompt": 3, "wall": 85.79, "n": 256, "pp_tps": 15.110019831901027, "tg_tps": 3.0542607752283977, "draft_n": null, "draft_acc": null, "head": "The 2008 financial crisis was primarily driven by a combination of lax regulator"}
+### END B1_off
+### BEGIN B3_mtp3 2026-11-05T22:47:13Z
+ROW {"rep": 0, "prompt": 0, "wall": 53.92, "n": 256, "pp_tps": 7.394963132147199, "tg_tps": 5.087933152459638, "draft_n": 196, "draft_acc": 188, "head": "```python\ndef merge_sorted_lists(list1: list, list2: list) -> list:\n    \"\"\"\n    "}
+ROW {"rep": 0, "prompt": 1, "wall": 80.33, "n": 256, "pp_tps": 16.0853988447759, "tg_tps": 3.267822295926067, "draft_n": 303, "draft_acc": 153, "head": "Hello! As an engineering student, you likely understand the basic thermodynamic "}
+ROW {"rep": 0, "prompt": 2, "wall": 56.91, "n": 256, "pp_tps": 15.09601552844333, "tg_tps": 4.670240114626373, "draft_n": 214, "draft_acc": 182, "head": "Here are the first 40 prime numbers, followed by an analysis of the gaps between"}
+ROW {"rep": 0, "prompt": 3, "wall": 77.38, "n": 256, "pp_tps": 15.318847448215116, "tg_tps": 3.397074394237358, "draft_n": 296, "draft_acc": 156, "head": "The 2008 financial crisis was primarily driven by a combination of lax regulator"}
+### LOG 0.04.571.592 I common_speculative_init_result: loading draft model '/models/mtp-Qwen3.8-27B-Q4_0.gguf'
+### LOG 1.00.197.257 I slot print_timing: id  0 | task 0 | draft acceptance = 0.95918 (  188 accepted /   196 generated), mean len =  3.85
+### LOG 2.20.532.883 I slot print_timing: id  0 | task 70 | draft acceptance = 0.50495 (  153 accepted /   303 generated), mean len =  2.50
+### LOG 3.17.442.860 I slot print_timing: id  0 | task 175 | draft acceptance = 0.85047 (  182 accepted /   214 generated), mean len =  3.53
+### LOG 4.34.824.270 I slot print_timing: id  0 | task 251 | draft acceptance = 0.52703 (  156 accepted /   296 generated), mean len =  2.58
+### END B3_mtp3
+### BEGIN B4_off_repeat 2026-11-05T22:51:49Z
+ROW {"rep": 0, "prompt": 0, "wall": 85.42, "n": 256, "pp_tps": 11.977497703956466, "tg_tps": 3.06963362767027, "draft_n": null, "draft_acc": null, "head": "```python\ndef merge_sorted_lists(list1: list, list2: list) -> list:\n    \"\"\"\n    "}
+ROW {"rep": 0, "prompt": 1, "wall": 86.24, "n": 256, "pp_tps": 15.611517325945773, "tg_tps": 3.0377713994108655, "draft_n": null, "draft_acc": null, "head": "Hello! As an engineering student, you likely understand the basic thermodynamic "}
+ROW {"rep": 0, "prompt": 2, "wall": 85.3, "n": 256, "pp_tps": 14.5485946526875, "tg_tps": 3.073397690441672, "draft_n": null, "draft_acc": null, "head": "Here are the first 40 prime numbers, followed by an analysis of the gaps between"}
+ROW {"rep": 0, "prompt": 3, "wall": 86.53, "n": 256, "pp_tps": 15.161917432935759, "tg_tps": 3.028332185239161, "draft_n": null, "draft_acc": null, "head": "The 2008 financial crisis was primarily driven by a combination of lax regulator"}
+### END B4_off_repeat

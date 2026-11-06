@@ -1,0 +1,49 @@
+{
+ "tag": "cpu-a",
+ "hostfile": [
+  [
+   "169.254.201.199:59053"
+  ],
+  [
+   "169.254.130.250:49592"
+  ]
+ ],
+ "bench_sha256": "0a2de54f924a88287636d0c7c964bcdeede2af80ad68f916e7118c3f7ff919c3",
+ "remote_bench_sha256": "0a2de54f924a88287636d0c7c964bcdeede2af80ad68f916e7118c3f7ff919c3",
+ "returncodes": {
+  "rank0": 0,
+  "rank1": 0
+ },
+ "wall_s": 22.54971408843994,
+ "logs": {
+  "rank0": "{\"rank\": 0, \"done\": true, \"output\": \"results/tp-allreduce-screen-v1/runs/cpu-a.rank0.json\"}\n",
+  "rank1": "{\"rank\": 1, \"done\": true, \"output\": \"/Users/jeremylien/Projects/paretoquant-dual-host/spikes/028-tp-allreduce-screen/cpu-a.rank1.json\"}\n"
+ },
+ "cleanup": {
+  "remote_bench_pids_after": [],
+  "local_bench_pids_after": [],
+  "local_port_closed_local_probe": true,
+  "remote_port_closed_local_probe": true,
+  "remote_port_closed_remote_probe": "True"
+ },
+ "rank1_fetch": {
+  "remote_sha256": "77b985ec95f717c8eacc94288a23b5987b8cbdd5020eb566fd8082809502255f",
+  "local_sha256": "77b985ec95f717c8eacc94288a23b5987b8cbdd5020eb566fd8082809502255f",
+  "match": true
+ },
+ "bench_args": [
+  "--warmup",
+  "300",
+  "--percall",
+  "1024",
+  "--tokens",
+  "32",
+  "--multipliers",
+  "1",
+  "2",
+  "--stream",
+  "cpu",
+  "--deadline",
+  "260"
+ ]
+}

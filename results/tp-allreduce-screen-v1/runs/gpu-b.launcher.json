@@ -1,0 +1,49 @@
+{
+ "tag": "gpu-b",
+ "hostfile": [
+  [
+   "169.254.201.199:59224"
+  ],
+  [
+   "169.254.130.250:49595"
+  ]
+ ],
+ "bench_sha256": "0a2de54f924a88287636d0c7c964bcdeede2af80ad68f916e7118c3f7ff919c3",
+ "remote_bench_sha256": "0a2de54f924a88287636d0c7c964bcdeede2af80ad68f916e7118c3f7ff919c3",
+ "returncodes": {
+  "rank0": 0,
+  "rank1": 0
+ },
+ "wall_s": 24.502198696136475,
+ "logs": {
+  "rank0": "{\"rank\": 0, \"done\": true, \"output\": \"results/tp-allreduce-screen-v1/runs/gpu-b.rank0.json\"}\n",
+  "rank1": "{\"rank\": 1, \"done\": true, \"output\": \"/Users/jeremylien/Projects/paretoquant-dual-host/spikes/028-tp-allreduce-screen/gpu-b.rank1.json\"}\n"
+ },
+ "cleanup": {
+  "remote_bench_pids_after": [],
+  "local_bench_pids_after": [],
+  "local_port_closed_local_probe": true,
+  "remote_port_closed_local_probe": true,
+  "remote_port_closed_remote_probe": "True"
+ },
+ "rank1_fetch": {
+  "remote_sha256": "22cea37ebfd27e02eb8c2213fc1390dab95ff73d0ffd463db88d6aaf6ff56c27",
+  "local_sha256": "22cea37ebfd27e02eb8c2213fc1390dab95ff73d0ffd463db88d6aaf6ff56c27",
+  "match": true
+ },
+ "bench_args": [
+  "--warmup",
+  "300",
+  "--percall",
+  "1024",
+  "--tokens",
+  "32",
+  "--multipliers",
+  "1",
+  "2",
+  "--stream",
+  "gpu",
+  "--deadline",
+  "260"
+ ]
+}

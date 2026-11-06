@@ -1,0 +1,15 @@
+layers  W=1 native    median   20.103 ms  min   19.611
+qmm     W=1 native    median    3.065 ms  min    3.051
+gdn     W=1 native    median    0.308 ms  min    0.295
+layers  W=2 native    median   21.510 ms  min   21.164
+qmm     W=2 native    median    3.017 ms  min    2.986
+layers  W=2 slot-qmv  median   22.475 ms  min   21.893
+qmm     W=2 slot-qmv  median    3.088 ms  min    3.050
+layers  W=2 slot-qmv-tuned-m4 median   22.623 ms  min   22.364
+gdn     W=2 native    median    0.313 ms  min    0.304
+layers  W=3 native    median   23.613 ms  min   23.098
+qmm     W=3 native    median    3.081 ms  min    3.002
+layers  W=3 slot-qmv  median   31.007 ms  min   30.529
+qmm     W=3 slot-qmv  median    4.207 ms  min    4.194
+layers  W=3 slot-qmv-tuned-m4 median   23.644 ms  min   23.171
+gdn     W=3 native    median    0.310 ms  min    0.292

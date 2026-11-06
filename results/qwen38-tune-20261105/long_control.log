@@ -1,0 +1,5 @@
+kern.memorystatus_vm_pressure_level: 1
+vm.swapusage: total = 7168.00M  used = 5612.56M  free = 1555.44M  (encrypted)
+Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s5   460Gi   373Gi    57Gi    87%    4.3M  600M    1%   /System/Volumes/Data
+{"status": "failed", "error_type": "ValueError"}

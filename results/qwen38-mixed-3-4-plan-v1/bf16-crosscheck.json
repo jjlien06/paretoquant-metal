@@ -1,0 +1,30 @@
+[
+ {
+  "tensor": "language_model.model.layers.0.linear_attn.in_proj_a",
+  "rel_out_q4_vs_bf16": 0.09245714545249939,
+  "rel_out_q3_vs_bf16": 0.18659508228302002,
+  "rel_out_q3_vs_q4": 0.21928220987319946,
+  "y_norm": 79.15023803710938
+ },
+ {
+  "tensor": "language_model.model.layers.10.linear_attn.in_proj_b",
+  "rel_out_q4_vs_bf16": 0.1035219356417656,
+  "rel_out_q3_vs_bf16": 0.2197037935256958,
+  "rel_out_q3_vs_q4": 0.25329673290252686,
+  "y_norm": 61.584983825683594
+ },
+ {
+  "tensor": "language_model.model.layers.3.self_attn.k_proj",
+  "rel_out_q4_vs_bf16": 0.09408719092607498,
+  "rel_out_q3_vs_bf16": 0.19778099656105042,
+  "rel_out_q3_vs_q4": 0.23054276406764984,
+  "y_norm": 292.980224609375
+ },
+ {
+  "tensor": "language_model.model.layers.40.linear_attn.out_proj",
+  "rel_out_q4_vs_bf16": 0.09256453067064285,
+  "rel_out_q3_vs_bf16": 0.1949383169412613,
+  "rel_out_q3_vs_q4": 0.22715520858764648,
+  "y_norm": 688.9924926757812
+ }
+]

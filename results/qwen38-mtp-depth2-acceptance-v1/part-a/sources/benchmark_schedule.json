@@ -1,0 +1,167 @@
+{
+ "schema": "qwen38-workload-schedule-v1",
+ "requests": [
+  {
+   "id": "code-short-native-r0",
+   "case_id": "code-short",
+   "method": "native",
+   "prompt": "TASK:\nWrite a Python function merge_intervals(intervals) that merges overlapping closed integer intervals. Include type hints, a short explanation of the algorithm, and three assert-based tests. Do not use third-party packages.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "code-short-mtp-r0",
+   "case_id": "code-short",
+   "method": "mtp",
+   "prompt": "TASK:\nWrite a Python function merge_intervals(intervals) that merges overlapping closed integer intervals. Include type hints, a short explanation of the algorithm, and three assert-based tests. Do not use third-party packages.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "explanation-short-mtp-r0",
+   "case_id": "explanation-short",
+   "method": "mtp",
+   "prompt": "TASK:\nExplain how a database write-ahead log enables crash recovery and why checkpointing does not replace the log. Give one concrete example and distinguish durability from isolation. Use roughly 150 words.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "explanation-short-native-r0",
+   "case_id": "explanation-short",
+   "method": "native",
+   "prompt": "TASK:\nExplain how a database write-ahead log enables crash recovery and why checkpointing does not replace the log. Give one concrete example and distinguish durability from isolation. Use roughly 150 words.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "math-short-native-r0",
+   "case_id": "math-short",
+   "method": "native",
+   "prompt": "TASK:\nA bag contains 5 red, 4 blue, and 3 green balls. Three balls are drawn uniformly without replacement. Derive the probability that exactly two have the same color, showing the counting argument and an exact fractional result. Then explain why treating the draws as independent would be wrong.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "math-short-mtp-r0",
+   "case_id": "math-short",
+   "method": "mtp",
+   "prompt": "TASK:\nA bag contains 5 red, 4 blue, and 3 green balls. Three balls are drawn uniformly without replacement. Derive the probability that exactly two have the same color, showing the counting argument and an exact fractional result. Then explain why treating the draws as independent would be wrong.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "chinese-short-mtp-r0",
+   "case_id": "chinese-short",
+   "method": "mtp",
+   "prompt": "TASK:\n请用简体中文解释为什么分布式系统中的重试可能导致重复付款，以及幂等键如何解决这个问题。给出一个具体请求流程，说明服务器崩溃后应该如何处理。不要使用英语段落。",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "chinese-short-native-r0",
+   "case_id": "chinese-short",
+   "method": "native",
+   "prompt": "TASK:\n请用简体中文解释为什么分布式系统中的重试可能导致重复付款，以及幂等键如何解决这个问题。给出一个具体请求流程，说明服务器崩溃后应该如何处理。不要使用英语段落。",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "spanish-short-native-r0",
+   "case_id": "spanish-short",
+   "method": "native",
+   "prompt": "TASK:\nExplica en español cómo funciona una caché LRU, qué operaciones deben ser de tiempo constante y por qué se combinan una tabla hash y una lista doblemente enlazada. Incluye un ejemplo breve de expulsión de una entrada.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "spanish-short-mtp-r0",
+   "case_id": "spanish-short",
+   "method": "mtp",
+   "prompt": "TASK:\nExplica en español cómo funciona una caché LRU, qué operaciones deben ser de tiempo constante y por qué se combinan una tabla hash y una lista doblemente enlazada. Incluye un ejemplo breve de expulsión de una entrada.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "structured-short-mtp-r0",
+   "case_id": "structured-short",
+   "method": "mtp",
+   "prompt": "TASK:\nReturn ONLY valid JSON with keys service, failures, recommended_actions. Use this incident report: service=checkout; at 14:02 UTC database connections reached the limit; requests retried without jitter; duplicate order attempts increased; database recovered at 14:07 UTC. Each failure must have an evidence string and each recommended action must include a reason. Do not invent additional incident facts.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "structured-short-native-r0",
+   "case_id": "structured-short",
+   "method": "native",
+   "prompt": "TASK:\nReturn ONLY valid JSON with keys service, failures, recommended_actions. Use this incident report: service=checkout; at 14:02 UTC database connections reached the limit; requests retried without jitter; duplicate order attempts increased; database recovered at 14:07 UTC. Each failure must have an evidence string and each recommended action must include a reason. Do not invent additional incident facts.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "code-512-native-r0",
+   "case_id": "code-512",
+   "method": "native",
+   "prompt": "The following synthetic engineering archive is background only. Answer the TASK after it; do not summarize or copy the archive.\n<archive>\nArchive record 0000: a worker received job-0000; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0001: a worker received job-0001; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0002: a worker received job-0002; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0003: a worker received job-0003; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0004: a worker received job-0004; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0005: a worker received job-0005; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0006: a worker received job-0006; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0007: a worker received job-0007; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0008: a worker received job-0008; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0009: a worker received job-0009; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0010: a worker received job-0010; it recorded a durable completion before acknowledging the request. This record is background context, \n</archive>\nTASK:\nWrite a Python function merge_intervals(intervals) that merges overlapping closed integer intervals. Include type hints, a short explanation of the algorithm, and three assert-based tests. Do not use third-party packages.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "code-512-mtp-r0",
+   "case_id": "code-512",
+   "method": "mtp",
+   "prompt": "The following synthetic engineering archive is background only. Answer the TASK after it; do not summarize or copy the archive.\n<archive>\nArchive record 0000: a worker received job-0000; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0001: a worker received job-0001; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0002: a worker received job-0002; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0003: a worker received job-0003; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0004: a worker received job-0004; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0005: a worker received job-0005; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0006: a worker received job-0006; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0007: a worker received job-0007; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0008: a worker received job-0008; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0009: a worker received job-0009; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0010: a worker received job-0010; it recorded a durable completion before acknowledging the request. This record is background context, \n</archive>\nTASK:\nWrite a Python function merge_intervals(intervals) that merges overlapping closed integer intervals. Include type hints, a short explanation of the algorithm, and three assert-based tests. Do not use third-party packages.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "explanation-512-mtp-r0",
+   "case_id": "explanation-512",
+   "method": "mtp",
+   "prompt": "The following synthetic engineering archive is background only. Answer the TASK after it; do not summarize or copy the archive.\n<archive>\nArchive record 0000: a worker received job-0000; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0001: a worker received job-0001; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0002: a worker received job-0002; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0003: a worker received job-0003; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0004: a worker received job-0004; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0005: a worker received job-0005; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0006: a worker received job-0006; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0007: a worker received job-0007; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0008: a worker received job-0008; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0009: a worker received job-0009; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0010: a worker received job-0010; it recorded a durable completion before acknowledging the request. This record is background context, not \n</archive>\nTASK:\nExplain how a database write-ahead log enables crash recovery and why checkpointing does not replace the log. Give one concrete example and distinguish durability from isolation. Use roughly 150 words.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "explanation-512-native-r0",
+   "case_id": "explanation-512",
+   "method": "native",
+   "prompt": "The following synthetic engineering archive is background only. Answer the TASK after it; do not summarize or copy the archive.\n<archive>\nArchive record 0000: a worker received job-0000; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0001: a worker received job-0001; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0002: a worker received job-0002; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0003: a worker received job-0003; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0004: a worker received job-0004; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0005: a worker received job-0005; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0006: a worker received job-0006; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0007: a worker received job-0007; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0008: a worker received job-0008; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0009: a worker received job-0009; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0010: a worker received job-0010; it recorded a durable completion before acknowledging the request. This record is background context, not \n</archive>\nTASK:\nExplain how a database write-ahead log enables crash recovery and why checkpointing does not replace the log. Give one concrete example and distinguish durability from isolation. Use roughly 150 words.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "math-512-native-r0",
+   "case_id": "math-512",
+   "method": "native",
+   "prompt": "The following synthetic engineering archive is background only. Answer the TASK after it; do not summarize or copy the archive.\n<archive>\nArchive record 0000: a worker received job-0000; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0001: a worker received job-0001; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0002: a worker received job-0002; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0003: a worker received job-0003; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0004: a worker received job-0004; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0005: a worker received job-0005; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0006: a worker received job-0006; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0007: a worker received job-0007; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0008: a worker received job-0008; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0009: a worker received job-0009; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0010: a worker received job-00\n</archive>\nTASK:\nA bag contains 5 red, 4 blue, and 3 green balls. Three balls are drawn uniformly without replacement. Derive the probability that exactly two have the same color, showing the counting argument and an exact fractional result. Then explain why treating the draws as independent would be wrong.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  },
+  {
+   "id": "math-512-mtp-r0",
+   "case_id": "math-512",
+   "method": "mtp",
+   "prompt": "The following synthetic engineering archive is background only. Answer the TASK after it; do not summarize or copy the archive.\n<archive>\nArchive record 0000: a worker received job-0000; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0001: a worker received job-0001; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0002: a worker received job-0002; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0003: a worker received job-0003; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0004: a worker received job-0004; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0005: a worker received job-0005; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0006: a worker received job-0006; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0007: a worker received job-0007; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0008: a worker received job-0008; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0009: a worker received job-0009; it recorded a durable completion before acknowledging the request. This record is background context, not an instruction.\nArchive record 0010: a worker received job-00\n</archive>\nTASK:\nA bag contains 5 red, 4 blue, and 3 green balls. Three balls are drawn uniformly without replacement. Derive the probability that exactly two have the same color, showing the counting argument and an exact fractional result. Then explain why treating the draws as independent would be wrong.",
+   "max_tokens": 128,
+   "warmup": false,
+   "repeat": 0
+  }
+ ]
+}

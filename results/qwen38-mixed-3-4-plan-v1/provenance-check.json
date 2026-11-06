@@ -1,0 +1,83 @@
+[
+ {
+  "tensor": "language_model.model.layers.0.linear_attn.out_proj",
+  "bf16_shape": [
+   5120,
+   6144
+  ],
+  "q4": {
+   "exact": {
+    "weight": true,
+    "scales": true,
+    "biases": true
+   },
+   "packed_word_mismatches": 0,
+   "packed_words": 3932160,
+   "pub_weight_sha256": "f9bcd1253d359b405436c8c80d0f3a47c7ca9aa3fa0a697770dd5c9457943737"
+  },
+  "q3": {
+   "exact": {
+    "weight": true,
+    "scales": true,
+    "biases": true
+   },
+   "packed_word_mismatches": 0,
+   "packed_words": 2949120,
+   "pub_weight_sha256": "9a342abd0a134a19a3a7970712948d8addd5ebb4be3207e119cdec6a18a01b70"
+  }
+ },
+ {
+  "tensor": "language_model.model.layers.3.self_attn.o_proj",
+  "bf16_shape": [
+   5120,
+   6144
+  ],
+  "q4": {
+   "exact": {
+    "weight": true,
+    "scales": true,
+    "biases": true
+   },
+   "packed_word_mismatches": 0,
+   "packed_words": 3932160,
+   "pub_weight_sha256": "225664ce466cc6727ddadc91558fdd0a51363b74a9401f6794664298d2fa5686"
+  },
+  "q3": {
+   "exact": {
+    "weight": true,
+    "scales": true,
+    "biases": true
+   },
+   "packed_word_mismatches": 0,
+   "packed_words": 2949120,
+   "pub_weight_sha256": "4e72c72e6cfe75fa36f9067c0060bdad8f5d35879c41b19ced77d41fad3bfff4"
+  }
+ },
+ {
+  "tensor": "language_model.model.layers.63.mlp.down_proj",
+  "bf16_shape": [
+   5120,
+   17408
+  ],
+  "q4": {
+   "exact": {
+    "weight": true,
+    "scales": true,
+    "biases": true
+   },
+   "packed_word_mismatches": 0,
+   "packed_words": 11141120,
+   "pub_weight_sha256": "890cb9ce8f23c84800fc58a40ca117db98208151edea710ab2e70cfbb537fdd9"
+  },
+  "q3": {
+   "exact": {
+    "weight": true,
+    "scales": true,
+    "biases": true
+   },
+   "packed_word_mismatches": 0,
+   "packed_words": 8355840,
+   "pub_weight_sha256": "45fa3db6cb8610816373362439d9c425569ae95f78a023b3b7fe8f0516e021af"
+  }
+ }
+]

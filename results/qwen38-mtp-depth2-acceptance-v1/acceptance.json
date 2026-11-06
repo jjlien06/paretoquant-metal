@@ -1,0 +1,371 @@
+{
+ "per_case": {
+  "chinese-1536": {
+   "rounds": 146,
+   "a1": 110,
+   "alpha1": 0.7534246575342466,
+   "a2_given_a1_n": 109,
+   "a2": 75,
+   "p_a2_given_a1": 0.6880733944954128,
+   "a3_given_a2_n": 75,
+   "a3": 48,
+   "p_a3_given_a2": 0.64
+  },
+  "chinese-512": {
+   "rounds": 69,
+   "a1": 58,
+   "alpha1": 0.8405797101449275,
+   "a2_given_a1_n": 58,
+   "a2": 38,
+   "p_a2_given_a1": 0.6551724137931034,
+   "a3_given_a2_n": 38,
+   "a3": 24,
+   "p_a3_given_a2": 0.631578947368421
+  },
+  "chinese-short": {
+   "rounds": 73,
+   "a1": 54,
+   "alpha1": 0.7397260273972602,
+   "a2_given_a1_n": 54,
+   "a2": 30,
+   "p_a2_given_a1": 0.5555555555555556,
+   "a3_given_a2_n": 29,
+   "a3": 18,
+   "p_a3_given_a2": 0.6206896551724138
+  },
+  "code-1536": {
+   "rounds": 132,
+   "a1": 123,
+   "alpha1": 0.9318181818181818,
+   "a2_given_a1_n": 123,
+   "a2": 109,
+   "p_a2_given_a1": 0.8861788617886179,
+   "a3_given_a2_n": 108,
+   "a3": 94,
+   "p_a3_given_a2": 0.8703703703703703
+  },
+  "code-512": {
+   "rounds": 66,
+   "a1": 62,
+   "alpha1": 0.9393939393939394,
+   "a2_given_a1_n": 61,
+   "a2": 55,
+   "p_a2_given_a1": 0.9016393442622951,
+   "a3_given_a2_n": 55,
+   "a3": 48,
+   "p_a3_given_a2": 0.8727272727272727
+  },
+  "code-short": {
+   "rounds": 66,
+   "a1": 61,
+   "alpha1": 0.9242424242424242,
+   "a2_given_a1_n": 61,
+   "a2": 55,
+   "p_a2_given_a1": 0.9016393442622951,
+   "a3_given_a2_n": 54,
+   "a3": 44,
+   "p_a3_given_a2": 0.8148148148148148
+  },
+  "explanation-1536": {
+   "rounds": 122,
+   "a1": 92,
+   "alpha1": 0.7540983606557377,
+   "a2_given_a1_n": 91,
+   "a2": 62,
+   "p_a2_given_a1": 0.6813186813186813,
+   "a3_given_a2_n": 62,
+   "a3": 39,
+   "p_a3_given_a2": 0.6290322580645161
+  },
+  "explanation-512": {
+   "rounds": 70,
+   "a1": 57,
+   "alpha1": 0.8142857142857143,
+   "a2_given_a1_n": 57,
+   "a2": 32,
+   "p_a2_given_a1": 0.5614035087719298,
+   "a3_given_a2_n": 31,
+   "a3": 16,
+   "p_a3_given_a2": 0.5161290322580645
+  },
+  "explanation-short": {
+   "rounds": 71,
+   "a1": 56,
+   "alpha1": 0.7887323943661971,
+   "a2_given_a1_n": 56,
+   "a2": 36,
+   "p_a2_given_a1": 0.6428571428571429,
+   "a3_given_a2_n": 36,
+   "a3": 27,
+   "p_a3_given_a2": 0.75
+  },
+  "math-1536": {
+   "rounds": 134,
+   "a1": 121,
+   "alpha1": 0.9029850746268657,
+   "a2_given_a1_n": 121,
+   "a2": 107,
+   "p_a2_given_a1": 0.8842975206611571,
+   "a3_given_a2_n": 106,
+   "a3": 88,
+   "p_a3_given_a2": 0.8301886792452831
+  },
+  "math-512": {
+   "rounds": 68,
+   "a1": 60,
+   "alpha1": 0.8823529411764706,
+   "a2_given_a1_n": 59,
+   "a2": 48,
+   "p_a2_given_a1": 0.8135593220338984,
+   "a3_given_a2_n": 48,
+   "a3": 37,
+   "p_a3_given_a2": 0.7708333333333334
+  },
+  "math-short": {
+   "rounds": 67,
+   "a1": 61,
+   "alpha1": 0.9104477611940298,
+   "a2_given_a1_n": 60,
+   "a2": 54,
+   "p_a2_given_a1": 0.9,
+   "a3_given_a2_n": 54,
+   "a3": 50,
+   "p_a3_given_a2": 0.9259259259259259
+  },
+  "spanish-1536": {
+   "rounds": 143,
+   "a1": 113,
+   "alpha1": 0.7902097902097902,
+   "a2_given_a1_n": 112,
+   "a2": 83,
+   "p_a2_given_a1": 0.7410714285714286,
+   "a3_given_a2_n": 83,
+   "a3": 59,
+   "p_a3_given_a2": 0.7108433734939759
+  },
+  "spanish-512": {
+   "rounds": 72,
+   "a1": 55,
+   "alpha1": 0.7638888888888888,
+   "a2_given_a1_n": 55,
+   "a2": 38,
+   "p_a2_given_a1": 0.6909090909090909,
+   "a3_given_a2_n": 38,
+   "a3": 27,
+   "p_a3_given_a2": 0.7105263157894737
+  },
+  "spanish-short": {
+   "rounds": 73,
+   "a1": 55,
+   "alpha1": 0.7534246575342466,
+   "a2_given_a1_n": 54,
+   "a2": 38,
+   "p_a2_given_a1": 0.7037037037037037,
+   "a3_given_a2_n": 38,
+   "a3": 24,
+   "p_a3_given_a2": 0.631578947368421
+  },
+  "structured-1536": {
+   "rounds": 127,
+   "a1": 125,
+   "alpha1": 0.984251968503937,
+   "a2_given_a1_n": 125,
+   "a2": 117,
+   "p_a2_given_a1": 0.936,
+   "a3_given_a2_n": 116,
+   "a3": 106,
+   "p_a3_given_a2": 0.9137931034482759
+  },
+  "structured-512": {
+   "rounds": 64,
+   "a1": 64,
+   "alpha1": 1.0,
+   "a2_given_a1_n": 63,
+   "a2": 60,
+   "p_a2_given_a1": 0.9523809523809523,
+   "a3_given_a2_n": 60,
+   "a3": 60,
+   "p_a3_given_a2": 1.0
+  },
+  "structured-short": {
+   "rounds": 64,
+   "a1": 64,
+   "alpha1": 1.0,
+   "a2_given_a1_n": 63,
+   "a2": 61,
+   "p_a2_given_a1": 0.9682539682539683,
+   "a3_given_a2_n": 61,
+   "a3": 60,
+   "p_a3_given_a2": 0.9836065573770492
+  }
+ },
+ "pooled": {
+  "rounds": 1627,
+  "a1": 1391,
+  "alpha1": 0.8549477566072526,
+  "a2_given_a1_n": 1382,
+  "a2": 1098,
+  "p_a2_given_a1": 0.7945007235890015,
+  "a3_given_a2_n": 1092,
+  "a3": 869,
+  "p_a3_given_a2": 0.7957875457875457
+ },
+ "equal_case_mean": {
+  "alpha1": 0.8596590273318254,
+  "p_a2_given_a1": 0.7813341240899574,
+  "p_a3_given_a2": 0.7679243659309785
+ },
+ "parity": {
+  "chinese-1536": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 256,
+   "accepted_drafts": 110,
+   "verification_rounds": 146,
+   "equals_archived_broad_v1": true
+  },
+  "chinese-512": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 128,
+   "accepted_drafts": 58,
+   "verification_rounds": 69,
+   "equals_archived_broad_v1": true
+  },
+  "chinese-short": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 128,
+   "accepted_drafts": 54,
+   "verification_rounds": 73,
+   "equals_archived_broad_v1": true
+  },
+  "code-1536": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 256,
+   "accepted_drafts": 123,
+   "verification_rounds": 132,
+   "equals_archived_broad_v1": true
+  },
+  "code-512": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 128,
+   "accepted_drafts": 62,
+   "verification_rounds": 66,
+   "equals_archived_broad_v1": true
+  },
+  "code-short": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 128,
+   "accepted_drafts": 61,
+   "verification_rounds": 66,
+   "equals_archived_broad_v1": true
+  },
+  "explanation-1536": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 214,
+   "accepted_drafts": 92,
+   "verification_rounds": 122,
+   "equals_archived_broad_v1": true
+  },
+  "explanation-512": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 128,
+   "accepted_drafts": 57,
+   "verification_rounds": 70,
+   "equals_archived_broad_v1": true
+  },
+  "explanation-short": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 128,
+   "accepted_drafts": 56,
+   "verification_rounds": 71,
+   "equals_archived_broad_v1": true
+  },
+  "math-1536": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 256,
+   "accepted_drafts": 121,
+   "verification_rounds": 134,
+   "equals_archived_broad_v1": true
+  },
+  "math-512": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 128,
+   "accepted_drafts": 60,
+   "verification_rounds": 68,
+   "equals_archived_broad_v1": true
+  },
+  "math-short": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 128,
+   "accepted_drafts": 61,
+   "verification_rounds": 67,
+   "equals_archived_broad_v1": true
+  },
+  "spanish-1536": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 256,
+   "accepted_drafts": 113,
+   "verification_rounds": 143,
+   "equals_archived_broad_v1": true
+  },
+  "spanish-512": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 128,
+   "accepted_drafts": 55,
+   "verification_rounds": 72,
+   "equals_archived_broad_v1": true
+  },
+  "spanish-short": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 128,
+   "accepted_drafts": 55,
+   "verification_rounds": 73,
+   "equals_archived_broad_v1": true
+  },
+  "structured-1536": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 253,
+   "accepted_drafts": 125,
+   "verification_rounds": 127,
+   "equals_archived_broad_v1": true
+  },
+  "structured-512": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 128,
+   "accepted_drafts": 64,
+   "verification_rounds": 64,
+   "equals_archived_broad_v1": true
+  },
+  "structured-short": {
+   "token_ids_equal": true,
+   "finish_equal": true,
+   "tokens": 128,
+   "accepted_drafts": 64,
+   "verification_rounds": 64,
+   "equals_archived_broad_v1": true
+  }
+ },
+ "requests": 36,
+ "definitions": {
+  "alpha1": "P(d1 == emitted token) over depth-1 rounds",
+  "p_a2_given_a1": "P(chained d2 == emitted token at pos+1 | d1 accepted, pos+1 emitted); chain = head(norm(h1), d1) per upstream mlx-vlm",
+  "p_a3_given_a2": "P(d3 == token at pos+2 | d1,d2 correct)",
+  "caveat": "rounds start at depth-1 round boundaries; a depth-2 runtime would start rounds at different positions"
+ }
+}

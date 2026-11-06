@@ -1,0 +1,46 @@
+{
+ "tag": "smoke-gpu",
+ "hostfile": [
+  [
+   "169.254.201.199:58909"
+  ],
+  [
+   "169.254.130.250:49584"
+  ]
+ ],
+ "bench_sha256": "0a2de54f924a88287636d0c7c964bcdeede2af80ad68f916e7118c3f7ff919c3",
+ "remote_bench_sha256": "0a2de54f924a88287636d0c7c964bcdeede2af80ad68f916e7118c3f7ff919c3",
+ "returncodes": {
+  "rank0": 0,
+  "rank1": 0
+ },
+ "wall_s": 1.317770004272461,
+ "logs": {
+  "rank0": "{\"rank\": 0, \"done\": true, \"output\": \"results/tp-allreduce-screen-v1/smoke/smoke-gpu.rank0.json\"}\n",
+  "rank1": "{\"rank\": 1, \"done\": true, \"output\": \"/Users/jeremylien/Projects/paretoquant-dual-host/spikes/028-tp-allreduce-screen/smoke-gpu.rank1.json\"}\n"
+ },
+ "cleanup": {
+  "remote_bench_pids_after": [],
+  "local_bench_pids_after": [],
+  "local_port_closed_local_probe": true,
+  "remote_port_closed_local_probe": true,
+  "remote_port_closed_remote_probe": "True"
+ },
+ "rank1_fetch": {
+  "remote_sha256": "bb7337ded8bd4e95d977099051091b4c57deb518832189fb066371cf29287c2a",
+  "local_sha256": "bb7337ded8bd4e95d977099051091b4c57deb518832189fb066371cf29287c2a",
+  "match": true
+ },
+ "bench_args": [
+  "--warmup",
+  "20",
+  "--percall",
+  "50",
+  "--tokens",
+  "2",
+  "--multipliers",
+  "1",
+  "--deadline",
+  "100"
+ ]
+}

@@ -1,0 +1,155 @@
+{
+  "schema": "paretoquant-large-raw-evidence-manifest-v1",
+  "description": "Raw rank receipts/stdout/stderr over 50 MB are kept out of git history (GitHub per-file limits/repo size) and published byte-for-byte as a GitHub Release asset tarball. Verify with sha256 after extraction at the repository root.",
+  "release_tag": "evidence-raw-2026-11-05",
+  "asset": "large-raw-evidence-2026-11-05.tar.gz",
+  "file_count": 29,
+  "total_bytes": 1699271368,
+  "files": [
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-bench-a/actors/6edf6c2c0bc98911570433b3fca74048/stderr",
+      "bytes": 53136775,
+      "sha256": "03929cb872c8255bfc9c5771fcca447690f72e0e0dc7d2447c300692c0a51cde"
+    },
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-bench-a/control7.stdout",
+      "bytes": 73265759,
+      "sha256": "f3eed65bfae65e42805795bb4f794f2178c257a14e522abad4c07335f04792ab"
+    },
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-bench-a/rank0.receipt.json",
+      "bytes": 58706667,
+      "sha256": "c011753901cb9d42e803daf7e231e921194a760cb8b95d611533f2102ed63ce2"
+    },
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-bench-a/rank0.stderr",
+      "bytes": 53136775,
+      "sha256": "03929cb872c8255bfc9c5771fcca447690f72e0e0dc7d2447c300692c0a51cde"
+    },
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-bench-a/rank1.receipt.json",
+      "bytes": 73265758,
+      "sha256": "71d32d5753e155b7f788d6524ffca953822a21ef6b955a1ac96ba08a7b3a1a87"
+    },
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-bench-a/rank1.stderr",
+      "bytes": 67110876,
+      "sha256": "d4cbae3687d8caf490302170cb395e1ac72e522db88d1b705e9674dc95ab707e"
+    },
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-bench-b/control5.stdout",
+      "bytes": 58814828,
+      "sha256": "a6c68604a5bef5163f19b6633f72d911968b56cff56558434218d4064e691f53"
+    },
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-bench-b/control9.stdout",
+      "bytes": 58814828,
+      "sha256": "a6c68604a5bef5163f19b6633f72d911968b56cff56558434218d4064e691f53"
+    },
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-bench-b/rank1.receipt.json",
+      "bytes": 58814827,
+      "sha256": "b7f54fce1e98bc5369253d039c7ef3545fcbaa95bef569d9ae1d4d6b8554c4de"
+    },
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-bench-b/rank1.stderr",
+      "bytes": 53198745,
+      "sha256": "41ef46b0b577237cf721e25b4a8fb97d21e8ae888679e4b31a6239e4c0d159d9"
+    },
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-cal/control5.stdout",
+      "bytes": 57662337,
+      "sha256": "0accb59a66706816099c322c1cab28c2e25976e2fb0f69884c084bfd8382a662"
+    },
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-cal/control9.stdout",
+      "bytes": 57662337,
+      "sha256": "0accb59a66706816099c322c1cab28c2e25976e2fb0f69884c084bfd8382a662"
+    },
+    {
+      "path": "results/qwen38-adaptive-mtp-v1/run-cal/rank1.receipt.json",
+      "bytes": 57662336,
+      "sha256": "ca457ca84cad662201973bc174333d30ca646ac2e0f7eb18cc03f02084966e15"
+    },
+    {
+      "path": "results/qwen38-mtp-depth2-acceptance-v1/part-a/control5.stdout",
+      "bytes": 59004932,
+      "sha256": "370120b0ee309f2cf0fed5a67cd187afdc9ae28c535b993f7d22c91680df13ab"
+    },
+    {
+      "path": "results/qwen38-mtp-depth2-acceptance-v1/part-a/control9.stdout",
+      "bytes": 59004932,
+      "sha256": "370120b0ee309f2cf0fed5a67cd187afdc9ae28c535b993f7d22c91680df13ab"
+    },
+    {
+      "path": "results/qwen38-mtp-depth2-acceptance-v1/part-a/rank1.receipt.json",
+      "bytes": 59004931,
+      "sha256": "a12391e87ccc5455a377d14f0a69f9b2ac00ff47937c96fdd26450e23d354bec"
+    },
+    {
+      "path": "results/qwen38-mtp-depth2-acceptance-v1/part-a/rank1.stderr",
+      "bytes": 53568909,
+      "sha256": "223f39de212199ba8cd96f0776ae6e8098193355973cdc8e9f34d35fa0c6771b"
+    },
+    {
+      "path": "results/qwen38-mtp-depth2-acceptance-v1/part-b/control5.stdout",
+      "bytes": 59350879,
+      "sha256": "b09690f0de3ee184cb6ab0d7d133ec789e66bbd8ed0da945d078406846ad246f"
+    },
+    {
+      "path": "results/qwen38-mtp-depth2-acceptance-v1/part-b/control9.stdout",
+      "bytes": 59350879,
+      "sha256": "b09690f0de3ee184cb6ab0d7d133ec789e66bbd8ed0da945d078406846ad246f"
+    },
+    {
+      "path": "results/qwen38-mtp-depth2-acceptance-v1/part-b/rank1.receipt.json",
+      "bytes": 59350878,
+      "sha256": "e3e06310f53bb2294807989c8e814cdad9c15e912c20461051e23a57f3c40c06"
+    },
+    {
+      "path": "results/qwen38-mtp-depth2-acceptance-v1/part-b/rank1.stderr",
+      "bytes": 53852070,
+      "sha256": "2f2c8b000ecb09e9aa52d6d5e94020f40b1a1d5109e6273ec74658d7f60b0949"
+    },
+    {
+      "path": "results/qwen38-width3-kernel-v1/run-s1d/control5.stdout",
+      "bytes": 58329981,
+      "sha256": "dab9b717169d9544cc432730d83b9621d2377558ffb1b0814628a478a3065b0c"
+    },
+    {
+      "path": "results/qwen38-width3-kernel-v1/run-s1d/control9.stdout",
+      "bytes": 58329981,
+      "sha256": "dab9b717169d9544cc432730d83b9621d2377558ffb1b0814628a478a3065b0c"
+    },
+    {
+      "path": "results/qwen38-width3-kernel-v1/run-s1d/rank1.receipt.json",
+      "bytes": 58329980,
+      "sha256": "4044bd596a47818e21b8ae7812753938bb3e03874424557971ef32609261bd7d"
+    },
+    {
+      "path": "results/qwen38-width3-kernel-v1/run-s1d/rank1.stderr",
+      "bytes": 52771696,
+      "sha256": "f4c4ed65479afb47d478df6bfefde6e1d83bb2cd00eefc8a08fe3f204d9a6d1d"
+    },
+    {
+      "path": "results/qwen38-width3-kernel-v1/run-s2d/control5.stdout",
+      "bytes": 58331685,
+      "sha256": "f1f87d65b68df99e6ae380cd4d3b509abd929c30ca227fcceadf27a150dc24c8"
+    },
+    {
+      "path": "results/qwen38-width3-kernel-v1/run-s2d/control9.stdout",
+      "bytes": 58331685,
+      "sha256": "f1f87d65b68df99e6ae380cd4d3b509abd929c30ca227fcceadf27a150dc24c8"
+    },
+    {
+      "path": "results/qwen38-width3-kernel-v1/run-s2d/rank1.receipt.json",
+      "bytes": 58331684,
+      "sha256": "3a0de193c668be7973fc0f16a23cbba51f43927a63317d6012ec14fc2a1f71ab"
+    },
+    {
+      "path": "results/qwen38-width3-kernel-v1/run-s2d/rank1.stderr",
+      "bytes": 52773418,
+      "sha256": "21c3a067e00d06923229d78929f467bfade119dbbcb5891dab170bc9ab06a8fd"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+ "label": "MODELLED (not measured): 030 run-cal rounds re-costed with 031 M4 width-3 saving",
+ "source_rounds": "results/qwen38-adaptive-mtp-v1/analysis-cal.rounds.json",
+ "m4_saving_ms_per_w3_round": 33.13350000000001,
+ "costs_030": [
+  177.7186393737793,
+  251.5164613723755,
+  188.1505250930786
+ ],
+ "scenarios": {
+  "full_saving": {
+   "P3": 218.38296137237546,
+   "grid": [
+    {
+     "tau": 0,
+     "gmean": 1.1245837933045564,
+     "per_case": {
+      "code-short": 1.183699668988153,
+      "code-512": 1.192302137512776,
+      "structured-short": 1.201764852889862,
+      "math-short": 1.1521121778213341,
+      "explanation-short": 1.033517773485281,
+      "chinese-short": 1.0015920276053603
+     }
+    },
+    {
+     "tau": 0.5,
+     "gmean": 1.1421510930214167,
+     "per_case": {
+      "code-short": 1.1817229045889779,
+      "code-512": 1.1977074815557238,
+      "structured-short": 1.201764852889862,
+      "math-short": 1.1554446174601016,
+      "explanation-short": 1.077782429977071,
+      "chinese-short": 1.0480336110938386
+     }
+    },
+    {
+     "tau": 0.7,
+     "gmean": 1.1301168230485448,
+     "per_case": {
+      "code-short": 1.1682734675648745,
+      "code-512": 1.1872167777106968,
+      "structured-short": 1.197060801255977,
+      "math-short": 1.146298718550432,
+      "explanation-short": 1.054483461102843,
+      "chinese-short": 1.0380343171569661
+     }
+    },
+    {
+     "tau": 0.8,
+     "gmean": 1.1266149174196873,
+     "per_case": {
+      "code-short": 1.1712607784078368,
+      "code-512": 1.184056728494677,
+      "structured-short": 1.1856338684190548,
+      "math-short": 1.140989389980838,
+      "explanation-short": 1.042494071329665,
+      "chinese-short": 1.0454928747771353
+     }
+    },
+    {
+     "tau": 0.9,
+     "gmean": 1.1143918026156447,
+     "per_case": {
+      "code-short": 1.159000553150757,
+      "code-512": 1.1461375288857556,
+      "structured-short": 1.1908871009895008,
+      "math-short": 1.126729383820704,
+      "explanation-short": 1.0245857184839122,
+      "chinese-short": 1.0487417721944048
+     }
+    },
+    {
+     "tau": 0.95,
+     "gmean": 1.105064674131556,
+     "per_case": {
+      "code-short": 1.133739743536309,
+      "code-512": 1.13462576010537,
+      "structured-short": 1.180643351065806,
+      "math-short": 1.1302221904748886,
+      "explanation-short": 1.0097378467265714,
+      "chinese-short": 1.0506763937892665
+     }
+    }
+   ]
+  },
+  "75pct_saving": {
+   "P3": 226.66633637237547,
+   "grid": [
+    {
+     "tau": 0,
+     "gmean": 1.0834866042470677,
+     "per_case": {
+      "code-short": 1.1404421283999637,
+      "code-512": 1.148730225263334,
+      "structured-short": 1.1578471318130428,
+      "math-short": 1.110008981715132,
+      "explanation-short": 0.9957485333592175,
+      "chinese-short": 0.9649894932615073
+     }
+    },
+    {
+     "tau": 0.5,
+     "gmean": 1.1060490212335785,
+     "per_case": {
+      "code-short": 1.1401429329042323,
+      "code-512": 1.1562592928278013,
+      "structured-short": 1.1578471318130428,
+      "math-short": 1.1139524416910873,
+      "explanation-short": 1.0532028582386763,
+      "chinese-short": 1.0223552130912514
+     }
+    },
+    {
+     "tau": 0.7,
+     "gmean": 1.100740413133556,
+     "per_case": {
+      "code-short": 1.1304144248877017,
+      "code-512": 1.1477446565136078,
+      "structured-short": 1.1557893981865055,
+      "math-short": 1.1117118393876846,
+      "explanation-short": 1.041652357219566,
+      "chinese-short": 1.0243131814480257
+     }
+    },
+    {
+     "tau": 0.8,
+     "gmean": 1.0999185268217935,
+     "per_case": {
+      "code-short": 1.1348172316686609,
+      "code-512": 1.1480317427482871,
+      "structured-short": 1.1464865180359525,
+      "math-short": 1.1097248540248288,
+      "explanation-short": 1.0328060087965574,
+      "chinese-short": 1.0343803572347077
+     }
+    },
+    {
+     "tau": 0.9,
+     "gmean": 1.0921062895359945,
+     "per_case": {
+      "code-short": 1.1279595044313848,
+      "code-512": 1.1188444796841255,
+      "structured-short": 1.1524034649800243,
+      "math-short": 1.0997254420370215,
+      "explanation-short": 1.0189013657307293,
+      "chinese-short": 1.0411306830498326
+     }
+    },
+    {
+     "tau": 0.95,
+     "gmean": 1.0847783096656478,
+     "per_case": {
+      "code-short": 1.1076347880530997,
+      "code-512": 1.109373074545368,
+      "structured-short": 1.1442171247131028,
+      "math-short": 1.1039677055435775,
+      "explanation-short": 1.0064845123706916,
+      "chinese-short": 1.0430373005511087
+     }
+    }
+   ]
+  }
+ }
+}

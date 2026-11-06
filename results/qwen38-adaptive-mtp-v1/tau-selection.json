@@ -1,0 +1,765 @@
+{
+ "label": "MODELLED (not measured)",
+ "costs_ms": [
+  177.7186393737793,
+  251.5164613723755,
+  188.1505250930786
+ ],
+ "n_rounds": 343,
+ "P(d2 accepted | d1 accepted) by p2 bucket": {
+  "p2>=0.99": {
+   "n": 164,
+   "rate": 1.0
+  },
+  "0.8-0.95": {
+   "n": 37,
+   "rate": 0.6756756756756757
+  },
+  "0.95-0.99": {
+   "n": 32,
+   "rate": 0.96875
+  },
+  "<0.5": {
+   "n": 26,
+   "rate": 0.23076923076923078
+  },
+  "0.5-0.8": {
+   "n": 39,
+   "rate": 0.5897435897435898
+  }
+ },
+ "chosen": {
+  "tau": 0.9,
+  "rule": "single tau for both p1 prefilter and p2 gate"
+ },
+ "grid": [
+  {
+   "tau_p1": 0.99,
+   "tau_p2": 0.8,
+   "modelled_vs_depth1_gmean": 1.0322882654145795,
+   "per_case": {
+    "code-short": 1.0366981699283384,
+    "code-512": 1.045430996289054,
+    "structured-short": 1.049414797379536,
+    "math-short": 1.03971185205229,
+    "explanation-short": 1.0097814116608204,
+    "chinese-short": 1.01337617236994
+   }
+  },
+  {
+   "tau_p1": 0.99,
+   "tau_p2": 0.5,
+   "modelled_vs_depth1_gmean": 1.031600116044342,
+   "per_case": {
+    "code-short": 1.0352195962483315,
+    "code-512": 1.0534045019901574,
+    "structured-short": 1.0451597653989264,
+    "math-short": 1.0481869693344075,
+    "explanation-short": 1.0010917159474524,
+    "chinese-short": 1.0077326569376999
+   }
+  },
+  {
+   "tau_p1": 0.9,
+   "tau_p2": 0.9,
+   "modelled_vs_depth1_gmean": 1.0308592470220825,
+   "per_case": {
+    "code-short": 1.0440707178445758,
+    "code-512": 1.0442444892664282,
+    "structured-short": 1.0505569095490344,
+    "math-short": 1.0259590053469085,
+    "explanation-short": 1.0022205501366104,
+    "chinese-short": 1.0189461281279706
+   }
+  },
+  {
+   "tau_p1": 0.99,
+   "tau_p2": 0.9,
+   "modelled_vs_depth1_gmean": 1.0305749284652646,
+   "per_case": {
+    "code-short": 1.0382330784744889,
+    "code-512": 1.0399425353808638,
+    "structured-short": 1.049414797379536,
+    "math-short": 1.0368176552711044,
+    "explanation-short": 1.0063590989677833,
+    "chinese-short": 1.01337617236994
+   }
+  },
+  {
+   "tau_p1": 0.8,
+   "tau_p2": 0.9,
+   "modelled_vs_depth1_gmean": 1.03015994735792,
+   "per_case": {
+    "code-short": 1.0394019913444683,
+    "code-512": 1.0533420405229554,
+    "structured-short": 1.0495045633418758,
+    "math-short": 1.0226393188192233,
+    "explanation-short": 1.0073525311353246,
+    "chinese-short": 1.009686851167069
+   }
+  },
+  {
+   "tau_p1": 0.95,
+   "tau_p2": 0.8,
+   "modelled_vs_depth1_gmean": 1.030094305595061,
+   "per_case": {
+    "code-short": 1.0370451967006784,
+    "code-512": 1.0505847696669555,
+    "structured-short": 1.0430616823446541,
+    "math-short": 1.0288124654209962,
+    "explanation-short": 0.9977519482182722,
+    "chinese-short": 1.024151816762012
+   }
+  },
+  {
+   "tau_p1": 0.95,
+   "tau_p2": 0.9,
+   "modelled_vs_depth1_gmean": 1.0299345681845877,
+   "per_case": {
+    "code-short": 1.0385738132386337,
+    "code-512": 1.045328147092599,
+    "structured-short": 1.0494600463345805,
+    "math-short": 1.0259590053469085,
+    "explanation-short": 1.000329342788219,
+    "chinese-short": 1.0207722871113871
+   }
+  },
+  {
+   "tau_p1": 0.99,
+   "tau_p2": 0,
+   "modelled_vs_depth1_gmean": 1.0297923074429178,
+   "per_case": {
+    "code-short": 1.0352195962483315,
+    "code-512": 1.0534045019901574,
+    "structured-short": 1.0451597653989264,
+    "math-short": 1.0419624690755462,
+    "explanation-short": 0.9985510489750261,
+    "chinese-short": 1.0056924141017707
+   }
+  },
+  {
+   "tau_p1": 0.9,
+   "tau_p2": 0.95,
+   "modelled_vs_depth1_gmean": 1.0296516216708755,
+   "per_case": {
+    "code-short": 1.0416694567467575,
+    "code-512": 1.0388454717290456,
+    "structured-short": 1.0484012962337093,
+    "math-short": 1.0320459992687179,
+    "explanation-short": 0.9988105902775465,
+    "chinese-short": 1.0189461281279706
+   }
+  },
+  {
+   "tau_p1": 0.99,
+   "tau_p2": 0.95,
+   "modelled_vs_depth1_gmean": 1.0293259162570938,
+   "per_case": {
+    "code-short": 1.0357026235661682,
+    "code-512": 1.0343094685424636,
+    "structured-short": 1.0472186218810804,
+    "math-short": 1.0432021196466008,
+    "explanation-short": 1.0028947613875017,
+    "chinese-short": 1.01337617236994
+   }
+  },
+  {
+   "tau_p1": 0.9,
+   "tau_p2": 0.5,
+   "modelled_vs_depth1_gmean": 1.0290886908132488,
+   "per_case": {
+    "code-short": 1.0432638617809318,
+    "code-512": 1.0444134184143823,
+    "structured-short": 1.0400933274080981,
+    "math-short": 1.0339756681207917,
+    "explanation-short": 0.9988515190743799,
+    "chinese-short": 1.0147677647272821
+   }
+  },
+  {
+   "tau_p1": 0.9,
+   "tau_p2": 0.8,
+   "modelled_vs_depth1_gmean": 1.0290373835004119,
+   "per_case": {
+    "code-short": 1.0424858153363323,
+    "code-512": 1.0430229964828928,
+    "structured-short": 1.0441970167913965,
+    "math-short": 1.0288124654209962,
+    "explanation-short": 0.9996637467517747,
+    "chinese-short": 1.0168344877067816
+   }
+  },
+  {
+   "tau_p1": 0.8,
+   "tau_p2": 0.95,
+   "modelled_vs_depth1_gmean": 1.0290096928583616,
+   "per_case": {
+    "code-short": 1.0370231515623842,
+    "code-512": 1.0482844410778978,
+    "structured-short": 1.0473446802246407,
+    "math-short": 1.028532231844727,
+    "explanation-short": 1.0040491298769665,
+    "chinese-short": 1.009686851167069
+   }
+  },
+  {
+   "tau_p1": 0.98,
+   "tau_p2": 0.8,
+   "modelled_vs_depth1_gmean": 1.0290060701395924,
+   "per_case": {
+    "code-short": 1.0366981699283384,
+    "code-512": 1.045430996289054,
+    "structured-short": 1.04191010964681,
+    "math-short": 1.0323980858006296,
+    "explanation-short": 1.000713980280005,
+    "chinese-short": 1.0175892399408488
+   }
+  },
+  {
+   "tau_p1": 0.98,
+   "tau_p2": 0.5,
+   "modelled_vs_depth1_gmean": 1.028982900927022,
+   "per_case": {
+    "code-short": 1.0352195962483315,
+    "code-512": 1.0534045019901574,
+    "structured-short": 1.037776183231272,
+    "math-short": 1.0409448144675477,
+    "explanation-short": 0.99565624601428,
+    "chinese-short": 1.0119998896329732
+   }
+  },
+  {
+   "tau_p1": 0.98,
+   "tau_p2": 0.9,
+   "modelled_vs_depth1_gmean": 1.0287882971311042,
+   "per_case": {
+    "code-short": 1.0382330784744889,
+    "code-512": 1.0399425353808638,
+    "structured-short": 1.048347398182159,
+    "math-short": 1.0294799277785718,
+    "explanation-short": 1.0033351616840502,
+    "chinese-short": 1.01410459648673
+   }
+  },
+  {
+   "tau_p1": 0.95,
+   "tau_p2": 0.95,
+   "modelled_vs_depth1_gmean": 1.0286935001088993,
+   "per_case": {
+    "code-short": 1.0360668324620939,
+    "code-512": 1.039937291370498,
+    "structured-short": 1.047282168162042,
+    "math-short": 1.0320459992687179,
+    "explanation-short": 0.9968490904517029,
+    "chinese-short": 1.0207722871113871
+   }
+  },
+  {
+   "tau_p1": 0.95,
+   "tau_p2": 0.5,
+   "modelled_vs_depth1_gmean": 1.0284280672468893,
+   "per_case": {
+    "code-short": 1.0379763557431074,
+    "code-512": 1.0518013122578576,
+    "structured-short": 1.0389428826925213,
+    "math-short": 1.0339756681207917,
+    "explanation-short": 0.99037761475287,
+    "chinese-short": 1.018637236927235
+   }
+  },
+  {
+   "tau_p1": 0.98,
+   "tau_p2": 0.95,
+   "modelled_vs_depth1_gmean": 1.0275297436654274,
+   "per_case": {
+    "code-short": 1.0357026235661682,
+    "code-512": 1.0343094685424636,
+    "structured-short": 1.0461468346161222,
+    "math-short": 1.0357740698434708,
+    "explanation-short": 0.9998627872149052,
+    "chinese-short": 1.01410459648673
+   }
+  },
+  {
+   "tau_p1": 0.8,
+   "tau_p2": 0.8,
+   "modelled_vs_depth1_gmean": 1.027452054552243,
+   "per_case": {
+    "code-short": 1.037932079493108,
+    "code-512": 1.0520094232923052,
+    "structured-short": 1.043157367162094,
+    "math-short": 1.025430611246025,
+    "explanation-short": 1.004792909794946,
+    "chinese-short": 1.0024163815069316
+   }
+  },
+  {
+   "tau_p1": 0.99,
+   "tau_p2": 0.97,
+   "modelled_vs_depth1_gmean": 1.0261581018447943,
+   "per_case": {
+    "code-short": 1.030543428983556,
+    "code-512": 1.0343094685424636,
+    "structured-short": 1.0472186218810804,
+    "math-short": 1.040293683899218,
+    "explanation-short": 1.0028947613875017,
+    "chinese-short": 1.002582663545193
+   }
+  },
+  {
+   "tau_p1": 0.7,
+   "tau_p2": 0.9,
+   "modelled_vs_depth1_gmean": 1.0257577770229898,
+   "per_case": {
+    "code-short": 1.0315662437772322,
+    "code-512": 1.0459943929809026,
+    "structured-short": 1.0495045633418758,
+    "math-short": 1.0226393188192233,
+    "explanation-short": 1.0067743900469555,
+    "chinese-short": 0.9990873357427044
+   }
+  },
+  {
+   "tau_p1": 0.9,
+   "tau_p2": 0,
+   "modelled_vs_depth1_gmean": 1.0256912319448186,
+   "per_case": {
+    "code-short": 1.0432638617809318,
+    "code-512": 1.0444134184143823,
+    "structured-short": 1.0400933274080981,
+    "math-short": 1.028119087301259,
+    "explanation-short": 0.9887078595300126,
+    "chinese-short": 1.0107634577687024
+   }
+  },
+  {
+   "tau_p1": 0.9,
+   "tau_p2": 0.97,
+   "modelled_vs_depth1_gmean": 1.025677841291079,
+   "per_case": {
+    "code-short": 1.0367771480397587,
+    "code-512": 1.0360939847552433,
+    "structured-short": 1.0484012962337093,
+    "math-short": 1.0262751119461526,
+    "explanation-short": 0.9988105902775465,
+    "chinese-short": 1.0085717177268463
+   }
+  },
+  {
+   "tau_p1": 0.7,
+   "tau_p2": 0.95,
+   "modelled_vs_depth1_gmean": 1.0255025905827497,
+   "per_case": {
+    "code-short": 1.029178439533335,
+    "code-512": 1.0408834161006693,
+    "structured-short": 1.0473446802246407,
+    "math-short": 1.028532231844727,
+    "explanation-short": 1.003499453650533,
+    "chinese-short": 1.004391721730652
+   }
+  },
+  {
+   "tau_p1": 0.98,
+   "tau_p2": 0,
+   "modelled_vs_depth1_gmean": 1.0252836198219897,
+   "per_case": {
+    "code-short": 1.0352195962483315,
+    "code-512": 1.0534045019901574,
+    "structured-short": 1.037776183231272,
+    "math-short": 1.0348057780761517,
+    "explanation-short": 0.9874863547123053,
+    "chinese-short": 1.0044835109858978
+   }
+  },
+  {
+   "tau_p1": 0.8,
+   "tau_p2": 0.5,
+   "modelled_vs_depth1_gmean": 1.0250475391722065,
+   "per_case": {
+    "code-short": 1.0387992076881214,
+    "code-512": 1.0531355902639512,
+    "structured-short": 1.0412278547257066,
+    "math-short": 1.0192534852663684,
+    "explanation-short": 1.0037717177646117,
+    "chinese-short": 0.9953715120273837
+   }
+  },
+  {
+   "tau_p1": 0.95,
+   "tau_p2": 0.97,
+   "modelled_vs_depth1_gmean": 1.024689141862921,
+   "per_case": {
+    "code-short": 1.03095632863249,
+    "code-512": 1.0371899089843264,
+    "structured-short": 1.047282168162042,
+    "math-short": 1.0262751119461526,
+    "explanation-short": 0.9968490904517029,
+    "chinese-short": 1.0104092902086699
+   }
+  },
+  {
+   "tau_p1": 0.8,
+   "tau_p2": 0.97,
+   "modelled_vs_depth1_gmean": 1.0246747059458352,
+   "per_case": {
+    "code-short": 1.0297114584135143,
+    "code-512": 1.045709040125621,
+    "structured-short": 1.0473446802246407,
+    "math-short": 1.0228881762630793,
+    "explanation-short": 1.0040491298769665,
+    "chinese-short": 0.9993484264335968
+   }
+  },
+  {
+   "tau_p1": 0.95,
+   "tau_p2": 0,
+   "modelled_vs_depth1_gmean": 1.0244092928149373,
+   "per_case": {
+    "code-short": 1.0379763557431074,
+    "code-512": 1.0518013122578576,
+    "structured-short": 1.0389428826925213,
+    "math-short": 1.028119087301259,
+    "explanation-short": 0.9768588324400246,
+    "chinese-short": 1.014502182905191
+   }
+  },
+  {
+   "tau_p1": 0.98,
+   "tau_p2": 0.97,
+   "modelled_vs_depth1_gmean": 1.0243788411853143,
+   "per_case": {
+    "code-short": 1.030543428983556,
+    "code-512": 1.0343094685424636,
+    "structured-short": 1.0461468346161222,
+    "math-short": 1.0328407770537495,
+    "explanation-short": 0.9998627872149052,
+    "chinese-short": 1.0034144972873464
+   }
+  },
+  {
+   "tau_p1": 0.7,
+   "tau_p2": 0.8,
+   "modelled_vs_depth1_gmean": 1.0228401353764642,
+   "per_case": {
+    "code-short": 1.0302551517982967,
+    "code-512": 1.044800603369504,
+    "structured-short": 1.043157367162094,
+    "math-short": 1.025430611246025,
+    "explanation-short": 1.0042456053950948,
+    "chinese-short": 0.9903126102167973
+   }
+  },
+  {
+   "tau_p1": 0.99,
+   "tau_p2": 0.99,
+   "modelled_vs_depth1_gmean": 1.0224471862204398,
+   "per_case": {
+    "code-short": 1.0279134085335486,
+    "code-512": 1.0285260045260893,
+    "structured-short": 1.0472186218810804,
+    "math-short": 1.037348982681381,
+    "explanation-short": 0.9958368767590903,
+    "chinese-short": 0.9989023859470676
+   }
+  },
+  {
+   "tau_p1": 0.5,
+   "tau_p2": 0.95,
+   "modelled_vs_depth1_gmean": 1.021269778147829,
+   "per_case": {
+    "code-short": 1.029178439533335,
+    "code-512": 1.042420232654167,
+    "structured-short": 1.0495483660189275,
+    "math-short": 1.0252148054410284,
+    "explanation-short": 0.9939694783386331,
+    "chinese-short": 0.9888239914682775
+   }
+  },
+  {
+   "tau_p1": 0.7,
+   "tau_p2": 0.97,
+   "modelled_vs_depth1_gmean": 1.021147143333398,
+   "per_case": {
+    "code-short": 1.0218420153901524,
+    "code-512": 1.0382811691167124,
+    "structured-short": 1.0473446802246407,
+    "math-short": 1.0228881762630793,
+    "explanation-short": 1.003499453650533,
+    "chinese-short": 0.9940226883621711
+   }
+  },
+  {
+   "tau_p1": 0.5,
+   "tau_p2": 0.9,
+   "modelled_vs_depth1_gmean": 1.0206941896430333,
+   "per_case": {
+    "code-short": 1.0315662437772322,
+    "code-512": 1.0474775225672512,
+    "structured-short": 1.0516648445668801,
+    "math-short": 1.0195040952682146,
+    "explanation-short": 0.997209435032521,
+    "chinese-short": 0.9787669828892196
+   }
+  },
+  {
+   "tau_p1": 0.98,
+   "tau_p2": 0.99,
+   "modelled_vs_depth1_gmean": 1.0206670053404836,
+   "per_case": {
+    "code-short": 1.0279134085335486,
+    "code-512": 1.0285260045260893,
+    "structured-short": 1.0461468346161222,
+    "math-short": 1.0298711725062286,
+    "explanation-short": 0.9927889254447708,
+    "chinese-short": 0.9997701722388256
+   }
+  },
+  {
+   "tau_p1": 0.9,
+   "tau_p2": 0.99,
+   "modelled_vs_depth1_gmean": 1.0206172673728129,
+   "per_case": {
+    "code-short": 1.0292056656881676,
+    "code-512": 1.030483674936305,
+    "structured-short": 1.0484012962337093,
+    "math-short": 1.0233373797690142,
+    "explanation-short": 0.991866432339522,
+    "chinese-short": 1.001462302155363
+   }
+  },
+  {
+   "tau_p1": 0.95,
+   "tau_p2": 0.99,
+   "modelled_vs_depth1_gmean": 1.02042795203354,
+   "per_case": {
+    "code-short": 1.0283515583130984,
+    "code-512": 1.0315878536207355,
+    "structured-short": 1.047282168162042,
+    "math-short": 1.0233373797690142,
+    "explanation-short": 0.989759574887923,
+    "chinese-short": 1.0033073406803883
+   }
+  },
+  {
+   "tau_p1": 0.5,
+   "tau_p2": 0.8,
+   "modelled_vs_depth1_gmean": 1.0197698909321997,
+   "per_case": {
+    "code-short": 1.0302551517982967,
+    "code-512": 1.0462658565604974,
+    "structured-short": 1.0453929351618245,
+    "math-short": 1.0222356335291571,
+    "explanation-short": 1.001926447611547,
+    "chinese-short": 0.9744506411173577
+   }
+  },
+  {
+   "tau_p1": 0.7,
+   "tau_p2": 0.5,
+   "modelled_vs_depth1_gmean": 1.0193431473986778,
+   "per_case": {
+    "code-short": 1.0312830936024044,
+    "code-512": 1.0460849902448117,
+    "structured-short": 1.0412278547257066,
+    "math-short": 1.0192534852663684,
+    "explanation-short": 0.997809914038777,
+    "chinese-short": 0.9819780489140086
+   }
+  },
+  {
+   "tau_p1": 0.8,
+   "tau_p2": 0.99,
+   "modelled_vs_depth1_gmean": 1.0183833686404296,
+   "per_case": {
+    "code-short": 1.0221255058045169,
+    "code-512": 1.0404621375664513,
+    "structured-short": 1.0473446802246407,
+    "math-short": 1.0171109568137104,
+    "explanation-short": 0.990438731396383,
+    "chinese-short": 0.9941495114524821
+   }
+  },
+  {
+   "tau_p1": 0.5,
+   "tau_p2": 0.97,
+   "modelled_vs_depth1_gmean": 1.0179044850984553,
+   "per_case": {
+    "code-short": 1.0218420153901524,
+    "code-512": 1.0398456466451802,
+    "structured-short": 1.0495483660189275,
+    "math-short": 1.0196926387603693,
+    "explanation-short": 0.9996178580178887,
+    "chinese-short": 0.9785517253009206
+   }
+  },
+  {
+   "tau_p1": 0.8,
+   "tau_p2": 0,
+   "modelled_vs_depth1_gmean": 1.016574740557078,
+   "per_case": {
+    "code-short": 1.0387992076881214,
+    "code-512": 1.0531355902639512,
+    "structured-short": 1.0412278547257066,
+    "math-short": 1.013700094591227,
+    "explanation-short": 0.983161077483351,
+    "chinese-short": 0.9721651416673
+   }
+  },
+  {
+   "tau_p1": 0.7,
+   "tau_p2": 0.99,
+   "modelled_vs_depth1_gmean": 1.0148487629061886,
+   "per_case": {
+    "code-short": 1.0142349029820066,
+    "code-512": 1.0329802709934204,
+    "structured-short": 1.0473446802246407,
+    "math-short": 1.0171109568137104,
+    "explanation-short": 0.9900102133895292,
+    "chinese-short": 0.9887346226390267
+   }
+  },
+  {
+   "tau_p1": 0,
+   "tau_p2": 0.95,
+   "modelled_vs_depth1_gmean": 1.0137293007874264,
+   "per_case": {
+    "code-short": 1.029178439533335,
+    "code-512": 1.0270025865956323,
+    "structured-short": 1.0495483660189275,
+    "math-short": 1.0252148054410284,
+    "explanation-short": 0.9822752028241936,
+    "chinese-short": 0.9714473621803149
+   }
+  },
+  {
+   "tau_p1": 0,
+   "tau_p2": 0.9,
+   "modelled_vs_depth1_gmean": 1.01271505227146,
+   "per_case": {
+    "code-short": 1.0315662437772322,
+    "code-512": 1.034703594682192,
+    "structured-short": 1.0516648445668801,
+    "math-short": 1.0195040952682146,
+    "explanation-short": 0.9801374017609423,
+    "chinese-short": 0.9617389768465985
+   }
+  },
+  {
+   "tau_p1": 0.5,
+   "tau_p2": 0.99,
+   "modelled_vs_depth1_gmean": 1.011056143509483,
+   "per_case": {
+    "code-short": 1.0142349029820066,
+    "code-512": 1.0346017761819923,
+    "structured-short": 1.0495483660189275,
+    "math-short": 1.0140439075391734,
+    "explanation-short": 0.9829200078686896,
+    "chinese-short": 0.9731111991357974
+   }
+  },
+  {
+   "tau_p1": 0.5,
+   "tau_p2": 0.5,
+   "modelled_vs_depth1_gmean": 1.010418952890643,
+   "per_case": {
+    "code-short": 1.0312830936024044,
+    "code-512": 1.0475082338899484,
+    "structured-short": 1.043450460519838,
+    "math-short": 1.0056169148550667,
+    "explanation-short": 0.9857600449201968,
+    "chinese-short": 0.9523529769362614
+   }
+  },
+  {
+   "tau_p1": 0,
+   "tau_p2": 0.97,
+   "modelled_vs_depth1_gmean": 1.0097476324369006,
+   "per_case": {
+    "code-short": 1.0218420153901524,
+    "code-512": 1.0243743251751372,
+    "structured-short": 1.0495483660189275,
+    "math-short": 1.0196926387603693,
+    "explanation-short": 0.984460437036037,
+    "chinese-short": 0.9610912252532532
+   }
+  },
+  {
+   "tau_p1": 0,
+   "tau_p2": 0.8,
+   "modelled_vs_depth1_gmean": 1.0085999827238266,
+   "per_case": {
+    "code-short": 1.0302551517982967,
+    "code-512": 1.0337356345028592,
+    "structured-short": 1.0453929351618245,
+    "math-short": 1.0222356335291571,
+    "explanation-short": 0.9651408160061372,
+    "chinese-short": 0.9583810043289926
+   }
+  },
+  {
+   "tau_p1": 0.7,
+   "tau_p2": 0,
+   "modelled_vs_depth1_gmean": 1.0080012887917864,
+   "per_case": {
+    "code-short": 1.0277650921083012,
+    "code-512": 1.0460849902448117,
+    "structured-short": 1.0412278547257066,
+    "math-short": 1.013700094591227,
+    "explanation-short": 0.9675811333519867,
+    "chinese-short": 0.9553511581841079
+   }
+  },
+  {
+   "tau_p1": 0,
+   "tau_p2": 0.99,
+   "modelled_vs_depth1_gmean": 1.0047829721351869,
+   "per_case": {
+    "code-short": 1.0142349029820066,
+    "code-512": 1.0252128443382198,
+    "structured-short": 1.0495483660189275,
+    "math-short": 1.0140439075391734,
+    "explanation-short": 0.9732931219272458,
+    "chinese-short": 0.9553843822373485
+   }
+  },
+  {
+   "tau_p1": 0.5,
+   "tau_p2": 0,
+   "modelled_vs_depth1_gmean": 0.9955564817025411,
+   "per_case": {
+    "code-short": 1.0277650921083012,
+    "code-512": 1.0475082338899484,
+    "structured-short": 1.043450460519838,
+    "math-short": 1.000338776448108,
+    "explanation-short": 0.9531520705188755,
+    "chinese-short": 0.9089981150936476
+   }
+  },
+  {
+   "tau_p1": 0,
+   "tau_p2": 0.5,
+   "modelled_vs_depth1_gmean": 0.9937889898221447,
+   "per_case": {
+    "code-short": 1.0312830936024044,
+    "code-512": 1.0352343151614138,
+    "structured-short": 1.043450460519838,
+    "math-short": 1.0056169148550667,
+    "explanation-short": 0.938100466302907,
+    "chinese-short": 0.916631486563324
+   }
+  },
+  {
+   "tau_p1": 0,
+   "tau_p2": 0,
+   "modelled_vs_depth1_gmean": 0.976436841362949,
+   "per_case": {
+    "code-short": 1.0277650921083012,
+    "code-512": 1.0352343151614138,
+    "structured-short": 1.043450460519838,
+    "math-short": 1.000338776448108,
+    "explanation-short": 0.8973673960470605,
+    "chinese-short": 0.8696473856301011
+   }
+  }
+ ]
+}
